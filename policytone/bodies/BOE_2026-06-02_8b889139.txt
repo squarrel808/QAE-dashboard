@@ -1,0 +1,144 @@
+Monetary Policy: Lessons
+from the Pandemic
+RBI@90
+October 2024
+Swati Dhingra
+Exceptional Circumstances
+• V-shaped Pandemic/Support
+• War and Terms of Trade
+• Data fog/data dependence
+A succession of exceptional circumstances
+Covid-19 pandemic Energy price shock Data fog
+GDP relative to February 2020 Utility bills (2019=100) Fall in Labour Force Survey Response
+220 220 80 80
+105
+200 200 70 70
+100
+UK
+Wave-specific
+60 60
+180 180 response
+95
+rates
+50 50
+160 160
+90
+EA 40 40
+140 140
+85
+30 30
+120 120
+80 US 20 20
+Total response rate
+100 100
+10 10
+75
+80 80
+0 0
+70 2019 2020 2021 2022 2023 2024
+2014 2016 2018 2020 2022 2024
+Jan 2019 Jul 2019 Jan 2020 Jul 2020 Jan 2021 Jul 2021
+Analytical Toolkit
+• Fool’s Gold: refinements to a
+model-based forecast
+• Real Gold: better data and
+research design to reduce
+uncertainty
+Reliance on theoretical and statistical model-based forecasts
+• Forecast errors across central banks were • While the shocks could not have been
+relatively similar during this inflationary anticipated, the forecast errors of the models
+episode despite different models and tools. were persistent and systematic.
+Percent
+Inflation, one-year-ahead forecast error
+10 10 14 14
+Sweden
+12 12
+8 8
+UK
+10 10
+6 6
+CPI
+8 8
+4 4 CPI forecasts
+Norway New Zealand 6 6
+US
+2 2
+4 4
+0 0
+2 2
+Euro Area
+Canada
+-2 -2 0 0
+-4 -4 -2 -2
+2016 2017 2018 2019 2020 2021 2022 2023 2012 2014 2016 2018 2020 2022 2024 2026
+Analytical Toolkit
+• Fool’s Gold: forecast
+refinements during large
+shocks
+• Real Gold: better data and
+research design to reduce
+uncertainty
+Research design to understand mechanisms
+• Granular wage and inactivity data from local labour • Fragmentation of production and rise of supply chains
+markets in the UK offers little evidence of positive make standard metrics, such as core and services
+correlation, suggesting rising inactivity was not a key inflation, less informative for assessing imported
+driver of wage inflation during the current episode. inflation.
+Pp. contribution to % change, 2019 Q4 to 2022
+Hourly wages, average year-on-year growth
+20.0
+12.0
+10.0 15.0
+2019-2023
+8.0
+10.0
+6.0
+5.0
+4.0
+2.0 0.0
+2014-2019
+0.0
+-5.0
+-2.0 CPI Core Services Core services
+-4.0
+Energy Imports exc energy Final use imports
+-30 -20 -10 0 10 20 30
+Unit labour costs Taxes Gross operating surplus
+Inactivity rate, change in percentage points
+Error CPI
+Making use of forward-looking data to reduce uncertainty
+Supply Chains Firms Mortgages
+% Deviation from trend (2019 average) Proportion of mortgages with fix period expiring
+CPI PPI
+30 600,000 600,000
+40 40
+500,000 500,000
+Registrations 35 35
+400,000 400,000
+20 30 30
+Net entry
+300,000 300,000
+25 25
+200,000 200,000
+20 20
+10
+100,000 100,000
+15 15
+0 0 10 10
+0
+-100,000 -100,000 5 5
+Dissolutions
+-200,000 -200,000 0 0
+Dissolution notices 2024 2024 2025 2025 2026 2026 Fixed
+-10
+-300,000 -300,000 H1 H2 H1 H2 H1 H2 into
+1958 1974 1990 2007 2023
+2020 2021 2022 2023 2024 2027
+Conclusions
+International Shocks Toolkit Evidence
+The global economy has been hit While experimenting with Data innovations and better
+by a succession of large external different risks in a forecasting research design to interpret the
+shocks. Going forward, the apparatus may be helpful for data become crucial to obtain
+lessons from these shocks may thinking through the forward-looking insights to
+matter more than before due to uncertainties, they are secondary discipline policy.
+geopolitics and climate change. to actual information on how the
+economy is evolving.

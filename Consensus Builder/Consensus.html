@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Combined Dashboard Tabs</title>
+<style>
+:root {
+    --page-bg: #f7f6f3;
+    --card-bg: #ffffff;
+    --text-main: #1a1c1f;
+    --text-muted: #5a5f66;
+    --border: #e8e8e6;
+    --header-bg: #f4f3f1;
+    --accent: #6e1f1f;
+    --pos: #1a7a4c;
+    --neg: #c0392b;
+    --font-base: "Pretendard","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text-main);
+    font-family: var(--font-base);
+}
+
+.header {
+    padding: 16px 24px 8px 24px;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    color: var(--text-main);
+    font-family: Georgia, serif;
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tab-btn {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab-btn:hover {
+    background: var(--header-bg);
+}
+
+.tab-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.viewer {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.tab-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+}
+
+.tab-frame.active {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Combined Dashboard</h1>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('gdp', this)">GDP Consensus</button>
+        <button class="tab-btn" onclick="showTab('cpi', this)">CPI Consensus</button>
+        <button class="tab-btn" onclick="showTab('cpi_dist', this)">CPI Distribution</button>
+    </div>
+</div>
+
+<div class="viewer">
+    <iframe id="gdp" class="tab-frame active" src="gdp_consensus_dashboard.html"></iframe>
+    <iframe id="cpi" class="tab-frame" src="cpi_consensus_dashboard.html"></iframe>
+    <iframe id="cpi_dist" class="tab-frame" src="cpi_dashboard.html"></iframe>
+</div>
+
+<script>
+function showTab(tabId, btn) {
+    const frames = document.querySelectorAll('.tab-frame');
+    frames.forEach(frame => frame.classList.remove('active'));
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>

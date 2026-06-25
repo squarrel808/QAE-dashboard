@@ -1,0 +1,149 @@
+Monetary policy outlook
+Megan Greene
+Where are we now vs. the start of the year?
+GDP growth Unemployment rate CPI inflation
+Sources: BCC, CBI, Lloyds Business Barometer, ONS, S&P Global and Bank calculations. The lighter diamonds show Bank staff’s projections at the time of the February Report. The darker diamonds show Bank staff’s current projections. The
+projections for headline GDP growth and the unemployment rate are quarterly and show 2025 Q1 and 2025 Q2 (February projections show 2024 Q4 to 2025 Q2). The projections for CPI inflation are monthly and show April to September 2025
+(February projections show January 2025 to June 2025). The GDP growth and unemployment rate projections for 2025 Q1 are based on official data to February 2025, while the CPI inflation figures over the same quarter are outturns. Although LFS
+unemployment data have been reinstated by the ONS, they are badged as official statistics in development and the LFS continues to suffer from very low response rates, which can introduce volatility and potentially non-response bias (Box D of 2
+theMay 2024 Monetary Policy Report).
+Inflation persistence remains in focus
+Services inflation Pay growth The observed V/U ratio and
+the estimated equilibrium level
+Private sector
+regular pay
+Sources: . LHS chart: ONS and Bank calculations. The low variance measure is calculated by weighting each component of services inflation by the inverse variance of the change in 12-month inflation of that component from 12 months previously. The maximum adjusted weight is capped at twice its original value. Details on the components which have been included/excluded from the ‘Services
+excluding indexed and volatile components, rents and foreign holidays’ measure are included in the accompanying spreadsheet published online. All measures are seasonally adjusted. The trimmed mean measure excludes the 10% largest and 10% smallest price changes. The latest data points shown refer to March 2025. Centre chart: Bank of England Agents, DMP Survey, HMRC, Indeed,
+KPMG/REC UK Report on Jobs, Lloyds Business Barometer, ONS and Bank calculations. Private sector regular pay growth in the aqua line shows the ONS measure of private sector regular average weekly earnings growth (three-month average on same three-month average a year ago). Latest data points are for the three months to February 2025 for private sector regular pay. DMP shows three-
+month average realised pay growth from the DMP Survey. KPMG/REC shows average starting salaries for permanent staff compared to the previous month. The KPMG/REC index is mean-variance adjusted to ONS private sector regular pay growth over 2002–19 and is advanced by 12 months, which better reflects the leading relationship between the KPMG/REC index and the ONS measure of pay
+growth. HMRC Real-Time Information (RTI) shows median of private sector employee pay growth. Indeed shows annual average job title matched pay growth for UK job vacancies. Latest data points are March 2024 for Indeed, HMRC RTI and the KPMG/REC index, and April 2025 for the DMP Survey. The Agents’ pay survey diamond shows respondents’ expected average pay settlements in 2025,
+weighted by employment and sector. The DMP diamond shows average expected pay growth one year ahead for respondents to the April 2025 DMP Survey. RHS: AA/WARC Expenditure Report, ONS and Bank calculations. The equilibrium V/U ratio is estimated using an error-correction model over the period 1982–2023. The real cost of vacancy posting and hourly labour productivity are included as 3
+long-run determinants for the level of vacancies. The model also includes controls for short-term movements in these variables (Stelmach et al, 2025). The final data points for both series in the chart are 2024 Q4, while diamonds represent projections for 2025 Q1.
+A near-term bump in inflation is expected to fall back though
+expectations remain elevated
+CPI inflation and CPI inflation Household and business short- Household and business longer-
+excluding energy term inflation expectations term inflation expectations
+Sources: LHS: Bloomberg Finance L.P., ONS and Bank calculations. Energy prices include fuels and lubricants, electricity, gas and other fuels. Centre and RHS: Bank/Ipsos Inflation Attitudes Survey (IAS), Citigroup, YouGov, DMP and Bank calculations. Bank/Ipsos IAS data
+shows median responses. Data shown are the one year and five year ahead inflation expectations measures. Dashed lines represent the series averages over 2010–19. A methodological break occurred during the Covid pandemic that means a degree of caution should be taken
+when making long-run comparisons with these data. The methodology notes linked in the latestIAS release for February 2025provide more information. Data are not seasonally adjusted and the latest data points are for 2025 Q1. Citi/YouGov survey data shown are the one
+year and five to ten year ahead inflation expectations measures. Dashed lines represent the series averages over 2010–19. Since August 2022, the YouGov/Citigroup survey has been based on updated response buckets. Data are not seasonally adjusted and the latest data 4
+points are for April 2025. DMP data is 1 year and 3 year ahead CPI expectations. Latest data points are for April 2025.
+A key question remains whether weakness in activity is supply or
+demand driven – or both
+Results from Bank staff’s SVAR
+Sources: LHS: Chart shows the estimated distribution of domestic and global demand and supply shocks that have hit the UK economy in 2024 Q3, 2024 Q4 and 2025 Q1. These shocks are derived from a SVAR model
+for the UK economy, estimated using Bayesian techniques on data from 1992 Q1 to 2025 Q1. The shocks are identified through zero and sign restrictions.Moreover, the SVAR also estimates a global energy shock and a
+domestic monetary policy shock, not shown here.Seeherefor further details on the model. RHS: Chart shows a decomposition of YoY headline GDP growth using results from the SVAR model. The chart is expressed in 5
+deviation from deterministic component (around 2%).
+Productivity continues to be surprisingly weak
+Average annual growth rate of whole economy labour productivity
+Sources: ONS and Bank calculations.
+6
+Businesses’ responses to the rise in the NICs is still unclear
+Proportion of firms reporting responses to Autumn Budget policy
+changes by margin of adjustment
+Sources: Agents’ pay survey, Deloitte, DMP Survey, IoD and Bank calculations. Agents’ pay survey results are based on the question: ‘In response to the April 2025 increases in employers’ National Insurance contributions (NICs) and National Living
+Wage/National Minimum Wage (NLW), and other changing labour market policies (including proposals in the Employment Rights Bill), what actions do you plan to take (select up to three that are most relevant/significant to you)?’. Firms are allowed to select
+multiple options, although limited to three options, therefore the percentages do not add up to 100. Responses are weighted by firm industry and size. Responses are for November and December 2024. Deloitte CFO survey results are based on weighted-
+average ratings on a scale of 0–100 for how likely chief financial officers are to pursue the following strategies in response to the forthcoming rise in employer National Insurance contributions. Zero stands for not pursuing at all and 100 stands for pursuing
+to the greatest extent. Latest data are for 2024 Q4. DMP results are based on the question: ‘How do you expect your business to respond to the changes to employer National Insurance contributions announced in the November 2024 Budget?’. Firms are
+allowed to select multiple options, therefore the percentages do not add up to 100. Responses are weighted by firm industry and employment. Responses are for January 2025. IoD results are based on responses the question: ‘You said the changes will
+increase your employer National Insurance bill. How do you plan to respond to the resulting higher costs of employment?’. Latest data are for February 2025. Other option not shown in chart had response of 6.5%. 7
+Official statistics still face some challenges
+LFS response rates, excluding Measures of employment Quarterly change in the
+imputed households growth unemployment rate
+Sources: LHS: ONS. Latest data is for 2024Q4. Response rate shown is total response rate. The total response rate is the cumulative response rate for the quarter across all waves, based on all eligible, in-scope households. Centre: Bank of
+England Agents, DMP survey, HM Revenue and Customs, KPMG/REC/S&P Global UK Report on Jobs, Lloyds Business Barometer, ONS, S&P Global and Bank calculations. (a) Bank staff’s indicator-based measure of underlying employment
+growth is constructed using a dynamic factor model following the approach of Doz et al (2011). The model extracts a common component from monthly survey indicators, capturing co-movements across series. The common component is scaled
+to align with LFS employment growth between 2000–19. Shaded area represents 95% confidence intervals. Latest data are for the three months to February 2025 for the LFS and April 2025 for the survey data. RHS: Bank of England Agents,
+Google Trends, S&P Global, KPMG/REC UK Report on Jobs, ONS and Bank calculations. Bank staff’s indicator-based models of near-term unemployment use mixed-data sampling (MIDAS) techniques (Daniell and Moreira (2023)). Latest data
+8
+are to 2024 Q3 and the diamonds show the model implied values for 2024 Q4 and 2025 Q1.
+Uncertainty persists surrounding the degree of restrictiveness in
+the economy
+Estimates of change in R*
+Potential drivers of the change in R* between 2018 and F25
+Change from 2018
+Approach​
+to F25 MPR​
+Financial market
+>90bps​
+measures
+Survey measures <25bps-150bps​
+Macroeconomic models 25bps-75bps​
+Sources: Financial market measures are based on dynamic term-structure models. 10-
+year forward expected rates are extracted from nominal bond yields before subtracting
+survey inflation expectations. The survey measures are based on responses to the Bank
+of England’s MaPS survey and professional forecasts according to Consensus
+Sources: LHS: Bank of England February 2025 Monetary Policy Report. Economics. The macroeconomic models covered in the range are Davis et al (2024) and
+Del Negro et al (2019). Estimates shown are not exact. More detail can be found in the
+February 2025 Monetary Policy Report.
+9
+Household saving ratio and consumption suggest monetary
+policy is still restrictive
+Household saving ratio Household consumption
+Source: ONS. LHS: Saving as a percentage of total available household resources. Based on NRJS. Final data points are 2024 Q4. RHS: Indexed 2019 Q4. Based on
+ABJR and HAYO. .
+10
+Global shocks have emerged
+US effective tariffs
+Sources: US Bureau of Economic Analysis, US International Trade Commission, White House and Bank calculations. The effective tariff rate is defined as implied customs duty revenue divided by total goods imports for consumption. Estimates for current
+effective US tariff rates reflect trade policies in place as of 15 April 2025 and assume that trade weights and flows remain fixed at 2024 levels. In the latest estimates, Bank staff also assume that the share of trade compliant with the free trade Agreement
+between the US, Mexico and Canada (USMCA) will rise from 2024 levels, with the vast majority of imports from Canada and Mexico adhering to USMCA standards as firms are motivated to demonstrate compliance in response to higher tariffs. A range of
+external estimates suggest that the US average effective tariff rate on global imports has increased to between 18% and 28% under the new US administration, depending on assumptions, particularly around changes in trade flows and substitution
+effects in response to tariffs, and the share of USMCA compliant trade.
+11
+Tariffs have led to heightened uncertainty
+Share of UK firms expecting a fall in sales next
+Trade policy uncertainty
+year because of US tariffs
+Sources: Caldara et al (2019), DMP Survey and Bank calculations. LHS: The trade policy uncertainty index reflects automated text search results of the electronic archives of seven newspapers discussing
+trade policy uncertainty: Boston Globe, Chicago Tribune, Guardian, Los Angeles Times, New York Times, Wall Street Journal, and Washington Post. Data are monthly. The final data point is for March
+2024. RHS: The survey results are based on the question: ‘How do you expect the implementation of new tariffs on goods entering the United States to affect the sales of your business over the next
+12
+year?”. The survey took place between 4 and 18 April 2025.
+Risks of trade policy to inflation are two-sided, but on balance
+likely to be disinflationary
+Unilateral tariffs Retaliation
+Impact on
+UK activity UK inflation Explanation UK activity UK inflation Explanation
+Channel
+Included in ECB-G
+US demand for UK exports US demand for UK exports
+Expenditure switching
+weakens. weakens
+Additional trade distortions Additional trade distortions
+weigh on global demand, weigh on global demand,
+Weaker global demand
+weakening demand for UK weakening demand for UK
+exports. exports.
+Other countries lower prices of Other countries lower prices of
+Trade diversion exports previously destined for exports previously destined for
+US. US.
+Sterling depreciates against the Sterling appreciates against the
+Exchange rate movement
+dollar. dollar.
+Not included in ECB-G
+Reorganisation temporarily Reorganisation temporarily
+Supply chains reduces global supply capacity reduces global supply capacity
+and increases price pressures. and increases price pressures.
+Reduced trade openness Reduced trade openness
+Lower competition/
+weighs on global potential weighs on global potential
+knowledge transfer
+supply growth. supply growth.
+13
+Source: For further details see (Greene, 2025)
+Tariffs have also contributed to some sharp movements in financial
+markets
+Ten-year government bond
+Equities Foreign exchange
+yields
+Sources: Bloomberg Finance L.P., Tradeweb FTSE Gilt Closing Data and Bank calculations. Equities and effective exchange rates are indexed to the date of the 2024 US presidential election, while 10-year yields
+show cumulative changes in yields over the same period. The final data points are for 29 April 2025.
+14
+Developments outside the UK significantly shift UK rates
+Rigobon decomposition of UK 1y OIS Rigobon decomposition of UK 3y Gilt Yield
+Source: Bloomberg Finance L.P. and Bank calculations. RHS: Decomposition of UK 1-year overnight index swap (OIS) rate cumulative change since December 2021. (LHS) and UK 3-year gilt cumulative change
+since 2 January 2025 (RHS) yield based on a model following Rigobon (2003). Latest data: 1ST May 2025.
+15

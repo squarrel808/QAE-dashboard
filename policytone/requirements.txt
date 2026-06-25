@@ -1,0 +1,7 @@
+anthropic
+pandas
+requests
+beautifulsoup4
+selenium
+pdfplumber
+python-dotenv

@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+logs/
+tickers.csv
+*.csv
+*.xlsx
+invalid_tickers.txt
+test_summary_output.csv

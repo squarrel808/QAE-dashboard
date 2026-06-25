@@ -1,0 +1,19 @@
+group,label,bbid,assetId,name,history
+Factor,Growth vs Value,GSPUGRVA,MA8MZG4ENC16TVNR,GS Growth vs Value,2012-12-28
+Factor,Growth,GSPUGROW,MABASVVW2C3ZX4ET,GS US Barra Growth Pair,2007-12-28
+Factor,Value,GSPUVALU,MAFKX61YEQY136FA,GS US Barra Value Pair,2007-12-28
+Factor,Momentum,GSPUMOMO,MA4EPYC53HVW64Q2,GS US Momo ex Memes Pair,1999-12-29
+Factor,Volatility (Low Vol),GSPURSVL,MAE67MZ982F2JM01,GS US Barra Res Vol Pair,2007-12-28
+Factor,Quality,GSPUQUAL,MA8R7BY1JTPQG84D,GS US Quality Pair,2004-12-30
+Factor,Size,GSPUSIZE,MAPW53PNZNF86SSN,GS US Barra Size Pair,2007-12-28
+Factor,Beta,GSPUBETA,MAQAWT6T2RVSKNFY,GS US Barra Beta Pair,2007-12-28
+Factor,Leverage,GSPULEVG,MAXYES9JT3M4P3ZZ,GS US Barra Leverage,2007-12-19
+Factor,Cyclicals vs Defensives,GSPUCYDE,MAEXSW9VD6GT02A5,GS Cyclicals vs Defens,2007-01-30
+Tech,AI,GSPUARTI,MA78VHWVMMHHT05W,GS AI Pair,2018-02-07
+Tech,AI vs Nonprofitable Tech,GSPUCHAT,MA1ZWCE19031B8FY,GS US AI vs Nonprof Tech,2014-09-09
+Tech,Mega vs Nonprofitable Tech,GSPUMENP,MASXCZG92BS7E0C3,GS Mega vs Nonprof Tech,2011-08-31
+Tech,Software vs Semis,GSPUSOSE,MAYDFNZ4F46XWHC5,Software vs Semis,2014-10-02
+Tech,Cheap vs Expensive Software,GSPUSOFT,MA0P21T77CF1Q35D,GS Cheap vs Exp Software,2014-09-08
+Tech,TMT Momentum,GSTMMOMO,MAEWJ7SNPJJMB1T0,GS US TMT Momentum,2012-12-28
+Tech,TMT Growth vs Value,GSTMTGVP,MA5NJM88VAGX1MF4,GS US TMT Gro vs Val,2011-01-31
+Tech,TMT Residual Volatility,GSTMRSVL,MA08NQDBCKPSYMZB,GS US TMT Residual Volatility,2012-12-28

@@ -1,0 +1,362 @@
+Mind the Gap
+Unpacking the puzzle of
+income growth and weak
+consumption in the UK and
+other mysteries
+Swati Dhingra
+Knoop Lecture (18 November 2025)
+I would like to thank Donal McVeigh, Jack Welling and Emily Fry for their
+assistance in preparing these materials.
+Mind the Gap
+Bridging evidence gaps through
+research to inform policymaking
+2
+Understanding the economy and designing policy is hardest
+when it is needed the most during turbulent times
+–
+Covid-19 pandemic Energy price shock Data fog
+Real GDP relative to Feb 2020 Utility bills Labour Force Survey response
+Source: ONS and Bank calculations. Source: LSEG Datastream, ONS and Bank calculations. Source: ONS and Bank calculations.
+Latest data: 2025 Q3. Latest data: September 2025. Latest data: 2025 Q2.
+3
+While the shocks could not have been anticipated, successive forecasts
+during the inflation surge consistently undershot outturns on the way up
+Successive CPI MPR forecasts, versus actual outturns
+Source: ONS and Bank calculations. Latest data: November 2025 Monetary Policy Report (MPR).
+4
+Forecast errors across central banks (and private forecasters) were
+relatively similar despite differences in modelling
+Inflation, one year ahead forecast errors, 2015-23
+Percentage points
+Source: Forecasting for monetary policy making and communication at the Bank of England: a review | Bank of England
+5
+Unconventional policy tools performed better in some cases in containing
+the inflation surge
+Headline consumer price indices’ growth, international comparison
+Latin America South East / East Asia Europe
+Source: LSEG Datastream and Bank calculations. See Coibion and Gorodnichenko (2025) for more detail. Latest data: September 2025.
+6
+Research can bridge evidence gaps that distort policy: Example
+• “The Bank of England appears to pin rising
+inactivity on a ‘change to the supply of labour, Hourly wages, average year-on-year growth, per cent
+independent of demand’. According to this 12
+view, such a fall in labour supply would then put 10
+2019-2023
+upward pressure on wages. This could in turn 8
+contribute to further cost-push inflation at a time 6
+of already double-digit inflation. If true, this can 4
+be seen as justification for a policy of raising 2
+2014-2019
+interest rates.” 0
+-2
+• In fact, areas where inactivity rose by more
+-4
+experienced smaller wage growth, not larger.
+-30 -20 -10 0 10 20 30
+Inactivity rate, change in percentage points
+Notes: Each dot in the scatter plot represents a Travel to Work Area in the UK:
+shows rise in inactivity (from APS) on the x-axis and average growth rate in hourly
+wages (from ASHE) on the y-axis (2013-2023).
+Source: Machin and Wadsworth, Economics Observatory (26 May 2023).
+7
+A Rich Vein or Fool’s Gold? Research, not tweaks to forecasts or
+communications, can bridge evidence gaps that distort policy
+• Experimenting with different assumptions and risks in a forecasting apparatus
+can help think through uncertainties, but forecasts are even more error-prone in
+turbulent times.
+• Credible research design and measurement, not tweaks to forecasting
+models or communications, can bridge evidence gaps that distort economic
+policy and skew narratives.
+• As the Bank undertakes reforms, this is an appropriate place to reiterate this
+message and highlight where research could bridge the evidence gaps that
+obscure our understanding of the economy today.
+8
+Three areas of discussion today for bridging evidence gaps
+Unpacking the puzzle of Developing central bank Understanding the
+income growth and weak toolkits to assess and effects of deglobalisation
+consumption in the UK prepare for global and the new world
+shocks and supply economic order
+shocks
+9
+The puzzle of income growth and
+weak consumption in the UK
+10
+Consumption growth has been consistently weaker than forecast
+MPR consumption forecasts, year-on-year growth
+Source: ONS and Bank calculations. Latest data: November 2025 Monetary Policy Report.
+11
+Alongside expectations for the saving ratio to fall back, which
+hasn’t materialised
+Households’ saving ratios across Blue Book and forecast vintages, per cent
+Per cent Per cent
+May 2024
+12 12
+May 2025
+Aug 2024
+Nov 2024
+Nov 2025
+10 10
+Nov 2023
+Feb 2025
+8 8
+Outturns Feb 2024
+(Blue Book 2023)
+Blue Book 2024 Aug 2025
+6 6
+Blue Book 2025
+4 4
+2022 2024 2026 2022 2024 2026 2028
+Source: ONS and Bank calculations. Updated chart from Mann (2025). Latest data: November 2025 Monetary Policy Report.
+12
+Consumption has been weaker than peers, despite similar real
+wage growth
+Real consumption evolution Real private sector / negotiated wages, four-quarter growth
+Source: Bureau of Economic Analysis, Eurostat, ONS and Bank calculations. Source: Bureau of Economic Analysis, Eurostat, ONS and Bank calculations.
+Latest data: 2025 Q3 (UK), 2025 Q2 (EA, US). Latest data: Q3 2025 (UK), Q2 2025 (EA, US).
+13
+And persistently diverged from households’ disposable income
+Households' consumption and disposable income, inflation-adjusted levels
+Source: ONSand Bank calculations. Latest data: Q2 2025.
+14
+Why does understanding the consumption puzzle matter?
+Channels through which Bank
+Rate impacts consumption
+Intertemporal Housing Financial Value of debt Indirect
+Cash-flow
+substitution channel wealth effect Fisher effect labour income
+15
+How do the explanations matter for the outlook for consumption?
+Tighter monetary policy, and so will pick up with lower interest rates
+Past high inflation experience causing persistent, maybe even structural changes, in
+consumption/saving behaviour
+Increased uncertainty/risk causing households to do more precautionary saving, so
+likely to not pick up if uncertainties continue
+Re-building wealth that has been eroded by inflation, and so should pick up as inflation
+falls
+Source: Bank of England Monetary Policy Report (MPR), November 2025.
+16
+Is there really a consumption puzzle? Not in the microdata where
+disposable incomes are just as weak as consumption
+Real disposable income and real household final consumption (per capita)
+Source: ONS and Bank calculations. Latest data: 2023/24.
+17
+How to assess the evidence? Let's look at each component of
+Consumption + Savings = Disposable Income/Price
+Let's get the Let's get the numerator Let's use Savings as
+denominator right: right: Incomes are not a cross-check on real
+Prices faced by just from wages, but also income minus
+households for their from benefits and other consumption
+consumption baskets sources
+18
+Let's get the denominator right: Household costs from spending
+microdata is less optimistic on a real wage recovery
+Level of real AWE relative to Q4 2019
+Source: ONS and Bank calculations. Latest data: June 2025.
+19
+Let's get the numerator right: Only interest income has grown
+consistently during the consumption puzzle period
+Contributions to growth in real income since 2019 (per cent) Real change in income per person by source (since Q4 2021)
+Source: ONS and Bank calculations. Latest data: Q2 2025. Source: ONS and Bank calculations. Latest data: Q2 2025.
+20
+Let's cross-check with savings: no uptick in savings during the
+consumption puzzle period in income and spending microdata
+Household saving ratio, by income quintile, financial year
+Source: ONS and Bank calculations. Latest data: FYE 2024.
+21
+And seemingly high saving ratios look more muted for cash
+measures of incomes less spending
+Household saving ratio, per cent
+Source: ONS and Bank calculations. Latest data: 2024.
+22
+Financial counterpart of savings shows paying down of debts, not
+accumulation of liquid assets for future consumption
+Difference in actual and trend household savings ratios (percentage points), since 2020 Q1
+Source: ONS Households’ finances saving saving, UK: 2020 to 2024 (Figure 5). Latest data: Q1 2024.
+23
+Correspondingly deposits are stable, except for the top quintile
+Household deposits by income quintile, deflated by quintile-specific inflation indices
+Source: Bank of England/NMG Survey of Household Finances, ONS and Bank calculations. Latest data: H2 2025.
+24
+How to assess the evidence? Real consumption weakness seems
+to be reflecting real disposable income weakness
+Let's get the Let's get the numerator Let's use Savings
+denominator right: right: Incomes are not as a cross-check on
+Prices faced by just from wages, but also real income
+households for their from benefits and other minus consumption
+consumption baskets sources
+Real disposable Nominal disposable
+Excess liquidity at the
+incomes are weaker incomes are weaker
+top, who marginally
+consume less
+25
+…and other mysteries
+Large global supply shocks
+26
+A small open economy like the UK is exposed to global shocks
+27
+Global and supply factors are key drivers of inflation
+Monetary policy Inflationary dynamics Central Bank toolkits
+focus has been on can differ when inflation need to assess and
+domestic and demand- is driven by global and respond to the drivers of
+driven price dynamics in supply side factors inflation in real time amid
+recent decades and over less developed global
+Example, global prices
+the last few years global and supply side
+transmitting through
+and supply factors have modelling and data
+longer supply chains
+seen a resurgence
+28
+Global price shocks manifest in "domestic" inflation metrics
+Chart 12: Evolution of cost component contributions to inflation measures
+Cost decomposition of the CPI basket (LHS) and of CPI measures (RHS) (a)
+29
+Global price shocks manifest in "domestic" inflation metrics
+Chart 12: Evolution of cost component contributions to inflation measures
+Cost decomposition of the CPI basket (LHS) and of CPI measures (RHS) (a)
+30
+Global price shocks manifest in "domestic" inflation metrics
+Chart 12: Evolution of cost component contributions to inflation measures
+Cost decomposition of the CPI basket (LHS) and of CPI measures (RHS) (a)
+31
+Energy and imports are key contributors to inflationary dynamics
+…and other mysteries
+A new world economic order
+Brexit was the first major reset of trade relations. Sterling depreciated. Import
+cost increases – outputs and inputs – caused real wage stagnation till 2019.
+Minute-by-minute sterling depreciation on the Headline inflation rose, particularly in food
+night of the Brexit referendum (Costa et al. 2022) (De Lyon, Dhingra and Machin 2017)
+34
+Brexit was the first major reset of trade relations. Sterling depreciated. Import
+cost increases – outputs and inputs – caused real wage stagnation till 2019.
+Minute-by-minute sterling depreciation on the Real wage growth in sectors more and less exposed
+night of the Brexit referendum (Costa et al. 2022) to the sterling depreciation through imported inputs
+Belo edian epreciation A ove edian epreciation
+35
+UK goods exports to the EU fell after Brexit
+Goods exports of small firms (quintile 1 by initial employment) to EU fell relative to exports to the rest of the
+world (Freeman et al. 2025), but not necessarily in ways that were expected at the outset.
+36
+UK services exports to the EU fell due to Brexit barriers
+Services exports of the UK to the EU fell in services affected by Brexit barriers relative to bilateral exports of
+other countries (Bhalotia et al. 2025), despite broad strength in services exports worldwide.
+Chart 6: Services sectors facing Brexit barriers saw trade with the EU decline
+Relative effect of barriers on UK exports to the EU
+37
+Brexit effects are large in firm surveys, so likely not just working
+through trade effects
+Chart 8: Brexit reduced firms’ investment and the economy’s productivity
+Estimated impact on investment (LHS) and whole-economy productivity (RHS) (%)
+38
+The dog that has barked: Financial services exports have dipped
+Banks in the UK that had passporting rights before Brexit had 80% less loans to EEA, relative to other banks
+(Bhalotia et al. 2025)
+Chart 7: Loss of passporting for UK banks has been a drag on EEA loan activity
+Event study estimates (a)
+39
+The US is back to Smoot-Hawley tariffs and trade policy has
+become more restrictive in recent years
+40
+C
+U
+h
+S
+a
+a
+r t
+v
+1
+e
+:
+r a
+T
+g
+r
+e
+a d
+e
+e
+f f e
+p
+c
+o
+t i
+l
+v
+i c
+e
+y
+t a
+h
+r
+a
+i f f
+s
+(
+b
+l e
+e
+f t
+c
+)
+o
+(
+m
+%
+e
+) a
+m
+n
+o
+d
+r
+t
+e
+r a
+r
+d
+e
+e
+s t
+p
+r
+o
+i c
+l i
+t
+c
+i
+y
+v e
+a c
+i n
+t i o
+r
+n
+e
+s
+c e
+t a
+n
+k
+t
+e
+y
+n
+e
+g
+a
+l
+r
+o
+s
+b a l l y ( r i g h t )
+Effects of US-China tariffs on imports from China differed across
+countries, and we can draw lessons from this experience
+Chart 10: Diversion to the EU is larger than to the UK
+41
+Mind the Gap(s)
+Research must step in to bridge evidence
+gaps that distort policy and skew narratives
+42

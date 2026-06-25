@@ -1,0 +1,27 @@
+# ── 비밀/환경 변수 (API 키 등) — 절대 커밋 금지 ──
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+credentials.json
+gs clinetid.txt
+gs_test_output.csv
+
+# ── Python ──
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ── 데이터/로그/DB ──
+outputs/
+outputs_daily_tp/
+logs/
+*.db
+*.sqlite3
+
+# ── 에디터/OS ──
+.vscode/
+.DS_Store
+.ipynb_checkpoints/

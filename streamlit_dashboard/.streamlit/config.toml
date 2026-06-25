@@ -1,0 +1,11 @@
+# Streamlit 테마 설정
+# 기존 HTML 대시보드(검정 배경 #0c0f14, 파란 강조)에 맞춰 다크 테마로 통일.
+# 색만 바꾸면 앱 전체 분위기가 즉시 달라집니다. 값을 바꿔보며 취향대로 조정하세요.
+
+[theme]
+base = "dark"                    # 다크 모드 기반
+primaryColor = "#4d6aa3"         # 강조색 (버튼/선택 항목) — 대시보드 파란 톤과 매칭
+backgroundColor = "#0c0f14"      # 본문 배경 — 대시보드와 동일한 검정
+secondaryBackgroundColor = "#14181f"  # 사이드바/카드 배경
+textColor = "#e0e0e0"            # 글자색
+font = "sans serif"

@@ -1,0 +1,174 @@
+"""
+build_dashboard.py
+─────────────────────────────────────────────────────────────
+데이터가 안에 통째로 박힌 대시보드 HTML 파일 하나를 통째로 생성한다.
+data.js 도, 업로드 버튼도, 폴더 맞추기도 필요 없음.
+
+[사용법] 본인 Selenium 스크래핑 코드에서:
+    from build_dashboard import build_dashboard
+    ...
+    df = pd.DataFrame(data, columns=[...])   # 기존 코드
+    build_dashboard(df)                      # ← 이 한 줄만 추가
+
+실행하면 'dashboard.html' 이 생기고, 더블클릭하면 끝.
+매번 돌릴 때마다 최신 데이터가 박힌 새 HTML 로 덮어쓴다.
+─────────────────────────────────────────────────────────────
+"""
+
+import os
+import json
+
+# ── 대시보드 HTML 틀. __DATA_JSON__ 자리에 실제 데이터가 박힌다 ──
+_TEMPLATE = r"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Economic Calendar</title>
+<style>
+  :root{--ink:#1a1c1f;--muted:#9aa0a6;--line:#e8e8e6;--head:#f4f3f1;
+    --badge:#6e1f1f;--up:#1a7a4c;--down:#c0392b;--flat:#5a5f66;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f7f6f3;color:var(--ink);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;
+    border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:18px;flex-wrap:wrap;gap:12px;}
+  .brand{font-family:Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.3px;}
+  .brand small{display:block;font-family:sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.18em;color:var(--muted);margin-top:4px;}
+  .gen{font-size:11px;color:var(--muted);}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;}
+  .stat .v{font-size:22px;font-weight:700;}
+  .stat .l{font-size:11px;color:var(--muted);margin-top:2px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .chip{font-size:12px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:999px;
+    padding:5px 11px;cursor:pointer;user-select:none;}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .board{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  table{width:100%;border-collapse:collapse;}
+  th{font-size:12px;color:var(--muted);font-weight:600;text-align:right;padding:9px 16px;}
+  th.l{text-align:left;}
+  tr.day td{background:var(--head);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:8px 16px;font-weight:700;font-size:14px;}
+  tr.day .colhead{font-size:11px;color:var(--muted);font-weight:600;text-align:right;}
+  tr.ev td{padding:10px 16px;border-bottom:1px solid #f1f0ee;vertical-align:middle;}
+  .time{display:inline-block;background:var(--badge);color:#fff;font-weight:700;font-size:11px;
+    padding:4px 7px;border-radius:4px;min-width:74px;text-align:center;}
+  .flag{font-size:15px;margin:0 6px 0 10px;}
+  .ccode{font-size:11px;font-weight:700;color:var(--muted);}
+  .ind{font-size:14px;}
+  .period{color:var(--muted);font-size:11px;margin-left:6px;}
+  td.r{text-align:right;}
+  .val{font-weight:700;font-size:14px;}
+  .val.up{color:var(--up);}.val.down{color:var(--down);}.val.flat{color:var(--ink);}
+  .val.empty{color:var(--muted);font-weight:500;}
+  .prev,.fcst{color:var(--flat);font-weight:600;font-size:13px;}
+  .surp{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:8px;}
+  .surp.up{background:#e6f4ec;color:var(--up);}
+  .surp.down{background:#fbeae8;color:var(--down);}
+  .surp.flat{background:#eef0f1;color:var(--flat);}
+  .surp.pend{background:#f3f1ec;color:#9a7a2e;}
+  .note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6;}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr);}.period{display:none;}}
+</style></head><body><div class="wrap">
+  <header class="top">
+    <div class="brand">Economic Calendar<small>G7 · AU · CN · KR — HIGH IMPORTANCE</small></div>
+    <div class="gen num" id="gen"></div>
+  </header>
+  <div class="stats" id="stats"></div>
+  <div class="chips" id="chips"></div>
+  <div class="board"><table id="tbl"></table></div>
+  <div class="note">· <b>서프라이즈 배지</b>는 <b>실제 − 예측치</b>의 방향(사실)만 표시(▲ 상회 / ▼ 하회 / = 부합).
+    상회·하회가 호재인지 악재인지는 지표마다 다른 해석의 영역이라 판단하지 않았습니다.<br>
+    · 실제값이 비어 있으면(발표 전) <b>예정</b>으로 표시됩니다.</div>
+</div>
+<script>
+const DATA_RAW = __DATA_JSON__;
+const GENERATED = "__GENERATED__";
+
+const COUNTRY={EA:["🇪🇺","유로존"],EU:["🇪🇺","유로존"],US:["🇺🇸","미국"],USA:["🇺🇸","미국"],
+ GB:["🇬🇧","영국"],UK:["🇬🇧","영국"],GBR:["🇬🇧","영국"],FR:["🇫🇷","프랑스"],FRA:["🇫🇷","프랑스"],
+ DE:["🇩🇪","독일"],DEU:["🇩🇪","독일"],IT:["🇮🇹","이탈리아"],ITA:["🇮🇹","이탈리아"],
+ JP:["🇯🇵","일본"],JPN:["🇯🇵","일본"],CA:["🇨🇦","캐나다"],CAN:["🇨🇦","캐나다"],
+ AU:["🇦🇺","호주"],AUS:["🇦🇺","호주"],CN:["🇨🇳","중국"],CHN:["🇨🇳","중국"],KR:["🇰🇷","한국"],KOR:["🇰🇷","한국"]};
+function ctry(c){c=(c||"").toUpperCase().trim();return COUNTRY[c]||["🏳️",c];}
+function splitPeriod(n){const m=(n||"").match(/\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|Q[1-4]|H[12]|\d{4})$/i);
+  return m?[n.slice(0,m.index).trim(),m[1]]:[n||"",""];}
+function parseNum(s){if(s==null)return null;let t=String(s).trim().replace(/,/g,"").replace(/%/g,"");
+  if(t===""||t==="-"||t==="—")return null;let mu=1;const L=t.slice(-1).toUpperCase();
+  if(L==="K"){mu=1e3;t=t.slice(0,-1);}else if(L==="M"){mu=1e6;t=t.slice(0,-1);}
+  else if(L==="B"){mu=1e9;t=t.slice(0,-1);}else if(L==="T"){mu=1e12;t=t.slice(0,-1);}
+  const n=parseFloat(t);return isNaN(n)?null:n*mu;}
+function surprise(a,f){const x=parseNum(a),y=parseNum(f);if(x==null)return{k:"pend",t:"예정"};
+  if(y==null)return null;if(x>y)return{k:"up",t:"▲ 상회"};if(x<y)return{k:"down",t:"▼ 하회"};return{k:"flat",t:"= 부합"};}
+
+const DATA=DATA_RAW.map(r=>({날짜:(r["날짜"]||"").trim(),시간:(r["시간"]||"").trim(),
+  국가:(r["국가"]||"").trim(),지표명:(r["지표명"]||"").trim(),
+  실제:(r["실제"]??"").toString().trim(),이전:(r["이전"]??"").toString().trim(),
+  예측치:(r["예측치"]??"").toString().trim()})).filter(r=>r.지표명);
+let active=new Set(DATA.map(r=>r.국가.toUpperCase()));
+
+function render(){
+  const total=DATA.length,released=DATA.filter(r=>parseNum(r.실제)!=null).length;
+  const beats=DATA.filter(r=>{const s=surprise(r.실제,r.예측치);return s&&s.k==="up";}).length;
+  const miss=DATA.filter(r=>{const s=surprise(r.실제,r.예측치);return s&&s.k==="down";}).length;
+  gen.textContent="생성: "+GENERATED+" · "+total+"건";
+  stats.innerHTML=`<div class="stat"><div class="v num">${total}</div><div class="l">전체 이벤트</div></div>
+    <div class="stat"><div class="v num">${total-released}</div><div class="l">발표 예정</div></div>
+    <div class="stat"><div class="v num" style="color:var(--up)">${beats}</div><div class="l">예상 상회</div></div>
+    <div class="stat"><div class="v num" style="color:var(--down)">${miss}</div><div class="l">예상 하회</div></div>`;
+  const codes=[...new Set(DATA.map(r=>r.국가.toUpperCase()))];
+  chips.innerHTML=codes.map(c=>{const[f,n]=ctry(c);return `<span class="chip ${active.has(c)?"on":""}" data-c="${c}">${f} ${n}</span>`;}).join("");
+  chips.querySelectorAll(".chip").forEach(el=>el.onclick=()=>{const c=el.dataset.c;active.has(c)?active.delete(c):active.add(c);render();});
+  const rows=DATA.filter(r=>active.has(r.국가.toUpperCase())),by={};
+  rows.forEach(r=>{const k=r.국가.toUpperCase();(by[k]=by[k]||[]).push(r);});
+  // 국가별 그룹: 미국(US/USA) 우선 → 나머지는 코드순
+  const usFirst=c=>(c==="US"||c==="USA")?0:1;
+  const codes=Object.keys(by).sort((a,b)=>usFirst(a)-usFirst(b)||a.localeCompare(b));
+  // 날짜 dd/mm/yyyy → 정렬용 숫자(yyyymmdd)
+  const dkey=d=>{const m=(d||"").match(/^(\d{2})\/(\d{2})\/(\d{4})$/);return m?+(m[3]+m[2]+m[1]):0;};
+  let h=`<thead><tr><th class="l">날짜 / 시간 / 지표</th><th>실제</th><th>이전</th><th>예측치</th></tr></thead><tbody>`;
+  codes.forEach(code=>{const[f,n]=ctry(code);
+    h+=`<tr class="day"><td><span class="flag">${f}</span> ${n}</td><td class="colhead">실제</td><td class="colhead">이전</td><td class="colhead">예측치</td></tr>`;
+    by[code].slice().sort((x,y)=>dkey(x.날짜)-dkey(y.날짜)).forEach(r=>{const[ind,per]=splitPeriod(r.지표명),s=surprise(r.실제,r.예측치),cls=s?s.k:"flat";
+      const a=r.실제?`<span class="val ${cls}">${r.실제}</span>`:`<span class="val empty">—</span>`;
+      const b=s?`<span class="surp ${s.k}">${s.t}</span>`:"";
+      h+=`<tr class="ev"><td><span class="period">${r.날짜||""}</span> <span class="time num">${r.시간}</span>
+        <span class="ind">${ind}</span>${per?`<span class="period">${per}</span>`:""}${b}</td>
+        <td class="r num">${a}</td><td class="r num"><span class="prev">${r.이전||"—"}</span></td>
+        <td class="r num"><span class="fcst">${r.예측치||"—"}</span></td></tr>`;});
+  });
+  tbl.innerHTML=h+`</tbody>`;
+}
+render();
+</script></body></html>"""
+
+
+def build_dashboard(df, out_path='dashboard.html'):
+    """
+    df       : 컬럼이 [날짜, 시간, 국가, 지표명, 실제, 이전, 예측치] 인 DataFrame
+    out_path : 저장할 HTML 경로 (기본: 현재 폴더의 dashboard.html)
+    """
+    import datetime
+    records = df.fillna('').astype(str).to_dict(orient='records')
+    data_json = json.dumps(records, ensure_ascii=False)
+    data_json = data_json.replace('</', '<\\/')  # </script> 깨짐 방지
+    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+
+    html = _TEMPLATE.replace('__DATA_JSON__', data_json).replace('__GENERATED__', now)
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"[\u2713] 대시보드 생성 완료: {os.path.abspath(out_path)}  ({len(records)}건)")
+    return out_path
+
+
+# 단독 실행 테스트
+if __name__ == '__main__':
+    import pandas as pd
+    demo = pd.DataFrame([
+        {"날짜":"02/06/2026","시간":"06:00 PM","국가":"EA","지표명":"인플레이션율(YoY) 잠정치 MAY","실제":"3.2%","이전":"3%","예측치":"3.2%"},
+        {"날짜":"02/06/2026","시간":"11:00 PM","국가":"US","지표명":"구인·이직 보고서(JOLT) 채용공고 APR","실제":"7.618M","이전":"6.887M","예측치":"6.88M"},
+        {"날짜":"03/06/2026","시간":"10:30 AM","국가":"AU","지표명":"경제성장률(QoQ) Q1","실제":"0.8%","이전":"0.5%","예측치":"0.5%"},
+        {"날짜":"03/06/2026","시간":"11:00 PM","국가":"US","지표명":"ISM 서비스 PMI MAY","실제":"","이전":"53.6","예측치":"53.8"},
+    ])
+    build_dashboard(demo)

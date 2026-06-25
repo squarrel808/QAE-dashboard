@@ -1,0 +1,13 @@
+# Python 찌꺼기
+__pycache__/
+*.py[cod]
+
+# OS / 에디터 / 임시 파일
+.fuse_hidden*
+.DS_Store
+Thumbs.db
+*.log
+
+# 혹시 모를 키 파일 (이 폴더엔 원래 없음 — 안전장치)
+.env
+*.env
