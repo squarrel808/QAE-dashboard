@@ -4,12 +4,11 @@ import { usePathname } from 'next/navigation'
 
 // 탭 순서 — 여기 배열 순서대로 표시됩니다.
 const TABS = [
-  { href: '/reports', label: 'Research' },
+  { href: '/reports', label: 'Report' },
   { href: '/pca', label: 'PCA' },
-  { href: '/caimap', label: 'CAI · MAP' },
+  { href: '/caimap', label: 'CAI' },
   { href: '/policy', label: 'Policy Tone' },
-  { href: '/equity', label: 'Equity Factors' },
-  { href: '/consensus', label: 'Consensus' },
+  { href: '/equity', label: 'Equity' },
 ]
 
 export default function NavTabs() {
