@@ -1,0 +1,12 @@
+/node_modules
+/.next
+/out
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+.vercel
+
+# 유료 리서치 PDF 원문(공개 저장소 제외; 64MB) — R2/Vercel로 별도 배포
+/public/report_files

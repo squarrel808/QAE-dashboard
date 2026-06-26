@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1a1c1f;
+  --muted: #9aa0a6;
+  --line: #e8e8e6;
+  --head: #f4f3f1;
+  --badge: #6e1f1f;
+  --up: #1a7a4c;
+  --down: #c0392b;
+  --card: #ffffff;
+  --bg: #f7f6f3;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+}
+
+.serif { font-family: Georgia, serif; }
