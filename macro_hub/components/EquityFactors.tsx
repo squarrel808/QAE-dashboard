@@ -30,6 +30,23 @@ function heatColor(pct: number | null, scale = 0.08): string {
   return `rgb(${lerp(247, 192, -t)},${lerp(238, 57, -t)},${lerp(236, 59, -t)})`
 }
 
+// 한 시계열을 window(months) 구간에서 100-리베이스 (구간 첫 유효값 = 100)
+function rebaseSeries(p: Series, months: string[]): (number | null)[] {
+  const dm: Record<string, number> = {}
+  p.dates.forEach((d, i) => { dm[d] = p.close[i] })
+  let base: number | null = null
+  return months.map((mo) => {
+    let v: number | null = dm[mo] ?? null
+    if (v == null) {
+      const dd = p.dates.filter((d) => d <= mo)
+      if (dd.length) v = dm[dd[dd.length - 1]]
+    }
+    if (v == null) return null
+    if (base == null) base = v
+    return base ? +((v / base) * 100).toFixed(1) : null
+  })
+}
+
 export default function EquityFactors({ data }: { data: PairBasketsData }) {
   const realSectors = useMemo(
     () => [...new Set((data.sector?.sectors || []).filter((s) => !/^VIP vs Short/.test(s)))],
@@ -97,6 +114,36 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   }, [universe, rTop])
   const top10 = ranked.slice(0, 10)
   const bottom10 = ranked.slice(-10).reverse()
+
+  // ── ⑤ 추이 비교: TOP10 기본 선택 + 유니버스 체크박스 라인차트
+  const [rUniv, setRUniv] = useState(36)
+  const univTop = useMemo(
+    () => universe.map((p) => ({ bbid: p.bbid, v: chgN(p.close, rUniv) }))
+      .filter((r): r is { bbid: string; v: number } => r.v != null)
+      .sort((a, b) => b.v - a.v),
+    [universe, rUniv]
+  )
+  const [checked, setChecked] = useState<Set<string>>(() => {
+    const t = universe.map((p) => ({ bbid: p.bbid, v: chgN(p.close, 36) }))
+      .filter((r): r is { bbid: string; v: number } => r.v != null)
+      .sort((a, b) => b.v - a.v)
+    return new Set(t.slice(0, 10).map((r) => r.bbid))
+  })
+  const toggle = (bbid: string) => setChecked((prev) => {
+    const s = new Set(prev); s.has(bbid) ? s.delete(bbid) : s.add(bbid); return s
+  })
+  const resetTop = () => setChecked(new Set(univTop.slice(0, 10).map((r) => r.bbid)))
+  const selected = useMemo(() => universe.filter((p) => checked.has(p.bbid)), [universe, checked])
+  const univRows = useMemo(() => {
+    const allMonths = Array.from(new Set(universe.flatMap((p) => p.dates))).sort()
+    const months = allMonths.slice(-(rUniv + 1))
+    const reb = selected.map((p) => ({ p, vals: rebaseSeries(p, months) }))
+    return months.map((mo, i) => {
+      const row: Record<string, number | string | null> = { month: mo }
+      reb.forEach(({ p, vals }) => { row[p.bbid] = vals[i] })
+      return row
+    })
+  }, [universe, selected, rUniv])
 
   const Sel = ({ value, onChange }: { value: number; onChange: (n: number) => void }) => (
     <select
@@ -209,6 +256,40 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
           <Bars rows={bottom10} />
         </Card>
       </div>
+
+      <Card title="⑤ 추이 비교 · TOP10 기본 선택 + 유니버스 추가"
+        control={
+          <span className="flex items-center gap-2">
+            <button onClick={resetTop} className="rounded-md border border-[var(--line)] bg-white px-2.5 py-1 text-xs hover:bg-[var(--head)]">현재 기간 TOP10로 리셋</button>
+            <span className="lbl text-xs text-[var(--muted)]">기간</span>
+            <Sel value={rUniv} onChange={setRUniv} />
+          </span>
+        }>
+        <div className="max-h-40 overflow-y-auto border border-[var(--line)] rounded-lg p-2 mb-2.5 grid gap-x-3.5 gap-y-0.5"
+          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
+          {universe.map((p) => (
+            <label key={p.bbid} className="text-xs flex items-center gap-1.5 truncate">
+              <input type="checkbox" checked={checked.has(p.bbid)} onChange={() => toggle(p.bbid)} />
+              <span className="truncate">{p.label}</span>
+            </label>
+          ))}
+        </div>
+        <div style={{ height: 340 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={univRows} margin={{ top: 6, right: 12, left: -12, bottom: 0 }}>
+              <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
+              <XAxis dataKey="month" tick={{ fontSize: 10, fill: '#5a5f66' }} minTickGap={32} />
+              <YAxis tick={{ fontSize: 10, fill: '#5a5f66' }} domain={['auto', 'auto']} />
+              <Tooltip contentStyle={{ fontSize: 11 }} />
+              <Legend wrapperStyle={{ fontSize: 10 }} />
+              {selected.map((p, i) => (
+                <Line key={p.bbid} type="monotone" dataKey={p.bbid} name={p.label}
+                  stroke={PALETTE[i % PALETTE.length]} strokeWidth={1.3} dot={false} connectNulls />
+              ))}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
 
       <p className="text-[11px] text-[var(--muted)] mt-2">
         데이터: GS Marquee PAIR_BASKETS_LEVELS (월별){data.generatedAt ? ` · 생성 ${data.generatedAt}` : ''}

@@ -24,6 +24,7 @@ DEST = os.path.join(ROOT, "public", "embeds")
 
 # (대상 파일명, 원본 경로) — 원본은 QAE-dashboard 하위 폴더들
 SOURCES = {
+    "econ.html": os.path.join(REPO, "경제지표가져오기", "dashboard.html"),
     "pca.html": os.path.join(REPO, "PCA", "pca_dashboard.html"),
     "consensus_cpi.html": os.path.join(REPO, "Consensus Builder", "cpi_consensus_dashboard.html"),
     "consensus_gdp.html": os.path.join(REPO, "Consensus Builder", "gdp_consensus_dashboard.html"),
