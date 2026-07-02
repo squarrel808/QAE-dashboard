@@ -8,6 +8,11 @@ import type { PcaData, PcaVersion } from '@/lib/types'
 const CONTRIB_COLORS: Record<string, string> = { Capex: '#378ADD', Consumer: '#1D9E75', Export: '#BA7517', Housing: '#D4537E', Other: '#888780' }
 const PALETTE = ['#378ADD', '#1D9E75', '#BA7517', '#D4537E', '#9b8cff', '#46b0c9', '#e0833b', '#cf5fd0', '#6fcf6f', '#d24b4a', '#5fa8ff', '#9aa0a6']
 const RANGE_OPTS: [number, string][] = [[12, '1Y'], [24, '2Y'], [36, '3Y'], [60, '5Y'], [120, '10Y'], [9999, 'All']]
+// 경제지표(econ)에서 수집하는 국가 목록. 현재 PCA 데이터는 US만 존재 → 나머지는 '준비중'.
+const PCA_COUNTRIES: [string, string][] = [
+  ['US', '미국'], ['GB', '영국'], ['FR', '프랑스'], ['DE', '독일'], ['IT', '이탈리아'],
+  ['JP', '일본'], ['CA', '캐나다'], ['AU', '호주'], ['CN', '중국'], ['KR', '한국'],
+]
 
 function tail<T>(arr: T[], months: number) {
   return months >= 9999 ? arr : arr.slice(Math.max(0, arr.length - months))
@@ -18,6 +23,9 @@ export default function Pca({ data }: { data: PcaData }) {
   const mom = data.versions['Momentum']
   const cats = useMemo(() => Object.keys(yoy.categories).filter((c) => c !== 'LEI'), [yoy])
 
+  const [pcaCountry, setPcaCountry] = useState('US')
+  const ready = pcaCountry === 'US'   // 현재 US만 실제 데이터 존재
+  const countryLabel = PCA_COUNTRIES.find((c) => c[0] === pcaCountry)?.[1] || pcaCountry
   const [tab, setTab] = useState<'gdp' | 'lei'>('gdp')
   const [gdpMonths, setGdpMonths] = useState(120)
   const [leiMonths, setLeiMonths] = useState(120)
@@ -165,11 +173,28 @@ export default function Pca({ data }: { data: PcaData }) {
 
   return (
     <section>
-      <div className="mb-3">
-        <h2 className="serif text-[18px] m-0">{data.country} — Activity Index</h2>
-        <p className="text-xs text-[var(--muted)] mt-1">Category PCA · Equal-Weight GDP Proxy · EWM z-score · 막대/선 호버 시 값 표시</p>
+      <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
+        <div>
+          <h2 className="serif text-[18px] m-0">{ready ? data.country : countryLabel} — Activity Index</h2>
+          <p className="text-xs text-[var(--muted)] mt-1">Category PCA · Equal-Weight GDP Proxy · EWM z-score · 막대/선 호버 시 값 표시</p>
+        </div>
+        <span className="flex items-center gap-2">
+          <span className="text-xs text-[var(--muted)]">국가</span>
+          <select value={pcaCountry} onChange={(e) => setPcaCountry(e.target.value)}
+            className="bg-[var(--head)] border border-[var(--line)] rounded-lg px-3 py-2 text-sm font-medium">
+            {PCA_COUNTRIES.map(([id, lab]) => (
+              <option key={id} value={id}>{lab}{id === 'US' ? '' : ' (준비중)'}</option>
+            ))}
+          </select>
+        </span>
       </div>
 
+      {!ready ? (
+        <div className="rounded-xl border border-[var(--line)] bg-white p-8 text-center text-sm text-[var(--muted)]">
+          {countryLabel} PCA 데이터는 준비 중입니다. 현재는 미국(US)만 제공됩니다.
+        </div>
+      ) : (
+      <>
       {/* 탭 */}
       <div className="flex gap-2 mb-4">
         {([['gdp', '경기지수'], ['lei', 'LEI']] as const).map(([t, lab]) => (
@@ -220,6 +245,8 @@ export default function Pca({ data }: { data: PcaData }) {
             </div>
           </Card>
         </>
+      )}
+      </>
       )}
     </section>
   )

@@ -8,8 +8,8 @@ build_cai_map.py — GS CAI + MAP 대시보드 탭 생성기
   3) 데이터를 박은 정적 HTML(cai_map_dashboard.html) 한 장 생성
        - 뷰1: 전체 CAI 히트맵 (국가 × 기간 선택)
        - 뷰2: 국가별 — CAI 콤보(섹터 누적막대 + 헤드라인 라인, 제목에 진척도%)
-              + Hard/Soft 기여도 + Innovation, 그 아래 MAP 섹터 라인(섹터 토글)
-              + 기간 드롭다운(PCA 방식)
+              + 섹터 히트맵(CAI_HEATMAP_SECTOR_*) + Hard/Soft 기여도,
+              그 아래 MAP 섹터 라인(섹터 토글) + 기간 드롭다운(PCA 방식)
 
 실행:
   cd "C:\\Users\\USER\\OneDrive\\문서\\QAE-dashboard\\gs api"
@@ -62,7 +62,15 @@ CAI_TYPES = {
 }
 CAI_HEADLINE = "CAI_HEADLINE"
 CAI_COMPLETION = "CAI_PERCENT_COMPONENTS_RELEASED"
-CAI_INNOVATION = "CAI_INNOVATION_MONTHLY"
+# CAI_HEATMAP_SECTOR_* — 섹터별 히트맵 지표(GS 라이브). contribution과 별개 metric.
+CAI_HEATMAP = {
+    "Consumer": "CAI_HEATMAP_SECTOR_CONSUMER",
+    "Housing": "CAI_HEATMAP_SECTOR_HOUSING",
+    "Labor": "CAI_HEATMAP_SECTOR_LABOR",
+    "Manufacturing": "CAI_HEATMAP_SECTOR_MANUFACTURING",
+    "Other": "CAI_HEATMAP_SECTOR_OTHER",
+}
+# 참고: CAI_INNOVATION_* / LEADING_CAI 는 GS가 2020-10-23 이후 발표를 중단(문서 명시). 최신값 없어 제외.
 
 # MAP metricName (소문자)
 MAP_SECTORS = {
@@ -105,7 +113,9 @@ def col(p, name):
 cai_df = fetch("CAI", CAI_START, END)
 print("[info] CAI metricNames:", sorted(cai_df["metricName"].dropna().unique().tolist()))
 # 월별 항목만 남김 — 일별 지표가 섞이면 월 단위 막대 정렬이 깨짐
-MONTHLY_CAI = {CAI_HEADLINE, CAI_COMPLETION, CAI_INNOVATION} | set(CAI_SECTORS.values()) | set(CAI_TYPES.values())
+MONTHLY_CAI = ({CAI_HEADLINE, CAI_COMPLETION}
+               | set(CAI_SECTORS.values()) | set(CAI_TYPES.values())
+               | set(CAI_HEATMAP.values()))
 cai_df = cai_df[cai_df["metricName"].isin(MONTHLY_CAI)].copy()
 
 map_df = fetch("MAP", MAP_START, END)
@@ -121,9 +131,9 @@ for geo, label in COUNTRIES:
             "dates": dates,
             "headline": col(p, CAI_HEADLINE),
             "sectors": {k: col(p, v) for k, v in CAI_SECTORS.items()},
+            "heatmap": {k: col(p, v) for k, v in CAI_HEATMAP.items()},
             "types": {k: col(p, v) for k, v in CAI_TYPES.items()},
             "completion": col(p, CAI_COMPLETION),
-            "innovation": col(p, CAI_INNOVATION),
         }
     pm, dm = pivot_geo(map_df, geo)
     if pm is not None:
@@ -216,10 +226,6 @@ HTML = r"""<!DOCTYPE html>
     <p class="cap" id="typeCap">CAI — Hard / Soft 기여도</p>
     <div id="typeLeg" class="legend"></div>
     <div style="position:relative;height:200px;"><canvas id="caiType"></canvas></div>
-  </div>
-  <div class="card">
-    <p class="cap">Innovation (서프라이즈 = 실제−예상)</p>
-    <div style="position:relative;height:90px;"><canvas id="innov"></canvas></div>
   </div>
   <div class="card">
     <p class="cap" id="mapCap">MAP · 섹터별 서프라이즈 (선택 토글)</p>
@@ -372,14 +378,6 @@ function drawCountry(){
     tds.push({type:"line", label:"CAI", data:pick(cai.headline, ci), borderColor:HEAD, backgroundColor:HEAD, borderWidth:2, pointRadius:0, tension:.3, stack:"line", order:0});
     charts.type = new Chart(document.getElementById("caiType"), {data:{labels:cdates, datasets:tds}, options:comboOpts()});
     document.getElementById("typeLeg").innerHTML = legendHTML(TCOL);
-
-    const iv = pick(cai.innovation, ci);
-    charts.innov = new Chart(document.getElementById("innov"), {
-      type:"bar", data:{labels:cdates, datasets:[{data:iv,
-        backgroundColor:iv.map(v=> v==null?"#f4f3f1": v>=0?"#1a7a4c":"#c0392b")}]},
-      options:{responsive:true, maintainAspectRatio:false, animation:false, plugins:{legend:{display:false}},
-        scales:{x:{ticks:{color:"#5a5f66", maxTicksLimit:12}, grid:{display:false}}, y:{ticks:{color:"#5a5f66"}, grid:GRID}}}
-    });
   }
 
   const mp = D.map[geo];

@@ -444,7 +444,10 @@ def main():
         return df
 
     finally:
-        input("\n[종료하려면 Enter를 누르세요...]")
+        try:
+            input("\n[종료하려면 Enter를 누르세요...]")
+        except EOFError:
+            pass   # 비대화형(자동화/백그라운드) 실행: 대기 없이 바로 종료
         driver.quit()
 
 

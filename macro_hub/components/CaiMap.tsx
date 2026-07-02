@@ -15,6 +15,19 @@ function cutoffDate(last: string, months: number) {
   return d.toISOString().slice(0, 10)
 }
 
+// ── 히트맵 색상: 부호=색(초록 확장/빨강 둔화), 크기=진하기(화면 내 최대값 기준, sqrt로 저강도 강조) ──
+const NEUTRAL = [244, 243, 241], C_GREEN = [26, 122, 76], C_RED = [192, 57, 43]
+function mix(a: number[], b: number[], t: number) {
+  return [Math.round(a[0] + (b[0] - a[0]) * t), Math.round(a[1] + (b[1] - a[1]) * t), Math.round(a[2] + (b[2] - a[2]) * t)]
+}
+function heatColor(v: number | null | undefined, maxAbs: number) {
+  if (v == null || !maxAbs) return { bg: '#f4f3f1', fg: '#9aa0a6' }
+  const t = Math.sqrt(Math.min(1, Math.abs(v) / maxAbs))
+  const c = mix(NEUTRAL, v >= 0 ? C_GREEN : C_RED, t)
+  const lum = (0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]) / 255
+  return { bg: `rgb(${c[0]},${c[1]},${c[2]})`, fg: lum > 0.55 ? '#14181f' : '#fff' }
+}
+
 export default function CaiMap({ data }: { data: CaiMapData }) {
   const [view, setView] = useState<'cai' | 'map'>('cai')
   const [months, setMonths] = useState(60)
@@ -46,6 +59,26 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
     })
     return { rows, sectorKeys: sk, typeRows, typeKeys: tk }
   }, [series, months])
+
+  // ── 섹터 히트맵 (CAI_HEATMAP_SECTOR_*) — 막대와 Hard/Soft 사이에 표시 ──
+  const heat = useMemo(() => {
+    if (!series || !series.heatmap) return null
+    const last = series.dates[series.dates.length - 1]
+    const cut = months >= 9999 ? '0000' : cutoffDate(last, months)
+    const idx: number[] = []
+    series.dates.forEach((d, i) => { if (d >= cut) idx.push(i) })
+    const keys = data.sectors.filter((s) => series.heatmap![s])   // 섹터 순서 유지
+    if (!keys.length || !idx.length) return null
+    const dates = idx.map((i) => series.dates[i])
+    let maxAbs = 0
+    const matrix: Record<string, (number | null)[]> = {}
+    keys.forEach((s) => {
+      const vals = idx.map((i) => series.heatmap![s][i] ?? null)
+      vals.forEach((v) => { if (v != null) maxAbs = Math.max(maxAbs, Math.abs(v)) })
+      matrix[s] = vals
+    })
+    return { dates, keys, matrix, maxAbs: maxAbs || 1 }
+  }, [series, months, data.sectors])
 
   const Btn = ({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) => (
     <button onClick={onClick}
@@ -96,6 +129,47 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
           </ResponsiveContainer>
         </div>
       </div>
+
+      {heat && (
+        <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-3.5">
+          <h3 className="serif text-[15px] mb-2.5">섹터 히트맵 (CAI_HEATMAP_SECTOR · 초록=확장 / 빨강=둔화)</h3>
+          <div className="overflow-x-auto">
+            <table className="border-separate" style={{ borderSpacing: 2, fontSize: 11, width: '100%' }}>
+              <thead>
+                <tr>
+                  <th></th>
+                  {heat.dates.map((d) => (
+                    <th key={d} className="font-normal text-[var(--muted)] px-1 text-center whitespace-nowrap">{d.slice(2, 7)}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {heat.keys.map((s) => (
+                  <tr key={s}>
+                    <td className="text-left pr-2.5 font-medium whitespace-nowrap">{s}</td>
+                    {heat.matrix[s].map((v, i) => {
+                      const c = heatColor(v, heat.maxAbs)
+                      return (
+                        <td key={i} className="p-0 text-center">
+                          <span className="block rounded px-1.5 py-1.5 font-semibold" style={{ background: c.bg, color: c.fg, minWidth: 30 }}>
+                            {v == null ? '' : v.toFixed(1)}
+                          </span>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="flex items-center gap-2 mt-2 text-[11px] text-[var(--muted)]">
+            <span>둔화</span>
+            <span style={{ display: 'inline-block', width: 160, height: 10, borderRadius: 3, background: 'linear-gradient(to right,#c0392b,#f4f3f1,#1a7a4c)' }} />
+            <span>확장</span>
+            <span className="ml-1">진하기 = 화면 내 상대 강도</span>
+          </div>
+        </div>
+      )}
 
       {typeKeys.length > 0 && (
         <div className="rounded-xl border border-[var(--line)] bg-white p-3.5">
