@@ -38,8 +38,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 
 # ===================== 설정 =====================
-# 다운로드 루트 (셀레니움이 보따리\YYMMDD 로 떨군 곳) — 기본값: 이 폴더 안의 보따리
-DOWNLOAD_ROOT = os.environ.get("DOWNLOAD_ROOT", os.path.join(HERE, "보따리"))
+# 다운로드 루트 (셀레니움이 보따리\YYMMDD 로 떨군 곳)
+# — 기본값: 실사용 중인 바탕화면 보따리 폴더 (download_reports.py 와 동일)
+DOWNLOAD_ROOT = os.environ.get("DOWNLOAD_ROOT", r"C:\Users\infomax\Desktop\보따리")
 # reports.json 위치 (사이트가 읽는 곳)
 REPORTS_JSON = os.environ.get("REPORTS_JSON", os.path.join(REPO, "macro_hub", "public", "data", "reports.json"))
 # 로컬 저장 모드일 때 PDF 복사 위치 (사이트 public/)
@@ -210,8 +211,4 @@ def main():
     os.makedirs(os.path.dirname(REPORTS_JSON), exist_ok=True)
     json.dump(reports, open(REPORTS_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"done": sorted(done)}, open(STATE_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"\n완료: 새 요약 {added}건  | 총 {len(reports)}건  -> {REPORTS_JSON}  (STORAGE={STORAGE})")
-
-
-if __name__ == "__main__":
-    main()
+    print(f"\n완료: 새 요약 {added}건  | 총 {len(reports)}건  -> {REPORTS_JSON}  (STORA

@@ -1,12 +1,12 @@
 # ── 비밀/환경 변수 (API 키 등) — 절대 커밋 금지 ──
 .env
 .env.*
+!.env.example
 *.key
 *.pem
 secrets.json
 credentials.json
 gs clinetid.txt
-gs_test_output.csv
 
 # ── Python ──
 .venv/
@@ -14,12 +14,8 @@ venv/
 __pycache__/
 *.pyc
 
-# ── 데이터/로그/DB ──
-outputs/
-outputs_daily_tp/
+# ── 로그 (데이터 산출물 outputs/, csv, db 는 이제 git에 올라감) ──
 logs/
-*.db
-*.sqlite3
 
 # ── 에디터/OS ──
 .vscode/

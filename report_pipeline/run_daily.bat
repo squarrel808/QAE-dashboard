@@ -1,17 +1,24 @@
 @echo off
-REM â”€â”€ ë¦¬ì„œì¹˜ ë¦¬í¬íŠ¸: ìˆ˜ì§‘ â†’ ìš”ì•½ â†’ ê²Œì‹œ (ë§¤ì¼ 1íšŒ) â”€â”€
+REM -- ¸®¼­Ä¡ ¸®Æ÷Æ®: Å©·Ò ½ÇÇà -> ¼öÁý -> ¿ä¾à -> °Ô½Ã (¼öµ¿ 1È¸ ½ÇÇà¿ë) --
+REM    ÀüÃ¼ ÆÄÀÌÇÁ¶óÀÎ ÀÚµ¿ ½ÇÇàÀº ..\_ÀÚµ¿È­\run_all_0830.bat »ç¿ë
 cd /d "%~dp0"
+set PYTHONUTF8=1
 
-echo [1/3] PDF ìˆ˜ì§‘ (Selenium)
+echo [0/3] ¼¿·¹´Ï¿ò¿ë Å©·Ò ½ÇÇà (µð¹ö±× Æ÷Æ® 9222)
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\selenium_profile"
+ping -n 8 127.0.0.1 > nul
+
+echo [1/3] PDF ¼öÁý (Selenium)
 python download_reports.py
 
-echo [2/3] ìƒˆ PDF ìš”ì•½ -^> reports.json
+echo [2/3] »õ PDF ¿ä¾à - reports.json
 python summarize.py
 
-echo [3/3] ì‚¬ì´íŠ¸ì— ê²Œì‹œ (git push)
-cd /d "%~dp0\..\macro_hub"
-git add public/data/reports.json public/report_files 2>nul
-git commit -m "reports %date%" 2>nul
+echo [3/3] »çÀÌÆ®¿¡ °Ô½Ã (git push)
+cd /d "%~dp0\.."
+git add macro_hub/public/data/reports.json macro_hub/public/report_files report_pipeline/state.json 2>nul
+git commit -m "reports %date:~0,10%"
 git push
 
-echo ì™„ë£Œ.
+echo ¿Ï·á.
+pause

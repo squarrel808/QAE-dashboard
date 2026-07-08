@@ -26,16 +26,26 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 
+# .env 로드 (BOFA_USERID/BOFA_PASSWORD, DOWNLOAD_ROOT 등) — summarize.py 와 동일 방식
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+except ImportError:
+    pass
+
 
 # ============================================================
 #  공통 설정
 # ============================================================
 BASE = "https://marquee.gs.com"
 TRENDING_URL = f"{BASE}/content/site/trending.html"
-# [변경] 다운로드 폴더를 이 스크립트와 같은 폴더 안의 '보따리\\YYMMDD' 로 둔다.
-#        (원본은 C:\\Users\\infomax\\Desktop\\보따리 였으나, 머신이 달라 프로젝트 내부로 이동)
+# [변경] 다운로드 폴더를 '실사용 중인 보따리 폴더'(바탕화면)와 통일.
+#        기존 selenium 파이프라인(gs리서치자료모으기)이 저장하는 곳과 같아
+#        어느 스크립트로 받아도 summarize.py 가 같은 곳을 읽는다.
+#        머신이 다르면 .env 의 DOWNLOAD_ROOT 로 바꿀 수 있음.
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DOWNLOAD_DIR = os.path.join(_SCRIPT_DIR, "보따리", datetime.now().strftime("%y%m%d"))
+DOWNLOAD_ROOT = os.environ.get("DOWNLOAD_ROOT", r"C:\Users\infomax\Desktop\보따리")
+DOWNLOAD_DIR = os.path.join(DOWNLOAD_ROOT, datetime.now().strftime("%y%m%d"))
 PER_SECTION = 10                 # Marquee: 한 시간 탭당 받을 개수
 TIMEFRAMES = ["1d"]              # Marquee: 1d만 순회
 
@@ -1283,14 +1293,4 @@ def main():
         marquee_total = run_site("Marquee", marquee_main, driver)   # 1) Marquee (+ Portfolio Strategy)
         bofa_total    = run_site("BofA", bofa_main, driver)         # 2) BofA
         jpmm_total    = run_site("JPMM", jpmm_main, driver)         # 3) JPMM
-        hsbc_total    = run_site("HSBC", hsbc_main, driver)         # 4) HSBC
-        grand = marquee_total + bofa_total + hsbc_total + jpmm_total
-        print(f"\n전체 완료: Marquee {marquee_total} + BofA {bofa_total} "
-              f"+ HSBC {hsbc_total} + JPMM {jpmm_total} = {grand}개 → {DOWNLOAD_DIR}")
-    finally:
-        # 붙기 모드: quit()은 연결된 창을 닫으므로 호출하지 않음 (브라우저 유지)
-        pass
-
-
-if __name__ == "__main__":
-    main()
+        hsbc_total    = run_site("HSBC

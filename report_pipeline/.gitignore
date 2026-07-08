@@ -1,5 +1,7 @@
+# 비밀 키만 제외 (state.json 은 컴퓨터 간 중복처리 방지를 위해 git에 올라감)
 .env
-state.json
+# 원본 PDF 는 바탕화면 보따리에 쌓임(요약된 PDF 는 macro_hub/public/report_files 로 복사됨).
+# 혹시 이 폴더 안에 받는 경우를 대비해 원본 중복 저장만 제외.
 보따리/
 __pycache__/
 *.pyc
