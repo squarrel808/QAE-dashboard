@@ -56,9 +56,10 @@ export type PcaData = { country: string; versions: Record<string, PcaVersion> }
 export type CaiSeries = {
   dates: string[]
   headline: (number | null)[]
-  sectors: Record<string, (number | null)[]>
-  heatmap?: Record<string, (number | null)[]>   // CAI_HEATMAP_SECTOR_* (GS 라이브 지표)
-  types?: Record<string, (number | null)[]>
+  // 국가별로 없는 섹터/타입은 배열이 아니라 null 로 들어옴 (예: JP·KR 의 Housing)
+  sectors: Record<string, (number | null)[] | null>
+  heatmap?: Record<string, (number | null)[] | null>   // CAI_HEATMAP_SECTOR_* (GS 라이브 지표)
+  types?: Record<string, (number | null)[] | null>
   completion?: (number | null)[] | null
   innovation?: unknown                            // GS가 2020-10-23 이후 발표 중단 → 미사용
 }

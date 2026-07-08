@@ -42,18 +42,19 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
     if (!series) return { rows: [], sectorKeys: [], typeRows: [], typeKeys: [] }
     const last = series.dates[series.dates.length - 1]
     const cut = months >= 9999 ? '0000' : cutoffDate(last, months)
-    const sk = Object.keys(series.sectors)
-    const tk = series.types ? Object.keys(series.types) : []
+    // 국가별로 없는 섹터/타입은 null 로 들어오므로 배열인 것만 사용 (null 접근 시 크래시 → 빈 화면 방지)
+    const sk = Object.keys(series.sectors).filter((s) => Array.isArray(series.sectors[s]))
+    const tk = series.types ? Object.keys(series.types).filter((t) => Array.isArray(series.types![t])) : []
     const rows: Record<string, number | string | null>[] = []
     const typeRows: Record<string, number | string | null>[] = []
     series.dates.forEach((d, i) => {
       if (d < cut) return
       const r: Record<string, number | string | null> = { date: d, headline: series.headline[i] }
-      sk.forEach((s) => { r[s] = series.sectors[s][i] })
+      sk.forEach((s) => { r[s] = series.sectors[s]![i] })
       rows.push(r)
       if (tk.length) {
         const tr: Record<string, number | string | null> = { date: d }
-        tk.forEach((t) => { tr[t] = series.types![t][i] })
+        tk.forEach((t) => { tr[t] = series.types![t]![i] })
         typeRows.push(tr)
       }
     })
@@ -73,7 +74,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
     let maxAbs = 0
     const matrix: Record<string, (number | null)[]> = {}
     keys.forEach((s) => {
-      const vals = idx.map((i) => series.heatmap![s][i] ?? null)
+      const vals = idx.map((i) => series.heatmap![s]![i] ?? null)
       vals.forEach((v) => { if (v != null) maxAbs = Math.max(maxAbs, Math.abs(v)) })
       matrix[s] = vals
     })
