@@ -8,3 +8,8 @@ tickers.csv
 *.xlsx
 invalid_tickers.txt
 test_summary_output.csv
+
+# raw data / 결과값은 공개 (비밀키만 제외)
+!Meta data_Raw data.xlsx
+!Meta data_Raw data_backup.xlsx
+!tickers.xlsx
