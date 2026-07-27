@@ -1,0 +1,102 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Earnings Calendar</title>
+<style>
+:root{--ink:#1a1c1f;--muted:#9aa0a6;--line:#e8e8e6;--head:#f4f3f1;--badge:#6e1f1f;}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f6f3;color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+.wrap{max-width:1150px;margin:0 auto;padding:26px 20px 70px;}
+header.top{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:16px;}
+.brand{font-family:Georgia,serif;font-size:24px;font-weight:700;}
+.brand small{display:block;font-family:sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--muted);margin-top:4px;}
+.gen{font-size:11px;color:var(--muted);}
+.monthbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.mbtn{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 13px;cursor:pointer;font-size:14px;font-weight:700;}
+.mbtn:hover{background:var(--head);}
+.mtitle{font-size:18px;font-weight:800;min-width:130px;text-align:center;}
+.cal{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.dow,.week{display:grid;grid-template-columns:repeat(7,1fr);}
+.dow div{padding:8px 0;text-align:center;font-size:11px;font-weight:700;color:var(--muted);background:var(--head);border-bottom:1px solid var(--line);}
+.day{height:124px;overflow:hidden;border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:6px 6px 8px;position:relative;}
+.day:nth-child(7n){border-right:none;}
+.day.out{background:#fbfaf8;color:#c9c9c6;}
+.day.today{background:#fdf6ee;}
+.dnum{font-size:12px;font-weight:700;margin-bottom:4px;}
+.day.today .dnum{color:var(--badge);}
+.chip{display:block;height:19px;line-height:15px;font-size:11px;font-weight:600;background:var(--head);border:1px solid var(--line);border-radius:5px;padding:1px 5px;margin-bottom:3px;cursor:default;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.chip.past{opacity:.45;}
+.more{font-size:10px;color:var(--badge);font-weight:700;cursor:pointer;}
+.day.sel{outline:2px solid var(--badge);outline-offset:-2px;}
+.detail{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:none;}
+.detail.on{display:block;}
+.detail h3{margin:0 0 8px;font-size:14px;}
+.detail table{width:100%;border-collapse:collapse;font-size:13px;}
+.detail td{padding:5px 8px;border-bottom:1px solid var(--line);}
+.detail td.t{color:var(--muted);white-space:nowrap;width:60px;font-variant-numeric:tabular-nums;}
+.detail td.p{color:var(--muted);width:70px;}
+</style></head><body><div class="wrap">
+<header class="top">
+  <div class="brand">Earnings Calendar<small>기업실적 발표 일정</small></div>
+  <div class="gen">generated 2026-07-20 19:13 · 총 98건</div>
+</header>
+<div class="monthbar">
+  <button class="mbtn" onclick="mv(-1)">&#8592;</button>
+  <div class="mtitle" id="mtitle"></div>
+  <button class="mbtn" onclick="mv(1)">&#8594;</button>
+</div>
+<div class="cal"><div class="dow"><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div><div>일</div></div><div id="grid"></div></div>
+<div class="detail" id="detail"></div>
+<script>
+const EVENTS = [{"date": "2026-07-01", "time": "05:15", "name": "NIKE Inc", "ticker": "NKE US", "period": "Q4 26", "mcap": 64756539206}, {"date": "2026-07-09", "time": "18:59", "name": "PepsiCo Inc", "ticker": "PEP US", "period": "Q2 26", "mcap": 187305920000}, {"date": "2026-07-14", "time": "19:38", "name": "JPMorgan Chase & Co", "ticker": "JPM US", "period": "Q2 26", "mcap": 913980861000}, {"date": "2026-07-14", "time": "19:43", "name": "Bank of America Corp", "ticker": "BAC US", "period": "Q2 26", "mcap": 434808069300}, {"date": "2026-07-14", "time": "20:24", "name": "Goldman Sachs Group Inc/The", "ticker": "GS US", "period": "Q2 26", "mcap": 314247356540}, {"date": "2026-07-14", "time": "19:28", "name": "Wells Fargo & Co", "ticker": "WFC US", "period": "Q2 26", "mcap": 267843134419}, {"date": "2026-07-14", "time": "21:03", "name": "Citigroup Inc", "ticker": "C US", "period": "Q2 26", "mcap": 221857898326}, {"date": "2026-07-15", "time": "19:20", "name": "Johnson & Johnson", "ticker": "JNJ US", "period": "Q2 26", "mcap": 609122948800}, {"date": "2026-07-15", "time": "20:25", "name": "Morgan Stanley", "ticker": "MS US", "period": "Q2 26", "mcap": 339864408000}, {"date": "2026-07-15", "time": "19:00", "name": "Blackrock Inc", "ticker": "BLK US", "period": "Q2 26", "mcap": 166186056086}, {"date": "2026-07-15", "time": "19:32", "name": "Bank of New York Mellon Corp/T", "ticker": "BNY US", "period": "Q2 26", "mcap": 107850739341}, {"date": "2026-07-16", "time": "19:00", "name": "UnitedHealth Group Inc", "ticker": "UNH US", "period": "Q2 26", "mcap": 386951249100}, {"date": "2026-07-16", "time": "19:00", "name": "General Electric Co", "ticker": "GE US", "period": "Q2 26", "mcap": 363948291851}, {"date": "2026-07-16", "time": "19:00", "name": "Abbott Laboratories", "ticker": "ABT US", "period": "Q2 26", "mcap": 175348012700}, {"date": "2026-07-16", "time": "19:00", "name": "US Bancorp", "ticker": "USB US", "period": "Q2 26", "mcap": 98355181306}, {"date": "2026-07-17", "time": "05:01", "name": "Netflix Inc", "ticker": "NFLX US", "period": "Q2 26", "mcap": 290334660000}, {"date": "2026-07-17", "time": "05:30", "name": "Intuitive Surgical Inc", "ticker": "ISRG US", "period": "Q2 26", "mcap": 122334983460}, {"date": "2026-07-21", "time": "19:00", "name": "Charles Schwab Corp/The", "ticker": "SCHW US", "period": "Q2 26", "mcap": 176627058400}, {"date": "2026-07-21", "time": "19:00", "name": "Danaher Corp", "ticker": "DHR US", "period": "Q2 26", "mcap": 144264886901}, {"date": "2026-07-21", "time": "19:00", "name": "3M Co", "ticker": "MMM US", "period": "Q2 26", "mcap": 83367310998}, {"date": "2026-07-21", "time": "19:30", "name": "General Motors Co", "ticker": "GM US", "period": "Q2 26", "mcap": 68589671384}, {"date": "2026-07-22", "time": "19:00", "name": "Philip Morris International In", "ticker": "PM US", "period": "Q2 26", "mcap": 300770908800}, {"date": "2026-07-22", "time": "19:00", "name": "GE Vernova Inc", "ticker": "GEV US", "period": "Q2 26", "mcap": 284262764800}, {"date": "2026-07-22", "time": "19:00", "name": "AT&T Inc", "ticker": "T US", "period": "Q2 26", "mcap": 151446713474}, {"date": "2026-07-22", "time": "05:05", "name": "Capital One Financial Corp", "ticker": "COF US", "period": "Q2 26", "mcap": 128150640600}, {"date": "2026-07-23", "time": "05:30", "name": "Alphabet Inc", "ticker": "GOOGL US", "period": "Q2 26", "mcap": 4194138171504}, {"date": "2026-07-23", "time": "05:30", "name": "Tesla Inc", "ticker": "TSLA US", "period": "Q2 26", "mcap": 1430328404800}, {"date": "2026-07-23", "time": "19:00", "name": "RTX Corp", "ticker": "RTX US", "period": "Q2 26", "mcap": 260596046800}, {"date": "2026-07-23", "time": "05:30", "name": "Texas Instruments Inc", "ticker": "TXN US", "period": "Q2 26", "mcap": 258484613860}, {"date": "2026-07-23", "time": "19:30", "name": "T-Mobile US Inc", "ticker": "TMUS US", "period": "Q2 26", "mcap": 208248653692}, {"date": "2026-07-23", "time": "05:30", "name": "International Business Machine", "ticker": "IBM US", "period": "Q2 26", "mcap": 199885342950}, {"date": "2026-07-23", "time": "19:00", "name": "Thermo Fisher Scientific Inc", "ticker": "TMO US", "period": "Q2 26", "mcap": 197880750080}, {"date": "2026-07-23", "time": "20:45", "name": "Union Pacific Corp", "ticker": "UNP US", "period": "Q2 26", "mcap": 179152897750}, {"date": "2026-07-23", "time": "19:00", "name": "Lockheed Martin Corp", "ticker": "LMT US", "period": "Q2 26", "mcap": 117303846842}, {"date": "2026-07-23", "time": "05:30", "name": "ServiceNow Inc", "ticker": "NOW US", "period": "Q2 26", "mcap": 106472237920}, {"date": "2026-07-23", "time": "20:00", "name": "Comcast Corp", "ticker": "CMCSA US", "period": "Q2 26", "mcap": 84983324651}, {"date": "2026-07-24", "time": "05:30", "name": "Intel Corp", "ticker": "INTC US", "period": "Q2 26", "mcap": 477671040000}, {"date": "2026-07-24", "time": "20:00", "name": "American Express Co", "ticker": "AXP US", "period": "Q2 26", "mcap": 242464701520}, {"date": "2026-07-24", "time": "20:30", "name": "NextEra Energy Inc", "ticker": "NEE US", "period": "Q2 26", "mcap": 185201755790}, {"date": "2026-07-24", "time": "19:00", "name": "Verizon Communications Inc", "ticker": "VZ US", "period": "Q2 26", "mcap": 182012660400}, {"date": "2026-07-28", "time": "19:00", "name": "Coca-Cola Co/The", "ticker": "KO US", "period": "Q2 26", "mcap": 350910268800}, {"date": "2026-07-28", "time": "19:00", "name": "Boeing Co/The", "ticker": "BA US", "period": "Q2 26", "mcap": 168720277060}, {"date": "2026-07-28", "time": "19:00", "name": "United Parcel Service Inc", "ticker": "UPS US", "period": "Q2 26", "mcap": 87887633040}, {"date": "2026-07-28", "time": "20:00", "name": "American Tower Corp", "ticker": "AMT US", "period": "Q2 26", "mcap": 79229763580}, {"date": "2026-07-29", "time": "05:30", "name": "Visa Inc", "ticker": "V US", "period": "Q3 26", "mcap": 687297260000}, {"date": "2026-07-29", "time": "20:00", "name": "Lam Research Corp", "ticker": "LRCX US", "period": "Q4 26", "mcap": 391803581000}, {"date": "2026-07-29", "time": "19:00", "name": "Procter & Gamble Co/The", "ticker": "PG US", "period": "Q4 26", "mcap": 349196702741}, {"date": "2026-07-29", "time": "05:05", "name": "Mondelez International Inc", "ticker": "MDLZ US", "period": "Q2 26", "mcap": 78302635726}, {"date": "2026-07-30", "time": "05:30", "name": "Microsoft Corp", "ticker": "MSFT US", "period": "Q4 26", "mcap": 2925464302600}, {"date": "2026-07-30", "time": "05:30", "name": "Meta Platforms Inc", "ticker": "META US", "period": "Q2 26", "mcap": 1639846785644}, {"date": "2026-07-30", "time": "19:00", "name": "Mastercard Inc", "ticker": "MA US", "period": "Q2 26", "mcap": 480310502414}, {"date": "2026-07-30", "time": "05:30", "name": "QUALCOMM Inc", "ticker": "QCOM US", "period": "Q3 26", "mcap": 181056120000}, {"date": "2026-07-30", "time": "20:00", "name": "Bristol-Myers Squibb Co", "ticker": "BMY US", "period": "Q2 26", "mcap": 124035331800}, {"date": "2026-07-30", "time": "20:00", "name": "Altria Group Inc", "ticker": "MO US", "period": "Q2 26", "mcap": 123922628549}, {"date": "2026-07-30", "time": "05:30", "name": "Starbucks Corp", "ticker": "SBUX US", "period": "Q3 26", "mcap": 120226953000}, {"date": "2026-07-30", "time": "19:00", "name": "Southern Co/The", "ticker": "SO US", "period": "Q2 26", "mcap": 107431690000}, {"date": "2026-07-30", "time": "05:30", "name": "General Dynamics Corp", "ticker": "GD US", "period": "Q2 26", "mcap": 99675158324}, {"date": "2026-07-31", "time": "05:30", "name": "Apple Inc", "ticker": "AAPL US", "period": "Q3 26", "mcap": 4901758191440}, {"date": "2026-07-31", "time": "20:00", "name": "Amazon.com Inc", "ticker": "AMZN US", "period": "Q2 26", "mcap": 2659477833000}, {"date": "2026-07-31", "time": "19:00", "name": "ExxonMobil Holdings Corp", "ticker": "XOM US", "period": "Q2 26", "mcap": 610923762207}, {"date": "2026-07-31", "time": "19:00", "name": "AbbVie Inc", "ticker": "ABBV US", "period": "Q2 26", "mcap": 449631105016}, {"date": "2026-07-31", "time": "19:00", "name": "Chevron Corp", "ticker": "CVX US", "period": "Q2 26", "mcap": 373146177216}, {"date": "2026-07-31", "time": "19:00", "name": "Linde PLC", "ticker": "LIN US", "period": "Q2 26", "mcap": 237415572000}, {"date": "2026-07-31", "time": "19:00", "name": "Colgate-Palmolive Co", "ticker": "CL US", "period": "Q2 26", "mcap": 74401602044}, {"date": "2026-08-03", "time": "20:00", "name": "Berkshire Hathaway Inc", "ticker": "BRK/A US", "period": "Q2 26", "mcap": 1058513728000}, {"date": "2026-08-04", "time": "19:00", "name": "Caterpillar Inc", "ticker": "CAT US", "period": "Q2 26", "mcap": 405489538360}, {"date": "2026-08-04", "time": "19:00", "name": "Merck & Co Inc", "ticker": "MRK US", "period": "Q2 26", "mcap": 314902612913}, {"date": "2026-08-04", "time": "05:30", "name": "Palantir Technologies Inc", "ticker": "PLTR US", "period": "Q2 26", "mcap": 303953746600}, {"date": "2026-08-04", "time": "19:00", "name": "Pfizer Inc", "ticker": "PFE US", "period": "Q2 26", "mcap": 142770972000}, {"date": "2026-08-04", "time": "20:00", "name": "Duke Energy Corp", "ticker": "DUK US", "period": "Q2 26", "mcap": 97457295960}, {"date": "2026-08-05", "time": "19:00", "name": "Eli Lilly & Co", "ticker": "LLY US", "period": "Q2 26", "mcap": 1110397395690}, {"date": "2026-08-05", "time": "05:30", "name": "Advanced Micro Devices Inc", "ticker": "AMD US", "period": "Q2 26", "mcap": 808386256000}, {"date": "2026-08-05", "time": "05:30", "name": "Amgen Inc", "ticker": "AMGN US", "period": "Q2 26", "mcap": 197689643320}, {"date": "2026-08-05", "time": "19:00", "name": "Walt Disney Co/The", "ticker": "DIS US", "period": "Q3 26", "mcap": 169605070782}, {"date": "2026-08-05", "time": "19:00", "name": "Uber Technologies Inc", "ticker": "UBER US", "period": "Q2 26", "mcap": 147499504482}, {"date": "2026-08-05", "time": "05:00", "name": "Booking Holdings Inc", "ticker": "BKNG US", "period": "Q2 26", "mcap": 140779914252}, {"date": "2026-08-05", "time": "19:00", "name": "CVS Health Corp", "ticker": "CVS US", "period": "Q2 26", "mcap": 137124197100}, {"date": "2026-08-05", "time": "05:30", "name": "Emerson Electric Co", "ticker": "EMR US", "period": "Q3 26", "mcap": 78167556000}, {"date": "2026-08-06", "time": "20:00", "name": "McDonald's Corp", "ticker": "MCD US", "period": "Q2 26", "mcap": 190209561260}, {"date": "2026-08-06", "time": "19:00", "name": "ConocoPhillips", "ticker": "COP US", "period": "Q2 26", "mcap": 139750505543}, {"date": "2026-08-07", "time": "20:00", "name": "Gilead Sciences Inc", "ticker": "GILD US", "period": "Q2 26", "mcap": 166718002681}, {"date": "2026-08-11", "time": "05:30", "name": "Simon Property Group Inc", "ticker": "SPG US", "period": "Q2 26", "mcap": 74163293400}, {"date": "2026-08-13", "time": "20:00", "name": "Cisco Systems Inc", "ticker": "CSCO US", "period": "Q4 26", "mcap": 441204196400}, {"date": "2026-08-14", "time": "05:30", "name": "Applied Materials Inc", "ticker": "AMAT US", "period": "Q3 26", "mcap": 420528323940}, {"date": "2026-08-17", "time": "20:00", "name": "Honeywell Aerospace Inc", "ticker": "HONA US", "period": "Q2 26", "mcap": 67072374594}, {"date": "2026-08-18", "time": "19:00", "name": "Home Depot Inc/The", "ticker": "HD US", "period": "Q2 27", "mcap": 337892930029}, {"date": "2026-08-19", "time": "19:00", "name": "Lowe's Cos Inc", "ticker": "LOW US", "period": "Q2 27", "mcap": 117036372110}, {"date": "2026-08-20", "time": "20:00", "name": "Walmart Inc", "ticker": "WMT US", "period": "Q2 27", "mcap": 909131059200}, {"date": "2026-08-20", "time": "19:00", "name": "Deere & Co", "ticker": "DE US", "period": "Q3 26", "mcap": 161217427707}, {"date": "2026-08-21", "time": "20:00", "name": "Intuit Inc", "ticker": "INTU US", "period": "Q4 26", "mcap": 79623885330}, {"date": "2026-08-27", "time": "05:30", "name": "NVIDIA Corp", "ticker": "NVDA US", "period": "Q2 27", "mcap": 4912261010000}, {"date": "2026-09-03", "time": "20:00", "name": "Salesforce Inc", "ticker": "CRM US", "period": "Q2 27", "mcap": 139860630000}, {"date": "2026-09-04", "time": "20:00", "name": "Broadcom Inc", "ticker": "AVGO US", "period": "Q3 26", "mcap": 1764229603500}, {"date": "2026-09-09", "time": "20:00", "name": "Oracle Corp", "ticker": "ORCL US", "period": "Q1 27", "mcap": 364321845600}, {"date": "2026-09-11", "time": "05:30", "name": "Adobe Inc", "ticker": "ADBE US", "period": "Q3 26", "mcap": 94306875000}, {"date": "2026-09-23", "time": "20:00", "name": "Micron Technology Inc", "ticker": "MU US", "period": "Q4 26", "mcap": 958795640500}, {"date": "2026-09-25", "time": "05:15", "name": "Costco Wholesale Corp", "ticker": "COST US", "period": "Q4 26", "mcap": 417256086730}, {"date": "2026-09-30", "time": "20:00", "name": "NIKE Inc", "ticker": "NKE US", "period": "Q1 27", "mcap": 64756539206}];
+const byDate = {};
+EVENTS.forEach(e=>{ (byDate[e.date] = byDate[e.date]||[]).push(e); });
+const months = [...new Set(EVENTS.map(e=>e.date.slice(0,7)))].sort();
+const todayStr = new Date().toISOString().slice(0,10);
+let cur = months.includes(todayStr.slice(0,7)) ? todayStr.slice(0,7) : months[0];
+
+function mv(d){
+  const [y,m] = cur.split('-').map(Number);
+  const nd = new Date(y, m-1+d, 1);
+  cur = nd.getFullYear()+'-'+String(nd.getMonth()+1).padStart(2,'0');
+  render();
+}
+function render(){
+  const [y,m] = cur.split('-').map(Number);
+  document.getElementById('mtitle').textContent = y+'년 '+m+'월';
+  const first = new Date(y, m-1, 1);
+  const start = new Date(first); start.setDate(1 - ((first.getDay()+6)%7)); // 월요일 시작
+  let html='';
+  for(let w=0; w<6; w++){
+    html+='<div class="week">';
+    for(let i=0;i<7;i++){
+      const d = new Date(start); d.setDate(start.getDate()+w*7+i);
+      const ds = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      const out = (d.getMonth()+1)!==m;
+      const evs = byDate[ds]||[];
+      let cls='day'+(out?' out':'')+(ds===todayStr?' today':'');
+      let inner='<div class="dnum">'+d.getDate()+'</div>';
+      const MAX=4;
+      evs.slice(0,MAX).forEach(e=>{
+        inner+='<span class="chip'+(ds<todayStr?' past':'')+'" title="'+e.name+' ('+e.time+', '+e.period+')">'+e.name+'</span>';
+      });
+      if(evs.length>MAX) inner+='<span class="more">+'+(evs.length-MAX)+' more</span>';
+      html+='<div class="'+cls+'" data-d="'+ds+'" onclick="pick(this)">'+inner+'</div>';
+    }
+    html+='</div>';
+  }
+  document.getElementById('grid').innerHTML=html;
+  document.getElementById('detail').className='detail';
+}
+function pick(el){
+  const ds = el.getAttribute('data-d');
+  const evs = byDate[ds]||[];
+  document.querySelectorAll('.day.sel').forEach(x=>x.classList.remove('sel'));
+  if(!evs.length){ document.getElementById('detail').className='detail'; return; }
+  el.classList.add('sel');
+  let h='<h3>'+ds+' · '+evs.length+'건</h3><table>';
+  evs.forEach(e=>{ h+='<tr><td class="t">'+e.time+'</td><td><b>'+e.name+'</b> <span style="color:#9aa0a6">'+e.ticker+'</span></td><td class="p">'+e.period+'</td></tr>'; });
+  h+='</table>';
+  const dv=document.getElementById('detail'); dv.innerHTML=h; dv.className='detail on';
+}
+render();
+</script></div></body></html>

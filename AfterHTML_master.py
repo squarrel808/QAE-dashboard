@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 from _runner import run_paths
 
-FOLDERS = ["경제지표가져오기", "PCA", "gs_api", "Consensus Builder", "policytone"]
+FOLDERS = ["경제지표가져오기", "releasecalendar", "PCA", "gs_api", "Consensus Builder", "policytone"]
 
 if __name__ == "__main__":
     print("=== AfterHTML_master 시작 (모든 폴더 HTML 생성) ===")

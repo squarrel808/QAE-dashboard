@@ -17,6 +17,7 @@ OUTPUT = "master_dashboard.html"
 # (탭 id, 버튼에 보일 이름, 상대 경로) — 위에서부터 탭 순서
 TABS = [
     ("econ",      "경제지표",        "경제지표가져오기/dashboard.html"),
+    ("earnings",  "실적 캘린더",     "releasecalendar/earnings_dashboard.html"),
     ("research",  "증권사 자료",     "https://ibreport-dashboard.vercel.app"),
     ("pca",       "PCA",            "PCA/pca_dashboard.html"),
     ("caimap",    "CAI · MAP",      "gs_api/cai_map_dashboard.html"),

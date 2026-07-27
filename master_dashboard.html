@@ -25,6 +25,7 @@ h1 { margin:0 0 12px 0; font-size:22px; color:#1a1c1f; font-family:Georgia,serif
     <h1>Macro Dashboard</h1>
     <div class="tabs">
         <button class="tab-btn active" onclick="showTab('econ', this)">경제지표</button>
+        <button class="tab-btn" onclick="showTab('earnings', this)">실적 캘린더</button>
         <button class="tab-btn" onclick="showTab('research', this)">증권사 자료</button>
         <button class="tab-btn" onclick="showTab('pca', this)">PCA</button>
         <button class="tab-btn" onclick="showTab('caimap', this)">CAI · MAP</button>
@@ -36,6 +37,7 @@ h1 { margin:0 0 12px 0; font-size:22px; color:#1a1c1f; font-family:Georgia,serif
 
 <div class="viewer">
     <iframe id="econ" class="tab-frame active" src="경제지표가져오기/dashboard.html"></iframe>
+    <iframe id="earnings" class="tab-frame" data-src="releasecalendar/earnings_dashboard.html"></iframe>
     <iframe id="research" class="tab-frame" data-src="https://ibreport-dashboard.vercel.app"></iframe>
     <iframe id="pca" class="tab-frame" data-src="PCA/pca_dashboard.html"></iframe>
     <iframe id="caimap" class="tab-frame" data-src="gs_api/cai_map_dashboard.html"></iframe>

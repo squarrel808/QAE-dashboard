@@ -1293,4 +1293,14 @@ def main():
         marquee_total = run_site("Marquee", marquee_main, driver)   # 1) Marquee (+ Portfolio Strategy)
         bofa_total    = run_site("BofA", bofa_main, driver)         # 2) BofA
         jpmm_total    = run_site("JPMM", jpmm_main, driver)         # 3) JPMM
-        hsbc_total    = run_site("HSBC
+        hsbc_total    = run_site("HSBC", hsbc_main, driver)         # 4) HSBC
+        grand = marquee_total + bofa_total + hsbc_total + jpmm_total
+        print(f"\n전체 완료: Marquee {marquee_total} + BofA {bofa_total} "
+              f"+ HSBC {hsbc_total} + JPMM {jpmm_total} = {grand}개 → {DOWNLOAD_DIR}")
+    finally:
+        # 붙기 모드: quit()은 연결된 창을 닫으므로 호출하지 않음 (브라우저 유지)
+        pass
+
+
+if __name__ == "__main__":
+    main()

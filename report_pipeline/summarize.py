@@ -211,4 +211,8 @@ def main():
     os.makedirs(os.path.dirname(REPORTS_JSON), exist_ok=True)
     json.dump(reports, open(REPORTS_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"done": sorted(done)}, open(STATE_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"\n완료: 새 요약 {added}건  | 총 {len(reports)}건  -> {REPORTS_JSON}  (STORA
+    print(f"\n완료: 새 요약 {added}건  | 총 {len(reports)}건  -> {REPORTS_JSON}  (STORAGE={STORAGE})")
+
+
+if __name__ == "__main__":
+    main()

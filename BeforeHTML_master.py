@@ -14,7 +14,7 @@ sys.path.insert(0, ROOT)
 from _runner import run_paths
 
 # 데이터 단계를 가진 폴더 (순서대로)
-FOLDERS = ["경제지표가져오기", "PCA", "gs_api", "Consensus Builder", "policytone"]
+FOLDERS = ["경제지표가져오기", "releasecalendar", "PCA", "gs_api", "Consensus Builder", "policytone"]
 
 if __name__ == "__main__":
     print("=== BeforeHTML_master 시작 (모든 폴더 데이터 단계) ===")

@@ -23,7 +23,7 @@ import pandas as pd
 # ============================================================
 # CONFIG - 여기만 수정하면 됩니다
 # ============================================================
-_BASE_DIR = r'C:\Users\USER\OneDrive\문서\QAE-dashboard\Consensus Builder'
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 스크립트 폴더 기준 (PC 무관)
 _HISTORY_DIR = os.path.join(_BASE_DIR, 'history')
 _FILE_PREFIX = 'ECFC_Growth Consesus'
 
@@ -56,7 +56,7 @@ EXCEL_FILES = {
     '캐나다': _LATEST_GROWTH,
 }
 
-OUTPUT_PATH = r'C:\Users\USER\OneDrive\문서\QAE-dashboard\Consensus Builder\gdp_consensus_dashboard.html'
+OUTPUT_PATH = os.path.join(_BASE_DIR, 'gdp_consensus_dashboard.html')
 
 COUNTRY_NAMES = {
     '미국': 'US', '영국': 'UK', '일본': 'JP', '독일': 'DE',
