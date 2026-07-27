@@ -25,8 +25,12 @@ import pandas as pd
 # ============================================================
 # CONFIG - 여기만 수정하세요
 # ============================================================
-DASHBOARD_XLSX = Path(r'C:\Users\USER\OneDrive\문서\QAE-dashboard\haver\haver-api_CPI\dashboard_data_CPI Distribution.xlsx')
-OUTPUT_PATH    = Path(r'C:\Users\USER\OneDrive\문서\QAE-dashboard\Consensus Builder\cpi_dashboard.html')
+# 레포 위치에 관계없이 동작하도록 이 파일 기준 상대경로로 잡는다.
+BASE = Path(__file__).resolve().parent      # Consensus Builder/
+REPO = BASE.parent                          # QAE 루트
+
+DASHBOARD_XLSX = REPO / 'haver' / 'haver-api_CPI' / 'dashboard_data_CPI Distribution.xlsx'
+OUTPUT_PATH    = BASE / 'cpi_dashboard.html'
 
 # descriptor 콜론 앞부분(소문자) → 화면 표시명
 COUNTRY_MAP = {
@@ -422,6 +426,8 @@ def extract_all_from_haver():
     """dashboard_data.xlsx → {country: country_data} 전체 추출."""
     if not DASHBOARD_XLSX.exists():
         print(f"[ERROR] {DASHBOARD_XLSX} not found")
+        print("        → haver\\haver-api_CPI\\fetch_haver_to_excel.py 를 먼저 실행하세요 "
+              "(Haver DLX 로그인 + tickers.xlsx 필요)")
         return {}
 
     # 1) Wide 시트
@@ -1020,7 +1026,7 @@ def main():
 
     if not all_data:
         print("[ERROR] No data extracted from dashboard_data.xlsx")
-        return
+        raise SystemExit(1)   # 자동화(_runner)가 실패로 인식하도록
 
     html = generate_html(all_data)
 

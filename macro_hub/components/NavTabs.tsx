@@ -9,6 +9,7 @@ const TABS = [
   { href: '/reports', label: 'Report' },
   { href: '/pca', label: 'PCA' },
   { href: '/caimap', label: 'CAI' },
+  { href: '/cpidist', label: 'CPI 분포' },
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
 ]

@@ -29,6 +29,7 @@ SOURCES = {
     "pca.html": os.path.join(REPO, "PCA", "pca_dashboard.html"),
     "consensus_cpi.html": os.path.join(REPO, "Consensus Builder", "cpi_consensus_dashboard.html"),
     "consensus_gdp.html": os.path.join(REPO, "Consensus Builder", "gdp_consensus_dashboard.html"),
+    "cpi_dist.html": os.path.join(REPO, "Consensus Builder", "cpi_dashboard.html"),
     "caimap.html": os.path.join(REPO, "gs_api", "cai_map_dashboard.html"),
 }
 

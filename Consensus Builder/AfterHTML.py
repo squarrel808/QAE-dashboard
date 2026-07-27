@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 from _runner import run_paths
 
-SCRIPTS = ["CPI consensus.py", "GDP consensus.py"]
+SCRIPTS = ["CPI consensus.py", "GDP consensus.py", "CPI distribution.py"]
 
 if __name__ == "__main__":
     run_paths([os.path.join(HERE, s) for s in SCRIPTS],
