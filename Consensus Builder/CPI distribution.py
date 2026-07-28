@@ -260,12 +260,48 @@ G10_CORE_CPI_MAP = {
 }
 
 
-def extract_g10_core_cpi(wide, pk_to_desc):
-    """하드코딩된 매핑으로 국가별 Core CPI 시리즈 추출."""
-    # Wide 컬럼명을 ticker_pk 형식으로 정규화해서 빠른 lookup
+def build_pk_to_col(wide, pk_to_desc):
+    """Wide 컬럼 헤더 → ticker_pk 역매핑.
+
+    헤더는 fetch 단계(build_header_map)에서 세 형태 중 하나로 만들어진다:
+      1) 'descriptor (ticker_pk)'  — descriptor가 중복일 때
+      2) 원본 티커 / ticker_pk     — descriptor를 못 받았을 때
+      3) descriptor                — 그 외 (대부분)
+    3)을 처리하지 않으면 descriptor를 정상 수신한 티커일수록 못 찾는
+    역설이 생기므로 세 경우를 모두 본다.
+    """
+    desc_to_pk = {}
+    for pk, desc in pk_to_desc.items():
+        desc_to_pk.setdefault(str(desc).strip(), pk)
+
     pk_to_col = {}
     for col in wide.columns:
-        pk_to_col[normalize_to_pk(col)] = col
+        h = str(col).strip()
+
+        # 1) '... (ticker_pk)' 꼬리
+        if h.endswith(')') and ' (' in h:
+            cand = normalize_to_pk(h.rsplit(' (', 1)[1][:-1])
+            if cand in pk_to_desc:
+                pk_to_col.setdefault(cand, col)
+                continue
+
+        # 2) 헤더 자체가 티커
+        norm = normalize_to_pk(h)
+        if norm in pk_to_desc:
+            pk_to_col.setdefault(norm, col)
+            continue
+
+        # 3) 헤더가 descriptor
+        pk = desc_to_pk.get(h)
+        if pk:
+            pk_to_col.setdefault(pk, col)
+
+    return pk_to_col
+
+
+def extract_g10_core_cpi(wide, pk_to_desc):
+    """하드코딩된 매핑으로 국가별 Core CPI 시리즈 추출."""
+    pk_to_col = build_pk_to_col(wide, pk_to_desc)
 
     by_country = {}
     for country, target_pk in G10_CORE_CPI_MAP.items():

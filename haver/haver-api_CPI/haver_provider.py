@@ -298,8 +298,19 @@ def fetch_series_data(ticker_chunk, start_date):
     try:
         data = Haver.data(ticker_chunk, startdate=start_date, dates=True)
         processed = _process_haver_data(data, ticker_chunk)
-        log_event(logger, "info", "Chunk fetch complete", ticker_count=len(ticker_chunk), rows=len(processed))
-        return processed
+        if not processed.empty or len(ticker_chunk) <= 1:
+            log_event(logger, "info", "Chunk fetch complete", ticker_count=len(ticker_chunk), rows=len(processed))
+            return processed
+        # 예외는 없었지만 결과가 비었다. Haver가 일부 코드를 쿼리에서 빼면
+        # (예: 'temporal aggregation not allowed') 컬럼 수가 어긋나 청크 전체가
+        # 버려진다. 몇 개 때문에 나머지를 잃지 않도록 per-ticker로 재시도한다.
+        log_event(
+            logger,
+            "warning",
+            "Chunk returned no rows without raising, switching to per-ticker fallback",
+            ticker_count=len(ticker_chunk),
+            start_date=start_date,
+        )
     except Exception as exc:
         log_event(
             logger,
@@ -318,6 +329,9 @@ def fetch_series_data(ticker_chunk, start_date):
             processed = _process_haver_data(single_data, [ticker])
             if not processed.empty:
                 combined_results.append(processed)
+            else:
+                # 예외 없이 빈 결과 = Haver가 이 코드를 제공하지 않음. 조용히 넘기지 않는다.
+                failed_tickers.append((ticker, "no rows returned"))
         except Exception as exc:
             failed_tickers.append((ticker, str(exc)))
 
