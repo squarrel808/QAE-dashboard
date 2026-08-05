@@ -28,10 +28,18 @@ def main():
     data = json.loads(m.group(1))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(data, open(OUT, "w", encoding="utf-8"), ensure_ascii=False)
-    vs = data.get("versions", {})
-    print("[saved]", OUT, "| country:", data.get("country"),
-          "| versions:", list(vs.keys()),
-          "| YoY dates:", len(vs.get("YoY", {}).get("dates", [])))
+    if "countries" in data:   # 신버전: 다국가 payload
+        ccs = list(data["countries"].keys())
+        d0 = data.get("default") or (ccs[0] if ccs else None)
+        vs = data["countries"].get(d0, {}).get("versions", {}) if d0 else {}
+        print("[saved]", OUT, "| countries:", ccs, "| default:", d0,
+              "| versions:", list(vs.keys()),
+              "| YoY dates:", len(vs.get("YoY", {}).get("dates", [])))
+    else:                      # 구버전: 단일 국가 payload
+        vs = data.get("versions", {})
+        print("[saved]", OUT, "| country:", data.get("country"),
+              "| versions:", list(vs.keys()),
+              "| YoY dates:", len(vs.get("YoY", {}).get("dates", [])))
 
 
 if __name__ == "__main__":
