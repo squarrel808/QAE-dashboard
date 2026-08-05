@@ -50,7 +50,14 @@ export type PcaVersion = {
   lei: { index: (number | null)[] }
   categories: Record<string, { index: (number | null)[]; indicators: Record<string, (number | null)[]> }>
 }
-export type PcaData = { country: string; versions: Record<string, PcaVersion> }
+export type PcaCountry = { label: string; label_kr?: string; versions: Record<string, PcaVersion> }
+// 신버전(다국가): { default, countries } / 구버전(단일): { country, versions } — 둘 다 허용
+export type PcaData = {
+  country?: string
+  versions?: Record<string, PcaVersion>
+  default?: string
+  countries?: Record<string, PcaCountry>
+}
 
 // ── CAI · MAP ──
 export type CaiSeries = {

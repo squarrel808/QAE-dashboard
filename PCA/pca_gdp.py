@@ -1,23 +1,28 @@
 # -*- coding: utf-8 -*-
 """
-pca_gdp.py — 카테고리별 Time-Varying PCA → GDP 프록시 + LEI + HTML 대시보드
+pca_gdp.py — 국가별 카테고리 Time-Varying PCA → GDP 프록시 + LEI + HTML 대시보드
 
 입력: haver/haver-api_PCA/Meta data_Raw data.xlsx
   - Wide     : 날짜 x 지표 (헤더 = CODE@DATABASE)
-  - Metadata : ticker_pk / code / descriptor / datatype / frequency / category
+  - Metadata : ticker_pk / code / descriptor / datatype / frequency / category / country
+               (country: AU/CA/DE/JP/UK/US — tickers.xlsx Country 열에서 fetch 스크립트가 병기.
+                한 지표를 여러 국가에서 쓰면 "US,CA" 처럼 콤마로 들어오고 양쪽 모두에 포함된다.
+                country 컬럼이 없거나 비어 있으면 US 로 간주 → 구버전 파일과 호환)
   - 전처리   : ticker_pk / code / (level | diffusion)
 
-버전 2개:
+버전 2개 (국가마다 각각):
   - YoY      : level은 12개월 로그차분, diffusion은 그대로. 반감기 24개월
   - Momentum : 3m/3m — 3개월평균의 3개월 전 대비 (level=로그차분, diffusion=차분). 반감기 12개월
 
 구조:
+  국가별로 지표를 나눈 뒤 →
   카테고리별 TV-PCA(EWM 상관행렬 + eigh) → 카테고리 지수(EWM z-score)
   → lei 제외 카테고리 동일가중 평균 = GDP 프록시 / lei는 별도 LEI 지수
 
 출력:
-  - pca_result.xlsx   (버전별 지수·기여도·지표 z-score)
-  - pca_dashboard.html (탭: 경기지수 / LEI)
+  - pca_result.xlsx    (국가_버전별 지수·기여도·지표 z-score 시트)
+  - pca_dashboard.html (국가 드롭다운 + 탭: 경기지수 / LEI)
+    payload 형식: {"default": "US", "countries": {"US": {"label","label_kr","versions"}, ...}}
 """
 import json
 import numpy as np
@@ -32,9 +37,19 @@ DATA_FILE  = BASE.parent / "haver" / "haver-api_PCA" / "Meta data_Raw data.xlsx"
 OUT_XLSX   = BASE / "pca_result.xlsx"
 OUT_HTML   = BASE / "pca_dashboard.html"
 
-COUNTRY    = "United States"
 LEI_CAT    = "lei"          # 합산에서 제외하고 별도 산출할 카테고리
 MIN_EWM_OBS = 12            # EWM 평균/표준편차 최소 관측치
+
+# 국가 코드 → 표기 (드롭다운 순서 = 이 순서)
+COUNTRIES = {
+    "US": {"en": "United States",  "kr": "미국"},
+    "AU": {"en": "Australia",      "kr": "호주"},
+    "CA": {"en": "Canada",         "kr": "캐나다"},
+    "DE": {"en": "Germany",        "kr": "독일"},
+    "JP": {"en": "Japan",          "kr": "일본"},
+    "UK": {"en": "United Kingdom", "kr": "영국"},
+}
+DEFAULT_COUNTRY = "US"      # country 컬럼이 없는 구버전 데이터의 폴백
 
 VERSIONS = {
     "YoY":      {"halflife": 24, "mode": "yoy"},
@@ -42,7 +57,18 @@ VERSIONS = {
 }
 
 CAT_LABEL = {"consumer": "Consumer", "capex": "Capex", "export": "Export",
-             "housing": "Housing", "lei": "LEI"}
+             "housing": "Housing", "labor": "Labor", "lei": "LEI",
+             "employment": "Employment", "production": "Production",
+             "financial": "Financial"}
+
+
+def cat_label(cat):
+    return CAT_LABEL.get(cat, str(cat).capitalize())
+
+
+def country_label(cc, kind="en"):
+    info = COUNTRIES.get(cc)
+    return info[kind] if info else cc
 
 
 # ============================================================
@@ -73,6 +99,20 @@ def load_data():
     rule_map = dict(zip(pre["ticker_pk"].astype(str), pre.iloc[:, -1].astype(str).str.strip().str.lower()))
     desc_map = dict(zip(meta["ticker_pk"].astype(str), meta["descriptor"].astype(str)))
 
+    # --- 국가 매핑: Metadata의 country 컬럼. 없거나 빈 값이면 DEFAULT_COUNTRY ---
+    # 값은 "US" 또는 "US,CA" (한 지표를 여러 국가에서 쓰는 경우 — 예: US ISM의 캐나다 스필오버).
+    # ctry_map[pk] 는 항상 국가코드 리스트.
+    if "country" in meta.columns:
+        raw_ctry = dict(zip(meta["ticker_pk"].astype(str), meta["country"].astype(str).str.strip().str.upper()))
+    else:
+        print(f"[INFO] Metadata에 country 컬럼 없음 → 전체를 {DEFAULT_COUNTRY} 로 간주 (구버전 호환)")
+        raw_ctry = {}
+    ctry_map = {}
+    for c in wide.columns:
+        v = raw_ctry.get(c, "")
+        ccs = [] if v in ("", "NAN", "NONE") else [x.strip() for x in v.split(",") if x.strip()]
+        ctry_map[c] = ccs or [DEFAULT_COUNTRY]
+
     # --- 검증 게이트: 규칙/카테고리 없는 지표는 경고 후 제외 ---
     drop = sorted({c for c in wide.columns if c not in rule_map}
                   | {c for c in wide.columns if c not in cat_map or cat_map.get(c) in ("", "nan")})
@@ -89,7 +129,7 @@ def load_data():
     if bad:
         raise SystemExit(f"[중단] 알 수 없는 전처리 라벨: {bad}")
 
-    return wide, cat_map, rule_map, desc_map
+    return wide, cat_map, rule_map, desc_map, ctry_map
 
 
 def short_label(pk, desc_map):
@@ -132,31 +172,69 @@ def ewm_zscore(df, halflife):
 # ============================================================
 def tv_pca(z, halflife):
     """
-    z: 카테고리 내 지표들의 z-score DataFrame (dropna된 상태)
-    반환: pc1(Series), loadings(DataFrame), contrib(DataFrame)
+    z: 카테고리 내 지표들의 z-score DataFrame. **결측 허용** — 지표마다 시작·종료가 달라도 된다.
+
+    각 시점 t 에서 그 시점에 값이 있는 지표만 골라 상관행렬 부분행렬을 떼어내 PC1 을 뽑는다.
+    (예전에는 dropna 로 균형패널을 만들었는데, 늦게 시작하는 지표 하나가
+     카테고리 전체 기간을 그 지표 시작일까지 잘라먹었다 — 2021년 시작 PMI 등)
+
+    지표 수 n 이 시점마다 달라지면 PC1 = z·loading 의 스케일이 대략 sqrt(n) 에 비례해
+    합류 시점에 계단이 생기므로 sqrt(n) 으로 나눠 맞춘다.
+
+    반환: pc1(Series), loadings(DataFrame, 미가용 지표는 NaN), contrib(DataFrame)
     """
     cols = list(z.columns)
-    n = len(cols)
-    # 모든 시점의 EWM 상관행렬을 한 번에 계산
-    corr_panel = z.ewm(halflife=halflife, min_periods=n).corr()
+    # 쌍별 EWM 상관. min_periods 를 넘기지 못한 쌍은 NaN 이라 그 시점엔 자동 제외된다.
+    corr_panel = z.ewm(halflife=halflife,
+                       min_periods=max(len(cols), MIN_EWM_OBS)).corr()
 
     pc1_vals, load_rows, idx_used = [], [], []
-    for i, t in enumerate(z.index):
-        if i < n:                       # 워밍업: 지표 수만큼 관측치 필요
+    prev_load = None                    # 직전 시점 로딩 (부호 연속성용)
+    for t in z.index:
+        row = z.loc[t]
+        avail = [c for c in cols if pd.notna(row[c])]
+        if len(avail) < 2:
             continue
-        cm = corr_panel.loc[t].values
-        if np.isnan(cm).any():
+        try:
+            cmdf = corr_panel.loc[t]
+        except KeyError:
             continue
+
+        # 새로 합류한 지표는 값은 있어도 다른 지표와의 EWM 상관이 아직 min_periods 를
+        # 못 채워 NaN 이다. 이때 그 시점을 통째로 버리면 지수에 구멍이 생기고
+        # 상관이 추정되는 순간 계단이 난다 → 상관을 못 구한 지표만 빼고 나머지로 진행한다.
+        while len(avail) >= 2:
+            na = cmdf.loc[avail, avail].isna().sum(axis=1)
+            if na.max() == 0:
+                break
+            avail = [c for c in avail if c != na.idxmax()]
+        if len(avail) < 2:
+            continue
+
+        cm = cmdf.loc[avail, avail].values
         w, v = np.linalg.eigh(cm)       # 고유분해 (w 오름차순)
-        loading = v[:, -1]              # 최대 고유값의 고유벡터 = PC1 방향
-        if loading.sum() < 0:           # 시점별 부호 일관성 (대부분 경기순응 가정)
-            loading = -loading
-        pc1_vals.append(z.loc[t].values @ loading)
-        load_rows.append(loading)
+        lser = pd.Series(v[:, -1], index=avail)   # 최대 고유값의 고유벡터 = PC1 방향
+
+        # 고유벡터의 부호는 임의로 정해진다. 예전에는 loading.sum()<0 이면 뒤집었는데,
+        # 로딩 부호가 섞여 합이 0 근처면 달마다 제멋대로 뒤집혀 지수에 가짜 스파이크가 났다.
+        # → 직전 시점 로딩과 내적이 음수면 뒤집어 방향을 이어붙인다.
+        if prev_load is not None:
+            shared = [c for c in avail if c in prev_load.index]
+            if shared and float((lser[shared] * prev_load[shared]).sum()) < 0:
+                lser = -lser
+        elif lser.sum() < 0:            # 첫 시점만 경기순응 가정으로 방향 결정
+            lser = -lser
+        prev_load = lser
+
+        pc1_vals.append(float(row[avail].values @ lser.values) / np.sqrt(len(avail)))
+        load_rows.append(lser)
         idx_used.append(t)
 
+    if not idx_used:
+        return pd.Series(dtype=float), pd.DataFrame(columns=cols), pd.DataFrame(columns=cols)
+
     pc1 = pd.Series(pc1_vals, index=idx_used, name="PC1")
-    loadings = pd.DataFrame(load_rows, index=idx_used, columns=cols)
+    loadings = pd.DataFrame(load_rows, index=idx_used).reindex(columns=cols)
 
     # 전체 부호 확정: 카테고리 평균 z와 양의 상관이 되도록
     anchor = z.mean(axis=1).reindex(idx_used)
@@ -168,9 +246,9 @@ def tv_pca(z, halflife):
 
 
 # ============================================================
-# 4. 버전 하나 전체 실행
+# 4. (국가 하나의) 버전 하나 전체 실행
 # ============================================================
-def run_version(wide, cat_map, rule_map, halflife, mode):
+def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
     z_all = ewm_zscore(transform(wide, rule_map, mode), halflife)
 
     cats = sorted(set(cat_map.get(c) for c in z_all.columns))
@@ -178,9 +256,12 @@ def run_version(wide, cat_map, rule_map, halflife, mode):
 
     for cat in cats:
         cols = [c for c in z_all.columns if cat_map[c] == cat]
-        sub = z_all[cols].dropna()
+        # 결측을 남긴 채 넘긴다 — 상관행렬이 성립하려면 그 시점에 지표가 2개 이상이면 된다.
+        # (dropna 로 균형패널을 만들면 늦게 시작하는 지표 하나가 카테고리 전체를 잘라먹는다)
+        sub = z_all[cols]
+        sub = sub[sub.notna().sum(axis=1) >= 2]
         if len(cols) < 2 or len(sub) <= len(cols):
-            print(f"  [WARN] {cat}: 지표 {len(cols)}개/표본 {len(sub)} — 스킵")
+            print(f"  [WARN] {tag}{cat}: 지표 {len(cols)}개/표본 {len(sub)} — 스킵")
             continue
         pc1, loadings, contrib = tv_pca(sub, halflife)
         # 카테고리 지수도 EWM z-score로 스케일 통일
@@ -191,42 +272,48 @@ def run_version(wide, cat_map, rule_map, halflife, mode):
 
     # GDP 프록시 = lei 제외 카테고리 동일가중 평균
     gdp_cats = [c for c in res["cat_index"] if c != LEI_CAT]
-    panel = pd.DataFrame({c: res["cat_index"][c] for c in gdp_cats}).dropna()
-    res["gdp"] = panel.mean(axis=1)
-    res["gdp_contrib"] = panel / len(gdp_cats)   # 합 = GDP 프록시
+    if gdp_cats:
+        panel = pd.DataFrame({c: res["cat_index"][c] for c in gdp_cats}).dropna()
+        res["gdp"] = panel.mean(axis=1)
+        res["gdp_contrib"] = panel / len(gdp_cats)   # 합 = GDP 프록시
+    else:
+        res["gdp"] = pd.Series(dtype=float)
+        res["gdp_contrib"] = pd.DataFrame()
     res["lei"] = res["cat_index"].get(LEI_CAT, pd.Series(dtype=float))
     return res
 
 
 # ============================================================
-# 5. 엑셀 저장
+# 5. 엑셀 저장 (국가별 시트 프리픽스)
 # ============================================================
-def save_excel(results, cat_map, desc_map):
+def save_excel(all_results, cat_map, desc_map):
     with pd.ExcelWriter(OUT_XLSX, engine="openpyxl") as wr:
         readme = pd.DataFrame({
-            "항목": ["국가", "버전", "전처리", "z-score", "PCA", "합산", "LEI"],
+            "항목": ["국가", "버전", "전처리", "z-score", "PCA", "합산", "LEI", "시트명"],
             "내용": [
-                COUNTRY,
+                " / ".join(f"{cc}={country_label(cc)}" for cc in all_results),
                 "YoY(반감기24) / Momentum 3m3m(반감기12)",
                 "level→로그차분(YoY=12개월, Mom=3mma 3개월), diffusion→그대로(Mom은 3mma 차분)",
                 f"EWM 평균·표준편차 (min_periods={MIN_EWM_OBS}, 룩어헤드 없음)",
-                "카테고리별 EWM 상관행렬 고유분해, 시점별 PC1",
+                "국가·카테고리별 EWM 상관행렬 고유분해, 시점별 PC1",
                 "lei 제외 카테고리 지수(z) 동일가중 평균 = GDP 프록시",
                 "별도 산출 (합산 미포함)",
+                "국가코드_버전_내용 (예: US_YoY_indices)",
             ],
         })
         readme.to_excel(wr, sheet_name="README", index=False)
 
-        for ver, r in results.items():
-            idx_df = pd.DataFrame({"GDP_proxy": r["gdp"], "LEI": r["lei"]})
-            for cat, s in r["cat_index"].items():
-                if cat != LEI_CAT:
-                    idx_df[CAT_LABEL.get(cat, cat)] = s
-            idx_df.to_excel(wr, sheet_name=f"{ver}_indices")
-            r["gdp_contrib"].rename(columns=lambda c: CAT_LABEL.get(c, c)).to_excel(
-                wr, sheet_name=f"{ver}_gdp_contrib")
-            r["z"].rename(columns=lambda c: short_label(c, desc_map)).to_excel(
-                wr, sheet_name=f"{ver}_indicator_z")
+        for cc, results in all_results.items():
+            for ver, r in results.items():
+                idx_df = pd.DataFrame({"GDP_proxy": r["gdp"], "LEI": r["lei"]})
+                for cat, s in r["cat_index"].items():
+                    if cat != LEI_CAT:
+                        idx_df[cat_label(cat)] = s
+                idx_df.to_excel(wr, sheet_name=f"{cc}_{ver}_indices")
+                r["gdp_contrib"].rename(columns=cat_label).to_excel(
+                    wr, sheet_name=f"{cc}_{ver}_gdp_contrib")
+                r["z"].rename(columns=lambda c: short_label(c, desc_map)).to_excel(
+                    wr, sheet_name=f"{cc}_{ver}_indicator_z")
     print(f"엑셀 저장: {OUT_XLSX}")
 
 
@@ -238,8 +325,8 @@ def fmt_series(s, index):
     return [None if pd.isna(v) else round(float(v), 3) for v in s]
 
 
-def build_payload(results, cat_map, desc_map):
-    payload = {"country": COUNTRY, "versions": {}}
+def build_country_versions(results, cat_map, desc_map):
+    versions = {}
     for ver, r in results.items():
         idx = r["z"].index
         dates = [d.strftime("%Y-%m") for d in idx]
@@ -248,32 +335,44 @@ def build_payload(results, cat_map, desc_map):
         cat_block = {}
         for cat in r["cat_index"]:
             cols = [c for c in r["z"].columns if cat_map[c] == cat]
-            cat_block[CAT_LABEL.get(cat, cat)] = {
+            cat_block[cat_label(cat)] = {
                 "index": fmt_series(r["cat_index"][cat], idx),
                 "indicators": {short_label(c, desc_map): fmt_series(r["z"][c], idx) for c in cols},
             }
 
-        payload["versions"][ver] = {
+        versions[ver] = {
             "dates": dates,
             "gdp": {
                 "index": fmt_series(r["gdp"], idx),
-                "contrib": {CAT_LABEL.get(c, c): fmt_series(r["gdp_contrib"][c], idx) for c in gdp_cats},
+                "contrib": {cat_label(c): fmt_series(r["gdp_contrib"][c], idx) for c in gdp_cats},
             },
             "lei": {"index": fmt_series(r["lei"], idx)},
             "categories": cat_block,
         }
-    return payload
+    return versions
+
+
+def build_payload(all_results, cat_map, desc_map):
+    countries = {}
+    for cc, results in all_results.items():
+        countries[cc] = {
+            "label": country_label(cc, "en"),
+            "label_kr": country_label(cc, "kr"),
+            "versions": build_country_versions(results, cat_map, desc_map),
+        }
+    default = DEFAULT_COUNTRY if DEFAULT_COUNTRY in countries else next(iter(countries))
+    return {"default": default, "countries": countries}
 
 
 # ============================================================
-# 7. HTML 대시보드
+# 7. HTML 대시보드 (국가 드롭다운 활성)
 # ============================================================
 HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>__COUNTRY__ Activity Index Dashboard</title>
+<title>Activity Index Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -318,12 +417,10 @@ select:hover,.vbtn:hover{border-color:var(--muted)}
 <body>
 <div class="header-row">
   <div class="header-left">
-    <h1>__COUNTRY__ — Activity Index</h1>
+    <h1 id="page-title">Activity Index</h1>
     <p class="sub">Category PCA · Equal-Weight GDP Proxy · YoY half-life 24m / Momentum 3m3m half-life 12m · EWM z-score · generated __NOW__</p>
   </div>
-  <select class="country-select" id="country-filter">
-    <option value="US">__COUNTRY__</option>
-  </select>
+  <select class="country-select" id="country-filter"></select>
 </div>
 
 <div class="tabs">
@@ -365,6 +462,7 @@ select:hover,.vbtn:hover{border-color:var(--muted)}
 const DATA = __DATA__;
 const COLORS = ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948','#b07aa1',
 '#ff9da7','#9c755f','#bab0ac','#86bcb6','#d37295','#fabfd2','#8cd17d','#499894','#e6a23c'];
+const CC_ORDER = ['US','AU','CA','DE','JP','UK'];
 
 function dpr(cv){const r=window.devicePixelRatio||1;const w=cv.clientWidth;
 cv.width=w*r;cv.height=parseInt(cv.getAttribute('height'))*r;
@@ -425,49 +523,67 @@ x.beginPath();let st2=false;
 s.forEach((v,i)=>{if(v==null)return;const px=xP(i),py=yP(v);
 if(!st2){x.moveTo(px,py);st2=true;}else x.lineTo(px,py);});x.stroke();});}
 
-// ---------- 렌더 ----------
-const VY=DATA.versions['YoY'], VM=DATA.versions['Momentum'];
-// ---- 기간 선택 (메인 차트 2개): 3,6,9,12,24,36개월 + 이후 1년 단위 + 전체 ----
+// ---------- 국가 선택 ----------
+const ccSel=document.getElementById('country-filter');
+const codes=Object.keys(DATA.countries);
+const ordered=CC_ORDER.filter(c=>codes.includes(c)).concat(codes.filter(c=>!CC_ORDER.includes(c)));
+ordered.forEach(cc=>{const o=document.createElement('option');o.value=cc;
+o.textContent=(DATA.countries[cc].label_kr||cc)+' ('+cc+')';ccSel.appendChild(o);});
+let CC=(DATA.default&&codes.includes(DATA.default))?DATA.default:ordered[0];
+ccSel.value=CC;
+
+let VY=null,VM=null;   // 현재 국가의 YoY / Momentum
+const EMPTY={dates:[],gdp:{index:[],contrib:{}},lei:{index:[]},categories:{}};
+function setCountry(cc){CC=cc;
+const vs=DATA.countries[CC].versions;
+VY=vs['YoY']||EMPTY;
+VM=vs['Momentum']||EMPTY;
+document.getElementById('page-title').textContent=(DATA.countries[CC].label||CC)+' — Activity Index';}
+
+// ---- 기간 선택 ----
 const rangeSel=document.getElementById('range-select');
+const leiRangeSel=document.getElementById('lei-range-select');
 const RANGE_OPTS=[[1,'1M'],[3,'3M'],[6,'6M'],[12,'12M'],[24,'2Y'],[36,'3Y'],[48,'4Y'],[60,'5Y'],[120,'10Y'],[240,'20Y']];
-function buildRange(sel,total){const avail=RANGE_OPTS.filter(([m])=>m<=total);
+function buildRange(sel,total){const prev=sel.value;sel.innerHTML='';
+const avail=RANGE_OPTS.filter(([m])=>m<=total);
 const list=avail.length?avail:[[total,'전체']];
 list.forEach(([m,lab])=>{const o=document.createElement('option');o.value=m;o.textContent=lab;sel.appendChild(o);});
 const oa=document.createElement('option');oa.value='all';oa.textContent='전체';sel.appendChild(oa);
-let def=list.some(([m])=>m===36)?'36':String(list[list.length-1][0]);sel.value=def;}
-(function(){buildRange(rangeSel,Math.max(VY.dates.length,VM.dates.length));})();
+const vals=[...sel.options].map(o=>o.value);
+if(prev&&vals.includes(prev)){sel.value=prev;}
+else{sel.value=list.some(([m])=>m===36)?'36':String(list[list.length-1][0]);}}
 function sliceLast(a,n){return n==='all'?a:a.slice(-n);}
 function sliceObj(o,n){const r={};Object.keys(o).forEach(k=>r[k]=sliceLast(o[k],n));return r;}
+
 function renderMain(){const n=rangeSel.value==='all'?'all':parseInt(rangeSel.value);
 contribChart('gdp-yoy',sliceLast(VY.dates,n),sliceObj(VY.gdp.contrib,n),sliceLast(VY.gdp.index,n),'lg-yoy');
 contribChart('gdp-mom',sliceLast(VM.dates,n),sliceObj(VM.gdp.contrib,n),sliceLast(VM.gdp.index,n),'lg-mom');}
 rangeSel.onchange=renderMain;
-renderMain();
-// ---- LEI 기간 선택 ----
-const leiRangeSel=document.getElementById('lei-range-select');
-(function(){buildRange(leiRangeSel,Math.max(VY.dates.length,VM.dates.length));})();
+
 function renderLeiMain(){const n=leiRangeSel.value==='all'?'all':parseInt(leiRangeSel.value);
 lineChart(document.getElementById('lei-yoy'),sliceLast(VY.dates,n),[sliceLast(VY.lei.index,n)],['#1a7a4c']);
 lineChart(document.getElementById('lei-mom'),sliceLast(VM.dates,n),[sliceLast(VM.lei.index,n)],['#1a7a4c']);}
 leiRangeSel.onchange=renderLeiMain;
-renderLeiMain();
 
 // 카테고리 패널 (YoY 검정 / Momentum 주황)
-const catGrid=document.getElementById('cat-grid');
+function renderCatGrid(){const catGrid=document.getElementById('cat-grid');catGrid.innerHTML='';
 Object.keys(VY.categories).filter(c=>c!=='LEI').forEach(cat=>{
 const p=document.createElement('div');p.className='panel';
 p.innerHTML=`<div class="t">${cat} <span style="color:var(--muted2);font-weight:400">— YoY(검정) / Momentum(주황)</span></div><canvas height="170"></canvas>`;
 catGrid.appendChild(p);
 lineChart(p.querySelector('canvas'),VY.dates,
-[VY.categories[cat].index, VM.categories[cat]?VM.categories[cat].index:[]],['#1a1c1f','#f28e2b']);});
+[VY.categories[cat].index, VM.categories[cat]?VM.categories[cat].index:[]],['#1a1c1f','#f28e2b']);});}
 
 // 드릴다운
 const sel=document.getElementById('cat-select');
-Object.keys(VY.categories).filter(c=>c!=='LEI').forEach(c=>{
-const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
 let drillVer='YoY';
-function renderDrill(){const V=DATA.versions[drillVer];const cat=sel.value;
+function buildDrillSelect(){const prev=sel.value;sel.innerHTML='';
+const cats=Object.keys(VY.categories).filter(c=>c!=='LEI');
+cats.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
+if(prev&&cats.includes(prev))sel.value=prev;}
+function renderDrill(){const V=drillVer==='YoY'?VY:VM;const cat=sel.value;
 const g=document.getElementById('drill-grid');g.innerHTML='';
+if(!cat||!V.categories[cat])return;
 const ind=V.categories[cat].indicators;
 Object.keys(ind).forEach((name,i)=>{
 const p=document.createElement('div');p.className='panel';
@@ -478,11 +594,10 @@ sel.onchange=renderDrill;
 document.querySelectorAll('.vbtn:not(.lei-vbtn)').forEach(b=>{b.onclick=()=>{
 document.querySelectorAll('.vbtn:not(.lei-vbtn)').forEach(x=>x.classList.remove('active'));
 b.classList.add('active');drillVer=b.dataset.ver;renderDrill();};});
-renderDrill();
 
 // LEI 지표 그리드
 let leiVer='YoY';
-function renderLei(){const V=DATA.versions[leiVer];
+function renderLei(){const V=leiVer==='YoY'?VY:VM;
 const g=document.getElementById('lei-grid');g.innerHTML='';
 const ind=V.categories['LEI']?V.categories['LEI'].indicators:{};
 Object.keys(ind).forEach((name,i)=>{
@@ -493,7 +608,18 @@ lineChart(p.querySelector('canvas'),V.dates,[ind[name]],[COLORS[i%COLORS.length]
 document.querySelectorAll('.lei-vbtn').forEach(b=>{b.onclick=()=>{
 document.querySelectorAll('.lei-vbtn').forEach(x=>x.classList.remove('active'));
 b.classList.add('active');leiVer=b.dataset.ver;renderLei();};});
-renderLei();
+
+// ---------- 전체 렌더 (국가 변경 시 재실행) ----------
+function renderAll(){
+buildRange(rangeSel,Math.max(VY.dates.length,VM.dates.length));
+buildRange(leiRangeSel,Math.max(VY.dates.length,VM.dates.length));
+buildDrillSelect();
+renderMain();renderCatGrid();renderDrill();
+renderLeiMain();renderLei();}
+
+ccSel.onchange=()=>{setCountry(ccSel.value);renderAll();};
+setCountry(CC);
+renderAll();
 
 // 탭
 document.querySelectorAll('.tab').forEach(t=>{t.onclick=()=>{
@@ -510,7 +636,6 @@ if(t.dataset.tab==='lei'){renderLeiMain();renderLei();}};});
 
 def save_dashboard(payload):
     html = (HTML_TEMPLATE
-            .replace("__COUNTRY__", COUNTRY)
             .replace("__NOW__", pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"))
             .replace("__DATA__", json.dumps(payload, ensure_ascii=False)))
     OUT_HTML.write_text(html, encoding="utf-8")
@@ -522,28 +647,52 @@ def save_dashboard(payload):
 # ============================================================
 def main():
     print("=" * 60)
-    print(f"{COUNTRY} — Category PCA / GDP Proxy")
+    print("Country PCA / GDP Proxy (AU CA DE JP UK US)")
     print("=" * 60)
-    wide, cat_map, rule_map, desc_map = load_data()
+    wide, cat_map, rule_map, desc_map, ctry_map = load_data()
     print(f"데이터: {wide.shape[0]}행 x {wide.shape[1]}지표 "
           f"({wide.index[0]:%Y-%m} ~ {wide.index[-1]:%Y-%m})")
 
-    results = {}
-    for ver, cfg in VERSIONS.items():
-        print(f"\n[{ver}] halflife={cfg['halflife']}, mode={cfg['mode']}")
-        r = run_version(wide, cat_map, rule_map, cfg["halflife"], cfg["mode"])
-        g = r["gdp"].dropna()
-        print(f"  GDP proxy: {g.index[0]:%Y-%m} ~ {g.index[-1]:%Y-%m} "
-              f"(mean {g.mean():.2f}, std {g.std():.2f})")
-        if len(r["lei"].dropna()):
-            l = r["lei"].dropna()
-            print(f"  LEI      : {l.index[0]:%Y-%m} ~ {l.index[-1]:%Y-%m}")
-        results[ver] = r
+    # 국가별 컬럼 분리 (드롭다운 순서 = COUNTRIES 순서, 그 외 코드는 뒤에)
+    present = sorted({cc for c in wide.columns for cc in ctry_map[c]})
+    ordered = [cc for cc in COUNTRIES if cc in present] + [cc for cc in present if cc not in COUNTRIES]
+    unknown = [cc for cc in present if cc not in COUNTRIES]
+    if unknown:
+        print(f"[WARN] COUNTRIES에 정의 안 된 국가코드 발견(코드 그대로 표기): {unknown}")
 
-    save_excel(results, cat_map, desc_map)
-    save_dashboard(build_payload(results, cat_map, desc_map))
-    print("\n완료.")
-    return results
+    all_results = {}
+    for cc in ordered:
+        cols = [c for c in wide.columns if cc in ctry_map[c]]
+        print(f"\n### {cc} ({country_label(cc)}) — 지표 {len(cols)}개")
+        if len(cols) < 2:
+            print(f"  [WARN] {cc}: 지표 부족 — 국가 스킵")
+            continue
+        sub = wide[cols].dropna(how="all")
+        results = {}
+        for ver, cfg in VERSIONS.items():
+            print(f"[{cc}·{ver}] halflife={cfg['halflife']}, mode={cfg['mode']}")
+            r = run_version(sub, cat_map, rule_map, cfg["halflife"], cfg["mode"], tag=f"{cc}·")
+            g = r["gdp"].dropna()
+            if len(g):
+                print(f"  GDP proxy: {g.index[0]:%Y-%m} ~ {g.index[-1]:%Y-%m} "
+                      f"(mean {g.mean():.2f}, std {g.std():.2f})")
+            if len(r["lei"].dropna()):
+                l = r["lei"].dropna()
+                print(f"  LEI      : {l.index[0]:%Y-%m} ~ {l.index[-1]:%Y-%m}")
+            results[ver] = r
+        # GDP·LEI 둘 다 빈 국가는 대시보드에서 제외
+        if all(len(r["gdp"].dropna()) == 0 and len(r["lei"].dropna()) == 0 for r in results.values()):
+            print(f"  [WARN] {cc}: 산출된 지수 없음 — 국가 스킵")
+            continue
+        all_results[cc] = results
+
+    if not all_results:
+        raise SystemExit("[중단] 산출된 국가가 하나도 없습니다.")
+
+    save_excel(all_results, cat_map, desc_map)
+    save_dashboard(build_payload(all_results, cat_map, desc_map))
+    print(f"\n완료. 국가: {list(all_results.keys())}")
+    return all_results
 
 
 if __name__ == "__main__":

@@ -5,6 +5,9 @@ DB를 거치지 않고 Haver → Excel로 직행 + 증분 수집.
 엑셀 구조 (시트 2개):
   - Wide      : 날짜 × 티커 패널. 컬럼 헤더는 descriptor 기준(중복 시 ticker_pk 병기)
   - Metadata  : 모든 티커의 ticker_pk / code / descriptor / datatype / frequency
+                + tickers.xlsx 의 Category / Country 열을 마지막에 병기
+                (Country: AU/CA/DE/JP/UK/US — pca_gdp.py 가 국가별 PCA 분리에 사용.
+                 한 티커가 여러 국가에 쓰이면 "US,CA" 처럼 콤마로 병기된다)
 
 부가:
   - last_dates.json 에 티커별 마지막 받은 날짜 저장
@@ -57,8 +60,8 @@ def ticker_to_pk(ticker):
 # ─────────────────────────────────────────────────────
 # Metadata 시트 빌드 (모든 티커의 code / descriptor / datatype / frequency / category)
 # ─────────────────────────────────────────────────────
-def build_metadata_sheet(all_tickers, logger, category_map=None):
-    empty_cols = ["ticker_pk"] + META_COLS + ["category"]
+def build_metadata_sheet(all_tickers, logger, category_map=None, country_map=None):
+    empty_cols = ["ticker_pk"] + META_COLS + ["category", "country"]
     if not all_tickers:
         return pd.DataFrame(columns=empty_cols)
 
@@ -76,11 +79,15 @@ def build_metadata_sheet(all_tickers, logger, category_map=None):
     out = out.drop_duplicates(subset=["ticker_pk"], keep="first")
     out = out.sort_values("ticker_pk").reset_index(drop=True)
 
-    # tickers.xlsx의 Category 열을 ticker_pk 기준으로 마지막 열에 병기
+    # tickers.xlsx의 Category / Country 열을 ticker_pk 기준으로 마지막 열에 병기
     if category_map:
         out["category"] = out["ticker_pk"].astype(str).map(category_map).fillna("")
     else:
         out["category"] = ""
+    if country_map:
+        out["country"] = out["ticker_pk"].astype(str).map(country_map).fillna("")
+    else:
+        out["country"] = ""
     return out
 
 
@@ -191,6 +198,28 @@ def main():
             cat = row[_cat_col]
             category_map[ticker_to_pk(tk)] = "" if pd.isna(cat) else str(cat).strip()
 
+    # tickers.xlsx의 Country 열(AU/CA/DE/JP/UK/US) → ticker_pk 기준 매핑
+    # 한 티커가 여러 국가에 쓰일 수 있다(예: US ISM을 CA 스필오버 지표로도 사용).
+    # 셀에 "US,CA" 처럼 콤마로 적거나 같은 티커를 여러 행에 적으면 전부 합쳐 콤마로 병기한다.
+    # pca_gdp.py 가 이 값을 split(",") 해서 국가별 지표 집합을 구성한다.
+    _ctry_col = next((c for c in _tickers_df.columns if str(c).strip().lower() == "country"), None)
+    country_sets = {}
+    if _ctry_col is not None:
+        for _, row in _tickers_df.iterrows():
+            tk = row[_ticker_col]
+            if pd.isna(tk):
+                continue
+            pk = ticker_to_pk(tk)
+            bucket = country_sets.setdefault(pk, [])
+            ctry = row[_ctry_col]
+            if pd.isna(ctry):
+                continue
+            for part in str(ctry).replace("/", ",").split(","):
+                part = part.strip().upper()
+                if part and part not in bucket:
+                    bucket.append(part)
+    country_map = {pk: ",".join(ccs) for pk, ccs in country_sets.items()}
+
     state   = load_state()
 
     # 1) 티커를 (기존 / 신규) 두 그룹으로 분리
@@ -238,7 +267,7 @@ def main():
                             .sort_index())
 
     # 7) Metadata 시트 (모든 티커) — 마지막 열에 category 병기
-    meta_sheet = build_metadata_sheet(tickers, logger, category_map)
+    meta_sheet = build_metadata_sheet(tickers, logger, category_map, country_map)
 
     # 8) Wide 컬럼을 descriptor로 리네임
     header_map = build_header_map(list(wide_internal.columns), meta_sheet)

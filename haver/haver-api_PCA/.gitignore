@@ -9,7 +9,12 @@ tickers.csv
 invalid_tickers.txt
 test_summary_output.csv
 
+# 스크립트가 만드는 백업본
+*.bak
+
 # raw data / 결과값은 공개 (비밀키만 제외)
 !Meta data_Raw data.xlsx
 !Meta data_Raw data_backup.xlsx
 !tickers.xlsx
+# 티커 선정의 원본 (국가별 시트 + 제외 사유). tickers.xlsx 는 여기서 생성된다.
+!tickerlist_confirmed.xlsx
