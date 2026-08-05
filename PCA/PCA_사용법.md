@@ -92,8 +92,29 @@
 - **`intsrvys:n158vro` (JP TDB Economic Trends) 2020-08 단종** — 시작이 아니라 *끝*이 잘려서
   JP LEI 가 최근 6년치를 통째로 잃었다 → 제외함.
 
-점검 방법: 카탈로그 CSV(`db_catalog/*.csv`)에 `startdate` / `enddate` 컬럼이 있으니
-티커를 확정하기 전에 여기서 기간을 먼저 볼 것.
+점검 방법: 카탈로그 CSV(`haver/haver-api_PCA/db_catalog/*.csv`)에 `startdate` / `enddate`
+컬럼이 있으니 티커를 확정하기 전에 여기서 기간을 먼저 볼 것.
+
+카탈로그가 없는 DB 는 덤프해서 만든다:
+
+```
+python haver\haver-api_PCA\dump_db_catalog_v2.py    # 여러 DB 를 한 방 호출로 (빠름)
+python haver\haver-api_PCA\dump_big_catalog.py UK   # 대형 DB — 청크·중간저장·이어받기
+```
+
+`UK` 는 시리즈가 너무 많아 v2 의 한 방 호출이 실패한다(그래서 catalog_UK.csv 만 없었다).
+`dump_big_catalog.py` 는 실패하면 청크를 절반씩 줄여가며 받고 청크마다 CSV 에 append 하므로,
+중간에 끊겨도 받은 데까지 남고 다시 실행하면 이어받는다.
+
+## 카테고리에 장기 지표가 1개뿐이면 지수가 안 나온다
+
+PCA 는 상관행렬이 필요해서 **그 시점에 지표가 2개 이상**이어야 한다.
+1개뿐인 구간은 지수가 만들어지지 않고, 두 번째가 합류한 뒤에도
+YoY(12개월) → z-score(12개월) → 상관(12개월)이 겹쳐 약 3년이 더 밀린다.
+
+GDP 프록시는 카테고리 지수들의 **교집합**이라, 나머지가 멀쩡해도 카테고리 하나가 짧으면
+그 나라 전체가 끌려간다. 실제로 JP·UK 는 capex 에 장기 지표가 1개뿐이라
+GDP 프록시가 2020~2021년부터였고, 자본재 계열을 하나씩 추가해 해소했다.
 
 ## 산출물
 
