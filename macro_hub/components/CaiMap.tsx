@@ -117,7 +117,11 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
         <h3 className="serif text-[15px] mb-2.5">Headline + 섹터 기여도</h3>
         <div style={{ height: 340 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <ComposedChart data={rows} margin={{ top: 6, right: 12, left: -10, bottom: 0 }}>
+            {/* stackOffset="sign": 기본값(none)은 앞 섹터의 누적합 위에 그냥 얹어서,
+                음수 섹터가 앞에 오면 양수 기여도가 0선 아래에 그려진다.
+                (US MAP 08-21: Manufacturing +1.81 이 -2.07~-0.26 구간에 그려짐)
+                sign 은 양수는 0 위로, 음수는 0 아래로 나눠 쌓는다. */}
+            <ComposedChart data={rows} stackOffset="sign" margin={{ top: 6, right: 12, left: -10, bottom: 0 }}>
               <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
               <XAxis dataKey="date" {...axis} />
               <YAxis tick={axis.tick} />
