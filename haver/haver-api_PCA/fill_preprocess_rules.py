@@ -149,6 +149,16 @@ def classify(datatype, descriptor):
     return "level", "review", f"datatype '{datatype}' 미분류 — 확인 필요"
 
 
+def rule_column(pre):
+    """전처리 시트의 level/diffusion 열 이름.
+       'rule' 열이 있으면 그걸 쓰고, 없으면 옛 구조(3번째 열 = 라벨)로 폴백.
+       formula/category 같은 열이 뒤에 붙어도 안전하도록 이름으로 찾는다."""
+    for c in pre.columns:
+        if str(c).strip().lower() == "rule":
+            return c
+    return pre.columns[2] if len(pre.columns) >= 3 else pre.columns[-1]
+
+
 def nonpositive_series():
     """Wide 시트에서 0 이하 값이 있는 지표 → {ticker_pk: 개수}.
 
@@ -226,7 +236,7 @@ def draft_from_confirmed():
     try:
         pre = pd.read_excel(DATA_FILE, sheet_name=SHEET)
         known = dict(zip(pre["ticker_pk"].astype(str),
-                         pre.iloc[:, -1].astype(str).str.strip().str.lower()))
+                         pre[rule_column(pre)].astype(str).str.strip().str.lower()))
     except Exception:
         known = {}
     prop["기존"] = prop["ticker_pk"].map(known).fillna("")
@@ -279,7 +289,7 @@ def main():
     meta = pd.read_excel(DATA_FILE, sheet_name="Metadata")
     pre  = pd.read_excel(DATA_FILE, sheet_name=SHEET)
 
-    rule_col = pre.columns[-1]                      # 보통 'Unnamed: 2'
+    rule_col = rule_column(pre)
     have = set(pre["ticker_pk"].astype(str))
 
     missing = meta[~meta["ticker_pk"].astype(str).isin(have)].copy()
@@ -320,8 +330,12 @@ def main():
         head = "자동 분류 (확신 높음)" if conf == "high" else "★ 사람이 확인 필요"
         print(f"--- {head} — {len(sub)}건 ---")
         for _, r in sub.sort_values(["country", "category", "ticker_pk"]).iterrows():
-            print(f"  {r['country']:5s} {r['category']:9s} {r['rule']:9s} "
-                  f"{r['ticker_pk']:26s} [{r['datatype']}] {r['descriptor']}")
+            # tickers.xlsx 에 Category/Country 가 비어 있으면 NaN(float)이 들어와
+            # ':9s' 포맷에서 죽었다 (canada:v6911351). 빈 값은 '-' 로 채워 출력만 넘긴다.
+            def _s(v):
+                return "-" if pd.isna(v) else str(v)
+            print(f"  {_s(r['country']):5s} {_s(r['category']):9s} {_s(r['rule']):9s} "
+                  f"{_s(r['ticker_pk']):26s} [{_s(r['datatype'])}] {_s(r['descriptor'])}")
             if conf == "review":
                 print(f"        └ {r['why']}")
         print()

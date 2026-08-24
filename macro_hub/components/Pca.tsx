@@ -14,6 +14,17 @@ const PCA_COUNTRIES: [string, string][] = [
 ]
 const EMPTY_VER: PcaVersion = { dates: [], gdp: { index: [], contrib: {} }, lei: { index: [] }, categories: {} }
 
+// 버전 이름이 'YoY' 라서 지수 전체가 YoY 인 것처럼 읽히는데, 실제로는 그렇지 않다.
+// 변환은 지표 유형별로 갈린다 (pca_gdp.py transform):
+//   level(수준지표, 81/181)      YoY: 3mma 의 12개월 로그차분 / Mom: 3mma 의 3개월 로그차분
+//   diffusion(서베이·PMI, 100/181) YoY: 원계열 그대로     / Mom: 3mma 의 3개월 차분
+// 즉 절반 이상이 YoY 변환을 아예 받지 않는다. 두 버전의 실제 차이는 '관측 주기와 반감기'다.
+const VER_LABEL: Record<string, string> = { YoY: '장기', Momentum: '모멘텀' }
+const VER_DESC: Record<string, string> = {
+  YoY: '수준지표는 전년동월비, 서베이는 원계열 · 반감기 24M',
+  Momentum: '수준지표는 3m/3m, 서베이는 3개월 차분 · 반감기 12M',
+}
+
 function tail<T>(arr: T[], months: number) {
   return months >= 9999 ? arr : arr.slice(Math.max(0, arr.length - months))
 }
@@ -67,10 +78,10 @@ export default function Pca({ data }: { data: PcaData }) {
   const VerToggle = ({ ver, set }: { ver: string; set: (v: 'YoY' | 'Momentum') => void }) => (
     <span className="flex gap-1">
       {(['YoY', 'Momentum'] as const).map((vv) => (
-        <button key={vv} onClick={() => set(vv)}
+        <button key={vv} onClick={() => set(vv)} title={VER_DESC[vv]}
           className={'rounded-md border px-3 py-1 text-xs font-semibold ' +
             (ver === vv ? 'bg-[var(--badge)] text-white border-[var(--badge)]' : 'bg-white border-[var(--line)] hover:bg-[var(--head)]')}>
-          {vv}
+          {VER_LABEL[vv]}
         </button>
       ))}
     </span>
@@ -174,7 +185,7 @@ export default function Pca({ data }: { data: PcaData }) {
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
               <Tooltip contentStyle={{ fontSize: 11 }} />
-              <Line type="monotone" dataKey="LEI" name={`LEI ${title.includes('Momentum') ? 'Momentum' : 'YoY'}`} stroke="#6e1f1f" strokeWidth={1.8} dot={false} connectNulls />
+              <Line type="monotone" dataKey="LEI" name="LEI" stroke="#6e1f1f" strokeWidth={1.8} dot={false} connectNulls />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -223,10 +234,10 @@ export default function Pca({ data }: { data: PcaData }) {
       {tab === 'gdp' && (
         <>
           <div className="mb-2.5"><RangeSel value={gdpMonths} onChange={setGdpMonths} /></div>
-          <Contrib v={yoy} months={gdpMonths} title="GDP Proxy — YoY (Contributions)" />
-          <Contrib v={mom} months={gdpMonths} title="GDP Proxy — Momentum 3m/3m (Contributions)" />
+          <Contrib v={yoy} months={gdpMonths} title={`GDP Proxy — ${VER_LABEL.YoY} 기여도 · ${VER_DESC.YoY}`} />
+          <Contrib v={mom} months={gdpMonths} title={`GDP Proxy — ${VER_LABEL.Momentum} 기여도 · ${VER_DESC.Momentum}`} />
 
-          <Card title="카테고리별 지수 (YoY vs Momentum)">
+          <Card title={`카테고리별 지수 (${VER_LABEL.YoY} vs ${VER_LABEL.Momentum})`}>
             <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
               {cats.map((c) => <CatDual key={c} cat={c} months={gdpMonths} />)}
             </div>
@@ -251,8 +262,8 @@ export default function Pca({ data }: { data: PcaData }) {
       {tab === 'lei' && (
         <>
           <div className="mb-2.5"><RangeSel value={leiMonths} onChange={setLeiMonths} /></div>
-          <LeiLine v={yoy} months={leiMonths} title="LEI — YoY" />
-          <LeiLine v={mom} months={leiMonths} title="LEI — Momentum 3m/3m" />
+          <LeiLine v={yoy} months={leiMonths} title={`LEI — ${VER_LABEL.YoY} · ${VER_DESC.YoY}`} />
+          <LeiLine v={mom} months={leiMonths} title={`LEI — ${VER_LABEL.Momentum} · ${VER_DESC.Momentum}`} />
           <Card title="LEI 구성 지표 z-score" control={<VerToggle ver={leiVer} set={setLeiVer} />}>
             <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
               {leiItems.map((it, j) => <MiniZ key={j} name={it.name} dates={it.dates} vals={it.vals} />)}
