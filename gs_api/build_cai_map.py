@@ -18,6 +18,7 @@ build_cai_map.py — GS CAI + MAP 대시보드 탭 생성기
 
 import os
 import json
+import time
 import datetime as dt
 import pandas as pd
 from dotenv import load_dotenv
@@ -83,13 +84,46 @@ MAP_SECTORS = {
 MAP_HEADLINE = "map"
 
 
+def _fetch_one(ds_id, geo, start, end, tries=3):
+    """국가 1개 조회. 타임아웃/일시 오류는 지수 백오프로 재시도."""
+    for i in range(tries):
+        try:
+            return Dataset(ds_id).get_data(startDate=start, endDate=end,
+                                           geographyId=[geo])
+        except Exception as e:
+            if i == tries - 1:
+                raise
+            wait = 5 * 2 ** i
+            print(f"     {geo:6s} 재시도 {i + 1}/{tries - 1} "
+                  f"({type(e).__name__}) — {wait}초 대기")
+            time.sleep(wait)
+
+
 def fetch(ds_id, start, end):
-    print(f"[..] {ds_id} 조회")
-    df = Dataset(ds_id).get_data(startDate=start, endDate=end, geographyId=GEO)
-    if "date" not in df.columns:
-        df = df.reset_index()
+    """국가별로 쪼개서 조회.
+       17개국을 한 번에 당기면 gs_quant 읽기 타임아웃(65초)을 넘겨 통째로 실패한다.
+       (GsSession.use 에는 timeout 인자가 없어 값을 올릴 수 없음)
+       국가 단위면 5~25초라 여유가 있고, 일부가 끝내 실패해도 나머지로 진행한다."""
+    print(f"[..] {ds_id} 조회 ({len(GEO)}개국 분할)")
+    parts, failed = [], []
+    for geo in GEO:
+        try:
+            d = _fetch_one(ds_id, geo, start, end)
+        except Exception as e:
+            failed.append(geo)
+            print(f"     {geo:6s} 실패 — 건너뜀 ({type(e).__name__})")
+            continue
+        if d is None or not len(d):
+            continue
+        if "date" not in d.columns:
+            d = d.reset_index()
+        parts.append(d)
+    if not parts:
+        raise SystemExit(f"[X] {ds_id}: 전 국가 조회 실패")
+    df = pd.concat(parts, ignore_index=True)
     df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
-    print(f"     {len(df):,}행, {df['geographyId'].nunique()}개 지역")
+    print(f"     {len(df):,}행, {df['geographyId'].nunique()}개 지역"
+          + (f", 실패 {failed}" if failed else ""))
     return df
 
 
