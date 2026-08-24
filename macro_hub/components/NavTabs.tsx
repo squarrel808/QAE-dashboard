@@ -10,6 +10,7 @@ const TABS = [
   { href: '/pca', label: 'PCA' },
   { href: '/caimap', label: 'CAI' },
   { href: '/cpidist', label: 'CPI 분포' },
+  { href: '/consensus', label: 'Consensus' },
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
 ]
