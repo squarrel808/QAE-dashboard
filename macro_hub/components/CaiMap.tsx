@@ -114,23 +114,45 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
       </div>
 
       <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-3.5">
-        <h3 className="serif text-[15px] mb-2.5">Headline + 섹터 기여도</h3>
+        <h3 className="serif text-[15px] mb-2.5">
+          {view === 'cai' ? 'Headline + 섹터 기여도' : 'Headline + 섹터별 서프라이즈'}
+        </h3>
         <div style={{ height: 340 }}>
           <ResponsiveContainer width="100%" height="100%">
-            {/* stackOffset="sign": 기본값(none)은 앞 섹터의 누적합 위에 그냥 얹어서,
-                음수 섹터가 앞에 오면 양수 기여도가 0선 아래에 그려진다.
-                (US MAP 08-21: Manufacturing +1.81 이 -2.07~-0.26 구간에 그려짐)
-                sign 은 양수는 0 위로, 음수는 0 아래로 나눠 쌓는다. */}
-            <ComposedChart data={rows} stackOffset="sign" margin={{ top: 6, right: 12, left: -10, bottom: 0 }}>
-              <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
-              <XAxis dataKey="date" {...axis} />
-              <YAxis tick={axis.tick} />
-              <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-              <Tooltip contentStyle={{ fontSize: 11 }} />
-              <Legend wrapperStyle={{ fontSize: 11 }} />
-              {sectorKeys.map((s) => <Bar key={s} dataKey={s} stackId="s" fill={SCOL[s] || '#9aa0a6'} />)}
-              <Line type="monotone" dataKey="headline" stroke="#1a1c1f" strokeWidth={1.8} dot={false} connectNulls />
-            </ComposedChart>
+            {view === 'cai' ? (
+              /* CAI 섹터는 진짜 기여도라 합이 헤드라인과 정확히 일치한다(오차 0.000). 그래서 누적막대.
+                 stackOffset="sign": 기본값(none)은 앞 섹터의 누적합 위에 그냥 얹어서, 앞쪽이
+                 음수면 뒤에 오는 양수 기여도가 0선 아래에 그려진다. sign 은 양수는 0 위로,
+                 음수는 0 아래로 나눠 쌓아 각 섹터의 부호와 막대 방향이 맞는다. */
+              <ComposedChart data={rows} stackOffset="sign" margin={{ top: 6, right: 12, left: -10, bottom: 0 }}>
+                <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
+                <XAxis dataKey="date" {...axis} />
+                <YAxis tick={axis.tick} />
+                <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
+                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Legend wrapperStyle={{ fontSize: 11 }} />
+                {sectorKeys.map((s) => <Bar key={s} dataKey={s} stackId="s" fill={SCOL[s] || '#9aa0a6'} />)}
+                <Line type="monotone" dataKey="headline" stroke="#1a1c1f" strokeWidth={1.8} dot={false} connectNulls />
+              </ComposedChart>
+            ) : (
+              /* MAP 섹터는 기여도가 아니라 섹터별 서프라이즈 점수라 더할 수 없다.
+                 실제로 합이 헤드라인의 2~3배로 벌어진다 (EAagg 7.29 vs 3.13, GB 6.72 vs 2.58,
+                 US 는 -0.72 vs 0.34 로 부호까지 반대). 누적막대로 그리면 Other 같은 섹터가
+                 실제보다 훨씬 커 보인다 → 원본 대시보드처럼 각각 선으로 그린다. */
+              <LineChart data={rows} margin={{ top: 6, right: 12, left: -10, bottom: 0 }}>
+                <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
+                <XAxis dataKey="date" {...axis} />
+                <YAxis tick={axis.tick} />
+                <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
+                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Legend wrapperStyle={{ fontSize: 11 }} />
+                {sectorKeys.map((s) => (
+                  <Line key={s} type="monotone" dataKey={s} stroke={SCOL[s] || '#9aa0a6'}
+                    strokeWidth={1.4} dot={false} connectNulls />
+                ))}
+                <Line type="monotone" dataKey="headline" stroke="#1a1c1f" strokeWidth={2} dot={false} connectNulls />
+              </LineChart>
+            )}
           </ResponsiveContainer>
         </div>
       </div>
