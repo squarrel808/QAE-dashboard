@@ -29,6 +29,7 @@ Reports 탭           →  reports.json 읽어 표·검색·다운로드        
 | BofA | **BofA** | Trending |
 | JPMM_Research | **JPM** | Research |
 | HSBC_MostRead / HSBC_HouseViews | **HSBC** | Most Read / House Views |
+| UBS_MacroStrategy / UBS_EquityStrategy / UBS_Economics | **UBS** | Macro Strategy / Equity Strategy / Economics |
 
 제목은 파일명이 잘려있어서, **Claude가 PDF 본문을 보고 정식 제목**을 다시 뽑습니다.
 

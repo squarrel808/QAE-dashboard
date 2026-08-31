@@ -67,6 +67,12 @@ GS_SECTIONS = {
     "Beyond_Research": "Beyond",
     "Portfolio_Strategy_Research": "Portfolio Strategy",
 }
+# UBS Neo (download_reports.py 의 UBS_SECTIONS 키와 반드시 일치)
+UBS_SECTIONS = {
+    "UBS_MacroStrategy": "Macro Strategy",
+    "UBS_EquityStrategy": "Equity Strategy",
+    "UBS_Economics": "Economics",
+}
 # ================================================
 
 FNAME_RE = re.compile(r"^(?P<sec>.+?)_(?P<tf>1d|now|day|\d+d|\d{6})_(?P<idx>\d{2})_(?P<title>.*)\.pdf$", re.I)
@@ -89,6 +95,8 @@ def parse_filename(fname):
         return "HSBC", "Most Read", title
     if sec == "HSBC_HouseViews":
         return "HSBC", "House Views", title
+    if sec in UBS_SECTIONS:
+        return "UBS", UBS_SECTIONS[sec], title
     return sec.split("_")[0], sec.replace("_", " "), title
 
 

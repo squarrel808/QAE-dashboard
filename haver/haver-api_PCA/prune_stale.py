@@ -53,8 +53,14 @@ def main():
         if pk not in keep:
             drop_cols.append((c, pk))
 
+    # 파생 지표(formula 있는 행)는 Haver 티커가 아니라 tickers.xlsx 에 없다 — 지우면 안 된다.
+    if "formula" in pre.columns:
+        derived = pre["formula"].astype(str).str.strip().replace("nan", "").ne("")
+    else:
+        derived = pd.Series(False, index=pre.index)
+
     drop_meta = meta[~meta["ticker_pk"].astype(str).isin(keep)]
-    drop_pre  = pre[~pre["ticker_pk"].astype(str).isin(keep)]
+    drop_pre  = pre[~pre["ticker_pk"].astype(str).isin(keep) & ~derived]
 
     state = json.loads(STATE_FILE.read_text(encoding="utf-8")) if STATE_FILE.exists() else {}
     drop_state = [k for k in state if ticker_to_pk(k) not in keep]

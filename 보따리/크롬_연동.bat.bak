@@ -1,0 +1,5 @@
+@echo off
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\selenium_profile"
+ping -n 6 127.0.0.1 > nul
+echo ===== run %date% %time% ===== >> "%~dp0botari_run_%date:~0,4%%date:~5,2%%date:~8,2%.log"
+python "C:\Users\infomax\Desktop\보따리\gs리서치자료모으기_backup_20260622_101003.py" >> "%~dp0botari_run_%date:~0,4%%date:~5,2%%date:~8,2%.log" 2>&1

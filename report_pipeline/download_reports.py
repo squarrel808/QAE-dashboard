@@ -1,10 +1,12 @@
 """
-리서치 리포트 통합 다운로더 (Marquee + BofA + HSBC + JPMM)
+리서치 리포트 통합 다운로더 (Marquee + BofA + HSBC + JPMM + UBS)
  [Marquee/GS] 4개 섹션 × (1d) × 10개 = 최대 40개  + Portfolio Strategy 5개
  [BofA]       Portfolio Strategy 5개
  [HSBC]       Trending Research Reports 상위 10개
  [JPMM/JPM]   Most Read(Day) 10개 + House Views(어제~오늘)
               Research 폴더 중 "3d ago" 이내(3일 이하)만
+ [UBS]        Macro Strategy / Equity Strategy / Economics 3개 탭의
+              'All ~ Research' 목록 중 1일 이내 × 각 10개
 전제: 'C:\\selenium_profile' 전용 프로필을 사용. 첫 실행 때 각 사이트에 1회만
       수동 로그인하면, 이후로는 세션이 저장돼 로그인 상태가 계속 유지됩니다.
       (평소 쓰는 크롬과 별개라 충돌 없고, 크롬을 종료할 필요도 없음)
@@ -78,6 +80,21 @@ JPMM_IFRAME_URL = "https://markets.jpmorgan.com/mcp-home/"
 JPMM_MAX_AGE_DAYS = 1            # 매일 실행이므로 1일 이내만 (중복 방지; 필요시 숫자 조정)
 JPMM_MAX_ITEMS = 30             # 안전 상한 (무한 스크롤/과다 다운로드 방지)
 
+# UBS Neo: 왼쪽 탭 3개가 각각 별도 URL. 각 페이지 맨 아래 'All ~ Research' 패널이 목록(최신순).
+#   키는 파일명 prefix로도 쓰이므로 summarize.py 의 매핑과 반드시 일치시킬 것.
+UBS_SECTIONS = {
+    "UBS_MacroStrategy":  "https://neo.ubs.com/macrostrategy",
+    "UBS_EquityStrategy": "https://neo.ubs.com/macrostrategyequity",
+    "UBS_Economics":      "https://neo.ubs.com/economics",
+}
+UBS_PER_SECTION = 10             # 섹션당 받을 최대 개수
+UBS_MAX_AGE_DAYS = 1             # JPMM과 동일하게 1일 이내만 (매일 실행 → 중복 방지)
+
+# UBS 자동 로그인 자격증명 — BofA와 동일하게 .env 에서 읽는다(코드에 평문 저장 금지).
+UBS_LOGIN_URL = "https://neo.ubs.com/static/login.html?origin=%2fmacrostrategy"
+UBS_EMAIL    = os.environ.get("UBS_EMAIL", "")
+UBS_PASSWORD = os.environ.get("UBS_PASSWORD", "")
+
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 
@@ -106,6 +123,22 @@ def get_browser_download_dir():
 BROWSER_DL_DIR = get_browser_download_dir()
 
 
+def err1(e, limit=120):
+    """
+    예외를 '한 줄'로 압축한다.
+
+    셀레니움 예외는 str(e)에 chromedriver Stacktrace 20여 줄이 통째로 붙어서,
+    실패 1건마다 로그가 20줄씩 불어난다(하루 로그가 300줄+). 그래서 Stacktrace를
+    잘라내고 예외 타입 + 메시지 첫 줄만 남긴다.
+    """
+    msg = str(e).split("Stacktrace:")[0]
+    msg = re.sub(r"^(?:\s*Message:\s*)+", "", msg)      # 셀레니움 'Message: ' 머리말 제거
+    msg = re.sub(r"\s+", " ", msg).strip()
+    if msg in ("", "None"):                            # TimeoutException() 처럼 메시지가 없는 경우
+        return type(e).__name__
+    return f"{type(e).__name__}: {msg}"[:limit]
+
+
 def make_driver():
     opts = Options()
     # ▼ 이미 켜둔 Chrome(크롬_연동.bat, 디버깅 포트 9222)에 '붙기' → 그 창의 로그인 세션 그대로 사용.
@@ -117,7 +150,7 @@ def make_driver():
         raise RuntimeError(
             "[연결 실패] 9222 포트의 Chrome을 못 찾음 → 바탕화면 '크롬_연동.bat'을 "
             "먼저 더블클릭해 Chrome을 켜고 로그인한 뒤 다시 실행하세요. (원본: %s)"
-            % repr(e)[:100])
+            % err1(e, 100))
     # ※ 다운로드 경로를 CDP로 강제하지 않는다(위 get_browser_download_dir 설명 참고).
     #    프로필 기본 폴더(BROWSER_DL_DIR)로 받게 두고, 받은 파일을 DOWNLOAD_DIR로 옮긴다.
     driver.set_page_load_timeout(60)
@@ -548,7 +581,7 @@ def marquee_portfolio_strategy(driver):
             total += 1
             print(f"  [1d {i:02d}] 성공  {os.path.getsize(out)//1024} KB  {name[:50]}")
         except Exception as e:
-            print(f"  [1d {i:02d}] 실패  {name[:50]}  -> {e}")
+            print(f"  [1d {i:02d}] 실패  {name[:50]}  -> {err1(e)}")
         time.sleep(1)
     return total
 
@@ -591,7 +624,7 @@ def marquee_main(driver):
                     total += 1
                     print(f"  [{tf} {i:02d}] 성공  {os.path.getsize(out)//1024} KB  {name[:50]}")
                 except Exception as e:
-                    print(f"  [{tf} {i:02d}] 실패  {name[:50]}  -> {e}")
+                    print(f"  [{tf} {i:02d}] 실패  {name[:50]}  -> {err1(e)}")
                 time.sleep(1)
             open_trending(driver)
 
@@ -600,7 +633,7 @@ def marquee_main(driver):
     try:
         total += marquee_portfolio_strategy(driver)
     except Exception as e:
-        print(f"  ({PORTFOLIO_TITLE} 건너뜀: {repr(e)[:80]})")
+        print(f"  ({PORTFOLIO_TITLE} 건너뜀: {err1(e, 80)})")
 
     print(f"\nMarquee 완료: 총 {total}개")
     return total
@@ -793,7 +826,7 @@ def bofa_set_time_24h(driver, wait=18):
         time.sleep(wait)
         print(f"  TIME -> {sel.get_attribute('value')}")
     except Exception as e:
-        print(f"  (TIME 24h 설정 실패 → 기본값 사용: {repr(e)[:80]})")
+        print(f"  (TIME 24h 설정 실패 → 기본값 사용: {err1(e, 80)})")
 
 
 def bofa_set_products(driver, wanted=BOFA_PRODUCTS, wait=18):
@@ -864,7 +897,7 @@ def bofa_main(driver):
     try:
         names = bofa_report_points(driver)
     except Exception as e:
-        print(f"  (리포트 목록 조회 실패: {repr(e)[:80]})")
+        print(f"  (리포트 목록 조회 실패: {err1(e, 80)})")
         names = []
     n = len(names)
     print(f"  리포트 {n}개 (상위 {BOFA_TOTAL}개 받기)")
@@ -882,7 +915,7 @@ def bofa_main(driver):
             total += 1
             print(f"  [{i+1:02d}] 성공  {os.path.getsize(out)//1024} KB  {name[:50]}")
         except Exception as e:
-            print(f"  [{i+1:02d}] 실패  {name[:50]}  -> {e}")
+            print(f"  [{i+1:02d}] 실패  {name[:50]}  -> {err1(e)}")
             # 남은 새 탭/뷰어 정리 후 대시보드 탭으로 복귀
             if len(driver.window_handles) > 1:
                 m = driver.window_handles[0]
@@ -1062,7 +1095,7 @@ def jpmm_main(driver):
             total += 1
             print(f"  [{i:02d}] 성공  {days}d  {os.path.getsize(out)//1024} KB  {title[:50]}")
         except Exception as e:
-            print(f"  [{i:02d}] 실패  {title[:50]}  -> {e}")
+            print(f"  [{i:02d}] 실패  {title[:50]}  -> {err1(e)}")
             driver.switch_to.default_content()
         time.sleep(1)
 
@@ -1236,7 +1269,7 @@ def hsbc_main(driver):
             total += 1
             print(f"  [Day {i:02d}] 성공  {os.path.getsize(out)//1024} KB  {name[:50]}")
         except Exception as e:
-            print(f"  [Day {i:02d}] 실패  {name[:50]}  -> {e}")
+            print(f"  [Day {i:02d}] 실패  {name[:50]}  -> {err1(e)}")
         time.sleep(1)
 
     driver.get(HSBC_HOME)
@@ -1258,10 +1291,212 @@ def hsbc_main(driver):
             total += 1
             print(f"  [HV {i:02d}] 성공  {dt}  {name[:40]}")
         except Exception as e:
-            print(f"  [HV {i:02d}] 실패  {name[:40]}  -> {e}")
+            print(f"  [HV {i:02d}] 실패  {name[:40]}  -> {err1(e)}")
         time.sleep(1)
 
     print(f"  HSBC 완료: {total}개")
+    return total
+
+
+# ============================================================
+#  UBS Neo (Macro Strategy / Equity Strategy / Economics)
+# ============================================================
+# [페이지 구조]
+#  - 왼쪽 탭 3개 = 별도 URL (UBS_SECTIONS)
+#  - 각 페이지 맨 아래 'All ~ Research' 패널이 전체 목록이며 이미 최신순 정렬
+#      div.pcc-client-stream-panel__wrapper
+#        └ div.pcc-client-stream-panel__header      → 'All ...' 로 시작하는 것이 대상
+#        └ li.pcc-client-stream-panel__article      → 항목 1건
+#             a.pcc-client-stream-panel__article-title   제목 + 링크
+#             time.pcc-client-stream-panel__date         datetime="2026-08-05T05:00:18+09:00"
+#  - 리포트 PDF 취득 방식은 사이트마다 달라, 공통 헬퍼(download_in_new_tab)의
+#    (A)뷰어 fetch / (B)PDF버튼 클릭 / (C)폴더 감시 / (D)printToPDF 폴백에 맡긴다.
+
+def parse_iso_age_days(iso_text):
+    """'2026-08-05T05:00:18+09:00' → 오늘 기준 경과일수. 형식 아니면 None."""
+    t = (iso_text or "").strip()
+    if not t:
+        return None
+    t = t.replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(t)
+    except ValueError:
+        m = re.match(r"(\d{4})-(\d{2})-(\d{2})", t)
+        if not m:
+            return None
+        return (date.today() - date(*map(int, m.groups()))).days
+    return (date.today() - dt.date()).days
+
+
+def ubs_find_all_panel(driver):
+    """현재 페이지에서 헤더가 'All'로 시작하는 패널(wrapper)을 반환. 없으면 None."""
+    for w in driver.find_elements(
+            By.CSS_SELECTOR, "div.pcc-client-stream-panel__wrapper"):
+        try:
+            h = w.find_element(
+                By.CSS_SELECTOR, "div.pcc-client-stream-panel__header").text.strip()
+        except Exception:
+            continue
+        if h.lower().startswith("all"):
+            return w
+    return None
+
+
+def ubs_logged_in(driver, timeout=20):
+    """현재 화면에 리서치 패널이 떴는지 = 로그인된 상태인지."""
+    try:
+        WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, "div.pcc-client-stream-panel__wrapper")))
+        return True
+    except TimeoutException:
+        return False
+
+
+def ubs_login(driver, email=None, password=None, timeout=20):
+    """
+    UBS Neo 로그인.
+      1) 전용 프로필에 세션이 살아있으면 그대로 통과 (평소엔 이 경로)
+      2) 세션이 풀렸으면 .env 의 UBS_EMAIL/UBS_PASSWORD 로 자동 로그인
+         (BofA와 동일한 방식 — 자격증명은 코드가 아니라 .env 에 둔다)
+      3) 2FA(OTP) 화면에서 멈추면 그때만 사람이 코드 입력
+
+    [확정된 셀렉터]
+      이메일   #email_input
+      Next     button.verify-email-button
+      비밀번호 input[name='password_input']
+      제출     button.submit-1fa-password-button
+    """
+    email = email or UBS_EMAIL
+    password = password or UBS_PASSWORD
+    first_url = next(iter(UBS_SECTIONS.values()))
+
+    # 1) 세션이 살아있는지 먼저 확인
+    driver.get(first_url)
+    if ubs_logged_in(driver, timeout):
+        print("[UBS] 로그인된 세션 감지 → 로그인 단계 건너뜀")
+        return
+
+    # 2) 자동 로그인
+    if not email or not password:
+        print("[UBS] .env 에 UBS_EMAIL/UBS_PASSWORD 없음 → 수동 로그인 대기")
+    else:
+        try:
+            driver.get(UBS_LOGIN_URL)
+            el = WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.ID, "email_input")))
+            el.clear(); el.send_keys(email)
+            WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, "button.verify-email-button"))).click()
+
+            pw = WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.NAME, "password_input")))
+            pw.clear(); pw.send_keys(password)
+            print("[UBS] ID/PW 입력 완료 → 제출")
+            try:
+                WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
+                    (By.CSS_SELECTOR, "button.submit-1fa-password-button"))).click()
+            except TimeoutException:
+                pw.submit()
+
+            # 로그인 페이지를 벗어나면 성공
+            WebDriverWait(driver, 30).until(
+                lambda d: "login" not in (d.current_url or "").lower())
+            driver.get(first_url)
+            if ubs_logged_in(driver, 30):
+                print("[UBS] 자동 로그인 완료")
+                return
+        except Exception as e:
+            # 2FA(OTP) 화면이거나 폼 구조가 바뀐 경우 → 아래 수동 폴백
+            print(f"[UBS] 자동 로그인 미완료({err1(e, 80)}) → 수동 로그인 대기")
+
+    # 3) 수동 폴백 (2FA 등)
+    print("\n[UBS] 열린 브라우저에서 로그인/인증을 완료해 주세요. (neo.ubs.com)")
+    try:
+        input("       완료 후 Enter ▶ ")
+    except EOFError:
+        time.sleep(8)   # 백그라운드(stdin 없음): EOF에 죽지 말고 대기 후 진행
+    driver.get(first_url)
+    WebDriverWait(driver, 45).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "div.pcc-client-stream-panel__wrapper")))
+
+
+def ubs_collect_section(driver, url, max_age_days=UBS_MAX_AGE_DAYS,
+                        limit=UBS_PER_SECTION):
+    """한 섹션 페이지의 'All ~ Research' 목록에서 (href, title, age_days) 수집.
+    날짜를 못 읽은 항목은 목록이 최신순이므로 '오늘'로 간주하지 않고 건너뛴다."""
+    driver.get(url)
+    try:
+        WebDriverWait(driver, 40).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, "li.pcc-client-stream-panel__article")))
+    except TimeoutException:
+        pass
+    time.sleep(2)   # 패널 지연 로딩 대기
+
+    panel = ubs_find_all_panel(driver)
+    if panel is None:
+        raise RuntimeError("'All ~ Research' 패널을 찾지 못했습니다")
+
+    items, seen = [], set()
+    for li in panel.find_elements(
+            By.CSS_SELECTOR, "li.pcc-client-stream-panel__article"):
+        try:
+            a = li.find_element(
+                By.CSS_SELECTOR, "a.pcc-client-stream-panel__article-title")
+            href = a.get_attribute("href")
+            if not href or href in seen:
+                continue
+            name = a.text.strip() or a.get_attribute("title") or "report"
+
+            days = None
+            try:
+                t = li.find_element(
+                    By.CSS_SELECTOR, "time.pcc-client-stream-panel__date")
+                days = parse_iso_age_days(t.get_attribute("datetime"))
+                if days is None:
+                    days = parse_relative_age_days(t.text)   # '2 hours ago' 형식 대비
+            except Exception:
+                pass
+            if days is None or days > max_age_days:
+                continue
+
+            seen.add(href)
+            items.append((href, name, days))
+            if len(items) >= limit:
+                break
+        except Exception:
+            continue    # 동적 렌더링으로 stale 된 요소 등은 건너뜀
+    return items
+
+
+def ubs_main(driver):
+    print("\n=== UBS Neo | Macro / Equity Strategy / Economics ===")
+    ubs_login(driver)
+    total = 0
+
+    for section, url in UBS_SECTIONS.items():
+        print(f"\n--- {section} ---")
+        try:
+            items = ubs_collect_section(driver, url)
+        except Exception as e:
+            print(f"  (목록 수집 실패 → 섹션 건너뜀: {err1(e, 80)})")
+            continue
+        print(f"  {UBS_MAX_AGE_DAYS}일 이내 {len(items)}개 수집")
+
+        for i, (href, name, days) in enumerate(items, 1):
+            tf = (date.today() - timedelta(days=days)).strftime("%y%m%d")
+            out = os.path.join(DOWNLOAD_DIR, safe_name(name, i, section, tf))
+            try:
+                download_in_new_tab(driver, out, href=href)
+                total += 1
+                print(f"  [{i:02d}] 성공  {os.path.getsize(out)//1024} KB  {name[:50]}")
+            except Exception as e:
+                print(f"  [{i:02d}] 실패  {name[:50]}  -> {err1(e)}")
+            time.sleep(1)
+
+    print(f"  UBS 완료: 총 {total}개")
     return total
 
 
@@ -1273,7 +1508,7 @@ def run_site(name, fn, driver):
     try:
         return fn(driver)
     except Exception as e:
-        print(f"\n[!] {name} 단계 실패 → 건너뜀: {repr(e)[:200]}")
+        print(f"\n[!] {name} 단계 실패 → 건너뜀: {err1(e, 200)}")
         # 남은 새 탭/창 정리 후 메인 창으로 복귀
         try:
             driver.switch_to.default_content()
@@ -1294,9 +1529,11 @@ def main():
         bofa_total    = run_site("BofA", bofa_main, driver)         # 2) BofA
         jpmm_total    = run_site("JPMM", jpmm_main, driver)         # 3) JPMM
         hsbc_total    = run_site("HSBC", hsbc_main, driver)         # 4) HSBC
-        grand = marquee_total + bofa_total + hsbc_total + jpmm_total
+        ubs_total     = run_site("UBS", ubs_main, driver)           # 5) UBS Neo
+        grand = marquee_total + bofa_total + hsbc_total + jpmm_total + ubs_total
         print(f"\n전체 완료: Marquee {marquee_total} + BofA {bofa_total} "
-              f"+ HSBC {hsbc_total} + JPMM {jpmm_total} = {grand}개 → {DOWNLOAD_DIR}")
+              f"+ HSBC {hsbc_total} + JPMM {jpmm_total} + UBS {ubs_total} "
+              f"= {grand}개 → {DOWNLOAD_DIR}")
     finally:
         # 붙기 모드: quit()은 연결된 창을 닫으므로 호출하지 않음 (브라우저 유지)
         pass

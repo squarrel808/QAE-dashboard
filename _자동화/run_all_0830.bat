@@ -1,62 +1,24 @@
 @echo off
+chcp 65001 > nul
 REM ============================================================
-REM  QAE ´ë½Ãº¸µå ÀÏÀÏ ÀÚµ¿ °»½Å (¸ÅÀÏ 08:30, ÀÛ¾÷ ½ºÄÉÁÙ·¯°¡ È£Ãâ)
-REM   1) ¼¿·¹´Ï¿ò¿ë Å©·Ò(µğ¹ö±× Æ÷Æ® 9222) ½ÇÇà
-REM   2) ¸®¼­Ä¡ PDF ¼öÁı(download_reports) + ¿ä¾à(summarize)
-REM   3) ¿øº» µ¥ÀÌÅÍ °»½Å (BeforeHTML_master: °æÁ¦ÁöÇ¥/PCA/gs_api/Consensus/policytone)
-REM   4) HTML Àç»ı¼º (AfterHTML_master + master_dashboard)
-REM   5) macro_hub ´ë½Ãº¸µå JSON ºôµå (5°³ ¸ğµâ + embeds µ¿±âÈ­)
-REM   6) git Ä¿¹Ô + push -> Vercel ÀÚµ¿ Àç¹èÆ÷
-REM  ·Î±×: _ÀÚµ¿È­\logs\YYYY-MM-DD.log
+REM  QAE ëŒ€ì‹œë³´ë“œ ë§¤ì¼ ìë™ ê°±ì‹  (ì‘ì—… ìŠ¤ì¼€ì¤„ëŸ¬ "QAEëŒ€ì‹œë³´ë“œê°±ì‹ " ì´ 08:30 ì— í˜¸ì¶œ)
+REM
+REM  ë‚´ìš©ì€ ì „ë¶€ QAE\ì „ì²´ì—…ë°ì´íŠ¸.bat -> run_qae.py ì— ìˆìŠµë‹ˆë‹¤.
+REM  ì—¬ê¸°ì„œëŠ” 'ë¬´ì¸ ì‹¤í–‰ì— ë§ëŠ” ì˜µì…˜'ë§Œ ë¶™ì—¬ì„œ ê·¸ê±¸ ë¶€ë¦…ë‹ˆë‹¤.
+REM
+REM    /nohaver   Haver ëŠ” DLX Direct ë¡œê·¸ì¸ì°½(ì´ë©”ì¼+ë³´ì•ˆì½”ë“œ)ì´ ë– ì„œ ë¬´ì¸ ì‹¤í–‰ì´
+REM               ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤. ê·¸ë˜ì„œ ìˆ˜ì§‘ì€ ê±´ë„ˆë›°ê³ , PCAÂ·CPIë¶„í¬ëŠ” ê¸°ì¡´ ì—‘ì…€ë¡œ
+REM               ë‹¤ì‹œ ê·¸ë¦½ë‹ˆë‹¤. Haver ê¹Œì§€ ìƒˆë¡œ ë°›ìœ¼ë ¤ë©´ ì‚¬ëŒì´ ìˆì„ ë•Œ
+REM               QAE\ì „ì²´ì—…ë°ì´íŠ¸.bat ì„ ì§ì ‘ ë”ë¸”í´ë¦­í•˜ì„¸ìš”.
+REM    /nopause   ëì—ì„œ í‚¤ ì…ë ¥ì„ ê¸°ë‹¤ë¦¬ì§€ ì•ŠìŒ (ì•ˆ ë¶™ì´ë©´ ìŠ¤ì¼€ì¤„ëŸ¬ê°€ ë©ˆì¶° ìˆìŒ)
+REM
+REM  ë¡œê·¸Â·ì´ë ¥ : QAE\logs\   (qae_YYYYMMDD.log / run_history.csv / run_steps.csv)
+REM              -> python\scheduler_dashboard.html ì— ìë™ ë°˜ì˜
+REM  ìŠ¤ì¼€ì¤„ ë“±ë¡: ì´ í´ë”ì˜ ìŠ¤ì¼€ì¤„ë“±ë¡_0830.bat ì„ ê´€ë¦¬ì ê¶Œí•œìœ¼ë¡œ 1íšŒ ì‹¤í–‰
+REM
+REM  ë’¤ì— ì˜µì…˜ì„ ë” ë¶™ì´ë©´ ê·¸ëŒ€ë¡œ ì „ë‹¬ë©ë‹ˆë‹¤. ë¬´ì—‡ì´ ëŒì•„ê°ˆì§€ ë¨¼ì € ë³´ë ¤ë©´:
+REM     run_all_0830.bat /dryrun
 REM ============================================================
 
-set ROOT=C:\Users\infomax\Documents\python\QAE
-set LOGDIR=%ROOT%\_ÀÚµ¿È­\logs
-if not exist "%LOGDIR%" mkdir "%LOGDIR%"
-call :main >> "%LOGDIR%\%date:~0,10%.log" 2>&1
-exit /b
-
-:main
-echo ================= %date% %time% ½ÃÀÛ =================
-
-REM (0) ÆÄÀÌ½ã Ãâ·Â ÀÎÄÚµù °íÁ¤(cp949 ÄÜ¼Ö¿¡¼­ Æ¯¼ö¹®ÀÚ·Î Á×´Â °Í ¹æÁö) + venv È°¼ºÈ­
-set PYTHONUTF8=1
-set PYTHONIOENCODING=utf-8
-if exist "%ROOT%\ACMTP\.venv\Scripts\activate.bat" call "%ROOT%\ACMTP\.venv\Scripts\activate.bat"
-
-REM (1) ¼¿·¹´Ï¿ò¿ë Å©·Ò ½ÇÇà - Å©·Ò_¿¬µ¿.bat °ú µ¿ÀÏ (ÀÌ¹Ì ¶° ÀÖÀ¸¸é ±âÁ¸ Ã¢¿¡ ºÙÀ½)
-start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\selenium_profile"
-ping -n 8 127.0.0.1 > nul
-
-REM (2) ¸®¼­Ä¡ PDF ¼öÁı + ¿ä¾à (ÇÑ ´Ü°è ½ÇÆĞÇØµµ ´ÙÀ½ ´Ü°è °è¼Ó)
-echo. & echo [2/6] ¸®¼­Ä¡ PDF ¼öÁı
-python "%ROOT%\report_pipeline\download_reports.py"
-echo. & echo [2/6] »õ PDF ¿ä¾à - reports.json
-python "%ROOT%\report_pipeline\summarize.py"
-
-REM (3) ¿øº» µ¥ÀÌÅÍ °»½Å (Æú´õº° ½ÇÆĞÇØµµ °è¼Ó ÁøÇàÇÏµµ·Ï ÀÌ¹Ì ¼³°èµÊ)
-echo. & echo [3/6] BeforeHTML_master (µ¥ÀÌÅÍ ¼öÁı,°¡°ø)
-python "%ROOT%\BeforeHTML_master.py"
-
-REM (4) HTML Àç»ı¼º
-echo. & echo [4/6] AfterHTML_master (HTML »ı¼º,ÅëÇÕ)
-python "%ROOT%\AfterHTML_master.py"
-
-REM (5) macro_hub ´ë½Ãº¸µå JSON ºôµå
-echo. & echo [5/6] macro_hub JSON ºôµå
-python "%ROOT%\macro_hub\scripts\build_pairbaskets_json.py"
-python "%ROOT%\macro_hub\scripts\build_policy_json.py"
-python "%ROOT%\macro_hub\scripts\build_consensus_json.py"
-python "%ROOT%\macro_hub\scripts\build_pca_json.py"
-python "%ROOT%\macro_hub\scripts\build_caimap_json.py"
-python "%ROOT%\macro_hub\scripts\sync_embeds.py"
-
-REM (6) git Ä¿¹Ô + push -> Vercel ÀÚµ¿ Àç¹èÆ÷
-echo. & echo [6/6] git push
-cd /d "%ROOT%"
-git add -A
-git commit -m "auto: daily data %date:~0,10%"
-git push
-
-echo ================= %date% %time% ³¡ =================
-exit /b
+call "%~dp0..\ì „ì²´ì—…ë°ì´íŠ¸.bat" /nohaver /nopause %*
+exit /b %errorlevel%

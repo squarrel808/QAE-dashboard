@@ -25,6 +25,7 @@ pca_gdp.py — 국가별 카테고리 Time-Varying PCA → GDP 프록시 + LEI +
     payload 형식: {"default": "US", "countries": {"US": {"label","label_kr","versions"}, ...}}
 """
 import json
+import re
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -82,6 +83,55 @@ def ticker_to_pk(h):
     return h.lower()
 
 
+def rule_column(pre):
+    """전처리 시트의 level/diffusion 열 이름.
+       'rule' 열이 있으면 그걸 쓰고, 없으면 옛 구조(3번째 열 = 라벨)로 폴백."""
+    for c in pre.columns:
+        if str(c).strip().lower() == "rule":
+            return c
+    return pre.columns[2] if len(pre.columns) >= 3 else pre.columns[-1]
+
+
+# 수식에 허용할 문자 — ticker_pk(db:code), 숫자, 사칙연산, 괄호, 공백만
+_FORMULA_OK = re.compile(r"^[A-Za-z0-9_:.+\-*/() ]+$")
+_PK_TOKEN   = re.compile(r"[A-Za-z0-9_]+:[A-Za-z0-9_]+")
+
+
+def add_derived(wide, pre, cat_map, ctry_map, desc_map):
+    """전처리 시트의 formula 열로 파생 지표 컬럼을 만든다.
+
+    예) canada:x_nonenergy = g10:s156ix - canada:v6911351  (비에너지 수출)
+    원료 티커는 tickers.xlsx 에 두되 카테고리를 비워두면 데이터만 들어오고
+    PCA 지표로는 잡히지 않는다(아래 검증 게이트에서 제외됨).
+
+    파생 지표는 Metadata 에 없으므로 category/country/descriptor 도 이 시트에서 읽는다.
+    """
+    if "formula" not in pre.columns:
+        return wide
+    for _, r in pre.iterrows():
+        expr = str(r.get("formula", "")).strip()
+        if not expr or expr.lower() == "nan":
+            continue
+        pk = str(r["ticker_pk"]).strip()
+        if not _FORMULA_OK.match(expr):
+            raise SystemExit(f"[중단] 허용되지 않는 문자가 수식에 있습니다: {pk} = {expr}")
+        toks = sorted(set(_PK_TOKEN.findall(expr)), key=len, reverse=True)
+        missing = [t for t in toks if t not in wide.columns]
+        if missing:
+            print(f"[WARN] 파생 {pk}: 원료 없음 {missing} — 건너뜀")
+            continue
+        py = expr
+        for t in toks:                      # 긴 것부터 치환해야 부분일치가 안 생긴다
+            py = py.replace(t, f'W["{t}"]')
+        wide[pk] = eval(py, {"__builtins__": {}}, {"W": wide})
+        cat_map[pk]  = str(r.get("category", "")).strip().lower()
+        v = str(r.get("country", "")).strip().upper()
+        ctry_map[pk] = [x.strip() for x in v.split(",") if x.strip()] or [DEFAULT_COUNTRY]
+        desc_map[pk] = str(r.get("descriptor", "")).strip() or pk
+        print(f"[INFO] 파생 생성: {pk} = {expr}  (n={wide[pk].notna().sum()})")
+    return wide
+
+
 def load_data():
     wide = pd.read_excel(DATA_FILE, sheet_name="Wide")
     meta = pd.read_excel(DATA_FILE, sheet_name="Metadata")
@@ -96,7 +146,7 @@ def load_data():
     wide = wide.interpolate(method="linear", limit=2, limit_area="inside")
 
     cat_map  = dict(zip(meta["ticker_pk"].astype(str), meta["category"].astype(str).str.strip().str.lower()))
-    rule_map = dict(zip(pre["ticker_pk"].astype(str), pre.iloc[:, -1].astype(str).str.strip().str.lower()))
+    rule_map = dict(zip(pre["ticker_pk"].astype(str), pre[rule_column(pre)].astype(str).str.strip().str.lower()))
     desc_map = dict(zip(meta["ticker_pk"].astype(str), meta["descriptor"].astype(str)))
 
     # --- 국가 매핑: Metadata의 country 컬럼. 없거나 빈 값이면 DEFAULT_COUNTRY ---
@@ -112,6 +162,9 @@ def load_data():
         v = raw_ctry.get(c, "")
         ccs = [] if v in ("", "NAN", "NONE") else [x.strip() for x in v.split(",") if x.strip()]
         ctry_map[c] = ccs or [DEFAULT_COUNTRY]
+
+    # --- 파생 지표 생성 (검증 게이트 전에 — 원료는 게이트에서 빠져도 파생은 남는다) ---
+    wide = add_derived(wide, pre, cat_map, ctry_map, desc_map)
 
     # --- 검증 게이트: 규칙/카테고리 없는 지표는 경고 후 제외 ---
     drop = sorted({c for c in wide.columns if c not in rule_map}
@@ -143,21 +196,28 @@ def short_label(pk, desc_map):
 # 2. 변환 (버전별) + EWM z-score
 # ============================================================
 def transform(wide, rule_map, mode):
-    out = pd.DataFrame(index=wide.index)
+    """level 은 성장률로, diffusion 은 그대로(또는 차분).
+
+    YoY 의 level 은 3개월 이동평균을 먼저 걸고 12개월 로그차분한다.
+    원계열을 바로 로그차분하면 하드데이터가 매달 방향이 뒤집힐 만큼 노이지했다
+    (level 80개 중앙: Δz 자기상관 -0.223 → 3mma 적용 시 +0.436,
+     월간 변동폭 |Δz| 0.296 → 0.162). 대가는 GDP 프록시 기준 0~1개월 시차.
+    """
+    cols = {}
     for col in wide.columns:
         x = wide[col]
         if mode == "yoy":
             if rule_map[col] == "level":
-                out[col] = np.log(x).diff(12) * 100          # YoY %
+                cols[col] = np.log(x.rolling(3).mean()).diff(12) * 100   # 3mma 기준 YoY %
             else:
-                out[col] = x                                  # diffusion 그대로
+                cols[col] = x                                 # diffusion 그대로
         elif mode == "m3m3":
             ma3 = x.rolling(3).mean()
             if rule_map[col] == "level":
-                out[col] = np.log(ma3).diff(3) * 100          # 3m/3m %
+                cols[col] = np.log(ma3).diff(3) * 100          # 3m/3m %
             else:
-                out[col] = ma3.diff(3)                        # diffusion: 3mma 차분
-    return out.dropna(how="all")
+                cols[col] = ma3.diff(3)                        # diffusion: 3mma 차분
+    return pd.concat(cols, axis=1).dropna(how="all")
 
 
 def ewm_zscore(df, halflife):
