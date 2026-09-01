@@ -86,7 +86,8 @@ export type ReportRec = {
   title: string
   summary: string[]
   keywords: string[]
-  file: string
+  /** 원문 PDF 경로. 증권사 리서치는 라이선스 대상이라 배포하지 않으므로 보통 비어 있다. */
+  file?: string
 }
 
 // ── House Views (운용사별 하우스뷰) ──

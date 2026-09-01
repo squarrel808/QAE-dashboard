@@ -333,9 +333,14 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
                 {r.section && <div className="text-[11px] text-[var(--muted)] mt-0.5">{r.section}</div>}
               </div>
               <div>
-                <a href={r.file} download className="text-[15px] font-semibold text-[var(--ink)] hover:text-[var(--badge)] hover:underline">
-                  {r.title}
-                </a>
+                {/* 원문 PDF 는 라이선스 대상이라 배포하지 않는다. file 이 없으면 링크 대신 제목만. */}
+                {r.file ? (
+                  <a href={r.file} download className="text-[15px] font-semibold text-[var(--ink)] hover:text-[var(--badge)] hover:underline">
+                    {r.title}
+                  </a>
+                ) : (
+                  <span className="text-[15px] font-semibold text-[var(--ink)]">{r.title}</span>
+                )}
                 <ul className="mt-1.5 space-y-1">
                   {bullets.map((b, i) => (
                     <li key={i} className="text-[13px] text-[var(--muted)] leading-snug flex gap-1.5">
@@ -360,7 +365,9 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
         })}
         {filtered.length === 0 && <div className="px-4 py-10 text-center text-sm text-[var(--muted)]">검색 결과가 없습니다.</div>}
       </div>
-      <p className="text-[11px] text-[var(--muted)] mt-2">제목을 클릭하면 원문 PDF가 다운로드됩니다. (현재 더미 데이터)</p>
+      <p className="text-[11px] text-[var(--muted)] mt-2">
+        일일 통합요약 문서에서 자동 생성됩니다. 원문 PDF는 라이선스 대상이라 제공하지 않습니다.
+      </p>
     </section>
   )
 }

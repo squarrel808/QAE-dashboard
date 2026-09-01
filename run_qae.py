@@ -84,8 +84,15 @@ PIPELINE = [
 
     ("report", "수집 (download_reports.py)", "download_reports.py",
      "report_pipeline", "download_reports.py"),
-    ("report", "요약 (summarize.py)", "summarize.py",
-     "report_pipeline", "summarize.py"),
+    # PDF 재요약(summarize.py)은 제거했다. 보따리\_자동화\daily_summary.py 가 만든
+    # 통합요약 DOCX 에 같은 내용이 이미 있어 같은 자료를 두 번 요약할 이유가 없다.
+    # (pdfplumber 의존도 함께 사라졌다)
+    ("report", "파싱 (parse_daily_docx.py)", "parse_daily_docx.py",
+     "report_pipeline", "parse_daily_docx.py"),
+    ("report", "하우스뷰 (extract_houseviews.py)", "extract_houseviews.py",
+     "report_pipeline", "extract_houseviews.py"),
+    ("report", "목록 (build_reports_json.py)", "build_reports_json.py",
+     "report_pipeline", "build_reports_json.py"),
 
     ("build", "데이터 (BeforeHTML_master.py)", "BeforeHTML_master.py",
      ".", "BeforeHTML_master.py"),
