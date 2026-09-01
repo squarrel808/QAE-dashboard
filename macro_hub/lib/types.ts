@@ -88,3 +88,28 @@ export type ReportRec = {
   keywords: string[]
   file: string
 }
+
+// ── House Views (운용사별 하우스뷰) ──
+// public/data/houseviews.json — 리포트 원문에서 뽑아낸 하우스별 자산군·권역 스탠스.
+// 한 리포트가 여러 뷰를 낳을 수 있다 (예: 미국 금리 + 일본 금리).
+export type HouseStance = 'OW' | 'N' | 'UW'
+// 원문에 명시적 등급이 없고 논조로 추론한 경우가 대부분이라 confidence 가 중요하다.
+export type HouseConfidence = 'high' | 'mid' | 'low'
+export type HouseView = {
+  id: string
+  date: string          // 'YYYY-MM-DD'
+  house: string         // GS / JPM / BofA / Citi / HSBC / UBS
+  asset: string         // 매크로 / 채권 / 주식 / 코모디티
+  region: string        // US·EU·JP·CN·KR·UK·AU·EM, 권역이 무의미하면 'GLOBAL'
+  stance: HouseStance
+  rationale: string
+  title: string
+  confidence: HouseConfidence
+}
+export type HouseViewData = {
+  generatedAt?: string
+  houses: string[]
+  assets: string[]
+  regions: string[]
+  views: HouseView[]
+}
