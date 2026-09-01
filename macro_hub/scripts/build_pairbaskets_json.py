@@ -73,6 +73,45 @@ def build_real():
             d, c = series[b]
             items.append({"sector": r["sector"], "factor": r["factor"], "bbid": b, "dates": d, "close": c})
     data["sector"] = {"sectors": sectors, "factors": factors, "items": items}
+
+    # ── 전체 universe (추이비교 체크박스용) ──
+    # 큐레이션 CSV 는 78개뿐이라 이것만 쓰면 화면 유니버스가 68개로 쪼그라든다.
+    # coverage 는 233개다. 단, assetId 로 조회하면 응답 컬럼이
+    # [assetId, closePrice, updateTime] 뿐이라 bbid 가 없어 매핑이 필요하다.
+    if os.getenv("FULL_UNIVERSE", "true").lower() != "false":
+        try:
+            ds = Dataset("PAIR_BASKETS_LEVELS")
+            cov = ds.get_coverage()
+            id2bbid = dict(zip(cov["assetId"], cov["bbid"]))
+            id2name = dict(zip(cov["assetId"], cov["name"])) if "name" in cov.columns else {}
+            known = {r["bbid"]: r["label"] for r in short}
+            ids = sorted(id2bbid)
+            frames = []
+            for i in range(0, len(ids), 50):
+                try:
+                    frames.append(ds.get_data(dt.date(2012, 1, 1), dt.date.today(),
+                                              assetId=ids[i:i + 50]))
+                except Exception as e:
+                    print(f"    [경고] chunk 실패(건너뜀): {e}")
+            udf = pd.concat(frames) if frames else pd.DataFrame()
+            if len(udf):
+                if "date" not in udf.columns:
+                    udf = udf.reset_index()
+                udf["date"] = pd.to_datetime(udf["date"])
+                if "bbid" not in udf.columns:
+                    udf["bbid"] = udf["assetId"].map(id2bbid)
+                udf = udf[udf["bbid"].notna()]
+                uni = []
+                for b, sub in udf.groupby("bbid"):
+                    d, c = series_monthly(sub)
+                    if len(c) >= 2:
+                        uni.append({"label": known.get(b) or id2name.get(sub["assetId"].iloc[0], b),
+                                    "bbid": b, "dates": d, "close": c})
+                data["universe"] = uni
+                print(f"[OK] universe {len(uni)}개")
+        except Exception as e:
+            print(f"[건너뜀] universe 풀 실패 ({e}) — groups+sector 로 대체")
+
     return data
 
 
