@@ -103,6 +103,11 @@ if FULL_UNIVERSE:
     try:
         cov = Dataset(DATASET).get_coverage()
         cov_ids = sorted(set(cov["assetId"])) if "assetId" in cov.columns else []
+        # assetId 로 조회하면 응답 컬럼이 [assetId, closePrice, updateTime] 뿐이라
+        # bbid 가 없다. 예전엔 그대로 groupby("bbid") 해서 KeyError 로 죽고
+        # 매번 fallback(groups+sector 68개)으로 넘어갔다 — 전체는 233개다.
+        id2bbid = dict(zip(cov["assetId"], cov["bbid"])) if "bbid" in cov.columns else {}
+        id2name = dict(zip(cov["assetId"], cov["name"])) if "name" in cov.columns else {}
         print(f"[..] 전체 coverage {len(cov_ids)}개 basket 풀링 (시간이 걸릴 수 있음)")
         frames = []
         for ch in _chunks(cov_ids, 50):
@@ -115,11 +120,17 @@ if FULL_UNIVERSE:
             if "date" not in udf.columns:
                 udf = udf.reset_index()
             udf["date"] = pd.to_datetime(udf["date"])
+            if "bbid" not in udf.columns and id2bbid:
+                udf["bbid"] = udf["assetId"].map(id2bbid)
+            udf = udf[udf["bbid"].notna()]
             uni = []
             for bbid, sub in udf.groupby("bbid"):
                 d, c = series_monthly(sub)
                 if len(c) >= 2:
-                    uni.append({"label": known_label.get(bbid, bbid),
+                    # 큐레이션 라벨 > coverage 의 name > bbid 순으로 이름을 고른다
+                    label = known_label.get(bbid) or id2name.get(
+                        sub["assetId"].iloc[0], bbid)
+                    uni.append({"label": label,
                                 "bbid": bbid, "dates": d, "close": c})
             data["universe"] = uni
             print(f"[OK] universe {len(uni)}개 적재")

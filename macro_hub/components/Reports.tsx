@@ -15,7 +15,6 @@ const ASSET_NOTE: Record<string, string> = {
 // 권역 구분이 무의미한 자산군 — 열로 쪼개지 않고 한 줄에 몰아서 보여준다.
 const NO_REGION_ASSETS = new Set(['코모디티'])
 // 하우스 하나가 뷰를 1,000건 넘게 갖는다. 목록은 최신부터 잘라서 보여주고 나머지는 접는다.
-const HV_LIST_MAX = 60
 
 const STANCE_COLOR: Record<string, string> = { OW: '#1a7a4c', N: '#888780', UW: '#c0392b' }
 const STANCE_KR: Record<string, string> = { OW: '비중확대', N: '중립', UW: '비중축소' }
@@ -45,10 +44,10 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
   const [date, setDate] = useState('ALL')
   const [open, setOpen] = useState<Record<string, boolean>>({})
   // 하우스뷰 영역 — 전체(하우스 합산 매트릭스) / 운용사별(하우스 선택)
+  const [tab, setTab] = useState<'houseview' | 'reports'>('houseview')
   const [hvMode, setHvMode] = useState<'all' | 'byHouse'>('all')
   const [house, setHouse] = useState('ALL')
   const [expand, setExpand] = useState<Record<string, boolean>>({})
-  const [listAll, setListAll] = useState(false)
 
   const sources = useMemo(() => [...new Set(rows.map((r) => r.source))].sort(), [rows])
   const dates = useMemo(() => [...new Set(rows.map((r) => r.date))].sort().reverse(), [rows])
@@ -163,7 +162,14 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
 
   return (
     <section>
+      {/* 하우스뷰와 보고서 목록은 한 화면에 같이 두지 않고 버튼으로 갈라 본다 */}
+      <div className="flex gap-1.5 mb-4">
+        <button onClick={() => setTab('houseview')} className={btn(tab === 'houseview')}>하우스뷰</button>
+        <button onClick={() => setTab('reports')} className={btn(tab === 'reports')}>보고서</button>
+      </div>
+
       {/* ── 하우스뷰 (자산군 × 권역) ── */}
+      {tab === 'houseview' && (
       <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-4">
         <div className="flex items-center justify-between gap-2 flex-wrap mb-2.5">
           <h3 className="serif text-[15px] m-0">
@@ -267,42 +273,12 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
           <p className="text-[11px] text-[var(--muted)] mt-2 mb-0">{activeHouse.toUpperCase()} 하우스의 뷰가 없습니다.</p>
         )}
 
-        {/* 특정 하우스를 고르면 그 하우스 뷰만 원문 목록으로 */}
-        {hvMode === 'byHouse' && activeHouse !== 'ALL' && hvRows.length > 0 && (
-          <div className="mt-3 border-t border-[var(--line)] pt-3">
-            <div className="text-xs font-semibold text-[var(--muted)] mb-2">
-              {activeHouse.toUpperCase()} 뷰 {hvRows.length}건
-              {!listAll && hvRows.length > HV_LIST_MAX && (
-                <span className="ml-1 font-normal">— 최신 {HV_LIST_MAX}건만 표시</span>
-              )}
-            </div>
-            <div className="space-y-2">
-              {(listAll ? hvRows : hvRows.slice(0, HV_LIST_MAX)).map((v) => (
-                <div key={v.id} className="grid gap-2.5 items-start" style={{ gridTemplateColumns: '86px 150px 1fr' }}>
-                  <div className="text-[11px] text-[var(--muted)]">{v.date}</div>
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="rounded border px-1.5 py-[1px] text-[10px] font-bold" style={stanceStyle(v.stance, v.confidence)}>{v.stance}</span>
-                    <span className="text-[11px] font-semibold">{v.asset}</span>
-                    <span className="text-[10px] text-[var(--muted)]">{v.region}</span>
-                  </div>
-                  <div className="min-w-0">
-                    {v.title && <div className="text-[12px] font-semibold leading-snug">{v.title}</div>}
-                    <div className="text-[11px] text-[var(--muted)] leading-snug">{v.rationale}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {hvRows.length > HV_LIST_MAX && (
-              <button onClick={() => setListAll((v) => !v)}
-                className="mt-2 text-[11px] font-semibold text-[var(--badge)]">
-                {listAll ? '접기' : '전체 ' + hvRows.length + '건 보기'}
-              </button>
-            )}
-          </div>
-        )}
       </div>
+      )}
 
-      {/* ── 보고서 검색·목록 (기존) ── */}
+      {/* ── 보고서 검색·목록 ── */}
+      {tab === 'reports' && (
+      <>
       <div className="flex gap-2 mb-4 flex-wrap">
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="보고서 검색 (제목, 기관, 내용)…"
           className="flex-1 min-w-[260px] bg-white border border-[var(--line)] rounded-lg px-4 py-2 text-sm" />
@@ -368,6 +344,8 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
       <p className="text-[11px] text-[var(--muted)] mt-2">
         일일 통합요약 문서에서 자동 생성됩니다. 원문 PDF는 라이선스 대상이라 제공하지 않습니다.
       </p>
+      </>
+      )}
     </section>
   )
 }
