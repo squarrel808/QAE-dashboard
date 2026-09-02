@@ -317,7 +317,11 @@ def parse_opts(argv):
         "web": True,
         "git": "nogit" not in flags,
         "push": "nopush" not in flags,
-        "add_all": "dataonly" not in flags,
+        # 기본은 산출물만 담는다. 이 저장소는 여러 트랙이 동시에 미커밋 상태로
+        # 굴러가서, add -A 가 기본이면 작업 중인 코드까지 "데이터 갱신" 커밋
+        # 하나에 쓸려 들어간다 (2026-09-01 에 84개·61개 파일로 두 번 발생).
+        # 전체를 담고 싶을 때만 /addall 을 명시한다. /dataonly 는 하위호환용.
+        "add_all": "addall" in flags,
         "dryrun": "dryrun" in flags,
     }
 
