@@ -40,6 +40,11 @@ OUT_HTML   = BASE / "pca_dashboard.html"
 
 LEI_CAT    = "lei"          # 합산에서 제외하고 별도 산출할 카테고리
 MIN_EWM_OBS = 12            # EWM 평균/표준편차 최소 관측치
+# GDP 프록시 한 달을 만드는 데 필요한 최소 카테고리 비중.
+# 카테고리 지수는 지표가 하나만 갱신돼도 산출되지만(그게 원래 요구),
+# 헤드라인 지수까지 카테고리 1개로 그리면 최신월이 그 카테고리 그 자체가 된다.
+# 0.5 = 카테고리 절반 이상(5개면 3개)이 있는 달만 GDP 프록시를 낸다.
+GDP_MIN_CAT_RATIO = 0.5
 
 # 국가 코드 → 표기 (드롭다운 순서 = 이 순서)
 COUNTRIES = {
@@ -233,6 +238,7 @@ def ewm_zscore(df, halflife):
 def tv_pca(z, halflife):
     """
     z: 카테고리 내 지표들의 z-score DataFrame. **결측 허용** — 지표마다 시작·종료가 달라도 된다.
+       그 시점에 값이 **하나라도** 있으면 계산한다(예전엔 2개 이상이어야 했다).
 
     각 시점 t 에서 그 시점에 값이 있는 지표만 골라 상관행렬 부분행렬을 떼어내 PC1 을 뽑는다.
     (예전에는 dropna 로 균형패널을 만들었는데, 늦게 시작하는 지표 하나가
@@ -245,47 +251,69 @@ def tv_pca(z, halflife):
     """
     cols = list(z.columns)
     # 쌍별 EWM 상관. min_periods 를 넘기지 못한 쌍은 NaN 이라 그 시점엔 자동 제외된다.
-    corr_panel = z.ewm(halflife=halflife,
-                       min_periods=max(len(cols), MIN_EWM_OBS)).corr()
+    # 상관은 '지표 2개 이상인 달'만으로 추정한다 — 1개짜리 달(발표가 몰리기 전 최신월)을
+    # 섞으면 EWM 감쇠 위치가 밀려 과거 값까지 미세하게 달라진다.
+    z2 = z[z.notna().sum(axis=1) >= 2]
+    corr_panel = z2.ewm(halflife=halflife,
+                        min_periods=max(len(cols), MIN_EWM_OBS)).corr()
 
     pc1_vals, load_rows, idx_used = [], [], []
     prev_load = None                    # 직전 시점 로딩 (부호 연속성용)
+    last_load = None                    # 지표별 '마지막으로 본' 로딩 (단일 지표 달의 부호 기준)
     for t in z.index:
         row = z.loc[t]
         avail = [c for c in cols if pd.notna(row[c])]
-        if len(avail) < 2:
-            continue
-        try:
-            cmdf = corr_panel.loc[t]
-        except KeyError:
+        if not avail:
             continue
 
-        # 새로 합류한 지표는 값은 있어도 다른 지표와의 EWM 상관이 아직 min_periods 를
-        # 못 채워 NaN 이다. 이때 그 시점을 통째로 버리면 지수에 구멍이 생기고
-        # 상관이 추정되는 순간 계단이 난다 → 상관을 못 구한 지표만 빼고 나머지로 진행한다.
-        while len(avail) >= 2:
-            na = cmdf.loc[avail, avail].isna().sum(axis=1)
-            if na.max() == 0:
-                break
-            avail = [c for c in avail if c != na.idxmax()]
-        if len(avail) < 2:
-            continue
+        cmdf = None
+        if len(avail) >= 2:
+            try:
+                cmdf = corr_panel.loc[t]
+            except KeyError:
+                cmdf = None
 
-        cm = cmdf.loc[avail, avail].values
-        w, v = np.linalg.eigh(cm)       # 고유분해 (w 오름차순)
-        lser = pd.Series(v[:, -1], index=avail)   # 최대 고유값의 고유벡터 = PC1 방향
+        if cmdf is not None:
+            # 새로 합류한 지표는 값은 있어도 다른 지표와의 EWM 상관이 아직 min_periods 를
+            # 못 채워 NaN 이다. 이때 그 시점을 통째로 버리면 지수에 구멍이 생기고
+            # 상관이 추정되는 순간 계단이 난다 → 상관을 못 구한 지표만 빼고 나머지로 진행한다.
+            while len(avail) >= 2:
+                na = cmdf.loc[avail, avail].isna().sum(axis=1)
+                if na.max() == 0:
+                    break
+                avail = [c for c in avail if c != na.idxmax()]
 
-        # 고유벡터의 부호는 임의로 정해진다. 예전에는 loading.sum()<0 이면 뒤집었는데,
-        # 로딩 부호가 섞여 합이 0 근처면 달마다 제멋대로 뒤집혀 지수에 가짜 스파이크가 났다.
-        # → 직전 시점 로딩과 내적이 음수면 뒤집어 방향을 이어붙인다.
-        if prev_load is not None:
-            shared = [c for c in avail if c in prev_load.index]
-            if shared and float((lser[shared] * prev_load[shared]).sum()) < 0:
+        if cmdf is not None and len(avail) >= 2:
+            cm = cmdf.loc[avail, avail].values
+            w, v = np.linalg.eigh(cm)       # 고유분해 (w 오름차순)
+            lser = pd.Series(v[:, -1], index=avail)   # 최대 고유값의 고유벡터 = PC1 방향
+
+            # 고유벡터의 부호는 임의로 정해진다. 예전에는 loading.sum()<0 이면 뒤집었는데,
+            # 로딩 부호가 섞여 합이 0 근처면 달마다 제멋대로 뒤집혀 지수에 가짜 스파이크가 났다.
+            # → 직전 시점 로딩과 내적이 음수면 뒤집어 방향을 이어붙인다.
+            if prev_load is not None:
+                shared = [c for c in avail if c in prev_load.index]
+                if shared and float((lser[shared] * prev_load[shared]).sum()) < 0:
+                    lser = -lser
+            elif lser.sum() < 0:            # 첫 시점만 경기순응 가정으로 방향 결정
                 lser = -lser
-        elif lser.sum() < 0:            # 첫 시점만 경기순응 가정으로 방향 결정
-            lser = -lser
-        prev_load = lser
+            prev_load = lser
+        else:
+            # 그 달에 갱신된 지표가 1개뿐(또는 쌍 상관을 못 구함) — 그 지표의 z 를 그대로
+            # PC1 로 쓴다. 로딩은 ±1 이고 부호는 그 지표의 마지막 정식 로딩을 따른다.
+            # (지표 n개일 때 PC1 = Σz·l/√n ≈ 평균 z 라 단일 지표 z 와 스케일이 맞는다)
+            # 카테고리가 아직 자리를 못 잡은 초반(로딩 이력 없음)에는 그대로 건너뛴다.
+            if last_load is None:
+                continue
+            pick = next((c for c in avail
+                         if c in last_load.index and pd.notna(last_load[c])), None)
+            if pick is None:
+                continue
+            avail = [pick]
+            lser = pd.Series([1.0 if last_load[pick] >= 0 else -1.0], index=[pick])
+            # prev_load 는 갱신하지 않는다 — 다음 달 부호 기준은 마지막 정식 PCA 로딩이다.
 
+        last_load = lser if last_load is None else lser.combine_first(last_load)
         pc1_vals.append(float(row[avail].values @ lser.values) / np.sqrt(len(avail)))
         load_rows.append(lser)
         idx_used.append(t)
@@ -316,10 +344,11 @@ def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
 
     for cat in cats:
         cols = [c for c in z_all.columns if cat_map[c] == cat]
-        # 결측을 남긴 채 넘긴다 — 상관행렬이 성립하려면 그 시점에 지표가 2개 이상이면 된다.
-        # (dropna 로 균형패널을 만들면 늦게 시작하는 지표 하나가 카테고리 전체를 잘라먹는다)
+        # 결측을 남긴 채 넘긴다 — 그 시점에 지표가 하나라도 있으면 계산한다.
+        # (dropna 로 균형패널을 만들면 늦게 시작하는 지표 하나가 카테고리 전체를 잘라먹는다.
+        #  2개 이상을 요구하면 발표가 이른 지표 하나만 나온 최신월이 통째로 사라졌다)
         sub = z_all[cols]
-        sub = sub[sub.notna().sum(axis=1) >= 2]
+        sub = sub[sub.notna().sum(axis=1) >= 1]
         if len(cols) < 2 or len(sub) <= len(cols):
             print(f"  [WARN] {tag}{cat}: 지표 {len(cols)}개/표본 {len(sub)} — 스킵")
             continue
@@ -333,12 +362,26 @@ def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
     # GDP 프록시 = lei 제외 카테고리 동일가중 평균
     gdp_cats = [c for c in res["cat_index"] if c != LEI_CAT]
     if gdp_cats:
-        panel = pd.DataFrame({c: res["cat_index"][c] for c in gdp_cats}).dropna()
+        panel = pd.DataFrame({c: res["cat_index"][c] for c in gdp_cats})
+        full = panel.dropna()
+        # 시작은 모든 카테고리가 갖춰진 첫 달(초반이 카테고리 1~2개로 만들어지지 않게).
+        # 그 뒤로는 '있는 카테고리만' 동일가중 평균 — 발표가 늦는 카테고리 하나 때문에
+        # 최신월 전체가 사라지지 않는다. 기여도도 그 달의 유효 카테고리 수로 나눠
+        # 막대 합 = 지수가 그대로 유지된다.
+        if len(full):
+            panel = panel.loc[full.index[0]:]
+        need = max(2, int(np.ceil(len(gdp_cats) * GDP_MIN_CAT_RATIO)))
+        panel = panel[panel.notna().sum(axis=1) >= need]
+        n_avail = panel.notna().sum(axis=1)
         res["gdp"] = panel.mean(axis=1)
-        res["gdp_contrib"] = panel / len(gdp_cats)   # 합 = GDP 프록시
+        res["gdp_contrib"] = panel.div(n_avail, axis=0)   # 합 = GDP 프록시
+        res["gdp_navail"] = n_avail                       # 그 달에 쓴 카테고리 수
+        res["gdp_ncats"] = len(gdp_cats)
     else:
         res["gdp"] = pd.Series(dtype=float)
         res["gdp_contrib"] = pd.DataFrame()
+        res["gdp_navail"] = pd.Series(dtype=int)
+        res["gdp_ncats"] = 0
     res["lei"] = res["cat_index"].get(LEI_CAT, pd.Series(dtype=float))
     return res
 
@@ -390,6 +433,10 @@ def build_country_versions(results, cat_map, desc_map):
     for ver, r in results.items():
         idx = r["z"].index
         dates = [d.strftime("%Y-%m") for d in idx]
+        # 최신 관측월 = 지표가 2개 이상 들어온 마지막 달.
+        # (한 달 먼저 나오는 서베이 1개가 기준월을 끌고 가면 나머지가 전부 미갱신으로 보인다)
+        cnt = r["z"].notna().sum(axis=1)
+        ref = cnt[cnt >= 2].index[-1] if (cnt >= 2).any() else (idx[-1] if len(idx) else None)
         gdp_cats = [c for c in r["cat_index"] if c != LEI_CAT]
 
         cat_block = {}
@@ -402,6 +449,7 @@ def build_country_versions(results, cat_map, desc_map):
 
         versions[ver] = {
             "dates": dates,
+            "latest": ref.strftime("%Y-%m") if ref is not None else None,
             "gdp": {
                 "index": fmt_series(r["gdp"], idx),
                 "contrib": {cat_label(c): fmt_series(r["gdp_contrib"][c], idx) for c in gdp_cats},
@@ -466,6 +514,7 @@ canvas{width:100%;display:block}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 10px 8px}
 .panel .t{font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--text)}
+.panel .upd{font-size:11px;font-weight:600;color:var(--up);height:15px;line-height:15px;margin:-5px 0 3px}
 .controls{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
 select,.vbtn{background:#ffffff;border:1px solid var(--border);color:var(--text);font-family:var(--font);
 padding:7px 14px;border-radius:8px;font-size:13px;cursor:pointer;outline:none}
@@ -501,6 +550,7 @@ select:hover,.vbtn:hover{border-color:var(--muted)}
       <select id="cat-select"></select>
       <button class="vbtn active" data-ver="YoY">YoY</button>
       <button class="vbtn" data-ver="Momentum">Momentum</button>
+      <span id="drill-ref" style="color:var(--muted2);font-size:12px"></span>
     </div>
     <div class="grid3" id="drill-grid"></div></div>
 </div>
@@ -643,11 +693,16 @@ cats.forEach(c=>{const o=document.createElement('option');o.value=c;o.textConten
 if(prev&&cats.includes(prev))sel.value=prev;}
 function renderDrill(){const V=drillVer==='YoY'?VY:VM;const cat=sel.value;
 const g=document.getElementById('drill-grid');g.innerHTML='';
+// 최신 관측월 위치 — 그 달에 값이 있는 지표만 'updated'
+const li=V.latest?V.dates.indexOf(V.latest):V.dates.length-1;
+const rf=document.getElementById('drill-ref');
+if(rf)rf.textContent=V.latest?`기준 ${V.latest}`:'';
 if(!cat||!V.categories[cat])return;
 const ind=V.categories[cat].indicators;
 Object.keys(ind).forEach((name,i)=>{
+const upd=(li>=0&&ind[name][li]!=null)?'updated':'';
 const p=document.createElement('div');p.className='panel';
-p.innerHTML=`<div class="t">${name}</div><canvas height="130"></canvas>`;
+p.innerHTML=`<div class="t">${name}</div><div class="upd">${upd}</div><canvas height="130"></canvas>`;
 g.appendChild(p);
 lineChart(p.querySelector('canvas'),V.dates,[ind[name]],[COLORS[i%COLORS.length]]);});}
 sel.onchange=renderDrill;
@@ -734,8 +789,10 @@ def main():
             r = run_version(sub, cat_map, rule_map, cfg["halflife"], cfg["mode"], tag=f"{cc}·")
             g = r["gdp"].dropna()
             if len(g):
+                nv = r["gdp_navail"].get(g.index[-1], r["gdp_ncats"])
                 print(f"  GDP proxy: {g.index[0]:%Y-%m} ~ {g.index[-1]:%Y-%m} "
-                      f"(mean {g.mean():.2f}, std {g.std():.2f})")
+                      f"(mean {g.mean():.2f}, std {g.std():.2f}, "
+                      f"마지막달 카테고리 {int(nv)}/{r['gdp_ncats']})")
             if len(r["lei"].dropna()):
                 l = r["lei"].dropna()
                 print(f"  LEI      : {l.index[0]:%Y-%m} ~ {l.index[-1]:%Y-%m}")

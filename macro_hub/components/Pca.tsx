@@ -144,11 +144,13 @@ export default function Pca({ data }: { data: PcaData }) {
   }
 
   // ── 개별 지표 z-score 소형 차트 (단일 라인) ──
-  function MiniZ({ name, dates, vals }: { name: string; dates: string[]; vals: (number | null)[] }) {
+  function MiniZ({ name, dates, vals, updated }: { name: string; dates: string[]; vals: (number | null)[]; updated?: boolean }) {
     const rows = dates.map((d, i) => ({ date: d, z: vals[i] }))
     return (
       <div className="border border-[var(--line)] rounded-lg p-2">
-        <div className="text-[11px] font-medium mb-1 truncate" title={name}>{name}</div>
+        <div className="text-[11px] font-medium truncate" title={name}>{name}</div>
+        {/* 최신 관측월에 값이 있으면 updated, 없으면 빈 줄(차트 높이 유지) */}
+        <div className="text-[10px] font-semibold text-[#1D9E75] h-[13px] leading-[13px] mb-0.5">{updated ? 'updated' : ''}</div>
         <div style={{ height: 130 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={rows} margin={{ top: 4, right: 8, left: -18, bottom: 0 }}>
@@ -167,10 +169,15 @@ export default function Pca({ data }: { data: PcaData }) {
   // 드릴다운 / LEI z-score 용 윈도우 슬라이스
   function indicatorList(v: PcaVersion, catKey: string) {
     const node = v.categories[catKey]
-    if (!node) return [] as { name: string; dates: string[]; vals: (number | null)[] }[]
+    if (!node) return [] as { name: string; dates: string[]; vals: (number | null)[]; updated: boolean }[]
     const dates = tail(v.dates, tab === 'lei' ? leiMonths : gdpMonths)
     const start = v.dates.length - dates.length
-    return Object.keys(node.indicators).map((nm) => ({ name: nm, dates, vals: node.indicators[nm].slice(start) }))
+    // updated 판정은 화면 구간이 아니라 전체 시계열의 최신 관측월 위치로 한다
+    const li = v.latest ? v.dates.indexOf(v.latest) : v.dates.length - 1
+    return Object.keys(node.indicators).map((nm) => ({
+      name: nm, dates, vals: node.indicators[nm].slice(start),
+      updated: li >= 0 && node.indicators[nm][li] != null,
+    }))
   }
 
   function LeiLine({ v, months, title }: { v: PcaVersion; months: number; title: string }) {
@@ -193,7 +200,8 @@ export default function Pca({ data }: { data: PcaData }) {
     )
   }
 
-  const drillItems = indicatorList(drillVer === 'YoY' ? yoy : mom, drillCat)
+  const drillVerData = drillVer === 'YoY' ? yoy : mom
+  const drillItems = indicatorList(drillVerData, drillCat)
   const leiItems = indicatorList(leiVer === 'YoY' ? yoy : mom, 'LEI')
 
   return (
@@ -250,10 +258,11 @@ export default function Pca({ data }: { data: PcaData }) {
                   {cats.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
                 <VerToggle ver={drillVer} set={setDrillVer} />
+                {drillVerData.latest && <span className="text-[11px] text-[var(--muted)]">기준 {drillVerData.latest}</span>}
               </span>
             }>
             <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-              {drillItems.map((it, j) => <MiniZ key={j} name={it.name} dates={it.dates} vals={it.vals} />)}
+              {drillItems.map((it, j) => <MiniZ key={j} name={it.name} dates={it.dates} vals={it.vals} updated={it.updated} />)}
             </div>
           </Card>
         </>
