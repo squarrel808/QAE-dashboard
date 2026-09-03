@@ -2,11 +2,13 @@
 """
 load_weco.py — 블룸버그 WECO 내보내기(xlsx) → 대시보드용 행(row) 리스트
 --------------------------------------------------------------------
-입력 : 이 파일과 같은 폴더의 `*_eco.xlsx`  (사용자가 2개씩 떨궈 넣음)
-         - 하나는 '지표' 파일        (Survey/Actual/Prior/Relevance 가 채워져 있음)
-         - 하나는 '연설·이벤트' 파일 (Survey/Actual 비어 있고 Relevance=0)
+입력 : 이 파일과 같은 폴더의 `*_eco.xlsx`  (보통 2개씩 떨궈 넣음)
+         - '지표' 파일        (Survey/Actual/Prior/Relevance 가 채워져 있음)
+         - '연설·이벤트' 파일 (Survey/Actual 비어 있고 Relevance=0)
        파일명은 매번 바뀌므로 이름으로 구분하지 않는다. 내용으로 판별한다.
-       가장 최근에 들어온 2개만 쓰고 과거 파일은 무시한다.
+       최근 MERGE_DAYS 안에 들어온 파일을 전부(최대 MAX_FILES개) 읽어 종류별로
+       합치되, 같은 일정(날짜·시각·국가·이벤트)이 겹치면 **최신 파일 값**을 쓴다.
+       한 개만 새로 떨궈 넣어도 이전 세트가 그대로 살아 있어 날짜가 안 끊긴다.
 
 출력 : load_rows() → list[dict]
        {"d","t","cc","flag","ev","p","svy","act","pri","rev","rel","kind"}
@@ -32,6 +34,8 @@ except Exception:                                    # 재설정 불가 환경 �
 BASE = os.path.dirname(os.path.abspath(__file__))
 PATTERN = os.path.join(BASE, "*_eco.xlsx")
 N_FILES = 2                                          # 한 세트 = 지표 1 + 이벤트 1
+MAX_FILES = 6                                        # 한 번에 읽을 최대 파일 수
+MERGE_DAYS = 14                                      # 최신 파일 기준 이 일수 안의 것만 병합
 
 # --- 국가 매핑 -------------------------------------------------------------
 # weco_dashboard.py 와 동일한 기본 매핑 (그쪽 파일은 건드리지 않는다)
@@ -133,11 +137,21 @@ def _period(v):
 
 
 # --- 파일 선택 -------------------------------------------------------------
-def pick_files(n=N_FILES):
-    """`*_eco.xlsx` 중 가장 최근 n개. 수정시각 우선, 같으면 파일명(=내보낸 시각) 순."""
+def pick_files(n=None):
+    """읽을 파일들을 최신순으로. 수정시각 우선, 같으면 파일명(=내보낸 시각) 순.
+
+    n 을 주면 그 개수만. 안 주면 '가장 최신 파일에서 MERGE_DAYS 안'에 들어온 것만
+    최대 MAX_FILES 개. 옛날에 넣어둔 파일은 이 창 밖이라 자동으로 빠진다.
+    """
     files = [f for f in glob.glob(PATTERN) if not os.path.basename(f).startswith("~$")]
     files.sort(key=lambda f: (os.path.getmtime(f), os.path.basename(f)), reverse=True)
-    return files[:n]
+    if n is not None:
+        return files[:n]
+    if not files:
+        return files
+    newest = os.path.getmtime(files[0])
+    cut = newest - MERGE_DAYS * 86400
+    return [f for f in files if os.path.getmtime(f) >= cut][:MAX_FILES]
 
 
 def _read(path):
@@ -179,16 +193,19 @@ def load_rows(verbose=True):
         kind, score, diag = classify(df)
         frames.append([p, df, kind, score, diag])
 
-    # 둘 다 같은 종류로 판정되면 상대비교로 갈라준다 (점수 높은 쪽이 지표)
+    # 파일이 딱 2개인데 둘 다 같은 종류로 판정되면 상대비교로 갈라준다
+    # (한 세트를 같은 종류로 두 번 내보낸 경우. 3개 이상이면 점수 그대로 믿는다 —
+    #  지표 파일 2개 + 이벤트 1개 같은 정상 조합을 억지로 갈라놓지 않기 위해서다)
     if len(frames) == 2 and frames[0][2] == frames[1][2]:
         hi, lo = (0, 1) if frames[0][3] >= frames[1][3] else (1, 0)
         frames[hi][2], frames[lo][2] = "ind", "evt"
         for f in frames:
             f[4] += "  [동점 판정 -> 상대비교로 재분류]"
 
-    rows, stat = [], []
+    # frames 는 최신순이다. 같은 일정이 여러 파일에 있으면 먼저 만난(=최신) 값을 쓴다.
+    rows, stat, seen = [], [], set()
     for p, df, kind, _score, diag in frames:
-        kept = dropped = skipped = 0
+        kept = dropped = skipped = dup = 0
         for _, r in df.iterrows():
             ev = "" if _blank(r.get("Event")) else str(r.get("Event")).strip()
             if not ev or ev.lower() == "event":
@@ -198,11 +215,18 @@ def load_rows(verbose=True):
             if not d:
                 skipped += 1
                 continue
+            cc = "" if _blank(r.get("Country Code")) else str(r.get("Country Code")).strip().upper()
+            key = (d, t, cc, ev)
+            if key in seen:                           # 더 최신 파일에서 이미 가져온 일정
+                dup += 1
+                continue
             # 지표 파일은 컨센서스(Survey) 있는 행만. 이벤트 파일은 전부.
             if kind == "ind" and _blank(r.get("Survey")):
                 dropped += 1
                 continue
-            cc = "" if _blank(r.get("Country Code")) else str(r.get("Country Code")).strip().upper()
+            # 실제로 담은 행만 seen 에 넣는다. 컨센서스가 비어 빠진 행까지 잡아두면
+            # 같은 일정이 옛 파일(또는 이벤트 파일)에 살아 있어도 통째로 사라진다.
+            seen.add(key)
             try:
                 rel = float(r.get("Relevance"))
             except (TypeError, ValueError):
@@ -224,16 +248,17 @@ def load_rows(verbose=True):
                 "kind": kind,
             })
             kept += 1
-        stat.append((p, kind, len(df), kept, dropped, skipped, diag))
+        stat.append((p, kind, len(df), kept, dropped, skipped, dup, diag))
 
     rows.sort(key=lambda x: (x["d"], x["t"], -x["rel"]))
 
     if verbose:
         label = {"ind": "지표", "evt": "연설·이벤트"}
         print("[source] " + BASE)
-        for p, kind, total, kept, dropped, skipped, diag in stat:
+        for p, kind, total, kept, dropped, skipped, dup, diag in stat:
             mt = dt.datetime.fromtimestamp(os.path.getmtime(p)).strftime("%Y-%m-%d %H:%M")
             tail = ", 컨센서스 없어 제외 {}행".format(dropped) if dropped else ""
+            tail += ", 최신 파일에 있어 건너뜀 {}행".format(dup) if dup else ""
             tail += ", 빈줄·꼬리 {}행".format(skipped) if skipped else ""
             print("  * {}  (수정 {})  -> {}({})  {}행 중 {}행 사용{}".format(
                 os.path.basename(p), mt, label[kind], kind, total, kept, tail))
