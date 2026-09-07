@@ -24,9 +24,11 @@ REM    /nopush     6)번에서 커밋만 하고 push 안 함
 REM    /nogit      6)번을 아예 건너뜀 - git 을 전혀 건드리지 않음 (로컬 갱신/테스트용)
 REM    /dryrun     실제로 돌리지 않고 '무엇이 실행될지'만 미리 보기
 REM    /nopause    끝에서 키 입력을 기다리지 않음 (작업 스케줄러 무인 실행용)
-REM    /dataonly   git add 를 산출물(macro_hub\public 등)로 제한.
-REM                작업 중인 코드까지 딸려 올라가는 게 싫을 때 사용.
-REM                (기본값은 기존 자동화와 동일하게 git add -A)
+REM    /addall     git add -A - 저장소 전체를 커밋에 담는다.
+REM                기본값은 산출물(macro_hub\public, report_pipeline\state.json)만이다.
+REM                이 저장소는 여러 작업이 동시에 미커밋 상태로 굴러가서,
+REM                add -A 가 기본이면 작업 중인 코드까지 커밋에 쓸려 들어간다.
+REM    /dataonly   (하위호환) 지금은 아무 효과 없음 - 산출물만 담는 게 이미 기본값.
 REM
 REM  로그: QAE\logs\qae_YYYYMMDD.log  (콘솔에도 똑같이 나옴)
 REM  이력: QAE\logs\run_history.csv / run_steps.csv / run_failures.csv

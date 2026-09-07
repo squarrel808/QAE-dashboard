@@ -1,6 +1,6 @@
 # QAE Macro Dashboard
 
-> 기준일 2026-09-07 · 배포처 https://macro-hub-nu.vercel.app
+> 기준일 2026-09-08 · 배포처 https://macro-hub-nu.vercel.app
 
 블룸버그·Haver·GS API·증권사 리서치를 모아 매일 아침 대시보드로 굽고 Vercel에 올리는 파이프라인.
 
@@ -94,9 +94,10 @@ QAE/
 ├ 전체업데이트.bat            진입점
 ├ _자동화/                   스케줄 등록 배치
 │
-├ 블벅경제지표/               ← 경제지표 입력 (xlsx 넣는 곳)
+├ 블벅경제지표/               ← 경제지표 **입력** (xlsx 넣는 곳)
 │   └ load_weco.py           파일 판별·정규화
-├ 경제지표가져오기/            weco_dashboard.py → dashboard.html
+├ 경제지표가져오기/            경제지표 **생성** — weco_dashboard.py → dashboard.html
+│                            (이름이 헷갈리지만 지우면 안 된다. 아래 주의 참고)
 ├ Consensus Builder/         ← 컨센서스 입력 (xlsb 넣는 곳)
 │   ├ merge_xlsb_to_xlsx.py  xlsb + history → 누적 xlsx
 │   ├ CPI/GDP consensus.py   대시보드
@@ -153,7 +154,25 @@ QAE/
 | 실행 이력 | `logs\run_history.csv`, `run_steps.csv` |
 | Haver 조회 실패 | `Haver.path()` 가 빈 문자열인 게 **정상**. `Haver.direct(1)` 이 호출되는 경로인지 확인 |
 | 한글 깨짐 / cp949 오류 | 스크립트 직접 실행 시 `PYTHONUTF8=1 PYTHONIOENCODING=utf-8` |
+| 리포트가 0건 수집됨 | 로그에 `NoSuchWindowException`. 디버그포트 9222 크롬이 이미 떠 있었거나 창이 닫힌 것. 크롬 다 끄고 다시 실행 |
+| Policy Tone 최신 연설이 안 붙음 | 로그에 `Could not resolve authentication method`. `policytone\.env` 의 Anthropic API 키가 안 읽힌 것. 키 넣고 `python policytone\score.py` 재실행 |
+| 경제지표 단계가 `파일 없음` | `경제지표가져오기\` 폴더가 지워졌다. 위 "지우면 안 되는 것" 참고 |
 | 커밋에 엉뚱한 파일이 잔뜩 | `/addall` 이 붙었는지 확인. 기본은 산출물만이다 |
+
+---
+
+## 지우면 안 되는 것
+
+`경제지표가져오기\` 는 이름만 보면 입력 폴더 같지만 **경제지표 탭을 굽는 코드**가 들어 있다.
+입력 폴더는 `블벅경제지표\` 쪽이다. 이 폴더를 지우면 세 군데가 한꺼번에 깨진다.
+
+| 참조하는 곳 | 무엇을 |
+|---|---|
+| `BeforeHTML_master.py` / `AfterHTML_master.py` | `FOLDERS` 목록의 첫 항목 |
+| `macro_hub\scripts\sync_embeds.py` | `econ.html` 의 원본 = `경제지표가져오기\dashboard.html` |
+
+> 실제로 2026-09-08 실행 전에 이 폴더가 통째로 사라져 있어 git 에서 되살렸다.
+> 사라졌는지 확인: `git status` 에 이 폴더가 `D` 로 뜨면 `git checkout -- 경제지표가져오기`.
 
 ---
 

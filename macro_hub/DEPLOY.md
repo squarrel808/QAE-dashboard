@@ -10,7 +10,7 @@
 터미널(PowerShell)에서 macro_hub 폴더로 이동:
 
 ```powershell
-cd "C:\Users\USER\OneDrive\문서\QAE-dashboard\macro_hub"
+cd "C:\Users\infomax\Documents\python\QAE\macro_hub"
 ```
 
 ### A-1. 데이터 채우기 (한 줄)
@@ -19,11 +19,17 @@ cd "C:\Users\USER\OneDrive\문서\QAE-dashboard\macro_hub"
 npm run data
 ```
 
-이 한 줄이 세 가지를 합니다:
+이 한 줄이 JSON 5종을 굽습니다:
 
-- `build_pairbaskets_json.py` → Equity Factors 데이터(GS 인증 필요). GS 없이 모양만 보려면 대신 `npm run data:mock`.
-- `build_policy_json.py` → Policy Tone 데이터(이미 있는 CSV 사용).
-- `sync_embeds.py` → PCA / Consensus / CAI·MAP 원본 대시보드 HTML을 `public/embeds/`로 복사.
+- `build_pairbaskets_json.py` → Equity Factors(GS 인증 필요). GS 없이 모양만 보려면 대신 `npm run data:mock`.
+- `build_policy_json.py` → Policy Tone(이미 있는 CSV 사용).
+- `build_consensus_json.py` / `build_pca_json.py` / `build_caimap_json.py` → Consensus / PCA / CAI·MAP.
+
+**임베드 HTML 은 여기 안 들어 있습니다.** 경제지표·실적 캘린더·CPI 분포 탭까지 갱신하려면 따로:
+
+```powershell
+python scripts/sync_embeds.py
+```
 
 > `sync_embeds.py` 실행 결과에 각 파일이 `OK`로 뜨는지 보세요. `WARN(끝에 </html> 없음)`이 뜨면
 > 그 원본 대시보드를 먼저 다시 생성해야 합니다(예: `PCA/pca_gdp.py` 등 원본 빌드 스크립트 실행).
@@ -34,8 +40,9 @@ npm run data
 npm run dev
 ```
 
-→ 브라우저에서 `http://localhost:3000` 열기. 5개 탭(Equity / Policy / Consensus / PCA / CAI·MAP)이
-다 보이고 그래프가 그려지면 성공. 빨간 에러가 나면 그 메시지를 저한테 복붙해주세요.
+→ 브라우저에서 `http://localhost:3000` 열기. 탭 9개(경제지표 / 실적 캘린더 / Report / PCA /
+CAI·MAP / CPI 분포 / Consensus / Policy Tone / Equity)가 다 보이고 그래프가 그려지면 성공.
+빨간 에러가 나면 그 메시지를 저한테 복붙해주세요.
 
 ---
 
@@ -44,7 +51,7 @@ npm run dev
 macro_hub는 이미 `QAE-dashboard` git 저장소 **안에** 있으니, 평소처럼 커밋·push하면 됩니다:
 
 ```powershell
-cd "C:\Users\USER\OneDrive\문서\QAE-dashboard"
+cd "C:\Users\infomax\Documents\python\QAE"
 git add macro_hub
 git commit -m "Add Next.js macro hub"
 git push
@@ -73,15 +80,24 @@ git push
 
 ## D. 데이터 갱신 루틴 (배포 후 평소 작업)
 
-데이터를 새로 받고 싶을 때:
+**평소에는 저장소 루트의 `전체업데이트.bat` 하나로 끝냅니다.** 수집 → HTML 생성 → JSON →
+embeds → commit → push 까지 다 돌고, git 에는 산출물만 담깁니다(작업 중인 코드는 안 딸려감).
 
 ```powershell
-cd "C:\Users\USER\OneDrive\문서\QAE-dashboard\macro_hub"
-npm run data                 # JSON 재생성 + embeds 동기화
+cd "C:\Users\infomax\Documents\python\QAE"
+.\전체업데이트.bat /nohaver          # Haver 로그인 없이 나머지 전부 + 배포
+```
+
+macro_hub 쪽만 손으로 다시 굽고 싶을 때:
+
+```powershell
+cd "C:\Users\infomax\Documents\python\QAE\macro_hub"
+npm run data                      # JSON 5종 재생성
+python scripts/sync_embeds.py     # 임베드 HTML 동기화
 cd ..
 git add macro_hub/public
 git commit -m "data refresh"
-git push                     # Vercel이 알아서 재배포
+git push                          # Vercel이 알아서 재배포
 ```
 
 비유: **반찬가게 새벽 준비**예요. 새벽에 반찬(JSON·HTML)을 새로 만들어 진열(push)하면,
