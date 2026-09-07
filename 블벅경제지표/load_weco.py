@@ -32,7 +32,15 @@ except Exception:                                    # 재설정 불가 환경 �
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-PATTERN = os.path.join(BASE, "*_eco.xlsx")
+# 파일명 규칙을 믿지 않는다. 블룸버그가 내보내는 이름이 매번 다르다
+# ('32253597_20260902_050757_eco.xlsx' 도 오고 'ecocal_fipjgrge.xlsx' 도 온다).
+# 그래서 폴더의 모든 xlsx 를 후보로 두고, 헤더가 WECO 형식인지로 거른 뒤
+# 최근에 쌓인 순서로 고른다.
+PATTERN = os.path.join(BASE, "*.xlsx")
+# 달력 파일이 아닌 것 (구버전 통합본 등)
+EXCLUDE_NAMES = {"weco_global.xlsx"}
+# WECO 내보내기라면 반드시 있는 컬럼
+REQUIRED_COLS = {"Date Time", "Country Code", "Event"}
 N_FILES = 2                                          # 한 세트 = 지표 1 + 이벤트 1
 MAX_FILES = 6                                        # 한 번에 읽을 최대 파일 수
 MERGE_DAYS = 14                                      # 최신 파일 기준 이 일수 안의 것만 병합
@@ -137,13 +145,26 @@ def _period(v):
 
 
 # --- 파일 선택 -------------------------------------------------------------
+def _is_weco(path):
+    """헤더만 훑어 WECO 내보내기인지 판별. 파일명 대신 이걸로 거른다."""
+    try:
+        head = pd.read_excel(path, nrows=0)
+    except Exception:
+        return False
+    cols = {str(c).strip() for c in head.columns}
+    return REQUIRED_COLS.issubset(cols) or _is_bquant(cols)
+
+
 def pick_files(n=None):
     """읽을 파일들을 최신순으로. 수정시각 우선, 같으면 파일명(=내보낸 시각) 순.
 
     n 을 주면 그 개수만. 안 주면 '가장 최신 파일에서 MERGE_DAYS 안'에 들어온 것만
     최대 MAX_FILES 개. 옛날에 넣어둔 파일은 이 창 밖이라 자동으로 빠진다.
     """
-    files = [f for f in glob.glob(PATTERN) if not os.path.basename(f).startswith("~$")]
+    files = [f for f in glob.glob(PATTERN)
+             if not os.path.basename(f).startswith("~$")
+             and os.path.basename(f).lower() not in EXCLUDE_NAMES
+             and _is_weco(f)]
     files.sort(key=lambda f: (os.path.getmtime(f), os.path.basename(f)), reverse=True)
     if n is not None:
         return files[:n]
@@ -154,9 +175,50 @@ def pick_files(n=None):
     return [f for f in files if os.path.getmtime(f) >= cut][:MAX_FILES]
 
 
+def _is_bquant(cols):
+    """BQuant CALENDAR() 내보내기인지. 날짜/시각이 나뉘어 있고 Country Code 가 없다."""
+    return ("Country" in cols and "Event" in cols
+            and "Country Code" not in cols
+            and any(c in cols for c in ("Date tie", "Date time", "Date Time")))
+
+
+def _from_bquant(df):
+    """BQuant CALENDAR() 형식을 WECO 표준 컬럼으로 맞춘다.
+
+    다른 점:
+      - 0행이 수식 설명('DROPNA(CALENDAR(...)).COUNTRY_NAME' 등)이라 버린다
+      - Country 가 'JP Country' 처럼 코드+접미사
+      - 날짜(Date tie — 원본 헤더의 오타)와 시각(time)이 따로
+      - Relevance 컬럼이 없다. 수식이 RELEVANCY=HIGH 라 전부 고관련도이므로
+        90 으로 채운다 (WECO 의 High 기준이 70 이상)
+    """
+    cols = list(df.columns)
+    dcol = next(c for c in ("Date tie", "Date time", "Date Time") if c in cols)
+
+    # 0행이 수식 설명이면 버린다
+    if len(df) and str(df.iloc[0].get("Country", "")).strip().upper() == "ID":
+        df = df.iloc[1:]
+
+    out = pd.DataFrame()
+    cc = df["Country"].astype(str).str.replace(r"\s*Country\s*$", "", regex=True).str.strip()
+    # BQuant 는 ISO 코드, WECO 는 블룸버그 코드를 쓴다. 대부분 같지만 영국만 갈린다
+    # (BQuant GB vs WECO UK). 안 맞추면 같은 나라가 두 줄로 쪼개진다.
+    cc = cc.replace({"GB": "UK"})
+    out["Country Code"] = cc
+    d = df[dcol].astype(str).str.strip()
+    t = df["time"].astype(str).str.strip() if "time" in cols else ""
+    out["Date Time"] = (d + " " + t).str.strip() if "time" in cols else d
+    for c in ("Event", "Period", "Survey", "Actual", "Prior", "Revised"):
+        out[c] = df[c] if c in cols else ""
+    out["Relevance"] = 90.0
+    return out.reset_index(drop=True)
+
+
 def _read(path):
     df = pd.read_excel(path)
     df.columns = [str(c).strip() for c in df.columns]
+    if _is_bquant(set(df.columns)):
+        df = _from_bquant(df)
     return df
 
 
