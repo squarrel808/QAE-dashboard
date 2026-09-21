@@ -14,6 +14,11 @@ PUBLIC = ROOT / "macro_hub" / "public"
 SITE = "https://macro-hub-nu.vercel.app"
 
 
+def content_hash(content):
+    # Git on Windows converts CRLF to LF when publishing text files.
+    return hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest()
+
+
 def prepare(run_id, root=ROOT):
     public = root / "macro_hub" / "public"
     records = json.loads((root / "report_pipeline/houseview_records.json").read_text("utf-8"))
@@ -37,7 +42,7 @@ def prepare(run_id, root=ROOT):
                 continue
             if path.suffix == ".json":
                 json.loads(path.read_text("utf-8"))
-            hashes[path.relative_to(public).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+            hashes[path.relative_to(public).as_posix()] = content_hash(path.read_bytes())
     marker = {"runId": run_id, "generatedAt": datetime.now().isoformat(timespec="seconds"),
               "latestSummary": latest, "latestReport": max(r["date"] for r in reports),
               "latestHouseview": max((r["date"] for r in views), default=None),
@@ -64,7 +69,7 @@ def verify(marker, log=print, timeout=900, fetch=fetch_bytes):
             if remote.get("runId") != marker["runId"]:
                 raise ValueError("사이트가 아직 이전 배포를 제공합니다")
             for path, expected in marker["files"].items():
-                if hashlib.sha256(fetch(path, marker["runId"])).hexdigest() != expected:
+                if content_hash(fetch(path, marker["runId"])) != expected:
                     raise ValueError("배포 데이터 불일치: " + path)
             # JSON만 배포되고 실제 화면이 실패하는 경우도 잡는다.
             page = fetch("reports", marker["runId"]).decode("utf-8")

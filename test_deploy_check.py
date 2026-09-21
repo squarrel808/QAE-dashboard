@@ -68,6 +68,13 @@ class DeploymentTests(unittest.TestCase):
             return self.today.encode() if path == 'reports' else (self.public / path).read_bytes()
         self.assertTrue(deploy_check.verify(marker, log=lambda x: None, timeout=0, fetch=fetch))
 
+    def test_windows_git_line_endings_do_not_report_false_failure(self):
+        (self.public / 'embeds/example.html').write_bytes(b'<html>\r\n<body>example</body>\r\n</html>')
+        marker = deploy_check.prepare('test', self.root)
+        def fetch(path, run_id):
+            return self.today.encode() if path == 'reports' else (self.public / path).read_bytes().replace(b'\r\n', b'\n')
+        self.assertTrue(deploy_check.verify(marker, log=lambda x: None, timeout=0, fetch=fetch))
+
     def test_report_page_must_also_update(self):
         marker = deploy_check.prepare('test', self.root)
         def fetch(path, run_id):
