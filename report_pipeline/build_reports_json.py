@@ -90,8 +90,11 @@ def main():
         })
 
     rows.sort(key=lambda x: (x["date"], x["source"]), reverse=True)
-    with open(OUT, "w", encoding="utf-8") as f:
+    if not rows:
+        raise SystemExit("유효한 리포트 0건 — 기존 reports.json을 보존합니다")
+    with open(OUT + ".tmp", "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=1)
+    os.replace(OUT + ".tmp", OUT)
 
     print("reports.json %d건 -> %s" % (len(rows), OUT))
     print("  기간:", rows[-1]["date"], "~", rows[0]["date"] if rows else "-")

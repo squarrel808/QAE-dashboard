@@ -20,6 +20,8 @@ REM  [옵션]  여러 개 같이 써도 됨.  예) 전체업데이트.bat /nohav
 REM    /nohaver    1)번 생략 - Haver 로그인 하기 싫을 때 (기존 엑셀 그대로 사용)
 REM    /noreport   2)번 생략 - 셀레니움 리포트 수집 생략
 REM    /webonly    1~4 전부 생략 - 이미 만들어둔 HTML로 JSON/embeds만 다시 굽기
+REM    /nightly    저장된 리포트 요약 + 웹 데이터 갱신, 실패 시 전송 중단, 사이트 반영 확인
+REM    /nohouseviews  별도 Claude 하우스뷰 재분석 생략, 작성된 문서로 보고서 목록만 갱신
 REM    /nopush     6)번에서 커밋만 하고 push 안 함
 REM    /nogit      6)번을 아예 건너뜀 - git 을 전혀 건드리지 않음 (로컬 갱신/테스트용)
 REM    /dryrun     실제로 돌리지 않고 '무엇이 실행될지'만 미리 보기
@@ -46,7 +48,8 @@ for %%A in (%*) do (
     if /i "%%~A"=="/nopause" set "NOPAUSE=1"
 )
 
-python "%~dp0run_qae.py" %*
+if not defined QAE_PYTHON set "QAE_PYTHON=python"
+"%QAE_PYTHON%" "%~dp0run_qae.py" %*
 set "RC=%errorlevel%"
 
 echo.

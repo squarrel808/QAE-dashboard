@@ -44,7 +44,7 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
   const [date, setDate] = useState('ALL')
   const [open, setOpen] = useState<Record<string, boolean>>({})
   // 하우스뷰 영역 — 전체(하우스 합산 매트릭스) / 운용사별(하우스 선택)
-  const [tab, setTab] = useState<'houseview' | 'reports'>('houseview')
+  const [tab, setTab] = useState<'houseview' | 'reports'>('reports')
   const [hvMode, setHvMode] = useState<'all' | 'byHouse'>('all')
   const [house, setHouse] = useState('ALL')
   const [expand, setExpand] = useState<Record<string, boolean>>({})
@@ -68,6 +68,7 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
     () => (houseViews && Array.isArray(houseViews.views) ? houseViews.views : EMPTY_VIEWS),
     [houseViews],
   )
+  const latestHouseView = useMemo(() => views.reduce((latest, v) => v.date > latest ? v.date : latest, ''), [views])
   const houses = useMemo(() => {
     const base = houseViews && houseViews.houses.length ? [...houseViews.houses] : [...DEFAULT_HOUSES]
     views.forEach((v) => { if (v.house && !base.includes(v.house)) base.push(v.house) })
@@ -167,6 +168,9 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
         <button onClick={() => setTab('houseview')} className={btn(tab === 'houseview')}>하우스뷰</button>
         <button onClick={() => setTab('reports')} className={btn(tab === 'reports')}>보고서</button>
       </div>
+      <p className="text-[11px] text-[var(--muted)] mb-3">
+        보고서 최신 자료: {dates[0] || '없음'} · 하우스뷰 최신 자료: {latestHouseView || '없음'}
+      </p>
 
       {/* ── 하우스뷰 (자산군 × 권역) ── */}
       {tab === 'houseview' && (

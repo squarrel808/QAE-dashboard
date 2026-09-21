@@ -1503,11 +1503,15 @@ def ubs_main(driver):
 # ============================================================
 #  실행
 # ============================================================
+SITE_ERRORS = []
+
+
 def run_site(name, fn, driver):
     """한 사이트에서 에러가 나도 전체가 멈추지 않도록 격리 실행."""
     try:
         return fn(driver)
     except Exception as e:
+        SITE_ERRORS.append(name)
         print(f"\n[!] {name} 단계 실패 → 건너뜀: {err1(e, 200)}")
         # 남은 새 탭/창 정리 후 메인 창으로 복귀
         try:
@@ -1523,6 +1527,7 @@ def run_site(name, fn, driver):
 
 
 def main():
+    SITE_ERRORS.clear()
     driver = make_driver()
     try:
         marquee_total = run_site("Marquee", marquee_main, driver)   # 1) Marquee (+ Portfolio Strategy)
@@ -1534,6 +1539,8 @@ def main():
         print(f"\n전체 완료: Marquee {marquee_total} + BofA {bofa_total} "
               f"+ HSBC {hsbc_total} + JPMM {jpmm_total} + UBS {ubs_total} "
               f"= {grand}개 → {DOWNLOAD_DIR}")
+        if SITE_ERRORS:
+            raise SystemExit("리포트 수집 실패 기관: " + ", ".join(SITE_ERRORS))
     finally:
         # 붙기 모드: quit()은 연결된 창을 닫으므로 호출하지 않음 (브라우저 유지)
         pass

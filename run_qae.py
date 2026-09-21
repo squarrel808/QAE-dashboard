@@ -16,6 +16,8 @@ run_qae.py  ―  QAE 대시보드 갱신 '지휘자(오케스트레이터)'
   /nohaver    Haver 수집 생략 (DLX 로그인 하기 싫을 때, 기존 엑셀 사용)
   /noreport   셀레니움 리포트 수집 생략
   /webonly    수집·HTML 생성 전부 생략, JSON/embeds 만 다시 굽기
+  /nightly    저장된 리포트 DOCX + 웹 산출물 갱신, 실패 시 전송 중단, 실제 사이트 확인
+  /nohouseviews  별도 Claude 분석 생략, 보고서 목록은 DOCX에서 갱신
   /nopush     커밋만 하고 push 안 함
   /nogit      git 을 아예 건드리지 않음 (로컬 갱신/테스트용)
   /dataonly   git add 를 산출물(macro_hub/public 등)로 제한
@@ -82,14 +84,14 @@ PIPELINE = [
      "haver-api_CPI/fetch_haver_to_excel.py",
      os.path.join("haver", "haver-api_CPI"), "fetch_haver_to_excel.py"),
 
-    ("report", "수집 (download_reports.py)", "download_reports.py",
+    ("collect_report", "수집 (download_reports.py)", "download_reports.py",
      "report_pipeline", "download_reports.py"),
     # PDF 재요약(summarize.py)은 제거했다. 보따리\_자동화\daily_summary.py 가 만든
     # 통합요약 DOCX 에 같은 내용이 이미 있어 같은 자료를 두 번 요약할 이유가 없다.
     # (pdfplumber 의존도 함께 사라졌다)
     ("report", "파싱 (parse_daily_docx.py)", "parse_daily_docx.py",
      "report_pipeline", "parse_daily_docx.py"),
-    ("report", "하우스뷰 (extract_houseviews.py)", "extract_houseviews.py",
+    ("houseviews", "하우스뷰 (extract_houseviews.py)", "extract_houseviews.py",
      "report_pipeline", "extract_houseviews.py"),
     ("report", "목록 (build_reports_json.py)", "build_reports_json.py",
      "report_pipeline", "build_reports_json.py"),
@@ -240,17 +242,28 @@ def run_git(run_id, do_push, add_all):
 
     send_result, send_flag, rc = "NOT_RUN", "NA", 0
     try:
+        # 다른 작업에서 이미 스테이징한 코드를 데이터 커밋에 섞지 않는다.
+        staged = subprocess.check_output(
+            ["git", "diff", "--cached", "--name-only"], cwd=BASE_DIR,
+            text=True, encoding="utf-8").splitlines()
+        allowed = ("macro_hub/public/data/", "macro_hub/public/embeds/")
+        if not add_all and any(not p.startswith(allowed) for p in staged):
+            raise RuntimeError("다른 작업의 스테이징 변경이 있어 전송을 중단합니다")
         if add_all:
-            git("add", "-A")
+            rc = git("add", "-A")
         else:
             log("    | (/dataonly) 산출물만 스테이징")
-            git("add", "macro_hub/public")
-            git("add", "report_pipeline/state.json")
+            rc = git("add", "--", "macro_hub/public/data", "macro_hub/public/embeds")
+        if rc:
+            raise RuntimeError("산출물 스테이징 실패")
 
         # diff --cached --quiet : 0=변경없음 / 1=스테이징된 변경 있음
-        has_change = (git("diff", "--cached", "--quiet") == 1)
+        diff_rc = git("diff", "--cached", "--quiet")
+        if diff_rc not in (0, 1):
+            raise RuntimeError("스테이징 변경 확인 실패")
+        has_change = diff_rc == 1
         if not has_change:
-            log("변경된 파일이 없습니다. 커밋/푸시 생략.")
+            log("새로 커밋할 변경 없음. 이전 미전송 커밋도 확인합니다.")
             send_result, send_flag = "SKIPPED", "0"
         else:
             rc = git("commit", "-m", f"데이터 갱신 {datetime.now():%Y-%m-%d}")
@@ -259,14 +272,15 @@ def run_git(run_id, do_push, add_all):
             elif not do_push:
                 log("(/nopush) 커밋만 하고 push 는 생략했습니다.")
                 send_result, send_flag = "SKIPPED", "0"
+        if rc == 0 and do_push:
+            # 이전 실행에서 commit만 성공하고 push가 실패한 경우에도 재전송.
+            rc = git("push")
+            if rc == 0:
+                log("GitHub 전송 완료 — Vercel 배포 성공은 사이트 확인 후 확정합니다.")
+                send_result, send_flag = "SENT", "1"
             else:
-                rc = git("push")
-                if rc == 0:
-                    log("push 완료 — Vercel 이 1~2분 뒤 재배포합니다.")
-                    send_result, send_flag = "SENT", "1"
-                else:
-                    log("push 실패 — 자격증명/네트워크 확인")
-                    send_result, send_flag = "FAILED", "1"
+                log("push 실패 — 자격증명/네트워크 확인")
+                send_result, send_flag = "FAILED", "1"
     except Exception as e:
         log(f"git 단계 예외: {e}")
         send_result, rc = "FAILED", 1
@@ -310,10 +324,14 @@ def refresh_dashboard():
 def parse_opts(argv):
     flags = {a.lstrip("-/").lower() for a in argv[1:]}
     webonly = "webonly" in flags
+    nightly = "nightly" in flags
     return {
-        "haver": not webonly and "nohaver" not in flags,
-        "report": not webonly and "noreport" not in flags,
-        "build": not webonly,
+        "haver": not nightly and not webonly and "nohaver" not in flags,
+        "collect_report": not nightly and not webonly and "noreport" not in flags,
+        "report": nightly or (not webonly and "noreport" not in flags),
+        "houseviews": "nohouseviews" not in flags and (nightly or (not webonly and "noreport" not in flags)),
+        "build": not nightly and not webonly,
+        "nightly": nightly,
         "web": True,
         "git": "nogit" not in flags,
         "push": "nopush" not in flags,
@@ -347,6 +365,8 @@ def show_plan(opt):
         print(f"  [{n + 1:>2}] 전송 (git)  —  {how} → {tail}")
     else:
         print("   --  전송 (git)   (건너뜀 /nogit)")
+    if opt["nightly"]:
+        print("  야간: 저장된 DOCX → Report → 웹 데이터 → 최신성 검사 → 전송 → 실제 사이트 확인")
     print("=" * 62)
     print(f"  실행 예정 단계: {n}개")
     print(f"  로그/이력 기록 위치: {LOG_DIR}")
@@ -385,7 +405,7 @@ def main():
             log(f"⏭️  건너뜀: {label}  (옵션으로 생략)")
             continue
         # 리포트 그룹 첫 단계 직전에 셀레니움용 크롬을 띄운다
-        if group == "report" and not chrome_done:
+        if group == "collect_report" and not chrome_done:
             log("셀레니움용 크롬 실행 (디버그포트 9222)")
             launch_chrome()
             chrome_done = True
@@ -396,9 +416,30 @@ def main():
             ok_count += 1
         else:
             failures.append({"security": label, "status": f"exit {rc}"})
+            if opt["nightly"]:
+                log("야간 필수 단계 실패 — 이후 처리와 전송을 중단합니다")
+                break
+
+    marker = None
+    if opt["nightly"] and not failures:
+        check_start = datetime.now()
+        total_count += 1
+        try:
+            from deploy_check import prepare
+            marker = prepare(run_id)
+            log("배포 전 검사 완료: 최신 요약 " + marker["latestSummary"])
+            ok_count += 1
+            append_step(run_id, "검증 (배포 전)", check_start, datetime.now(), 0)
+        except Exception as exc:
+            failures.append({"security": "검증 (배포 전)", "status": str(exc)})
+            log("배포 전 검사 실패: " + str(exc))
+            append_step(run_id, "검증 (배포 전)", check_start, datetime.now(), 1)
 
     # git 단계 (/nopush 면 커밋까지만, /nogit 이면 아예 건너뜀)
-    if opt["git"]:
+    if opt["nightly"] and failures:
+        send_result = hist["send_result"] = "NOT_RUN"
+        log("갱신 실패로 사이트 전송하지 않음")
+    elif opt["git"]:
         send_result, send_flag, send_exit, git_label = run_git(
             run_id, opt["push"], opt["add_all"])
         hist["send_result"] = send_result
@@ -411,6 +452,17 @@ def main():
         send_result = hist["send_result"] = "SKIPPED"   # 성공 판정에는 영향 없게
         hist["send_flag"] = "NA"
         hist["send_exit"] = "NA"
+
+    if marker and send_result == "SENT":
+        from deploy_check import verify
+        check_start = datetime.now()
+        total_count += 1
+        verified = verify(marker, log=log)
+        append_step(run_id, "검증 (Vercel 사이트)", check_start, datetime.now(), 0 if verified else 1)
+        if verified:
+            ok_count += 1
+        else:
+            failures.append({"security": "검증 (Vercel 사이트)", "status": "15분 내 사이트 반영 확인 실패"})
 
     end = datetime.now()
     hist.update({
@@ -442,4 +494,20 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # 오전/야간/수동 실행이 같은 산출물과 Git 인덱스를 동시에 수정하지 않도록 보호.
+    if parse_opts(sys.argv)["dryrun"]:
+        sys.exit(main())
+    with open(os.path.join(LOG_DIR, "qae.lock"), "a+b") as lock:
+        if sys.platform == "win32":
+            import msvcrt
+            lock.seek(0, os.SEEK_END)
+            if lock.tell() == 0:
+                lock.write(b"0")
+                lock.flush()
+            lock.seek(0)
+            try:
+                msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
+            except OSError:
+                log("다른 QAE 갱신이 실행 중입니다 — 중복 실행하지 않음")
+                sys.exit(2)
+        sys.exit(main())

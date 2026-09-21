@@ -18,6 +18,7 @@ parse_daily_docx.py — 보따리\YYMMDD\일일리서치통합요약_*.docx 를 
 출력: report_pipeline/houseview_records.json  (추출 단계의 입력)
 """
 import os, re, json, glob, io, sys, collections
+from datetime import date
 
 BASE = os.environ.get("BOTARI_ROOT", r"C:\Users\infomax\Desktop\보따리")
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -128,6 +129,8 @@ def parse_doc(path):
 
 def main():
     files = sorted(glob.glob(os.path.join(BASE, "*", "*요약*.docx")))
+    if not files:
+        raise SystemExit("요약 DOCX 없음 — 기존 레코드를 보존합니다: " + BASE)
     print("DOCX %d개" % len(files))
     allrecs, bad = [], []
     for f in files:
@@ -147,8 +150,20 @@ def main():
         seen.add(k)
         uniq.append(r)
 
-    with open(OUT, "w", encoding="utf-8") as fp:
+    if not uniq:
+        raise SystemExit("파싱 결과 0건 — 기존 레코드를 보존합니다")
+    newest = max(r["date"] for r in uniq if r.get("date"))
+    if (date.today() - date.fromisoformat(newest)).days > int(os.environ.get("REPORT_MAX_AGE_DAYS", "7")):
+        raise SystemExit("요약 입력이 오래됨: " + newest + " — 기존 레코드를 보존합니다")
+    if bad:
+        # 최신 문서가 파싱에 실패한 채 과거 문서만 성공하는 경우도 실패로 처리.
+        for path, reason in bad:
+            if newest in os.path.basename(path) or os.path.getmtime(path) >= max(os.path.getmtime(f) for f in files):
+                raise SystemExit("최신 요약 파싱 실패: " + os.path.basename(path) + " / " + reason)
+    with open(OUT + ".tmp", "w", encoding="utf-8") as fp:
         json.dump(uniq, fp, ensure_ascii=False, indent=1)
+    os.replace(OUT + ".tmp", OUT)
+    print("  최신 요약:", newest)
     print("레코드 %d개 (중복 제거 후) -> %s" % (len(uniq), OUT))
     print("  섹션:", dict(collections.Counter(r["section"] for r in uniq)))
     print("  기관:", dict(collections.Counter(r["house"] or "?" for r in uniq).most_common(12)))

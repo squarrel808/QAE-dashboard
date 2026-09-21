@@ -400,7 +400,7 @@ def make_client():
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not key:
         raise SystemExit("ANTHROPIC_API_KEY 없음 — report_pipeline/.env 확인 (.env.example 참고)")
-    return Anthropic(api_key=key)
+    return Anthropic(api_key=key, timeout=120.0, max_retries=0)
 
 
 def call_batch(client, batch, stats):
@@ -576,9 +576,9 @@ def main():
         added = 0
         for i, rec in pairs:
             raws = result.get(i)
-            if raws is None:            # 모델이 인덱스를 빠뜨림 → 뷰 없음으로 확정
+            if raws is None:            # 실패/누락은 완료 처리하지 않아 다음 실행에서 재시도
                 stats["missing_idx"] += 1
-                raws = []
+                continue
             views, seen = [], set()
             for raw in raws[:3]:
                 v = norm_view(raw, rec, stats)
@@ -615,6 +615,8 @@ def main():
     print("스킵 사유 — 기관 미상 %d · 근거 부족 %d · 인덱스 누락 %d · 응답잘림 %d · 실패배치 %d"
           % (stats["no_house"], stats["no_rationale"], stats["missing_idx"],
              stats["truncated"], stats["failed_batches"]))
+    if stats["missing_idx"] or stats["failed_batches"]:
+        raise SystemExit("하우스뷰 미처리 레코드가 남았습니다. 다음 실행에서 재시도합니다.")
 
 
 if __name__ == "__main__":
