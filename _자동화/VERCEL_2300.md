@@ -1,6 +1,7 @@
 # 매일 23:00 Vercel 배포
 
-한국시간 매일 23:00에 `run_vercel_2300.bat`이 기존 `전체업데이트.bat /nightly /nohouseviews /dataonly /nopause`를 호출한다.
+한국시간 매일 23:00에 기존 BAT의 실행 본체인 `run_qae.py /nightly /nohouseviews /dataonly`를 실행한다.
+예약은 Python을 직접 실행해 종료 상태를 추적하며, 수동 실행용 `run_vercel_2300.bat`도 같은 실행 흐름을 호출한다.
 기존 오전 07:00 예약은 유지한다. 컴퓨터가 켜져 있고 infomax 사용자가 로그인되어 있어야 한다.
 오전 예약에도 `/nohouseviews`를 추가해 리포트 요약문을 별도로 재분석하지 않는다.
 놓친 예약은 다음 실행 가능 시점에 실행하고, 실행이 겹치면 중복 실행하지 않는다.

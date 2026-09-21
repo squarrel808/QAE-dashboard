@@ -8,8 +8,11 @@ if ($existing) {
     $backup = Join-Path $workspace ('logs\vercel-task-before-' + (Get-Date -Format 'yyyyMMdd-HHmmss') + '.xml')
     Export-ScheduledTask -TaskName $taskName | Set-Content -LiteralPath $backup -Encoding Unicode
 }
-$action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\cmd.exe" `
-    -Argument ('/d /c ""' + $batch + '""') -WorkingDirectory $workspace
+$pythonPath = 'C:\Users\infomax\AppData\Local\Programs\Python\Python313\python.exe'
+if (-not (Test-Path -LiteralPath $pythonPath)) { throw 'Python runtime missing' }
+# 직접 실행해야 작업 종료/시간 제한 시 BAT 아래 Python이 고아 프로세스로 남지 않는다.
+$action = New-ScheduledTaskAction -Execute $pythonPath `
+    -Argument ('-X utf8 -u "' + (Join-Path $workspace 'run_qae.py') + '" /nightly /nohouseviews /dataonly') -WorkingDirectory $workspace
 $trigger = New-ScheduledTaskTrigger -Daily -At '23:00'
 $principal = New-ScheduledTaskPrincipal -UserId ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name) `
     -LogonType Interactive -RunLevel Limited
