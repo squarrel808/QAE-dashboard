@@ -1,0 +1,25 @@
+{
+  "runId": "20260921_215336",
+  "generatedAt": "2026-09-21T21:56:22",
+  "latestSummary": "2026-09-21",
+  "latestReport": "2026-09-21",
+  "latestHouseview": "2026-09-02",
+  "reports": 1153,
+  "files": {
+    "data/caimap.json": "96e6e0168d3c2ea46f58593f692ef948b9c88e161515fbec68ba3366b9352416",
+    "data/consensus_cpi.json": "a02684589d7ad4521302af96a0428945a510cf63c3888111f0a42141628905e2",
+    "data/consensus_gdp.json": "dba75ce67bdb8665f48e58bc0d10ef38cbb8709ddbd6dddd7a79d7470dd8ddde",
+    "data/houseviews.json": "139c592f641564e1a15311b3b140a7598cbc663d2ac4eced2456ff78ec526af9",
+    "data/pairbaskets.json": "37c69b3621d87f03a70438c7f54380ab1ca407e5929ee01b58da78f963521d7b",
+    "data/pca.json": "4ceccd3d48b257024692a435c3296887ac6f1e80f4f884489ccc78c1ed68568b",
+    "data/policy.json": "44ab58954b41193c9b7c9f8f2b2962147e20845a81c0425ba3d9072b884e68d7",
+    "data/reports.json": "15c8827058e18a02cb6b7b20ad5efab013060fc6722170e71951d60cb4d42a56",
+    "embeds/caimap.html": "458b865ed573cad4cb62a3e0bb565816a4c45e91dcdfc965ddd9701008100d10",
+    "embeds/consensus_cpi.html": "06494afc397e1a314f70d97b27c3dff07ae92feb1b83ea2ab213a0a7a782a1f6",
+    "embeds/consensus_gdp.html": "2f56364a0f8fa8ce5a132bd2dbfa21b0be5557cb510bd584d66ddd4b4e665002",
+    "embeds/cpi_dist.html": "2aa43c1ae34168a961b538902374b407b2c474103715683b8452e363012c3a22",
+    "embeds/earnings.html": "6df7ff469347590114c4839861fe99693474b16455c1ae67da510a8665e71cde",
+    "embeds/econ.html": "ccda6bde3a4f17af0e05bc2da862cc09142a9bc3713606befc44bfac059cd183",
+    "embeds/pca.html": "ac243e410e49accb4bc4f518f534e2e971e098d4b90579af7329d732b491a337"
+  }
+}
