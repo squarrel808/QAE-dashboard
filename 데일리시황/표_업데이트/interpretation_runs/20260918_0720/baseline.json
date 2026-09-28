@@ -1,0 +1,300 @@
+{
+  "manifest": {
+    "requested_at": "2026-09-17T08:49:15+09:00",
+    "mode": "tables_and_existing_evidence",
+    "inputs": {
+      "bquant": {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\Bquant_All_19_Raw_Refreshed12시 (6).xlsb",
+        "name": "Bquant_All_19_Raw_Refreshed12시 (6).xlsb",
+        "sha256": "827fa68deb8c7b30c31d66b5e178562a426d8d186737b4b9a6988ebd9add791f",
+        "modified": "2026-09-17T08:40:23+09:00"
+      },
+      "growth": {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Growth Consesus_수정 (4).xlsb",
+        "name": "ECFC_Growth Consesus_수정 (4).xlsb",
+        "sha256": "ff768946151adae51f8a4700986fea39446e0a294e97e37d90fd73bab5ba7725",
+        "modified": "2026-09-17T08:40:23+09:00"
+      },
+      "inflation": {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Inflation Consesus_수정 (3).xlsb",
+        "name": "ECFC_Inflation Consesus_수정 (3).xlsb",
+        "sha256": "fd9965aa15f5dbb3e6903cb278cc19d474554b6801a17113dc6cc19f68038a19",
+        "modified": "2026-09-17T08:40:24+09:00"
+      },
+      "weco": {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+        "name": "ecocal_fipjgrge (4).xlsx",
+        "sha256": "b86f5440e1b55e57718930d3fcfbdc20340f07150feb22bd394a9b7cd8ca5063",
+        "modified": "2026-09-17T08:40:24+09:00"
+      }
+    },
+    "new_ai_interpretations": true,
+    "markets": {
+      "1D": [
+        {
+          "key": "STOXX600",
+          "asOf": "2026-09-16",
+          "periodStart": {
+            "1D": "2026-09-15",
+            "5D": "2026-09-09",
+            "1M": "2026-08-14",
+            "3M": "2026-06-16",
+            "6M": "2026-03-16"
+          },
+          "coverage": {
+            "1D": 1.0,
+            "5D": 1.0,
+            "1M": 1.0,
+            "3M": 1.0,
+            "6M": 0.9966666666666667
+          },
+          "sessionDates": [
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15",
+            "2026-09-16"
+          ],
+          "memberCount": 600
+        },
+        {
+          "key": "SP500",
+          "asOf": "2026-09-16",
+          "periodStart": {
+            "1D": "2026-09-15",
+            "5D": "2026-09-09",
+            "1M": "2026-08-14",
+            "3M": "2026-06-16",
+            "6M": "2026-03-16"
+          },
+          "coverage": {
+            "1D": 1.0,
+            "5D": 1.0,
+            "1M": 1.0,
+            "3M": 1.0,
+            "6M": 0.9960238568588469
+          },
+          "sessionDates": [
+            "2026-09-02",
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15",
+            "2026-09-16"
+          ],
+          "memberCount": 503
+        },
+        {
+          "key": "TOPIX",
+          "asOf": "2026-09-16",
+          "periodStart": {
+            "1D": "2026-09-15",
+            "5D": "2026-09-09",
+            "1M": null,
+            "3M": null,
+            "6M": null
+          },
+          "coverage": {
+            "1D": 1.0,
+            "5D": 1.0,
+            "1M": null,
+            "3M": null,
+            "6M": null
+          },
+          "sessionDates": [
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15",
+            "2026-09-16"
+          ],
+          "memberCount": 1635
+        },
+        {
+          "key": "HANGSENG",
+          "asOf": "2026-09-16",
+          "periodStart": {
+            "1D": "2026-09-15",
+            "5D": "2026-09-09",
+            "1M": "2026-08-14",
+            "3M": "2026-06-16",
+            "6M": "2026-03-16"
+          },
+          "coverage": {
+            "1D": 1.0,
+            "5D": 1.0,
+            "1M": 0.9789473684210527,
+            "3M": 0.9789473684210527,
+            "6M": 0.9789473684210527
+          },
+          "sessionDates": [
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15",
+            "2026-09-16"
+          ],
+          "memberCount": 95
+        }
+      ],
+      "AI": {
+        "asOf": "2026-09-16",
+        "periodStarts": {
+          "1D": "2026-09-15",
+          "5D": "2026-09-09",
+          "1W": "2026-09-09",
+          "1M": "2026-08-14",
+          "3M": "2026-06-16",
+          "6M": "2026-03-16",
+          "YTD": "2025-12-31",
+          "Since 2025-07-01": "2025-07-01"
+        },
+        "stages": 12,
+        "stocks": 73
+      }
+    },
+    "consensus": {
+      "growth": {
+        "미국": "2026-09-17",
+        "영국": "2026-09-17",
+        "일본": "2026-09-17",
+        "독일": "2026-09-10",
+        "프랑스": "2026-09-17",
+        "호주": "2026-09-17",
+        "중국": "2026-09-17",
+        "캐나다": "2026-09-17"
+      },
+      "inflation": {
+        "미국": "2026-09-17",
+        "영국": "2026-09-17",
+        "일본": "2026-09-17",
+        "독일": "2026-09-17",
+        "프랑스": "2026-09-17",
+        "호주": "2026-09-17",
+        "중국": "2026-09-17",
+        "캐나다": "2026-09-17"
+      }
+    },
+    "weco": {
+      "title": "매크로 지표와 IB 해석",
+      "as_of": "2026-09-17",
+      "generated_at": "2026-09-17T14:19:59+09:00",
+      "workbook": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+      "workbook_name": "ecocal_fipjgrge (4).xlsx",
+      "workbook_sha256": "b86f5440e1b55e57718930d3fcfbdc20340f07150feb22bd394a9b7cd8ca5063",
+      "workbook_modified": "2026-09-17T08:40:24",
+      "source_db": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\data\\research.sqlite3",
+      "source_date_max": "2026-09-16",
+      "event_count": 247,
+      "country_count": 12,
+      "reported": 194,
+      "missing": 53,
+      "start": "2026-09-03",
+      "end": "2026-09-24",
+      "months": [
+        "2026-09"
+      ],
+      "comment_counts": {
+        "uncovered": 551,
+        "reaction": 144,
+        "preview": 28,
+        "related": 57,
+        "candidate": 423,
+        "basis": 32
+      },
+      "reviewed_connections": 9,
+      "source_documents": 111,
+      "indicator_candidate_documents": 366,
+      "indicator_candidate_pages": 1497,
+      "time_note": "발표시각은 파일 D열 그대로이며 시간대는 파일에 명시되지 않음. 실제값 존재 여부는 H열 기준. 원문 후보는 지표 키워드와 국가/지역을 결합한 미검토 검색 결과이며, 직접 IB 코멘트로 사용하기 전에 전체 페이지 검토가 필요함. 상위 거시 뷰는 보조 배경일 뿐 지표 코멘트가 아님.",
+      "monthly_note": "월 분류는 발표월 기준. 기간 밖으로 밀려난 실제값 수록 지표는 이전에 저장한 원본 수치와 검토 당시 코멘트로 누적 표시함. 최신 원본에 같은 지표가 다시 있으면 최신 수치를 우선함.",
+      "source_column_range": "B:K",
+      "requested_at": "2026-09-17T14:19:59+09:00",
+      "interpretation_mode": "source_reviewed_commentary",
+      "available_at_request": 194,
+      "latest_calendar_start": "2026-09-10",
+      "latest_calendar_end": "2026-09-24",
+      "latest_calendar_event_count": 116,
+      "latest_calendar_reported": 63,
+      "history_event_count": 131,
+      "authored_event_count": 152,
+      "authored_house_count": 186,
+      "commentary_needs_recheck": 0,
+      "commentary_reviewed_on": "2026-09-17",
+      "macro_views": {
+        "title": "IB 거시 맥락 뷰",
+        "as_of": "2026-09-17",
+        "generated_at": "2026-09-17T14:25:54+09:00",
+        "current_views": 60,
+        "historical_views": 78,
+        "prior_views": 18,
+        "source_documents": 54,
+        "source_pages": 64,
+        "current_forecasts": 11,
+        "latest_view_date": "2026-09-16",
+        "oldest_current_view_date": "2026-07-30",
+        "indexed_documents": 3551,
+        "latest_indexed_report_date": "2026-09-16",
+        "supplemental_views": 3,
+        "conflict_groups": 0,
+        "draft": true,
+        "mode": "restored_saved_context_not_new_research",
+        "view_payload_sha256": "cbe3c3aaa8af420e4a6dcea89f5f99fb23d1da512c9c9a9966beceeffeeca552",
+        "note": "저장된 검토 뷰를 복원한 화면입니다. 최근 보고서가 검색 DB에 추가됐더라도 각 하우스의 거시 전망이 새로 검토·갱신됐다는 뜻은 아닙니다."
+      }
+    },
+    "review_queue": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\review_queue.json",
+    "queue_changes": {
+      "unchanged": 63
+    },
+    "outputs": [
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\Sector_Industry\\sector_1D.html",
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\AI\\ai_1D.html",
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\Consensus\\growth.html",
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\Consensus\\inflation.html",
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html",
+      "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views.html"
+    ],
+    "weco_refreshed_at": "2026-09-17T14:20:20+09:00",
+    "commentary_written_at": "2026-09-17T08:53:28+09:00",
+    "interpretation_run": {
+      "status": "published_partial_source_coverage",
+      "record": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\interpretation_runs\\20260917_recovery\\run_record.json",
+      "updated_events": 26,
+      "completed_at": "2026-09-17T08:53:28+09:00"
+    },
+    "weco_history": {
+      "enabled": true,
+      "archive": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\ecocal_dashboard\\indicator_history.json",
+      "history_events": 131,
+      "published_at": "2026-09-17T14:20:20+09:00"
+    },
+    "macro_views_updated_at": "2026-09-17T14:26:25+09:00"
+  },
+  "hashes": {
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\latest.json": "56af462bcc7432dfcf6d782ea152134f16b43cfefe419261f824d20484aee022",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\ecocal_dashboard\\authored_commentary.json": "36cad4d41387a2defe5b4e2e29e6621d565665607a7bf994fbbc29e4bbfbafab",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\data\\living_ib.sqlite3": "1e860a5a57da0902c4d9ac243d447a4fb92402b60ea6b83301f3927cc7f7cfa7",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\ecocal_dashboard\\indicator_history.json": "40f3b6fc45e214b2216ecee1c25a25647959898733b4f55f510470e1aa1db3a8",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\dashboard_data.json": "01bc5cf4f886af65a6cb1e36f0023a96433554552d009312b56a42529502f715"
+  }
+}

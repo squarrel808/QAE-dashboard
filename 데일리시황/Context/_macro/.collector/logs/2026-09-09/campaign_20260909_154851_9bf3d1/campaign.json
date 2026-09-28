@@ -1,0 +1,39 @@
+{
+  "campaign_id": "20260909_154851_9bf3d1",
+  "started": "2026-09-09T15:48:51.097955+09:00",
+  "end": "2026-09-09",
+  "trial_start": "2026-06-08",
+  "extension_start": "2026-03-09",
+  "extension_end": "2026-06-07",
+  "status": "interrupted_for_recovery",
+  "previous_status": "waiting_for_current_run",
+  "finished": "2026-09-09T20:15:39+09:00",
+  "recovery_reason": "User-approved restart after Playwright driver crash. Supervisor PID4500 and collector tree PID6660/48352 were independently confirmed stopped. Existing PDFs and Chrome ports 9222/9223 preserved.",
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "after_run": "20260909_150452_83614f",
+  "houses": {
+    "HSBC": {},
+    "BofA": {},
+    "JPM": {},
+    "GS": {},
+    "Citi": {}
+  },
+  "attempts": [],
+  "active": null,
+  "scheduled": false,
+  "updated": "2026-09-09T20:14:58.987286+09:00",
+  "disk_space": {
+    "minimum_free_gib": 5.0,
+    "volumes": [
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+        "free_bytes": 32882855936
+      },
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+        "free_bytes": 32882855936
+      }
+    ]
+  }
+}

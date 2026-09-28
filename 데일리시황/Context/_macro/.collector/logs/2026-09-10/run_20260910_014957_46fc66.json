@@ -1,0 +1,26 @@
+{
+  "run_id": "20260910_014957_46fc66",
+  "mode": "backfill",
+  "start": "2026-06-08",
+  "end": "2026-09-09",
+  "started": "2026-09-10T01:50:03.966841+09:00",
+  "finished": "2026-09-10T02:11:24.007196+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_014957_46fc66.log",
+  "houses": {
+    "Citi": {
+      "status": "incomplete",
+      "reason": "Failed PDFs or unparseable publication dates remain.",
+      "counts": {
+        "discovered": 500,
+        "outside_range": 17,
+        "in_range": 483,
+        "already_saved": 448,
+        "attempted": 35,
+        "failed": 18,
+        "downloaded": 17
+      }
+    }
+  }
+}

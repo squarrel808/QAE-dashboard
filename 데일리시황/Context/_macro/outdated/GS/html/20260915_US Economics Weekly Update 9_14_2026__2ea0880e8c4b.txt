@@ -1,0 +1,71 @@
+DEV
+search
+Search Marquee
+ 
+Sorry, no matches were found
+Try a new search or use our popular apps
+US ECONOMICS WEEKLY UPDATE
+US Economics Weekly Update 9/14/2026
+Research | Economics | 15 September 2026 | 12:16AM UTC
+
+We expect a 25bp hike without a signal of further hikes at the September FOMC meeting on Wednesday.
+
+We added a 25bp rate hike to our forecast after the August CPI, which had little impact on our inflation view but pushed market pricing of a hike to 90%, high enough that the FOMC will likely want to avoid the market reaction from staying on hold.
+
+We expect the FOMC to avoid signaling further hikes in a few places:
+
+Statement: We do not expect any guidance on the path forward or the criteria for further hikes.
+
+Press conference: Warsh could say that before deciding on further steps, the FOMC will “carefully assess” incoming data or will want to see upcoming inflation reports (plural) or how the underlying inflation trend evolves, which all hint at waiting a bit longer to collect more information.
+
+Dot plot: We expect a 10-8 majority to show 1 hike, with a risk of a majority for 2 if more participants than we expect see a hike this week as a normal response to higher oil prices.
+
+We also raised our forecast for the terminal rate to 3.25-3.5% (vs. 3-3.25% previously).
+
+We continue to expect two cuts in 2027 but now expect them in September and December (vs. June and December previously).
+
+We expect the FOMC’s longer run or neutral rate dots to gradually drift higher and for the funds rate to ultimately stabilize a bit higher for two reasons:
+
+The longer the economy performs well at high rates, the more likely FOMC participants are to conclude that we might already be near neutral.
+
+Some participants might think AI investment demand is raising the equilibrium interest rate.
+
+Our Fed expectations through the end of next year remain considerably less hawkish than market pricing.
+
+Our probability-weighted forecast for the fed funds rate through the end of next year is well below market pricing.
+
+We do not see a strong economic case for raising the funds rate.
+
+We think that all of the overshoot of 2% is due to one-time factors whose impact is fading, that the improvement in core PCE inflation to a 2.5% pace over the last three months is an early sign of this, that high inflation looks broad-based mainly because of tariff effects, that inflation expectations are not at immediate risk of unanchoring, and that the economy is not overheated, which is the reason to hike.
+
+Seasonality distortions should boost August retail sales.
+
+We forecast a 0.6% increase (vs. 0.4% consensus) in core retail sales, but the strength reflects a 0.4pp boost from a rebound in the nonstore retailers category, which was depressed in July because an online shopping holiday came earlier in June this year instead.
+
+We also expect a 0.6% increase in headline retail sales, reflecting higher gasoline prices and auto sales but limited growth in food services and building materials sales.
+
+Core CPI prices rose 0.29% in August and 2.45% over the last year.
+
+Prices of wireless phone services boosted the core by 10bp.  Airfares rose sharply due to higher oil prices, boosting the core by another 4bp.
+
+OER and rent were more benign, with both rising slightly less than 0.2%.
+
+We estimate that core PCE prices rose 0.26% in August and 3.16% year-over-year after accounting for the impact of methodological changes that will be implemented this month.
+
+Our financial conditions index is little changed this year despite the large rise in interest rates, implying little net impact on GDP growth.
+
+Interest rates have risen substantially since the start of the year, but their impact on overall financial conditions has been roughly offset by tighter credit spreads, higher equity prices, and a weaker dollar.
+
+As a result, the impulse from changes in financial conditions to GDP growth is little changed and quite small, contrary to what one would think from the rise in rates alone.
+
+David Mericle
+Goldman Sachs & Co. LLC, New York
+david.mericle@gs.com
+© Copyright 2002-2026 Goldman Sachs All rights reserved.
+Need help?
+Contact Us
+
+Use of this site is subject to the Terms and Conditions of Use updated as of 12 August 2024.
+Marquee Regulatory Disclosures
+Important Disclosure Information About Goldman Sachs Research
+Please review our Interest Rate Benchmark Transition Notice, Privacy & Cookies Policy, Security, Market Data Attribution, Security Guidance and GS&Co.'s Statement of Financial Condition

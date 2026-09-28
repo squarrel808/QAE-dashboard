@@ -102,7 +102,9 @@ export default function Pca({ data }: { data: PcaData }) {
       <Card title={title}>
         <div style={{ height: 290 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <ComposedChart data={rows} margin={{ top: 6, right: 10, left: -12, bottom: 0 }}>
+            {/* stackOffset="sign": 기본값(none)은 앞 카테고리 누적합 위에 음수를 얹어 막대가 0선 위에 그려진다.
+                sign 은 양수는 0 위로, 음수는 0 아래로 나눠 쌓는다 (CaiMap 과 동일). */}
+            <ComposedChart data={rows} stackOffset="sign" margin={{ top: 6, right: 10, left: -12, bottom: 0 }}>
               <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />

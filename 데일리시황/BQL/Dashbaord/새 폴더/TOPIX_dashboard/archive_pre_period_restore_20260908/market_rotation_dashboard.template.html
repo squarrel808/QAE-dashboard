@@ -1,0 +1,1061 @@
+<div id="market-rotation-dashboard-17">
+  <style>
+    #market-rotation-dashboard-17 {
+      position: relative;
+      width: 100%;
+      color: var(--foreground);
+      background: transparent;
+    }
+    #market-rotation-dashboard-17 .mrd-heading { margin-bottom: 14px; }
+    #market-rotation-dashboard-17 .mrd-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 14px; }
+    #market-rotation-dashboard-17 .mrd-tabbar { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 18px; }
+    #market-rotation-dashboard-17 .mrd-panel[hidden] { display: none; }
+    #market-rotation-dashboard-17 .mrd-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+    #market-rotation-dashboard-17 .mrd-single { width: 100%; }
+    #market-rotation-dashboard-17 .mrd-chart { width: 100%; min-width: 0; }
+    #market-rotation-dashboard-17 .mrd-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+    #market-rotation-dashboard-17 .mrd-chart .domain,
+    #market-rotation-dashboard-17 .mrd-chart .tick line { stroke: var(--border); }
+    #market-rotation-dashboard-17 .mrd-chart .tick text,
+    #market-rotation-dashboard-17 .mrd-chart text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+    #market-rotation-dashboard-17 .mrd-chart .mrd-muted { fill: var(--muted-foreground); }
+    #market-rotation-dashboard-17 .mrd-chart .mrd-gridline { stroke: var(--border); stroke-opacity: 0.55; }
+    #market-rotation-dashboard-17 .mrd-chart-title { margin: 0 0 8px; }
+    #market-rotation-dashboard-17 .mrd-controls { margin: 0 0 14px; }
+    #market-rotation-dashboard-17 .mrd-controls label { min-width: 150px; }
+    #market-rotation-dashboard-17 .mrd-note { margin-top: 18px; color: var(--muted-foreground); }
+    #market-rotation-dashboard-17 .mrd-empty { padding: 36px 0; color: var(--muted-foreground); text-align: center; }
+    #market-rotation-dashboard-17 .mrd-tooltip {
+      position: absolute;
+      z-index: 20;
+      display: none;
+      pointer-events: none;
+      max-width: 280px;
+      padding: 8px 10px;
+      color: var(--popover-foreground);
+      background: var(--popover);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 12%, transparent);
+    }
+    #market-rotation-dashboard-17 .mrd-tooltip strong { font-weight: 500; }
+    #market-rotation-dashboard-17 .mrd-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 4px 0 10px; }
+    #market-rotation-dashboard-17 .mrd-legend button { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; color: var(--foreground); }
+    #market-rotation-dashboard-17 .mrd-period-buttons { display: flex; align-items: flex-end; gap: 6px; margin-left: auto; }
+    #market-rotation-dashboard-17 .mrd-swatch { display: inline-block; width: 12px; height: 8px; }
+    #market-rotation-dashboard-17 .mrd-cross { font-weight: 500; }
+    #market-rotation-dashboard-17 .mrd-table-wrap { margin-top: 16px; }
+    #market-rotation-dashboard-17 .mrd-table-wrap td:first-child,
+    #market-rotation-dashboard-17 .mrd-table-wrap th:first-child { max-width: 260px; }
+    #market-rotation-dashboard-17 .mrd-status { display: inline-flex; align-items: center; gap: 5px; }
+    #market-rotation-dashboard-17 .mrd-status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--viz-series-1); }
+    #market-rotation-dashboard-17 .mrd-status-dot.missing { background: var(--destructive); }
+    #market-rotation-dashboard-17 .mrd-fan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 18px; align-items: start; }
+    #market-rotation-dashboard-17 .mrd-fan-item { min-width: 0; }
+    #market-rotation-dashboard-17 .mrd-fan-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+    #market-rotation-dashboard-17 .mrd-fan-head h3 { margin: 0; }
+    #market-rotation-dashboard-17 .mrd-sector-divider { grid-column: 1 / -1; margin-top: 8px; padding: 8px 0 6px; border-bottom: 1px solid var(--border); }
+    #market-rotation-dashboard-17 .mrd-sector-divider h3 { margin: 0; font-weight: 600; }
+    #market-rotation-dashboard-17 .mrd-section-space { margin-top: 30px; }
+    #market-rotation-dashboard-17 .mrd-heatmap-layout { display: grid; grid-template-columns: minmax(230px, 0.28fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+    #market-rotation-dashboard-17 .mrd-sector-list { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    #market-rotation-dashboard-17 .mrd-sector-row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; min-height: 34px; padding: 6px 8px; overflow: hidden; border: 1px solid var(--border); border-radius: 5px; }
+    #market-rotation-dashboard-17 .mrd-sector-row::before { content: ''; position: absolute; inset: 0 auto 0 0; width: var(--sector-weight); background: var(--viz-series-1); opacity: .08; pointer-events: none; }
+    #market-rotation-dashboard-17 .mrd-sector-name { position: relative; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #market-rotation-dashboard-17 .mrd-sector-weight,
+    #market-rotation-dashboard-17 .mrd-sector-return { position: relative; font-variant-numeric: tabular-nums; }
+    #market-rotation-dashboard-17 .mrd-sector-weight { color: var(--muted-foreground); }
+    #market-rotation-dashboard-17 .mrd-heatmap { min-height: 540px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    #market-rotation-dashboard-17 .mrd-heatmap svg { display: block; width: 100%; height: 100%; min-height: 540px; }
+    #market-rotation-dashboard-17 .mrd-heatmap-label { pointer-events: none; font-weight: 600; }
+    #market-rotation-dashboard-17 .mrd-heatmap-sub { pointer-events: none; font-variant-numeric: tabular-nums; }
+    @media (max-width: 900px) {
+      #market-rotation-dashboard-17 .mrd-fan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      #market-rotation-dashboard-17 .mrd-grid { grid-template-columns: 1fr; gap: 22px; }
+      #market-rotation-dashboard-17 .mrd-fan-grid { grid-template-columns: 1fr; }
+      #market-rotation-dashboard-17 .mrd-heatmap-layout { grid-template-columns: 1fr; }
+      #market-rotation-dashboard-17 .mrd-heatmap { min-height: 420px; }
+      #market-rotation-dashboard-17 .mrd-heatmap svg { min-height: 420px; }
+      #market-rotation-dashboard-17 .mrd-controls label { min-width: 0; width: 100%; }
+      #market-rotation-dashboard-17 .mrd-tabbar .btn { flex: 1 1 auto; }
+    }
+  </style>
+
+  <header class="mrd-heading">
+    <h1>TOPIX Rotation Monitor</h1>
+    <div class="mrd-meta text-small" aria-live="polite">
+      <span id="mrd-asof"></span>
+      <span id="mrd-window"></span>
+      <span id="mrd-universe"></span>
+    </div>
+  </header>
+
+  <nav class="mrd-tabbar" aria-label="Dashboard sections">
+    <button type="button" class="btn btn-primary" data-tab="europe" aria-selected="true">TOPIX Heatmap</button>
+    <button type="button" class="btn" data-tab="groups" aria-selected="false">Sector / Industry EPS</button>
+    <button type="button" class="btn" data-tab="price1" aria-selected="false">Price & Attribution I</button>
+    <button type="button" class="btn" data-tab="price2" aria-selected="false">Price & Attribution II</button>
+    <button type="button" class="btn" data-tab="quality" aria-selected="false">Quality</button>
+    <button type="button" class="btn" data-tab="coverage" aria-selected="false">Coverage</button>
+  </nav>
+
+  <section class="mrd-panel" data-panel="europe">
+    <div class="viz-controls mrd-controls">
+      <label class="form-label">Japan index
+        <select id="mrd-heatmap-index" class="form-select"></select>
+      </label>
+      <div class="mrd-legend" aria-label="Return period">
+        <button type="button" class="btn btn-primary" data-heatmap-period="price5d" aria-pressed="true">5D</button>
+      </div>
+    </div>
+    <h2 class="mrd-chart-title" id="mrd-heatmap-title">TOPIX Sector Heatmap — Available 5D Price Return</h2>
+    <div class="text-small text-muted" id="mrd-heatmap-note">Tile area and the left-hand percentages are current sector market-cap weights. Colour shows the selected period's price return.</div>
+    <div class="mrd-heatmap-layout mrd-section-space">
+      <aside id="mrd-sector-list" class="mrd-sector-list" aria-label="Sector weights"></aside>
+      <div id="mrd-sector-heatmap" class="mrd-heatmap" aria-label="Sector return treemap"></div>
+    </div>
+    <h2 class="mrd-chart-title mrd-section-space" id="mrd-relative-title">Sector Relative Price Return vs TOPIX — Since 2026-09-02</h2>
+    <div class="text-small text-muted">Cumulative relative price return = (1 + sector return) / (1 + TOPIX return) − 1. Each mini-chart uses its own y-axis and always includes 0%. Dividends are excluded.</div>
+    <div id="mrd-relative-grid" class="mrd-fan-grid"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="index" hidden>
+    <div class="mrd-grid">
+      <div>
+        <h2 class="mrd-chart-title">EPS Chg — 4W Basis</h2>
+        <div class="mrd-legend text-small">
+          <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-1)"></span>13W EPS × 4/13</button>
+          <button type="button" aria-pressed="true"><span class="mrd-cross" style="color:var(--viz-series-2)">×</span>Actual 4W EPS</button>
+        </div>
+        <div id="mrd-index-eps" class="mrd-chart"></div>
+      </div>
+      <div>
+        <h2 class="mrd-chart-title">EPS Momentum — 4W minus 13W trend on 4W basis</h2>
+        <div class="mrd-legend text-small">
+          <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-3)"></span>4W − 4/13 × 13W</button>
+        </div>
+        <div id="mrd-index-momentum" class="mrd-chart"></div>
+      </div>
+    </div>
+    <div class="mrd-section-space">
+      <div class="viz-controls mrd-controls">
+        <h2 class="mrd-chart-title" id="mrd-index-return-title">Index Price Return — 1M · ranked high to low</h2>
+        <div class="mrd-period-buttons" aria-label="Index return period">
+          <button type="button" class="btn btn-primary" data-index-return-period="price1m" aria-pressed="true">1M</button>
+          <button type="button" class="btn" data-index-return-period="price3m" aria-pressed="false">3M</button>
+          <button type="button" class="btn" data-index-return-period="price6m" aria-pressed="false">6M</button>
+        </div>
+      </div>
+      <div id="mrd-index-return" class="mrd-chart mrd-single"></div>
+    </div>
+  </section>
+
+  <section class="mrd-panel" data-panel="index2" hidden>
+    <nav class="mrd-tabbar" aria-label="Index EPS II views">
+      <button type="button" class="btn btn-primary" data-index2-view="ranking" aria-selected="true">FY1 / FY2 Strength</button>
+      <button type="button" class="btn" data-index2-view="history" aria-selected="false">FY1 / FY2 History</button>
+    </nav>
+    <div data-index2-panel="ranking">
+      <div class="viz-controls mrd-controls">
+        <h2 class="mrd-chart-title" id="mrd-index2-ranking-title">FY1 / FY2 EPS Revision Strength — 1M</h2>
+        <div class="mrd-period-buttons" aria-label="FY1 and FY2 estimate-change period">
+          <button type="button" class="btn btn-primary" data-index2-period="1m" aria-pressed="true">1M</button>
+          <button type="button" class="btn" data-index2-period="3m" aria-pressed="false">3M</button>
+          <button type="button" class="btn" data-index2-period="6m" aria-pressed="false">6M</button>
+        </div>
+      </div>
+      <div class="text-small text-muted">Each ranking compares the latest market-cap-weighted EPS estimate level with the nearest weekly observation on or before the selected calendar-month lookback.</div>
+      <div class="mrd-grid mrd-section-space">
+        <div>
+          <h3 class="mrd-chart-title" id="mrd-fy1-rank-title">FY1 EPS — 1M · ranked high to low</h3>
+          <div id="mrd-fy1-rank" class="mrd-chart"></div>
+        </div>
+        <div>
+          <h3 class="mrd-chart-title" id="mrd-fy2-rank-title">FY2 EPS — 1M · ranked high to low</h3>
+          <div id="mrd-fy2-rank" class="mrd-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div data-index2-panel="history" hidden>
+      <h2 class="mrd-chart-title">FY1 / FY2 EPS Estimate Change Since 2026-01-01</h2>
+      <div class="mrd-legend text-small">
+        <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-1)"></span>FY1 EPS</button>
+        <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-2)"></span>FY2 EPS</button>
+      </div>
+      <div id="mrd-fund-index-grid" class="mrd-fan-grid"></div>
+    </div>
+  </section>
+
+  <section class="mrd-panel" data-panel="groups" hidden>
+    <div class="viz-controls mrd-controls">
+      <label class="form-label">Index
+        <select id="mrd-group-index" class="form-select"></select>
+      </label>
+      <label class="form-label">Classification
+        <select id="mrd-group-level" class="form-select">
+          <option value="Sector">Sector</option>
+          <option value="Industry">Industry group</option>
+        </select>
+      </label>
+      <label class="form-check form-switch">
+        <input id="mrd-group-contribution" class="form-check-input" type="checkbox">
+        <span class="form-check-label">EPS contribution</span>
+      </label>
+    </div>
+    <h2 class="mrd-chart-title" id="mrd-group-title">Available 5D EPS Estimate Change by Group</h2>
+    <div class="text-small text-muted" id="mrd-group-note"></div>
+    <div id="mrd-group-eps" class="mrd-chart mrd-single"></div>
+    <div id="mrd-group-table" class="table-responsive mrd-table-wrap"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="price1" hidden>
+    <div class="viz-controls mrd-controls">
+      <label class="form-label">Index
+        <select id="mrd-contribution-index" class="form-select"></select>
+      </label>
+    </div>
+    <h2 class="mrd-chart-title" id="mrd-contribution-index-title">Price Return with EPS / P/E Attribution Since 2026-09-02</h2>
+    <div class="mrd-legend text-small">
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-1)"></span>EPS contribution</button>
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-2)"></span>P/E contribution</button>
+      <button type="button" aria-pressed="true"><span class="mrd-cross" style="color:var(--viz-series-4)">●</span>Total price return</button>
+    </div>
+    <div class="text-small text-muted">Each date is a cumulative diverging bar: positive EPS/P/E contributions stack above zero and negative contributions stack below zero. The dot is their sum, equal to total price return.</div>
+    <div id="mrd-contribution-index-chart" class="mrd-chart mrd-single"></div>
+
+    <h2 class="mrd-chart-title mrd-section-space">Sector Contribution — all groups</h2>
+    <div id="mrd-contribution-sector-grid" class="mrd-fan-grid"></div>
+
+    <h2 class="mrd-chart-title mrd-section-space">Industry Group Contribution — grouped by Sector</h2>
+    <div id="mrd-contribution-industry-grid" class="mrd-fan-grid"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="price2" hidden>
+    <div class="viz-controls mrd-controls">
+      <label class="form-label">Index
+        <select id="mrd-price-index" class="form-select"></select>
+      </label>
+      <label class="form-label">Classification
+        <select id="mrd-price-level" class="form-select">
+          <option value="Sector">Sector</option>
+          <option value="Industry">Industry group</option>
+        </select>
+      </label>
+      <div class="mrd-period-buttons" aria-label="Price attribution period">
+        <button type="button" class="btn" data-price2-period="price1d" aria-pressed="false">1D</button>
+        <button type="button" class="btn btn-primary" data-price2-period="price5d" aria-pressed="true">5D</button>
+      </div>
+    </div>
+    <div class="mrd-grid">
+      <div>
+        <h2 class="mrd-chart-title" id="mrd-price-scatter-title">Available 5D Price Return vs EPS Change</h2>
+        <div id="mrd-price-scatter" class="mrd-chart"></div>
+      </div>
+      <div>
+        <h2 class="mrd-chart-title" id="mrd-attribution-title">Available 5D Return Attribution by Sector</h2>
+        <div class="mrd-legend text-small">
+          <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-3)"></span>EPS contribution</button>
+          <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-2)"></span>P/E contribution</button>
+          <button type="button" aria-pressed="true"><span class="mrd-cross" style="color:var(--viz-series-4)">●</span>Total price return</button>
+        </div>
+        <div id="mrd-attribution" class="mrd-chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mrd-panel" data-panel="valuation1" hidden>
+    <div class="viz-controls mrd-controls" aria-label="Valuation history window">
+      <button type="button" class="btn" data-valuation-years="5" aria-pressed="false">5Y</button>
+      <button type="button" class="btn" data-valuation-years="10" aria-pressed="false">10Y</button>
+      <button type="button" class="btn btn-primary" data-valuation-years="15" aria-pressed="true">15Y</button>
+    </div>
+    <h2 class="mrd-chart-title" id="mrd-fan-sector-title">STOXX Europe 600 Sector 12MF P/E History</h2>
+    <div class="mrd-legend text-small">
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-1)"></span>12MF P/E</button>
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-2)"></span>Trailing 10Y mean</button>
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-4)"></span>Trailing 10Y mean ±2σ</button>
+    </div>
+    <div id="mrd-fan-sector-grid" class="mrd-fan-grid"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="valuation2" hidden>
+    <h2 class="mrd-chart-title" id="mrd-box-title">STOXX Europe 600 Sector 12MF P/E Distribution — trailing 10Y</h2>
+    <div class="mrd-legend text-small">
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-1)"></span>Historical IQR</button>
+      <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-4)"></span>Latest P/E</button>
+    </div>
+    <div id="mrd-boxplot" class="mrd-chart mrd-single"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="quality" hidden>
+    <div class="viz-controls mrd-controls">
+      <label class="form-label">Index
+        <select id="mrd-quality-index" class="form-select"></select>
+      </label>
+      <label class="form-label">Classification
+        <select id="mrd-quality-level" class="form-select">
+          <option value="Sector">Sector</option>
+          <option value="Industry">Industry group</option>
+        </select>
+      </label>
+      <label class="form-label">Profitability
+        <select id="mrd-quality-metric" class="form-select">
+          <option value="roe12m">12MF ROE</option>
+          <option value="opm12m">12MF operating margin</option>
+          <option value="fy2Growth">FY2 vs FY1 EPS growth</option>
+        </select>
+      </label>
+    </div>
+    <h2 class="mrd-chart-title">Valuation vs Forward Fundamentals</h2>
+    <div id="mrd-quality-scatter" class="mrd-chart mrd-single"></div>
+    <div id="mrd-quality-table" class="table-responsive mrd-table-wrap"></div>
+  </section>
+
+  <section class="mrd-panel" data-panel="coverage" hidden>
+    <h2 class="mrd-chart-title">Data Coverage</h2>
+    <div id="mrd-coverage-table" class="table-responsive mrd-table-wrap"></div>
+  </section>
+
+  <p class="mrd-note text-small">
+    The source currently covers 2026-09-02 through 2026-09-07. One-day changes use the previous weekday observation. Five-day changes use five prior weekday observations, falling back to the earliest available observation until five complete sessions exist. EPS changes use positive observations and market-cap weights, with constituent changes capped at ±100%. P/E is aggregated through earnings yield; observations below 1x are excluded as data-quality outliers. Price attribution uses start-date market-cap weights and splits the EPS×P/E interaction equally so EPS and P/E contributions sum to price return. Operating-margin observations outside ±200% are excluded from weighted averages. Price returns exclude dividends.
+  </p>
+  <div class="mrd-tooltip text-small" role="tooltip"></div>
+
+  <script>__D3_JS__</script>
+  <script>
+  (() => {
+    const root = document.getElementById('market-rotation-dashboard-17');
+    const DATA = __DASHBOARD_DATA__;
+    const rowFields=['index','indexName','level','group','members','weight','eps4','eps13','momentum','_unusedMetric4','_unusedMetric13','top5Concentration','epsCoverage13','price1m','price3m','priceCoverage3m','peCurrent','pePercentile','roeCurrent','roe12m','opmCurrent','opm12m','fy2Growth','mcap','price6m','priceCoverage6m','eps6m','epsCoverage6m','price1d','eps1d','priceCoverage1d','epsCoverage1d','price5d','eps5d','priceCoverage5d','epsCoverage5d'];
+    const rows = (DATA.rows||[]).map(values=>Object.fromEntries(rowFields.map((field,i)=>[field,values[i]])));
+    const indexRows = rows.filter(d => d.level === 'Index');
+    const indexNameMap = new Map(indexRows.map(d=>[d.index,d.indexName]));
+    const boxes = (DATA.boxes||[]).map(v=>({index:v[0],indexName:indexNameMap.get(v[0])||v[0],level:v[1],group:v[2],low:v[3],q1:v[4],median:v[5],q3:v[6],high:v[7],current:v[8],percentile:v[9]}));
+    const peHistories = (DATA.peHistory||[]).map(v=>({index:v[0],indexName:indexNameMap.get(v[0])||v[0],level:v[1],group:v[2],mean:v[3],std:v[4],values:v[5]}));
+    const sectorPEHistories = (DATA.sectorPEHistory||[]).map(v=>({index:v[0],indexName:indexNameMap.get(v[0])||v[0],level:v[1],group:v[2],mean:v[3],std:v[4],values:v[5]}));
+    const industrySectorMap = DATA.industrySectorMap || {};
+    const tooltip = d3.select(root).select('.mrd-tooltip');
+    const pct = d3.format('+.1%');
+    const pctp = v => `${d3.format('+.2%')(v)}p`;
+    const pct0 = d3.format('.0%');
+    const num1 = d3.format(',.1f');
+    const valid = v => v !== null && Number.isFinite(v);
+    let valuationYears = 15;
+    let heatmapPeriod = 'price5d';
+    let price2Period = 'price5d';
+    let indexReturnPeriod = 'price1m';
+    let index2Period = '1m';
+    let index2View = 'ranking';
+    const short = (s, n) => s.length > n ? s.slice(0, n - 1) + '…' : s;
+    const colors = () => {
+      const style = getComputedStyle(root);
+      const get = name => style.getPropertyValue(name).trim();
+      return {
+        fg: get('--foreground'), muted: get('--muted-foreground'), border: get('--border'),
+        one: get('--viz-series-1'), two: get('--viz-series-2'), three: get('--viz-series-3'),
+        four: get('--viz-series-4'), five: get('--viz-series-5'), pop: get('--popover')
+      };
+    };
+
+    function showTip(event, html) {
+      const [x, y] = d3.pointer(event, root);
+      tooltip.html(html).style('display', 'block').style('left', `${x + 14}px`).style('top', `${y + 14}px`);
+    }
+    function hideTip() { tooltip.style('display', 'none'); }
+    function clear(selector) { d3.select(root).select(selector).selectAll('*').remove(); }
+    function empty(selector, message) {
+      clear(selector);
+      d3.select(root).select(selector).append('div').attr('class', 'mrd-empty').text(message);
+    }
+    function paddedExtent(values, ratio = 0.1) {
+      let [lo, hi] = d3.extent(values.filter(valid));
+      if (!valid(lo) || !valid(hi)) return [-0.01, 0.01];
+      if (lo === hi) { const pad = Math.abs(lo || 1) * ratio; return [lo - pad, hi + pad]; }
+      const pad = (hi - lo) * ratio;
+      return [lo - pad, hi + pad];
+    }
+    function zeroAnchoredExtent(values, minSpan = 0.10) {
+      const clean=values.filter(valid);
+      if(!clean.length)return [-minSpan/2,minSpan/2];
+      let lo=Math.min(0,d3.min(clean)),hi=Math.max(0,d3.max(clean));
+      if(lo===0&&hi===0)return [-minSpan/2,minSpan/2];
+      if(hi-lo<minSpan){
+        if(lo===0)hi=minSpan;
+        else if(hi===0)lo=-minSpan;
+        else {const extra=(minSpan-(hi-lo))/2;lo-=extra;hi+=extra;}
+      }
+      const pad=(hi-lo)*.08;
+      return [lo-pad,hi+pad];
+    }
+    function frame(svg, x, y, width, height, c) {
+      svg.append('rect').attr('data-chart-frame', '').attr('x', x).attr('y', y).attr('width', width).attr('height', height).attr('fill', 'none').attr('stroke', c.border);
+    }
+    function axisTitle(svg, text, x, y, axis) {
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', axis).attr('x', x).attr('y', y).attr('text-anchor', 'middle').text(text);
+    }
+
+    function drawEuropeHeatmap(data, metric, indexCode) {
+      const container=root.querySelector('#mrd-sector-heatmap');
+      const list=root.querySelector('#mrd-sector-list');
+      const clean=data.filter(d=>valid(d.weight)&&d.weight>0&&valid(d[metric])).slice().sort((a,b)=>b.weight-a.weight);
+      container.innerHTML='';list.innerHTML='';
+      if(!clean.length){container.innerHTML='<div class="mrd-empty">No valid sector returns for this period</div>';return;}
+      const maxWeight=d3.max(clean,d=>d.weight)||1;
+      list.innerHTML=clean.map(d=>`<div class="mrd-sector-row" style="--sector-weight:${d.weight/maxWeight*100}%"><span class="mrd-sector-name" title="${d.group}">${d.group}</span><span class="mrd-sector-weight">${pct0(d.weight)}</span><span class="mrd-sector-return" style="color:${d[metric]>=0?'#15803d':'#b91c1c'}">${pct(d[metric])}</span></div>`).join('');
+
+      const width=Math.max(320,container.getBoundingClientRect().width||900);
+      const height=width<600?420:560;
+      const maxAbs=Math.max(0.05,d3.max(clean,d=>Math.abs(d[metric]))||0.05);
+      const color=d3.scaleLinear().domain([-maxAbs,0,maxAbs]).range(['#b91c1c','#f3f4f6','#15803d']).clamp(true);
+      const hierarchy=d3.hierarchy({children:clean}).sum(d=>d.weight||0).sort((a,b)=>b.value-a.value);
+      d3.treemap().size([width,height]).paddingInner(3).round(true)(hierarchy);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${indexLabel(indexCode)} sector heatmap by market-cap weight and price return`);
+      svg.append('title').text(`${indexLabel(indexCode)} sector heatmap: tile area is market-cap weight and colour is price return`);
+      const tile=svg.selectAll('g').data(hierarchy.leaves()).join('g').attr('transform',d=>`translate(${d.x0},${d.y0})`).attr('tabindex',0);
+      tile.append('rect').attr('width',d=>Math.max(0,d.x1-d.x0)).attr('height',d=>Math.max(0,d.y1-d.y0)).attr('fill',d=>color(d.data[metric])).attr('stroke','rgba(255,255,255,.75)').attr('stroke-width',1);
+      tile.append('title').text(d=>`${d.data.group}\nWeight ${pct0(d.data.weight)}\nReturn ${pct(d.data[metric])}`);
+      tile.each(function(d){
+        const w=d.x1-d.x0,h=d.y1-d.y0,contrast=Math.abs(d.data[metric])/maxAbs>.42?'#ffffff':'#111827';
+        if(w<68||h<36)return;
+        const g=d3.select(this),name=short(d.data.group,w<120?12:22);
+        g.append('text').attr('class','mrd-heatmap-label').attr('x',8).attr('y',20).attr('fill',contrast).attr('font-size',w<120?'11px':'13px').text(name);
+        if(h>=57)g.append('text').attr('class','mrd-heatmap-sub').attr('x',8).attr('y',39).attr('fill',contrast).attr('font-size','11px').text(`${pct0(d.data.weight)} · ${pct(d.data[metric])}`);
+      });
+      tile.on('pointermove',(event,d)=>showTip(event,`<strong>${indexLabel(indexCode)} · ${d.data.group}</strong><br>Index weight ${pct0(d.data.weight)}<br>Available 5D price return ${pct(d.data[metric])}<br>Members ${d.data.members.toLocaleString()}`)).on('pointerleave',hideTip);
+    }
+
+    function sectorRelativeSeries(indexCode) {
+      const benchmark=peHistories.find(d=>d.index==='TPX500'&&d.level==='Index');
+      const benchmarkValues=(benchmark?.values||[]).filter(v=>v.length>=9&&valid(v[8])).map(v=>({day:v[0],value:v[8]}));
+      if(benchmarkValues.length<2)return [];
+      const bisect=d3.bisector(d=>d.day).left;
+      const benchmarkAt=day=>{const i=bisect(benchmarkValues,day);if(i<=0)return benchmarkValues[0].value;if(i>=benchmarkValues.length)return benchmarkValues[benchmarkValues.length-1].value;const a=benchmarkValues[i-1],b=benchmarkValues[i],t=(day-a.day)/(b.day-a.day||1);return a.value+t*(b.value-a.value);};
+      return peHistories.filter(d=>d.index===indexCode&&d.level==='Sector').map(history=>{
+        const values=(history.values||[]).filter(v=>v.length>=9&&valid(v[8])).map(v=>{const benchmarkReturn=benchmarkAt(v[0]),relative=(1+v[8])/(1+benchmarkReturn)-1;return {date:new Date(v[0]*86400000),day:v[0],sectorReturn:v[8],benchmarkReturn,relative};}).filter(d=>valid(d.relative)&&!Number.isNaN(+d.date));
+        return {index:indexCode,indexName:history.indexName,group:history.group,values};
+      }).filter(d=>d.values.length>=2);
+    }
+
+    function drawRelativeHistory(container,series,yDomain) {
+      d3.select(container).selectAll('*').remove();
+      const data=series.values,width=Math.max(280,container.getBoundingClientRect().width||300),height=190,left=48,right=12,top=10,bottom=38,innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const dateExtent=d3.extent(data,d=>d.date),x=d3.scaleUtc().domain(dateExtent).range([left,left+innerW]),y=d3.scaleLinear().domain(yDomain).range([top+innerH,top]);
+      const latest=data[data.length-1],lineColor=latest.relative>=0?'#15803d':'#b91c1c';
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${series.indexName} ${series.group} cumulative relative price return versus TOPIX since 2026-09-02`);
+      svg.append('title').text(`${series.indexName} · ${series.group}: cumulative relative price return versus TOPIX`);frame(svg,left,top,innerW,innerH,c);
+      if(yDomain[0]<=0&&yDomain[1]>=0)svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(0)).attr('y2',y(0)).attr('stroke','#111111').attr('stroke-width',1.4);
+      svg.append('path').datum(data).attr('fill','none').attr('stroke',lineColor).attr('stroke-width',1.8).attr('d',d3.line().x(d=>x(d.date)).y(d=>y(d.relative)));
+      svg.append('circle').attr('cx',x(latest.date)).attr('cy',y(latest.relative)).attr('r',3.2).attr('fill',lineColor);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(3).tickFormat(d3.utcFormat('%y-%m')));
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('+.0%')));
+      axisTitle(svg,'Date',left+innerW/2,height-4,'x');
+      const guide=svg.append('line').attr('y1',top).attr('y2',top+innerH).attr('stroke',c.border).attr('display','none'),marker=svg.append('circle').attr('r',4).attr('fill',lineColor).attr('stroke',c.fg).attr('display','none'),nearest=d3.bisector(d=>d.date).center;
+      svg.append('rect').attr('x',left).attr('y',top).attr('width',innerW).attr('height',innerH).attr('fill','transparent').style('pointer-events','all').on('pointermove',function(event){const [px]=d3.pointer(event,this),point=data[nearest(data,x.invert(px))];guide.attr('x1',x(point.date)).attr('x2',x(point.date)).attr('display',null);marker.attr('cx',x(point.date)).attr('cy',y(point.relative)).attr('display',null);showTip(event,`<strong>${series.indexName} · ${series.group}</strong><br>${d3.utcFormat('%Y-%m-%d')(point.date)}<br>Relative return ${pct(point.relative)}<br>Sector return ${pct(point.sectorReturn)}<br>TOPIX ${pct(point.benchmarkReturn)}`);}).on('pointerleave',()=>{guide.attr('display','none');marker.attr('display','none');hideTip();});
+    }
+
+    function renderRelativeGrid(indexCode) {
+      const target=root.querySelector('#mrd-relative-grid'),series=sectorRelativeSeries(indexCode);
+      target.innerHTML='';
+      if(!series.length){target.innerHTML='<div class="mrd-empty">No valid sector relative-return history</div>';return;}
+      series.sort((a,b)=>b.values[b.values.length-1].relative-a.values[a.values.length-1].relative).forEach(item=>{
+        const latest=item.values[item.values.length-1].relative,yDomain=zeroAnchoredExtent(item.values.map(v=>v.relative),.10),wrapper=document.createElement('div');wrapper.className='mrd-fan-item';
+        const head=document.createElement('div');head.className='mrd-fan-head';
+        const title=document.createElement('h3');title.textContent=item.group;
+        const value=document.createElement('span');value.className='text-small';value.textContent=pct(latest);value.style.color=latest>=0?'#15803d':'#b91c1c';
+        const chart=document.createElement('div');chart.className='mrd-chart';head.append(title,value);wrapper.append(head,chart);target.append(wrapper);drawRelativeHistory(chart,item,yDomain);
+      });
+    }
+
+    function drawBarMarker(selector, input, labelField, limit = 24) {
+      const container = root.querySelector(selector);
+      const isContribution = input.some(d => d._contribution);
+      const valueFormat = isContribution ? pctp : pct;
+      const tickFormat = isContribution ? d3.format('.2%') : d3.format('.0%');
+      const data = input.filter(d => valid(d.eps13) || valid(d.eps4)).slice().sort((a,b) => (b.eps13 ?? -Infinity) - (a.eps13 ?? -Infinity)).slice(0, limit);
+      if (!data.length) return empty(selector, 'No valid EPS history');
+      clear(selector);
+      const width = Math.max(320, container.getBoundingClientRect().width || 736);
+      const left = width < 520 ? 112 : 190, right = 62, top = 12, bottom = 42;
+      const height = Math.max(330, top + bottom + data.length * 28);
+      const innerW = width - left - right, innerH = height - top - bottom;
+      const c = colors();
+      const domain = paddedExtent(data.flatMap(d => [d.eps13, d.eps4, 0]), 0.12);
+      const x = d3.scaleLinear().domain(domain).range([left, left + innerW]);
+      const y = d3.scaleBand().domain(data.map((d,i) => i)).range([top, top + innerH]).padding(0.22);
+      const svg = d3.select(container).append('svg').attr('viewBox', `0 0 ${width} ${height}`).attr('role', 'img').attr('aria-label', isContribution ? 'Contribution to index EPS change on a four-week basis' : 'EPS change comparison on a four-week basis');
+      svg.append('title').text(isContribution ? 'Four-week-basis contribution: 13-week change converted by 4/13 with actual 4-week markers' : '13-week EPS change converted by 4/13 with actual 4-week markers');
+      frame(svg, left, top, innerW, innerH, c);
+      svg.append('g').selectAll('line').data(x.ticks(width < 520 ? 4 : 6)).join('line').attr('class','mrd-gridline').attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',top).attr('y2',top+innerH);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke',c.fg).attr('stroke-width',1);
+      const row = svg.append('g').selectAll('g').data(data).join('g').attr('transform',(d,i)=>`translate(0,${y(i)})`);
+      row.append('rect').attr('x',d=>x(Math.min(0,d.eps13 ?? 0))).attr('width',d=>Math.abs(x(d.eps13 ?? 0)-x(0))).attr('height',y.bandwidth()).attr('fill',d=>(d.eps13 ?? 0)>=0?c.one:c.four).attr('opacity',0.62);
+      row.append('path').attr('d', d => {
+        if (!valid(d.eps4)) return '';
+        const cx=x(d.eps4), cy=y.bandwidth()/2, s=4;
+        return `M${cx-s},${cy-s}L${cx+s},${cy+s}M${cx-s},${cy+s}L${cx+s},${cy-s}`;
+      }).attr('stroke',c.two).attr('stroke-width',2).attr('fill','none');
+      row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d[labelField] || d.group || d.index,width<520?16:29));
+      row.append('text').attr('x',d=>Math.max(left+4,Math.min(left+innerW-4,d.eps13>=0?x(d.eps13 ?? 0)+5:x(0)+5))).attr('y',y.bandwidth()/2+4).attr('text-anchor','start').text(d=>valid(d.eps13)?valueFormat(d.eps13):'—');
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,isContribution
+          ? `<strong>${d.indexName || d.index} · ${d.group || 'Index'}</strong><br>13W contribution (4W basis) ${valid(d.eps13)?pctp(d.eps13):'—'}<br>Actual 4W contribution ${valid(d.eps4)?pctp(d.eps4):'—'}<br>Index weight ${valid(d.weight)?pct0(d.weight):'—'}<br>Raw group EPS: 13W ${valid(d.eps13Raw)?pct(d.eps13Raw):'—'} · 4W ${valid(d.eps4Raw)?pct(d.eps4Raw):'—'}`
+          : `<strong>${d.indexName || d.index} · ${d.group || 'Index'}</strong><br>13W EPS (4W basis) ${valid(d.eps13)?pct(d.eps13):'—'}<br>Actual 4W EPS ${valid(d.eps4)?pct(d.eps4):'—'}<br>Raw 13W EPS ${valid(d.eps13Raw)?pct(d.eps13Raw):'—'}<br>Coverage ${valid(d.epsCoverage13)?pct0(d.epsCoverage13):'—'}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(tickFormat));
+      axisTitle(svg,isContribution?'Contribution to index EPS change (4W basis, %p)':'EPS estimate change (4W basis)',left+innerW/2,height-5,'x');
+    }
+
+    function drawSingleBar(selector, input, key, labelField, limit = 24) {
+      const container = root.querySelector(selector);
+      const data = input.filter(d=>valid(d[key])).slice().sort((a,b)=>b[key]-a[key]).slice(0,limit);
+      if (!data.length) return empty(selector,'No valid observations');
+      clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||736);
+      const left=width<520?112:170,right=60,top=12,bottom=42;
+      const height=Math.max(330,top+bottom+data.length*28),innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d[key],0]),0.12)).range([left,left+innerW]);
+      const y=d3.scaleBand().domain(data.map((d,i)=>i)).range([top,top+innerH]).padding(.22);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label','Momentum ranking');
+      svg.append('title').text('EPS momentum ranking'); frame(svg,left,top,innerW,innerH,c);
+      svg.append('g').selectAll('line').data(x.ticks(width<520?4:6)).join('line').attr('class','mrd-gridline').attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',top).attr('y2',top+innerH);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke',c.fg);
+      const row=svg.append('g').selectAll('g').data(data).join('g').attr('transform',(d,i)=>`translate(0,${y(i)})`);
+      row.append('rect').attr('x',d=>x(Math.min(0,d[key]))).attr('width',d=>Math.abs(x(d[key])-x(0))).attr('height',y.bandwidth()).attr('fill',d=>d[key]>=0?c.three:c.four).attr('opacity',.65);
+      row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d[labelField]||d.group||d.index,width<520?16:25));
+      row.append('text').attr('x',d=>Math.max(left+4,Math.min(left+innerW-4,d[key]>=0?x(d[key])+5:x(0)+5))).attr('y',y.bandwidth()/2+4).attr('text-anchor','start').text(d=>pct(d[key]));
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,`<strong>${d.indexName || d.index} · ${d.group || 'Index'}</strong><br>EPS momentum ${pct(d[key])}<br>4W ${valid(d.eps4)?pct(d.eps4):'—'}<br>13W ${valid(d.eps13)?pct(d.eps13):'—'}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(d3.format('.0%')));
+      axisTitle(svg,'EPS momentum (4W basis)',left+innerW/2,height-5,'x');
+    }
+
+    function drawAvailableEPSBar(selector,input,contributionMode=false) {
+      const container=root.querySelector(selector);
+      const data=input.filter(d=>valid(d.eps5d)&&(!contributionMode||valid(d.weight))).map(d=>({...d,value:contributionMode?d.weight*d.eps5d:d.eps5d})).sort((a,b)=>b.value-a.value).slice(0,30);
+      if(!data.length)return empty(selector,'No valid EPS observations');
+      clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||1100),left=width<520?125:220,right=72,top=12,bottom=42;
+      const height=Math.max(360,top+bottom+data.length*28),innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d.value,0]),.12)).range([left,left+innerW]);
+      const y=d3.scaleBand().domain(data.map((d,i)=>i)).range([top,top+innerH]).padding(.22);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label','TOPIX group EPS estimate change over the available five-day window');
+      svg.append('title').text('TOPIX available five-day EPS estimate change by group');frame(svg,left,top,innerW,innerH,c);
+      svg.append('g').selectAll('line').data(x.ticks(width<520?4:7)).join('line').attr('class','mrd-gridline').attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',top).attr('y2',top+innerH);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke',c.fg).attr('stroke-width',1.2);
+      const row=svg.append('g').selectAll('g').data(data).join('g').attr('transform',(d,i)=>`translate(0,${y(i)})`);
+      row.append('rect').attr('x',d=>x(Math.min(0,d.value))).attr('width',d=>Math.abs(x(d.value)-x(0))).attr('height',y.bandwidth()).attr('fill',d=>d.value>=0?c.one:c.four).attr('opacity',.68);
+      row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d.group,width<520?18:34));
+      row.append('text').attr('x',d=>d.value>=0?Math.min(left+innerW-4,x(d.value)+6):Math.max(left+4,x(d.value)-6)).attr('y',y.bandwidth()/2+4).attr('text-anchor',d=>d.value>=0?'start':'end').text(d=>contributionMode?pctp(d.value):pct(d.value));
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all').on('pointermove',(event,d)=>showTip(event,`<strong>${d.group}</strong><br>5D EPS change ${pct(d.eps5d)}<br>Index weight ${pct0(d.weight)}${contributionMode?`<br>Index EPS contribution ${pctp(d.value)}`:''}<br>Coverage ${valid(d.epsCoverage5d)?pct0(d.epsCoverage5d):'—'}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:7).tickFormat(contributionMode?d3.format('.2%'):d3.format('.1%')));
+      axisTitle(svg,contributionMode?'Contribution to TOPIX EPS change (%p)':'Available 5D EPS estimate change',left+innerW/2,height-5,'x');
+    }
+
+    function renderAvailableGroupTable(data,contributionMode) {
+      const target=root.querySelector('#mrd-group-table');
+      const sorted=data.filter(d=>valid(d.eps5d)).slice().sort((a,b)=>{
+        const bv=contributionMode&&valid(b.weight)?b.weight*b.eps5d:b.eps5d;
+        const av=contributionMode&&valid(a.weight)?a.weight*a.eps5d:a.eps5d;
+        return bv-av;
+      }).slice(0,30);
+      target.innerHTML=`<table class="table table-sm"><thead><tr><th>Group</th><th class="text-end">Weight</th><th class="text-end">5D EPS</th>${contributionMode?'<th class="text-end">Index contribution</th>':''}<th class="text-end">P/E</th></tr></thead><tbody>${sorted.map(d=>`<tr><td>${d.group}</td><td class="text-end">${valid(d.weight)?pct0(d.weight):'—'}</td><td class="text-end">${pct(d.eps5d)}</td>${contributionMode?`<td class="text-end">${valid(d.weight)?pctp(d.weight*d.eps5d):'—'}</td>`:''}<td class="text-end">${valid(d.peCurrent)?num1(d.peCurrent)+'x':'—'}</td></tr>`).join('')}</tbody></table>`;
+    }
+
+    function drawIndexReturnBar(selector,input,key,periodLabel) {
+      const container=root.querySelector(selector),data=input.filter(d=>valid(d[key])).slice().sort((a,b)=>b[key]-a[key]);
+      if(!data.length)return empty(selector,'No valid index return observations');clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||1200),left=width<520?112:200,right=64,top=12,bottom=42;
+      const height=Math.max(360,top+bottom+data.length*28),innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d[key],0]),.12)).range([left,left+innerW]),y=d3.scaleBand().domain(data.map((d,i)=>i)).range([top,top+innerH]).padding(.22);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${periodLabel} index price returns ranked from highest to lowest`);
+      svg.append('title').text(`${periodLabel} index price returns ranked from highest to lowest`);frame(svg,left,top,innerW,innerH,c);
+      svg.append('g').selectAll('line').data(x.ticks(width<520?4:7)).join('line').attr('class','mrd-gridline').attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',top).attr('y2',top+innerH);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke','#111111').attr('stroke-width',1.5);
+      const row=svg.append('g').selectAll('g').data(data).join('g').attr('transform',(d,i)=>`translate(0,${y(i)})`);
+      row.append('rect').attr('x',d=>x(Math.min(0,d[key]))).attr('width',d=>Math.abs(x(d[key])-x(0))).attr('height',y.bandwidth()).attr('fill',d=>d[key]>=0?c.three:c.four).attr('opacity',.68);
+      row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d.indexName,width<520?18:32));
+      row.append('text').attr('x',d=>d[key]>=0?Math.min(left+innerW-4,x(d[key])+6):Math.max(left+4,x(d[key])-6)).attr('y',y.bandwidth()/2+4).attr('text-anchor',d=>d[key]>=0?'start':'end').text(d=>pct(d[key]));
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all').on('pointermove',(event,d)=>showTip(event,`<strong>${d.index} · ${d.indexName}</strong><br>${periodLabel} price return ${pct(d[key])}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:7).tickFormat(d3.format('.0%')));
+      axisTitle(svg,`${periodLabel} price return`,left+innerW/2,height-5,'x');
+    }
+
+    function estimateStrength(history, position, months) {
+      const points=(history.values||[]).filter(v=>v.length>position&&valid(v[position])).slice().sort((a,b)=>a[0]-b[0]);
+      if(points.length<2)return null;
+      const latest=points[points.length-1],target=new Date(latest[0]*86400000);
+      target.setUTCMonth(target.getUTCMonth()-months);
+      const targetDay=Math.floor(+target/86400000);
+      const prior=points.filter(v=>v[0]<=targetDay).pop();
+      if(!prior||!valid(prior[position])||1+prior[position]<=0)return null;
+      const change=(1+latest[position])/(1+prior[position])-1;
+      return valid(change)?{index:history.index,indexName:history.indexName,change,startDay:prior[0],endDay:latest[0],startLevel:prior[position],endLevel:latest[position]}:null;
+    }
+
+    function drawEstimateStrengthBar(selector,histories,position,periodLabel,seriesLabel) {
+      const months={"1m":1,"3m":3,"6m":6}[index2Period];
+      const data=histories.map(history=>estimateStrength(history,position,months)).filter(Boolean).sort((a,b)=>b.change-a.change);
+      if(!data.length)return empty(selector,`No valid ${seriesLabel} observations for ${periodLabel}`);clear(selector);
+      const container=root.querySelector(selector),width=Math.max(320,container.getBoundingClientRect().width||736),left=width<520?112:180,right=62,top=12,bottom=42;
+      const height=Math.max(360,top+bottom+data.length*28),innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d.change,0]),.12)).range([left,left+innerW]),y=d3.scaleBand().domain(data.map((d,i)=>i)).range([top,top+innerH]).padding(.22);
+      const positiveColor=position===4?c.one:c.two;
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${seriesLabel} estimate change over ${periodLabel}, ranked from highest to lowest`);
+      svg.append('title').text(`${seriesLabel} estimate change over ${periodLabel}, ranked from highest to lowest`);frame(svg,left,top,innerW,innerH,c);
+      svg.append('g').selectAll('line').data(x.ticks(width<520?4:6)).join('line').attr('class','mrd-gridline').attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',top).attr('y2',top+innerH);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke','#111111').attr('stroke-width',1.5);
+      const row=svg.append('g').selectAll('g').data(data).join('g').attr('transform',(d,i)=>`translate(0,${y(i)})`);
+      row.append('rect').attr('x',d=>x(Math.min(0,d.change))).attr('width',d=>Math.abs(x(d.change)-x(0))).attr('height',y.bandwidth()).attr('fill',d=>d.change>=0?positiveColor:c.four).attr('opacity',.68);
+      row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d.indexName,width<520?17:27));
+      row.append('text').attr('x',d=>d.change>=0?Math.min(left+innerW-4,x(d.change)+6):Math.max(left+4,x(d.change)-6)).attr('y',y.bandwidth()/2+4).attr('text-anchor',d=>d.change>=0?'start':'end').text(d=>pct(d.change));
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all').on('pointermove',(event,d)=>showTip(event,`<strong>${d.index} · ${d.indexName}</strong><br>${seriesLabel} ${periodLabel} change ${pct(d.change)}<br>Reference ${d3.utcFormat('%Y-%m-%d')(new Date(d.startDay*86400000))}<br>Latest ${d3.utcFormat('%Y-%m-%d')(new Date(d.endDay*86400000))}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(d3.format('.0%')));
+      axisTitle(svg,`${seriesLabel} estimate change — ${periodLabel}`,left+innerW/2,height-5,'x');
+    }
+
+    function drawScatter(selector,input,xKey,yKey,xLabel,yLabel,xMode='percent',yMode='percent') {
+      const container=root.querySelector(selector), data=input.filter(d=>valid(d[xKey])&&valid(d[yKey]));
+      if(!data.length)return empty(selector,'No valid observations'); clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||736),height=480;
+      const left=68,right=24,top=18,bottom=54,innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d[xKey],0]),.14)).range([left,left+innerW]);
+      const y=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d[yKey],0]),.14)).range([top+innerH,top]);
+      const radius=d3.scaleSqrt().domain([0,d3.max(data,d=>d.weight)||1]).range([5,18]);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${yLabel} versus ${xLabel}`);
+      svg.append('title').text(`${yLabel} versus ${xLabel}`); frame(svg,left,top,innerW,innerH,c);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke',c.border);
+      svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(0)).attr('y2',y(0)).attr('stroke',c.border);
+      const xTick=xMode==='multiple'?(d=>`${d3.format('.0f')(d)}x`):d3.format('.0%');
+      const yTick=yMode==='points'?(d=>d3.format('.0f')(d)):d3.format('.0%');
+      const xValue=v=>xMode==='multiple'?`${num1(v)}x`:pct(v);
+      const yValue=v=>yMode==='points'?`${num1(v)}%`:pct(v);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(xTick));
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(6).tickFormat(yTick));
+      const points=svg.append('g').selectAll('g').data(data).join('g');
+      points.append('circle').attr('cx',d=>x(d[xKey])).attr('cy',d=>y(d[yKey])).attr('r',d=>radius(d.weight||0)).attr('fill',c.one).attr('fill-opacity',.5).attr('stroke',c.one);
+      const labels=data.slice().sort((a,b)=>(b.weight||0)-(a.weight||0)).slice(0,width<520?7:12).map(d=>({d,xp:x(d[xKey]),yp:y(d[yKey]),ly:y(d[yKey])-6})).sort((a,b)=>a.ly-b.ly);
+      labels.forEach((item,i)=>{if(i&&item.ly<labels[i-1].ly+14)item.ly=labels[i-1].ly+14;});
+      for(let i=labels.length-2;i>=0;i--){if(labels[i].ly>labels[i+1].ly-14)labels[i].ly=labels[i+1].ly-14;}
+      labels.forEach(item=>{item.ly=Math.max(top+11,Math.min(top+innerH-4,item.ly));item.right=item.xp<left+innerW-115;item.lx=item.xp+(item.right?6:-6);});
+      const labelLayer=svg.append('g');
+      labelLayer.selectAll('line').data(labels).join('line').attr('x1',d=>d.xp).attr('y1',d=>d.yp).attr('x2',d=>d.lx).attr('y2',d=>d.ly-3).attr('stroke',c.border);
+      labelLayer.selectAll('text').data(labels).join('text').attr('x',d=>d.lx).attr('y',d=>d.ly).attr('text-anchor',d=>d.right?'start':'end').text(d=>short(d.d.group,18));
+      points.append('circle').attr('cx',d=>x(d[xKey])).attr('cy',d=>y(d[yKey])).attr('r',d=>Math.max(16,radius(d.weight||0))).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,`<strong>${d.group}</strong><br>${xLabel} ${xValue(d[xKey])}<br>${yLabel} ${yValue(d[yKey])}<br>Index weight ${valid(d.weight)?pct0(d.weight):'—'}<br>P/E ${valid(d.peCurrent)?num1(d.peCurrent)+'x':'—'}`)).on('pointerleave',hideTip);
+      axisTitle(svg,xLabel,left+innerW/2,height-7,'x');
+      svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform',`translate(16,${top+innerH/2}) rotate(-90)`).attr('text-anchor','middle').text(yLabel);
+    }
+
+    function drawAttribution(selector,input,priceKey,epsKey,periodLabel,labelField='index') {
+      const container=root.querySelector(selector);
+      const data=input.filter(d=>valid(d[priceKey])&&valid(d[epsKey])&&d[epsKey]>-0.999).map(d=>{const priceReturn=d[priceKey],epsChange=d[epsKey],peChange=(1+priceReturn)/(1+epsChange)-1,interaction=epsChange*peChange;return {...d,priceReturn,epsEffect:epsChange+.5*interaction,peEffect:peChange+.5*interaction};}).sort((a,b)=>b.priceReturn-a.priceReturn);
+      if(!data.length)return empty(selector,'No valid observations'); clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||736),left=labelField==='group'?(width<520?125:175):(width<520?90:115),right=65,top=12,bottom=42;
+      data.forEach(d=>{d.pos=Math.max(0,d.epsEffect)+Math.max(0,d.peEffect);d.neg=Math.min(0,d.epsEffect)+Math.min(0,d.peEffect);});
+      const height=Math.max(380,top+bottom+data.length*25),innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const x=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[d.neg,d.pos,d.priceReturn,0]),.12)).range([left,left+innerW]);
+      const y=d3.scaleBand().domain(data.map(d=>d[labelField])).range([top,top+innerH]).padding(.22);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${periodLabel} return attribution ranked by total price return`);
+      svg.append('title').text(`${periodLabel} return attribution ranked by total price return; dot is EPS plus P/E contribution`); frame(svg,left,top,innerW,innerH,c);
+      svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',top+innerH).attr('stroke',c.fg);
+      const row=svg.append('g').selectAll('g').data(data).join('g').attr('transform',d=>`translate(0,${y(d[labelField])})`);
+      row.each(function(d){
+        let positive=0,negative=0;
+        const parts=[{key:'epsEffect',color:c.three},{key:'peEffect',color:c.two}];
+        d3.select(this).selectAll('rect.part').data(parts).join('rect').attr('class','part').attr('x',p=>{
+          const v=d[p.key]; const start=v>=0?positive:negative; if(v>=0)positive+=v;else negative+=v; return x(Math.min(start,start+v));
+        }).attr('width',p=>Math.abs(x(d[p.key])-x(0))).attr('height',y.bandwidth()).attr('fill',p=>p.color).attr('opacity',.68);
+      });
+      row.append('text').attr('x',left-7).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d[labelField],labelField==='group'?(width<520?18:28):12));
+      row.append('circle').attr('cx',d=>x(d.priceReturn)).attr('cy',y.bandwidth()/2).attr('r',4).attr('fill',c.four).attr('stroke',c.pop).attr('stroke-width',1.2);
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,`<strong>${d.indexName}${d.level!=='Index'?` · ${d.group}`:''}</strong><br>${periodLabel} total price return ${pct(d.priceReturn)}<br>EPS contribution ${pctp(d.epsEffect)}<br>P/E contribution ${pctp(d.peEffect)}<br>Check: EPS + P/E = ${pct(d.epsEffect+d.peEffect)}`)).on('pointerleave',hideTip);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(d3.format('.0%')));
+      axisTitle(svg,`${periodLabel} return / contribution`,left+innerW/2,height-5,'x');
+    }
+
+    function drawBoxplot(selector,input) {
+      const container=root.querySelector(selector),data=input.filter(d=>valid(d.low)&&valid(d.q1)&&valid(d.median)&&valid(d.q3)&&valid(d.high)&&valid(d.current));
+      if(!data.length)return empty(selector,'No valid P/E history for this selection'); clear(selector);
+      const width=Math.max(320,container.getBoundingClientRect().width||900),height=520,left=68,right=24,top=18,bottom=58,innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      const low=d3.min(data,d=>Math.min(d.low,d.current)),high=d3.max(data,d=>Math.max(d.high,d.current));
+      const y=d3.scaleLog().domain([Math.max(.5,low*.85),high*1.15]).range([top+innerH,top]).nice();
+      const category=d=>d._plotKey||d.index;
+      const x=d3.scaleBand().domain(data.map(category)).range([left,left+innerW]).padding(.28);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label','Forward P/E historical box plots');
+      svg.append('title').text('Forward P/E historical box plots'); frame(svg,left,top,innerW,innerH,c);
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(7,'~g'));
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x));
+      const g=svg.append('g').selectAll('g').data(data).join('g').attr('transform',d=>`translate(${x(category(d))},0)`);
+      g.append('line').attr('x1',x.bandwidth()/2).attr('x2',x.bandwidth()/2).attr('y1',d=>y(d.low)).attr('y2',d=>y(d.high)).attr('stroke',c.muted);
+      g.append('line').attr('x1',x.bandwidth()*.2).attr('x2',x.bandwidth()*.8).attr('y1',d=>y(d.low)).attr('y2',d=>y(d.low)).attr('stroke',c.muted);
+      g.append('line').attr('x1',x.bandwidth()*.2).attr('x2',x.bandwidth()*.8).attr('y1',d=>y(d.high)).attr('y2',d=>y(d.high)).attr('stroke',c.muted);
+      g.append('rect').attr('x',0).attr('width',x.bandwidth()).attr('y',d=>y(d.q3)).attr('height',d=>Math.max(1,y(d.q1)-y(d.q3))).attr('fill',c.one).attr('fill-opacity',.2).attr('stroke',c.one);
+      g.append('line').attr('x1',0).attr('x2',x.bandwidth()).attr('y1',d=>y(d.median)).attr('y2',d=>y(d.median)).attr('stroke',c.one).attr('stroke-width',2);
+      g.append('rect').attr('x',x.bandwidth()/2-4).attr('y',d=>y(d.current)-4).attr('width',8).attr('height',8).attr('fill',c.four);
+      g.append('rect').attr('x',-5).attr('width',x.bandwidth()+10).attr('y',d=>y(Math.max(d.high,d.current))).attr('height',d=>Math.abs(y(Math.min(d.low,d.current))-y(Math.max(d.high,d.current)))).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,`<strong>${d._plotName||d.indexName}</strong><br>Latest ${num1(d.current)}x · ${pct0(d.percentile)} percentile<br>Median ${num1(d.median)}x<br>IQR ${num1(d.q1)}–${num1(d.q3)}x<br>Whisker ${num1(d.low)}–${num1(d.high)}x`)).on('pointerleave',hideTip);
+      svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform',`translate(17,${top+innerH/2}) rotate(-90)`).attr('text-anchor','middle').text('12MF P/E (x, log scale)');
+    }
+
+    function drawPEFan(container, history, compact=false) {
+      d3.select(container).selectAll('*').remove();
+      const data=(history?.values||[]).map(v=>({date:new Date(v[0]*86400000),pe:v[1]})).filter(d=>valid(d.pe)&&!Number.isNaN(+d.date));
+      if(data.length<2){d3.select(container).append('div').attr('class','mrd-empty').text('Insufficient P/E history');return;}
+      const width=Math.max(280,container.getBoundingClientRect().width||(compact?300:900));
+      const height=compact?190:360,left=compact?46:62,right=compact?12:24,top=compact?10:18,bottom=compact?38:48;
+      const innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      let dateExtent=d3.extent(data,d=>d.date);
+      if(+dateExtent[0]===+dateExtent[1])dateExtent=[new Date(+dateExtent[0]-7*86400000),new Date(+dateExtent[1]+7*86400000)];
+      const mean=history.mean,std=history.std,lower=valid(mean)&&valid(std)?Math.max(0,mean-2*std):null,upper=valid(mean)&&valid(std)?mean+2*std:null;
+      const yValues=data.map(d=>d.pe).concat([mean,lower,upper].filter(valid));
+      const yDomain=paddedExtent(yValues,.08);
+      yDomain[0]=Math.max(0,yDomain[0]);
+      const x=d3.scaleUtc().domain(dateExtent).range([left,left+innerW]);
+      const y=d3.scaleLinear().domain(yDomain).range([top+innerH,top]);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${history.indexName} ${history.group} 12-month forward P/E history with two-standard-deviation range`);
+      svg.append('title').text(`${history.indexName} · ${history.group}: 12MF P/E, mean and ±2 standard deviations`);
+      frame(svg,left,top,innerW,innerH,c);
+      if(valid(lower)&&valid(upper)){
+        svg.append('rect').attr('x',left).attr('y',y(upper)).attr('width',innerW).attr('height',Math.max(0,y(lower)-y(upper))).attr('fill',c.four).attr('fill-opacity',.07);
+        [lower,upper].forEach(value=>svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(value)).attr('y2',y(value)).attr('stroke',c.four).attr('stroke-width',1.3).attr('stroke-dasharray','2,4'));
+      }
+      if(valid(mean))svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(mean)).attr('y2',y(mean)).attr('stroke',c.two).attr('stroke-width',1.2).attr('stroke-dasharray','6,4');
+      svg.append('path').datum(data).attr('fill','none').attr('stroke',c.one).attr('stroke-width',compact?1.6:2).attr('d',d3.line().x(d=>x(d.date)).y(d=>y(d.pe)));
+      const last=data[data.length-1];
+      svg.append('circle').attr('cx',x(last.date)).attr('cy',y(last.pe)).attr('r',compact?3:4).attr('fill',c.one);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(compact?3:(width<520?4:6)).tickFormat(d3.utcFormat('%y-%m')));
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(compact?3:5).tickFormat(d=>`${d3.format('.1f')(d)}x`));
+      axisTitle(svg,'Date',left+innerW/2,height-4,'x');
+      svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform',`translate(13,${top+innerH/2}) rotate(-90)`).attr('text-anchor','middle').text('P/E (x)');
+      const guide=svg.append('line').attr('data-chart-hover-guide','').attr('y1',top).attr('y2',top+innerH).attr('stroke',c.border).attr('display','none');
+      const marker=svg.append('circle').attr('data-chart-hover-marker','').attr('r',4).attr('fill',c.one).attr('stroke',c.fg).attr('display','none');
+      const bisect=d3.bisector(d=>d.date).center;
+      svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',left).attr('y',top).attr('width',innerW).attr('height',innerH).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',function(event){const [px]=d3.pointer(event,this),date=x.invert(px),point=data[bisect(data,date)];guide.attr('x1',x(point.date)).attr('x2',x(point.date)).attr('display',null);marker.attr('cx',x(point.date)).attr('cy',y(point.pe)).attr('display',null);showTip(event,`<strong>${history.indexName} · ${history.group}</strong><br>${d3.utcFormat('%Y-%m-%d')(point.date)} · ${num1(point.pe)}x<br>Mean ${valid(mean)?num1(mean)+'x':'—'}<br>Mean ±2σ ${valid(lower)?num1(lower)+'x':'—'} – ${valid(upper)?num1(upper)+'x':'—'}`);})
+        .on('pointerleave',()=>{guide.attr('display','none');marker.attr('display','none');hideTip();});
+    }
+
+    function drawContributionHistory(container, history, compact=false) {
+      d3.select(container).selectAll('*').remove();
+      const rawData=(history?.values||[]).filter(v=>v.length>=4).map(v=>({date:new Date(v[0]*86400000),eps:v[2],pe:v[3],price:v[2]+v[3]})).filter(d=>valid(d.eps)&&valid(d.pe)&&valid(d.price)&&!Number.isNaN(+d.date));
+      const monthEnd=new Map();
+      rawData.forEach(d=>monthEnd.set(`${d.date.getUTCFullYear()}-${d.date.getUTCMonth()}`,d));
+      const pointMap=new Map();
+      if(rawData.length)pointMap.set(+rawData[0].date,rawData[0]);
+      monthEnd.forEach(d=>pointMap.set(+d.date,d));
+      const data=[...pointMap.values()].sort((a,b)=>a.date-b.date);
+      if(data.length<2){d3.select(container).append('div').attr('class','mrd-empty').text('Insufficient contribution history');return;}
+      const width=Math.max(280,container.getBoundingClientRect().width||(compact?300:900));
+      const height=compact?190:360,left=compact?48:64,right=compact?12:24,top=compact?10:18,bottom=compact?38:48;
+      const innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      data.forEach(d=>{let positive=0,negative=0;d.parts=[{key:'eps',value:d.eps,color:c.one},{key:'pe',value:d.pe,color:c.two}].map(p=>{const start=p.value>=0?positive:negative;const end=start+p.value;if(p.value>=0)positive=end;else negative=end;return {...p,start,end};});d.pos=positive;d.neg=negative;});
+      const x=d3.scaleBand().domain(data.map(d=>+d.date)).range([left,left+innerW]).padding(.24);
+      const y=d3.scaleLinear().domain(paddedExtent(data.flatMap(d=>[0,d.neg,d.pos,d.price]),.1)).range([top+innerH,top]);
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${history.indexName} ${history.group} price return with cumulative EPS and P/E attribution since July 2025`);
+      svg.append('title').text(`${history.indexName} · ${history.group}: diverging cumulative EPS and P/E attribution since 2025-07-01; dot is total price return`);
+      frame(svg,left,top,innerW,innerH,c);
+      svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(0)).attr('y2',y(0)).attr('stroke',c.fg).attr('stroke-width',1);
+      const bars=svg.append('g').selectAll('g').data(data).join('g').attr('transform',d=>`translate(${x(+d.date)},0)`);
+      bars.selectAll('rect.part').data(d=>d.parts).join('rect').attr('class','part').attr('x',0).attr('width',x.bandwidth()).attr('y',p=>y(Math.max(p.start,p.end))).attr('height',p=>Math.max(1,Math.abs(y(p.start)-y(p.end)))).attr('fill',p=>p.color).attr('opacity',.72);
+      const center=d=>x(+d.date)+x.bandwidth()/2;
+      svg.append('path').datum(data).attr('fill','none').attr('stroke',c.four).attr('stroke-width',compact?1.2:1.6).attr('stroke-opacity',.65).attr('d',d3.line().x(center).y(d=>y(d.price)));
+      svg.append('g').selectAll('circle').data(data).join('circle').attr('cx',center).attr('cy',d=>y(d.price)).attr('r',compact?2.8:3.5).attr('fill',c.four).attr('stroke',c.pop).attr('stroke-width',1);
+      const tickCount=compact?3:(width<520?4:6),step=Math.max(1,Math.ceil(data.length/tickCount));
+      const tickValues=data.filter((d,i)=>i%step===0||i===data.length-1).map(d=>+d.date);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).tickValues(tickValues).tickFormat(d=>d3.utcFormat('%y-%m')(new Date(d))));
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(compact?3:5).tickFormat(d3.format('+.0%')));
+      axisTitle(svg,'Date',left+innerW/2,height-4,'x');
+      bars.append('rect').attr('x',0).attr('y',top).attr('width',x.bandwidth()).attr('height',innerH).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',(event,d)=>showTip(event,`<strong>${history.indexName} · ${history.group}</strong><br>${d3.utcFormat('%Y-%m-%d')(d.date)}<br>Total price return ${pct(d.price)}<br>Cumulative EPS contribution ${pctp(d.eps)}<br>Cumulative P/E contribution ${pctp(d.pe)}`)).on('pointerleave',hideTip);
+    }
+
+    function drawEstimatePair(container, history) {
+      d3.select(container).selectAll('*').remove();
+      const positions=[4,5];
+      const labels=['FY1 EPS','FY2 EPS'];
+      const data=(history?.values||[]).filter(v=>v.length>=8).map(v=>({date:new Date(v[0]*86400000),one:v[positions[0]],two:v[positions[1]]})).filter(d=>valid(d.one)&&valid(d.two)&&!Number.isNaN(+d.date));
+      if(data.length<2){d3.select(container).append('div').attr('class','mrd-empty').text('Insufficient earnings history');return;}
+      const width=Math.max(280,container.getBoundingClientRect().width||300),height=190,left=48,right=12,top=10,bottom=38;
+      const innerW=width-left-right,innerH=height-top-bottom,c=colors();
+      let dateExtent=d3.extent(data,d=>d.date);
+      if(+dateExtent[0]===+dateExtent[1])dateExtent=[new Date(+dateExtent[0]-7*86400000),new Date(+dateExtent[1]+7*86400000)];
+      const x=d3.scaleUtc().domain(dateExtent).range([left,left+innerW]);
+      const yDomain=paddedExtent(data.flatMap(d=>[d.one,d.two,0]),.1);
+      const y=d3.scaleLinear().domain(yDomain).range([top+innerH,top]);
+      const aria='FY1 and FY2 EPS estimate change since 2026 start';
+      const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${history.indexName} ${history.group} ${aria}`);
+      svg.append('title').text(`${history.indexName} · ${history.group}: ${aria}`);frame(svg,left,top,innerW,innerH,c);
+      if(yDomain[0]<=0&&yDomain[1]>=0)svg.append('line').attr('x1',left).attr('x2',left+innerW).attr('y1',y(0)).attr('y2',y(0)).attr('stroke',c.border).attr('stroke-width',1).attr('stroke-opacity',1);
+      const lineFor=key=>d3.line().x(d=>x(d.date)).y(d=>y(d[key]));
+      svg.append('path').datum(data).attr('fill','none').attr('stroke',c.one).attr('stroke-width',1.7).attr('d',lineFor('one'));
+      svg.append('path').datum(data).attr('fill','none').attr('stroke',c.two).attr('stroke-width',1.7).attr('d',lineFor('two'));
+      const last=data[data.length-1];
+      svg.append('circle').attr('cx',x(last.date)).attr('cy',y(last.one)).attr('r',3).attr('fill',c.one);
+      svg.append('rect').attr('x',x(last.date)-3).attr('y',y(last.two)-3).attr('width',6).attr('height',6).attr('fill',c.two);
+      svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(3).tickFormat(d3.utcFormat('%y-%m')));
+      svg.append('g').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).ticks(3).tickFormat(d3.format('+.0%')));
+      axisTitle(svg,'Date',left+innerW/2,height-4,'x');
+      const guide=svg.append('line').attr('data-chart-hover-guide','').attr('y1',top).attr('y2',top+innerH).attr('stroke',c.border).attr('display','none');
+      const oneMarker=svg.append('circle').attr('data-chart-hover-marker','').attr('r',4).attr('fill',c.one).attr('stroke',c.fg).attr('display','none');
+      const twoMarker=svg.append('rect').attr('data-chart-hover-marker','').attr('width',8).attr('height',8).attr('fill',c.two).attr('stroke',c.fg).attr('display','none');
+      const bisect=d3.bisector(d=>d.date).left;
+      const interpolate=(date,key)=>{const i=bisect(data,date);if(i<=0)return data[0][key];if(i>=data.length)return data[data.length-1][key];const a=data[i-1],b=data[i],t=(+date-+a.date)/(+b.date-+a.date||1);return a[key]+t*(b[key]-a[key]);};
+      svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',left).attr('y',top).attr('width',innerW).attr('height',innerH).attr('fill','transparent').style('pointer-events','all')
+        .on('pointermove',function(event){const [px]=d3.pointer(event,this),date=x.invert(px),one=interpolate(date,'one'),two=interpolate(date,'two');guide.attr('x1',px).attr('x2',px).attr('display',null);oneMarker.attr('cx',px).attr('cy',y(one)).attr('display',null);twoMarker.attr('x',px-4).attr('y',y(two)-4).attr('display',null);showTip(event,`<strong>${history.indexName} · ${history.group}</strong><br>${d3.utcFormat('%Y-%m-%d')(date)}<br>${labels[0]} ${pct(one)}<br>${labels[1]} ${pct(two)}`);})
+        .on('pointerleave',()=>{guide.attr('display','none');oneMarker.attr('display','none');twoMarker.attr('display','none');hideTip();});
+    }
+
+    function renderFanGrid(selector, histories) {
+      const target=root.querySelector(selector);
+      target.innerHTML='';
+      const sorted=histories.slice().sort((a,b)=>(a._order??1)-(b._order??1)||a.group.localeCompare(b.group));
+      if(!sorted.length){target.innerHTML='<div class="mrd-empty">No P/E history for this classification</div>';return;}
+      sorted.forEach(history=>{
+        const item=document.createElement('div');item.className='mrd-fan-item';
+        const head=document.createElement('div');head.className='mrd-fan-head';
+        const title=document.createElement('h3');title.textContent=history.group;
+        const latest=document.createElement('span');latest.className='text-small';
+        const last=history.values?.[history.values.length-1];latest.textContent=last&&valid(last[1])?`${num1(last[1])}x`:'—';
+        const chart=document.createElement('div');chart.className='mrd-chart';
+        head.append(title,latest);item.append(head,chart);target.append(item);drawPEFan(chart,history,true);
+      });
+    }
+
+    function renderContributionGrid(selector, histories, groupBySector = false) {
+      const target=root.querySelector(selector);
+      target.innerHTML='';
+      const sectorOf=history=>industrySectorMap[history.index]?.[history.group]||'Unclassified';
+      const sorted=histories.slice().sort((a,b)=>groupBySector
+        ? sectorOf(a).localeCompare(sectorOf(b))||a.group.localeCompare(b.group)
+        : a.group.localeCompare(b.group));
+      if(!sorted.length){target.innerHTML='<div class="mrd-empty">No contribution history for this classification</div>';return;}
+      let currentSector=null;
+      sorted.forEach(history=>{
+        const sector=sectorOf(history);
+        if(groupBySector&&sector!==currentSector){
+          currentSector=sector;
+          const divider=document.createElement('div');divider.className='mrd-sector-divider';
+          const sectorTitle=document.createElement('h3');sectorTitle.textContent=sector;
+          divider.append(sectorTitle);target.append(divider);
+        }
+        const item=document.createElement('div');item.className='mrd-fan-item';
+        const head=document.createElement('div');head.className='mrd-fan-head';
+        const title=document.createElement('h3');title.textContent=groupBySector?`${history.group} — ${sector}`:history.group;
+        const latest=document.createElement('span');latest.className='text-small';
+        const validPoints=(history.values||[]).filter(v=>v.length>=4&&valid(v[2])&&valid(v[3]));
+        const last=validPoints[validPoints.length-1];latest.textContent=last?`Σ ${pct(last[2]+last[3])}`:'—';
+        const chart=document.createElement('div');chart.className='mrd-chart';
+        head.append(title,latest);item.append(head,chart);target.append(item);drawContributionHistory(chart,history,true);
+      });
+    }
+
+    function renderEstimateGrid(selector, histories) {
+      const target=root.querySelector(selector);target.innerHTML='';
+      const sorted=histories.slice().sort((a,b)=>(a.level==='Index'?a.indexName:a.group).localeCompare(b.level==='Index'?b.indexName:b.group));
+      if(!sorted.length){target.innerHTML='<div class="mrd-empty">No earnings history for this selection</div>';return;}
+      const positions=[4,5];
+      sorted.forEach(history=>{
+        const item=document.createElement('div');item.className='mrd-fan-item';
+        const head=document.createElement('div');head.className='mrd-fan-head';
+        const title=document.createElement('h3');title.textContent=history.level==='Index'?history.indexName:history.group;
+        const latest=document.createElement('span');latest.className='text-small';
+        const validPoints=(history.values||[]).filter(v=>v.length>=8&&valid(v[positions[0]])&&valid(v[positions[1]]));
+        const last=validPoints[validPoints.length-1];latest.textContent=last?`FY1 ${pct(last[positions[0]])} · FY2 ${pct(last[positions[1]])}`:'—';
+        const chart=document.createElement('div');chart.className='mrd-chart';
+        head.append(title,latest);item.append(head,chart);target.append(item);drawEstimatePair(chart,history);
+      });
+    }
+
+    function renderGroupTable(data, contributionMode, indexRow) {
+      const target=root.querySelector('#mrd-group-table');
+      const sorted=data.slice().sort((a,b)=>contributionMode
+        ? ((valid(b.weight)&&valid(b.eps13)?b.weight*b.eps13:-Infinity)-(valid(a.weight)&&valid(a.eps13)?a.weight*a.eps13:-Infinity))
+        : ((b.eps13??-Infinity)-(a.eps13??-Infinity))).slice(0,25);
+      if (contributionMode) {
+        target.innerHTML=`<table class="table table-sm"><thead><tr><th>Group</th><th class="text-end">Index weight</th><th class="text-end">13W EPS × 4/13</th><th class="text-end">13W contribution × 4/13</th><th class="text-end">Actual 4W EPS</th><th class="text-end">Actual 4W contribution</th><th class="text-end">Share of raw index EPS 13W</th></tr></thead><tbody>${sorted.map(d=>{const eps13Eq=valid(d.eps13)?d.eps13*4/13:null,c13Eq=valid(d.weight)&&valid(eps13Eq)?d.weight*eps13Eq:null,c4=valid(d.weight)&&valid(d.eps4)?d.weight*d.eps4:null,c13Raw=valid(d.weight)&&valid(d.eps13)?d.weight*d.eps13:null,share=valid(c13Raw)&&valid(indexRow?.eps13)&&indexRow.eps13!==0?c13Raw/indexRow.eps13:null;return `<tr><td>${d.group}</td><td class="text-end">${valid(d.weight)?pct0(d.weight):'—'}</td><td class="text-end">${valid(eps13Eq)?pct(eps13Eq):'—'}</td><td class="text-end">${valid(c13Eq)?pctp(c13Eq):'—'}</td><td class="text-end">${valid(d.eps4)?pct(d.eps4):'—'}</td><td class="text-end">${valid(c4)?pctp(c4):'—'}</td><td class="text-end">${valid(share)?pct0(share):'—'}</td></tr>`;}).join('')}</tbody></table>`;
+      } else {
+        target.innerHTML=`<table class="table table-sm"><thead><tr><th>Group</th><th class="text-end">Weight</th><th class="text-end">13W EPS × 4/13</th><th class="text-end">Actual 4W EPS</th><th class="text-end">4W momentum</th><th class="text-end">P/E</th></tr></thead><tbody>${sorted.map(d=>{const eps13Eq=valid(d.eps13)?d.eps13*4/13:null,momentum=valid(d.eps4)&&valid(eps13Eq)?d.eps4-eps13Eq:null;return `<tr><td>${d.group}</td><td class="text-end">${valid(d.weight)?pct0(d.weight):'—'}</td><td class="text-end">${valid(eps13Eq)?pct(eps13Eq):'—'}</td><td class="text-end">${valid(d.eps4)?pct(d.eps4):'—'}</td><td class="text-end">${valid(momentum)?pct(momentum):'—'}</td><td class="text-end">${valid(d.peCurrent)?num1(d.peCurrent)+'x':'—'}</td></tr>`;}).join('')}</tbody></table>`;
+      }
+    }
+
+    function renderQualityTable(data,key) {
+      const target=root.querySelector('#mrd-quality-table');
+      const sorted=data.filter(d=>valid(d[key])).slice().sort((a,b)=>b[key]-a[key]).slice(0,25);
+      const label={roe12m:'12MF ROE',opm12m:'12MF OPM',fy2Growth:'FY2 growth'}[key];
+      const formatter=key==='fy2Growth'?pct:v=>`${num1(v)}%`;
+      target.innerHTML=`<table class="table table-sm"><thead><tr><th>Group</th><th class="text-end">Weight</th><th class="text-end">P/E</th><th class="text-end">${label}</th><th class="text-end">Current ROE</th><th class="text-end">Current OPM</th></tr></thead><tbody>${sorted.map(d=>`<tr><td>${d.group}</td><td class="text-end">${valid(d.weight)?pct0(d.weight):'—'}</td><td class="text-end">${valid(d.peCurrent)?num1(d.peCurrent)+'x':'—'}</td><td class="text-end">${valid(d[key])?formatter(d[key]):'—'}</td><td class="text-end">${valid(d.roeCurrent)?num1(d.roeCurrent)+'%':'—'}</td><td class="text-end">${valid(d.opmCurrent)?num1(d.opmCurrent)+'%':'—'}</td></tr>`).join('')}</tbody></table>`;
+    }
+
+    function renderCoverage() {
+      const available=new Map(DATA.coverage.map(d=>[d.index,d]));
+      const order=[...DATA.meta.available];
+      root.querySelector('#mrd-coverage-table').innerHTML=`<table class="table table-sm"><thead><tr><th>Status</th><th>Index</th><th class="text-end">Members</th><th>Window</th><th class="text-end">P/E coverage</th><th class="text-end">EPS coverage</th><th class="text-end">Price coverage</th><th>Source</th></tr></thead><tbody>${order.map(code=>{const d=available.get(code);if(!d)return `<tr><td><span class="mrd-status"><span class="mrd-status-dot missing"></span>Missing</span></td><td>${code}</td><td class="text-end">—</td><td>—</td><td class="text-end">—</td><td class="text-end">—</td><td class="text-end">—</td><td>—</td></tr>`;return `<tr><td><span class="mrd-status"><span class="mrd-status-dot"></span>Available</span></td><td>${d.index}</td><td class="text-end">${d.members.toLocaleString()}</td><td>${d.startDate} – ${d.endDate}</td><td class="text-end">${pct0(d.metricCoverage.pe)}</td><td class="text-end">${pct0(d.metricCoverage.eps12)}</td><td class="text-end">${pct0(d.metricCoverage.price)}</td><td>${d.source}</td></tr>`;}).join('')}</tbody></table>`;
+    }
+
+    function populateSelect(select,values,labeler=x=>x) {
+      const current=select.value;
+      select.innerHTML=values.map(v=>`<option value="${v}">${labeler(v)}</option>`).join('');
+      if(values.includes(current))select.value=current;
+    }
+    function indexLabel(code){const row=indexRows.find(d=>d.index===code);return row?`${row.index} · ${row.indexName}`:code;}
+    function industryLabel(code,industry){const sector=industrySectorMap[code]?.[industry]||'Unclassified';return `${industry} — ${sector}`;}
+    function groupData(indexSelect,levelSelect){return rows.filter(d=>d.index===indexSelect.value&&d.level===levelSelect.value);}
+
+    function fourWeekComparison(data){return data.map(d=>({...d,eps13Raw:d.eps13,eps4Raw:d.eps4,eps13:valid(d.eps13)?d.eps13*4/13:null}));}
+    function renderEurope(){
+      const code=root.querySelector('#mrd-heatmap-index').value;
+      const periods={price5d:'5D'};
+      const data=rows.filter(d=>d.index===code&&d.level==='Sector');
+      root.querySelector('#mrd-heatmap-title').textContent=`${indexLabel(code)} Sector Heatmap — ${periods[heatmapPeriod]} Price Return`;
+      root.querySelector('#mrd-relative-title').textContent=`${indexLabel(code)} Sector Relative Price Return vs TOPIX — Since ${DATA.meta.startDate}`;
+      drawEuropeHeatmap(data,heatmapPeriod,code);
+      renderRelativeGrid(code);
+    }
+    function renderIndexReturns(){const labels={price1m:'1M',price3m:'3M',price6m:'6M'},label=labels[indexReturnPeriod];root.querySelector('#mrd-index-return-title').textContent=`Index Price Return — ${label} · ranked high to low`;drawIndexReturnBar('#mrd-index-return',indexRows,indexReturnPeriod,label);}
+    function renderIndex(){drawBarMarker('#mrd-index-eps',fourWeekComparison(indexRows),'indexName',30);drawSingleBar('#mrd-index-momentum',indexRows,'momentum','indexName',30);renderIndexReturns();}
+    function renderIndex2Ranking(){
+      const labels={"1m":"1M","3m":"3M","6m":"6M"},label=labels[index2Period],histories=peHistories.filter(d=>d.level==='Index');
+      root.querySelector('#mrd-index2-ranking-title').textContent=`FY1 / FY2 EPS Revision Strength — ${label}`;
+      root.querySelector('#mrd-fy1-rank-title').textContent=`FY1 EPS — ${label} · ranked high to low`;
+      root.querySelector('#mrd-fy2-rank-title').textContent=`FY2 EPS — ${label} · ranked high to low`;
+      drawEstimateStrengthBar('#mrd-fy1-rank',histories,4,label,'FY1 EPS');
+      drawEstimateStrengthBar('#mrd-fy2-rank',histories,5,label,'FY2 EPS');
+    }
+    function renderIndex2(){
+      root.querySelectorAll('[data-index2-panel]').forEach(panel=>panel.hidden=panel.dataset.index2Panel!==index2View);
+      if(index2View==='ranking')renderIndex2Ranking();
+      else renderEstimateGrid('#mrd-fund-index-grid',peHistories.filter(d=>d.level==='Index'));
+    }
+    function renderGroups(){
+      const indexSelect=root.querySelector('#mrd-group-index'),data=groupData(indexSelect,root.querySelector('#mrd-group-level'));
+      const contributionMode=root.querySelector('#mrd-group-contribution').checked;
+      root.querySelector('#mrd-group-title').textContent=contributionMode?'Contribution to TOPIX EPS Change by Group — Available 5D':'EPS Estimate Change by Group — Available 5D';
+      root.querySelector('#mrd-group-note').textContent=contributionMode?'Bar = start-window index weight × 5D EPS change.':`Bar = market-cap-weighted constituent EPS estimate change over the latest five weekday observations through ${DATA.meta.endDate}.`;
+      drawAvailableEPSBar('#mrd-group-eps',data,contributionMode);
+      renderAvailableGroupTable(data,contributionMode);
+    }
+    function renderPrice1(){
+      const code=root.querySelector('#mrd-contribution-index').value;
+      const indexHistory=peHistories.find(d=>d.index===code&&d.level==='Index');
+      root.querySelector('#mrd-contribution-index-title').textContent=`${indexLabel(code)} — Cumulative EPS / P/E Attribution Since ${DATA.meta.startDate}`;
+      drawContributionHistory(root.querySelector('#mrd-contribution-index-chart'),indexHistory,false);
+      renderContributionGrid('#mrd-contribution-sector-grid',peHistories.filter(d=>d.index===code&&d.level==='Sector'));
+      renderContributionGrid('#mrd-contribution-industry-grid',peHistories.filter(d=>d.index===code&&d.level==='Industry'),true);
+    }
+    function renderPrice2(){
+      const settings={price1d:{label:'1D',epsKey:'eps1d',epsLabel:'1D EPS change'},price5d:{label:'5D',epsKey:'eps5d',epsLabel:'5D EPS change'}}[price2Period];
+      const code=root.querySelector('#mrd-price-index').value;
+      const level=root.querySelector('#mrd-price-level').value;
+      const rawData=groupData(root.querySelector('#mrd-price-index'),root.querySelector('#mrd-price-level'));
+      const data=level==='Industry'?rawData.map(d=>({...d,group:industryLabel(code,d.group)})):rawData;
+      const sectorData=rows.filter(d=>d.index===code&&d.level==='Sector');
+      root.querySelector('#mrd-price-scatter-title').textContent=`${settings.label} Price Return vs ${settings.epsLabel}`;
+      root.querySelector('#mrd-attribution-title').textContent=`${indexLabel(code)} — ${settings.label} Return Attribution by Sector · ranked by total return`;
+      drawScatter('#mrd-price-scatter',data,price2Period,settings.epsKey,`${settings.label} price return`,settings.epsLabel,'percent','percent');
+      drawAttribution('#mrd-attribution',sectorData,price2Period,settings.epsKey,settings.label,'group');
+    }
+    function renderValuation1(){
+      const external=DATA.meta.sectorValuationHistory;
+      const externalGroups=new Set(Object.keys(external?.sectorCoverage||{}));
+      if(!external){renderFanGrid('#mrd-fan-sector-grid',[]);return;}
+      const end=new Date(`${external.endDate}T00:00:00Z`);
+      const cutoff=new Date(Date.UTC(end.getUTCFullYear()-valuationYears,end.getUTCMonth(),end.getUTCDate()));
+      const cutoffDay=Math.floor(+cutoff/86400000);
+      const sectorHistories=sectorPEHistories.filter(d=>externalGroups.has(d.group)).map(d=>({...d,_order:1,values:d.values.filter(v=>v[0]>=cutoffDay)}));
+      const rawIndexHistory=sectorPEHistories.find(d=>d.index==='SXXP'&&d.level==='Index');
+      const indexValues=(rawIndexHistory?.values||[]).filter(v=>v.length>=2&&valid(v[1])&&v[1]>0&&v[0]>=cutoffDay&&v[0]<=Math.floor(+end/86400000));
+      const indexHistory=rawIndexHistory&&indexValues.length?{...rawIndexHistory,_order:0,values:indexValues}:null;
+      root.querySelector('#mrd-fan-sector-title').textContent=`STOXX Europe 600 Index + Sector 12MF P/E — ${valuationYears}Y view; mean and ±2σ use trailing 10Y`;
+      renderFanGrid('#mrd-fan-sector-grid',indexHistory?[indexHistory,...sectorHistories]:sectorHistories);
+    }
+    function renderValuation2(){
+      const external=DATA.meta.sectorValuationHistory;
+      if(!external){drawBoxplot('#mrd-boxplot',[]);return;}
+      const aliases={'Communication Services':'Comms','Consumer Discretionary':'Discr.','Consumer Staples':'Staples','Health Care':'Health','Information Technology':'Tech','Industrials':'Indls','Materials':'Matls','Utilities':'Util','Financials':'Fin'};
+      const externalGroups=new Set(Object.keys(external.sectorCoverage||{}));
+      const data=boxes.filter(d=>d.index==='SXXP'&&d.level==='Sector'&&externalGroups.has(d.group)).map(d=>({...d,_plotKey:aliases[d.group]||d.group,_plotName:`STOXX Europe 600 · ${d.group}`}));
+      drawBoxplot('#mrd-boxplot',data);
+    }
+    function renderQuality(){
+      const data=groupData(root.querySelector('#mrd-quality-index'),root.querySelector('#mrd-quality-level'));
+      const key=root.querySelector('#mrd-quality-metric').value;
+      const label={roe12m:'12MF ROE',opm12m:'12MF operating margin',fy2Growth:'FY2 vs FY1 EPS growth'}[key];
+      drawScatter('#mrd-quality-scatter',data,'peCurrent',key,'12MF P/E',label,'multiple',key==='fy2Growth'?'percent':'points');
+      renderQualityTable(data,key);
+    }
+    function drawActive(){
+      const active=root.querySelector('[data-tab][aria-selected="true"]').dataset.tab;
+      if(active==='europe')renderEurope();
+      if(active==='index')renderIndex();
+      if(active==='index2')renderIndex2();
+      if(active==='groups')renderGroups();
+      if(active==='price1')renderPrice1();
+      if(active==='price2')renderPrice2();
+      if(active==='valuation1')renderValuation1();
+      if(active==='valuation2')renderValuation2();
+      if(active==='quality')renderQuality();
+      if(active==='coverage')renderCoverage();
+    }
+
+    const codes=indexRows.map(d=>d.index);
+    ['#mrd-group-index','#mrd-price-index','#mrd-quality-index','#mrd-contribution-index'].forEach(sel=>populateSelect(root.querySelector(sel),codes,indexLabel));
+    const europeCodes=['TPX500'].filter(code=>codes.includes(code));
+    populateSelect(root.querySelector('#mrd-heatmap-index'),europeCodes.length?europeCodes:codes,indexLabel);
+    const preferred=codes.includes('SXXP')?'SXXP':codes[0];
+    root.querySelector('#mrd-group-index').value=preferred;
+    root.querySelector('#mrd-price-index').value=preferred;
+    root.querySelector('#mrd-quality-index').value=preferred;
+    root.querySelector('#mrd-contribution-index').value=preferred;
+    root.querySelector('#mrd-heatmap-index').value=europeCodes[0]||preferred;
+    root.querySelectorAll('select').forEach(select=>select.addEventListener('change',drawActive));
+    root.querySelector('#mrd-group-contribution').addEventListener('change',drawActive);
+    root.querySelectorAll('[data-heatmap-period]').forEach(button=>button.addEventListener('click',()=>{
+      heatmapPeriod=button.dataset.heatmapPeriod;
+      root.querySelectorAll('[data-heatmap-period]').forEach(b=>{const on=b===button;b.setAttribute('aria-pressed',String(on));b.classList.toggle('btn-primary',on);});
+      renderEurope();
+    }));
+    root.querySelectorAll('[data-price2-period]').forEach(button=>button.addEventListener('click',()=>{
+      price2Period=button.dataset.price2Period;
+      root.querySelectorAll('[data-price2-period]').forEach(b=>{const on=b===button;b.setAttribute('aria-pressed',String(on));b.classList.toggle('btn-primary',on);});
+      renderPrice2();
+    }));
+    root.querySelectorAll('[data-index-return-period]').forEach(button=>button.addEventListener('click',()=>{
+      indexReturnPeriod=button.dataset.indexReturnPeriod;
+      root.querySelectorAll('[data-index-return-period]').forEach(b=>{const on=b===button;b.setAttribute('aria-pressed',String(on));b.classList.toggle('btn-primary',on);});
+      renderIndexReturns();
+    }));
+    root.querySelectorAll('[data-index2-period]').forEach(button=>button.addEventListener('click',()=>{
+      index2Period=button.dataset.index2Period;
+      root.querySelectorAll('[data-index2-period]').forEach(b=>{const on=b===button;b.setAttribute('aria-pressed',String(on));b.classList.toggle('btn-primary',on);});
+      renderIndex2Ranking();
+    }));
+    root.querySelectorAll('[data-index2-view]').forEach(button=>button.addEventListener('click',()=>{
+      index2View=button.dataset.index2View;
+      root.querySelectorAll('[data-index2-view]').forEach(b=>{const on=b===button;b.setAttribute('aria-selected',String(on));b.classList.toggle('btn-primary',on);});
+      renderIndex2();
+    }));
+    root.querySelectorAll('[data-valuation-years]').forEach(button=>button.addEventListener('click',()=>{
+      valuationYears=Number(button.dataset.valuationYears);
+      root.querySelectorAll('[data-valuation-years]').forEach(b=>{const on=b===button;b.setAttribute('aria-pressed',String(on));b.classList.toggle('btn-primary',on);});
+      renderValuation1();
+    }));
+    root.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{
+      root.querySelectorAll('[data-tab]').forEach(b=>{const on=b===button;b.setAttribute('aria-selected',String(on));b.classList.toggle('btn-primary',on);});
+      root.querySelectorAll('[data-panel]').forEach(panel=>panel.hidden=panel.dataset.panel!==button.dataset.tab);
+      drawActive();
+    }));
+
+    root.querySelector('#mrd-asof').textContent=`As of ${DATA.meta.endDate}`;
+    root.querySelector('#mrd-window').textContent=`Window ${DATA.meta.startDate} – ${DATA.meta.endDate}`;
+    root.querySelector('#mrd-universe').textContent=`${DATA.meta.availableCount} indices`;
+
+    renderCoverage();
+    drawActive();
+    let resizeTimer;
+    new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(drawActive,120);}).observe(root);
+    new MutationObserver(drawActive).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme','style']});
+  })();
+  </script>
+</div>

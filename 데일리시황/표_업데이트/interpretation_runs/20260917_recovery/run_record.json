@@ -1,0 +1,266 @@
+{
+  "automation_id": "qae-ib-07-20",
+  "completed_at": "2026-09-17T08:53:28+09:00",
+  "status": "published_partial_source_coverage",
+  "supersedes": "20260917_0720 deferred decision corrected by user",
+  "input": {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+    "sha256": "b86f5440e1b55e57718930d3fcfbdc20340f07150feb22bd394a9b7cd8ca5063"
+  },
+  "actual_values_snapshot_date": "2026-09-17",
+  "collector": {
+    "run_id": "20260917_070002_5e3db5",
+    "mode": "daily",
+    "start": "2026-09-16",
+    "end": "2026-09-16",
+    "houses": [
+      "BofA",
+      "JPM",
+      "GS",
+      "Citi",
+      "HSBC"
+    ],
+    "port": 9223,
+    "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "started": "2026-09-17T07:00:02.702369+09:00",
+    "status": "incomplete",
+    "scheduled": false,
+    "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-17\\run_20260917_070002_5e3db5.log",
+    "collector_report": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-17\\run_20260917_070002_5e3db5.json",
+    "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\daily\\2026-09-17\\daily_20260917_070002_5e3db5.console.log",
+    "updated": "2026-09-17T07:12:28.747518+09:00",
+    "disk_space": {
+      "checked": "2026-09-17T07:12:23.742195+09:00",
+      "minimum_free_gib": 5,
+      "volumes": [
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+          "free_bytes": 46308478976
+        },
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+          "free_bytes": 46308478976
+        }
+      ]
+    },
+    "worker_pid": 52500,
+    "collector_exit_code": 2,
+    "collector_result": {
+      "run_id": "20260917_070002_5e3db5",
+      "mode": "daily",
+      "start": "2026-09-16",
+      "end": "2026-09-16",
+      "started": "2026-09-17T07:00:11.351093+09:00",
+      "finished": "2026-09-17T07:12:26.306496+09:00",
+      "overall_status": "incomplete",
+      "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+      "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-17\\run_20260917_070002_5e3db5.log",
+      "houses": {
+        "BofA": {
+          "status": "incomplete",
+          "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+          "counts": {},
+          "connection_lost": false
+        },
+        "JPM": {
+          "status": "complete",
+          "counts": {
+            "discovered": 50,
+            "in_range": 12,
+            "attempted": 12,
+            "downloaded": 12,
+            "outside_range": 38
+          },
+          "coverage_guard_version": 1
+        },
+        "GS": {
+          "status": "incomplete",
+          "reason": "Failed PDFs or unparseable publication dates remain.",
+          "counts": {
+            "discovered": 49,
+            "outside_range": 32,
+            "in_range": 17,
+            "attempted": 17,
+            "downloaded": 15,
+            "no_original_pdf": 1,
+            "archived_html": 1,
+            "failed": 1
+          }
+        },
+        "Citi": {
+          "status": "complete",
+          "counts": {
+            "discovered": 97,
+            "outside_range": 93,
+            "in_range": 4,
+            "attempted": 4,
+            "downloaded": 4
+          },
+          "coverage_guard_version": 1
+        },
+        "HSBC": {
+          "status": "complete",
+          "counts": {
+            "discovered": 12,
+            "in_range": 12,
+            "attempted": 12,
+            "downloaded": 9,
+            "no_original_pdf": 3
+          },
+          "coverage_guard_version": 1
+        }
+      }
+    },
+    "finished": "2026-09-17T07:12:28.747507+09:00",
+    "exit_code": 2
+  },
+  "collection_scope": "JPM·Citi 수집 완료; GS 확보 PDF 15개 사용 가능하나 실패 1건으로 수집 미완료; BofA timeout. HSBC는 이번 실제 로그에서 PDF 9개 확보 확인. 전체 수집 완료를 가정하지 않고 확보 자료로 계속 갱신.",
+  "updated_summaries": 26,
+  "retained_summaries": 37,
+  "valid_summaries": 63,
+  "house_comments": 91,
+  "reviewed_event_ids": [
+    "72b1976a6e4baf4ed579",
+    "a74fc0ada284d786ef65",
+    "8949ffd9bb3befcf3c90",
+    "d3cfd8195aa7e6bb6a92",
+    "2a28e526354ddf6fd1d7",
+    "d96db3cb937bf219622d",
+    "853eb2e42fd95db18ebb",
+    "eb602fa587cf9735e7fb",
+    "51d3eefb5031d0634107",
+    "eaaa9c7d643cbdc191dc",
+    "74ca4e43e3b7d758370d",
+    "8759e2d68e870902a13b",
+    "eb3a0b311d529c302afc",
+    "82882e0af5b2c618e8e3",
+    "041895dc9d2ddf6974be",
+    "95858958526d8be1a4eb",
+    "ef5a6080c19d76843cb4",
+    "dce4a6492dfc3edaeb73",
+    "4b86b31fc72f154236cd",
+    "8384f31e5f8327a4b2ba",
+    "1256580b4b15b87987b9",
+    "15bfae8389f25fccbdb9",
+    "9929bd5a068495d067a3",
+    "1a26b1295325c42d6832",
+    "e9f87d3ca604b8ca5ac4",
+    "ee15b937b353a7195a53"
+  ],
+  "reviewed_evidence_pages": [
+    {
+      "doc_id": "0fc004cee0caa18eff82e2075a3ed73e86acd95dbe581a1d571bd4136395330e",
+      "page": 1
+    },
+    {
+      "doc_id": "12ba06908c587150df7b4fa351cc6988d716ffc88bf21f4dc4813aba77708415",
+      "page": 2
+    },
+    {
+      "doc_id": "4c0d1544365d35b4a06c8e0896b6158165bd0b3350445463c0570b5ec9583d5b",
+      "page": 1
+    },
+    {
+      "doc_id": "55b8a31c03a3ea8b33bb6e8574925deac2a5fc946607fea022ce04f90588635d",
+      "page": 1
+    },
+    {
+      "doc_id": "5f60bc520bd3110642f35a6625c8768141cd6c518fedf1d4d3a982bf271295a4",
+      "page": 2
+    },
+    {
+      "doc_id": "634485a706c9261d1e5bf48698d20400b9fa09237ca5e18a703369ab909e121b",
+      "page": 1
+    },
+    {
+      "doc_id": "68f93a8dc8eac26440b86dd435e226f7379d99d2700a6e556754c7e9c168bb9c",
+      "page": 1
+    },
+    {
+      "doc_id": "733b5c5477bbe48a9bb45c36b28ff0618460c7949e66aed447bcefa0ada3ae36",
+      "page": 1
+    },
+    {
+      "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+      "page": 1
+    },
+    {
+      "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+      "page": 2
+    },
+    {
+      "doc_id": "9f44cf6edaaba19edeeaa5ce0478f263fd278315692094357716e2109703414f",
+      "page": 1
+    },
+    {
+      "doc_id": "ac60bf3637dd890a433ec88ae09ea8dfa89f109007805cf7e2d6a19067541e6a",
+      "page": 2
+    },
+    {
+      "doc_id": "d312339c31702f5aecb95a49bfd5830e0b69981c7eb5e7b64173b9a7cf53a532",
+      "page": 2
+    },
+    {
+      "doc_id": "e275c922f6d3775f59ee00df72a7983fd32666a6977505d8a1cadb83b7be14b6",
+      "page": 1
+    },
+    {
+      "doc_id": "eecf4996176bb191528cf11aeb5a7dfcb0b71f59d80b4e6887245471aaff072e",
+      "page": 1
+    }
+  ],
+  "whole_documents_completed": [],
+  "validation": {
+    "rows_preserved": 116,
+    "unique_events": 116,
+    "columns_preserved": "B:K",
+    "five_houses_per_event": true,
+    "quote_and_file_checks": "passed",
+    "status_counts": {
+      "candidate": 423,
+      "related": 13,
+      "reaction": 69,
+      "preview": 18,
+      "basis": 32,
+      "uncovered": 25
+    },
+    "direct_event_house_connections": 9,
+    "indicator_candidate_documents": 366,
+    "indicator_candidate_pages": 1497,
+    "indicator_search_is_unreviewed": true,
+    "input_numeric_match": true,
+    "authored_events": 63,
+    "commentary_needs_recheck": 0,
+    "new_reviewed_events": 26,
+    "retained_reviews": 37,
+    "review_status": "draft",
+    "macro_views_payload_unchanged": true,
+    "raw_excel_all_rows_independently_checked": true,
+    "all_local_navigation_links_exist": true
+  },
+  "queue_changes": {
+    "unchanged": 63
+  },
+  "living_db_unchanged": true,
+  "publication_paths": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views.html"
+  ],
+  "limitations": [
+    "IB 직접 근거 없는 지표는 수치 기반 AI 초안만 작성; 하우스 미확보 유지.",
+    "JPM FOMC 사후 보고서는 달력 날짜 차이로 관련 분석 분류, 실제 시점 제한 명시.",
+    "현재 원본 범위 밖의 이전 지표는 authored 이력과 게시 전 백업에 보존.",
+    "미검토 페이지를 완료로 기록하지 않음."
+  ],
+  "published_hashes": {
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\dashboard_data.json": "5bce90c24dab8559b3417f37432b55688938cdb01817925b006830dc8fb5dcb8",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html": "f8d44b301f0a0a875bc3a2709e86e835337179a3ff5b656527ca57a6ce39acab",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views.html": "05069e50064d75132c3d0632c79e8c03fdd1276e0571d81cbc7e5dceaef395a3",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views_data.json": "b6416bc82c0bfddc965e5983cc29d4f2c513dfa8819714001490ec3fe3448dc1",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\review_queue.json": "8cafd0d617de830fd485b0d9f309764c641d6c2f584ed48e0e6563a4b0809424",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\validation.json": "6af1c0944d24bd3a20255b09bde5efc7d71a412d27f5c78acd12456fd97b4a5f"
+  },
+  "automation_prompt_corrected": true
+}

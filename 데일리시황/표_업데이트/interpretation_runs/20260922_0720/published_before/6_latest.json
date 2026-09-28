@@ -1,0 +1,462 @@
+{
+  "requested_at": "2026-09-21T22:21:46+09:00",
+  "mode": "tables_and_existing_evidence",
+  "inputs": {
+    "bquant": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\Bquant_All_19_Raw_Refreshed12시 (6).xlsb",
+      "name": "Bquant_All_19_Raw_Refreshed12시 (6).xlsb",
+      "sha256": "9ad2e84e6a9854b59bdb7b25d9d65d2b3a6e5cdb6517e91f580d806cb8344a27",
+      "modified": "2026-09-21T22:17:12+09:00"
+    },
+    "growth": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Growth Consesus_수정 (4).xlsb",
+      "name": "ECFC_Growth Consesus_수정 (4).xlsb",
+      "sha256": "9d912410aae8c868055e6cd88ef22ed7aaf6ad9509348907c4d66c5e16795b92",
+      "modified": "2026-09-21T22:17:10+09:00"
+    },
+    "inflation": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Inflation Consesus_수정 (3).xlsb",
+      "name": "ECFC_Inflation Consesus_수정 (3).xlsb",
+      "sha256": "1db6503e0f418b2b83b14a564f21fbbb09b0050c1be462c92ce2076364fdfdec",
+      "modified": "2026-09-21T22:17:11+09:00"
+    },
+    "weco": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+      "name": "ecocal_fipjgrge (4).xlsx",
+      "sha256": "96542db0b364325d8beca35a274714b59f6885cbe1e5fb163bde53560675f5fa",
+      "modified": "2026-09-21T22:17:12+09:00"
+    }
+  },
+  "new_ai_interpretations": false,
+  "markets": {
+    "1D": [
+      {
+        "key": "STOXX600",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.975,
+          "3M": 0.975,
+          "6M": 0.9733333333333334
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.975,
+          "3M": 0.975,
+          "6M": 0.9733333333333334
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 600
+      },
+      {
+        "key": "SP500",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9920477137176938,
+          "3M": 0.9920477137176938,
+          "6M": 0.9880715705765407
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9920477137176938,
+          "3M": 0.9900596421471173,
+          "6M": 0.9880715705765407
+        },
+        "sessionDates": [
+          "2026-09-04",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 503
+      },
+      {
+        "key": "TOPIX",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 1635
+      },
+      {
+        "key": "HANGSENG",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9789473684210527,
+          "3M": 0.9789473684210527,
+          "6M": 0.9789473684210527
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9789473684210527,
+          "3M": 0.9789473684210527,
+          "6M": 0.9789473684210527
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 95
+      }
+    ],
+    "5D": [
+      {
+        "key": "STOXX600",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.975,
+          "3M": 0.975,
+          "6M": 0.9733333333333334
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.975,
+          "3M": 0.975,
+          "6M": 0.9733333333333334
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 600
+      },
+      {
+        "key": "SP500",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9920477137176938,
+          "3M": 0.9920477137176938,
+          "6M": 0.9880715705765407
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9920477137176938,
+          "3M": 0.9900596421471173,
+          "6M": 0.9880715705765407
+        },
+        "sessionDates": [
+          "2026-09-04",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 503
+      },
+      {
+        "key": "TOPIX",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 1635
+      },
+      {
+        "key": "HANGSENG",
+        "asOf": "2026-09-18",
+        "periodStart": {
+          "1D": "2026-09-17",
+          "5D": "2026-09-11",
+          "1M": "2026-08-18",
+          "3M": "2026-06-18",
+          "6M": "2026-03-18"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9789473684210527,
+          "3M": 0.9789473684210527,
+          "6M": 0.9789473684210527
+        },
+        "capCoverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 0.9789473684210527,
+          "3M": 0.9789473684210527,
+          "6M": 0.9789473684210527
+        },
+        "sessionDates": [
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18"
+        ],
+        "memberCount": 95
+      }
+    ],
+    "AI": {
+      "asOf": "2026-09-18",
+      "periodStarts": {
+        "1D": "2026-09-17",
+        "5D": "2026-09-11",
+        "1W": "2026-09-11",
+        "1M": "2026-08-18",
+        "3M": "2026-06-18",
+        "6M": "2026-03-18",
+        "YTD": "2025-12-31",
+        "Since 2025-07-01": "2025-07-01"
+      },
+      "stages": 12,
+      "stocks": 73
+    }
+  },
+  "consensus": {
+    "growth": {
+      "미국": "2026-09-21",
+      "영국": "2026-09-21",
+      "일본": "2026-09-21",
+      "독일": "2026-09-21",
+      "프랑스": "2026-09-21",
+      "호주": "2026-09-21",
+      "중국": "2026-09-21",
+      "캐나다": "2026-09-21"
+    },
+    "inflation": {
+      "미국": "2026-09-21",
+      "영국": "2026-09-21",
+      "일본": "2026-09-21",
+      "독일": "2026-09-21",
+      "프랑스": "2026-09-21",
+      "호주": "2026-09-21",
+      "중국": "2026-09-21",
+      "캐나다": "2026-09-21"
+    }
+  },
+  "weco": {
+    "title": "매크로 지표와 IB 해석",
+    "as_of": "2026-09-21",
+    "generated_at": "2026-09-21T22:31:02+09:00",
+    "workbook": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+    "workbook_name": "ecocal_fipjgrge (4).xlsx",
+    "workbook_sha256": "96542db0b364325d8beca35a274714b59f6885cbe1e5fb163bde53560675f5fa",
+    "workbook_modified": "2026-09-21T22:17:12",
+    "source_db": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\data\\research.sqlite3",
+    "source_date_max": "2026-09-20",
+    "event_count": 253,
+    "country_count": 12,
+    "reported": 212,
+    "missing": 41,
+    "start": "2026-09-03",
+    "end": "2026-09-28",
+    "months": [
+      "2026-09"
+    ],
+    "comment_counts": {
+      "uncovered": 619,
+      "related": 67,
+      "reaction": 154,
+      "preview": 24,
+      "candidate": 359,
+      "basis": 42
+    },
+    "reviewed_connections": 0,
+    "source_documents": 119,
+    "indicator_candidate_documents": 330,
+    "indicator_candidate_pages": 1165,
+    "time_note": "발표시각은 파일 D열 그대로이며 시간대는 파일에 명시되지 않음. 실제값 존재 여부는 H열 기준. 원문 후보는 지표 키워드와 국가/지역을 결합한 미검토 검색 결과이며, 직접 IB 코멘트로 사용하기 전에 전체 페이지 검토가 필요함. 상위 거시 뷰는 보조 배경일 뿐 지표 코멘트가 아님.",
+    "monthly_note": "월 분류는 발표월 기준. 기간 밖으로 밀려난 실제값 수록 지표는 이전에 저장한 원본 수치와 검토 당시 코멘트로 누적 표시함. 최신 원본에 같은 지표가 다시 있으면 최신 수치를 우선함.",
+    "source_column_range": "B:K",
+    "requested_at": "2026-09-21T22:21:46+09:00",
+    "interpretation_mode": "source_reviewed_commentary",
+    "available_at_request": 212,
+    "latest_calendar_start": "2026-09-14",
+    "latest_calendar_end": "2026-09-28",
+    "latest_calendar_event_count": 96,
+    "latest_calendar_reported": 55,
+    "history_event_count": 157,
+    "authored_event_count": 194,
+    "authored_house_count": 219,
+    "commentary_needs_recheck": 0,
+    "commentary_reviewed_on": "2026-09-21",
+    "macro_views": {
+      "title": "IB 거시 맥락 뷰",
+      "as_of": "2026-09-21",
+      "generated_at": "2026-09-21T22:21:46+09:00",
+      "current_views": 60,
+      "historical_views": 78,
+      "prior_views": 18,
+      "source_documents": 54,
+      "source_pages": 64,
+      "current_forecasts": 11,
+      "latest_view_date": "2026-09-16",
+      "oldest_current_view_date": "2026-07-30",
+      "indexed_documents": 3669,
+      "latest_indexed_report_date": "2026-09-20",
+      "supplemental_views": 3,
+      "conflict_groups": 0,
+      "draft": true,
+      "mode": "restored_saved_context_not_new_research",
+      "view_payload_sha256": "cbe3c3aaa8af420e4a6dcea89f5f99fb23d1da512c9c9a9966beceeffeeca552",
+      "note": "저장된 검토 뷰를 복원한 화면입니다. 최근 보고서가 검색 DB에 추가됐더라도 각 하우스의 거시 전망이 새로 검토·갱신됐다는 뜻은 아닙니다."
+    }
+  },
+  "review_queue": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\WECO\\review_queue.json",
+  "queue_changes": {
+    "new_actual": 18,
+    "revised": 0,
+    "unchanged": 37
+  },
+  "outputs": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\Sector_Industry\\sector_1D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\Sector_Industry\\sector_5D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\AI\\ai_1D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\AI\\ai_5D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\Consensus\\growth.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\Consensus\\inflation.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\WECO\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260921_222146_678456\\WECO\\macro_views.html"
+  ]
+}

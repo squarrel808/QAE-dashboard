@@ -1,0 +1,196 @@
+{
+  "before_db_run": {
+    "run_id": "20260909_133207_4bb1f1",
+    "started": "2026-09-09T13:32:08.332117+09:00",
+    "finished": null,
+    "mode": "backfill",
+    "start_date": "2026-06-08",
+    "end_date": "2026-09-09",
+    "summary": "{\"Citi\": {\"status\": \"running\", \"counts\": {}}, \"BofA\": {\"status\": \"not_started\", \"counts\": {}}, \"HSBC\": {\"status\": \"not_started\", \"counts\": {}}, \"JPM\": {\"status\": \"not_started\", \"counts\": {}}, \"GS\": {\"status\": \"not_started\", \"counts\": {}}}"
+  },
+  "before_report": {
+    "run_id": "20260909_133207_4bb1f1",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T13:32:08.332117+09:00",
+    "finished": null,
+    "overall_status": "running",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_133207_4bb1f1.log",
+    "houses": {
+      "Citi": {
+        "status": "running",
+        "counts": {}
+      },
+      "BofA": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "HSBC": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "JPM": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "GS": {
+        "status": "not_started",
+        "counts": {}
+      }
+    }
+  },
+  "before_latest": {
+    "run_id": "20260909_133207_4bb1f1",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T13:32:08.332117+09:00",
+    "finished": null,
+    "overall_status": "running",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_133207_4bb1f1.log",
+    "houses": {
+      "Citi": {
+        "status": "running",
+        "counts": {}
+      },
+      "BofA": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "HSBC": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "JPM": {
+        "status": "not_started",
+        "counts": {}
+      },
+      "GS": {
+        "status": "not_started",
+        "counts": {}
+      }
+    }
+  },
+  "after_report": {
+    "run_id": "20260909_133207_4bb1f1",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T13:32:08.332117+09:00",
+    "finished": "2026-09-09T14:50:20.637825+09:00",
+    "overall_status": "incomplete",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_133207_4bb1f1.log",
+    "houses": {
+      "Citi": {
+        "status": "incomplete",
+        "counts": {
+          "downloaded": 166,
+          "failed": 10
+        },
+        "previous_status": "running",
+        "reason": "User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223."
+      },
+      "BofA": {
+        "status": "incomplete",
+        "counts": {},
+        "previous_status": "not_started",
+        "reason": "Not started because the run stopped. User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223."
+      },
+      "HSBC": {
+        "status": "incomplete",
+        "counts": {},
+        "previous_status": "not_started",
+        "reason": "Not started because the run stopped. User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223."
+      },
+      "JPM": {
+        "status": "incomplete",
+        "counts": {},
+        "previous_status": "not_started",
+        "reason": "Not started because the run stopped. User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223."
+      },
+      "GS": {
+        "status": "incomplete",
+        "counts": {},
+        "previous_status": "not_started",
+        "reason": "Not started because the run stopped. User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223."
+      }
+    },
+    "interruption": {
+      "reason": "User requested pause before 15:00 shared-profile job; moving macro collection to isolated Chrome profile/port 9223.",
+      "reconciled_at": "2026-09-09T14:50:20.637825+09:00",
+      "process_shutdown_independently_confirmed": true,
+      "count_evidence": "Existing checkpoint counts preserved; downloaded/failed recovered from this run's log. Unlogged counts remain unknown. reports.updated was not used."
+    }
+  },
+  "inventory": [
+    {
+      "house": "BofA",
+      "status": "downloaded",
+      "count": 32
+    },
+    {
+      "house": "Citi",
+      "status": "downloaded",
+      "count": 212
+    },
+    {
+      "house": "Citi",
+      "status": "failed",
+      "count": 10
+    },
+    {
+      "house": "Citi",
+      "status": "pending",
+      "count": 1
+    },
+    {
+      "house": "GS",
+      "status": "downloaded",
+      "count": 1295
+    },
+    {
+      "house": "GS",
+      "status": "failed",
+      "count": 121
+    },
+    {
+      "house": "GS",
+      "status": "no_original_pdf",
+      "count": 8
+    },
+    {
+      "house": "GS",
+      "status": "unresolved_print_control",
+      "count": 1
+    },
+    {
+      "house": "HSBC",
+      "status": "downloaded",
+      "count": 79
+    },
+    {
+      "house": "HSBC",
+      "status": "failed",
+      "count": 23
+    },
+    {
+      "house": "HSBC",
+      "status": "no_original_pdf",
+      "count": 21
+    },
+    {
+      "house": "JPM",
+      "status": "downloaded",
+      "count": 537
+    },
+    {
+      "house": "JPM",
+      "status": "pending",
+      "count": 1
+    }
+  ]
+}

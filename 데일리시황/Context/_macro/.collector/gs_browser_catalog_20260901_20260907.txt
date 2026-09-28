@@ -1,0 +1,118 @@
+2|7|reports/2026/09/02/cd252293-e1e0-497b-9c96-23d30560c2f7.html|Australia: 2Q2026 GDP: Resilient
+2|6|reports/2026/09/02/14cf416c-a581-4df8-910c-91f0191d8017.html|New Zealand: RBNZ: OCR increases 25bp to 2.75% with less hawkish guidance
+2|6|reports/2026/09/01/9940f344-499d-4dc4-97c1-4c4b877eb81b.html|Colombia: Four-Year Wide Current Account Deficit in 2Q2026; Higher FDI Inflows; Financial Account Data Impacted by TRS
+2|7|reports/2026/09/01/f0540157-5cb2-4c8d-ab73-2e7a2637eaa3.html|What's Top of Mind in Macro Research: Higher bond yields, US-Iran flare-up, earlier BoJ hike
+2|24|reports/2026/09/01/d55f74c5-6e25-4bc3-98e4-dac4da447611.html|AI Adoption Tracker: August 2026: Adoption Rises to 22.4%
+2|7|reports/2026/09/01/9b4ca77e-fdbc-4330-9361-8ed6cdd0b5ca.html|Macro at a Glance: Latest views and forecasts
+2|5|reports/2026/09/01/c5d0c3ea-9626-4aed-99ac-717fe095147b.html|Peru: Energy and Tradables Drove Inflation Higher in August Though Services Slowed; Annual Headline Inflation Continues to Rise
+2|4|reports/2026/09/01/2e81572e-d5e8-4634-97ec-c65377a57872.html|Israel: BoI Cuts by 25bp, Against Split Consensus and Our Expectations
+2|5|reports/2026/09/01/eb0a4392-9d9c-4817-a7d0-f667bd0319b0.html|Mexico: Small 2027 Core Inflation Expectations Improvement; Uptick in 2026 Growth Outlook (Ramos)
+2|6|reports/2026/09/01/e505ffe7-bb8a-42ce-9f4f-5f3c0a04f827.html|CEE: Aggregate PMI Rises Slightly, CAI Broadly Stable
+2|5|reports/2026/09/01/efd22e86-a607-4dc5-a74f-57e6d5f80014.html|Mexico: Firm Remittances’ Flow in July; Purchasing Power Still Eroded by MXN Appreciation (Ramos)
+1|6|reports/2026/09/01/0bfd49f2-1181-49d7-af56-5703e07e0693.html|USA: ISM Manufacturing Below Expectations; Job Openings Roughly in Line With Expectations; Construction Spending Below Expectations
+1|29|reports/2026/09/01/2a466aa7-770e-4f35-b8a5-03e5eb0bc387.html|Global: GS Economic Indicators Update: Above-Potential DM Activity
+1|5|reports/2026/09/01/abfb44aa-1b8c-43fe-9222-32a7a391ab9f.html|Brazil: Manufacturing PMI Moved Deeper Into Contractionary Territory; Moderating Input Cost/Price Pressures (Ramos)
+1|10|reports/2026/09/01/782bc506-0776-495b-b712-e42e94b57df2.html|LATAM Today: September 1, 2026
+1|5|reports/2026/09/01/57aaccc5-473c-4512-9be4-8aeda390f931.html|Chile: Weak July Growth; Lowering Our 2026 Growth Forecast to 0.6%
+1|5|reports/2026/09/01/06c91bd7-a8bb-4fa5-ac3d-d56622c40413.html|Mexico: Flat/Mixed Business Sentiment; Firming INEGI Manufacturing PMI (Ramos)
+1|7|reports/2026/09/01/ded9400e-9dad-45aa-929a-01bcf31d628c.html|Brazil: Real GDP Growth Decelerated in 2Q26; Softer Final Domestic Demand; Negative Contribution from Net Exports (Ramos)
+1|7|reports/2026/09/01/3e666e75-2251-485a-8660-f355058016c7.html|Global Markets Daily: AI Haves vs. Have-Nots Drive Divergence in Asian FX
+1|6|reports/2026/09/01/4145ff1f-3445-4f49-b166-6361d3f6b81b.html|Euro Area: Core Inflation Below Expectations as Services Inflation Drops
+1|5|reports/2026/09/01/c4559260-a09a-45b9-a461-cfb3a523436b.html|Kazakhstan: Headline Inflation Fell to 9.9%yoy in August, in Line with Our Forecast but Below Consensus
+1|8|reports/2026/09/01/c133a326-5ee3-4e7f-973d-3b5e6961f3ea.html|South Korea: 2027 Budget--Significantly Narrower Deficit and Moderate Reduction in KTB Issuance
+1|4|reports/2026/09/01/19b88bf0-86f1-41da-9f32-8c466d8ce413.html|Indonesia: Inflation rises on higher food prices
+1|46|reports/2026/09/01/6d85c783-bfba-47d3-94e3-8d2294eb590b.html|China: GS China Economic Outlook: September 2026 [Presentation]
+1|10|reports/2026/09/01/a880af64-92e1-4f83-8ffb-58c9253d1680.html|European Daily: France—No Deficit Reduction This Year and Next
+7|9|reports/2026/09/07/cf5090a1-13fd-40d6-9d3e-7bfb42bb2791.html|Germany: Industrial Production Declines by -1.1% in July, Below Expectations
+7|4|reports/2026/09/07/a735bae0-13d7-4869-8fff-98894fcb8a84.html|Thailand: Higher food and fuel costs lift August CPI
+7|8|reports/2026/09/07/1ecee927-2cb8-44da-8adb-d718125d2cd4.html|Global Week Ahead: September 7 – September 13
+7|5|reports/2026/09/07/c98e1866-42c5-481b-b2c4-690a87a49bb0.html|US Week Ahead: September 7 - September 13
+7|8|reports/2026/09/07/dc4a4148-ba34-473a-80be-39019572bb81.html|CEEMEA in Focus: CEE Trip Notes — Markets are Too Hawkish on Near-Term Rate Prospects
+7|4|reports/2026/09/06/31355cf8-12da-40df-a59f-77f8a5fa13ef.html|This Week in Asia-Pacific Macro: 7 - 13 September (Audio)
+7|12|reports/2026/09/06/654d8088-9be0-43f0-985a-2d8213e52fb4.html|Asia in Focus: China: Property Downturn Keeps Straining Local Government Finances
+7|5|reports/2026/09/06/bf3aa664-0882-469c-822b-336cde534a0b.html|China: Three things in China
+5|19|reports/2026/09/04/e1e45045-b6c2-43f9-ad4f-e849f62f7eeb.html|Global Rates Trader: Eyes on the Price
+5|7|reports/2026/09/04/1a87fd58-34b5-4c05-9080-4660d6904657.html|Research Unplugged: GOAL: Asset Allocation Webinar: ‘Back to School’ overview of our core views across assets
+5|11|reports/2026/09/04/9bfa302f-98f6-495e-ad5a-2ee6517513cf.html|Global FX Trader: Is This For Real?
+5|9|reports/2026/09/04/b9494aa6-8f87-4421-aa68-a985691a5170.html|LATAM Week Ahead: MPC Meetings in Chile (Hold at 4.5%) and Peru (+25bp to 4.5%); IPoM in Chile
+5|7|reports/2026/09/04/41d85bc3-a319-43b5-ad1e-8b11bf4975fb.html|European Week Ahead: September 7 - September 13
+5|1|https://marquee.gs.com/content/markets/en/2026/09/04/f2bb28c1-bdf3-48c2-b8d1-8e0c57442e1c.html|GS Weekend Macro Call: Fed Pricing, Bond Market Volatility, European Gas, Mid-Terms, M&A & the Next Wave of AI
+5|7|reports/2026/09/04/3b1c2519-66c7-4737-8431-57a5072993ed.html|Global Economics Wrap-Up: September 4, 2026
+5|1|blogs/2026/09/04/525d5f82-7de7-4f4e-b3fa-4ce69abed7ed.html|Weekly FX Wrap Up
+5|9|reports/2026/09/04/d50415f6-ae25-455e-9a30-af7a81579287.html|Asia in Focus: India: Managing liquidity and FX: Buying time and flexibility
+5|13|reports/2026/09/04/7f1cddb9-2b0b-41a1-8d00-9150395240da.html|Weekly Fund Flows: Continued Japan Bond Fund Inflows
+4|6|reports/2026/09/04/cb1f1960-596d-4892-9c9c-67ff10a57a2b.html|USA: Payroll Growth Well Above Expectations and Revised Higher for Prior Months; Unemployment Rate Unchanged on a Rounded Basis; Labor Force Participation Rises; Wage Growth Remains Soft
+4|5|reports/2026/09/04/6b39d194-dc3d-47f6-90c5-a57c2a878353.html|Canada Economics Comment: Employment Falls by 42k; Unemployment Rate Unchanged
+4|15|reports/2026/09/04/6ac16155-adfe-49ed-9067-0e86e6d31870.html|LATAM Views: Low Growth Gear, High Inflation Inertia (Ramos)
+4|11|reports/2026/09/04/41250b67-5300-4eb7-9f9f-05c0f5c1eeb9.html|CEEMEA Week Ahead: CBR to Cut 25bp, NBP and TCMB on Hold; CPI Across the Region; GDP in ZA; CA in TR
+4|6|reports/2026/09/04/871dd148-1008-49fc-8bbb-144c6ce52d23.html|LATAM Today: September 4, 2026
+4|6|reports/2026/09/04/6e6a7840-326b-48e1-a33e-009979de7912.html|Mexico: Mixed Domestic Demand Signals in Jun; Strong GFI in Jun and 2Q26 (Ramos)
+4|5|reports/2026/09/04/cd81ead1-9933-47ad-b5fe-4c5a4dcbb5b2.html|Czechia: Headline Inflation Rises Slightly, in Line With Expectations
+4|12|reports/2026/09/04/5a4e045e-f633-43e3-82f7-4c9d029b9a58.html|European Economics Analyst: ECB Preview—Another Hike Without Guidance
+4|16|reports/2026/09/04/1718f8bc-4770-4f62-b4fc-5937a0aece21.html|China Economic Activity and Policy Tracker: Sep 4
+4|1|blogs/2026/09/04/1bf2d503-554c-4057-9816-f5a5f352bdd0.html|GS FX Research Notes: Payrolls vol, despite lower policy relevance
+4|9|reports/2026/09/04/ee22f90f-10f8-494a-bd5e-fcf462ab3ed9.html|Germany: Strong Headline Factory Orders in July, but Near-Term Weakness Under the Surface
+4|9|reports/2026/09/04/d905e32c-be8a-4016-a8c0-495c0f419349.html|AEJ Week Ahead: China trade/inflation/credit data
+4|11|reports/2026/09/04/6bb04fe7-78b7-425e-b8d5-e73320bc9be5.html|Asia-Pacific Growth Monitor: Still solid ahead of latest energy price uptick
+4|10|reports/2026/09/04/50338338-7639-4b5c-8e89-7982ba697bb1.html|Japan Focus of the Week: Q2 GDP Revision, July Wage, August Corporate Goods Prices
+4|7|reports/2026/09/04/f0d86adb-f7b1-4241-97b1-f561708e13ab.html|Australia & NZ Weekly Economic Preview/Review: Week commencing 7 September 2026
+4|4|reports/2026/09/04/b4e73fa1-26ad-4ef4-92c9-30a154ecc3bf.html|Philippines: Inflation eases marginally in August
+4|11|reports/2026/09/03/07847d46-0c28-45d0-b128-2e9b689c2f1f.html|European Daily: Italy—Out of the Recovery Fund and Into the Election: Increasing Macro Risk
+4|9|reports/2026/09/03/70bb4a7c-467e-4360-a60c-f2c7a54933d6.html|US Daily: August Payrolls Preview
+4|10|reports/2026/09/03/5a9d7cf7-b86b-41ec-89ce-283762d92349.html|US Daily: What’s Driving the Decline in the Labor Force Participation Rate?
+4|7|reports/2026/09/03/9a3c1207-cd79-4c4e-8fe5-58abc011ea9f.html|Research Unplugged: AI, Rates, and the Dollar
+4|12|reports/2026/09/03/b1ee1448-19ce-4c5b-b1ca-da5c0bca1243.html|Global PMI Monitor: Lower Future Output in Canada
+4|1|blogs/2026/09/03/43644c93-104c-4d18-b0a2-bea987fff277.html|GS FX Research Notes: Yen price action – similar but different
+4|6|reports/2026/09/03/bea7fe90-9460-45bb-9799-42150e14128c.html|Turkiye: August CPI Print Points to Broad Stabilisation of Underlying Inflation Momentum at Current Levels
+4|21|reports/2026/09/03/c215bffc-f9eb-46a7-bdec-9e575264b7d1.html|CEEMEA Growth Monitor: Aggregate PMI Edges Down But Remains Slightly Expansionary; CAI Improves Modestly
+4|4|reports/2026/09/03/607da73c-8d5a-4aac-85ae-99afa7a8aef5.html|USA: ISM Services Stronger Than Expected
+3|5|reports/2026/09/03/f420ce4f-f77a-4b27-8f02-151b21a71906.html|USA: Governor Waller Says “Recent Data Suggest We Are Finally Seeing Some Signs of Disinflation”
+3|34|reports/2026/09/03/4caa4416-ab36-4c9a-8fc7-aef747bad1e4.html|The EM Trader: School's Back, More Upside Ahead
+3|7|reports/2026/09/03/82d94a69-fa72-42a0-aa1a-61c3df4d6a1c.html|USA: Productivity Growth Unrevised in Q2; Unit Labor Costs Revised Down; Trade Deficit Somewhat Below Expectations; Lowering Q3 GDP Tracking Estimate to +2.5%; Initial Claims in Line With Expectations
+3|4|reports/2026/09/03/8cbc78da-a66f-4e78-8b0d-d5119dc27f90.html|China in the Long Run: Introducing a New Research Series [Video]
+3|7|reports/2026/09/03/cfb6b1cd-bb72-4f2d-ae92-acb424ce41a0.html|LATAM Today: September 3, 2026
+3|6|reports/2026/09/03/14b875b3-31e5-40a4-8248-c6935026adaf.html|Brazil: Manufacturing PMI Deeper In Contractionary Territory; Services PMI Back to Neutral; Moderating Input Cost Pressures (Ramos)
+3|6|reports/2026/09/03/ed0234f1-394a-4bd3-ae88-e005a70340d6.html|Mexico: Firmer Consumer Sentiment; Soft Services and Flattish Manufacturing PMIs; Mixed Business Sentiment Signals (Ramos)
+3|5|reports/2026/09/03/8b70c92e-0b45-49ef-b8cd-396a25555d52.html|Malaysia: BNM keeps rate on hold; policy language turns slightly hawkish
+3|5|reports/2026/09/03/816eccf1-65dd-4d5d-b3bf-9bcb1a97188b.html|India: Services PMI improved in August; employment index at a 15-month high
+3|1|reports/2026/09/03/141dae2f-7ec9-43a2-8194-c14a60b67997.html|APAC in An Evolving Geopolitical Landscape – Asia Leaders Conference 2026
+3|1|reports/2026/09/03/23b58924-7e06-46a8-9d40-fad9d9cef79e.html|The Asia Trade: Macro, Markets & Strategy – Asia Leaders Conference 2026
+3|6|reports/2026/09/03/0a10e06d-5ea5-4717-8388-9f26599210f3.html|Switzerland: Inflation Notably Above Consensus in August as Headline Jumps to 0.8%yoy and Core Rises to 0.4%yoy
+3|6|reports/2026/09/03/60cda5b0-7c44-4843-8fef-298f6ae99465.html|China: Unofficial services PMI increased in August
+3|7|reports/2026/09/03/4bf52293-8d48-4bdd-84f8-9557153b2326.html|Vietnam: Sustained Broad Gains in August Activity and Higher Inflation
+3|5|reports/2026/09/03/ee393d86-f195-4696-bf5d-68e091b9b1e3.html|Australia: International Trade: Goods trade surplus narrows
+3|5|reports/2026/09/03/0660bf7d-9cd2-4fc2-8741-01623869064d.html|Hong Kong: PMI fell further in August
+3|5|reports/2026/09/03/88a09bd7-2d1d-4558-bdc5-b44d79b32978.html|South Korea: Inflation Up on a Temporary Base Effect, But Stays Below Expectations
+3|12|reports/2026/09/02/bef9d274-82b4-4866-9835-16e447e97324.html|European Daily: Germany—Recovery Continues as Fiscal Policy Expands and Trade Drag Fades, But H2 Likely to be Softer
+3|9|reports/2026/09/02/87498361-4a9a-498f-b4bc-bdc32ae42f2a.html|Global Markets Daily: An Inconvenient Time for EGBs?
+3|5|reports/2026/09/02/1b5aebb0-f0c3-4bdb-838e-27e630924a66.html|Canada Economics Comment: BoC Holds as Expected; Guidance Skews Hawkish
+3|25|reports/2026/09/02/c2b3349f-00e2-4841-b430-7707ff802b87.html|CEEMEA Economics Analyst: CEEMEA Outlook — Cautiously Optimistic
+3|6|reports/2026/09/02/b6b50a78-915d-48df-a6d3-5ded271db6c2.html|ECB Chatterbox: September Edition
+3|5|reports/2026/09/02/03cc1631-975f-4ebf-9d0c-7f3187493518.html|USA: Factory Orders Slightly Above Consensus Expectations
+2|9|reports/2026/09/02/dbd65246-eb69-47ab-bff6-e09be0e670bd.html|Australia & NZ Views: RBA To Tighten Into Deeper Housing Drag
+2|1|reports/2026/09/02/a8ee124e-8d82-4f5a-a63c-f5224abafa1a.html|Global Macro and the New Fed Playbook – Asia Leaders Conference 2026
+2|4|reports/2026/09/02/a0a1d87b-aee6-4bfb-a54f-d7ac8e18cfaf.html|USA: ADP Employment Roughly in Line With Consensus Expectations
+2|11|reports/2026/09/02/c8a0670f-ae88-4999-91fa-565aae2c25f0.html|LATAM Today: September 2, 2026
+2|5|reports/2026/09/02/8dc46654-945e-4812-a37d-4f73e3e494c0.html|Brazil: Soft Industrial Activity in Jul (Ramos)
+2|1|blogs/2026/09/02/e964396d-1758-4b84-b2ea-63fe6450781c.html|GS FX Research Notes: G10 Relative Value Heating Up
+2|4|reports/2026/09/02/ed2ff1f2-cd94-494c-b628-8118c10e1e75.html|Ghana: Inflation Increases to 5.0%yoy in August, In Line with Consensus
+2|6|reports/2026/09/02/098c9e87-febc-4073-a19b-3a13ca355757.html|Mexico: Mixed Manufacturing and Soft Services PMI; Mixed Business Sentiment Signals (Ramos)
+2|10|reports/2026/09/02/6dae868d-4e90-43b7-978b-e35bdda8099c.html|Asia in Focus: Why Beijing may favor gradual RMB appreciation
+1|21|reports/2026/09/01/2ed109b4-1e26-4810-9849-d6dbe80de193.html|CEEMEA Economics Analyst: South Africa — The Path Back to Investment Grade
+1|5|reports/2026/09/01/e89cf492-adc7-45c7-b5c3-8449ebb663dd.html|India: Manufacturing PMI declined to a five-year low in August, but remains in expansion
+1|5|reports/2026/09/01/07d572fc-5ce5-458b-a0cb-29a7f30a7ad2.html|Japan: August Consumer Sentiment Improves for Fourth Consecutive Month; Expected Inflation Declines Factoring in Consumption Tax Cut
+1|6|reports/2026/09/01/fd545a46-5e2b-422e-9cdf-8bcfe36c37e4.html|South Korea: Tech-Driven Strong Rebound in August Exports
+1|6|reports/2026/09/01/0f6c988a-6627-4584-9216-51ef2942768a.html|Australia: Balance of Payments: Net exports and public inventories to boost 2Q2026 GDP
+1|6|reports/2026/09/01/c083300e-4620-4dc2-a90f-d68e1b34cb59.html|China: Unofficial manufacturing PMI rose in August
+1|5|reports/2026/09/01/9039aae0-2c4c-4317-b5c1-7d95ec02d00e.html|Australia: Building Approvals: Broad-based decline in July
+1|6|reports/2026/09/01/524cb12b-4edb-499d-9d23-52deda575c0b.html|Japan: Apr-Jun MOF Corporate Statistics: Sharp Rise in Corporate Recurring Profits; Capex Also Increases Modestly
+1|12|reports/2026/09/01/915872bb-8cf1-4a7b-af1f-9622ee2cc7e0.html|USA: GS Economic Indicators Update
+1|5|reports/2026/08/31/55b992d5-ad1a-4b39-9083-bd6d939c92f6.html|Australia: Cotality House Prices: Declines broaden further
+1|9|reports/2026/08/31/eb333a55-4075-4c5c-b70b-06c207bc7e74.html|US Daily: GSAI Rises in August
+1|1|blogs/2026/08/31/465edd59-e896-403b-a213-a1a0dc16651c.html|US Economics Weekly Update 8/31/2026
+1|4|reports/2026/08/31/974bec08-4773-4810-9308-da72a38aad1a.html|Kenya: Headline Inflation Edged Up by 0.1pp in August, In Line With Expectations
+1|6|reports/2026/08/31/0a28fc08-dffb-4b6c-b20c-758875317151.html|Turkiye: Real GDP Growth Decelerated to 2.3%yoy in Q2, Largely as Expected, Driven by Household Consumption
+1|5|reports/2026/08/31/4286f3df-654d-483e-bc30-ef811dd62fcb.html|Mexico: Moderate Private Sector Credit Growth (Ramos)
+1|5|reports/2026/08/31/f05059b7-d555-4804-8d6b-e18d0996a935.html|India: Strong direct taxes and front-loaded capex in July
+1|7|reports/2026/08/31/4f5c0b19-afe3-4293-ad68-ebc83495bf81.html|India: Q2 real GDP growth beats expectations; Past series revised higher; Raising CY26 forecast
+1|6|reports/2026/08/31/ab609c6d-ec74-4d1e-a747-a39791f9cb4d.html|Euro Area: German Inflation Surprises to the Downside; Lowering Our Area-Wide Tracking Estimates

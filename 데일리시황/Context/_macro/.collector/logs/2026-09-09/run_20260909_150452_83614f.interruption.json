@@ -1,0 +1,262 @@
+{
+  "before_db_run": {
+    "run_id": "20260909_150452_83614f",
+    "started": "2026-09-09T15:04:53.303933+09:00",
+    "finished": null,
+    "mode": "backfill",
+    "start_date": "2026-06-08",
+    "end_date": "2026-09-09",
+    "summary": "{\"HSBC\": {\"status\": \"incomplete\", \"reason\": \"Page did not reach the expected state (timeout). Check login or site layout.\", \"counts\": {\"discovered\": 15, \"in_range\": 15, \"attempted\": 13, \"failed\": 6, \"downloaded\": 7, \"already_saved\": 2}}, \"BofA\": {\"status\": \"incomplete\", \"reason\": \"Failed PDFs or unparseable publication dates remain.\", \"counts\": {\"discovered\": 1063, \"in_range\": 379, \"attempted\": 347, \"downloaded\": 342, \"already_saved\": 32, \"failed\": 5, \"outside_range\": 684}}, \"JPM\": {\"status\": \"complete\", \"counts\": {\"discovered\": 824, \"in_range\": 798, \"attempted\": 261, \"downloaded\": 261, \"already_saved\": 537, \"outside_range\": 26}}, \"GS\": {\"status\": \"running\", \"counts\": {}}, \"Citi\": {\"status\": \"not_started\", \"counts\": {}}}"
+  },
+  "before_report": {
+    "run_id": "20260909_150452_83614f",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T15:04:53.303933+09:00",
+    "finished": null,
+    "overall_status": "running",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_150452_83614f.log",
+    "houses": {
+      "HSBC": {
+        "status": "incomplete",
+        "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+        "counts": {
+          "discovered": 15,
+          "in_range": 15,
+          "attempted": 13,
+          "failed": 6,
+          "downloaded": 7,
+          "already_saved": 2
+        }
+      },
+      "BofA": {
+        "status": "incomplete",
+        "reason": "Failed PDFs or unparseable publication dates remain.",
+        "counts": {
+          "discovered": 1063,
+          "in_range": 379,
+          "attempted": 347,
+          "downloaded": 342,
+          "already_saved": 32,
+          "failed": 5,
+          "outside_range": 684
+        }
+      },
+      "JPM": {
+        "status": "complete",
+        "counts": {
+          "discovered": 824,
+          "in_range": 798,
+          "attempted": 261,
+          "downloaded": 261,
+          "already_saved": 537,
+          "outside_range": 26
+        }
+      },
+      "GS": {
+        "status": "running",
+        "counts": {}
+      },
+      "Citi": {
+        "status": "not_started",
+        "counts": {}
+      }
+    }
+  },
+  "before_latest": {
+    "run_id": "20260909_150452_83614f",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T15:04:53.303933+09:00",
+    "finished": null,
+    "overall_status": "running",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_150452_83614f.log",
+    "houses": {
+      "HSBC": {
+        "status": "incomplete",
+        "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+        "counts": {
+          "discovered": 15,
+          "in_range": 15,
+          "attempted": 13,
+          "failed": 6,
+          "downloaded": 7,
+          "already_saved": 2
+        }
+      },
+      "BofA": {
+        "status": "incomplete",
+        "reason": "Failed PDFs or unparseable publication dates remain.",
+        "counts": {
+          "discovered": 1063,
+          "in_range": 379,
+          "attempted": 347,
+          "downloaded": 342,
+          "already_saved": 32,
+          "failed": 5,
+          "outside_range": 684
+        }
+      },
+      "JPM": {
+        "status": "complete",
+        "counts": {
+          "discovered": 824,
+          "in_range": 798,
+          "attempted": 261,
+          "downloaded": 261,
+          "already_saved": 537,
+          "outside_range": 26
+        }
+      },
+      "GS": {
+        "status": "running",
+        "counts": {}
+      },
+      "Citi": {
+        "status": "not_started",
+        "counts": {}
+      }
+    }
+  },
+  "after_report": {
+    "run_id": "20260909_150452_83614f",
+    "mode": "backfill",
+    "start": "2026-06-08",
+    "end": "2026-09-09",
+    "started": "2026-09-09T15:04:53.303933+09:00",
+    "finished": "2026-09-09T20:16:59.745651+09:00",
+    "overall_status": "incomplete",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_150452_83614f.log",
+    "houses": {
+      "HSBC": {
+        "status": "incomplete",
+        "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+        "counts": {
+          "discovered": 15,
+          "in_range": 15,
+          "attempted": 13,
+          "failed": 6,
+          "downloaded": 7,
+          "already_saved": 2
+        }
+      },
+      "BofA": {
+        "status": "incomplete",
+        "reason": "Failed PDFs or unparseable publication dates remain.",
+        "counts": {
+          "discovered": 1063,
+          "in_range": 379,
+          "attempted": 347,
+          "downloaded": 342,
+          "already_saved": 32,
+          "failed": 5,
+          "outside_range": 684
+        }
+      },
+      "JPM": {
+        "status": "complete",
+        "counts": {
+          "discovered": 824,
+          "in_range": 798,
+          "attempted": 261,
+          "downloaded": 261,
+          "already_saved": 537,
+          "outside_range": 26
+        }
+      },
+      "GS": {
+        "status": "incomplete",
+        "counts": {
+          "downloaded": 25,
+          "failed": 9
+        },
+        "previous_status": "running",
+        "reason": "User-approved restart: Playwright driver crashed on Page.handleJavaScriptDialog (No dialog is showing) at 17:31; stopped supervisor PID4500 and collector tree PID6660/48352; both Chrome ports retained."
+      },
+      "Citi": {
+        "status": "incomplete",
+        "counts": {},
+        "previous_status": "not_started",
+        "reason": "Not started because the run stopped. User-approved restart: Playwright driver crashed on Page.handleJavaScriptDialog (No dialog is showing) at 17:31; stopped supervisor PID4500 and collector tree PID6660/48352; both Chrome ports retained."
+      }
+    },
+    "interruption": {
+      "reason": "User-approved restart: Playwright driver crashed on Page.handleJavaScriptDialog (No dialog is showing) at 17:31; stopped supervisor PID4500 and collector tree PID6660/48352; both Chrome ports retained.",
+      "reconciled_at": "2026-09-09T20:16:59.745651+09:00",
+      "process_shutdown_independently_confirmed": true,
+      "count_evidence": "Existing checkpoint counts preserved; downloaded/failed recovered from this run's log. Unlogged counts remain unknown. reports.updated was not used."
+    }
+  },
+  "inventory": [
+    {
+      "house": "BofA",
+      "status": "downloaded",
+      "count": 374
+    },
+    {
+      "house": "BofA",
+      "status": "failed",
+      "count": 5
+    },
+    {
+      "house": "Citi",
+      "status": "downloaded",
+      "count": 212
+    },
+    {
+      "house": "Citi",
+      "status": "failed",
+      "count": 10
+    },
+    {
+      "house": "Citi",
+      "status": "pending",
+      "count": 1
+    },
+    {
+      "house": "GS",
+      "status": "downloaded",
+      "count": 1320
+    },
+    {
+      "house": "GS",
+      "status": "failed",
+      "count": 122
+    },
+    {
+      "house": "GS",
+      "status": "no_original_pdf",
+      "count": 8
+    },
+    {
+      "house": "GS",
+      "status": "unresolved_print_control",
+      "count": 1
+    },
+    {
+      "house": "HSBC",
+      "status": "downloaded",
+      "count": 86
+    },
+    {
+      "house": "HSBC",
+      "status": "failed",
+      "count": 29
+    },
+    {
+      "house": "HSBC",
+      "status": "no_original_pdf",
+      "count": 21
+    },
+    {
+      "house": "JPM",
+      "status": "downloaded",
+      "count": 798
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-09-28T15:24:31.7563737+09:00",
+  "state": "Ready",
+  "enabled": true,
+  "last_run": "2026-09-28T07:00:01.0000000+09:00",
+  "result": 2,
+  "next_run": "2026-09-29T07:00:00.0000000+09:00",
+  "execute": "C:\\Users\\infomax\\Documents\\python\\QAE\\전체업데이트.bat",
+  "arguments": "/nohaver /dataonly /nopause /nohouseviews"
+}

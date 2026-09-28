@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-17",
+  "forecasts": [
+    {
+      "house": "GS",
+      "country": "US",
+      "indicator": "US_CORE_PCE",
+      "reference_period": "2026-08",
+      "scenario": "base",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "forecast_id": "gs.us.core_pce.2026-08.mom.20260911",
+      "as_of": "2026-09-11",
+      "unit": "pct_mom",
+      "value": 0.26,
+      "qualifier": "8월 CPI 발표 후 PPI·CPI 항목을 반영한 근원 PCE 전월비 추정; 원문은 발표 직전 0.24%에서 상향. 9월 2일 초기 약 0.2% 전망과 직접 비교.",
+      "evidence": [
+        {
+          "doc_id": "fe41dcba4a312c24ba0d4ab0f25cdf3af49d86cdecca2db5952dee8f46a8b449",
+          "page": 1,
+          "quote": "BOTTOM LINE: Core CPI increased by 0.29% in August, above expectations. On the \nfirmer side, the volatile wireless phone services category boosted the core by about \n10bp. Travel services were also firm, matching the strong reading in the domestic \npassenger airfares component in yesterday’s August PPI report, with airfares and \nlodging each boosting the core by 4bp. On the softer side, the shelter categories—\nwhich carry a smaller weight in PCE than in CPI—were more benign than we \nexpected, with OER and rent boosting the core by 6bp and 2bp, respectively. Based \non details in the CPI and PPI reports, we estimate that the core PCE price index rose \n0.26% in August (vs. 0.24% before the CPI release), corresponding to a \nyear-over-year rate of +3.16%"
+        }
+      ],
+      "prior_forecast_id": "gs.us.core_pce.2026-08.mom.20260902",
+      "change": "revised"
+    },
+    {
+      "house": "GS",
+      "country": "US",
+      "indicator": "US_CORE_PCE",
+      "reference_period": "2026-08",
+      "scenario": "base",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "forecast_id": "gs.us.core_pce.2026-08.mom.20260916",
+      "as_of": "2026-09-16",
+      "unit": "pct_mom",
+      "value": 0.27,
+      "qualifier": "8월 수입물가 발표 후 국제항공료를 반영해 0.26%에서 0.27%로 상향한 근원 PCE 전월비 추정. 아직 확정 발표값 아님.",
+      "evidence": [
+        {
+          "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+          "page": 1,
+          "quote": "Core import prices \nrose 0.8% in August, well above expectations. The international airfares component \nof import prices, which is the source data for the foreign travel component of core \nPCE, increased 2.1% (SA by GS). We estimate that the core PCE price index rose \n0.27% in August (vs. our expectation of 0.26% prior to today’s import prices report), \ncorresponding to a year-over-year rate of +3.17%."
+        }
+      ],
+      "prior_forecast_id": "gs.us.core_pce.2026-08.mom.20260911",
+      "change": "revised"
+    },
+    {
+      "house": "GS",
+      "country": "US",
+      "indicator": "US_CORE_PCE",
+      "reference_period": "2026-08",
+      "scenario": "base",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "forecast_id": "gs.us.core_pce.2026-08.yoy.20260916",
+      "as_of": "2026-09-16",
+      "unit": "pct_yoy",
+      "value": 3.17,
+      "qualifier": "8월 근원 PCE 전년비 추정. 예정된 방법론 변경에 따른 과거치 수정 예상을 포함하며 확정 발표값 아님.",
+      "evidence": [
+        {
+          "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+          "page": 1,
+          "quote": "Core import prices \nrose 0.8% in August, well above expectations. The international airfares component \nof import prices, which is the source data for the foreign travel component of core \nPCE, increased 2.1% (SA by GS). We estimate that the core PCE price index rose \n0.27% in August (vs. our expectation of 0.26% prior to today’s import prices report), \ncorresponding to a year-over-year rate of +3.17%."
+        }
+      ],
+      "prior_forecast_id": null,
+      "change": "uncompared"
+    }
+  ]
+}

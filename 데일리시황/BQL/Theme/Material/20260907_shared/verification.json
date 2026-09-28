@@ -1,0 +1,15 @@
+{
+  "price_asof": "2026-09-04",
+  "markets": {
+    "SPX": 503,
+    "SHSZ300": 300,
+    "SXXP": 600
+  },
+  "ranking_tables": 12,
+  "rows_per_ranking": 100,
+  "ai_classified": 73,
+  "ai_valid": 72,
+  "price_ratio_checks": "PASS",
+  "AI_1D_contribution_reconciliation": "PASS",
+  "news_sources": 9
+}

@@ -1,0 +1,662 @@
+[
+  {
+    "path": "C:\\Users\\USER\\Downloads\\유로존\\dashbaord\\1.xlsb",
+    "size": 2386286,
+    "indices": [
+      {
+        "code": "SX5E",
+        "name": "EURO STOXX 50",
+        "sheet": "Sheet2",
+        "members": 50,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22325,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22313,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22060,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22350,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "INDU",
+        "name": "Dow Jones Industrial Average",
+        "sheet": "Sheet3",
+        "members": 30,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13219,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13219,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13219,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 12449,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              30,
+              447
+            ],
+            "finite": 13410,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\Downloads\\유로존\\dashbaord\\spx2.xlsb",
+    "size": 12200933,
+    "indices": [
+      {
+        "code": "SHSZ300",
+        "name": "CSI 300",
+        "sheet": "Sheet1",
+        "members": 300,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 124015,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 125032,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 126167,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 125980,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 133872,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 133870,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 134048,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 132447,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 127727,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 126601,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "UKX",
+        "name": "FTSE 100",
+        "sheet": "Sheet2",
+        "members": 100,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42203,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42016,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42069,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42016,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 44636,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42401,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42877,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42853,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 42398,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              100,
+              447
+            ],
+            "finite": 41081,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "IBOV",
+        "name": "Bovespa",
+        "sheet": "Sheet3",
+        "members": 78,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 32111,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 32873,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 33056,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 32926,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34866,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34866,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34198,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34370,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34340,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              78,
+              447
+            ],
+            "finite": 34116,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\Downloads\\유로존\\csi300.xlsb",
+    "size": 8886771,
+    "indices": [
+      {
+        "code": "SHSZ300",
+        "name": "CSI 300",
+        "sheet": "Sheet1",
+        "members": 300,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 124015,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 125032,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 126167,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 125980,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 133872,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 133870,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 134048,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 132447,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 127727,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              300,
+              447
+            ],
+            "finite": 126601,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "STAR50",
+        "name": "STAR 50",
+        "sheet": "Sheet2",
+        "members": 50,
+        "dates": 447,
+        "start": "2025-06-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 19057,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 18945,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 19898,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 19228,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 21966,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 21964,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 22005,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 21381,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 19782,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              50,
+              447
+            ],
+            "finite": 20079,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\Downloads\\index_Bquant.xlsb",
+    "size": 1638061,
+    "indices": []
+  }
+]

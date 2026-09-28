@@ -1,0 +1,34 @@
+{
+  "run_id": "20260907_173516_f0709b",
+  "mode": "scan",
+  "start": "2026-09-01",
+  "end": "2026-09-07",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "houses": {
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "Page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://www.research.hsbc.com/ibcom/in/reach/servlet/Reach?productid=5\nCall log:\n  - navigating to \"https://www.research.hsbc.com/ibcom/in/reach/servlet/Reach?productid=5\", waiting until \"domcontentloaded\"\n",
+      "counts": {}
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://marquee.gs.com/content/research/site/search.html?facets=()&language=%5B%22en%22%5D&page=1&sort=time&limitTo=%5B%22model%22%5D&filter=(disciplines_and_assets%20EQ%20%24%7B(%227c8f0740-d6fe-11df-a204-00118563711b%22)%7D%24%20AND%20totalPages%20IN%20%5B1%2C400%5D)\nCall log:\n  - navigating to \"https://marquee.gs.com/content/research/site/search.html?facets=()&language=%5B%22en%22%5D&page=1&sort=time&limitTo=%5B%22model%22%5D&filter=(disciplines_and_assets%20EQ%20%24%7B(%227c8f0740-d6fe-11df-a204-00118563711b%22)%7D%24%20AND%20totalPages%20IN%20%",
+      "counts": {}
+    },
+    "JPM": {
+      "status": "incomplete",
+      "reason": "Page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://markets.jpmorgan.com/jpmm/search?query=YW5hbHl0aWNzPXRydWUmc29ydD1ERVNDRU5ESU5HLU1vc3QgUmVjZW50LVBVQkxJQ0FUSU9OX0RBVEUmZGVmYXVsdERhdGVzPWZhbHNlJmN1c3RvbVF1ZXJpZXM9eyJxdWVyaWVzIjpbeyJkaXNwbGF5TmFtZSI6IkVjb25vbWljcyBDb21tZXRhcnkiLCJ0eXBlTGFiZWwiOiJWaWV3IEFsbCIsInF1ZXJ5Tm9kZSI6eyJvcGVyYXRvciI6Ik9SIiwiY2hpbGRyZW4iOlt7Iml0ZW0iOiJQVUJMSUNBVElPTl9JRCIsIm9wZXJhdG9yIjoiRVFVQUxTIiwidmFsdWVzIjpbIjExMCIsIjkwMDA3NTAiLCI5MDAxMDA1Il19LHsiaXRlbSI6IlBVQkxJQ0FUSU9OX0lEIiwib3BlcmF0b3IiOiJFUVVBTFMiLCJ2YWx1ZXMiOlsiOTAwMDIwOCIsIjI2IiwiOTAwMDczNiIsIjkwMDA3MzciLCI5",
+      "counts": {}
+    },
+    "Citi": {
+      "status": "incomplete",
+      "reason": "Page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://www.citivelocity.com/cv2/go/CV_OneSearch_Result/X19OQVZJR0FUSU9OX0JBU0U2NF9fL0NvbXBvc2l0ZVBhZ2VTZXJ2aWNlL3BhZ2UvY3ZzZWFyY2hyZXN1bHRwYWdlL0NWX1NJR05BTF9QQUdFX0NBQ0hFI2NudHJDb2RlPUNWX1NJR05BTF9QQUdFJkRVTT1mYWxzZSZzPU40SWdvZ3hnOWdkbEMyQkxDQlNBVEFCZ0lJd0lZQnNCUEFaMFdKQUM1UnlxUUFYU2tBTTNnRmQ4UUFhRUFDMXhvRGFvUHNSNTFjQWN3QXFoQUE0QlRTZ0pERldBSXdCVzhpSFR6eEZBWFc0d2w0YUhDU3BNT0FpVElnaklSQUJORzIyQW1TNDhSVXVXN0VBRTRRakFEQ0FHcWhzSFR5TUF6Y0RCVE1QQ0FBdm83RThyakJQQURTOG9RQTdsQ0JyclNKekFEV1hDQW1TWkFlbHVqWVBuYitJTEtzZ2ZMNVJTVmxJRFhFRldCeGlIU0VhYW5jUEZLTURSYkl",
+      "counts": {}
+    },
+    "BofA": {
+      "status": "incomplete",
+      "reason": "Page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://markets.ml.com/economics-overview\nCall log:\n  - navigating to \"https://markets.ml.com/economics-overview\", waiting until \"domcontentloaded\"\n",
+      "counts": {}
+    }
+  }
+}

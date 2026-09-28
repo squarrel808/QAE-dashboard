@@ -1,0 +1,548 @@
+[
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260918_Japan Economics_ August nationwide CPI_ Way station on the road __5af4dbc7cbbe.pdf",
+    "sha256": "bd145fa963565a4d3aaac79fbe568aa77de3c96f6fb69e2b9a36a21c806ef414",
+    "bytes": 221309,
+    "mtime_ns": 1789769783854060500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260918_Japan Economics_ BoJ MPM review_ Two dissenting votes paradoxica__0658c66d845c.pdf",
+    "sha256": "715104a5b680ce7042a15545c5f62f3adfc9a2ebcf588b2b7661b8a3f663a8ae",
+    "bytes": 238975,
+    "mtime_ns": 1789769829074732500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260918_US Economics_ The Daily Update - PCE Revision Riddle__53ae7d9d4df4.pdf",
+    "sha256": "71937e89746427b33d24cb041eec7aa9a7572f2ddd5f4ce623f1a4ecd415ba22",
+    "bytes": 194119,
+    "mtime_ns": 1789769760622734200,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260918_日本 経済_ 8月の全国CPI：再び2%を超えるまでの通過点__d83100b2dee5.pdf",
+    "sha256": "a11a78b23e0d80d604f4981054b43ed1418acbac9134894552b2c5a4bd502348",
+    "bytes": 466729,
+    "mtime_ns": 1789769808942667000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260918_日本 経済_ 日銀会合レビュー：利上げ反対2票は逆説的にペース加速を示唆__6ded76ba7e0b.pdf",
+    "sha256": "d93f02dba8af318a04860ca62b2968074e27fd9a56a719cbdfdd46d1fd2fe012",
+    "bytes": 473223,
+    "mtime_ns": 1789769850923133500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260919_Brazil Economics_ Brazil Elections - The Road to Planalto Palace__f3b8af734400.pdf",
+    "sha256": "eb46ac85dfc601f945916f7b2448f200c3c6d3405853120647da68a645bc14eb",
+    "bytes": 839767,
+    "mtime_ns": 1789855736593525300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260919_Canada Economics Weekly_ Markets pricing much higher rates with __9a7b82d5ee2a.pdf",
+    "sha256": "8290dad206cdc90bdafef86c3e634f1a51ec317f5fb1be42f8fc861472779f46",
+    "bytes": 275715,
+    "mtime_ns": 1789855717661085500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260919_US Economics Weekly_ Hawkish Fed will slow non-AI economy__2b6e5bdb4ca5.pdf",
+    "sha256": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+    "bytes": 509623,
+    "mtime_ns": 1789855698772421700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_AEJ Week Ahead_ Trump-Xi Summit, Korea 20-day exports, Taiwan IP__c1708bc82900.pdf",
+    "sha256": "82cf6d585d3b731b3dce6baf452c057e770ddf6609742841da0361a68c0bf3ed",
+    "bytes": 353828,
+    "mtime_ns": 1789769211720851000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Argentina_ Real GDP Contracted in the Second Quarter Driven by W__81b9062921c6.pdf",
+    "sha256": "276e122ecf80e5dbc55ffd9aeddc9f6ff56b40220618d0c3e350ef7a3ec85e83",
+    "bytes": 243612,
+    "mtime_ns": 1789769494731766300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Australia_ RBA Parliamentary Testimony_ _Upside risks to inflati__b5a32bb02d44.pdf",
+    "sha256": "4515f74055b3425f7aee53728b6898524670d5c97d2fb94f7bd44235305f4196",
+    "bytes": 238543,
+    "mtime_ns": 1789769450099284900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_China Economic Activity and Policy Tracker_ Sep 18__3cff15c73dc9.pdf",
+    "sha256": "45baf84ffb1f5d63e6cb62cc1e9e4df62bc2576a6abeb73bae09c82445dc5bb2",
+    "bytes": 1425881,
+    "mtime_ns": 1789769266586099000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_China_ Continued augmented fiscal deficit narrowing in August su__ad5c970439cf.pdf",
+    "sha256": "2651d0307f64bd1604374f82f0df20dcba1f8187bf0fac0194208f20a022a9d3",
+    "bytes": 337301,
+    "mtime_ns": 1789769195060165700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_EM Asia FX_Rates Views_ Positioning for Higher Energy, Elevated __8926ce912e02.pdf",
+    "sha256": "32b3bd2e7c010e6510f8f50c073c3c8cc8197153e96f68468d0fa2f13337b2e9",
+    "bytes": 914710,
+    "mtime_ns": 1789769204239481600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Euro Area Data Update_ Softer Italian Construction and Services __cdc6434c5d98.pdf",
+    "sha256": "75dba11ea7a081b4b98a412b3df537b17eaefdb86db2ec841c729eb0ac2537f4",
+    "bytes": 421843,
+    "mtime_ns": 1789769185780646400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_European Daily_ BoE Recap—Opening the Door to a November Hike__38813aca5b3d.pdf",
+    "sha256": "fa2d77e2f787ecdae04dc9e3b0b12042d0807a7e8765909bc24b608a5d46d169",
+    "bytes": 510686,
+    "mtime_ns": 1789769523453560400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Global Economics Comment_ Is Poor Economic Sentiment Really Abou__d7a00c1aa764.pdf",
+    "sha256": "ea7e3a4a18ac64b94547af46f3bd6dfb133914d3868c6cedf99310a10ba96b89",
+    "bytes": 756337,
+    "mtime_ns": 1789769460283155100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Global Markets_ Rates, Fiscal Concerns & Cross-Asset Implication__e652db350c24.pdf",
+    "sha256": "8d3a47cfb2db3aeb6226de6e8708892e2f9bc157f542ca8568680f59723fd777",
+    "bytes": 243194,
+    "mtime_ns": 1789769427140309700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Global Rates Notes_ BoE Announce Gilt-Friendly QT Plan__c65f36462aec.pdf",
+    "sha256": "1b10c6c1a85af1271d359b350e4a77208511b376687a5cc6214933354b2c0c07",
+    "bytes": 350855,
+    "mtime_ns": 1789769508440111400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Japan Economic Flash_ Continue to Expect Next Rate Hike in Janua__4068bb74eabb.pdf",
+    "sha256": "68c93faed5e41d6e19aa0810ad8e2c468b51c658e74f5abae4544b8cd6ef2792",
+    "bytes": 236492,
+    "mtime_ns": 1789769000288934400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Japan Economics Analyst_ Expecting Circa ¥13 tn Increase in 'Cal__836b4e6ae146.pdf",
+    "sha256": "5b9a7324eee37a3bc8b071c275e1d3de585a2ae68f9be3a248847dd69f6e6eb6",
+    "bytes": 502619,
+    "mtime_ns": 1789769469208536400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Japan Focus of the Week_ September 21-25__18a570df9fae.pdf",
+    "sha256": "8cb5862ce589e7bb4eb00cf86ef9d88147e92c560fef8e58b111e8149880aa49",
+    "bytes": 340536,
+    "mtime_ns": 1789768991704015700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Japan_ August National CPI_ New Core CPI Unchanged as Decelerati__51c0397e7fa8.pdf",
+    "sha256": "caedee2bb286134ab507a90b68ff989a3720e9562911fa39c19e540b8813a824",
+    "bytes": 300611,
+    "mtime_ns": 1789769480685759900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Japan_ BOJ_ Raises Policy Rate by 25 bp to 1.25%. Further Tighte__90d88c56ddd8.pdf",
+    "sha256": "65d233a22eb0531ef0e073683dbdb3b994aad8a149bde6eff919f61984c92d65",
+    "bytes": 224481,
+    "mtime_ns": 1789769441380725600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_LATAM Today_ September 18, 2026__3e89f25ff14b.pdf",
+    "sha256": "e1676c24c59031183e21b9f9cf306283f8b7f640d1e810e6af494c27aed39c49",
+    "bytes": 298986,
+    "mtime_ns": 1789769170523893300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Macro at a Glance_ Latest views and forecasts__046027c243bd.pdf",
+    "sha256": "0d26b3f5a5c9511689d541c028974e017df3deef80cb8f4cc1262287909c35b3",
+    "bytes": 330673,
+    "mtime_ns": 1789769501787841800,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Malaysia_ Underlying price pressures remained contained in Augus__1c86b9a938c0.pdf",
+    "sha256": "da185bdd1bf592c30994f685f5abb4d57aa20a688adaacaa1f3aca4aa02c46c5",
+    "bytes": 206783,
+    "mtime_ns": 1789769434407452800,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Mexico_ Solid Broad-Based Expansion of Real GDP During 2Q26; Som__9fffd4544134.pdf",
+    "sha256": "270e20231dd22ee1fba29d153bff3c17f9cd09e1763f4e8d43c3d6d320af2c62",
+    "bytes": 289965,
+    "mtime_ns": 1789769178255185300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_Nigeria_ Current Account Surplus Continued to Rise in Q2-26, In __1d84af35c6f9.pdf",
+    "sha256": "5591c5acde34f3d374372eca8dc9205bfacef9cb41d55e0b70f13b080212d2e4",
+    "bytes": 219469,
+    "mtime_ns": 1789769069059623300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_UK—Retail Sales Firmer Than Expected in August__0cd378c4d309.pdf",
+    "sha256": "27a0a8e7882ded321ad55986b598d40617787f8f120a9a53266b67d0621bcaf6",
+    "bytes": 226659,
+    "mtime_ns": 1789769273801436200,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_USA_ Industrial Production Below Expectations but GDP-Relevant D__868f7a557b27.pdf",
+    "sha256": "69e378c2225b8e365ec0f280c5222f99157ed7d5aae467d31f50edab2c6a260e",
+    "bytes": 218676,
+    "mtime_ns": 1789769061286319000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260918_What's Top of Mind in Macro Research_ A hawkish Fed meeting, Chi__384562b12c98.pdf",
+    "sha256": "12104e8690b7da5f41b78ff015ed879aff246449213d6b2dad78b8d6078c90f9",
+    "bytes": 365050,
+    "mtime_ns": 1789769516083421500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Argentina_ Another Solid Trade Surplus in August__663779326cbc.pdf",
+    "sha256": "72438b82c1f6703197e436829e232d7608e5a700399ae1b634f3d72ea44f4df5",
+    "bytes": 273127,
+    "mtime_ns": 1789855299329279900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Argentina_ Disciplined Spending Continued in August; Fiscal Bala__44fd258fb881.pdf",
+    "sha256": "7998c8e6665484b112b2c16990644783fe0a681379980ca6174a49589f9ba9ea",
+    "bytes": 235458,
+    "mtime_ns": 1789855480990545400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Australia & NZ Weekly Economic Preview_Review_ Week commencing 2__fada9383e47e.pdf",
+    "sha256": "5436df8a7344706653cf644cf2fe1d6a1b8a0f76ad2ec21382fe9623e09e66e9",
+    "bytes": 321717,
+    "mtime_ns": 1789855313953522400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Australian and New Zealand Inflation Monitor_ Monthly Inflation __53b60416363e.pdf",
+    "sha256": "e124199a4e4d9e67bcaa4ee0a9b46ba7b53053fcadce3c9322e2e32b0015187a",
+    "bytes": 563502,
+    "mtime_ns": 1789855306376535500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_CEEMEA Week Ahead_ SARB to Hike by 25bp; MNB, CBE and BoG on Hol__63cfaf2f1981.pdf",
+    "sha256": "f1b22b057e99070f175ac24b32d2b98938716fbc2d6a7d7478cfc81cf07cff95",
+    "bytes": 353384,
+    "mtime_ns": 1789855639525517200,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_European Economics Analyst_ Euro Area—Introducing Our Nearcast M__249b9a052690.pdf",
+    "sha256": "751cc3e4091c99cc30289170b581a6d90047e39a805718188c5a115db1b61674",
+    "bytes": 1179879,
+    "mtime_ns": 1789855291475568100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_European September Flash PMI Preview__d393d3117e0d.pdf",
+    "sha256": "42abcaeadaea77757274943247c5efc08504acde9e1fce2662c73461ea0f6fc0",
+    "bytes": 828426,
+    "mtime_ns": 1789855631731645100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_European Views_ Not So Fast__fa787dc57fe3.pdf",
+    "sha256": "dfae4ef38ebdb7fc90e1969eff4596f849bc5f8b4b712d5c903b11365effd636",
+    "bytes": 1742458,
+    "mtime_ns": 1789855322378383000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_European Week Ahead_ September 21 - September 27__ca655f20ed80.pdf",
+    "sha256": "43a1bb7caf9f3ce8861c57c7a91ea5612b4c7f574f907df81cd73dc0cf0707b1",
+    "bytes": 322943,
+    "mtime_ns": 1789855337238465700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Global Economics Wrap-Up_ September 18, 2026__e3f9abf54cc5.pdf",
+    "sha256": "12cfdd8d553921b3e103c38e4716734d499d464f7628344ed02f0b6bc2684750",
+    "bytes": 322152,
+    "mtime_ns": 1789855400563070400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Global FX Trader_ Dollar Drift__273a35fb66d9.pdf",
+    "sha256": "3bb9bcae75d548e4927bbe1c8ec3a891d23da25aadf31f71eec487cfd0fdad2e",
+    "bytes": 699346,
+    "mtime_ns": 1789855330259806900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Global Rates Trader_ Hiking More or Less__a80f2a1f0081.pdf",
+    "sha256": "f740085a73cca8548c170dba7b3899016d08e29bcc9a0ecea8f8912498673077",
+    "bytes": 2638789,
+    "mtime_ns": 1789855344969617700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_LATAM Week Ahead_ MPC Meeting in Mexico (Hold at 6.50%); MPR and__497dc709d8b0.pdf",
+    "sha256": "f461d51fcf0d281a2a6fc78b489fd51b28d7fb9e5622438492858d5f9cf2e9c8",
+    "bytes": 480729,
+    "mtime_ns": 1789855412993427100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260919_Weekly Fund Flows_ Pickup in Global Equity Inflows__7af53983537a.pdf",
+    "sha256": "497145e86a3faaacfe25dfa0bdc05aebe2a2c2288d5f75d3ed36736f71cfed01",
+    "bytes": 970938,
+    "mtime_ns": 1789855419740679400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260920_Asia Economics Analyst_ Korea – Tracking Corporate Cash and Fina__4735f0b5cf4d.pdf",
+    "sha256": "6599ef93a3ed9bf5f0e1f9b5492748170a09d6755688d306779e4dbc9e2eeb06",
+    "bytes": 1138879,
+    "mtime_ns": 1789941797779604000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260920_China Matters_ Path of Least Resistance__a1c8bd0dde0a.pdf",
+    "sha256": "44d694b0be13aefd47794cb60e2d0da81f32dfe5bbd4e408bdfcbc60fc45a746",
+    "bytes": 442534,
+    "mtime_ns": 1789941804909568600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260920_European Daily_ Spain—Slowing Momentum, Sustained Outperformance__2ea771b90bbf.pdf",
+    "sha256": "5d959210730b361e4eb18c2a6524d11d3265ef3dd370b8b5802fb5c6d0a1e5bf",
+    "bytes": 2156950,
+    "mtime_ns": 1789941861136678100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_Bank of Japan_Keeping pace with the Fed might not be enough__fbb6b19acd6e.pdf",
+    "sha256": "c84a1983609e180aa176a0e371f2f6cb448eb665186cb76814e3b45ac1bfa88b",
+    "bytes": 388296,
+    "mtime_ns": 1789769949798915900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_Doing more with less_What the RBI needs__35057a000702.pdf",
+    "sha256": "3bc50c591a9d012890338e1977e677d926970f7c741ad4d9b19ec00139b70bc6",
+    "bytes": 307944,
+    "mtime_ns": 1789770270326590100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_GEMs in the week_The tightening that matters__e756ee90751a.pdf",
+    "sha256": "58dcb7979527715bb434c9ee948ad28068c4b2c988c09c1582f9f4132387564c",
+    "bytes": 1217829,
+    "mtime_ns": 1789769898428853400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_Global Economic Calendar_21 September - 27 September__9be499e2a819.pdf",
+    "sha256": "7aec6889d3a1fdb7597c3fff54c9d32a4c036b22bc36ab8b75c639baa8ea5f53",
+    "bytes": 421386,
+    "mtime_ns": 1789770016146318000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_Indonesia’s changing fortunes_BI to hold now, hike later__0267a110b6e0.pdf",
+    "sha256": "3bd9884e623cbaf6a6c43fac63e3279d8bcb0fda69a3b549f87160dd061e7389",
+    "bytes": 549437,
+    "mtime_ns": 1789770012646327000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_Romania_New PM candidate; no majority support__23dac7c11d4d.pdf",
+    "sha256": "fa24aa186a026953567066e5255c07275e502a28b004d8c9262ed5c49efc02bb",
+    "bytes": 259185,
+    "mtime_ns": 1789770001826217400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_The China shock thing_Asia Chart of the Week__bd3ae73ffd57.pdf",
+    "sha256": "227d2a0c5fff918f41464042d938b4ba175cd4da9711458870d8a31cb0ecaa31",
+    "bytes": 457821,
+    "mtime_ns": 1789770073068559300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260918_The Week in Numbers_A look back at the economic data__169092233bd5.pdf",
+    "sha256": "9e0c32334c2fb3c2720eba8c3dbc510e969f1cc69221a218c1311b8d7f66161b",
+    "bytes": 278967,
+    "mtime_ns": 1789769883188443600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Australia and New Zealand_ Weekly Prospects__55c81794d0d0.pdf",
+    "sha256": "ed459c4067f3283e1a730169905779340f59036569e649ebe45c1a224943d199",
+    "bytes": 745809,
+    "mtime_ns": 1789768958856335300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_BoJ enters a new phase__4fcc16425b47.pdf",
+    "sha256": "a50d987fb139983e71c401045383da831269f7088bc78252c60ac99001d3df53",
+    "bytes": 222678,
+    "mtime_ns": 1789768949685195700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Brazil Weekly _ All at once__fcb920786491.pdf",
+    "sha256": "09cec001ce09c75d5b1f08041957745694372e65207979290cba8d0ea9929be7",
+    "bytes": 570232,
+    "mtime_ns": 1789768919743989400,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_ECB_ And now for hike number four__36262add7874.pdf",
+    "sha256": "7a7cf06438b354d438c04e8a66607f5c91aa469bc18503c04527259da4cbde83",
+    "bytes": 225019,
+    "mtime_ns": 1789768945544458100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Euro area inflation forecasts (linkers)__eb6033b7506a.pdf",
+    "sha256": "bb987722622f8a13a0a16c1e8c90106d006695f8aa37a672c970e658d9c68da4",
+    "bytes": 270351,
+    "mtime_ns": 1789768890591731200,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Euro area_ Consumer inflation expectations ticked up__9886e5194a34.pdf",
+    "sha256": "0407f64d8172e850147910711a3d983927f7573377b5a62d7f9fb0339e697da4",
+    "bytes": 404631,
+    "mtime_ns": 1789768933065698900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_France_ Government lays ground for 5% deficit next year__f1bb53645fbc.pdf",
+    "sha256": "b193bc93ffc1f04004427a21a4ca63988009e91bc171f1b84871f78dcd5b1fa8",
+    "bytes": 221531,
+    "mtime_ns": 1789768904523443700,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Germany_ Political pressure could increase next week__8b9eaf8edf0d.pdf",
+    "sha256": "385209509cfcc43e3682ba5326122ed89535fc879345ae2bd296d5677993155c",
+    "bytes": 219053,
+    "mtime_ns": 1789768937529114000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Japan_ Aug CPI looks soft, but underlying pressures persist__fe0d77fcb181.pdf",
+    "sha256": "041c4ae690ab31c571c74cdd2629091c7489b2aeb988cb58b453212cf29024f8",
+    "bytes": 929978,
+    "mtime_ns": 1789768969543303000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Korea_ August PPI lifted by crude bounce, firm core__6fda007b6db0.pdf",
+    "sha256": "5be1d5fa2752d4ebc575bd95aa6a56d787a7fed3aebed7cb7c5ae28c11d9b107",
+    "bytes": 455927,
+    "mtime_ns": 1789768963679671600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Malaysia_ Trade surplus rises to a three-month high _ Tech stren__1399e68bb600.pdf",
+    "sha256": "70484c84ccff428e516e8b395705149c84dce333776e6929e8ad9b7b44f03e02",
+    "bytes": 617167,
+    "mtime_ns": 1789768924449969500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Mexico weekly _ Banxico on hold amidst inflation and growth rele__393f99099152.pdf",
+    "sha256": "263bbf971815c6f4bd76e21b9d5cdb1af223044e1e35a5a9ea4d167f1b67f638",
+    "bytes": 540183,
+    "mtime_ns": 1789768878488822800,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Mexico _ Banxico preview - The Fed factor to gain relevance__b81e48d55148.pdf",
+    "sha256": "e0626fdd4af95eb1b865a9b5d35759442c1cb3b938943fdf9256203da97cefd1",
+    "bytes": 333816,
+    "mtime_ns": 1789768887309809000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_NBH preview_ the pause before the reset__af1f396e5a9e.pdf",
+    "sha256": "9c7422f25ec8dbb7476cc31b573a43c87b2c7b8ae05a834974d9996b06a45ab4",
+    "bytes": 331107,
+    "mtime_ns": 1789768941609861500,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Nigeria MPC preview_ Policy rate cut might not mean easing _ CBN__e42d74bf055e.pdf",
+    "sha256": "275469f2a6280c310ee9a99aff1b407df44bcbcffa41ef1275fb987dc1f7b404",
+    "bytes": 613223,
+    "mtime_ns": 1789768929417198600,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Norges Bank_ Preview of next week’s meeting__5de46c56622c.pdf",
+    "sha256": "be441289b2a849a8877125ddacdfdf02451d7a11f8e307fef2a5a344b54ff522",
+    "bytes": 276718,
+    "mtime_ns": 1789768910671060100,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Panama_ A rising tide lifts all boats__75b7ae077e10.pdf",
+    "sha256": "a71469995c3bd5e1dfb58db27acf10fa1814d308dd7bd23752f50b6bf6f8a5d6",
+    "bytes": 331291,
+    "mtime_ns": 1789768882906871300,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Riksbank_ Preview of next week’s meeting__1b761555db2a.pdf",
+    "sha256": "f4359c95d7e5efd17f10121a2cca69f0aa5b34da2dd90102c7b25387f63810f7",
+    "bytes": 378316,
+    "mtime_ns": 1789768915196606000,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_Romania_ government formation still uncertain__4af3df7f9ed2.pdf",
+    "sha256": "952fe85830f5e9af2f995fe225f514d82685e6f6f19cb3200c2d157a700a6a5f",
+    "bytes": 279918,
+    "mtime_ns": 1789768953624623200,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260918_US_ Manufacturing took a breather in August__8fd3cbc84334.pdf",
+    "sha256": "710ef5751764c37efef89a2759c437460efc1048af991cffcc012a338abfdc80",
+    "bytes": 451782,
+    "mtime_ns": 1789768896629427900,
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260920_Malaysia_ August CPI comes in a notch above expectations _ Maint__065591e1054f.pdf",
+    "sha256": "1d9ae26af97be3da3071367e11feb252c69172c0df4229a2818fb7bc03026f74",
+    "bytes": 631933,
+    "mtime_ns": 1789941677948330000,
+    "stable": true
+  }
+]

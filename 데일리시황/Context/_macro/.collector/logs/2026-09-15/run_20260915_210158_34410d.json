@@ -1,0 +1,37 @@
+{
+  "run_id": "20260915_210158_34410d",
+  "mode": "daily",
+  "start": "2026-09-09",
+  "end": "2026-09-15",
+  "started": "2026-09-15T21:02:19.267564+09:00",
+  "finished": "2026-09-15T21:05:13.454807+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_210158_34410d.log",
+  "houses": {
+    "BofA": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    },
+    "JPM": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    },
+    "Citi": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    }
+  }
+}

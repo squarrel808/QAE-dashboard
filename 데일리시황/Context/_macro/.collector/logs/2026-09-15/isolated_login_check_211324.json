@@ -1,0 +1,27 @@
+{
+  "checked": "2026-09-15T21:13:24.779249+09:00",
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "houses": {
+    "BofA": {
+      "status": "report_list_ready",
+      "title": "Global Economics - BofA Markets",
+      "error": ""
+    },
+    "JPM": {
+      "status": "login_or_site_check_needed",
+      "title": "J.P. Morgan Markets",
+      "error": ""
+    },
+    "GS": {
+      "status": "report_list_ready",
+      "title": "Search",
+      "error": ""
+    },
+    "Citi": {
+      "status": "report_list_ready",
+      "title": "Citi Velocity",
+      "error": ""
+    }
+  }
+}

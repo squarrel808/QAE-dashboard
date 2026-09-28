@@ -1,0 +1,65 @@
+{
+  "checked": "2026-09-15T23:02:56.411502+09:00",
+  "start": "2026-09-09",
+  "end": "2026-09-15",
+  "status": "current_catalog_complete",
+  "houses": {
+    "BofA": {
+      "pdfs_in_range": 32,
+      "html_in_range": 0,
+      "new_pdfs": 29
+    },
+    "JPM": {
+      "pdfs_in_range": 42,
+      "html_in_range": 0,
+      "new_pdfs": 37
+    },
+    "GS": {
+      "pdfs_in_range": 98,
+      "html_in_range": 5,
+      "new_pdfs": 83
+    },
+    "Citi": {
+      "pdfs_in_range": 48,
+      "html_in_range": 0,
+      "new_pdfs": 43
+    }
+  },
+  "new_pdfs": 192,
+  "html_archived": 5,
+  "integrity": "All 220 PDFs and 5 registered HTML archives in the requested range passed file/hash checks.",
+  "coverage_runs": {
+    "BofA": "20260915_220051_c1a870",
+    "JPM": "20260915_220051_c1a870",
+    "GS": "20260915_225157_71b70c",
+    "Citi": "20260915_225157_71b70c"
+  },
+  "legacy_pending_records": [
+    {
+      "house": "BofA",
+      "doc_id": "13017021",
+      "title": "GEMs Paper",
+      "published": "2026-09-10",
+      "status": "pending"
+    },
+    {
+      "house": "BofA",
+      "doc_id": "13017227",
+      "title": "Global Emerging Markets Weekly",
+      "published": "2026-09-10",
+      "status": "pending"
+    }
+  ],
+  "legacy_note": "These two Sep 11 database records were not present on the current Global catalog first 100 rows. Same-date/title current records 13017596 and 13018123 were downloaded. Older records were preserved as pending; no identity or revision equivalence is asserted.",
+  "daily_default": {
+    "timezone": "Asia/Seoul",
+    "days": 1,
+    "end": "yesterday",
+    "houses": [
+      "BofA",
+      "JPM",
+      "GS",
+      "Citi"
+    ]
+  }
+}

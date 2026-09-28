@@ -1,0 +1,34 @@
+{
+  "run_id": "20260908_011123_3793a4",
+  "mode": "backfill",
+  "start": "2026-06-08",
+  "end": "2026-09-08",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "houses": {
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {}
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {}
+    },
+    "JPM": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {}
+    },
+    "Citi": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {}
+    },
+    "BofA": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {}
+    }
+  }
+}

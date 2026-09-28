@@ -1,0 +1,19 @@
+{
+  "run_id": "20260909_214132_a213f5",
+  "mode": "backfill",
+  "start": "2026-06-08",
+  "end": "2026-09-09",
+  "started": "2026-09-09T21:41:39.687742+09:00",
+  "finished": "2026-09-09T21:41:52.089694+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_214132_a213f5.log",
+  "houses": {
+    "BofA": {
+      "status": "incomplete",
+      "reason": "Page.goto: Timeout 12000ms exceeded.\nCall log:\n  - navigating to \"https://markets.ml.com/economics-overview\", waiting until \"domcontentloaded\"\n",
+      "counts": {},
+      "connection_lost": false
+    }
+  }
+}

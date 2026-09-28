@@ -1,0 +1,41 @@
+DEV
+search
+Search Marquee
+ 
+Sorry, no matches were found
+Try a new search or use our popular apps
+FX MORNING NOTES
+GS FX Research Notes: Shifting Impulses from Norway’s Fiscal Mechanism
+Research | Economics | 9 September 2026 | 1:46PM UTC
+
+Two announcements relating to Norway’s sovereign wealth fund and fiscal mechanism have been in focus over the past two weeks, though we expect the total FX impact of each to be relatively modest.
+
+First, the Norges Bank detailed a proposed shift to GPFG’s (the wealth fund’s) investment strategy to their fixed income portfolio on September 1. The proposal includes a recommended shift from government bonds (reducing the allocation from 70% to 50%) towards other, higher-yielding bonds (including MBS) within the same markets – which should be FX-neutral but may gradually impact spreads across fixed income assets, as our rates strategists have highlighted. The proposal’s other key recommendation is that the fund’s government bond allocations move from being GDP-weighted to market value-weighted. This re-weighting would imply modest shifts in fixed income currency allocations, most notably including a ~3.2pp increase for the Yen (worth approximately $20bn on our estimates), but with any changes being gradual. We see both of these proposed changes to the fund as consistent with the broader industry trend of the past decade of a reach for yield by moving down the credit curve. 
+
+Second, the Norges Bank announced daily average FX purchases for September on August 31. For the first time this year, the Norges Bank will be selling NOK to transfer excess oil-related profits to GPFG (first chart below). Government oil revenues have increased across 2026 (reflecting the lagged impact of higher energy prices), allowing the Norges Bank to switch back to NOK selling, as it did on a larger scale for much of the 2022/2023 period of higher energy prices (second chart below). The September pace of NOK selling remains relatively small, and in our view is unlikely to meaningfully shift the currency’s recent beta to energy prices. Oil transfers to GPFG (either directly in foreign currency or converted from NOK) are part of a broader tailwind to Norway macro and the Krone that comes from higher-for-longer energy prices, as we argued earlier this year.
+
+ 
+
+Stuart Jenkins
+Goldman Sachs International, London
+stuart.jenkins@gs.com
+Lexi Kanter
+Goldman Sachs & Co. LLC, New York
+alexandra.kanter@gs.com
+Teresa Alves
+Goldman Sachs International, London
+teresa.alves@gs.com
+Karen Reichgott Fishman
+Goldman Sachs & Co. LLC, New York
+karen.fishman@gs.com
+Michael Cahill
+Goldman Sachs International, London
+michael.e.cahill@gs.com
+© Copyright 2002-2026 Goldman Sachs All rights reserved.
+Need help?
+Contact Us
+
+Use of this site is subject to the Terms and Conditions of Use updated as of 12 August 2024.
+Marquee Regulatory Disclosures
+Important Disclosure Information About Goldman Sachs Research
+Please review our Interest Rate Benchmark Transition Notice, Privacy & Cookies Policy, Security, Market Data Attribution, Security Guidance and GS&Co.'s Statement of Financial Condition

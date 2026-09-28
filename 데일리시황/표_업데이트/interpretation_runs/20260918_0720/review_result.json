@@ -1,0 +1,117 @@
+{
+  "updated_events": [
+    "d22b54ccd0be4f932b42",
+    "3099770bd39945f8929a",
+    "5ac5e1ec6f0a02c9f712",
+    "1627fbcbc540244fac20",
+    "057c1a13f70dbbdea485",
+    "bab038bd35599a75b9c5",
+    "1dfd1f67d6da741f7333",
+    "21e7f5cf9ce3301639fb",
+    "29e60538ceb0ad6361b9",
+    "a825db1a2d531bef0b18",
+    "ae8eb22ba987cb1cfab7",
+    "233755991b4fc4e86506",
+    "c39855fd5d5778b97849",
+    "543f6ed12cdd89644704",
+    "5162d3e533b027e8f4b2",
+    "3d708b5a62d42799dedb",
+    "e3dcc2f3dfae1853488b",
+    "a14b978e7362e3222eb8",
+    "fcafd169f15606a3ee5c",
+    "62e9538d97f60cd1d7b2",
+    "e4aa7df123ba37868743",
+    "44d61c8ca47f52c0d74d",
+    "afe3742ff98df9c0c352",
+    "c7eb749805ed8778de96",
+    "d8c375c9b01c75696236",
+    "b80e29030d5954b0b424",
+    "adb7cb1e9764f2520fea",
+    "7b60251c4a848e27f282",
+    "c4af46e213a193c2e05a",
+    "3aef7537c1b34d166b51",
+    "795502e15628e7291cfb",
+    "ebda2b89709dd52de82b",
+    "9959261ffb1fc6e0c0b3",
+    "b21be94dc32f1aa11a24",
+    "52c7e0a2b873ebb5907f",
+    "97a36234c2ca8ba3251e",
+    "d71734446c8a3139781d",
+    "cd5c2f731ac95db0b2b1",
+    "0648b968169e094adb52",
+    "b4db72bcdb4f16678d0d",
+    "e12470142c03d9e5acca",
+    "4e9ab03977ecc151e19b",
+    "1a26b1295325c42d6832",
+    "9929bd5a068495d067a3",
+    "ee15b937b353a7195a53",
+    "e9f87d3ca604b8ca5ac4"
+  ],
+  "updated_count": 46,
+  "new_summaries": 42,
+  "revised_summaries": 4,
+  "retained_summaries": 148,
+  "adopted_pages": [
+    {
+      "doc_id": "07bc375d8a9a7a8409c000b9dd3100029b1231f64e1603b1d488c6c23bab0b0e",
+      "page": 1
+    },
+    {
+      "doc_id": "2753726bb2e31b609e29965c594283052d3da740081efa1cc1f725854028bace",
+      "page": 1
+    },
+    {
+      "doc_id": "3321901f83f0683381e2338b5f1f2df5b3728f4563cf8deea03f3dbb222bde5b",
+      "page": 1
+    },
+    {
+      "doc_id": "454b353647299d698251452f61c4252de1923ebbed40bd3d763f60b604ab5897",
+      "page": 2
+    },
+    {
+      "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+      "page": 1
+    },
+    {
+      "doc_id": "7192a2cc12f9515040f56e67fdc4b0fad4c5c2f7250d251d9022351364e86ed1",
+      "page": 1
+    },
+    {
+      "doc_id": "746acae4ec7c44064400855ec1ae5be9bc1f97b534653a71f2cb2248f6135492",
+      "page": 1
+    },
+    {
+      "doc_id": "7d954de2e7f7f083b0881a64b4f9c90e4b498252f0d4964605a6eac5cda37c80",
+      "page": 1
+    },
+    {
+      "doc_id": "9c98b0daff2a993159efb2b30405a9499cede474273dc03f5e7d7a25004e0b7b",
+      "page": 1
+    },
+    {
+      "doc_id": "b4ef0e136f0cee9edefebea00ffe6dee9c74358d8b40c49d98c220b98c92a2bc",
+      "page": 1
+    },
+    {
+      "doc_id": "cdefbe36bf40cffda6c0469e1ddadc13bb3096c6aa25bef1cc6aab58b9729cdc",
+      "page": 1
+    },
+    {
+      "doc_id": "d82d1a54c7c3002098bf910fe5f370e22838f7a3b31d0c73bc99d2fb57758883",
+      "page": 1
+    },
+    {
+      "doc_id": "e8ca17f2b83ab99df2c372540d5fd13974fb08e983e18e04f135d771e42872a6",
+      "page": 1
+    },
+    {
+      "doc_id": "ed407d9c08528c964a752cafa3c9e21e3d7fc58276cb5f747f8b7f9a33075f31",
+      "page": 1
+    },
+    {
+      "doc_id": "fa77ff36e260acc47aad1028b23b375c91e0717ba92864ad94aac691fd6e2489",
+      "page": 1
+    }
+  ],
+  "reviewed_on": "2026-09-18"
+}

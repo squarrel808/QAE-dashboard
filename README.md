@@ -58,29 +58,44 @@
 
 | 탭 | 화면 | 출처 | 갱신 방법 |
 |---|---|---|---|
-| 경제지표 | `/econ` | `블벅경제지표\*.xlsx` | **파일을 폴더에 넣으면 끝** |
+| 경제지표 | `/econ` | `____Rawdata___\*.xlsx` | **파일을 폴더에 넣으면 끝** |
 | 실적 캘린더 | `/earnings` | releasecalendar | 자동 |
 | Report | `/reports` | `Desktop\보따리\*\일일리서치통합요약_*.docx` | 통합요약 DOCX 생성 시 자동 |
 | PCA | `/pca` | Haver (`haver-api_PCA`) | Haver 로그인 후 수집 |
 | CAI | `/caimap` | GS Marquee API | 자동 |
 | CPI 분포 | `/cpidist` | Haver (`haver-api_CPI`) | Haver 로그인 후 수집 |
-| Consensus | `/consensus` | `Consensus Builder\ECFC_*.xlsb` | **파일을 폴더에 넣으면 끝** |
+| Consensus | `/consensus` | `____Rawdata___\ECFC_*.xlsb` | **파일을 폴더에 넣으면 끝** |
 | Policy Tone | `/policy` | 중앙은행 연설문 스크래핑 + Claude 채점 | 자동 (`policytone\.env` 에 API 키 필요) |
 | Equity | `/equity` | GS Pair Baskets API | 자동 |
 
-### 파일을 넣어서 갱신하는 두 곳
+### 받은 엑셀은 `____Rawdata___\` 한 곳에
 
-**`블벅경제지표\`** — 블룸버그 이코노믹 캘린더 내보내기
-- 파일명 규칙 없음. **폴더에 최근 쌓인 순서**로 고른다
-- 형식 두 가지를 자동 판별: WECO 표준(`Date Time`/`Country Code`), BQuant `CALENDAR()`(`Country`/`Date tie`/`time`)
-- 지표/연설 구분도 파일명이 아니라 내용(Survey·Actual 채움률, Relevance)으로 판별
+파이프라인별로 나눠 넣지 않는다. **내려받은 파일을 `QAE\____Rawdata___\` 에 그대로 복사**하면
+각 스크립트가 실행할 때 여기서 자기 파일을 집어간다. 매칭은 **파일명 앞부분(prefix)** 하나뿐이라
+뒤에 `(2)` 든 날짜든 붙어도 상관없다. 같은 prefix 가 여럿이면 수정시각이 최신인 것을 쓴다.
+
+| 넣는 파일 (앞부분) | 확장자 | 집어가는 곳 | 결과 |
+|---|---|---|---|
+| `ECFC_Growth Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` GDP |
+| `ECFC_Inflation Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` CPI |
+| `Bquant_` | `.xlsb` `.xlsx` | `데일리시황\BQL\Rawfile\update_master.py` | 유럽·TOPIX·AI·Top10 |
+| (모든 `.xlsx`) | `.xlsx` | `블벅경제지표\load_weco.py` | `/econ` 경제지표 |
+
+- 찾는 코드는 `rawdata.py` 하나다. `python rawdata.py` 로 뭐가 물렸는지 확인할 수 있다
+- 폴더 위치를 옮기려면 환경변수 `QAE_RAWDATA_DIR`
+- **예전 폴더(`Consensus Builder\`, `블벅경제지표\`)에 둬도 계속 돈다.** 두 곳을 같이 훑고
+  수정시각이 최신인 쪽을 쓴다 — 옮기는 중에 안 깨지게 남겨둔 폴백이다
+- 자세히: `____Rawdata___\README.md`
+
+**경제지표(WECO)** — 이것만 prefix 를 안 본다
+- 파일 **내용**으로 판별한다: WECO 표준(`Date Time`/`Country Code`) / BQuant `CALENDAR()`(`Country`/`Date tie`/`time`)
+- 지표/연설 구분도 파일명이 아니라 Survey·Actual 채움률, Relevance 로 판별
+- 최근 2주 안에 넣은 파일을 전부 합친다(최대 6개). 같은 일정은 최신 파일 값
 - 지표는 **컨센서스(Survey) 있는 행만** 표시. 연설·이벤트는 전량
-- 1개만 넣어도 그 파일에 해당하는 만큼 갱신된다
 - 자세히: `블벅경제지표\사용법.md`
 
-**`Consensus Builder\`** — ECFC 컨센서스
-- `ECFC_Growth Consesus_수정.xlsb` / `ECFC_Inflation Consesus_수정.xlsb` 두 개를 덮어쓴다
-- xlsb 에는 최근 60일치만 들어있고, 누적 시계열은 `history\` 에 쌓인다
+**ECFC 컨센서스**
+- xlsb 에는 최근 60일치만 들어있고, 누적 시계열은 `Consensus Builder\history\` 에 쌓인다
 - 병합 시 `history` 의 **최신 산출물**을 베이스로 이어붙인다 (원본 `_수정.xlsx` 는 오래 전에 멈춰 있음)
 - 7일 넘는 공백이 생기면 로그에 경고가 찍힌다
 
@@ -94,11 +109,13 @@ QAE/
 ├ 전체업데이트.bat            진입점
 ├ _자동화/                   스케줄 등록 배치
 │
-├ 블벅경제지표/               ← 경제지표 **입력** (xlsx 넣는 곳)
+├ ____Rawdata___/            ← **받은 엑셀 넣는 곳** (전부 여기 하나)
+├ rawdata.py                 prefix 로 원본을 찾아주는 공용 헬퍼
+├ 블벅경제지표/               경제지표 로더 (구 입력 폴더 — 여기 둬도 읽는다)
 │   └ load_weco.py           파일 판별·정규화
 ├ 경제지표가져오기/            경제지표 **생성** — weco_dashboard.py → dashboard.html
 │                            (이름이 헷갈리지만 지우면 안 된다. 아래 주의 참고)
-├ Consensus Builder/         ← 컨센서스 입력 (xlsb 넣는 곳)
+├ Consensus Builder/         컨센서스 (구 입력 폴더 — 여기 둬도 읽는다)
 │   ├ merge_xlsb_to_xlsx.py  xlsb + history → 누적 xlsx
 │   ├ CPI/GDP consensus.py   대시보드
 │   ├ CPI distribution.py    CPI 분포
@@ -141,7 +158,7 @@ QAE/
 |---|---|
 | **Haver 수집** | DLX Direct 가 이메일+보안코드 로그인이라 무인 실행 불가. 스케줄은 `/nohaver` 로 돈다. PCA·CPI 원본을 새로 받으려면 로그인한 상태에서 직접 실행 |
 | **통합요약 DOCX** | `보따리\_자동화\daily_summary.py` 가 스케줄러에 없다. 이게 안 돌면 Report 탭이 전날에 머문다 |
-| **경제지표·컨센서스 파일** | 블룸버그에서 내보내 폴더에 넣는 건 사람이 한다 |
+| **경제지표·컨센서스·BQuant 파일** | 블룸버그에서 내보내 `____Rawdata___\` 에 넣는 건 사람이 한다 |
 
 ---
 
@@ -157,6 +174,8 @@ QAE/
 | 리포트가 0건 수집됨 | 로그에 `NoSuchWindowException`. 디버그포트 9222 크롬이 이미 떠 있었거나 창이 닫힌 것. 크롬 다 끄고 다시 실행 |
 | Policy Tone 최신 연설이 안 붙음 | 로그에 `Could not resolve authentication method`. `policytone\.env` 의 Anthropic API 키가 안 읽힌 것. 키 넣고 `python policytone\score.py` 재실행 |
 | 경제지표 단계가 `파일 없음` | `경제지표가져오기\` 폴더가 지워졌다. 위 "지우면 안 되는 것" 참고 |
+| 원본을 넣었는데 안 읽는다 | `python rawdata.py` 로 prefix 가 물렸는지 확인. 엑셀에서 파일을 열어 두면 잠겨서 읽기가 실패한다 |
+| CPI 분포에서 한 나라만 12개월 마이너스 | 통계청이 지수 기준연도를 바꾼 것(예: 일본 2020=100 → 2025=100). `CPI distribution.py` 가 자동으로 이어붙인다. 로그에 `[REBASE]` 줄이 찍히는지 확인 |
 | 커밋에 엉뚱한 파일이 잔뜩 | `/addall` 이 붙었는지 확인. 기본은 산출물만이다 |
 
 ---
@@ -180,7 +199,8 @@ QAE/
 
 | 문서 | 내용 |
 |---|---|
-| `블벅경제지표\사용법.md` | 경제지표 파일 넣는 법 |
+| `____Rawdata___\README.md` | **받은 엑셀 넣는 법 (모든 파이프라인 공통)** |
+| `블벅경제지표\사용법.md` | 경제지표 WECO 내보내기 절차 |
 | `macro_hub\README.md` | Next.js 사이트 구조 |
 | `macro_hub\DEPLOY.md` | Vercel 최초 연결 |
 | `report_pipeline\README.md` | 리서치 수집 파이프라인 |

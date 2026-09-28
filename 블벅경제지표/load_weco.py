@@ -20,7 +20,6 @@ import io
 import os
 import re
 import sys
-import glob
 import datetime as dt
 
 import pandas as pd
@@ -32,11 +31,17 @@ except Exception:                                    # 재설정 불가 환경 �
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+# 원본은 QAE\____Rawdata___ 에 떨궈 넣는다. 이 폴더(블벅경제지표)에 그냥 둬도
+# 계속 읽는다 — 두 폴더를 같이 훑고 수정시각 최신순으로 고른다.
+sys.path.insert(0, os.path.dirname(BASE))
+import rawdata                                       # noqa: E402
+
+SEARCH_DIRS = rawdata.search_dirs([BASE])
+PATTERN = " / ".join(os.path.join(d, "*.xlsx") for d in SEARCH_DIRS)  # 로그용
 # 파일명 규칙을 믿지 않는다. 블룸버그가 내보내는 이름이 매번 다르다
-# ('32253597_20260902_050757_eco.xlsx' 도 오고 'ecocal_fipjgrge.xlsx' 도 온다).
-# 그래서 폴더의 모든 xlsx 를 후보로 두고, 헤더가 WECO 형식인지로 거른 뒤
+# ('32253597_20260902_050757_eco.xlsx' 도 오고 'ecocal_fipjgrge (2).xlsx' 도 온다).
+# 그래서 두 폴더의 모든 xlsx 를 후보로 두고, 헤더가 WECO 형식인지로 거른 뒤
 # 최근에 쌓인 순서로 고른다.
-PATTERN = os.path.join(BASE, "*.xlsx")
 # 달력 파일이 아닌 것 (구버전 통합본 등)
 EXCLUDE_NAMES = {"weco_global.xlsx"}
 # WECO 내보내기라면 반드시 있는 컬럼
@@ -161,11 +166,10 @@ def pick_files(n=None):
     n 을 주면 그 개수만. 안 주면 '가장 최신 파일에서 MERGE_DAYS 안'에 들어온 것만
     최대 MAX_FILES 개. 옛날에 넣어둔 파일은 이 창 밖이라 자동으로 빠진다.
     """
-    files = [f for f in glob.glob(PATTERN)
-             if not os.path.basename(f).startswith("~$")
-             and os.path.basename(f).lower() not in EXCLUDE_NAMES
+    # rawdata.find_all("") = 검색 폴더 전체의 xlsx 를 최신순으로
+    files = [f for f in rawdata.find_all("", exts=(".xlsx",), extra_dirs=[BASE])
+             if os.path.basename(f).lower() not in EXCLUDE_NAMES
              and _is_weco(f)]
-    files.sort(key=lambda f: (os.path.getmtime(f), os.path.basename(f)), reverse=True)
     if n is not None:
         return files[:n]
     if not files:
@@ -316,7 +320,7 @@ def load_rows(verbose=True):
 
     if verbose:
         label = {"ind": "지표", "evt": "연설·이벤트"}
-        print("[source] " + BASE)
+        print("[source] " + " / ".join(SEARCH_DIRS))
         for p, kind, total, kept, dropped, skipped, dup, diag in stat:
             mt = dt.datetime.fromtimestamp(os.path.getmtime(p)).strftime("%Y-%m-%d %H:%M")
             tail = ", 컨센서스 없어 제외 {}행".format(dropped) if dropped else ""

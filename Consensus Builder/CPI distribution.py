@@ -5,6 +5,7 @@ haver-api 의 dashboard_data.xlsx 에서 직접 읽어 국가별 CPI 분포 대�
 
 데이터 흐름:
   dashboard_data.xlsx (Wide=원자료, Metadata=설명) → YoY% 계산
+  (기준연도 변경으로 끊긴 지수는 이어붙인 뒤 계산 — find_level_steps 주석 참고)
   → descriptor 콜론 앞부분으로 국가 분류 → 4-panel 시각화
 
 4패널 구성:
@@ -20,6 +21,10 @@ haver-api 의 dashboard_data.xlsx 에서 직접 읽어 국가별 CPI 분포 대�
 from pathlib import Path
 import json
 import datetime
+import re
+from collections import Counter
+
+import numpy as np
 import pandas as pd
 
 # ============================================================
@@ -188,6 +193,85 @@ def compute_yoy_smart(series):
         lag = 1           # annual
 
     return (series / series.shift(lag) - 1.0) * 100.0
+
+
+# ------------------------------------------------------------
+# 기준연도 변경(리베이스) 이어붙이기
+# ------------------------------------------------------------
+# 통계청이 지수 기준연도를 바꾸면(예: 일본 2020=100 -> 2025=100) 원계열의 수준이
+# 그 달에 통째로 내려앉는다. 겹치는 구간을 같이 주지 않으므로 레벨만 보고 YoY 를
+# 계산하면 그 뒤 12개월이 통째로 가짜 마이너스가 된다.
+#   실제로 일본은 2025-01 에 731개 중 532개가 한꺼번에 끊겨(125.6 -> 98.0)
+#   2025년 내내 중앙값 YoY 가 -10% 로 찍혔다.
+# 그래서 끊긴 시점 이전 구간에 링크 비율을 곱해 수준을 맞춘 뒤 YoY 를 계산한다.
+#
+# 한계를 알고 쓸 것: 겹치는 구간이 원자료에 없어서 링크 비율에는 이음매 달의 실제
+# 월간 상승분이 섞여 들어간다. 중앙값은 제자리를 찾지만(일본 2025년 1.5~1.9%,
+# 연속 시리즈인 코어CPI 대비 평소 격차 +0.25%p 그대로) 품목별로는 그 달의 가격
+# 변동이 서로 달라서, 이어붙인 12개월 동안 '0% 미만 품목' 비중이 실제보다 약 9%p
+# 높게 나온다. 이걸 마저 없애려면 구 기준 계열이나 공식 링크계수가 필요하다.
+#
+# 품목 하나가 실제로 급등한 것과 구분하는 기준은 **동시성**이다. 리베이스는 한 나라
+# 시리즈가 같은 달에 우르르 끊기고, 에너지 급등 같은 건 품목마다 시점이 흩어진다.
+REBASE_MIN_STEP = 0.08      # 한 달 만에 로그수익률이 이만큼 튀면 후보
+REBASE_PERSIST = 0.06       # 튄 뒤 12개월 평균이 이전 12개월과 이만큼 차이나야 (되돌아오는 급등 제외)
+REBASE_MIN_SHARE = 0.20     # 그 달에 그 나라 레벨 시리즈의 이 비율 이상이 같이 튀어야 리베이스
+REBASE_MIN_COUNT = 10       # 시리즈가 적은 나라에서 우연히 걸리지 않게 최소 개수
+
+# 대상은 '기준연도=100' 으로 표기된 지수뿐이다. 같은 폴더 데이터에 PMI 확산지수
+# (50+=Expansion) 가 섞여 있는데, 2020-02 코로나 급락 후 반등이 계단처럼 보여서
+# 안 거르면 리베이스로 오인한다 (China 5/16 오탐이 실제로 났다).
+_INDEX_BASE_RE = re.compile(r"=\s*100\b")
+
+
+def has_index_base(descriptor):
+    """descriptor 에 '2025=100' 같은 기준연도 표기가 있는지."""
+    return bool(descriptor) and bool(_INDEX_BASE_RE.search(str(descriptor)))
+
+
+def find_level_steps(series):
+    """한 시리즈의 계단형 끊김 후보 {날짜: 링크비율}. 비율 = 새 수준 / 직전 수준."""
+    s = pd.to_numeric(series, errors='coerce').dropna()
+    s = s[s > 0]
+    if len(s) < 30:
+        return {}
+    lr = np.log(s).diff()
+    out = {}
+    for d, v in lr.items():
+        if not np.isfinite(v) or abs(v) < REBASE_MIN_STEP:
+            continue
+        i = s.index.get_loc(d)
+        if not isinstance(i, int) or i < 1:
+            continue
+        before = s.iloc[max(0, i - 12):i]
+        after = s.iloc[i:i + 12]
+        if len(before) < 6 or len(after) < 6:
+            continue
+        # 새 수준에 눌러앉았는지 (한 달 튀었다 돌아오는 건 리베이스가 아니다)
+        if abs(np.log(after.mean() / before.mean())) < REBASE_PERSIST:
+            continue
+        out[d] = float(s.iloc[i] / s.iloc[i - 1])
+    return out
+
+
+def detect_rebase_dates(steps_by_col, n_series):
+    """같은 달에 몰려서 끊긴 시점만 리베이스로 판정. 반환: {날짜: 끊긴 시리즈 수}"""
+    counts = Counter(d for steps in steps_by_col.values() for d in steps)
+    n = max(n_series, 1)
+    return {d: k for d, k in counts.items()
+            if k >= REBASE_MIN_COUNT and k / n >= REBASE_MIN_SHARE}
+
+
+def chain_link(series, rebase_dates, steps):
+    """리베이스 시점 이전 구간에 링크 비율을 곱해 하나의 연속 시리즈로 만든다."""
+    hits = [d for d in rebase_dates if d in steps]
+    if not hits:
+        return series
+    out = pd.to_numeric(series, errors='coerce').copy()
+    for d in sorted(hits, reverse=True):   # 최신 것부터 → 여러 번 바뀌었어도 누적된다
+        mask = out.index < d
+        out.loc[mask] = out.loc[mask] * steps[d]
+    return out
 
 
 def compute_yoy_monthly(df):
@@ -513,6 +597,15 @@ def extract_all_from_haver():
     # 4) 국가별 데이터 빌드 — chg_type별 분기
     result = {}
     for country, items in country_cols.items():
+        # 레벨 시리즈는 YoY 전에 기준연도 변경을 이어붙인다 (없으면 그대로 지나간다)
+        level_cols = [col for col, desc, chg in items
+                      if chg is None and has_index_base(desc)]
+        steps_by_col = {col: find_level_steps(wide[col]) for col in level_cols}
+        rebase_dates = detect_rebase_dates(steps_by_col, len(level_cols))
+        for d, k in sorted(rebase_dates.items()):
+            print(f"  [REBASE] {country}: {d:%Y-%m} 기준연도 변경 감지 "
+                  f"— {k}/{len(level_cols)}개 시리즈 이어붙임")
+
         yoy_per_col = {}
         for col, desc, chg_type in items:
             s = wide[col]
@@ -521,7 +614,8 @@ def extract_all_from_haver():
             elif chg_type in ('mom', 'qoq'):
                 yoy_per_col[col] = derive_yoy_from_mom_pct(s)
             else:
-                yoy_per_col[col] = compute_yoy_smart(s)
+                yoy_per_col[col] = compute_yoy_smart(
+                    chain_link(s, rebase_dates, steps_by_col.get(col, {})))
         sub_df = pd.DataFrame(yoy_per_col)
         sub_df.columns = [parse_subcategory(d) for _, d, _ in items]
         sub_df = sub_df.loc[:, ~sub_df.columns.duplicated()]

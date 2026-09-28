@@ -1,0 +1,402 @@
+[
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260916_Asia Economics & Strategy Daily_ SG Econ Comments, CN Aug Data, __9f37b2e48412.pdf",
+    "house": "Citi",
+    "bytes": 496036,
+    "modified": "2026-09-17T07:07:57.299354+09:00",
+    "sha256": "6cbbbeb0f1caec782a712eec81398ec2074d9f0cb49ac1db88ecaa631570abe5",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260916_Emerging Markets Economics_ Emerging Markets El Niño Monthly Tra__354b6526e471.pdf",
+    "house": "Citi",
+    "bytes": 2361316,
+    "modified": "2026-09-17T07:07:38.734331+09:00",
+    "sha256": "53ec52e5cb79f0b7e5edeed724a741acdab09bd1441990ca433d2ac165a6c3b8",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260916_US Economics_ Retail sales show resilient consumer spending__6101d54fe20d.pdf",
+    "house": "Citi",
+    "bytes": 148647,
+    "modified": "2026-09-17T07:06:59.610370+09:00",
+    "sha256": "12ba06908c587150df7b4fa351cc6988d716ffc88bf21f4dc4813aba77708415",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260916_US Economics_ The Daily Update - Phoning in a rate hike__cf729a0077f0.pdf",
+    "house": "Citi",
+    "bytes": 190784,
+    "modified": "2026-09-17T07:07:20.237097+09:00",
+    "sha256": "634485a706c9261d1e5bf48698d20400b9fa09237ca5e18a703369ab909e121b",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Brazil_ Weak July Real GDP Growth (Ramos)__6644d5ed18dd.pdf",
+    "house": "GS",
+    "bytes": 277673,
+    "modified": "2026-09-17T07:03:19.085846+09:00",
+    "sha256": "f2a7f13227e9b58cf676a57a820472ac4898de66b17c8d691044cb2f9e8c4098",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Chile MPC Minutes_ Dovish Signals as Directors Flag Risks of a M__d8aa113b7619.pdf",
+    "house": "GS",
+    "bytes": 217651,
+    "modified": "2026-09-17T07:03:12.191377+09:00",
+    "sha256": "47254762fc5fae8a8c3a791c99915601b6df14e00b6c6613a68b7e81d5fe4ae4",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_China_ SAFE data suggest increased FX inflows in August__6b274d8127ca.pdf",
+    "house": "GS",
+    "bytes": 315779,
+    "modified": "2026-09-17T07:03:40.599178+09:00",
+    "sha256": "e802f2f3e8217e54368f3e31c1db9794a8cd4e601491e982b2fb41d3e557c691",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Colombia_ Higher End-2026 Inflation Expectations but Lower Expec__de03eab80e2c.pdf",
+    "house": "GS",
+    "bytes": 315380,
+    "modified": "2026-09-17T07:06:08.951470+09:00",
+    "sha256": "676694e90c3e1bfaee4dd78ef582f1db884f8fc4193df164890fa2236ff4d92a",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Euro Area Data Update_ Area-Wide IP Edged Down in July__a36fa570841c.pdf",
+    "house": "GS",
+    "bytes": 487083,
+    "modified": "2026-09-17T07:03:27.108664+09:00",
+    "sha256": "7c6470a8d36f55d7c3c14c50cb1da9552990baffbf39de0911a7d0440c5a6bae",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_India_ Goods trade deficit narrows in August on lower oil and go__a847016ffa31.pdf",
+    "house": "GS",
+    "bytes": 315822,
+    "modified": "2026-09-17T07:04:27.070591+09:00",
+    "sha256": "b7275bc87772630054e6ef1e679d642f8bd94a739c49226bf77b1af377d1bcb1",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Japan_ August Trade_ Crude Oil Import Prices Dip Temporarily, bu__f98333efb3a9.pdf",
+    "house": "GS",
+    "bytes": 313530,
+    "modified": "2026-09-17T07:03:54.165722+09:00",
+    "sha256": "9f44cf6edaaba19edeeaa5ce0478f263fd278315692094357716e2109703414f",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_LATAM Today_ September 16, 2026__633e55cc552d.pdf",
+    "house": "GS",
+    "bytes": 393538,
+    "modified": "2026-09-17T07:03:05.256410+09:00",
+    "sha256": "047a4574cbfdb1a1cf6084ab181731cfa64f8237c2ad25ef2d8debabc69d8cce",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_New Zealand_ Balance of Payments_ Current account deficit widens__6599044ef97c.pdf",
+    "house": "GS",
+    "bytes": 220734,
+    "modified": "2026-09-17T07:04:07.876432+09:00",
+    "sha256": "356e57d7211f73b3761370c74078b3805d27f9edbf499d0cb2847aa6b008cd18",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Peru_ Very Strong and Broad-Based Real Activity Rebound in July;__0c0787f67391.pdf",
+    "house": "GS",
+    "bytes": 251131,
+    "modified": "2026-09-17T07:06:16.202470+09:00",
+    "sha256": "13ede09b0a4007f08638999bfa3fd320efb8555347ca0a32c44751049150998c",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_Rates Vol Monitor_ Dispersion of Risks__2704a3517386.pdf",
+    "house": "GS",
+    "bytes": 2841234,
+    "modified": "2026-09-17T07:04:14.156797+09:00",
+    "sha256": "9043c2158938c977aa8d315a32886fe499db4d24981deee3cb8be7564a9702f9",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_South Africa_ Inflation Expectations Ease Slightly in Q3, In Lin__2e8f9341b0d4.pdf",
+    "house": "GS",
+    "bytes": 217349,
+    "modified": "2026-09-17T07:03:33.558641+09:00",
+    "sha256": "3209979850606ad19755bf28096cc905b5fa3636895d349e4eb9ddca314a9b3a",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_UK—Headline Inflation Rises as Expected in August__3201f2388344.pdf",
+    "house": "GS",
+    "bytes": 664540,
+    "modified": "2026-09-17T07:03:47.158175+09:00",
+    "sha256": "ede5c0ae1fdbef2ce835b4ece5a67870a15b6c553310f8c88864e64b7fd0c671",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_US Daily_ What Explains the Decline in the Labor Share of Income__802dc09e73e3.pdf",
+    "house": "GS",
+    "bytes": 336808,
+    "modified": "2026-09-17T07:04:00.919074+09:00",
+    "sha256": "78dc0cb8efe9eda71db79c29997acf0ec559263756da128f97c2f2dd821a4a7d",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260916_USA_ Core Retail Sales Well Above Expectations; Boosting Q3 GDP __8817a7e73f84.pdf",
+    "house": "GS",
+    "bytes": 258326,
+    "modified": "2026-09-17T07:02:58.368823+09:00",
+    "sha256": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_Bahrain_FX assets drop, claims on government rise__96906fea844c.pdf",
+    "house": "HSBC",
+    "bytes": 310023,
+    "modified": "2026-09-17T07:11:29.064115+09:00",
+    "sha256": "57281be4a335a00ea3ffb18fdd7f6fb98e45ea457baac1a645d73b49294a84cd",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_China Macro Tracker_AI guardrails_ A topic for US-China talks___345ee8ff2ea7.pdf",
+    "house": "HSBC",
+    "bytes": 859429,
+    "modified": "2026-09-17T07:12:25.394952+09:00",
+    "sha256": "ae936b5ba21383ebd61bcab00ca4048d032287236ad41db129334d9f5789c4d0",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_Europe macro tracker_Turn of the screw__f506c17bf555.pdf",
+    "house": "HSBC",
+    "bytes": 910991,
+    "modified": "2026-09-17T07:09:22.510967+09:00",
+    "sha256": "b76e0d19d2574984abbf0ba5ac1af96dc792ffce0208864addaf86b6fc5e7203",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_HSBC Expert Webcast_ Romania – Breaking the stalemate__Thursday,__cd4f85bd258b.pdf",
+    "house": "HSBC",
+    "bytes": 221738,
+    "modified": "2026-09-17T07:09:18.929815+09:00",
+    "sha256": "7abaeef3b787cda35a18f5efcf49ef7affc9e838e9504d966fa689cc2d16d3d1",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_Hungary (CB preview)_Rate on hold, new forecast, target revision__436029766619.pdf",
+    "house": "HSBC",
+    "bytes": 305876,
+    "modified": "2026-09-17T07:09:40.357944+09:00",
+    "sha256": "f55cc40397da899df3b22e95a7ebc13bceeffb2e405d96cd0fca5523a5ddf4de",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_India trade deficit narrows_Exports strong; electronics becoming__4f3e09ed4369.pdf",
+    "house": "HSBC",
+    "bytes": 302684,
+    "modified": "2026-09-17T07:10:31.876160+09:00",
+    "sha256": "e72d96edcd8f96dde1055e27e4402adac55da7f31f668a7fd88c1ef38251ea4c",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_South Africa MPC preview_Catch-up hike__5271a65e38dc.pdf",
+    "house": "HSBC",
+    "bytes": 252535,
+    "modified": "2026-09-17T07:09:32.362865+09:00",
+    "sha256": "97c9b77b582e3a5d505eda9b51d98f122f325e70cdf447478f722f86e798ae4f",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_Thailand in focus_What the latest electronics indicators mean fo__4e99d27cb204.pdf",
+    "house": "HSBC",
+    "bytes": 571192,
+    "modified": "2026-09-17T07:09:36.216684+09:00",
+    "sha256": "02f5beb178006f584e2f242958a115a8520e70413e39886519f70b5f530dd14b",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260916_UK Inflation Briefing (Aug)_Higher forecasts, with energy prices__593655762003.pdf",
+    "house": "HSBC",
+    "bytes": 681429,
+    "modified": "2026-09-17T07:09:16.136552+09:00",
+    "sha256": "1996a536fb018a07f5d1045baf9968ac1ce3142a3053586d36b90a9cf0c333c3",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Brazil _ Economic activity index fell again in July, as expected__961ecf059a27.pdf",
+    "house": "JPM",
+    "bytes": 497894,
+    "modified": "2026-09-17T07:01:55.816463+09:00",
+    "sha256": "b15c01f3e2c8ae6a572b599e2360c7e78778e17c200ff0b0797e20b617224ded",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Brazil _ Weekly trade and financial flows__b48980db5fc1.pdf",
+    "house": "JPM",
+    "bytes": 810275,
+    "modified": "2026-09-17T07:01:32.328688+09:00",
+    "sha256": "707d920fb7190fea01e81a3f1766eeab54e47fac182f4ca97831e98d4f3080c3",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Committee wants another dose__4f5af745364b.pdf",
+    "house": "JPM",
+    "bytes": 376182,
+    "modified": "2026-09-17T07:01:25.931058+09:00",
+    "sha256": "eecf4996176bb191528cf11aeb5a7dfcb0b71f59d80b4e6887245471aaff072e",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_DomRep_ Subsidies start to add up__4c9086b07908.pdf",
+    "house": "JPM",
+    "bytes": 442508,
+    "modified": "2026-09-17T07:02:14.940490+09:00",
+    "sha256": "01705ba10360250355fa26a4e44051aca7fa90b62cc8e4c78d530f0b5255323e",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Euro area data wrap up__dba9eb813a1a.pdf",
+    "house": "JPM",
+    "bytes": 725542,
+    "modified": "2026-09-17T07:02:09.019604+09:00",
+    "sha256": "df5b2af67419953350ce2f26cb90cd4eba2a981df204fcf2ea9c7038f55c89fe",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Israel_ Inflation steady at 1.5%oya__7d50f9de2e15.pdf",
+    "house": "JPM",
+    "bytes": 590556,
+    "modified": "2026-09-17T07:02:27.956276+09:00",
+    "sha256": "0b003f59dfcd1688bc46d41f3596902347579b6ffea624bdddadcb2f331f98dc",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Japan_ Machinery orders slip in July__d67212b7bffd.pdf",
+    "house": "JPM",
+    "bytes": 425708,
+    "modified": "2026-09-17T07:02:33.904093+09:00",
+    "sha256": "55b8a31c03a3ea8b33bb6e8574925deac2a5fc946607fea022ce04f90588635d",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_Peru _ Activity bounced back in July, aligning with firm domesti__99c83a2afe94.pdf",
+    "house": "JPM",
+    "bytes": 557640,
+    "modified": "2026-09-17T07:02:02.452522+09:00",
+    "sha256": "42dea169f833e51192373af853325e36363829eb8269cdddafbf8cdffc423b46",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_UK_ Inflation accelerates in August, core mixed__034d4b72742f.pdf",
+    "house": "JPM",
+    "bytes": 607975,
+    "modified": "2026-09-17T07:02:21.386757+09:00",
+    "sha256": "13a3b3da6532121b735853a1f4765ed41dae6cd805553fe858fb685af50bde2c",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_US_ Import price inflation remained firm in August__a640b89625e8.pdf",
+    "house": "JPM",
+    "bytes": 447130,
+    "modified": "2026-09-17T07:01:43.919041+09:00",
+    "sha256": "4c0d1544365d35b4a06c8e0896b6158165bd0b3350445463c0570b5ec9583d5b",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_US_ NAHB index matches weakest reading since 2022__0f356ffbcf98.pdf",
+    "house": "JPM",
+    "bytes": 424316,
+    "modified": "2026-09-17T07:01:37.951408+09:00",
+    "sha256": "5f40d709b75c9584eb2e40559b0a1c4c43f8f0db7974a7ccb63d509bdb65dd01",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260916_US_ Raising 3Q GDP to 3.5% as the consumer chugs along__4542511969da.pdf",
+    "house": "JPM",
+    "bytes": 494635,
+    "modified": "2026-09-17T07:01:50.288230+09:00",
+    "sha256": "68f93a8dc8eac26440b86dd435e226f7379d99d2700a6e556754c7e9c168bb9c",
+    "stable_during_read": true,
+    "pdf_header": true,
+    "reviewed": false
+  }
+]

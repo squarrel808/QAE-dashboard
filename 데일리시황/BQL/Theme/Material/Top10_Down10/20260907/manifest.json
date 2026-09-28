@@ -1,0 +1,19 @@
+{
+  "asOf": "2026-09-07",
+  "tag": "20260907",
+  "materialDir": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\20260907",
+  "publishDir": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20260907\\Top10_Down10",
+  "manifest": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\20260907\\manifest.json",
+  "latestPointer": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\latest_outputs.json",
+  "rankings": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\20260907\\Market_10D_Rankings_20260907.json",
+  "enriched": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\Market_10D_Enriched_latest.json",
+  "datedEnriched": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\20260907\\Market_10D_Enriched_20260907.json",
+  "workbook": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20260907\\Top10_Down10\\SPX_CSI300_STOXX600_10D_Top10_Down10_20260907.xlsx",
+  "chartDir": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Top10_Down10\\20260907\\charts",
+  "docx": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20260907\\Top10_Down10\\SPX_CSI300_STOXX600_최근10거래일_Top10_Down10_20260907.docx",
+  "pdf": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20260907\\Top10_Down10\\SPX_CSI300_STOXX600_최근10거래일_Top10_Down10_20260907_preview.pdf",
+  "status": "complete",
+  "workbookValidated": true,
+  "wordGenerated": true,
+  "completedAt": "2026-09-08T18:41:46.1844039+09:00"
+}

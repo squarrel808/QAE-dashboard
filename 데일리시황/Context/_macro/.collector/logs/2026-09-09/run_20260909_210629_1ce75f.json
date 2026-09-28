@@ -1,0 +1,26 @@
+{
+  "run_id": "20260909_210629_1ce75f",
+  "mode": "backfill",
+  "start": "2026-06-08",
+  "end": "2026-09-09",
+  "started": "2026-09-09T21:06:35.558825+09:00",
+  "finished": "2026-09-09T21:34:16.542647+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-09\\run_20260909_210629_1ce75f.log",
+  "houses": {
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "HSBC still advertises later pages, but Next is unavailable.",
+      "counts": {
+        "discovered": 417,
+        "in_range": 417,
+        "no_original_pdf": 126,
+        "already_saved": 262,
+        "attempted": 29,
+        "failed": 29
+      },
+      "connection_lost": false
+    }
+  }
+}

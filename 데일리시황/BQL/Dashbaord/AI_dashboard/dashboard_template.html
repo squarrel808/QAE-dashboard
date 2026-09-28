@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>미국 AI 밸류체인 가격·EPS·P/E</title>
+  <style>
+    :root{--ink:#17243a;--navy:#17365d;--muted:#64748b;--line:#d9e2ec;--pale:#f4f7fb;--blue:#175cd3}
+    *{box-sizing:border-box}html{font-family:Arial,'Malgun Gothic',sans-serif;color:var(--ink);background:#fff}
+    body{margin:0;font-size:14px}button{font:inherit;cursor:pointer}main{max-width:1720px;margin:auto;padding:18px 22px 42px}
+    header{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;border-bottom:2px solid var(--navy);padding-bottom:12px}
+    h1{font-size:23px;line-height:1.2;margin:0 0 4px}header p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+    .date-badge{font-size:12px;color:var(--navy);font-weight:700;white-space:nowrap}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 0}
+    .control-group{display:flex;align-items:center;gap:5px}.control-label{color:var(--muted);font-size:12px;margin-right:4px}
+    .control{padding:6px 11px;border:1px solid #bdcbdc;border-radius:5px;background:#fff;color:var(--navy);font-weight:700;font-size:12px}
+    .control.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    .layout{display:grid;grid-template-columns:296px minmax(0,1fr);gap:16px;align-items:start}
+    aside{position:sticky;top:10px;border:1px solid var(--line);border-radius:8px;background:#fbfdff;padding:12px}
+    .aside-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.aside-head h2{font-size:15px;margin:0}
+    .aside-actions{display:flex;gap:4px}.aside-actions button{font-size:11px;border:0;color:var(--blue);background:none;padding:3px}
+    .group-list{display:grid;gap:5px}.group{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff;padding:7px 8px;text-align:left;display:grid;grid-template-columns:14px minmax(0,1fr);gap:7px;align-items:start;color:var(--ink)}
+    .group[aria-pressed="false"]{opacity:.48}.group:hover,.group:focus-visible{border-color:#6e9cd4;outline:0}.swatch{width:11px;height:11px;border-radius:3px;margin-top:2px}
+    .group-name{font-size:12px;font-weight:700;line-height:1.25}.group-meta{display:block;font-size:10px;color:var(--muted);font-weight:400;margin-top:3px;line-height:1.35}
+    .aside-note{font-size:11px;line-height:1.45;color:var(--muted);border-top:1px solid var(--line);margin-top:10px;padding-top:9px}
+    .charts{min-width:0;display:grid;gap:12px}.chart-panel{border:1px solid var(--line);border-radius:8px;padding:11px 12px 8px;background:#fff}
+    .chart-heading{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:4px}.chart-heading h2{font-size:16px;margin:0}.chart-heading span{font-size:11px;color:var(--muted);text-align:right}
+    .chart-wrap{height:240px;position:relative}.chart-wrap svg{display:block;width:100%;height:100%;overflow:visible}
+    .axis-label{fill:#64748b;font-size:12px}.grid-line{stroke:#e6edf4;stroke-width:1}.axis-line{stroke:#94a3b8;stroke-width:1}.base-line{stroke:#b8c9df;stroke-dasharray:4 3}
+    .chart-tooltip{position:absolute;pointer-events:none;background:#fff;border:1px solid #9aabc1;border-radius:6px;box-shadow:0 7px 22px rgba(23,54,93,.14);padding:8px 10px;min-width:160px;max-height:200px;overflow:auto;font-size:11px;line-height:1.5;z-index:5}
+    .chart-tooltip[hidden]{display:none}.tip-row{display:flex;justify-content:space-between;gap:14px;white-space:nowrap}.tip-name{font-weight:700}.tip-muted{color:var(--muted)}
+    .empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px;pointer-events:none}
+    footer{margin-top:18px;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);font-size:11px;line-height:1.55}
+    @media(max-width:980px){.layout{grid-template-columns:1fr}aside{position:static}.group-list{grid-template-columns:repeat(3,minmax(0,1fr))}.chart-wrap{height:230px}}
+    @media(max-width:630px){main{padding:12px 10px 28px}header{display:block}.date-badge{display:block;margin-top:6px}.group-list{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-heading{display:block}.chart-heading span{display:block;text-align:left;margin-top:3px}.chart-wrap{height:215px}}
+  </style>
+</head>
+<body><main>
+  <header>
+    <div><h1>미국 AI 밸류체인 가격·EPS·P/E</h1><p>기존 12개 밸류체인 분류 · S&amp;P 500 현 구성종목 · 원자료가 있는 전체 거래일</p></div>
+    <div class="date-badge" id="dateBadge"></div>
+  </header>
+  <div class="toolbar">
+    <div class="control-group" aria-label="종목 범위"><span class="control-label">분류 범위</span><button class="control" data-mode="Core">Core</button><button class="control active" data-mode="Expanded">인접 포함</button></div>
+    <div class="control-group" aria-label="표시 기간"><span class="control-label">기간</span><button class="control active" data-range="all">전체</button><button class="control" data-range="1y">1년</button><button class="control" data-range="6m">6개월</button></div>
+  </div>
+  <div class="layout">
+    <aside><div class="aside-head"><h2>밸류체인 표시</h2><div class="aside-actions"><button id="showAll">모두 표시</button><button id="hideAll">모두 숨김</button></div></div><div id="groupList" class="group-list"></div><p class="aside-note">색상 항목을 눌러 세 그래프에서 해당 밸류체인을 함께 표시하거나 숨길 수 있습니다. P/E는 배수가 높을수록 비싸며, EPS와 가격은 각 그룹의 첫 유효일을 100으로 둔 변화입니다.</p></aside>
+    <div class="charts">
+      <section class="chart-panel" aria-labelledby="priceTitle"><div class="chart-heading"><h2 id="priceTitle">가격</h2><span id="priceMeta"></span></div><div class="chart-wrap" id="priceWrap"><svg id="priceChart" role="img" aria-label="밸류체인 가격 추이"></svg><div class="chart-tooltip" hidden></div></div></section>
+      <section class="chart-panel" aria-labelledby="epsTitle"><div class="chart-heading"><h2 id="epsTitle">12개월 선행 EPS</h2><span id="epsMeta"></span></div><div class="chart-wrap" id="epsWrap"><svg id="epsChart" role="img" aria-label="밸류체인 12개월 선행 EPS 추이"></svg><div class="chart-tooltip" hidden></div></div></section>
+      <section class="chart-panel" aria-labelledby="peTitle"><div class="chart-heading"><h2 id="peTitle">12개월 선행 P/E</h2><span id="peMeta"></span></div><div class="chart-wrap" id="peWrap"><svg id="peChart" role="img" aria-label="밸류체인 12개월 선행 P/E 추이"></svg><div class="chart-tooltip" hidden></div></div></section>
+    </div>
+  </div>
+  <footer id="methodNote"></footer>
+</main>
+<script>const DATA = /*__DASHBOARD_DATA__*/;</script>
+<script>
+(() => {
+  'use strict';
+  const dates=DATA.dates, times=dates.map(d=>Date.parse(d+'T00:00:00Z'));
+  const groups=DATA.groups, selected=new Set(groups.map(g=>g.key));
+  let mode='Expanded', period='all';
+  const W=1120,H=240,L=58,R=18,T=12,B=28;
+  const $=id=>document.getElementById(id);
+  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const formatDate=s=>s?s.slice(2,7).replace('-','.'):'';
+  const formatFullDate=s=>s?s.replaceAll('-','.'):'';
+  const formatValue=(key,x)=>x==null?'—':key==='pe'?x.toFixed(1)+'배':x.toFixed(1);
+  function startIndex(){
+    if(period==='all') return 0;
+    const end=times[times.length-1],months=period==='1y'?12:6;
+    const d=new Date(end);d.setUTCMonth(d.getUTCMonth()-months);
+    const target=d.getTime();let i=times.findIndex(x=>x>=target);return i<0?0:i;
+  }
+  function renderList(){
+    $('groupList').innerHTML=groups.map(g=>{
+      const row=g.modes[mode],i=dates.length-1;
+      const p=row.price[i],e=row.eps[i],pe=row.pe[i];
+      return `<button type="button" class="group" data-key="${escape(g.key)}" aria-pressed="${selected.has(g.key)}" title="${escape(g.description)}"><span class="swatch" style="background:${g.color}"></span><span class="group-name">${escape(g.short)}<span class="group-meta">${row.members}종목 · 가격 ${formatValue('price',p)} · EPS ${formatValue('eps',e)} · P/E ${formatValue('pe',pe)}</span></span></button>`;
+    }).join('');
+  }
+  function nearestIndex(t,lo,hi){let a=lo,b=hi;while(a<b){const m=(a+b)>>1;if(times[m]<t)a=m+1;else b=m;}if(a<=lo)return lo;if(a>hi)return hi;return Math.abs(times[a]-t)<Math.abs(times[a-1]-t)?a:a-1;}
+  function drawMetric(key){
+    const svg=$(key+'Chart'),meta=$(key+'Meta'),wrap=$(key+'Wrap'),tip=wrap.querySelector('.chart-tooltip');
+    const lo=startIndex(),hi=dates.length-1,visible=groups.filter(g=>selected.has(g.key));
+    const points=[];
+    for(const g of visible){const v=g.modes[mode][key];for(let i=lo;i<=hi;i++)if(v[i]!=null&&Number.isFinite(v[i]))points.push(v[i]);}
+    let yMin=Math.min(...points),yMax=Math.max(...points);
+    if(!points.length){svg.innerHTML='';meta.textContent='선택한 밸류체인의 유효 데이터 없음';tip.hidden=true;return;}
+    if(key!=='pe'){yMin=Math.min(yMin,100);yMax=Math.max(yMax,100);}
+    let spread=yMax-yMin;if(spread<1)spread=Math.max(1,Math.abs(yMax)*.05);
+    yMin-=spread*.10;yMax+=spread*.10;
+    if(key==='pe')yMin=Math.max(0,yMin);
+    const left=times[lo],right=times[hi],delta=Math.max(1,right-left);
+    const x=i=>L+(times[i]-left)/delta*(W-L-R);
+    const y=v=>T+(yMax-v)/(yMax-yMin)*(H-T-B);
+    const parts=[`<rect x="0" y="0" width="${W}" height="${H}" fill="white"/>`];
+    for(let k=0;k<=4;k++){
+      const value=yMin+(yMax-yMin)*k/4,yy=y(value);
+      parts.push(`<line class="grid-line" x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}"/><text class="axis-label" x="${L-8}" y="${yy+4}" text-anchor="end">${key==='pe'?value.toFixed(1)+'x':value.toFixed(0)}</text>`);
+    }
+    if(key!=='pe'&&yMin<=100&&yMax>=100)parts.push(`<line class="base-line" x1="${L}" x2="${W-R}" y1="${y(100)}" y2="${y(100)}"/>`);
+    for(let k=0;k<=5;k++){const i=lo+Math.round((hi-lo)*k/5),xx=x(i);parts.push(`<line class="axis-line" x1="${xx}" x2="${xx}" y1="${H-B}" y2="${H-B+4}"/><text class="axis-label" x="${xx}" y="${H-5}" text-anchor="middle">${formatDate(dates[i])}</text>`);}
+    for(const g of visible){
+      const values=g.modes[mode][key];let path='',open=false;
+      for(let i=lo;i<=hi;i++){
+        const v=values[i];if(v==null||!Number.isFinite(v)){open=false;continue;}
+        path+=(open?'L':'M')+x(i).toFixed(2)+' '+y(v).toFixed(2);open=true;
+      }
+      if(path)parts.push(`<path d="${path}" fill="none" stroke="${g.color}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`);
+    }
+    parts.push(`<line class="crosshair" x1="0" x2="0" y1="${T}" y2="${H-B}" stroke="#55657a" stroke-dasharray="3 3" visibility="hidden"/>`);
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=parts.join('');
+    meta.textContent=`${formatFullDate(dates[lo])}–${formatFullDate(dates[hi])} · ${visible.length}개 표시`;
+    const cross=svg.querySelector('.crosshair');
+    svg.onmousemove=ev=>{
+      const rect=svg.getBoundingClientRect(),vx=(ev.clientX-rect.left)/rect.width*W;
+      if(vx<L||vx>W-R){tip.hidden=true;cross.setAttribute('visibility','hidden');return;}
+      const t=left+(vx-L)/(W-L-R)*delta,i=nearestIndex(t,lo,hi),xx=x(i);
+      cross.setAttribute('x1',xx);cross.setAttribute('x2',xx);cross.setAttribute('visibility','visible');
+      const rows=visible.map(g=>{const row=g.modes[mode],v=row[key][i],c=row.coverage[key][i];return v==null?'':`<div class="tip-row"><span class="tip-name" style="color:${g.color}">${escape(g.short)}</span><span>${formatValue(key,v)} <span class="tip-muted">${c==null?'':Math.round(c*100)+'%'}</span></span></div>`;}).filter(Boolean);
+      tip.innerHTML=`<b>${formatFullDate(dates[i])}</b><div class="tip-muted">오른쪽 숫자는 데이터 커버리지</div>${rows.join('')||'<div>유효값 없음</div>'}`;
+      tip.hidden=false;tip.style.left=Math.min(rect.width-170,Math.max(6,ev.clientX-rect.left+12))+'px';tip.style.top=Math.max(4,Math.min(rect.height-75,ev.clientY-rect.top-15))+'px';
+    };
+    svg.onmouseleave=()=>{tip.hidden=true;cross.setAttribute('visibility','hidden');};
+  }
+  function redraw(){renderList();for(const key of ['price','eps','pe'])drawMetric(key);}
+  $('groupList').addEventListener('click',ev=>{const item=ev.target.closest('[data-key]');if(!item)return;const k=item.dataset.key;selected.has(k)?selected.delete(k):selected.add(k);redraw();});
+  $('showAll').onclick=()=>{groups.forEach(g=>selected.add(g.key));redraw();};
+  $('hideAll').onclick=()=>{selected.clear();redraw();};
+  document.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{mode=btn.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===btn));redraw();});
+  document.querySelectorAll('[data-range]').forEach(btn=>btn.onclick=()=>{period=btn.dataset.range;document.querySelectorAll('[data-range]').forEach(x=>x.classList.toggle('active',x===btn));redraw();});
+  $('dateBadge').textContent=`${formatFullDate(DATA.meta.firstSession)}–${formatFullDate(DATA.meta.lastSession)} · ${DATA.meta.sessions}거래일`;
+  $('methodNote').textContent=`원천: ${DATA.meta.source} / ${DATA.meta.sourceSheet} (${DATA.meta.currency}). 현재 S&P 500 구성종목과 기존 AI 밸류체인 분류를 과거에 고정 적용합니다. 가격은 종목별 시총÷주가로 주식수를 복원해 주식수 가중 바스켓 가격을 연결하고 배당은 제외합니다. EPS는 같은 주식수로 가중한 12MF Blended EPS, P/E는 유효 종목의 시총가중 earnings yield 역수입니다. 가격·EPS는 각 밸류체인의 첫 유효 거래일=100이며, 시작점이 서로 다를 수 있습니다. EPS/P/E 커버리지가 당일 그룹 시총의 60% 미만이면 표시하지 않습니다. P/E 1배 미만·200배 초과는 이상치로 제외합니다. P/E는 가격과 EPS의 단순 비율 또는 종목 P/E 산술평균이 아니며, 세 지표의 유효 종목 집합이 달라 값이 정확히 맞물리지 않을 수 있습니다.`;
+  redraw();
+})();
+</script></body></html>

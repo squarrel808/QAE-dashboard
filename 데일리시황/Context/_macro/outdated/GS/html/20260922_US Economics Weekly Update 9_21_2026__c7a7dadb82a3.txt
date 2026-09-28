@@ -1,0 +1,117 @@
+search
+Search Marquee
+ 
+help_outline
+notifications
+person
+search
+article
+Form a View
+chevron_right
+search
+View to a Trade
+chevron_right
+monitoring
+Manage Portfolio
+chevron_right
+scatter_plot
+Data Services
+chevron_right
+cloud_download
+Downloads
+chevron_right
+THOUGHT LEADERSHIP
+chevron_left
+Goldman Sachs Research
+expand_more
+Market Insights
+expand_more
+MarketView
+chevron_right
+Events
+My Content
+US ECONOMICS WEEKLY UPDATE
+US Economics Weekly Update 9/21/2026
+Research | Economics | 22 September 2026 | 3:06AM UTC
+
+Renewed increases in oil and refined product prices will increase and prolong the passthrough to consumer prices, but the incremental impact should be smaller than in the spring.
+
+Oil prices have rebounded from $85/barrel in June/July to $120, and prices of refined products such as diesel and jet fuel have risen disproportionately too, adding to the pressure on consumer prices.
+
+Our strategists expect oil prices to fall to $85/barrel by end-2026 and $75 by end-2027, with refined product prices falling a more moderate 10% on average this year and another 15% in 2027.
+
+We estimate the following effects on core and headline inflation:
+
+A further boost to monthly core PCE inflation of 3-5bp through year-end, less than in the spring.
+
+A further boost to year-over-year core PCE inflation of 15bp, on top of the 35bp so far.
+
+Enough upward pressure on energy and food prices to keep headline PCE inflation near 3.5% through year-end before a drop-off to 2.5% in March 2027 and 2.0% in May as base effects kick in.
+
+The September FOMC meeting last week signaled strong support for at least one more hike this year.
+
+The FOMC raised the funds rate by 25bp to 3.75-4%.
+
+The meeting was more hawkish than we expected in a few ways:
+
+A 16-2 majority projected at least one more rate hike this year.
+
+The median fed funds rate projection remained elevated through 2029, and the median neutral rate projection rose from 3.06% in June to 3.25%.
+
+Chairman Warsh described the hike as having “removed a dose of accommodation.”
+
+We now expect the FOMC to deliver a second 25bp hike in October.
+
+We think consecutive hikes are most natural because the FOMC presented the hike as supporting “a timelier return” to 2% inflation.
+
+Another hike in December is possible but not our base case, partly because our forecast for core PCE inflation remains below the median FOMC participant’s forecast.  Some participants appear not to have penciled in a revision from upcoming methodological changes that we think will be worth -0.2pp.
+
+We kept our forecast for the terminal rate unchanged at 3.25-3.5% by adding to the September and December 2027 rate cuts we already expected a third 25bp cut in March 2028.
+
+Many FOMC participants will speak this week.
+
+President Williams speaks on Tuesday, Thursday, and Friday; Vice Chair Jefferson on Tuesday; President Barkin on Tuesday and Thursday; Governor Barr on Wednesday; President Paulson on Thursday; and President Hammack on Thursday and Friday.
+
+Research recap: The labor share of income has fallen substantially since 2000 for both genuine and measurement reasons.
+
+The labor share of income in the nonfarm business sector has declined about 7.5pp since the 1990s.
+
+Roughly 40% of the decline comes from factors that do not reflect a genuine shift in the distribution of income between labor and capital:
+
+Tax policy has incentivized using pass-throughs to report income as profits instead of wages.
+
+The depreciation rate is rising as short-lived capital goods like computers become a larger part of the capital stock, which depresses the labor share but does not boost capital’s net income.
+
+Some of the growth in equity compensation for high-paid workers is missed in the official statistics.
+
+Roughly 60% of the decline (4.5pp) looks genuine and comes from three overlapping factors:
+
+Rising markups, in part reflecting the growing dominance of “superstar” firms.
+
+Automation has reduced the need for labor in production.
+
+Labor’s bargaining power has declined due to globalization, de-unionization, and corporate concentration.
+
+If these trends continue, for example because AI is likely to automate many additional tasks, the labor share will likely continue to decline.
+
+We raised our Q3 GDP growth tracking estimate by 0.8pp last week to +3.3%.
+
+Our 2026 Q4/Q4 GDP growth forecast now stands at 2.2%, close to our 2.3% estimate of potential and 0.3pp below 2.5% forecast before the Iran war.
+
+Nominal core retail sales rose 1.4% in August, with a 0.5pp boost from the unusual timing of an online shopping holiday.  We estimate that real core retail sales rose at a 4.3% annualized pace over the last three months.
+
+Housing starts fell 2.6% in August to 1,275k, while building permits fell to 1,394k.
+
+Industrial production was flat in August, and manufacturing production fell 0.3%.
+
+David Mericle
+Goldman Sachs & Co. LLC, New York
+david.mericle@gs.com
+© Copyright 2002-2026 Goldman Sachs All rights reserved.
+Need help?
+Contact Us
+
+Use of this site is subject to the Terms and Conditions of Use updated as of 12 August 2024.
+Marquee Regulatory Disclosures
+Important Disclosure Information About Goldman Sachs Research
+Please review our Interest Rate Benchmark Transition Notice, Privacy & Cookies Policy, Security, Market Data Attribution, Security Guidance and GS&Co.'s Statement of Financial Condition

@@ -1,0 +1,20 @@
+[
+  {
+    "doc_id": "HJzdRjkCxjQZ",
+    "actual_doc_id": "CkgWjwqCxjQZ",
+    "quarantined_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\rejected_title_matches\\20260903_German competitiveness__bfce21272c61.pdf",
+    "sha256": "17ffeb38cb0493d8929668275e99240fe1676487492173649941f66bdcfd49f6"
+  },
+  {
+    "doc_id": "MCdvQ7NCxjQZ",
+    "actual_doc_id": "bDmTTMTCxjQZ",
+    "quarantined_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\rejected_title_matches\\20260903_Bank Negara Malaysia review__db4e1072dee8.pdf",
+    "sha256": "3e2db4b4cc84bdd20f62949ebd7554c3326ae1511bdac3b87812c581a42b6049"
+  },
+  {
+    "doc_id": "nwH6HzVCxjQZ",
+    "actual_doc_id": "bDmTTMTCxjQZ",
+    "quarantined_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\rejected_title_matches\\20260902_The RBA Observer__dfe88aa04025.pdf",
+    "sha256": "3e2db4b4cc84bdd20f62949ebd7554c3326ae1511bdac3b87812c581a42b6049"
+  }
+]

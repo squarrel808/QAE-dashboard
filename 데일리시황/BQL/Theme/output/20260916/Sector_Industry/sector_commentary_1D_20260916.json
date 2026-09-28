@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "target": {
+    "report": "sector",
+    "asOf": "2026-09-16",
+    "primary": "1D"
+  },
+  "global": [
+    {
+      "title": "같은 날, 다른 시장 충격",
+      "body": "BQL 9월 15→16일 구성종목 가격 기준 유럽·일본은 상승하고 미국은 하락했다. 유럽·일본은 Fed 결정 전 종가, 미국은 결정 후 종가다. 같은 날짜라도 Fed 결과를 유럽·일본 당일 가격의 원인으로 소급하지 않는다.",
+      "date": "가격일 2026-09-16",
+      "source": "BQL 1D 정량표; Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+    },
+    {
+      "title": "아시아·유럽 → 미국의 하루 전개",
+      "body": "유럽은 전력설비·금융이 견조하고 자동차·에너지는 약했다. 일본은 에너지·소재가 강한 반면 SoftBank·반도체 장비가 내렸다. 미국은 원문상 Fed 25bp 인상 이후 장기금리 상승과 유가 조정, 금융기업 실적 경계가 겹쳤다. Ciena 발표 뒤 광통신만 선택적으로 강했다.",
+      "date": "2026-09-16 지역별 거래시간",
+      "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+    },
+    {
+      "title": "팩터·테마와 수치 품질",
+      "body": "원문 5D ETF 프록시에서 모멘텀·고베타·소형주는 가치·저변동보다 약했다. 가치·저변동은 상대 방어이지 절대 상승이 아니다. 미국 섹터 ETF 1D 0.00%는 개장 전 미갱신 값이므로 제외했다. 원문 Euro Stoxx 50·CAC 당일 값은 표와 서술이 상충하므로 핵심 수치로 쓰지 않는다. 팩터·테마 원문값은 별도 페이지에 분리했다.",
+      "date": "2026-09-17 원문 검증",
+      "source": "Bloomberg Factor, Thematic & Positioning Market Pulse"
+    },
+    {
+      "title": "BQL 계산과 원문 해설 분리",
+      "body": "아래 BM·섹터·산업·상하위 종목은 BQL 현 구성종목의 현지통화 가격수익률을 시작일 시총으로 가중한 것이다. Bloomberg의 보도치·ETF 총수익률·시간외 가격은 합치지 않는다. 유럽 시총은 통화 혼합으로 근사치이며 TOPIX 1M 이상은 원자료 이력이 부족하다.",
+      "date": "2026-09-16 가격일",
+      "source": "BQL 실행 기록"
+    }
+  ],
+  "markets": {
+    "STOXX600": [
+      {
+        "title": "전력 인프라·금융이 강하고 자동차·에너지는 약세",
+        "body": "원문은 STOXX600 종목 600개 중 421개가 상승했다고 기록한다. Siemens Energy의 가스터빈 수주 보도와 Schneider Electric의 데이터센터 전력 기대가 산업 인프라를 지지했다. JPMorgan의 거래수익 전망은 은행에 우호적으로 읽혔다. 반면 BP·Shell은 유가 후퇴, Volkswagen·Mercedes-Benz는 자동차 업종 부담으로 약했다.",
+        "date": "2026-09-16 유럽 종가, Fed 결정 전",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      },
+      {
+        "title": "영국·독일·프랑스 내부 차이",
+        "body": "영국은 CPI 예상 부합 뒤 BOE 인상 기대가 낮아졌고 Barratt Redrow는 이익이 예상치를 넘었다. 다만 FY27 준공 가이던스는 낮췄다. 독일은 Siemens Energy와 자동차가 엇갈렸다. 프랑스는 금융·전력설비가 견조했지만 Kepler Cheuvreux의 유럽주식 중립 하향이 별도 위험이다.",
+        "date": "2026-09-16 유럽 종가",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      }
+    ],
+    "SP500": [
+      {
+        "title": "미국 금융·에너지 약세",
+        "body": "원문은 Fed 결정 이후 장기금리 상승과 금융·에너지 약세를 설명한다. Goldman Sachs는 3분기 채권거래 둔화·비용 증가를, Huntington은 향후 EPS·순이자이익 전망 하향을 언급했다. 유가 조정과 Diamondback의 대규모 블록매각 보도가 겹쳤다. 원문 근사 섹터값은 아래 BQL 수익률을 대체하지 않는다.",
+        "date": "2026-09-16 미국 종가, Fed 결정 후",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      },
+      {
+        "title": "광통신은 IT 전체가 아니다",
+        "body": "Ciena의 중장기 목표 발표 이후 Lumentum·Coherent가 동반 상승했다. 원문은 반도체·소프트웨어·하드웨어 전체가 함께 강한 것은 아니라고 명시한다. Generac의 Amazon 계약 급등과 Fluence의 가이던스 하향 급락은 시간외 거래여서 정규장 산업재 표와 분리한다.",
+        "date": "2026-09-16 미국 정규장 및 시간외",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      }
+    ],
+    "TOPIX": [
+      {
+        "title": "일본 에너지·소재 대 AI 반도체",
+        "body": "원문은 33개 TOPIX 업종 중 23개 상승을 기록한다. ENEOS·Idemitsu, Panasonic·Murata가 강했지만 SoftBank, Advantest, Lasertec, Tokyo Electron은 약했다. SoftBank CDS 확대와 OpenAI 투자 부담은 원문의 보도치다. 원문이 일본 정유사를 upstream으로 부른 것은 업종 오분류여서 정유사로 표기한다.",
+        "date": "2026-09-16 일본 종가, Fed 결정 전",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      },
+      {
+        "title": "확정 촉매와 추정 분리",
+        "body": "Otsuka에는 경쟁사 신장질환 약물의 후기 임상 데이터가 직접 촉매로 언급된다. 반도체 장비주·Fast Retailing에는 확인된 개별 촉매가 없다. 일본 에너지 강세를 유가나 정제마진의 단일 확정 원인으로 적지 않는다.",
+        "date": "2026-09-16 일본 종가",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      }
+    ],
+    "HANGSENG": [
+      {
+        "title": "홍콩의 실적·정책형 기술주와 EV·소비의 분화",
+        "body": "Lenovo는 실적 뒤 상승했고 SMIC·Hua Hong에는 중국 내수 AI 정책 기대가 있었다. CATL은 3분기 전망 우려·풋옵션 거래 증가가 보도됐고 Sands China·Tencent는 약했다. 홍콩 정책 계획과 Stock Connect 순유입은 배경이지만 모든 개별 종목의 확정 촉매는 아니다.",
+        "date": "2026-09-16 홍콩 종가, Fed 결정 전",
+        "source": "Bloomberg 원문(사용자 제공, 미국·비미국 2026-09-16 시황)"
+      }
+    ]
+  },
+  "sectors": {
+    "STOXX600": {
+      "Utilities": "BQL 상승 종목이 넓었다. 영국 금리 기대 변화는 원문의 배경이나 모든 유럽 유틸리티의 공통 촉매는 아니다.",
+      "Industrials": "Siemens Energy 가스터빈 수주 보도와 Schneider Electric의 AI 전력설비 기대가 부각됐다.",
+      "Information Technology": "유럽의 AI 수혜는 전력설비 산업재에도 걸쳐 있다. 원문은 IT 전체의 동시 강세보다 종목별 차이를 강조한다.",
+      "Materials": "원문은 유가 완화가 경기민감주에 우호적이었다고 보지만 개별 소재 종목 촉매를 일괄 추정하지 않는다.",
+      "Real Estate": "영국 주택건설주 반등은 CPI·BOE 기대와 Barratt 실적이 함께 작용한 사례다. 유럽 부동산 전체의 공통 촉매와 구분한다.",
+      "Financials": "원문은 JPMorgan 거래수익 전망 뒤 은행 반등을 기록한다. 은행·보험의 동인은 구분한다.",
+      "Consumer Discretionary": "Volkswagen·Mercedes-Benz·BMW 자동차는 유가 완화에도 약했다. EV 전환·비용 우려는 원문 해설이다.",
+      "Health Care": "원문에서는 유럽 헬스케어의 공통 신규 촉매보다 금융·산업재와 자동차의 차이가 중심이다.",
+      "Communication Services": "원문에 유럽 통신서비스 전체의 확인된 새 촉매는 없으므로 BQL 구성종목 가격을 우선한다.",
+      "Consumer Staples": "경기민감주가 강한 가운데 상대적으로 뒤처졌다. Danone 하락의 확인된 직접 회사 촉매는 제시되지 않았다.",
+      "Energy": "BP·Shell은 브렌트유 후퇴에 약했다. 일본 에너지 강세와 거래시장·업종구성을 분리한다."
+    },
+    "SP500": {
+      "Information Technology": "Lumentum·Coherent 광통신의 Ciena 발표 동반효과를 반도체·소프트웨어·하드웨어 전반으로 일반화하지 않는다.",
+      "Communication Services": "원문에서는 대형 플랫폼의 상대적 견조함이 언급되지만 특정 대형주 공통의 확인된 뉴스는 없다.",
+      "Health Care": "원문은 상대적 방어로 보지만 당일 특정 대형주의 공통 확정 촉매는 없다.",
+      "Consumer Staples": "원문은 하락장 속 상대적 방어를 제시한다. 최근 1개월 프록시가 약했다는 점에서 방어주가 절대 상승했다는 뜻은 아니다.",
+      "Materials": "원문은 달러 강세와 원자재 가격 약세를 배경으로 제시한다. 소재 내 산업그룹별 차이는 BQL 표를 따른다.",
+      "Consumer Discretionary": "금리 상승과 주택·자동차 수요 우려가 원문 배경이다. 모든 구성종목의 직접 촉매로 적용하지 않는다.",
+      "Real Estate": "원문은 미국 10년물 금리 상승으로 할인율·자본환원율 부담이 커졌다고 해석한다.",
+      "Utilities": "장기금리 상승과 데이터센터 전력요금 법안 위험은 원문 배경이다.",
+      "Industrials": "JB Hunt 급락에는 확인된 개별 촉매가 없다. Generac·Fluence 급변은 시간외여서 BQL 정규장 표와 분리한다.",
+      "Financials": "Goldman Sachs의 거래 둔화·비용 증가와 Huntington 가이던스 하향이 경계심을 키웠다. 금리 인상=은행주 상승은 성립하지 않았다.",
+      "Energy": "송유관 부분 복구 기대와 유가 하락이 원문 배경이다. Diamondback 블록매각은 관계자 보도, Viper에는 확인된 개별 촉매가 없다. 하루 조정만으로 3개월 강세 종료를 확정하지 않는다."
+    },
+    "TOPIX": {
+      "Energy": "ENEOS·Idemitsu 상승과 중동산 원유 조달 보도가 있다. 정유사를 upstream 생산업체로 오분류하거나 정제마진 상승을 확정하지 않는다.",
+      "Materials": "에너지와 함께 소재로 매수가 확산됐다. Mitsubishi Chemical에는 확정된 개별 촉매가 없다.",
+      "Industrials": "Panasonic·Murata·Nitto Denko 강세는 순수 AI 반도체 부진과 다른 하드웨어 경로다.",
+      "Utilities": "원문은 일본의 에너지 수입비용을 관찰 변수로 제시하지만 9월 16일 모든 전력주의 공통 촉매로 단정하지 않는다.",
+      "Information Technology": "SoftBank·Advantest·Lasertec·Tokyo Electron은 지수 상승과 달리 약했다. 뒤의 반도체 종목에는 확인된 개별 촉매가 없다.",
+      "Real Estate": "BOJ 회의 전 금리 기대가 배경이지만 실제 BOJ 결정은 아직 나오지 않은 시점이었다.",
+      "Consumer Discretionary": "Fast Retailing의 하락에 확인된 회사별 촉매는 없었다. 에너지·소재 주도와 구분한다.",
+      "Financials": "BOJ 정책회의 전 가격이다. 이후 결정을 9월 16일 금융 수익률의 원인으로 소급하지 않는다.",
+      "Consumer Staples": "원문에서 일본 필수소비재 전체의 확인된 촉매는 제시되지 않았다.",
+      "Health Care": "Otsuka에는 경쟁사 신장질환 치료제 후기 임상 데이터가 별도 촉매다."
+      ,"Communication Services": "원문에서 통신서비스 공통의 신규 촉매는 제시되지 않았다."
+    },
+    "HANGSENG": {
+      "Information Technology": "Lenovo 실적과 SMIC·Hua Hong 정책 기대가 강했지만 Tencent는 하락해 기술주 전체 동반 상승은 아니다.",
+      "Financials": "Stock Connect 순유입과 HKEX 목표주가 상향은 원문 배경이다.",
+      "Consumer Discretionary": "Trip.com에는 회사별 확정 촉매가 없고 Sands China는 52주 저점이다.",
+      "Industrials": "CATL 전망 우려와 풋옵션 거래 증가는 원문의 보도·추정이다."
+    }
+  }
+}

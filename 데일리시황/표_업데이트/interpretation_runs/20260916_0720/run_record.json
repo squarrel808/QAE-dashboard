@@ -1,0 +1,394 @@
+{
+  "automation_id": "qae-ib-07-20",
+  "finished_at": "2026-09-16T07:30:29+09:00",
+  "status": "published_partial_coverage",
+  "input_sha256": "e38b1ec17c4f8b380c15ae4f7a3636089ce90d7d32fbd85b90da178626d84136",
+  "actual_values_snapshot_date": "2026-09-15",
+  "actual_release_max": "2026-09-15",
+  "collector": {
+    "run_id": "20260916_070003_5536d6",
+    "mode": "daily",
+    "start": "2026-09-15",
+    "end": "2026-09-15",
+    "houses": [
+      "BofA",
+      "JPM",
+      "GS",
+      "Citi",
+      "HSBC"
+    ],
+    "port": 9223,
+    "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "started": "2026-09-16T07:00:03.054825+09:00",
+    "status": "incomplete",
+    "scheduled": false,
+    "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-16\\run_20260916_070003_5536d6.log",
+    "collector_report": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-16\\run_20260916_070003_5536d6.json",
+    "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\daily\\2026-09-16\\daily_20260916_070003_5536d6.console.log",
+    "updated": "2026-09-16T07:05:58.497517+09:00",
+    "disk_space": {
+      "checked": "2026-09-16T07:05:53.488946+09:00",
+      "minimum_free_gib": 5,
+      "volumes": [
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+          "free_bytes": 53426192384
+        },
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+          "free_bytes": 53426192384
+        }
+      ]
+    },
+    "worker_pid": 3796,
+    "collector_exit_code": 2,
+    "collector_result": {
+      "run_id": "20260916_070003_5536d6",
+      "mode": "daily",
+      "start": "2026-09-15",
+      "end": "2026-09-15",
+      "started": "2026-09-16T07:00:20.104806+09:00",
+      "finished": "2026-09-16T07:05:54.067243+09:00",
+      "overall_status": "incomplete",
+      "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+      "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-16\\run_20260916_070003_5536d6.log",
+      "houses": {
+        "BofA": {
+          "status": "complete",
+          "counts": {
+            "discovered": 763,
+            "in_range": 3,
+            "attempted": 2,
+            "downloaded": 2,
+            "outside_range": 760,
+            "already_saved": 1
+          },
+          "coverage_guard_version": 1
+        },
+        "JPM": {
+          "status": "complete",
+          "counts": {
+            "discovered": 50,
+            "in_range": 9,
+            "attempted": 3,
+            "downloaded": 3,
+            "already_saved": 6,
+            "outside_range": 41
+          },
+          "coverage_guard_version": 1
+        },
+        "GS": {
+          "status": "complete",
+          "counts": {
+            "discovered": 50,
+            "outside_range": 35,
+            "in_range": 15,
+            "already_saved": 14,
+            "no_original_pdf": 1
+          },
+          "coverage_guard_version": 1
+        },
+        "Citi": {
+          "status": "complete",
+          "counts": {
+            "discovered": 97,
+            "in_range": 9,
+            "already_saved": 9,
+            "outside_range": 88
+          },
+          "coverage_guard_version": 1
+        },
+        "HSBC": {
+          "status": "incomplete",
+          "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+          "counts": {},
+          "connection_lost": false
+        }
+      }
+    },
+    "finished": "2026-09-16T07:05:58.497506+09:00",
+    "exit_code": 2
+  },
+  "input_numbers_changed": false,
+  "indexed_documents_added": 76,
+  "indexed_not_equivalent_to_reviewed": true,
+  "updated_summary_count": 32,
+  "new_event_count": 0,
+  "valid_summary_count": 130,
+  "house_comments_before": 137,
+  "house_comments_after": 166,
+  "reviewed_event_ids": [
+    "09ce3380763f61020286",
+    "0aa02540774735098165",
+    "105830b2de59db69d7fd",
+    "1248daf11ba72ab4a1fe",
+    "16bc21a22527b42e12e1",
+    "173ac64daad75c6e6692",
+    "17428e8bb8375c76477f",
+    "1de89f0fcc00977ccec9",
+    "1eb352a6c7db02339553",
+    "2301f070165054264272",
+    "257c384943811ede2edb",
+    "26593828a7ca33df6a12",
+    "2cd39369d037d05f743f",
+    "39abc030cbb52519b976",
+    "44128c92c1f286c99092",
+    "4a3505096a43b67e4234",
+    "4ad9c7c23dbb3e500e90",
+    "53cc564531e2aa002cae",
+    "60440b54fd8e4b35f7ba",
+    "61e7a6a1667dd6126c32",
+    "621738f00a5edf903da8",
+    "720c61b274cf9d1b43bf",
+    "78c2b329945fdcc46901",
+    "79c7bbb1e97ad5beee59",
+    "a9f47946394223809920",
+    "b20b80c821db1beeb839",
+    "d3cfd8195aa7e6bb6a92",
+    "d64800de4d81b652ff2e",
+    "e71888c6977d4330de3b",
+    "f228e2069c36077c33f9",
+    "f47a1d26e6a0298fa407",
+    "f8291371a72e4552017b"
+  ],
+  "new_evidence_pages": [
+    {
+      "doc_id": "0b97b789fd017b9fec8e635ccf0bb17d89dc9d8851025d5945815bb87355bce4",
+      "page": 1
+    },
+    {
+      "doc_id": "0e4898a74c2674030411fe46a449aabbc3f98640ebd97746d3c4c29b990f165e",
+      "page": 1
+    },
+    {
+      "doc_id": "24ce28320a31ac4a65100c76ba045ec9038440075cd34d9c50cb7d5ed8382c5c",
+      "page": 1
+    },
+    {
+      "doc_id": "31f8c6b04ab01f02d2325cb641cebcd6fe1881737fe049ca4bb3faa5d970a5f4",
+      "page": 2
+    },
+    {
+      "doc_id": "3a7fcc8e7cd3ae55a7d1095256bfb3b88073eb7d689661054312bcb6fe88095c",
+      "page": 2
+    },
+    {
+      "doc_id": "3e0d5ad848872b88cac75b5876e5da4f9a4c5a65fe46d2339dcff64ac12966e5",
+      "page": 1
+    },
+    {
+      "doc_id": "5321b414087b83c7edda9f451db9beeee339aa18b006324853f15b24f9f0443d",
+      "page": 2
+    },
+    {
+      "doc_id": "5d09f33fd1f4c53dc75510fd38d78a3e1a5cb1bb42f06bc0bef0ab677dd37fbd",
+      "page": 1
+    },
+    {
+      "doc_id": "7fa4fbda68afca3a2eed5970c09251a81d59ad731b19846a6bf49bfa3785b576",
+      "page": 2
+    },
+    {
+      "doc_id": "8312fabd95768077f93230f2095f8c3dcf4b37a122c3ba15cdf9c968fecdf5da",
+      "page": 1
+    },
+    {
+      "doc_id": "e1820ae20877128ad554f0b72b7bf120550e1e3015e466dbd748179e4576b29c",
+      "page": 1
+    },
+    {
+      "doc_id": "e275c922f6d3775f59ee00df72a7983fd32666a6977505d8a1cadb83b7be14b6",
+      "page": 2
+    },
+    {
+      "doc_id": "f4e558e37813211574d0fecb114f3bb9241a6fc4ba85d65b504f93847e854b7d",
+      "page": 1
+    },
+    {
+      "doc_id": "f90600e0adc6771aef2f39cbab46c1ad71a95e26c541be03e8cdd76608e5fd08",
+      "page": 1
+    },
+    {
+      "doc_id": "f90600e0adc6771aef2f39cbab46c1ad71a95e26c541be03e8cdd76608e5fd08",
+      "page": 2
+    }
+  ],
+  "documents_with_unreviewed_pages": [
+    "05e53079a2f661dfcd2d237984f8dc21235f8b6c74a00c550d00c3e2a3e4979f",
+    "065f854316bf8ae8eddb2e0569a1d43ce7599e97ebce2c1462d44c8c65a5bdb5",
+    "0744c91a8aece086d53fee6489244c40ff5f99d6c11ec9b9d5bae40f6d85048e",
+    "0b97b789fd017b9fec8e635ccf0bb17d89dc9d8851025d5945815bb87355bce4",
+    "0e4898a74c2674030411fe46a449aabbc3f98640ebd97746d3c4c29b990f165e",
+    "1d72bf9f08592534fb952d256ef8529f01138d40b3ee774fd1ecfe66bd05bc84",
+    "1e538358c35275d0302413d8834fd9e650f37da8e1405b1f6ca05373bcbaf5e3",
+    "24ce28320a31ac4a65100c76ba045ec9038440075cd34d9c50cb7d5ed8382c5c",
+    "24f7c55ba92721be2840195126f51b5295d74897f87ab8ff61e0cae7c72f0f75",
+    "29de830f03936b7995cbd96ad2fd1d569b93fe1df9053b952749d0aabed4a234",
+    "2ac1ac555e8a5f4fd6bd201d45f10fb10862d240f65aec24aacf079631f58f00",
+    "2b9e74d9a738116d89ece8987aae8a4593e1ac206fb17caa23fe35509a97320e",
+    "31f8c6b04ab01f02d2325cb641cebcd6fe1881737fe049ca4bb3faa5d970a5f4",
+    "33f392b2d65d75e2bd60a4dbe45797f96f8685caab6ff5e42ac80188bfaca8c5",
+    "349a9c0e116b7cc336f77418b76589e9e6f6eee3952685c3a66cd5cadcd466f7",
+    "374b38014e9e4245c793cc77a1a6fe1a4eadedad06507ffdcdc65ff86caafba1",
+    "3a7fcc8e7cd3ae55a7d1095256bfb3b88073eb7d689661054312bcb6fe88095c",
+    "3e0d5ad848872b88cac75b5876e5da4f9a4c5a65fe46d2339dcff64ac12966e5",
+    "43e646b6f8a0e418b0a31c8813f0b7d26788ae4a28bc3594070a90700b32a347",
+    "4420a071f84da2a7c1991de5253a8cb2085705ba308c0e03be43a17054454e67",
+    "44250e856126951ed0d0bd62842baf2e53bd45b6a317f6ddf627beaf302a3468",
+    "4697b7467aeade15af61020a68207144492de788018966ef383f45fe7c542920",
+    "4cbbafd5f3808c8ad7c7fd0eb64a1692594868371c5d17e5b3f3ac83cda94608",
+    "5321b414087b83c7edda9f451db9beeee339aa18b006324853f15b24f9f0443d",
+    "569436f93158f8665d57499f0b373bfc18f8ceb7de7321676b73123491e98fcc",
+    "5be89f629c8604b107c1203a6ac02c3f58ee28e2857b13c16dc8e105e188921a",
+    "5d09f33fd1f4c53dc75510fd38d78a3e1a5cb1bb42f06bc0bef0ab677dd37fbd",
+    "5ebd93cb0474ca171e9b4737f9b650b6394741fc3e14da82141d5adad4a725c4",
+    "5f60bc520bd3110642f35a6625c8768141cd6c518fedf1d4d3a982bf271295a4",
+    "6b37f51b8563b90c1d43c371c1b370da6bd62f825c64e21d1a4ffee84ec11f84",
+    "6e0f7277b0120aa161710cc108855cfc0e8d526268cc09b708a86feafd0a711a",
+    "7185e746e703ae084ed91188e978eeead2dba11bd3e53d5fd0a935491699a841",
+    "7afabd54402aa184fb2a524e248b428dd1a14e4e0ed074e89a2d7868af4ad209",
+    "7bb7dbd48e39ecfc30867e32d79d2df18c6ac4858d43e92b99495e30aaab6f46",
+    "7fa4fbda68afca3a2eed5970c09251a81d59ad731b19846a6bf49bfa3785b576",
+    "8312fabd95768077f93230f2095f8c3dcf4b37a122c3ba15cdf9c968fecdf5da",
+    "86d8e9b08412cf7d92be2657342ac3b546836eaed40cf58f2bfe4fd4cdf9d51b",
+    "8cbde595a7eadfb513fc1d7c4c0f5ae5a28ef55b12193ef0ce72ded3db2e9487",
+    "91c0e2cb1809ebbbdeddfc9c32b594d181a7fa0d2889833b198d14be7ae3a120",
+    "93a813f38f24049a5da42ac180b17420a91c9381b185278c547d39a5c195561d",
+    "9850db62047c68a9311ee897701c571fe58d5a0768d4a62695a0e1318c235461",
+    "997316aa2fef8cd750a018792d10badfb6568238dbdd612118e1c72e7ca86f8a",
+    "9fdc5b59dbf2f3cd3bab00b77dcad536e3d72971999ce3fdb1753b6c2aa58e62",
+    "a0a7b596f14ff7c80710c0805dad5008058793231421715c70c88e614fe8d2a9",
+    "a3ee28563b7d4449dd577e2eb749b55abaf29387a01c78463fb8a307db27c12e",
+    "a431159ba005a53444532b0f27c9166f41c0f18cc9a69606062271d263ff3e84",
+    "a9edc4ab13b273432354579115601aee950726b9936e7e758f4ace63873467af",
+    "aab82a4044aba5d57ea560db3631950880db50e72d12b7033e792cb806346de2",
+    "aaf019f596ad565be896d34a94d9281a7e948aaf32114fb9f1bbc0c3d3fbbd40",
+    "aafd574662026484b3b43f67613f10a3c9ff6397aea442c9dc8aeeb0a1f4cea4",
+    "ac60bf3637dd890a433ec88ae09ea8dfa89f109007805cf7e2d6a19067541e6a",
+    "acfc29bddf2ca164e9198fe5c8c36382878eaa7b5bb2bdf51540bfb8eee5d7cc",
+    "af317cb8dfbc8ee9e515468de567ee97838aa1250fc310b448d6000f1c7b214e",
+    "bb432ca6d8b9cd9baf430c2a368af9f872270df05e74e8cf352bb6048e9db63c",
+    "be9967553f82cae6c6dfab6e350222515232411d9cdef88b2b2d16b3fb36c195",
+    "c375dbbbe79812e516d069fcab283d848567efd1f2d2e23ce2cc17aed99339dc",
+    "c5f254486a19835329e5225f6a49a1e6776b0366f98d81eaf317a37df452f954",
+    "ce1cff636b8cbe2ca05427fa781d3fb3d65391c74c4925197e74a2745888fb8c",
+    "cf730dec35bd937190b9a19c58a3599750184e4afd4ac0bf3faea637959e0de2",
+    "cf85e8095f6343a12acb307a69d6519b8ed0fd48f99f5ec612443a21d4114627",
+    "d5f819fb43f8915c81395a64dde4dea1c446b77cb159b4cf6ca74442308092bb",
+    "d6d56e7fc934b3d73b7976e1c049a65b1eadf04b1bea85330185bf2b6cb23037",
+    "df8ef61308e48ee68a7d63ded64d0ff3fc4d0499f00099741f8354167047152d",
+    "e1820ae20877128ad554f0b72b7bf120550e1e3015e466dbd748179e4576b29c",
+    "e275c922f6d3775f59ee00df72a7983fd32666a6977505d8a1cadb83b7be14b6",
+    "e401da5a38a1ce3ba0623d1164a578a03c1c86f72e3d76bee1ef9a9e72a4be04",
+    "e8411517493eaf17dc0930bf2bff7b6f6b30533ed3f7a94cf076f2be88c4c626",
+    "e857a77a3f46d88e41ca01dd0d394f5dafc0d88571656dc55c51e2d547b051b4",
+    "e874c1a0779bd6c8223fa47de0333f93f8e8e6e3c18ec0197293601f6ed84cb8",
+    "f271221fbcafbe47cfcc440677c155ea5cf0abdd7a07541672c1751ceef8ea5c",
+    "f4e558e37813211574d0fecb114f3bb9241a6fc4ba85d65b504f93847e854b7d",
+    "f55161643c632e7acb70e942dba1806a96662c5d6839b2b723893d590db0d794",
+    "f63552e3cc4a426aac3240846fc3fb002e6a9e6835b0f9944668970876e95d56",
+    "f7894b0a642bf02cd906fc69422ccc4b1e7191824df63dadb4a3a52aade034f0",
+    "f90600e0adc6771aef2f39cbab46c1ad71a95e26c541be03e8cdd76608e5fd08",
+    "fc2a99889f7a685d539e918b9b15945153db2da0fd944e91d30b6609bfdbcbba"
+  ],
+  "documents_without_adopted_evidence": [
+    "05e53079a2f661dfcd2d237984f8dc21235f8b6c74a00c550d00c3e2a3e4979f",
+    "065f854316bf8ae8eddb2e0569a1d43ce7599e97ebce2c1462d44c8c65a5bdb5",
+    "0744c91a8aece086d53fee6489244c40ff5f99d6c11ec9b9d5bae40f6d85048e",
+    "1d72bf9f08592534fb952d256ef8529f01138d40b3ee774fd1ecfe66bd05bc84",
+    "1e538358c35275d0302413d8834fd9e650f37da8e1405b1f6ca05373bcbaf5e3",
+    "24f7c55ba92721be2840195126f51b5295d74897f87ab8ff61e0cae7c72f0f75",
+    "29de830f03936b7995cbd96ad2fd1d569b93fe1df9053b952749d0aabed4a234",
+    "2ac1ac555e8a5f4fd6bd201d45f10fb10862d240f65aec24aacf079631f58f00",
+    "2b9e74d9a738116d89ece8987aae8a4593e1ac206fb17caa23fe35509a97320e",
+    "33f392b2d65d75e2bd60a4dbe45797f96f8685caab6ff5e42ac80188bfaca8c5",
+    "349a9c0e116b7cc336f77418b76589e9e6f6eee3952685c3a66cd5cadcd466f7",
+    "374b38014e9e4245c793cc77a1a6fe1a4eadedad06507ffdcdc65ff86caafba1",
+    "43e646b6f8a0e418b0a31c8813f0b7d26788ae4a28bc3594070a90700b32a347",
+    "4420a071f84da2a7c1991de5253a8cb2085705ba308c0e03be43a17054454e67",
+    "44250e856126951ed0d0bd62842baf2e53bd45b6a317f6ddf627beaf302a3468",
+    "4697b7467aeade15af61020a68207144492de788018966ef383f45fe7c542920",
+    "4cbbafd5f3808c8ad7c7fd0eb64a1692594868371c5d17e5b3f3ac83cda94608",
+    "569436f93158f8665d57499f0b373bfc18f8ceb7de7321676b73123491e98fcc",
+    "5be89f629c8604b107c1203a6ac02c3f58ee28e2857b13c16dc8e105e188921a",
+    "5ebd93cb0474ca171e9b4737f9b650b6394741fc3e14da82141d5adad4a725c4",
+    "5f60bc520bd3110642f35a6625c8768141cd6c518fedf1d4d3a982bf271295a4",
+    "6b37f51b8563b90c1d43c371c1b370da6bd62f825c64e21d1a4ffee84ec11f84",
+    "6e0f7277b0120aa161710cc108855cfc0e8d526268cc09b708a86feafd0a711a",
+    "7185e746e703ae084ed91188e978eeead2dba11bd3e53d5fd0a935491699a841",
+    "7afabd54402aa184fb2a524e248b428dd1a14e4e0ed074e89a2d7868af4ad209",
+    "7bb7dbd48e39ecfc30867e32d79d2df18c6ac4858d43e92b99495e30aaab6f46",
+    "86d8e9b08412cf7d92be2657342ac3b546836eaed40cf58f2bfe4fd4cdf9d51b",
+    "8cbde595a7eadfb513fc1d7c4c0f5ae5a28ef55b12193ef0ce72ded3db2e9487",
+    "91c0e2cb1809ebbbdeddfc9c32b594d181a7fa0d2889833b198d14be7ae3a120",
+    "93a813f38f24049a5da42ac180b17420a91c9381b185278c547d39a5c195561d",
+    "9850db62047c68a9311ee897701c571fe58d5a0768d4a62695a0e1318c235461",
+    "997316aa2fef8cd750a018792d10badfb6568238dbdd612118e1c72e7ca86f8a",
+    "9fdc5b59dbf2f3cd3bab00b77dcad536e3d72971999ce3fdb1753b6c2aa58e62",
+    "a0a7b596f14ff7c80710c0805dad5008058793231421715c70c88e614fe8d2a9",
+    "a3ee28563b7d4449dd577e2eb749b55abaf29387a01c78463fb8a307db27c12e",
+    "a431159ba005a53444532b0f27c9166f41c0f18cc9a69606062271d263ff3e84",
+    "a9edc4ab13b273432354579115601aee950726b9936e7e758f4ace63873467af",
+    "aab82a4044aba5d57ea560db3631950880db50e72d12b7033e792cb806346de2",
+    "aaf019f596ad565be896d34a94d9281a7e948aaf32114fb9f1bbc0c3d3fbbd40",
+    "aafd574662026484b3b43f67613f10a3c9ff6397aea442c9dc8aeeb0a1f4cea4",
+    "ac60bf3637dd890a433ec88ae09ea8dfa89f109007805cf7e2d6a19067541e6a",
+    "acfc29bddf2ca164e9198fe5c8c36382878eaa7b5bb2bdf51540bfb8eee5d7cc",
+    "af317cb8dfbc8ee9e515468de567ee97838aa1250fc310b448d6000f1c7b214e",
+    "bb432ca6d8b9cd9baf430c2a368af9f872270df05e74e8cf352bb6048e9db63c",
+    "be9967553f82cae6c6dfab6e350222515232411d9cdef88b2b2d16b3fb36c195",
+    "c375dbbbe79812e516d069fcab283d848567efd1f2d2e23ce2cc17aed99339dc",
+    "c5f254486a19835329e5225f6a49a1e6776b0366f98d81eaf317a37df452f954",
+    "ce1cff636b8cbe2ca05427fa781d3fb3d65391c74c4925197e74a2745888fb8c",
+    "cf730dec35bd937190b9a19c58a3599750184e4afd4ac0bf3faea637959e0de2",
+    "cf85e8095f6343a12acb307a69d6519b8ed0fd48f99f5ec612443a21d4114627",
+    "d5f819fb43f8915c81395a64dde4dea1c446b77cb159b4cf6ca74442308092bb",
+    "d6d56e7fc934b3d73b7976e1c049a65b1eadf04b1bea85330185bf2b6cb23037",
+    "df8ef61308e48ee68a7d63ded64d0ff3fc4d0499f00099741f8354167047152d",
+    "e401da5a38a1ce3ba0623d1164a578a03c1c86f72e3d76bee1ef9a9e72a4be04",
+    "e8411517493eaf17dc0930bf2bff7b6f6b30533ed3f7a94cf076f2be88c4c626",
+    "e857a77a3f46d88e41ca01dd0d394f5dafc0d88571656dc55c51e2d547b051b4",
+    "e874c1a0779bd6c8223fa47de0333f93f8e8e6e3c18ec0197293601f6ed84cb8",
+    "f271221fbcafbe47cfcc440677c155ea5cf0abdd7a07541672c1751ceef8ea5c",
+    "f55161643c632e7acb70e942dba1806a96662c5d6839b2b723893d590db0d794",
+    "f63552e3cc4a426aac3240846fc3fb002e6a9e6835b0f9944668970876e95d56",
+    "f7894b0a642bf02cd906fc69422ccc4b1e7191824df63dadb4a3a52aade034f0",
+    "fc2a99889f7a685d539e918b9b15945153db2da0fd944e91d30b6609bfdbcbba"
+  ],
+  "validation": {
+    "rows_preserved": 259,
+    "unique_events": 259,
+    "columns_preserved": "A:L",
+    "five_houses_per_event": true,
+    "quote_and_file_checks": "passed",
+    "status_counts": {
+      "related": 55,
+      "candidate": 791,
+      "basis": 161,
+      "uncovered": 167,
+      "reaction": 100,
+      "preview": 21
+    },
+    "direct_event_house_connections": 12,
+    "indicator_candidate_documents": 436,
+    "indicator_candidate_pages": 2706,
+    "indicator_search_is_unreviewed": true,
+    "numeric_snapshots_unchanged": true,
+    "authored_events": 130,
+    "commentary_needs_recheck": 0,
+    "review_status": "draft",
+    "new_reviewed_events": 32,
+    "collection_partial": true
+  },
+  "publication_paths": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260915_213943_459212\\WECO\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260915_213943_459212\\WECO\\macro_views.html"
+  ],
+  "limitations": [
+    "HSBC 당일 수집 실패; 신규 근거 미확보 하우스는 유지.",
+    "76개 적재 중 채택 근거는 일부 페이지이며 전체 보고서 검토 완료가 아님.",
+    "BofA Japan Capital Goods 표지 9월16일/메타데이터 9월15일 충돌: 이번 지표 근거에 미채택.",
+    "GS PPI·Citi 주택/심리·후속 CPI/ECB의 원문 표지일과 DB 날짜 차이는 코멘트에 명시."
+  ]
+}

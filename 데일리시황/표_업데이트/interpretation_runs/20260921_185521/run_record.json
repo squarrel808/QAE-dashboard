@@ -1,0 +1,2072 @@
+{
+  "automation_id": "qae-ib-07-20",
+  "completed_at": "2026-09-21T18:59:07+09:00",
+  "status": "published_partial_source_coverage",
+  "input": {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (4).xlsx",
+    "sha256": "b86f5440e1b55e57718930d3fcfbdc20340f07150feb22bd394a9b7cd8ca5063"
+  },
+  "actual_values_snapshot_date": "2026-09-17",
+  "collector": {
+    "run_id": "20260921_070003_62981d",
+    "mode": "daily",
+    "start": "2026-09-20",
+    "end": "2026-09-20",
+    "started": "2026-09-21T07:00:16.582097+09:00",
+    "finished": "2026-09-21T07:05:15.136208+09:00",
+    "overall_status": "incomplete",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-21\\run_20260921_070003_62981d.log",
+    "houses": {
+      "BofA": {
+        "status": "incomplete",
+        "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+        "counts": {},
+        "connection_lost": false
+      },
+      "JPM": {
+        "status": "complete",
+        "counts": {
+          "discovered": 50,
+          "in_range": 1,
+          "attempted": 1,
+          "downloaded": 1,
+          "outside_range": 49
+        },
+        "coverage_guard_version": 1
+      },
+      "GS": {
+        "status": "incomplete",
+        "reason": "Failed PDFs or unparseable publication dates remain.",
+        "counts": {
+          "discovered": 49,
+          "in_range": 4,
+          "attempted": 4,
+          "failed": 1,
+          "downloaded": 3,
+          "outside_range": 45
+        }
+      },
+      "Citi": {
+        "status": "complete",
+        "counts": {
+          "discovered": 97,
+          "outside_range": 97
+        },
+        "coverage_guard_version": 1
+      },
+      "HSBC": {
+        "status": "complete",
+        "counts": {},
+        "coverage_guard_version": 1
+      }
+    }
+  },
+  "collection_scope": "9월 21일 07:00 수집: JPM 1개 완료, GS 3개 확보·1개 실패, BofA 시간초과. Citi·HSBC 해당 날짜 범위 신규 0개로 완료 로그. scheduled=false여서 별도 06:30 실행은 확인 불가. 지난 성공 이후 안정 원문 78개로 부분 갱신.",
+  "ingested_documents": 78,
+  "ingested_pages": 689,
+  "new_summaries": 0,
+  "revised_summaries": 17,
+  "updated_summaries": 17,
+  "retained_summaries": 177,
+  "valid_summaries": 194,
+  "house_comments": 219,
+  "reviewed_event_ids": [
+    "795502e15628e7291cfb",
+    "ebda2b89709dd52de82b",
+    "0aa02540774735098165",
+    "43d080d9befd864c4f16",
+    "735ebd8f454565504ab1",
+    "4a3505096a43b67e4234",
+    "173ac64daad75c6e6692",
+    "257c384943811ede2edb",
+    "f8291371a72e4552017b",
+    "10754cbb2efbfb46043e",
+    "d3cfd8195aa7e6bb6a92",
+    "621738f00a5edf903da8",
+    "853eb2e42fd95db18ebb",
+    "2a28e526354ddf6fd1d7",
+    "6a5da26ffe48b6285fb8",
+    "1a26b1295325c42d6832",
+    "9929bd5a068495d067a3"
+  ],
+  "reviewed_evidence_pages": [
+    {
+      "doc_id": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+      "page": 1
+    },
+    {
+      "doc_id": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+      "page": 2
+    },
+    {
+      "doc_id": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+      "page": 3
+    },
+    {
+      "doc_id": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+      "page": 5
+    },
+    {
+      "doc_id": "44d694b0be13aefd47794cb60e2d0da81f32dfe5bbd4e408bdfcbc60fc45a746",
+      "page": 2
+    },
+    {
+      "doc_id": "7a7cf06438b354d438c04e8a66607f5c91aa469bc18503c04527259da4cbde83",
+      "page": 2
+    },
+    {
+      "doc_id": "8290dad206cdc90bdafef86c3e634f1a51ec317f5fb1be42f8fc861472779f46",
+      "page": 1
+    },
+    {
+      "doc_id": "8290dad206cdc90bdafef86c3e634f1a51ec317f5fb1be42f8fc861472779f46",
+      "page": 2
+    },
+    {
+      "doc_id": "8290dad206cdc90bdafef86c3e634f1a51ec317f5fb1be42f8fc861472779f46",
+      "page": 3
+    }
+  ],
+  "whole_documents_completed": [],
+  "validation": {
+    "rows_preserved": 247,
+    "unique_events": 247,
+    "columns_preserved": "B:K",
+    "five_houses_per_event": true,
+    "quote_and_file_checks": "passed",
+    "status_counts": {
+      "uncovered": 541,
+      "related": 67,
+      "reaction": 154,
+      "preview": 24,
+      "candidate": 417,
+      "basis": 32
+    },
+    "direct_event_house_connections": 9,
+    "indicator_candidate_documents": 363,
+    "indicator_candidate_pages": 1498,
+    "indicator_search_is_unreviewed": true,
+    "input_numeric_match": true,
+    "historical_numeric_match": true,
+    "authored_events": 194,
+    "commentary_needs_recheck": 0,
+    "new_summaries": 0,
+    "updated_summaries": 17,
+    "retained_reviews": 177,
+    "review_status": "draft",
+    "macro_views_payload_unchanged": true
+  },
+  "queue_changes": {
+    "unchanged": 194
+  },
+  "living_db_unchanged": true,
+  "history_facts_unchanged": true,
+  "publication_paths": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views.html"
+  ],
+  "limitations": [
+    "신규 PDF 78개 적재는 전체 의미 검토 완료가 아님. 4개 원문의 채택 페이지·17개 지표 연결만 완료.",
+    "숫자 기준일은 9월 17일. 일본 CPI·BOJ·미국 산업생산 등의 새 보고서 수치를 원본 실제값에 대신 넣지 않음.",
+    "Citi 캐나다·미국 주간보고서 표지 발행 9월 18일과 메타데이터 9월 19일 차이를 명시.",
+    "JPM ECB 미래 예금금리 전망은 관련 분석이며 다른 정책금리 전망으로 환산하지 않음.",
+    "HSBC 9월 18일 주간표 전체 첫 페이지를 검토했지만 정성 근거 부족으로 새 코멘트 미채택. 오늘 수집 신규 0개. BofA 실패를 성공으로 표시하지 않음.",
+    "읽은 다른 문서와 페이지는 검토 목록에 별도 기록하고 완독 완료로 처리하지 않음."
+  ],
+  "uncovered_event_houses": [
+    {
+      "event_id": "d22b54ccd0be4f932b42",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3099770bd39945f8929a",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "5ac5e1ec6f0a02c9f712",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1627fbcbc540244fac20",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "057c1a13f70dbbdea485",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "bab038bd35599a75b9c5",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1dfd1f67d6da741f7333",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "21e7f5cf9ce3301639fb",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "29e60538ceb0ad6361b9",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a825db1a2d531bef0b18",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "ae8eb22ba987cb1cfab7",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "233755991b4fc4e86506",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c39855fd5d5778b97849",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "543f6ed12cdd89644704",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "5162d3e533b027e8f4b2",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3d708b5a62d42799dedb",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e3dcc2f3dfae1853488b",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a14b978e7362e3222eb8",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "fcafd169f15606a3ee5c",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "62e9538d97f60cd1d7b2",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e4aa7df123ba37868743",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "44d61c8ca47f52c0d74d",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "afe3742ff98df9c0c352",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c7eb749805ed8778de96",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d8c375c9b01c75696236",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b80e29030d5954b0b424",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "adb7cb1e9764f2520fea",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "7b60251c4a848e27f282",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c4af46e213a193c2e05a",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3aef7537c1b34d166b51",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "795502e15628e7291cfb",
+      "houses": [
+        "GS",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "ebda2b89709dd52de82b",
+      "houses": [
+        "GS",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9959261ffb1fc6e0c0b3",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b21be94dc32f1aa11a24",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "52c7e0a2b873ebb5907f",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "97a36234c2ca8ba3251e",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d71734446c8a3139781d",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "cd5c2f731ac95db0b2b1",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0648b968169e094adb52",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b4db72bcdb4f16678d0d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e12470142c03d9e5acca",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "4e9ab03977ecc151e19b",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f5bb894f85ecd69d3cfd",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "27340feb772b5d979305",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c8e1e7bd7e27eeb07684",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "529c3ab4247b36dd2827",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b4c62660601b22f8302f",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "bec6f2c8e42d065802db",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e75d3d399d8027eb7a03",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9d09e685d0ee9972ed52",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "53312fcf9328ca21dec6",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3a55bce5e927b778525d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a597b8d2716051a5cd1c",
+      "houses": [
+        "GS",
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "054701058f62a42c46c9",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "17b1081257f7729137d8",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "93c10669d11a20fda3ca",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "07882046fda435133fb6",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d9d904de4c50eedd52b2",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA"
+      ]
+    },
+    {
+      "event_id": "f93886387cdf9dd6ecfb",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "72075c86aca871ebdf1c",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "72b1976a6e4baf4ed579",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "7109566a3abc65323c5d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "05af6840307d591479d5",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f59f2c706f70d1961fc4",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA"
+      ]
+    },
+    {
+      "event_id": "e5fa6a171736c915c5a0",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a4fcfeceb1de8beec78d",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA"
+      ]
+    },
+    {
+      "event_id": "68f652c472536e6b6e3c",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2301f070165054264272",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a418dad4c63875e325bf",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b18ea5e0518b279b8dd7",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0aa02540774735098165",
+      "houses": [
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "43d080d9befd864c4f16",
+      "houses": [
+        "GS",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "735ebd8f454565504ab1",
+      "houses": [
+        "GS",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "4ad9c7c23dbb3e500e90",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "720c61b274cf9d1b43bf",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f228e2069c36077c33f9",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "16bc21a22527b42e12e1",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "17428e8bb8375c76477f",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1eb352a6c7db02339553",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1de89f0fcc00977ccec9",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1248daf11ba72ab4a1fe",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "09ce3380763f61020286",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c16f9c13c6a403bc47cf",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a9f47946394223809920",
+      "houses": [
+        "GS",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "39abc030cbb52519b976",
+      "houses": [
+        "GS",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b6f65db832d04d71f4d1",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3859fa96cf36a1a153eb",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "dd78f3538b6060c9debf",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "54724c4e0cb090850e2f",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d64800de4d81b652ff2e",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "61e7a6a1667dd6126c32",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "06f96f41a7c31051c8c4",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d79811bb6a6545e713d5",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "10514b67fb72f6dbffdc",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9704d927f05037d096d8",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d50b6fa651a741ebb16a",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "4e00374278fb092b868d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2ba47bce42619561b35c",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f6383f35c48593a245b2",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0ac56f0eec4492f6256e",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "7ad125a574373060f42b",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "6a4ac392f69b5d533459",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1cb9e720d58063d3058c",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "fe9fb30806e339144bee",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2f1805a4b2480894b3c1",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "5b6f582aa313ffc607e6",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "13aef35846d9a58fdbe2",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b398541ee7c641cb7dbb",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "261bc4e1d599426656cd",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0bed1a4043db3a7a516a",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "26593828a7ca33df6a12",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "60440b54fd8e4b35f7ba",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "95fbf012e4971440b31d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "4a3505096a43b67e4234",
+      "houses": [
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "173ac64daad75c6e6692",
+      "houses": [
+        "GS",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "aedc2ddcf4514877ecce",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2685778551fa93c0d380",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "13c548755a5f99daf24e",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0c03a972e8c355de43c6",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "48d7fbc5ac51f39f7a85",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "847f83c634ae682f1fb6",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "b20b80c821db1beeb839",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "105830b2de59db69d7fd",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2cd39369d037d05f743f",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e71888c6977d4330de3b",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "78c2b329945fdcc46901",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "806c7d0e4c104b628eb6",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "45a6ff779bec1961bfae",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "6067dc55dde36d368c7f",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "21b4c637dc7cc76a79f1",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9f582247b41bfa925733",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "3d572a8e85fb31ccc4ff",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "a74fc0ada284d786ef65",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "986f20f3a0f60721008c",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9b6d93983e1a152f2f6f",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "5526251d366a52f3b126",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "8949ffd9bb3befcf3c90",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9fe19c22d3c0061e0b63",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "257c384943811ede2edb",
+      "houses": [
+        "GS",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f8291371a72e4552017b",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "10754cbb2efbfb46043e",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d3cfd8195aa7e6bb6a92",
+      "houses": [
+        "GS",
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "621738f00a5edf903da8",
+      "houses": [
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "bf0caf9b7095f7ded663",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "17919350d2ba5234fdfc",
+      "houses": [
+        "GS",
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "51d3eefb5031d0634107",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "eb602fa587cf9735e7fb",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "853eb2e42fd95db18ebb",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "d96db3cb937bf219622d",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2a28e526354ddf6fd1d7",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "ed691b1b29cca2eae0fd",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "535765e7556bd4420906",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "898eda9fc0921ce265d2",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "656b27e0431b71281d29",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f79a3c0ce99374bee5d8",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "800476d26298cf56d40e",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "44128c92c1f286c99092",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "8ec8cb85ae4ae2843312",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f47a1d26e6a0298fa407",
+      "houses": [
+        "JPM",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c217cd1981f10843d9c6",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "53cc564531e2aa002cae",
+      "houses": [
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "11e04739695b103a0707",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "38b6d53edce1d99d8468",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "08c169eaf508070cbd02",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "56dd216a63ffcae1a29a",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "352d091d208a422a922b",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "f2de762cd8e7d813ce27",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "57f1e097ef295a8ba799",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "66420f9e924b90c702ca",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "6a5da26ffe48b6285fb8",
+      "houses": [
+        "GS",
+        "JPM",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "eaaa9c7d643cbdc191dc",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "977f698dd91774dac6e4",
+      "houses": [
+        "JPM",
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "0433e6f0ff4d6c164cf8",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "2815d72e414a6cff4d5c",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "292ea71fc4b15fead184",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "c19ed74662c602cc5f6e",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "fedb7b72e2b2ee133b66",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "79c7bbb1e97ad5beee59",
+      "houses": [
+        "Citi",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "8759e2d68e870902a13b",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "eb3a0b311d529c302afc",
+      "houses": [
+        "GS",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "74ca4e43e3b7d758370d",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "82882e0af5b2c618e8e3",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "95858958526d8be1a4eb",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "041895dc9d2ddf6974be",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "ef5a6080c19d76843cb4",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "dce4a6492dfc3edaeb73",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "15bfae8389f25fccbdb9",
+      "houses": [
+        "GS",
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1256580b4b15b87987b9",
+      "houses": [
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "4b86b31fc72f154236cd",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "8384f31e5f8327a4b2ba",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "1a26b1295325c42d6832",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "9929bd5a068495d067a3",
+      "houses": [
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "ee15b937b353a7195a53",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    },
+    {
+      "event_id": "e9f87d3ca604b8ca5ac4",
+      "houses": [
+        "JPM",
+        "Citi",
+        "BofA",
+        "HSBC"
+      ]
+    }
+  ],
+  "published_hashes": {
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\dashboard_data.json": "91fc1f82fe8b11e4b992ff5c19f5e1a715d64b728387933c5e18d5d7c56e3a43",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html": "5a1d3b6761deb19d1ea448b30d6ab3955a053ffcff221818eb6bcd37d2ffe5cb",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views.html": "9066e785b0d113ae284e545bec55eba554ba1068057991350b54ceeab723e888",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\macro_views_data.json": "505d012240884ca6464061eb84248f0da8d4979f17e9767cf6e2e1d753c448b1",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\review_queue.json": "4247dd36d7928d50a329d5a94e36742192d54d4adf6c0b699539d0fe03e9c5a0",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\validation.json": "4fc1f8872a4620bbb963499deef33557250a9e11004db370bdf14436f10c0b80"
+  },
+  "documents_pages_read": [
+    {
+      "doc_id": "8290dad206cdc90bdafef86c3e634f1a51ec317f5fb1be42f8fc861472779f46",
+      "house": "Citi",
+      "title": "Canada Economics Weekly: Markets pricing much higher rates with core inflation at 2%",
+      "published": "2026-09-19",
+      "full_pages_read": [
+        1,
+        2,
+        3
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "096f3ee02eb54709c674d7d7e01486d48aa710ab429f9673e1fb185defc851dd",
+      "house": "Citi",
+      "title": "US Economics Weekly: Hawkish Fed will slow non-AI economy",
+      "published": "2026-09-19",
+      "full_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "44d694b0be13aefd47794cb60e2d0da81f32dfe5bbd4e408bdfcbc60fc45a746",
+      "house": "GS",
+      "title": "China Matters: Path of Least Resistance",
+      "published": "2026-09-20",
+      "full_pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "45baf84ffb1f5d63e6cb62cc1e9e4df62bc2576a6abeb73bae09c82445dc5bb2",
+      "house": "GS",
+      "title": "China Economic Activity and Policy Tracker: Sep 18",
+      "published": "2026-09-18",
+      "full_pages_read": [
+        1,
+        2,
+        3
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "71937e89746427b33d24cb041eec7aa9a7572f2ddd5f4ce623f1a4ecd415ba22",
+      "house": "Citi",
+      "title": "US Economics: The Daily Update - PCE Revision Riddle",
+      "published": "2026-09-18",
+      "full_pages_read": [
+        1,
+        2,
+        3
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "7a7cf06438b354d438c04e8a66607f5c91aa469bc18503c04527259da4cbde83",
+      "house": "JPM",
+      "title": "ECB: And now for hike number four",
+      "published": "2026-09-18",
+      "full_pages_read": [
+        1,
+        2
+      ],
+      "whole_document_completed": false
+    },
+    {
+      "doc_id": "9e0c32334c2fb3c2720eba8c3dbc510e969f1cc69221a218c1311b8d7f66161b",
+      "house": "HSBC",
+      "title": "The Week in Numbers A look back at the economic data",
+      "published": "2026-09-18",
+      "full_pages_read": [
+        1,
+        2
+      ],
+      "whole_document_completed": false
+    }
+  ],
+  "candidate_search_file": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\interpretation_runs\\20260921_185521\\candidate_search.json",
+  "unreviewed_new_document_ids": [
+    "bd145fa963565a4d3aaac79fbe568aa77de3c96f6fb69e2b9a36a21c806ef414",
+    "715104a5b680ce7042a15545c5f62f3adfc9a2ebcf588b2b7661b8a3f663a8ae",
+    "a11a78b23e0d80d604f4981054b43ed1418acbac9134894552b2c5a4bd502348",
+    "d93f02dba8af318a04860ca62b2968074e27fd9a56a719cbdfdd46d1fd2fe012",
+    "eb46ac85dfc601f945916f7b2448f200c3c6d3405853120647da68a645bc14eb",
+    "82cf6d585d3b731b3dce6baf452c057e770ddf6609742841da0361a68c0bf3ed",
+    "276e122ecf80e5dbc55ffd9aeddc9f6ff56b40220618d0c3e350ef7a3ec85e83",
+    "4515f74055b3425f7aee53728b6898524670d5c97d2fb94f7bd44235305f4196",
+    "2651d0307f64bd1604374f82f0df20dcba1f8187bf0fac0194208f20a022a9d3",
+    "32b3bd2e7c010e6510f8f50c073c3c8cc8197153e96f68468d0fa2f13337b2e9",
+    "75dba11ea7a081b4b98a412b3df537b17eaefdb86db2ec841c729eb0ac2537f4",
+    "fa2d77e2f787ecdae04dc9e3b0b12042d0807a7e8765909bc24b608a5d46d169",
+    "ea7e3a4a18ac64b94547af46f3bd6dfb133914d3868c6cedf99310a10ba96b89",
+    "8d3a47cfb2db3aeb6226de6e8708892e2f9bc157f542ca8568680f59723fd777",
+    "1b10c6c1a85af1271d359b350e4a77208511b376687a5cc6214933354b2c0c07",
+    "68c93faed5e41d6e19aa0810ad8e2c468b51c658e74f5abae4544b8cd6ef2792",
+    "5b9a7324eee37a3bc8b071c275e1d3de585a2ae68f9be3a248847dd69f6e6eb6",
+    "8cb5862ce589e7bb4eb00cf86ef9d88147e92c560fef8e58b111e8149880aa49",
+    "caedee2bb286134ab507a90b68ff989a3720e9562911fa39c19e540b8813a824",
+    "65d233a22eb0531ef0e073683dbdb3b994aad8a149bde6eff919f61984c92d65",
+    "e1676c24c59031183e21b9f9cf306283f8b7f640d1e810e6af494c27aed39c49",
+    "0d26b3f5a5c9511689d541c028974e017df3deef80cb8f4cc1262287909c35b3",
+    "da185bdd1bf592c30994f685f5abb4d57aa20a688adaacaa1f3aca4aa02c46c5",
+    "270e20231dd22ee1fba29d153bff3c17f9cd09e1763f4e8d43c3d6d320af2c62",
+    "5591c5acde34f3d374372eca8dc9205bfacef9cb41d55e0b70f13b080212d2e4",
+    "27a0a8e7882ded321ad55986b598d40617787f8f120a9a53266b67d0621bcaf6",
+    "69e378c2225b8e365ec0f280c5222f99157ed7d5aae467d31f50edab2c6a260e",
+    "12104e8690b7da5f41b78ff015ed879aff246449213d6b2dad78b8d6078c90f9",
+    "72438b82c1f6703197e436829e232d7608e5a700399ae1b634f3d72ea44f4df5",
+    "7998c8e6665484b112b2c16990644783fe0a681379980ca6174a49589f9ba9ea",
+    "5436df8a7344706653cf644cf2fe1d6a1b8a0f76ad2ec21382fe9623e09e66e9",
+    "e124199a4e4d9e67bcaa4ee0a9b46ba7b53053fcadce3c9322e2e32b0015187a",
+    "f1b22b057e99070f175ac24b32d2b98938716fbc2d6a7d7478cfc81cf07cff95",
+    "751cc3e4091c99cc30289170b581a6d90047e39a805718188c5a115db1b61674",
+    "42abcaeadaea77757274943247c5efc08504acde9e1fce2662c73461ea0f6fc0",
+    "dfae4ef38ebdb7fc90e1969eff4596f849bc5f8b4b712d5c903b11365effd636",
+    "43a1bb7caf9f3ce8861c57c7a91ea5612b4c7f574f907df81cd73dc0cf0707b1",
+    "12cfdd8d553921b3e103c38e4716734d499d464f7628344ed02f0b6bc2684750",
+    "3bb9bcae75d548e4927bbe1c8ec3a891d23da25aadf31f71eec487cfd0fdad2e",
+    "f740085a73cca8548c170dba7b3899016d08e29bcc9a0ecea8f8912498673077",
+    "f461d51fcf0d281a2a6fc78b489fd51b28d7fb9e5622438492858d5f9cf2e9c8",
+    "497145e86a3faaacfe25dfa0bdc05aebe2a2c2288d5f75d3ed36736f71cfed01",
+    "6599ef93a3ed9bf5f0e1f9b5492748170a09d6755688d306779e4dbc9e2eeb06",
+    "5d959210730b361e4eb18c2a6524d11d3265ef3dd370b8b5802fb5c6d0a1e5bf",
+    "c84a1983609e180aa176a0e371f2f6cb448eb665186cb76814e3b45ac1bfa88b",
+    "3bc50c591a9d012890338e1977e677d926970f7c741ad4d9b19ec00139b70bc6",
+    "58dcb7979527715bb434c9ee948ad28068c4b2c988c09c1582f9f4132387564c",
+    "7aec6889d3a1fdb7597c3fff54c9d32a4c036b22bc36ab8b75c639baa8ea5f53",
+    "3bd9884e623cbaf6a6c43fac63e3279d8bcb0fda69a3b549f87160dd061e7389",
+    "fa24aa186a026953567066e5255c07275e502a28b004d8c9262ed5c49efc02bb",
+    "227d2a0c5fff918f41464042d938b4ba175cd4da9711458870d8a31cb0ecaa31",
+    "ed459c4067f3283e1a730169905779340f59036569e649ebe45c1a224943d199",
+    "a50d987fb139983e71c401045383da831269f7088bc78252c60ac99001d3df53",
+    "09cec001ce09c75d5b1f08041957745694372e65207979290cba8d0ea9929be7",
+    "bb987722622f8a13a0a16c1e8c90106d006695f8aa37a672c970e658d9c68da4",
+    "0407f64d8172e850147910711a3d983927f7573377b5a62d7f9fb0339e697da4",
+    "b193bc93ffc1f04004427a21a4ca63988009e91bc171f1b84871f78dcd5b1fa8",
+    "385209509cfcc43e3682ba5326122ed89535fc879345ae2bd296d5677993155c",
+    "041c4ae690ab31c571c74cdd2629091c7489b2aeb988cb58b453212cf29024f8",
+    "5be1d5fa2752d4ebc575bd95aa6a56d787a7fed3aebed7cb7c5ae28c11d9b107",
+    "70484c84ccff428e516e8b395705149c84dce333776e6929e8ad9b7b44f03e02",
+    "263bbf971815c6f4bd76e21b9d5cdb1af223044e1e35a5a9ea4d167f1b67f638",
+    "e0626fdd4af95eb1b865a9b5d35759442c1cb3b938943fdf9256203da97cefd1",
+    "9c7422f25ec8dbb7476cc31b573a43c87b2c7b8ae05a834974d9996b06a45ab4",
+    "275469f2a6280c310ee9a99aff1b407df44bcbcffa41ef1275fb987dc1f7b404",
+    "be441289b2a849a8877125ddacdfdf02451d7a11f8e307fef2a5a344b54ff522",
+    "a71469995c3bd5e1dfb58db27acf10fa1814d308dd7bd23752f50b6bf6f8a5d6",
+    "f4359c95d7e5efd17f10121a2cca69f0aa5b34da2dd90102c7b25387f63810f7",
+    "952fe85830f5e9af2f995fe225f514d82685e6f6f19cb3200c2d157a700a6a5f",
+    "710ef5751764c37efef89a2759c437460efc1048af991cffcc012a338abfdc80",
+    "1d9ae26af97be3da3071367e11feb252c69172c0df4229a2818fb7bc03026f74"
+  ],
+  "candidate_limitations": "기존 자동 후보 순위는 오래된/다른 지역 결과가 섞여 신규 문서 제목·기간·전체 페이지를 추가 대조했다. 미채택 원문 및 남은 페이지는 검토 완료로 처리하지 않음."
+}

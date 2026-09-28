@@ -1,0 +1,382 @@
+{
+  "campaign_id": "20260910_174009_2f20d5",
+  "started": "2026-09-10T17:40:09.675998+09:00",
+  "end": "2026-09-09",
+  "trial_start": "2026-06-08",
+  "extension_start": "2026-03-09",
+  "extension_end": "2026-06-07",
+  "status": "incomplete",
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "after_run": "20260909_202016_864eeb",
+  "houses": {
+    "HSBC": {
+      "trial": {
+        "eligible": false,
+        "gate_reasons": [
+          "Collector status must be 'complete', got 'incomplete'.",
+          "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174157_12f0bc.console.log",
+          "Collector must report a positive integer counts.in_range for fresh discovery.",
+          "29 unresolved database reports remain (failed=29)."
+        ],
+        "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\audit_trial_HSBC_20260910_174157_12f0bc.json",
+        "run_id": "20260910_174157_12f0bc",
+        "result": {
+          "status": "incomplete",
+          "counts": {},
+          "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174157_12f0bc.console.log"
+        }
+      },
+      "extension": {
+        "status": "held_for_trial_errors",
+        "reason": "Three-month verification has not passed."
+      }
+    },
+    "BofA": {
+      "trial": {
+        "eligible": false,
+        "gate_reasons": [
+          "Collector status must be 'complete', got 'incomplete'.",
+          "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174417_15d9a4.console.log",
+          "Collector must report a positive integer counts.in_range for fresh discovery.",
+          "2 unresolved database reports remain (failed=2)."
+        ],
+        "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\audit_trial_BofA_20260910_174417_15d9a4.json",
+        "run_id": "20260910_174417_15d9a4",
+        "result": {
+          "status": "incomplete",
+          "counts": {},
+          "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174417_15d9a4.console.log"
+        }
+      },
+      "extension": {
+        "status": "held_for_trial_errors",
+        "reason": "Three-month verification has not passed."
+      }
+    },
+    "JPM": {
+      "trial": {
+        "eligible": false,
+        "gate_reasons": [
+          "Collector status must be 'complete', got 'incomplete'.",
+          "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174633_5af69f.console.log",
+          "Collector must report a positive integer counts.in_range for fresh discovery."
+        ],
+        "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\audit_trial_JPM_20260910_174633_5af69f.json",
+        "run_id": "20260910_174633_5af69f",
+        "result": {
+          "status": "incomplete",
+          "counts": {},
+          "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174633_5af69f.console.log"
+        }
+      },
+      "extension": {
+        "status": "held_for_trial_errors",
+        "reason": "Three-month verification has not passed."
+      }
+    },
+    "GS": {
+      "trial": {
+        "eligible": false,
+        "gate_reasons": [
+          "Collector status must be 'complete', got 'incomplete'.",
+          "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174910_a908d4.console.log",
+          "Collector must report a positive integer counts.in_range for fresh discovery.",
+          "66 unresolved database reports remain (failed=65, unresolved_print_control=1)."
+        ],
+        "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\audit_trial_GS_20260910_174910_a908d4.json",
+        "run_id": "20260910_174910_a908d4",
+        "result": {
+          "status": "incomplete",
+          "counts": {},
+          "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174910_a908d4.console.log"
+        }
+      },
+      "extension": {
+        "status": "held_for_trial_errors",
+        "reason": "Three-month verification has not passed."
+      }
+    },
+    "Citi": {
+      "trial": {
+        "eligible": false,
+        "gate_reasons": [
+          "Collector status must be 'complete', got 'incomplete'.",
+          "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175121_fccdb4.console.log",
+          "Collector must report a positive integer counts.in_range for fresh discovery.",
+          "18 unresolved database reports remain (failed=18)."
+        ],
+        "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\audit_trial_Citi_20260910_175121_fccdb4.json",
+        "run_id": "20260910_175121_fccdb4",
+        "result": {
+          "status": "incomplete",
+          "counts": {},
+          "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175121_fccdb4.console.log"
+        }
+      },
+      "extension": {
+        "status": "held_for_trial_errors",
+        "reason": "Three-month verification has not passed."
+      }
+    }
+  },
+  "attempts": [
+    {
+      "phase": "trial",
+      "house": "HSBC",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174057_386a8c",
+      "started": "2026-09-10T17:40:57.638510+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174057_386a8c.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174057_386a8c.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:41:57.693610+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174057_386a8c.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "HSBC",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174157_12f0bc",
+      "started": "2026-09-10T17:41:57.892379+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174157_12f0bc.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174157_12f0bc.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:42:57.940029+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_HSBC_20260910_174157_12f0bc.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "BofA",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174316_55e08c",
+      "started": "2026-09-10T17:43:16.875882+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174316_55e08c.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174316_55e08c.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:44:16.929523+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174316_55e08c.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "BofA",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174417_15d9a4",
+      "started": "2026-09-10T17:44:17.128266+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174417_15d9a4.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174417_15d9a4.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:45:17.187389+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_BofA_20260910_174417_15d9a4.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "JPM",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174533_ab3217",
+      "started": "2026-09-10T17:45:33.199153+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174533_ab3217.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174533_ab3217.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:46:33.260479+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174533_ab3217.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "JPM",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174633_5af69f",
+      "started": "2026-09-10T17:46:33.733056+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174633_5af69f.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174633_5af69f.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:47:33.783845+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174633_5af69f.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "GS",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174809_2475a0",
+      "started": "2026-09-10T17:48:09.124118+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174809_2475a0.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174809_2475a0.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:49:09.183586+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174809_2475a0.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "GS",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_174910_a908d4",
+      "started": "2026-09-10T17:49:10.269803+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174910_a908d4.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_174910_a908d4.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:50:10.329080+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_GS_20260910_174910_a908d4.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "Citi",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_175021_db8fa0",
+      "started": "2026-09-10T17:50:21.460456+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175021_db8fa0.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_175021_db8fa0.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.1,
+      "idle_seconds": 50.1,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:51:21.590824+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175021_db8fa0.console.log"
+      }
+    },
+    {
+      "phase": "trial",
+      "house": "Citi",
+      "start": "2026-06-08",
+      "end": "2026-09-09",
+      "run_id": "20260910_175121_fccdb4",
+      "started": "2026-09-10T17:51:21.954832+09:00",
+      "status": "incomplete",
+      "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175121_fccdb4.console.log",
+      "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\run_20260910_175121_fccdb4.log",
+      "stall_minutes": 15.0,
+      "house_timeout_minutes": 360.0,
+      "elapsed_seconds": 50.0,
+      "idle_seconds": 50.0,
+      "exit_code": 2,
+      "finished": "2026-09-10T17:52:22.045175+09:00",
+      "console_log_exists": true,
+      "collector_log_exists": false,
+      "result": {
+        "status": "incomplete",
+        "counts": {},
+        "reason": "Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_Citi_20260910_175121_fccdb4.console.log"
+      }
+    }
+  ],
+  "active": null,
+  "scheduled": false,
+  "updated": "2026-09-10T17:52:22.375181+09:00",
+  "disk_space": {
+    "minimum_free_gib": 5.0,
+    "volumes": [
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+        "free_bytes": 21368266752
+      },
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+        "free_bytes": 21368266752
+      }
+    ]
+  },
+  "finished": "2026-09-10T17:52:22.375168+09:00"
+}

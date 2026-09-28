@@ -1,0 +1,28 @@
+{
+  "rows_preserved": 253,
+  "unique_events": 253,
+  "columns_preserved": "B:K",
+  "five_houses_per_event": true,
+  "quote_and_file_checks": "passed",
+  "status_counts": {
+    "uncovered": 619,
+    "related": 74,
+    "reaction": 178,
+    "preview": 24,
+    "candidate": 328,
+    "basis": 42
+  },
+  "direct_event_house_connections": 0,
+  "indicator_candidate_documents": 333,
+  "indicator_candidate_pages": 1164,
+  "indicator_search_is_unreviewed": true,
+  "input_numeric_match": true,
+  "historical_numeric_match": true,
+  "authored_events": 212,
+  "commentary_needs_recheck": 0,
+  "new_summaries": 18,
+  "updated_summaries": 22,
+  "retained_reviews": 190,
+  "review_status": "draft",
+  "macro_views_payload_unchanged": true
+}

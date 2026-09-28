@@ -14,6 +14,13 @@
 
 ## 1. 모듈
 
+### Market Rotation (2026-09-23 추가)
+
+`/market-rotation` 탭은 `데일리시황/BQL/Dashbaord/유로존_dashboard/Market_Rotation_Dashboard_17_Indices.html`을 표시합니다.
+원본 HTML을 갱신한 뒤 기존 `scripts/sync_embeds.py`를 실행하면 `public/embeds/market_rotation.html`로 복사됩니다.
+동기화는 원본 대시보드를 재계산하지 않습니다. 로컬 생성 → 동기화 → 기존 QAE Git push 순서로 배포합니다.
+최초 배포에는 새 라우트·NavTabs·동기화 코드도 함께 커밋해야 합니다. 이후 데이터 갱신에는 갱신된 임베드 파일을 포함합니다.
+
 | 탭 | 내용 | 차트 | 데이터 |
 |---|---|---|---|
 | **Equity Factors** `/equity` | GS Pair Baskets 섹터×팩터 히트맵·추이·TOP/BOTTOM | Recharts + 히트맵 | `pairbaskets.json` |

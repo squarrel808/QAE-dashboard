@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-10",
+  "note": "기존 다운로드 보고서에서 원문과 페이지를 확인한 초기 수치 전망. 모두 사용자 검토 전 초안.",
+  "forecasts": [
+    {
+      "forecast_id": "gs.us.core_cpi.2026-08.mom.20260902",
+      "house": "GS", "country": "US", "indicator": "US_CORE_CPI", "reference_period": "2026-08", "as_of": "2026-09-02", "unit": "pct_mom", "value": 0.2, "scenario": "base", "qualifier": "약 0.2%",
+      "evidence": [{"doc_id": "d594c42e3a233e5f89913f650197ba60bae546e6c255088037fccfc9ddfbf616", "page": 1, "quote": "We continue to expect August core CPI and PCE inflation to print around 0.2%, which would reinforce the case for the Fed to remain on hold in September and lead front-end US Treasury yields lower."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "gs.us.core_pce.2026-08.mom.20260902",
+      "house": "GS", "country": "US", "indicator": "US_CORE_PCE", "reference_period": "2026-08", "as_of": "2026-09-02", "unit": "pct_mom", "value": 0.2, "scenario": "base", "qualifier": "약 0.2%",
+      "evidence": [{"doc_id": "d594c42e3a233e5f89913f650197ba60bae546e6c255088037fccfc9ddfbf616", "page": 1, "quote": "We continue to expect August core CPI and PCE inflation to print around 0.2%, which would reinforce the case for the Fed to remain on hold in September and lead front-end US Treasury yields lower."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "jpm.us.real_gdp.2026-q3.qoqann.20260904",
+      "house": "JPM", "country": "US", "indicator": "US_REAL_GDP", "reference_period": "2026-Q3", "as_of": "2026-09-04", "unit": "pct_qoq_annualized", "value": 2.75, "scenario": "base", "qualifier": "견조한 성장 전망",
+      "evidence": [{"doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5", "page": 1, "quote": "We continue to expect a solid 2.75% GDP growth outcome this quarter."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "citi.us.core_cpi.2026-08.mom.20260908",
+      "house": "Citi", "country": "US", "indicator": "US_CORE_CPI", "reference_period": "2026-08", "as_of": "2026-09-08", "unit": "pct_mom", "value": 0.184, "scenario": "base", "qualifier": "현재 최종 전망",
+      "evidence": [{"doc_id": "c8c862fae85baf9de9c09a63d395749c63a5d2bb5a7af73e1461992775b60b50", "page": 1, "quote": "Our final (for now) forecast is for a 0.184%MoM increase in core CPI in August, with the year-on-year reading falling to 2.3% (but with risk it stays at 2.4%)."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "citi.us.core_cpi.2026-08.yoy.20260908",
+      "house": "Citi", "country": "US", "indicator": "US_CORE_CPI", "reference_period": "2026-08", "as_of": "2026-09-08", "unit": "pct_yoy", "value": 2.3, "scenario": "base", "qualifier": "2.4%에 머물 위험 명시",
+      "evidence": [{"doc_id": "c8c862fae85baf9de9c09a63d395749c63a5d2bb5a7af73e1461992775b60b50", "page": 1, "quote": "Our final (for now) forecast is for a 0.184%MoM increase in core CPI in August, with the year-on-year reading falling to 2.3% (but with risk it stays at 2.4%)."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "citi.us.core_pce.2026-08.mom.20260908",
+      "house": "Citi", "country": "US", "indicator": "US_CORE_PCE", "reference_period": "2026-08", "as_of": "2026-09-08", "unit": "pct_mom", "value": 0.19, "scenario": "base", "qualifier": "새 산출 방법 반영 예정",
+      "evidence": [{"doc_id": "c8c862fae85baf9de9c09a63d395749c63a5d2bb5a7af73e1461992775b60b50", "page": 1, "quote": "Details of CPI and PPI lead us to pencil in a 0.19%MoM increase in core PCE in August, which will incorporate new methodologies to calculate key components."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "bofa.us.core_cpi.2026-08.mom.20260904",
+      "house": "BofA", "country": "US", "indicator": "US_CORE_CPI", "reference_period": "2026-08", "as_of": "2026-09-04", "unit": "pct_mom", "value": 0.22, "scenario": "base", "qualifier": "추세 수준",
+      "evidence": [{"doc_id": "87d785a3d22d541e7510915c363aa9eed20419b148a4d2b4f07fd5e2c157a449", "page": 1, "quote": "We forecast core CPI to rise a trend-like 0.22% m/m in August, while core PCE should come in slightly firmer at 0.24% m/m."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "bofa.us.core_pce.2026-08.mom.20260904",
+      "house": "BofA", "country": "US", "indicator": "US_CORE_PCE", "reference_period": "2026-08", "as_of": "2026-09-04", "unit": "pct_mom", "value": 0.24, "scenario": "base", "qualifier": "core CPI보다 소폭 강한 전망",
+      "evidence": [{"doc_id": "87d785a3d22d541e7510915c363aa9eed20419b148a4d2b4f07fd5e2c157a449", "page": 1, "quote": "We forecast core CPI to rise a trend-like 0.22% m/m in August, while core PCE should come in slightly firmer at 0.24% m/m."}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "hsbc.us.headline_cpi.2026-08.mom.20260904",
+      "house": "HSBC", "country": "US", "indicator": "US_HEADLINE_CPI", "reference_period": "2026-08", "as_of": "2026-09-04", "unit": "pct_mom", "value": 0.4, "scenario": "base", "qualifier": "에너지·호텔 가격 상승 반영",
+      "evidence": [{"doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354", "page": 1, "quote": "In the US, we expect CPI to rise 0.4% m-o-m, boosted by higher energy and volatile hotel prices, with core CPI showing a moderate 0.2% m-o-m increase"}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "forecast_id": "hsbc.us.core_cpi.2026-08.mom.20260904",
+      "house": "HSBC", "country": "US", "indicator": "US_CORE_CPI", "reference_period": "2026-08", "as_of": "2026-09-04", "unit": "pct_mom", "value": 0.2, "scenario": "base", "qualifier": "완만한 상승",
+      "evidence": [{"doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354", "page": 1, "quote": "In the US, we expect CPI to rise 0.4% m-o-m, boosted by higher energy and volatile hotel prices, with core CPI showing a moderate 0.2% m-o-m increase"}],
+      "prior_forecast_id": null, "change": "uncompared", "review_status": "draft", "origin": "assistant_review_of_local_reports"
+    }
+  ]
+}

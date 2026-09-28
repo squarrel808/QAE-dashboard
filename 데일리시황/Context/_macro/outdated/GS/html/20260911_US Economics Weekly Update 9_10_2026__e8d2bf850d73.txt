@@ -1,0 +1,51 @@
+DEV
+search
+Search Marquee
+ 
+Sorry, no matches were found
+Try a new search or use our popular apps
+US ECONOMICS WEEKLY UPDATE
+US Economics Weekly Update 9/10/2026
+Research | Economics | 10 September 2026 | 7:44PM UTC
+
+We forecast a 0.23% increase in August core CPI on Friday and a 0.24% increase in core PCE.
+
+Our forecast implies 2.40% year-over-year core CPI inflation.  We think headline CPI prices rose 0.39% in August and 3.40% year-over-year.  The rise in jet fuel prices likely boosted airfares by about 4% this month, but shelter should remain benign (0.22% OER, 0.23% rent).
+
+Following the August PPI report, we now expect that core PCE prices rose 0.24% in August and 3.15% year-over-year, accounting for a 0.2pp downward revision from the upcoming methodological changes.
+
+Last week’s August employment report was strong and suggests the labor market is in a good place.
+
+Payroll growth averaged 71k over the last three months, and our estimate of the underlying pace of job growth based on the payroll and household surveys stands at 53k, roughly the breakeven rate.  The unemployment rate remained low at 4.1%, and the participation rate rebounded 0.2pp to 61.6%.
+
+Average hourly earnings rose just 3.1% over the last year, and our broader wage growth tracker stands at 3.4% year-over-year, below the 4% rate that we think is compatible with 2% price inflation.
+
+These numbers suggest the labor market is in a good place, neither too weak nor too strong, which should leave the Fed’s focus on inflation.
+
+Fed commentary was mixed over the last two weeks.
+
+Last week, Governor Waller said that “recent data suggest we are finally seeing some signs of disinflation” and that “if this continues … over the next two weeks, I would be inclined to support holding the target for the federal funds rate at its current setting,” though “if the incoming data for August show this improvement has been fleeting, then it may be appropriate to raise the policy rate.”
+
+New York Fed President Williams said last week that he is “seeing trend inflation moving slowly down as some of the effects of tariffs move into the rear-view mirror,” a view similar to our own.
+
+Their comments contrasted with Chairman Warsh’s Jackson Hole speech the prior week.
+
+Research recap: Rising interest rates add to existing fiscal sustainability concerns arising from unusually large primary deficits and the high debt-to-GDP ratio.
+
+In our baseline forecast, which assumes that interest rates will come back down from the recent increases, we project that federal debt-to-GDP will rise from 100% to 123% by 2035, and that nominal interest expense as a share of GDP will substantially surpass its 1990s peak and real interest expense will approach its 1990s highs in coming years.
+
+Interest rates have been below nominal GDP growth in recent years, which helps to slow the growth of debt-to-GDP.  That would remain true in our baseline but would not if current interest rates held indefinitely.  Even under our forecast, a growing debt stock would likely raise interest rates over time.
+
+Balancing the primary budget outside of recessions would roughly stabilize debt-to-GDP.  But getting there requires a large 3pp deficit reduction, which is politically unlikely for now.  Inaction is costly: the required deficit reduction grows the longer it is delayed because debt and interest expense rise.  A larger productivity boost from AI would reduce but probably not eliminate the deficit reduction needed.
+
+David Mericle
+Goldman Sachs & Co. LLC, New York
+david.mericle@gs.com
+© Copyright 2002-2026 Goldman Sachs All rights reserved.
+Need help?
+Contact Us
+
+Use of this site is subject to the Terms and Conditions of Use updated as of 12 August 2024.
+Marquee Regulatory Disclosures
+Important Disclosure Information About Goldman Sachs Research
+Please review our Interest Rate Benchmark Transition Notice, Privacy & Cookies Policy, Security, Market Data Attribution, Security Guidance and GS&Co.'s Statement of Financial Condition

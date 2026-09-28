@@ -1,0 +1,78 @@
+{
+  "house": "BofA",
+  "start_date": "2026-06-08",
+  "end_date": "2026-09-09",
+  "run_status": "incomplete",
+  "eligible": false,
+  "gate_reasons": [
+    "Collector status must be 'complete', got 'incomplete'.",
+    "Collector reason: Page.goto: Timeout 12000ms exceeded.\nCall log:\n  - navigating to \"https://markets.ml.com/economics-overview\", waiting until \"domcontentloaded\"\n",
+    "Collector must report a positive integer counts.in_range for fresh discovery.",
+    "2 unresolved database reports remain (failed=2)."
+  ],
+  "coverage_evidence": "Collector completion and fresh in-range discovery; date spans are descriptive only.",
+  "counts": {
+    "reports_in_window": 382,
+    "downloaded": 380,
+    "validated_downloads": 380,
+    "no_original_pdf": 0,
+    "unresolved": 2,
+    "unknown_or_invalid_date": 0,
+    "file_error_count": 0
+  },
+  "status_counts": {
+    "downloaded": 380,
+    "failed": 2
+  },
+  "min_published": "2026-06-08",
+  "max_published": "2026-09-09",
+  "downloaded_min_published": "2026-06-08",
+  "downloaded_max_published": "2026-09-09",
+  "month_counts": {
+    "2026-06": {
+      "reports": 109,
+      "downloaded": 108,
+      "validated_downloads": 108,
+      "no_original_pdf": 0,
+      "unresolved": 1
+    },
+    "2026-07": {
+      "reports": 149,
+      "downloaded": 148,
+      "validated_downloads": 148,
+      "no_original_pdf": 0,
+      "unresolved": 1
+    },
+    "2026-08": {
+      "reports": 86,
+      "downloaded": 86,
+      "validated_downloads": 86,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    },
+    "2026-09": {
+      "reports": 38,
+      "downloaded": 38,
+      "validated_downloads": 38,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    }
+  },
+  "errors": [],
+  "unresolved": [
+    {
+      "doc_id": "12988734",
+      "published": "2026-06-29",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "12996456",
+      "published": "2026-07-20",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    }
+  ]
+}

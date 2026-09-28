@@ -1,0 +1,99 @@
+{
+  "updated_events": [
+    "4a3505096a43b67e4234",
+    "173ac64daad75c6e6692",
+    "1a26b1295325c42d6832",
+    "9929bd5a068495d067a3",
+    "3f23cf1342dc221a670f",
+    "cff4a274dfffba446bb0",
+    "c17e9496f181c24844e0",
+    "41fdf167a863cbeae385",
+    "48e6ec69f67b93210555",
+    "48349d882a1dea794a71",
+    "1085bf15e1098089b0e5",
+    "d16aa13dabc9012be9ad",
+    "6f5bbdd3f8bdf8f5d47d",
+    "3f473b50589b0ce1686f",
+    "5527a108e0df94440ab6",
+    "f7b7c08536d15f0d245e",
+    "9a735a7bd432aceed474",
+    "8f0d61422c610861afe9",
+    "d9dc3455a1737467977c",
+    "c5c4b7f83e5edb7c31ba",
+    "24c794eee60f4238f7da",
+    "3b6b2a83994b8cd51026"
+  ],
+  "new_summaries": 18,
+  "revised_summaries": 4,
+  "retained_summaries": 190,
+  "adopted_pages": [
+    {
+      "doc_id": "026fe43c3eca347d7d0e9d306000a6291e8baa6dd7795a3e07bfb1e67e52fd59",
+      "page": 1
+    },
+    {
+      "doc_id": "041c4ae690ab31c571c74cdd2629091c7489b2aeb988cb58b453212cf29024f8",
+      "page": 1
+    },
+    {
+      "doc_id": "188a8fe374630927a58d0fcd1aa7861329ce13fb5e1c1e59bedec9b361ea4378",
+      "page": 1
+    },
+    {
+      "doc_id": "25d34f23252b95d69cfcc8d8bcedeb3942bb35717ca21474f2e46b133765e187",
+      "page": 2
+    },
+    {
+      "doc_id": "4151d6b219a363bc09ceb8066569d5487e03c4945601066bc5694b4c7e88ce95",
+      "page": 1
+    },
+    {
+      "doc_id": "5aff80dc3fd324bbf82b789ed4aa336d4df0aba94196273934af56d33c090254",
+      "page": 1
+    },
+    {
+      "doc_id": "5be1d5fa2752d4ebc575bd95aa6a56d787a7fed3aebed7cb7c5ae28c11d9b107",
+      "page": 1
+    },
+    {
+      "doc_id": "641766cc96a1c548e4ae0d755b4cd41dc3af51db4ed19d920020820ab00891db",
+      "page": 2
+    },
+    {
+      "doc_id": "710ef5751764c37efef89a2759c437460efc1048af991cffcc012a338abfdc80",
+      "page": 1
+    },
+    {
+      "doc_id": "715104a5b680ce7042a15545c5f62f3adfc9a2ebcf588b2b7661b8a3f663a8ae",
+      "page": 1
+    },
+    {
+      "doc_id": "8c0e34fdf71ea4b816fbf5ecb358a216faf74746a1a379862a00e1425e29ae10",
+      "page": 1
+    },
+    {
+      "doc_id": "a2e64b86cc0814c3870c76dcae0ce5c4b03b533d34731656e54e3419336b4677",
+      "page": 2
+    },
+    {
+      "doc_id": "a50d987fb139983e71c401045383da831269f7088bc78252c60ac99001d3df53",
+      "page": 2
+    },
+    {
+      "doc_id": "bd145fa963565a4d3aaac79fbe568aa77de3c96f6fb69e2b9a36a21c806ef414",
+      "page": 1
+    },
+    {
+      "doc_id": "c84a1983609e180aa176a0e371f2f6cb448eb665186cb76814e3b45ac1bfa88b",
+      "page": 1
+    },
+    {
+      "doc_id": "c84a1983609e180aa176a0e371f2f6cb448eb665186cb76814e3b45ac1bfa88b",
+      "page": 2
+    },
+    {
+      "doc_id": "db2b11949b500185c86e44f896f0187fc50231873ece537a9bfd7e944ec9ba1a",
+      "page": 2
+    }
+  ]
+}

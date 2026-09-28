@@ -1,0 +1,75 @@
+{
+  "run_id": "20260915_211708_115eb7",
+  "mode": "daily",
+  "start": "2026-09-09",
+  "end": "2026-09-15",
+  "houses": [
+    "BofA",
+    "JPM",
+    "GS",
+    "Citi"
+  ],
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "started": "2026-09-15T21:17:08.325904+09:00",
+  "status": "incomplete",
+  "scheduled": false,
+  "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_211708_115eb7.log",
+  "collector_report": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_211708_115eb7.json",
+  "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\daily\\2026-09-15\\daily_20260915_211708_115eb7.console.log",
+  "updated": "2026-09-15T21:29:14.614886+09:00",
+  "disk_space": {
+    "checked": "2026-09-15T21:29:09.604263+09:00",
+    "minimum_free_gib": 5,
+    "volumes": [
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+        "free_bytes": 36039553024
+      },
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+        "free_bytes": 36039553024
+      }
+    ]
+  },
+  "worker_pid": 16996,
+  "collector_exit_code": 1,
+  "collector_result": {
+    "run_id": "20260915_211708_115eb7",
+    "mode": "daily",
+    "start": "2026-09-09",
+    "end": "2026-09-15",
+    "started": "2026-09-15T21:17:26.228836+09:00",
+    "finished": null,
+    "overall_status": "running",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_211708_115eb7.log",
+    "houses": {
+      "BofA": {
+        "status": "incomplete",
+        "reason": "Page.goto: Timeout 12000ms exceeded.\nCall log:\n  - navigating to \"https://markets.ml.com/economics-overview\", waiting until \"domcontentloaded\"\n",
+        "counts": {},
+        "connection_lost": false
+      },
+      "JPM": {
+        "status": "complete",
+        "counts": {
+          "discovered": 25,
+          "outside_range": 25
+        },
+        "coverage_guard_version": 1
+      },
+      "GS": {
+        "status": "running",
+        "counts": {}
+      },
+      "Citi": {
+        "status": "not_started",
+        "counts": {}
+      }
+    }
+  },
+  "finished": "2026-09-15T21:29:14.614824+09:00",
+  "exit_code": 2
+}

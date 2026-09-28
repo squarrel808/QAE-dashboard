@@ -1,0 +1,629 @@
+{
+  "SPX": {
+    "start": "2026-08-21",
+    "latest": "2026-09-04",
+    "constituents": 503,
+    "top": [
+      {
+        "Ticker": "CRM UN Equity",
+        "Security_Name": "Salesforce Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 259.23,
+        "Index_Weight": 0.0028609170784991865,
+        "Price_start": 209.17,
+        "Return_10D": 0.23932686331691944
+      },
+      {
+        "Ticker": "DELL UN Equity",
+        "Security_Name": "Dell Technologies Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 524.14,
+        "Index_Weight": 0.0045414625671198585,
+        "Price_start": 442.08,
+        "Return_10D": 0.18562251176257694
+      },
+      {
+        "Ticker": "HOOD UW Equity",
+        "Security_Name": "Robinhood Markets Inc",
+        "GICS_Sector": "Financials",
+        "GICS_Industry_Group": "Financial Services",
+        "Price": 122.11,
+        "Index_Weight": 0.0014743318448196877,
+        "Price_start": 108.13,
+        "Return_10D": 0.12928881901414968
+      },
+      {
+        "Ticker": "META UW Equity",
+        "Security_Name": "Meta Platforms Inc",
+        "GICS_Sector": "Communication Services",
+        "GICS_Industry_Group": "Media & Entertainment",
+        "Price": 616.77,
+        "Index_Weight": 0.021069715448108383,
+        "Price_start": 549.9,
+        "Return_10D": 0.12160392798690678
+      },
+      {
+        "Ticker": "CDW UW Equity",
+        "Security_Name": "CDW Corp/DE",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 152.38,
+        "Index_Weight": 0.0002554575233400888,
+        "Price_start": 137.25,
+        "Return_10D": 0.11023679417122034
+      },
+      {
+        "Ticker": "CRWD UW Equity",
+        "Security_Name": "Crowdstrike Holdings Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 213.1,
+        "Index_Weight": 0.0029260109440620422,
+        "Price_start": 191.95,
+        "Return_10D": 0.11018494399583223
+      },
+      {
+        "Ticker": "VEEV UN Equity",
+        "Security_Name": "Veeva Systems Inc",
+        "GICS_Sector": "Health Care",
+        "GICS_Industry_Group": "Health Care Equipment & Services",
+        "Price": 275.09,
+        "Index_Weight": 0.0005972629385113334,
+        "Price_start": 247.9,
+        "Return_10D": 0.1096813231141589
+      },
+      {
+        "Ticker": "SWKS UW Equity",
+        "Security_Name": "Skyworks Solutions Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 74.02,
+        "Index_Weight": 0.00014935755874473256,
+        "Price_start": 67.14,
+        "Return_10D": 0.10247244563598445
+      },
+      {
+        "Ticker": "NOW UN Equity",
+        "Security_Name": "ServiceNow Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 141.26,
+        "Index_Weight": 0.0019586638862578495,
+        "Price_start": 128.48,
+        "Return_10D": 0.09947073474470747
+      },
+      {
+        "Ticker": "HPQ UN Equity",
+        "Security_Name": "HP Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 32.64,
+        "Index_Weight": 0.000394708252861565,
+        "Price_start": 29.71,
+        "Return_10D": 0.09861999326825988
+      }
+    ],
+    "bottom": [
+      {
+        "Ticker": "EIX UN Equity",
+        "Security_Name": "Edison International",
+        "GICS_Sector": "Utilities",
+        "GICS_Industry_Group": "Utilities",
+        "Price": 56.77,
+        "Index_Weight": 0.00029294757652842434,
+        "Price_start": 71.59,
+        "Return_10D": -0.20701215253527028
+      },
+      {
+        "Ticker": "FICO UN Equity",
+        "Security_Name": "Fair Isaac Corp",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 932.26,
+        "Index_Weight": 0.00026999978797668183,
+        "Price_start": 1172.67,
+        "Return_10D": -0.2050107873485295
+      },
+      {
+        "Ticker": "CIEN UN Equity",
+        "Security_Name": "Ciena Corp",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 321.0,
+        "Index_Weight": 0.0006104183033453196,
+        "Price_start": 395.79,
+        "Return_10D": -0.18896384446297287
+      },
+      {
+        "Ticker": "PCG UN Equity",
+        "Security_Name": "PG&E Corp",
+        "GICS_Sector": "Utilities",
+        "GICS_Industry_Group": "Utilities",
+        "Price": 14.3,
+        "Index_Weight": 0.00042232411939905034,
+        "Price_start": 17.6,
+        "Return_10D": -0.1875
+      },
+      {
+        "Ticker": "AXON UW Equity",
+        "Security_Name": "Axon Enterprise Inc",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 515.67,
+        "Index_Weight": 0.000561756539865134,
+        "Price_start": 627.75,
+        "Return_10D": -0.1785424133811231
+      },
+      {
+        "Ticker": "LULU UW Equity",
+        "Security_Name": "Lululemon Athletica Inc",
+        "GICS_Sector": "Consumer Discretionary",
+        "GICS_Industry_Group": "Consumer Durables & Apparel",
+        "Price": 100.61,
+        "Index_Weight": 0.00014936480391170698,
+        "Price_start": 121.07,
+        "Return_10D": -0.16899314446188152
+      },
+      {
+        "Ticker": "ADSK UW Equity",
+        "Security_Name": "Autodesk Inc",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 217.9,
+        "Index_Weight": 0.0006106940540828683,
+        "Price_start": 253.825,
+        "Return_10D": -0.14153452181621184
+      },
+      {
+        "Ticker": "CLX UN Equity",
+        "Security_Name": "Clorox Co/The",
+        "GICS_Sector": "Consumer Staples",
+        "GICS_Industry_Group": "Household & Personal Products",
+        "Price": 93.06,
+        "Index_Weight": 0.0001509109960357714,
+        "Price_start": 106.69,
+        "Return_10D": -0.1277533039647577
+      },
+      {
+        "Ticker": "TSN UN Equity",
+        "Security_Name": "Tyson Foods Inc",
+        "GICS_Sector": "Consumer Staples",
+        "GICS_Industry_Group": "Food, Beverage & Tobacco",
+        "Price": 51.42,
+        "Index_Weight": 0.00024257718346403856,
+        "Price_start": 58.48,
+        "Return_10D": -0.12072503419972636
+      },
+      {
+        "Ticker": "ALB UN Equity",
+        "Security_Name": "Albemarle Corp",
+        "GICS_Sector": "Materials",
+        "GICS_Industry_Group": "Materials",
+        "Price": 126.28,
+        "Index_Weight": 0.00019982755171983342,
+        "Price_start": 143.25,
+        "Return_10D": -0.1184642233856893
+      }
+    ]
+  },
+  "SHSZ300": {
+    "start": "2026-08-24",
+    "latest": "2026-09-07",
+    "constituents": 300,
+    "top": [
+      {
+        "Ticker": "300413 CH Equity",
+        "Security_Name": "Mango Excellent Media Co Ltd",
+        "GICS_Sector": "Communication Services",
+        "GICS_Industry_Group": "Media & Entertainment",
+        "Price": 22.1,
+        "Index_Weight": 0.0006390491233130458,
+        "Price_start": 13.98,
+        "Return_10D": 0.5808297567954221
+      },
+      {
+        "Ticker": "688183 CH Equity",
+        "Security_Name": "Shengyi Electronics Co Ltd",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 132.93,
+        "Index_Weight": 0.0017210287264884602,
+        "Price_start": 102.3,
+        "Return_10D": 0.2994134897360705
+      },
+      {
+        "Ticker": "002837 CH Equity",
+        "Security_Name": "Shenzhen Envicool Technology C",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 64.47,
+        "Index_Weight": 0.0012727008222928988,
+        "Price_start": 54.75,
+        "Return_10D": 0.17753424657534245
+      },
+      {
+        "Ticker": "600183 CH Equity",
+        "Security_Name": "Shengyi Technology Co Ltd",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 148.15,
+        "Index_Weight": 0.005562407705014698,
+        "Price_start": 126.3,
+        "Return_10D": 0.17300079176563754
+      },
+      {
+        "Ticker": "002602 CH Equity",
+        "Security_Name": "Zhejiang Century Huatong Group",
+        "GICS_Sector": "Communication Services",
+        "GICS_Industry_Group": "Media & Entertainment",
+        "Price": 16.16,
+        "Index_Weight": 0.0018411197679625282,
+        "Price_start": 13.79,
+        "Return_10D": 0.17186366932559838
+      },
+      {
+        "Ticker": "300418 CH Equity",
+        "Security_Name": "Kunlun Tech Co Ltd",
+        "GICS_Sector": "Communication Services",
+        "GICS_Industry_Group": "Media & Entertainment",
+        "Price": 46.6,
+        "Index_Weight": 0.0009256222126581874,
+        "Price_start": 40.54,
+        "Return_10D": 0.1494819930932414
+      },
+      {
+        "Ticker": "300866 CH Equity",
+        "Security_Name": "Anker Innovations Technology C",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 132.24,
+        "Index_Weight": 0.0011906284215295957,
+        "Price_start": 115.43,
+        "Return_10D": 0.14562938577492845
+      },
+      {
+        "Ticker": "601136 CH Equity",
+        "Security_Name": "Capital Securities Co Ltd",
+        "GICS_Sector": "Financials",
+        "GICS_Industry_Group": "Financial Services",
+        "Price": 15.64,
+        "Index_Weight": 0.0006607884019224399,
+        "Price_start": 13.7,
+        "Return_10D": 0.14160583941605842
+      },
+      {
+        "Ticker": "600150 CH Equity",
+        "Security_Name": "China CSSC Holdings Ltd",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 38.38,
+        "Index_Weight": 0.004464577035924927,
+        "Price_start": 33.8,
+        "Return_10D": 0.13550295857988193
+      },
+      {
+        "Ticker": "002714 CH Equity",
+        "Security_Name": "Muyuan Foods Group Co Ltd",
+        "GICS_Sector": "Consumer Staples",
+        "GICS_Industry_Group": "Food, Beverage & Tobacco",
+        "Price": 43.91,
+        "Index_Weight": 0.0038708800585403286,
+        "Price_start": 38.83,
+        "Return_10D": 0.13082668040175127
+      }
+    ],
+    "bottom": [
+      {
+        "Ticker": "300274 CH Equity",
+        "Security_Name": "Sungrow Power Supply Co Ltd",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 88.75,
+        "Index_Weight": 0.0028441005488504764,
+        "Price_start": 111.5,
+        "Return_10D": -0.20403587443946192
+      },
+      {
+        "Ticker": "002028 CH Equity",
+        "Security_Name": "Sieyuan Electric Co Ltd",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 145.0,
+        "Index_Weight": 0.001753985544793863,
+        "Price_start": 175.2,
+        "Return_10D": -0.17237442922374424
+      },
+      {
+        "Ticker": "688472 CH Equity",
+        "Security_Name": "CSI Solar Co Ltd",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 8.68,
+        "Index_Weight": 0.0004887970661054476,
+        "Price_start": 10.25,
+        "Return_10D": -0.1531707317073171
+      },
+      {
+        "Ticker": "600460 CH Equity",
+        "Security_Name": "Hangzhou Silan Microelectronic",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 30.96,
+        "Index_Weight": 0.0007963537250186959,
+        "Price_start": 35.56,
+        "Return_10D": -0.12935883014623173
+      },
+      {
+        "Ticker": "002460 CH Equity",
+        "Security_Name": "Ganfeng Lithium Group Co Ltd",
+        "GICS_Sector": "Materials",
+        "GICS_Industry_Group": "Materials",
+        "Price": 48.86,
+        "Index_Weight": 0.0014514321742528406,
+        "Price_start": 55.63,
+        "Return_10D": -0.12169692611900063
+      },
+      {
+        "Ticker": "002353 CH Equity",
+        "Security_Name": "Yantai Jereh Oilfield Services",
+        "GICS_Sector": "Energy",
+        "GICS_Industry_Group": "Energy",
+        "Price": 125.36,
+        "Index_Weight": 0.0019839502773261663,
+        "Price_start": 142.48,
+        "Return_10D": -0.12015721504772592
+      },
+      {
+        "Ticker": "000975 CH Equity",
+        "Security_Name": "Shanjin International Gold Co",
+        "GICS_Sector": "Materials",
+        "GICS_Industry_Group": "Materials",
+        "Price": 25.8,
+        "Index_Weight": 0.001105677697555147,
+        "Price_start": 29.26,
+        "Return_10D": -0.11825017088174983
+      },
+      {
+        "Ticker": "300750 CH Equity",
+        "Security_Name": "Contemporary Amperex Technolog",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 348.2,
+        "Index_Weight": 0.02538083152485141,
+        "Price_start": 387.89,
+        "Return_10D": -0.10232282348088373
+      },
+      {
+        "Ticker": "000657 CH Equity",
+        "Security_Name": "China Tungsten And Hightech Ma",
+        "GICS_Sector": "Materials",
+        "GICS_Industry_Group": "Materials",
+        "Price": 60.0,
+        "Index_Weight": 0.0021132611701089503,
+        "Price_start": 66.76,
+        "Return_10D": -0.10125823846614745
+      },
+      {
+        "Ticker": "605117 CH Equity",
+        "Security_Name": "Ningbo Deye Technology Corp",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 85.19,
+        "Index_Weight": 0.0016765975444296439,
+        "Price_start": 94.31,
+        "Return_10D": -0.09670236454246639
+      }
+    ]
+  },
+  "SXXP": {
+    "start": "2026-08-24",
+    "latest": "2026-09-07",
+    "constituents": 600,
+    "top": [
+      {
+        "Ticker": "ATS AV Equity",
+        "Security_Name": "AT&S Austria Technologie & Sys",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Technology Hardware & Equipment",
+        "Price": 175.3999938964844,
+        "Index_Weight": 0.00040179253164029574,
+        "Price_start": 128.8,
+        "Return_10D": 0.36180119484848117
+      },
+      {
+        "Ticker": "SOI FP Equity",
+        "Security_Name": "SOITEC",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 143.3500061035156,
+        "Index_Weight": 0.00030235863977213004,
+        "Price_start": 107.85,
+        "Return_10D": 0.3291609281735337
+      },
+      {
+        "Ticker": "TKA GY Equity",
+        "Security_Name": "thyssenkrupp AG",
+        "GICS_Sector": "Materials",
+        "GICS_Industry_Group": "Materials",
+        "Price": 15.64999961853027,
+        "Index_Weight": 0.0005744564286521164,
+        "Price_start": 13.585,
+        "Return_10D": 0.15200586076777833
+      },
+      {
+        "Ticker": "KGX GY Equity",
+        "Security_Name": "KION Group AG",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 45.29000091552734,
+        "Index_Weight": 0.0003503587343065587,
+        "Price_start": 40.28,
+        "Return_10D": 0.12437936731696464
+      },
+      {
+        "Ticker": "IFX GY Equity",
+        "Security_Name": "Infineon Technologies AG",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 60.79000091552734,
+        "Index_Weight": 0.004680910787478609,
+        "Price_start": 54.16,
+        "Return_10D": 0.1224150833738431
+      },
+      {
+        "Ticker": "AKER NO Equity",
+        "Security_Name": "Aker ASA",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 150.4756481609423,
+        "Index_Weight": 0.0006594229641566349,
+        "Price_start": 135.2534252319549,
+        "Return_10D": 0.11254593296163717
+      },
+      {
+        "Ticker": "GBF GY Equity",
+        "Security_Name": "Bilfinger SE",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Commercial & Professional Services",
+        "Price": 81.6500015258789,
+        "Index_Weight": 0.00018105015371389958,
+        "Price_start": 74.0,
+        "Return_10D": 0.10337839899836365
+      },
+      {
+        "Ticker": "STMMI IM Equity",
+        "Security_Name": "STMicroelectronics NV",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Semiconductors & Semiconductor Equipment",
+        "Price": 46.61000061035156,
+        "Index_Weight": 0.0025044543814369408,
+        "Price_start": 42.25,
+        "Return_10D": 0.10319528071838024
+      },
+      {
+        "Ticker": "VOW3 GY Equity",
+        "Security_Name": "Volkswagen AG",
+        "GICS_Sector": "Consumer Discretionary",
+        "GICS_Industry_Group": "Automobiles & Components",
+        "Price": 81.0199966430664,
+        "Index_Weight": 0.002395375106681645,
+        "Price_start": 73.82,
+        "Return_10D": 0.09753449800956937
+      },
+      {
+        "Ticker": "CCC LN Equity",
+        "Security_Name": "Computacenter PLC",
+        "GICS_Sector": "Information Technology",
+        "GICS_Industry_Group": "Software & Services",
+        "Price": 65.23622242116345,
+        "Index_Weight": 0.0004086713559867928,
+        "Price_start": 59.61294470638662,
+        "Return_10D": 0.0943298094478191
+      }
+    ],
+    "bottom": [
+      {
+        "Ticker": "CSG NA Equity",
+        "Security_Name": "CSG NV",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 16.27000045776367,
+        "Index_Weight": 0.000959331772083651,
+        "Price_start": 18.492,
+        "Return_10D": -0.12016004446443507
+      },
+      {
+        "Ticker": "RI FP Equity",
+        "Security_Name": "Pernod Ricard SA",
+        "GICS_Sector": "Consumer Staples",
+        "GICS_Industry_Group": "Food, Beverage & Tobacco",
+        "Price": 61.11999893188477,
+        "Index_Weight": 0.00090913593082799,
+        "Price_start": 69.0,
+        "Return_10D": -0.11420291403065552
+      },
+      {
+        "Ticker": "LISP SE Equity",
+        "Security_Name": "Chocoladefabriken Lindt & Spru",
+        "GICS_Sector": "Consumer Staples",
+        "GICS_Industry_Group": "Food, Beverage & Tobacco",
+        "Price": 8774.576987538578,
+        "Index_Weight": 0.0012206552860799923,
+        "Price_start": 9878.37207633711,
+        "Return_10D": -0.11173856180641228
+      },
+      {
+        "Ticker": "TOM NO Equity",
+        "Security_Name": "TOMRA Systems ASA",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 9.008128980776743,
+        "Index_Weight": 0.00015724124841090374,
+        "Price_start": 10.06108585512907,
+        "Return_10D": -0.10465638495824359
+      },
+      {
+        "Ticker": "QQ/ LN Equity",
+        "Security_Name": "QinetiQ Group PLC",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 5.575367223024844,
+        "Index_Weight": 0.00016933698728443137,
+        "Price_start": 6.195070724389198,
+        "Return_10D": -0.10003170729345523
+      },
+      {
+        "Ticker": "CVC NA Equity",
+        "Security_Name": "CVC Capital Partners PLC",
+        "GICS_Sector": "Financials",
+        "GICS_Industry_Group": "Financial Services",
+        "Price": 13.69999980926514,
+        "Index_Weight": 0.0008437890838207745,
+        "Price_start": 15.22,
+        "Return_10D": -0.09986860648717877
+      },
+      {
+        "Ticker": "SAABB SS Equity",
+        "Security_Name": "Saab AB",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 52.23263778098206,
+        "Index_Weight": 0.0016735148820661262,
+        "Price_start": 57.97982062991807,
+        "Return_10D": -0.099123846650371
+      },
+      {
+        "Ticker": "FHZN SE Equity",
+        "Security_Name": "Flughafen Zurich AG",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Transportation",
+        "Price": 220.0287627402163,
+        "Index_Weight": 0.0003983140435055802,
+        "Price_start": 244.0476130054511,
+        "Return_10D": -0.09841870596250535
+      },
+      {
+        "Ticker": "BAB LN Equity",
+        "Security_Name": "Babcock International Group PL",
+        "GICS_Sector": "Industrials",
+        "GICS_Industry_Group": "Capital Goods",
+        "Price": 11.4163389237036,
+        "Index_Weight": 0.0003303612645817737,
+        "Price_start": 12.64145092156022,
+        "Return_10D": -0.09691229317413008
+      },
+      {
+        "Ticker": "BC IM Equity",
+        "Security_Name": "Brunello Cucinelli SpA",
+        "GICS_Sector": "Consumer Discretionary",
+        "GICS_Industry_Group": "Consumer Durables & Apparel",
+        "Price": 80.54000091552734,
+        "Index_Weight": 0.0003229251023175548,
+        "Price_start": 89.06,
+        "Return_10D": -0.09566583297184661
+      }
+    ]
+  }
+}

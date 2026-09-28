@@ -1,0 +1,201 @@
+{
+  "automation_id": "qae-ib-07-20",
+  "monitor_run_id": "20260924_072207_codex",
+  "completed_at": "2026-09-24T07:27:27+09:00",
+  "status": "published_no_eligible_commentary_change_partial_source_coverage",
+  "input": {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge.xlsx",
+    "sha256": "1042bc3fa5b765694d2e96afccd85bfeeb3f5f6e788a7cc8b941a8032834f7c2",
+    "modified": "2026-09-22T09:02:39"
+  },
+  "actual_values_snapshot_date": "2026-09-21",
+  "interpretation_publication_date": "2026-09-24",
+  "collector": {
+    "run_id": "20260924_070002_b467e9",
+    "mode": "daily",
+    "start": "2026-09-23",
+    "end": "2026-09-23",
+    "houses": [
+      "BofA",
+      "JPM",
+      "GS",
+      "Citi",
+      "HSBC"
+    ],
+    "port": 9223,
+    "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+    "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+    "started": "2026-09-24T07:00:02.743320+09:00",
+    "status": "incomplete",
+    "scheduled": false,
+    "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-24\\run_20260924_070002_b467e9.log",
+    "collector_report": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-24\\run_20260924_070002_b467e9.json",
+    "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\daily\\2026-09-24\\daily_20260924_070002_b467e9.console.log",
+    "updated": "2026-09-24T07:13:33.884178+09:00",
+    "disk_space": {
+      "checked": "2026-09-24T07:13:28.805041+09:00",
+      "minimum_free_gib": 5,
+      "volumes": [
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+          "free_bytes": 38307028992
+        },
+        {
+          "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+          "free_bytes": 38307028992
+        }
+      ]
+    },
+    "worker_pid": 43628,
+    "collector_exit_code": 2,
+    "collector_result": {
+      "run_id": "20260924_070002_b467e9",
+      "mode": "daily",
+      "start": "2026-09-23",
+      "end": "2026-09-23",
+      "started": "2026-09-24T07:00:12.448010+09:00",
+      "finished": "2026-09-24T07:13:25.841025+09:00",
+      "overall_status": "incomplete",
+      "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+      "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-24\\run_20260924_070002_b467e9.log",
+      "houses": {
+        "BofA": {
+          "status": "incomplete",
+          "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+          "counts": {},
+          "connection_lost": false
+        },
+        "JPM": {
+          "status": "complete",
+          "counts": {
+            "discovered": 50,
+            "in_range": 11,
+            "attempted": 11,
+            "downloaded": 11,
+            "outside_range": 39
+          },
+          "coverage_guard_version": 1
+        },
+        "GS": {
+          "status": "incomplete",
+          "reason": "Failed PDFs or unparseable publication dates remain.",
+          "counts": {
+            "discovered": 50,
+            "outside_range": 39,
+            "in_range": 11,
+            "attempted": 11,
+            "downloaded": 10,
+            "failed": 1
+          }
+        },
+        "Citi": {
+          "status": "complete",
+          "counts": {
+            "discovered": 96,
+            "outside_range": 91,
+            "in_range": 5,
+            "attempted": 5,
+            "downloaded": 5
+          },
+          "coverage_guard_version": 1
+        },
+        "HSBC": {
+          "status": "incomplete",
+          "reason": "Failed PDFs or unparseable publication dates remain.",
+          "counts": {
+            "discovered": 9,
+            "in_range": 9,
+            "attempted": 9,
+            "downloaded": 5,
+            "failed": 1,
+            "no_original_pdf": 3
+          }
+        }
+      }
+    },
+    "finished": "2026-09-24T07:13:33.884119+09:00",
+    "exit_code": 2
+  },
+  "collection_scope": "JPM 11건·Citi 5건 완료, GS 10건 확보/1건 실패, BofA 시간초과. HSBC는 필수 범위로 가정하지 않으며 실제 5건 확보/1건 실패/3건 원문 없음. scheduled=false이므로 별도 06:30 실행 완료는 확인하지 못함.",
+  "ingested_documents": 31,
+  "ingested_pages": 281,
+  "reviewed_documents": [
+    "Citi South Africa Economics: August CPI neither here nor there",
+    "GS CEEMEA Inflation Monitor",
+    "GS Euro Area Data Update",
+    "GS Europe September Flash PMIs",
+    "GS Hungary MNB",
+    "GS Singapore Core inflation",
+    "GS South Africa inflation",
+    "GS USA S&P PMIs",
+    "HSBC EM Webcast: CEE inflation",
+    "JPM Korea Consumer sentiment",
+    "JPM Singapore August core inflation",
+    "JPM UK Flash PMI",
+    "JPM US September flash PMI"
+  ],
+  "new_summaries": 0,
+  "revised_summaries": 0,
+  "retained_summaries": 213,
+  "valid_summaries": 213,
+  "house_comments": 250,
+  "reviewed_event_ids": [],
+  "reviewed_evidence_pages": [],
+  "whole_documents_completed": [],
+  "validation": {
+    "rows_preserved": 261,
+    "unique_events": 261,
+    "columns_preserved": "B:K",
+    "five_houses_per_event": true,
+    "quote_and_file_checks": "passed",
+    "status_counts": {
+      "uncovered": 640,
+      "related": 74,
+      "reaction": 178,
+      "preview": 24,
+      "candidate": 345,
+      "basis": 44
+    },
+    "direct_event_house_connections": 0,
+    "indicator_candidate_documents": 352,
+    "indicator_candidate_pages": 1186,
+    "indicator_search_is_unreviewed": true,
+    "input_numeric_match": true,
+    "authored_events": 213,
+    "authored_house_comments": 250,
+    "commentary_needs_recheck": 0,
+    "new_summaries": 0,
+    "updated_summaries": 0,
+    "retained_reviews": 213,
+    "review_status": "draft",
+    "macro_views_payload_unchanged": true,
+    "recent_three_day_overview_preserved": true,
+    "reviewed_new_documents": 13,
+    "eligible_commentary_changes": 0
+  },
+  "queue_changes": {
+    "unchanged": 49
+  },
+  "living_db_unchanged": true,
+  "publication_paths": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\index.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\macro_views.html"
+  ],
+  "limitations": [
+    "9월 23일 신규 원문의 직접 반응 대상(PMI, 싱가포르·남아공 CPI, 한국 소비심리)은 현재 ecocal에 실제값이 수록되지 않아 해석을 신규 작성하지 않음.",
+    "신규 원문은 검색 DB에 적재했지만, 채택하지 않은 문서·페이지를 검토 완료로 표시하지 않음.",
+    "ecocal은 9월 22일 09:02 원본으로, 실제값 기준일 9월 21일과 해석·게시일 9월 24일을 구분.",
+    "BofA 수집 실패와 GS 부분 실패를 성공으로 표시하지 않음.",
+    "스케줄러 HTML은 프로젝트 밖 쓰기 권한이 없어 갱신 불가. QAE 전용 모니터 로그는 유지.",
+    "test_dashboard.py의 6개 단정은 현재 97행 원본이 아닌 과거 136행 픽스처의 고정 행번호를 기대해 실패. 현재 261개 누적 이벤트의 ID별 B:K 숫자 동일성, 213개 스냅샷, 인용·파일, 거시 페이로드, 화면 링크는 별도 검증 통과. living_ib verify는 75개 견해·13개 전망·131개 인용으로 통과."
+  ],
+  "published_hashes": {
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\dashboard_data.json": "ef1e3904161367ab48ba203ca07d2995b293b0e5f632fcbbcf377d50a06efcc9",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\index.html": "5e90491846da645ba6a4685fa55529a89256ef53c234e9c3f6649415fd2c7ab3",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\macro_views.html": "fac2a00e53c201f706b4e8dc20357bd784793a8fbccaa5a4f742457727f1b824",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\macro_views_data.json": "f90e69a8402848945050b5b8b40c396e587468f0c6c0157d3fe8f02b9074ff14",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\review_queue.json": "06e0e0cc9c402b464df960c4ad323c32d66d1d4f50c9ac42769497c7475b140a",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260922_091409_221321\\WECO\\validation.json": "ca70df2e16c1f1656d3bb743476199c1cc53edf68d01670a03eea8179cf6af28"
+  }
+}

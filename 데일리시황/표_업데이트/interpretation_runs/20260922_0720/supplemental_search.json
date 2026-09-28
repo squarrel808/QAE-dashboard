@@ -1,0 +1,156 @@
+{
+  "Japan bonds": [],
+  "Canada IPPI": [
+    {
+      "doc_id": "f7bb3d0efb14a5a1d41fc0723339f10f28e030dd58002714d59b6c25922ea65f",
+      "house": "BofA",
+      "title": "Canada Watch",
+      "published": "2026-09-14",
+      "page": 7
+    },
+    {
+      "doc_id": "15235e2afa4331319fe553bd4873a438d505298ac8e2247665f736ff9c101106",
+      "house": "BofA",
+      "title": "Emerging Insight",
+      "published": "2026-09-14",
+      "page": 14
+    },
+    {
+      "doc_id": "fd46cc799a0bd2a340ff7177c11e948e0b6625d5a7b1ba93a922a1d968ae40e4",
+      "house": "GS",
+      "title": "Global: GS Economic Indicators Update: Financial Conditions Tighten in Japan",
+      "published": "2026-09-15",
+      "page": 3
+    },
+    {
+      "doc_id": "fd46cc799a0bd2a340ff7177c11e948e0b6625d5a7b1ba93a922a1d968ae40e4",
+      "house": "GS",
+      "title": "Global: GS Economic Indicators Update: Financial Conditions Tighten in Japan",
+      "published": "2026-09-15",
+      "page": 23
+    },
+    {
+      "doc_id": "fd46cc799a0bd2a340ff7177c11e948e0b6625d5a7b1ba93a922a1d968ae40e4",
+      "house": "GS",
+      "title": "Global: GS Economic Indicators Update: Financial Conditions Tighten in Japan",
+      "published": "2026-09-15",
+      "page": 24
+    },
+    {
+      "doc_id": "181bcaed5beb93696b06e3f96558f0339dc58b374622fdf3883264b8dc5b12bf",
+      "house": "JPM",
+      "title": "Canada: Core CPI stayed contained in August",
+      "published": "2026-09-14",
+      "page": 7
+    },
+    {
+      "doc_id": "d5f819fb43f8915c81395a64dde4dea1c446b77cb159b4cf6ca74442308092bb",
+      "house": "BofA",
+      "title": "Emerging Insight",
+      "published": "2026-09-15",
+      "page": 10
+    },
+    {
+      "doc_id": "8ceb71fa809fbe6798ad8fd978b15b2966802056aa380d37af8172e5e7b5acaf",
+      "house": "JPM",
+      "title": "EU: von der Leyen reiterates existing policy ambitions",
+      "published": "2026-09-17",
+      "page": 1
+    },
+    {
+      "doc_id": "188a8fe374630927a58d0fcd1aa7861329ce13fb5e1c1e59bedec9b361ea4378",
+      "house": "GS",
+      "title": "Central Bank Policy Tracker: September 2026",
+      "published": "2026-09-21",
+      "page": 4
+    },
+    {
+      "doc_id": "188a8fe374630927a58d0fcd1aa7861329ce13fb5e1c1e59bedec9b361ea4378",
+      "house": "GS",
+      "title": "Central Bank Policy Tracker: September 2026",
+      "published": "2026-09-21",
+      "page": 10
+    },
+    {
+      "doc_id": "188a8fe374630927a58d0fcd1aa7861329ce13fb5e1c1e59bedec9b361ea4378",
+      "house": "GS",
+      "title": "Central Bank Policy Tracker: September 2026",
+      "published": "2026-09-21",
+      "page": 11
+    },
+    {
+      "doc_id": "188a8fe374630927a58d0fcd1aa7861329ce13fb5e1c1e59bedec9b361ea4378",
+      "house": "GS",
+      "title": "Central Bank Policy Tracker: September 2026",
+      "published": "2026-09-21",
+      "page": 13
+    }
+  ],
+  "US leading": [
+    {
+      "doc_id": "fd46cc799a0bd2a340ff7177c11e948e0b6625d5a7b1ba93a922a1d968ae40e4",
+      "house": "GS",
+      "title": "Global: GS Economic Indicators Update: Financial Conditions Tighten in Japan",
+      "published": "2026-09-15",
+      "page": 19
+    },
+    {
+      "doc_id": "e1820ae20877128ad554f0b72b7bf120550e1e3015e466dbd748179e4576b29c",
+      "house": "Citi",
+      "title": "US Economics: Inflation Weekly – August inflation coming down to the wire(less)",
+      "published": "2026-09-15",
+      "page": 3
+    }
+  ],
+  "Euro final": [
+    {
+      "doc_id": "8cea645ab5eea5ca00b6ebf4db1469a4774a94db11a060ddc9e3f3f506e6db4d",
+      "house": "GS",
+      "title": "European Week Ahead: September 14 - September 20",
+      "published": "2026-09-14",
+      "page": 1
+    },
+    {
+      "doc_id": "026fe43c3eca347d7d0e9d306000a6291e8baa6dd7795a3e07bfb1e67e52fd59",
+      "house": "GS",
+      "title": "Euro Area: Final Inflation Details Show Easing Underlying Momentum but Energy Pressures Push Headline Higher",
+      "published": "2026-09-17",
+      "page": 1
+    },
+    {
+      "doc_id": "026fe43c3eca347d7d0e9d306000a6291e8baa6dd7795a3e07bfb1e67e52fd59",
+      "house": "GS",
+      "title": "Euro Area: Final Inflation Details Show Easing Underlying Momentum but Energy Pressures Push Headline Higher",
+      "published": "2026-09-17",
+      "page": 2
+    },
+    {
+      "doc_id": "8c0e34fdf71ea4b816fbf5ecb358a216faf74746a1a379862a00e1425e29ae10",
+      "house": "HSBC",
+      "title": "Eurozone inflation briefing Brace for September",
+      "published": "2026-09-17",
+      "page": 1
+    },
+    {
+      "doc_id": "751cc3e4091c99cc30289170b581a6d90047e39a805718188c5a115db1b61674",
+      "house": "GS",
+      "title": "European Economics Analyst: Euro Area—Introducing Our Nearcast Model for Inflation",
+      "published": "2026-09-19",
+      "page": 11
+    },
+    {
+      "doc_id": "12cfdd8d553921b3e103c38e4716734d499d464f7628344ed02f0b6bc2684750",
+      "house": "GS",
+      "title": "Global Economics Wrap-Up: September 18, 2026",
+      "published": "2026-09-19",
+      "page": 3
+    },
+    {
+      "doc_id": "0407f64d8172e850147910711a3d983927f7573377b5a62d7f9fb0339e697da4",
+      "house": "JPM",
+      "title": "Euro area: Consumer inflation expectations ticked up",
+      "published": "2026-09-18",
+      "page": 1
+    }
+  ]
+}

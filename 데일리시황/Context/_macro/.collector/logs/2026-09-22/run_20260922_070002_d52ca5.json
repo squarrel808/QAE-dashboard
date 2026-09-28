@@ -1,0 +1,65 @@
+{
+  "run_id": "20260922_070002_d52ca5",
+  "mode": "daily",
+  "start": "2026-09-21",
+  "end": "2026-09-21",
+  "started": "2026-09-22T07:00:17.349124+09:00",
+  "finished": "2026-09-22T07:16:59.465439+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-22\\run_20260922_070002_d52ca5.log",
+  "houses": {
+    "BofA": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    },
+    "JPM": {
+      "status": "complete",
+      "counts": {
+        "discovered": 50,
+        "in_range": 4,
+        "attempted": 4,
+        "downloaded": 4,
+        "outside_range": 46
+      },
+      "coverage_guard_version": 1
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Failed PDFs or unparseable publication dates remain.",
+      "counts": {
+        "discovered": 49,
+        "outside_range": 37,
+        "in_range": 12,
+        "attempted": 12,
+        "downloaded": 9,
+        "failed": 3
+      }
+    },
+    "Citi": {
+      "status": "complete",
+      "counts": {
+        "discovered": 97,
+        "outside_range": 92,
+        "in_range": 5,
+        "attempted": 5,
+        "downloaded": 5
+      },
+      "coverage_guard_version": 1
+    },
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "Failed PDFs or unparseable publication dates remain.",
+      "counts": {
+        "discovered": 10,
+        "in_range": 10,
+        "attempted": 10,
+        "downloaded": 6,
+        "failed": 1,
+        "no_original_pdf": 3
+      }
+    }
+  }
+}

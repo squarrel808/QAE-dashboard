@@ -1,0 +1,16 @@
+﻿Name,Ticker,Index,Start,End,Return_10D,Sector,Industry,Category,Label
+ABB Ltd,ABBN SE Equity,SXXP,2026-08-18,2026-09-01,-0.027142515991748994,Industrials,Capital Goods,EU Diversified,ABB
+Applied Materials Inc,AMAT UW Equity,NDX,2026-08-17,2026-08-31,-0.14369243989464042,Information Technology,Semiconductors & Semiconductor Equipment,Semi Equipment,Applied Materials
+ASML Holding NV,ASML NA Equity,AEX,2026-08-18,2026-09-01,-0.05967048331292968,Information Technology,Semiconductors & Semiconductor Equipment,Semi Equipment,ASML
+EMCOR Group Inc,EME UN Equity,SPX,2026-08-17,2026-08-31,-0.14839891483293532,Industrials,Capital Goods,E&C,EMCOR
+Siemens Energy AG,ENR GY Equity,DAX,2026-08-18,2026-09-01,-0.08685503705721742,Industrials,Capital Goods,Power / Cooling,Siemens Energy
+Comfort Systems USA Inc,FIX UN Equity,SPX,2026-08-17,2026-08-31,-0.17837740141825886,Industrials,Capital Goods,E&C,Comfort Systems
+GE Vernova Inc,GEV UN Equity,SPX,2026-08-17,2026-08-31,-0.16725671918443008,Industrials,Capital Goods,Power / Cooling,GE Vernova
+KLA Corp,KLAC UW Equity,NDX,2026-08-17,2026-08-31,-0.14730754276827374,Information Technology,Semiconductors & Semiconductor Equipment,Semi Equipment,KLA
+Lam Research Corp,LRCX UW Equity,NDX,2026-08-17,2026-08-31,-0.1231677524429966,Information Technology,Semiconductors & Semiconductor Equipment,Semi Equipment,Lam Research
+Micron Technology Inc,MU UW Equity,NDX,2026-08-17,2026-08-31,-0.05240425006177418,Information Technology,Semiconductors & Semiconductor Equipment,Memory,Micron
+Quanta Services Inc,PWR UN Equity,SPX,2026-08-17,2026-08-31,-0.15951599728648358,Industrials,Capital Goods,E&C,Quanta Services
+Siemens AG,SIE GY Equity,DAX,2026-08-18,2026-09-01,0.01849163849341684,Industrials,Capital Goods,EU Diversified,Siemens
+Schneider Electric SE,SU FP Equity,CAC,2026-08-18,2026-09-01,-0.012368647214397899,Industrials,Capital Goods,EU Diversified,Schneider Electric
+Teradyne Inc,TER UW Equity,NDX,2026-08-17,2026-08-31,-0.21056550977117838,Information Technology,Semiconductors & Semiconductor Equipment,Semi Equipment,Teradyne
+Vertiv Holdings Co,VRT UN Equity,SPX,2026-08-17,2026-08-31,-0.11527545053517074,Industrials,Capital Goods,Power / Cooling,Vertiv

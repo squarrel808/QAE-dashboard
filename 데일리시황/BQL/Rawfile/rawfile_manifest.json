@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "processed": {
+    "6f996f4d25ea180ae87346cb9049f287461ddcf24bfe10a9a212bc626ba1f097": {
+      "file": "Bquant_All_19_Raw_Refreshed_20260901_1200KST.xlsb",
+      "sizeBytes": 8101521,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "c73f65e292f49b9cd1af3359a3529e420b82b81de7033ed418b6963f1b893c53": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (3).xlsb",
+      "sizeBytes": 3860061,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "8f5f0c5fae771b7d85d206d72557fa58c53d4504d7f4519c28de68f267d1baf5": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (5).xlsb",
+      "sizeBytes": 2889004,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "223b40614aae89c07441ed038a796a21fd950da9d00f4d3a677113d7c31d147a": {
+      "file": "Bquant_All_19_Raw_Refreshed12시0908.xlsb",
+      "sizeBytes": 3125381,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "a5eedd3670a621d97776fc656c6b94a016a97b94c62acee1291cf4d11eecd365": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (5)_a5eedd3670.xlsb",
+      "sizeBytes": 3447794,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "1357db1b4599ab9b9c205ae79c71ec02214ea76122e37b8dea3d4b86c8607306": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (5)_1357db1b45.xlsb",
+      "sizeBytes": 3652393,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "b1857cfc2c82b3b91e99c0399ecde7892addef83d25d868cbb93d3fd6989f7a8": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (5)_b1857cfc2c.xlsb",
+      "sizeBytes": 4920002,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "827fa68deb8c7b30c31d66b5e178562a426d8d186737b4b9a6988ebd9add791f": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (6).xlsb",
+      "sizeBytes": 5391837,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "9ad2e84e6a9854b59bdb7b25d9d65d2b3a6e5cdb6517e91f580d806cb8344a27": {
+      "file": "Bquant_All_19_Raw_Refreshed12시 (6)_9ad2e84e6a.xlsb",
+      "sizeBytes": 6368775,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    },
+    "8c8a1f0e5d015d86cbc9e6eb40c9a90cd01134b14560c7ee7513a2aa0e08a5a0": {
+      "file": "Bquant_All_19_Raw_Refreshed12시.xlsb",
+      "sizeBytes": 6586972,
+      "processedAt": "2026-09-22T09:09:51+09:00"
+    }
+  },
+  "master": {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Rawfile\\BQuant_Master.xlsx",
+    "updatedAt": "2026-09-22T09:09:51+09:00",
+    "sizeBytes": 86607225,
+    "indices": {
+      "SX5E": {
+        "members": 50,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 22977,
+          "eps12": 23034,
+          "eps_fy1": 23034,
+          "eps_fy2": 23034,
+          "price": 23034,
+          "mcap": 23034,
+          "roe_current": 22997,
+          "opm_current": 22744,
+          "roe_12m": 23034,
+          "opm_12m": 23034
+        }
+      },
+      "SXXP": {
+        "members": 600,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 273277,
+          "eps12": 275900,
+          "eps_fy1": 275945,
+          "eps_fy2": 276095,
+          "price": 279619,
+          "mcap": 279621,
+          "roe_current": 277037,
+          "opm_current": 276020,
+          "roe_12m": 276760,
+          "opm_12m": 273695
+        }
+      },
+      "DAX": {
+        "members": 40,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 19160,
+          "eps12": 19160,
+          "eps_fy1": 19160,
+          "eps_fy2": 19160,
+          "price": 19160,
+          "mcap": 19160,
+          "roe_current": 19075,
+          "opm_current": 19101,
+          "roe_12m": 19160,
+          "opm_12m": 19160
+        }
+      },
+      "CAC": {
+        "members": 40,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 19160,
+          "eps12": 19160,
+          "eps_fy1": 19160,
+          "eps_fy2": 19160,
+          "price": 19160,
+          "mcap": 19160,
+          "roe_current": 19159,
+          "opm_current": 18596,
+          "roe_12m": 19160,
+          "opm_12m": 19160
+        }
+      },
+      "IBEX": {
+        "members": 35,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 16258,
+          "eps12": 16765,
+          "eps_fy1": 16765,
+          "eps_fy2": 16765,
+          "price": 16765,
+          "mcap": 16765,
+          "roe_current": 16764,
+          "opm_current": 16764,
+          "roe_12m": 16765,
+          "opm_12m": 16765
+        }
+      },
+      "AEX": {
+        "members": 30,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 14088,
+          "eps12": 14179,
+          "eps_fy1": 14179,
+          "eps_fy2": 14179,
+          "price": 14180,
+          "mcap": 14180,
+          "roe_current": 14089,
+          "opm_current": 13545,
+          "roe_12m": 14179,
+          "opm_12m": 14179
+        }
+      },
+      "UKX": {
+        "members": 100,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 44316,
+          "eps12": 44110,
+          "eps_fy1": 44163,
+          "eps_fy2": 44110,
+          "price": 46920,
+          "mcap": 44525,
+          "roe_current": 45065,
+          "opm_current": 45008,
+          "roe_12m": 44498,
+          "opm_12m": 43085
+        }
+      },
+      "SPX": {
+        "members": 503,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 233908,
+          "eps12": 235763,
+          "eps_fy1": 236625,
+          "eps_fy2": 235838,
+          "price": 237797,
+          "mcap": 237776,
+          "roe_current": 222308,
+          "opm_current": 238247,
+          "roe_12m": 236052,
+          "opm_12m": 236365
+        }
+      },
+      "NDX": {
+        "members": 101,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 44794,
+          "eps12": 46656,
+          "eps_fy1": 46657,
+          "eps_fy2": 46656,
+          "price": 47433,
+          "mcap": 47420,
+          "roe_current": 44594,
+          "opm_current": 47750,
+          "roe_12m": 47409,
+          "opm_12m": 47614
+        }
+      },
+      "INDU": {
+        "members": 30,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 11164,
+          "eps12": 11164,
+          "eps_fy1": 11164,
+          "eps_fy2": 11164,
+          "price": 11164,
+          "mcap": 11164,
+          "roe_current": 10139,
+          "opm_current": 11164,
+          "roe_12m": 11164,
+          "opm_12m": 11164
+        }
+      },
+      "SPTSX60": {
+        "members": 60,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 28740,
+          "eps12": 28666,
+          "eps_fy1": 28666,
+          "eps_fy2": 28666,
+          "price": 28740,
+          "mcap": 28740,
+          "roe_current": 28721,
+          "opm_current": 28737,
+          "roe_12m": 28740,
+          "opm_12m": 27717
+        }
+      },
+      "IBOV": {
+        "members": 76,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 33443,
+          "eps12": 33825,
+          "eps_fy1": 33999,
+          "eps_fy2": 33869,
+          "price": 35946,
+          "mcap": 35946,
+          "roe_current": 35725,
+          "opm_current": 35418,
+          "roe_12m": 35356,
+          "opm_12m": 35164
+        }
+      },
+      "NKY": {
+        "members": 225,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 106094,
+          "eps12": 107471,
+          "eps_fy1": 107471,
+          "eps_fy2": 107471,
+          "price": 107471,
+          "mcap": 107471,
+          "roe_current": 107775,
+          "opm_current": 107775,
+          "roe_12m": 107585,
+          "opm_12m": 104576
+        }
+      },
+      "HSI": {
+        "members": 95,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 41051,
+          "eps12": 41225,
+          "eps_fy1": 41236,
+          "eps_fy2": 41225,
+          "price": 44589,
+          "mcap": 44589,
+          "roe_current": 44514,
+          "opm_current": 44367,
+          "roe_12m": 44589,
+          "opm_12m": 44589
+        }
+      },
+      "SHSZ300": {
+        "members": 300,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 133036,
+          "eps12": 134228,
+          "eps_fy1": 135363,
+          "eps_fy2": 135176,
+          "price": 143472,
+          "mcap": 143470,
+          "roe_current": 143648,
+          "opm_current": 142030,
+          "roe_12m": 137086,
+          "opm_12m": 135837
+        }
+      },
+      "STAR50": {
+        "members": 50,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 18674,
+          "eps12": 18666,
+          "eps_fy1": 19592,
+          "eps_fy2": 18946,
+          "price": 21276,
+          "mcap": 21274,
+          "roe_current": 21315,
+          "opm_current": 20677,
+          "roe_12m": 19431,
+          "opm_12m": 19743
+        }
+      },
+      "AS51": {
+        "members": 200,
+        "dates": 479,
+        "startDate": "2025-06-01",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 84260,
+          "eps12": 88005,
+          "eps_fy1": 88101,
+          "eps_fy2": 88279,
+          "price": 92863,
+          "mcap": 92922,
+          "roe_current": 92989,
+          "opm_current": 90921,
+          "roe_12m": 92851,
+          "opm_12m": 90906
+        }
+      },
+      "TPX500": {
+        "members": 1635,
+        "dates": 21,
+        "startDate": "2026-09-02",
+        "endDate": "2026-09-22",
+        "metricNumericCells": {
+          "pe": 23832,
+          "eps12": 23866,
+          "eps_fy1": 23855,
+          "eps_fy2": 23869,
+          "price": 34335,
+          "mcap": 34335,
+          "roe_current": 34293,
+          "opm_current": 34314,
+          "roe_12m": 19304,
+          "opm_12m": 23607
+        }
+      }
+    }
+  }
+}

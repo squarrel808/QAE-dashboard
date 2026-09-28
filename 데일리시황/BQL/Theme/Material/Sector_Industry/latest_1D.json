@@ -1,0 +1,12 @@
+{
+  "period": "1D",
+  "asOf": {
+    "TOPIX": "2026-09-09"
+  },
+  "material": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Sector_Industry\\20260909\\TOPIX_Sector_Industry_1D_20260909.json",
+  "json": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Sector_Industry\\20260909\\TOPIX_Sector_Industry_1D_20260909.json",
+  "images": {
+    "TOPIX": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20260909\\Sector_Industry\\TOPIX_섹터_1D_20260909.png"
+  },
+  "updatedAt": "2026-09-10T09:14:38+09:00"
+}

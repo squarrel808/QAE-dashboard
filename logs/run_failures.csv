@@ -1,3 +1,13 @@
 ﻿run_id,security,status
 20260824_234159,요약 (summarize.py),exit 1
 20260901_070002,요약 (summarize.py),exit 1
+20260922_070002,수집 (download_reports.py),exit 1
+20260923_070002,수집 (download_reports.py),exit 1
+20260923_070002,전송 (git),exit 1
+20260923_230002,전송 (git),exit 1
+20260924_070001,수집 (download_reports.py),exit 1
+20260924_070001,전송 (git),exit 1
+20260924_230002,전송 (git),exit 1
+20260925_070002,수집 (download_reports.py),exit 1
+20260925_070002,전송 (git),exit 1
+20260925_230002,전송 (git),exit 1

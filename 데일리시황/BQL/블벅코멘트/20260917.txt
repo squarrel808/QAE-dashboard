@@ -1,0 +1,2073 @@
+
+Invalid Subject 69.189.145.7 US (미국)   상세 
+보낸사람
+"Jeyhyuk Im (NATIONAL PENSION S" <jey9232@bloomberg.net> 주소추가 자동분류 추가
+받는사람
+<jeyhyuk.im@nps.or.kr> 주소추가
+보낸날짜
+2026.09.17 08:39:56
+라벨을 추가하려면 여기를 클릭하세요.
+일반 첨부 4개 (5.8MB) 전체다운로드
+Bquant_All_19_Raw_Refreshed12시.xlsb 5.1MB	PC저장 첨부파일삭제
+ECFC_Growth Consesus_수정.xlsb 346.5KB	PC저장 첨부파일삭제
+ECFC_Inflation Consesus_수정.xlsb 341.3KB	PC저장 첨부파일삭제
+ecocal_fipjgrge.xlsx 19.8KB	PC저장 첨부파일삭제
+
+Workflow
+US Morning Brief
+
+Show Thinking
+
+US MACRO & EQUITY MORNING BRIEFING
+Thursday, 17 September 2026 | 07:30 JST | Prepared for Portfolio Managers & Traders
+
+
+1. GLOBAL MARKET WRAP
+The S&P 500 fell 0.5% to 7,551.81 on Wednesday, its third consecutive losing session and the lowest close since July, as the Federal Reserve delivered its first rate hike in more than three years. The move was broad-based and macro-driven: most S&P 500 sectors declined, with Energy and Financials leading losses. The Dow Jones Industrial Average dropped 1.2%, while the Nasdaq 100 ended essentially flat, cushioned by strength in AI-linked optical networking stocks. The 10-year Treasury yield settled above 5% for the first time since July 2007, and the 2-year yield hit its highest since 2024. The Bloomberg Dollar Spot Index rose 0.5%, its largest single-day gain since June. WTI crude fell more than 3% intraday — its steepest drop since early August — as Saudi Arabia moved to restore its East-West pipeline, easing some of the supply-disruption premium. VIX futures edged higher post-close. Asian equity futures pointed lower overnight, tracking Wall Street's decline. US equity futures were little changed as of the 6:05 p.m. NY close.
+(1)
+(2)
+(3)
+
+Data Query
+for ([ 'GT10 Govt' , 'GT2 Govt' , 'GT30 Govt'] ) get ( yield )
+
+
+
+2. TODAY'S ZEITGEIST
+Four narratives dominate the setup for Thursday's session. First, the Fed's hawkish pivot is the dominant macro force. Chair Kevin Warsh raised the federal funds rate 25 basis points to 3.75%–4.00% and the dot plot signals one additional hike in 2026, with the median year-end projection at 4.125%. Warsh's press conference struck a decidedly hawkish tone — "inflation is too high and has been for too long" — and bond markets responded by pricing in three additional hikes by mid-2027, one more than before the decision. The 10-year yield above 5% is a valuation headwind for equities, particularly rate-sensitive sectors. Second, the oil supply picture is in flux. WTI fell more than 3% on Wednesday as Saudi Arabia moved to restore partial capacity on its East-West pipeline within days, but the broader Hormuz crisis — now more than six months old — remains unresolved, with Houthi control of Bab al-Mandeb and ongoing tanker cyberattack investigations adding uncertainty. Third, the US-China summit on September 24 in Washington is approaching, with both sides reportedly discussing tariff cuts on energy and agricultural goods ahead of the Trump-Xi meeting. Goldman Sachs surveys suggest most investors view the summit as "largely symbolic," but any concrete tariff reduction announcement could be a positive catalyst for risk assets. Fourth, the US-Canada trade escalation continues, with Trump directing agencies to remove Canadian-origin items from federal procurement, and Congress passing a bill enabling tariffs on Russian oil buyers — broadening the tariff policy toolkit.
+(4)
+(5)
+(6)
+
+
+
+3. BUSINESS CATALYSTS
+Ciena sets aggressive multi-year targets, lifts optical networking sector. Ciena released long-term financial targets including an adjusted operating margin of 32%–35% through FY2029 and a gross margin floor of 45%–46% in FY2027. The guidance triggered a sympathy rally in optical networking peers: Lumentum (LITE) surged 9.6% to lead all S&P 500 gainers on Wednesday, and Coherent (COHR) rose 6.9%. The moves signal that AI data-center demand for high-bandwidth optical interconnects remains robust, even as broader tech sentiment is cautious.
+(7)
+(8)
+(9)
+Goldman Sachs CEO warns on fixed income and costs. At the Barclays Global Financial Conference, CEO David Solomon said Q3 fixed-income trading is "softer" than prior quarters, while equity trading remains "very strong." He also flagged higher expenses across the firm. Goldman shares fell as much as 4.5% on Wednesday. The commentary has read-through for other large bank trading desks heading into Q3 earnings season.
+(10)
+(11)
+Diamondback Energy (FANG) hit by $1.9 billion block sale. SGF Capital — the family office of the late Autry Stephens' daughter — sold approximately 9.1 million shares at $205.80 via Morgan Stanley in an unregistered block trade, according to people familiar with the matter. Combined with the broader oil pullback, FANG fell approximately 8% on Wednesday, its worst session since April 2025. The block sale was supply-driven, not fundamental, but the magnitude amplified sector weakness.
+(12)
+(13)
+Generac secures $2.4 billion Amazon supply agreement. Generac and Amazon executed a long-term supply pact for backup generators, with initial deliveries of $2.4 billion expected in 2027–2028. Amazon also received a warrant for up to 1.69 million Generac shares. Generac shares rose 21% in after-hours trading on Wednesday. The deal underscores data-center power demand as a durable growth driver for industrial power equipment.
+(14)
+Fluence Energy (FLNC) slashes guidance on factory delays. The energy storage company cut its FY2026 revenue forecast to approximately $2.4 billion (from $2.9–$3.1 billion) and now expects an adjusted EBITDA loss of approximately $200 million (versus a prior loss of $30 million to profit of $10 million). The company cited delays in ramping its Houston contract manufacturing facility, which switched to hand welding. Shares fell approximately 17%–20% in after-hours trading. The miss raises questions about domestic manufacturing ramp timelines for clean energy hardware.
+(15)
+(16)
+AI capex conviction remains high despite AI lab caution. A Bank of America global fund manager survey (conducted September 4–10) found 79% of respondents do not expect any AI hyperscaler to announce a capex cut in 2026, up from 71% in August. However, 42% named AI hyperscaler capex as the most likely source of a systemic credit event, and net 33% said companies are overinvesting. The tension between conviction and concern is a key market dynamic.
+(17)
+Huntington Bancshares cuts FY2027 EPS outlook. At the Barclays Global Financial Conference, Huntington lowered its FY2027 EPS guidance to $1.75–$1.83 from $1.90–$1.93, and trimmed its FY2026 net interest income growth forecast to approximately 35% from 39%–43%. The revision adds to caution around regional bank earnings trajectories in a higher-for-longer rate environment.
+(18)
+Saudi Arabia moves to restore East-West pipeline. Saudi Aramco is seeking to restore approximately half the capacity of its East-West pipeline within days, with full operations expected in about six weeks, according to a person familiar with the matter. The pipeline had been shut following drone strikes. Aramco also sold approximately 20 million barrels to Asian refiners from outside Hormuz. The partial restoration contributed to Wednesday's oil price decline.
+(19)
+
+
+4. S&P 500 SECTOR PERFORMANCE
+Note: Bloomberg structured data returns 0.00% for all sector ETF 1-day returns as of the pre-open data pull (07:30 JST, before US market open). The Wednesday session returns below are sourced from Bloomberg News reporting and the S&P 500 Sector Wrap.
+Rank	Sector	1-Day Return (Wed)	Rel. to S&P 500 (–0.5%)	5-Day Return	1-Month Return	3-Month Return	Main Driver
+1	Information Technology	~0.00%	+0.50%	–0.19%	–3.36%	–0.89%	Optical networking surge (LITE, COHR) offset broader weakness
+2	Communication Services	~–0.2%	+0.30%	–1.80%	+1.97%	+3.75%	Mega-cap resilience; AI demand narrative intact
+3	Health Care	~–0.2%	+0.30%	+0.01%	+0.43%	+11.81%	Defensive rotation; strongest 3-month performer ex-Energy
+4	Consumer Staples	~–0.3%	+0.20%	–1.29%	–1.59%	+0.28%	Mild defensive bid; limited upside given rate pressure
+5	Materials	~–0.4%	+0.10%	–0.26%	–3.60%	–2.83%	Dollar strength; commodity price softness
+6	Consumer Discretionary	~–0.5%	0.00%	–2.37%	–5.63%	–4.40%	Rate sensitivity; housing/auto demand concerns
+7	Real Estate	~–0.6%	–0.10%	–0.72%	–4.51%	–1.80%	10-year yield above 5%; cap rate pressure
+8	Industrials	~–0.7%	–0.20%	–0.72%	–9.45%	–5.83%	Rate headwinds; Canada trade friction; worst 1-month sector
+9	Utilities	~–0.8%	–0.30%	–1.20%	–6.47%	–6.47%	10-year yield spike; data center power bill legislation risk
+10	Financials	~–2.0%	–1.50%	–1.93%	–2.87%	+3.84%	Fed hike + hawkish Warsh; Goldman fixed-income warning
+11	Energy	~–3.0%	–2.50%	–0.77%	+2.32%	+17.95%	WTI –3%+ on Saudi pipeline restoration; FANG block sale
+Expand Table to Artifact Pane
+Data Query
+for ([ 'XLB US Equity' , 'XLC US Equity' , 'XLE US Equity' , 'XLF US Equity' , 'XLI US Equity' , 'XLK US Equity' , 'XLP US Equity' , 'XLRE US Equity' , 'XLU US Equity' , 'XLV US Equity' , 'XLY US Equity'] ) get ( total_return ( calc_interval = 1D ) , total_return ( calc_interval = 1M ) , total_return ( calc_interval = 3M ) , total_return ( calc_interval = 5D ))
+
+Best session: Information Technology (~flat) and Communication Services (~–0.2%) outperformed materially, driven by the Ciena-triggered optical networking rally and mega-cap resilience. Worst session: Energy (–3%) and Financials (–2%) led declines — Energy on oil supply relief, Financials on the Fed hike and Goldman's guidance.
+(20)
+Participation was broad to the downside, with most S&P 500 groups falling. The S&P 500's 33-consecutive-day streak without a 1%+ drawdown came close to breaking, with the index falling as much as 1.1% intraday before recovering.
+(21)
+Health Care is the standout multi-timeframe leader (3-month: +11.81%), consistent across 5-day, 1-month, and 3-month periods. Energy leads over 3 months (+17.95%) but reversed sharply on Wednesday. Communication Services and Financials are the only other sectors with positive 3-month returns.
+Most important reversal: Energy, the strongest 3-month performer, was the worst sector on Wednesday — a sharp single-session reversal driven by supply-side news rather than a change in the underlying geopolitical backdrop.
+
+
+5. S&P 500 SECTOR ROTATION
+Period	Leading Sectors	Lagging Sectors	Dominant Style	Main Driver	Rotation Signal
+Latest Session (Sep 16)	IT, Comm. Services, Health Care	Energy, Financials, Utilities	Mixed / Defensive	Fed hike + oil supply relief	Reversal in Energy; Financials underperform despite rate hike
+Last 5 Days	Health Care, IT, Materials	Consumer Discretionary, Financials, Comm. Services	Defensive / Growth	Rising rate expectations; pre-FOMC positioning	Narrowing — defensives and select growth holding up
+Last 1 Month	Energy, Comm. Services, Health Care	Industrials, Utilities, Real Estate, Consumer Discretionary	Commodity-Sensitive + Defensive	Hormuz crisis driving Energy; rate pressure on rate-sensitives	Continuing — Energy/Health Care leadership intact until Wed reversal
+Last 3 Months	Energy (+17.95%), Health Care (+11.81%), Comm. Services (+3.75%), Financials (+3.84%)	Industrials (–5.83%), Utilities (–6.47%), Consumer Discretionary (–4.40%)	Commodity-Sensitive + Defensive	Geopolitical risk premium; AI demand; rate headwinds on long-duration	Reversing in Energy on session; Health Care leadership broadening
+Expand Table to Artifact Pane
+Assessment: A genuine rotation away from Energy is not yet confirmed on one session alone. The 3-month Energy leadership was driven by the Hormuz supply shock; Wednesday's reversal reflects partial supply restoration, not a structural change. Health Care is the most consistent multi-timeframe leader. Rate-sensitive sectors (Utilities, Real Estate, Industrials) remain under sustained pressure across all measured periods, consistent with a higher-for-longer rate regime. Leadership is narrowing — the market is increasingly concentrated in Health Care, select Communication Services mega-caps, and AI-linked Technology names.
+
+
+6. INTER-SECTOR INSIGHTS
+
+Growth vs. Cyclicals: AI Subsectors Decouple from Macro
+Technology was effectively flat on Wednesday while Financials fell ~2% and Energy fell ~3%, illustrating a sharp divergence within cyclicals. The outperformance of IT was not broad — it was concentrated in AI optical networking (Lumentum, Coherent), which rallied on Ciena's targets. Broader semiconductor and software names were more muted. The Ciena catalyst suggests investors are selectively rotating into AI supply-chain beneficiaries even as macro headwinds intensify.
+(22)
+(23)
+
+
+Technology: Narrow, AI-Driven, Not Broad
+Wednesday's IT outperformance was entirely company-specific and concentrated in optical networking. Semiconductors, software, and hardware did not participate meaningfully. Over 1 month, IT is down 3.36%, underperforming the broader market. The AI capex narrative remains intact — 79% of BofA fund managers expect no hyperscaler capex cut in 2026 — but equity performance is increasingly stock-specific rather than sector-wide.
+(24)
+
+
+Defensives vs. Economically Sensitive: Health Care Stands Alone
+Health Care (+11.81% over 3 months) is the clearest defensive outperformer and the only non-commodity, non-growth sector with sustained positive returns across all measured periods. Consumer Staples, by contrast, is down 1.59% over 1 month despite its defensive character, suggesting rate pressure is limiting the traditional defensive bid. Utilities (–6.47% over 3 months) have been the worst rate-sensitive sector, reflecting the dual headwind of rising yields and data-center power legislation risk.
+(25)
+
+
+Rate-Sensitive Divergence: Financials Fail to Benefit from Hike
+Financials fell ~2% on the day of the rate hike — counterintuitive at first glance, but consistent with the market pricing in a more aggressive hiking cycle that could compress net interest margins at the long end while raising credit risk. Goldman's fixed-income warning and Huntington's EPS cut reinforced the concern. Real Estate (–4.51% over 1 month) and Utilities (–6.47%) are the most damaged rate-sensitive sectors. The 10-year above 5% is the critical threshold to watch.
+(26)
+(27)
+
+
+Energy Reversal: Supply Relief vs. Structural Geopolitical Premium
+Energy's 3-month leadership (+17.95%) was built on the Hormuz supply shock and Saudi pipeline disruption. Wednesday's ~3% sector decline reflects partial supply restoration news, not a resolution of the underlying conflict. WTI at ~$102 and Brent at ~$106 remain elevated by historical standards. The Houthi control of Bab al-Mandeb and ongoing tanker cyberattack investigations suggest the geopolitical risk premium is not fully unwinding. Energy's 1-month return remains positive (+2.32%), indicating the reversal is not yet a trend.
+(28)
+(29)
+
+
+
+6. STOCKS IN FOCUS
+Company	Sector	Stock Return (Wed)	Confirmed Catalyst	Broader Read-Through
+Lumentum (LITE)	Information Technology	+9.6%	Sympathy rally with Ciena's aggressive multi-year margin and revenue targets; bullish options flow	AI data-center optical interconnect demand remains robust; supply-chain beneficiaries outperforming even in risk-off sessions
+Coherent (COHR)	Information Technology	+6.9%	Same Ciena catalyst; optical networking sector re-rating	Confirms the Ciena read-through is sector-wide, not stock-specific; AI infrastructure spending visible in component demand
+Goldman Sachs (GS)	Financials	~–4.5%	CEO Solomon flagged Q3 fixed-income softness and higher expenses at Barclays conference	Negative read for large bank trading revenues in Q3; sets cautious tone ahead of earnings season; broader Financials sector underperformance
+Diamondback Energy (FANG)	Energy	~–8.0%	SGF Capital sold ~$1.9 billion of shares (9.1 million shares at $205.80) via Morgan Stanley block trade, per people familiar with the matter; compounded by oil price decline	Supply-driven, not fundamental; but magnitude amplified sector weakness; highlights concentration risk in Energy's largest holders
+Generac (GNRC)	Industrials	+21% (after-hours)	Long-term supply agreement with Amazon for backup generators; $2.4 billion in initial deliveries in 2027–2028; Amazon warrant issued	Data-center power demand is a durable, contracted revenue stream; positive for industrial power equipment manufacturers
+Fluence Energy (FLNC)	Industrials / Clean Energy	~–17% (after-hours)	Revenue guidance cut to ~$2.4 billion from ~$3.0 billion; EBITDA loss widened to ~$200 million; Houston factory ramp delays	Domestic clean energy manufacturing ramp timelines remain challenged; raises questions about US energy storage supply chain execution
+Huntington Bancshares (HBAN)	Financials	-	FY2027 EPS guidance cut to $1.75–$1.83 from $1.90–$1.93; NII growth forecast trimmed at Barclays conference	Regional bank earnings trajectory under pressure in higher-for-longer environment; watch for similar guidance revisions at Q3 earnings
+Expand Table to Artifact Pane
+
+
+7. KEY STOCK MOVERS BY SECTOR
+Sector	Direction	Company	Ticker	Stock Return (Wed)	Confirmed Catalyst	Broader Read-Through
+Information Technology	Gainer	Lumentum Holdings	LITE	+9.6%	Ciena multi-year targets triggered optical networking sector re-rating	AI data-center interconnect demand robust; supply-chain names outperform
+Information Technology	Gainer	Coherent	COHR	+6.9%	Same Ciena catalyst; sector sympathy rally	Confirms sector-wide re-rating in optical networking
+Information Technology	Decliner	-	-	-	No confirmed large-cap IT decliner with material news flow on the session	-
+Financials	Decliner	Goldman Sachs	GS	~–4.5%	CEO warned of Q3 fixed-income softness and higher expenses at Barclays conference	Negative Q3 trading revenue signal; cautious tone ahead of bank earnings
+Financials	Decliner	US Bancorp	USB	Elevated volume; declined	No confirmed company-specific catalyst identified; sector-wide Fed hike pressure	Regional bank sensitivity to rate path uncertainty
+Energy	Decliner	Diamondback Energy	FANG	~–8.0%	$1.9 billion block sale by SGF Capital; compounded by WTI –3%+ decline	Supply-driven; highlights holder concentration risk in Energy sector
+Energy	Decliner	Viper Energy	VNOM	~–7.0%	No confirmed company-specific catalyst; oil price decline and sector rotation	Permian-linked names most exposed to oil price pullback
+Industrials	Gainer	Generac	GNRC	+21% (after-hours)	Long-term Amazon supply agreement; $2.4 billion initial deliveries 2027–2028	Data-center power demand creates contracted industrial revenue streams
+Industrials	Decliner	JB Hunt Transport	JBHT	~–13%	No confirmed company-specific catalyst identified; volume spiked to 13x 20-day average	Elevated volume without confirmed catalyst warrants monitoring; possible macro/freight demand concern
+Industrials	Decliner	Fluence Energy	FLNC	~–17% (after-hours)	Revenue guidance cut; Houston factory ramp delays	Domestic clean energy manufacturing execution risk
+Communication Services	Gainer	-	-	-	No confirmed large-cap gainer with material news flow; sector held up on mega-cap resilience	-
+Health Care	Gainer	-	-	-	Sector outperformed on defensive rotation; no single large-cap confirmed catalyst	Defensive positioning in rising-rate environment
+Expand Table to Artifact Pane
+
+
+10. NEXT-SESSION SECTOR WATCH
+Trigger	Most Exposed Sectors	Stocks to Watch	What Would Confirm the Signal
+Initial Jobless Claims (21:30 KST) — survey 206.5k vs. prior 206k	Financials, Consumer Discretionary, Industrials	GS, JPM, HD, AMZN	Claims above 215k would reinforce labor softening; below 200k would add to hawkish Fed narrative
+Philadelphia Fed Business Outlook (21:30 KST) — survey 32.1 vs. prior 47.4	Industrials, Materials	HON, CAT, NUE	A print below 30 would confirm manufacturing deceleration; above 40 would signal resilience and add to rate-hike expectations
+Housing Starts (21:30 KST) — survey 1,320k vs. prior 1,239k	Real Estate, Consumer Discretionary, Materials	LEN, DHI, HD, LOW	A beat would be constructive for homebuilders but may reinforce Fed hawkishness; a miss would add to rate-sensitive sector pressure
+10-year Treasury yield trajectory — currently 5.02%	Utilities, Real Estate, Financials, Consumer Discretionary	NEE, AMT, BAC, USB	Sustained move above 5.10% would intensify pressure on rate-sensitive sectors; a pullback below 4.95% would provide relief
+Oil supply developments — Saudi pipeline restoration timeline	Energy	XOM, CVX, FANG, OXY	Confirmation of faster-than-expected pipeline restoration would extend Wednesday's oil decline; any new Hormuz escalation would reverse it
+Expand Table to Artifact Pane
+
+
+11. ECONOMY CALENDAR & ECONOMY COMMENT
+
+Today's Key US Economic Releases (Korea/Japan Time, UTC+9)
+Time (KST/JST)	Event	Period	Actual	Bloomberg Survey	Prior
+03:00	FOMC Rate Decision (Upper Bound)	Sep 16	4.00%	4.00%	3.75%
+03:00	FOMC Median Rate Forecast: Current Year	Sep 16	4.125%	4.125%	3.750%
+03:00	FOMC Median Rate Forecast: Next Year	Sep 16	4.125%	3.875%	3.625%
+21:30	Initial Jobless Claims	Sep 12	–	206.5k	206.0k
+21:30	Continuing Claims	Sep 5	–	1,779k	1,774k
+21:30	Housing Starts	Aug	–	1,320k	1,239k
+21:30	Housing Starts MoM	Aug	–	+6.7%	–12.4%
+21:30	Building Permits	Aug P	–	1,407.5k	1,433.0k
+21:30	Philadelphia Fed Business Outlook	Sep	–	32.1	47.4
+23:00	Pending Home Sales MoM	Aug	–	–0.1%	–2.3%
+Expand Table to Artifact Pane
+Data Query
+for ( 'US Country' ) get ( calendar ( dates = range( 2026-09-17 , 2026-09-17 ) ))
+
+
+Economy Comment
+The most important already-released data point is Wednesday's August retail sales print: +1.2% month-on-month, the strongest in five months and well above the Bloomberg survey median of +0.8%. The advance was broad-based across categories, including gasoline-driven components. The strength reinforced the Fed's decision to hike and contributed to the hawkish tone of Warsh's press conference — a resilient consumer reduces the urgency for policy relief.
+(30)
+
+The FOMC dot plot released Wednesday showed the median year-end 2026 projection at 4.125% (one more hike), but the next-year median came in at 4.125% — above the pre-meeting survey of 3.875% — signaling the Fed has removed an expected cut from its 2027 path. This is the most hawkish incremental signal from the dot plot.
+(31)
+(32)
+
+Today's data slate is consequential. The Philadelphia Fed Business Outlook is expected to fall sharply to 32.1 from 47.4 — a significant deceleration in manufacturing sentiment that, if confirmed, would add to concerns about industrial sector momentum. Housing Starts are expected to rebound (+6.7% MoM) after July's –12.4% drop, but Building Permits are expected to decline –1.5%, suggesting the rebound may be temporary. Jobless claims are expected to remain stable near 206k, consistent with a still-tight labor market.
+
+
+12. CENTRAL BANKS
+FOMC (Sep 16 — confirmed): The FOMC voted unanimously to raise the federal funds rate by 25 basis points to a 3.75%–4.00% range — the first hike since 2023. The dot plot signals one additional hike in 2026 (year-end median: 4.125%) and removed a previously expected 2027 cut (next-year median now 4.125% vs. prior 3.625%). Chair Warsh stated "inflation is too high and has been for too long" and emphasized the Fed's commitment to returning inflation to 2% in a "timelier" way. Warsh again declined to submit his own dot plot projection.
+(33)
+(34)
+Market pricing post-FOMC: Bond traders are now pricing in three additional Fed hikes by mid-2027 — one more than before the decision — according to Bloomberg reporting. Money markets priced approximately 50% odds of an October hike. Standard Chartered updated its forecast to add a December hike, now seeing the fed funds rate at 4.25% at end-2026 and end-2027.
+(35)
+(36)
+(37)
+Trump reaction: President Trump publicly demanded "huge" Fed rate cuts hours after the hike, per reporting. The rebuke tests the Fed's independence narrative but has no immediate policy implication.
+(38)
+(39)
+Bloomberg Intelligence commentary: Edward Harrison (Bloomberg) wrote that Warsh's overriding message was that a booming economy with above-target inflation requires more restrictive policy, and that long-end yields will likely rise further. The tail risk is a sustained hiking cycle.
+(40)
+Treasury market: Thursday's 8-week bill auction is being watched as a gauge of money-market investor expectations for an October hike. Funds tend to shorten weighted average maturity ahead of anticipated rate increases.
+(41)
+
+
+13. GOVERNMENTS
+US-Canada trade escalation: President Trump directed the Office of Management and Budget and the US Trade Representative to identify and remove Canadian-origin items from federal civil procurement "where warranted." Canada has imposed reciprocal tariffs on approximately $20 billion of US goods. The escalation is a headwind for US industrial and materials companies with Canadian supply chains.
+(42)
+(43)
+(44)
+Russia oil tariff bill passes Congress: The House passed legislation giving Trump new powers to impose tariffs on countries purchasing Russian petroleum products. The bill, which the Senate had already passed, creates a legal framework for broader tariff action against US trading partners and was opposed by a coalition of business lobbyists. Affected sectors: Energy, Industrials, global trade-exposed companies.
+(45)
+US-China summit preparation (Sep 24): Treasury Secretary Bessent is meeting his Chinese counterpart He Lifeng this weekend ahead of the Trump-Xi summit in Washington. Both sides are reportedly discussing tariff cuts on US energy and agricultural exports and reductions on Chinese manufacturing inputs. BYD is reportedly being considered for Xi's business delegation. Goldman Sachs surveys suggest most investors view the summit as "largely symbolic."
+(46)
+(47)
+Semiconductor tariffs under review: Commerce Secretary Lutnick said the administration is weighing additional tariffs on imported semiconductors, potentially paired with relief for companies investing in domestic manufacturing. Affected sectors: Information Technology, Industrials.
+(48)
+Data center power legislation: Senate Republicans are pursuing expedited legislation directing states to consider requiring data centers to fund their own electricity costs. Bipartisan House support exists. Affected sectors: Utilities, Real Estate (data center REITs), Information Technology.
+(49)
+Iran cyberattack investigation: The US Coast Guard and FBI are investigating potential Iranian cyberattacks on two energy tankers bound for American ports in August. The probe raises concerns about Iran widening the conflict beyond the Strait of Hormuz. Affected sectors: Energy, Industrials (shipping).
+(50)
+(51)
+
+
+14. THE DAYBOOK
+
+Today — Thursday, 17 September 2026 (KST/JST)
+05:00 KST — US Total Net TIC Flows (July): Actual $83.7 billion vs. prior $133.5 billion (revised $135.5 billion). Net Long-term TIC Flows: –$27.9 billion vs. prior $172.7 billion. Significant deterioration in foreign demand for US assets — watch for Treasury market reaction.
+21:30 KST — Initial Jobless Claims (Sep 12 week): Survey 206.5k | Prior 206.0k
+21:30 KST — Continuing Claims (Sep 5): Survey 1,779k | Prior 1,774k
+21:30 KST — Housing Starts (August): Survey 1,320k | Prior 1,239k
+21:30 KST — Building Permits (August, Preliminary): Survey 1,407.5k | Prior 1,433k
+21:30 KST — Philadelphia Fed Business Outlook (September): Survey 32.1 | Prior 47.4
+21:30 KST — US 8-Week Bill Auction (first post-hike gauge of October rate expectations)
+(52)
+23:00 KST — Pending Home Sales MoM (August): Survey –0.1% | Prior –2.3%
+TBD — Generac (GNRC): Amazon supply agreement details; watch for formal press release and analyst commentary on data-center power demand read-through
+(53)
+TBD — Fluence Energy (FLNC): After-hours guidance cut; analyst calls and potential rating actions expected during US session
+(54)
+TBD — Barclays Global Financial Conference continues: Additional bank CEO commentary expected; watch for further guidance updates from Financials sector
+
+Tomorrow — Friday, 18 September 2026
+Thailand-Trump tariff deal talks: Prime Minister Anutin expected to speak with Trump around September 17–18 to conclude negotiations, according to Thailand's Commerce Minister
+(55)
+Treasury Secretary Bessent meets Chinese counterpart He Lifeng (weekend) ahead of September 24 Trump-Xi summit
+(56)
+
+
+15. PRESENTATION SUMMARY
+
+Core Message
+The S&P 500 fell 0.5% on Wednesday to its lowest since July as the Federal Reserve delivered its first rate hike in three years and Chair Warsh struck a hawkish tone, pushing the 10-year Treasury yield above 5% for the first time since 2007. The decline was broad-based and macro-driven, with Energy (–3%) and Financials (–2%) leading losses — Energy on Saudi pipeline restoration news, Financials on the Goldman Sachs fixed-income warning. Information Technology was the standout relative outperformer, driven entirely by AI optical networking stocks (Lumentum +9.6%, Coherent +6.9%) following Ciena's aggressive multi-year targets. For Thursday, the Philadelphia Fed print, jobless claims, and the 10-year yield trajectory are the key variables.
+
+Sector Highlights
+Energy (–3.0% Wed | +17.95% 3M): Sharpest single-session reversal of the year's top-performing sector. Saudi pipeline restoration drove WTI –3%+. Diamondback Energy fell ~8% on a $1.9 billion block sale. Geopolitical risk premium not fully unwound.
+Financials (~–2.0% Wed | +3.84% 3M): Underperformed despite the rate hike. Goldman Sachs –4.5% on Q3 fixed-income warning. Huntington cut FY2027 EPS guidance. Sets a cautious tone for Q3 bank earnings.
+Information Technology (~flat Wed | –0.89% 3M): Best relative performer. Entirely driven by Lumentum (+9.6%) and Coherent (+6.9%) on Ciena's targets. Broad IT remains under pressure from rising rates.
+Health Care (~–0.2% Wed | +11.81% 3M): Most consistent multi-timeframe leader. Defensive positioning in a higher-for-longer rate environment. No single large-cap catalyst.
+Industrials (~–0.7% Wed | –5.83% 3M): Worst 1-month sector (–9.45%). Generac +21% after-hours on Amazon deal is a bright spot; Fluence Energy –17% after-hours on guidance cut. JB Hunt fell ~13% on elevated volume with no confirmed catalyst.
+
+Three Takeaways
+Market: The Fed's first rate hike in three years, combined with a hawkish dot plot signaling one more hike in 2026 and a higher-for-longer 2027 path, is the dominant market narrative. The 10-year yield above 5% is a structural headwind for equities, particularly rate-sensitive and long-duration sectors.
+Leadership: Health Care is the most durable sector leader across all measured timeframes. Energy's 3-month leadership is reversing on supply-side news. Technology leadership is narrowing to AI optical networking names — it is not broad. Rate-sensitive sectors (Utilities, Real Estate, Industrials) remain under sustained pressure.
+Watch: The Philadelphia Fed Business Outlook (survey: 32.1 vs. prior 47.4) is the highest-impact release of the day — a sharp deceleration would signal manufacturing deterioration and could pressure Industrials further, while a beat would reinforce the hawkish Fed narrative. The 10-year yield's behavior around 5% is the critical equity market variable.
+Sources: Bloomberg News, Bloomberg Intelligence, Bloomberg structured data, US Census Bureau, Federal Reserve, Wall Street Journal, MarketWatch, Barron's, AFP, AP, Axios, Benzinga, Dow Jones, MT Newswires, Investor's Business Daily.
+Data Query
+for ([ 'NDX Index' , 'RTY Index' , 'SPX Index'] ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last )
+
+Data Query
+for ( 'SPX Index' ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last )
+
+Data Query
+for ( 'DXY Curncy' ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last )
+
+Data Query
+for ([ 'CL1 Comdty' , 'CO1 Comdty'] ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last )
+
+Data Query
+for ( 'VIX Index' ) get ( px_last )
+
+Data Query
+for ( 'YCCI0674 Index' ) get ( spread )
+
+Data Query
+for ( 'YCCI0674 Index' ) get ( name , px_last ( dates = 0D ) , spread ( dates = 0D )) with ( fill = PREV )
+
+Data Query
+for ([ 'XLB US Equity' , 'XLC US Equity' , 'XLE US Equity' , 'XLF US Equity' , 'XLI US Equity' , 'XLK US Equity' , 'XLP US Equity' , 'XLRE US Equity' , 'XLU US Equity' , 'XLV US Equity' , 'XLY US Equity'] ) get ( total_return ( calc_interval = 1D ))
+
+
+Copy
+Save to
+
+Suggested Follow-Ups
+What are the current consensus EPS estimates and forward P/E multiples for the S&P 500 Financials sector heading into Q3 earnings season?
+
+How has the S&P 500 historically performed in the 30 days following the first Fed rate hike of a new tightening cycle?
+
+How can the Bloomberg Terminal be used to monitor real-time sector rotation and Treasury yield movements during the US trading session?
+
+Copy
+Save to
+
+
+Workflows
+
+Responses are generated by
+Bloomberg AI
+. Check to make sure they are correct and complete.
+
+1.
+Bloomberg News
+
+NEWS 09/16/2026
+2.
+MT Newswires
+
+NEWS 09/16/2026
+3.
+Bloomberg First Word
+
+NEWS 09/16/2026
+4.
+Bloomberg News
+
+NEWS 09/16/2026
+5.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+6.
+Bloomberg First Word
+
+NEWS 09/16/2026
+7.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+8.
+Bloomberg News
+
+NEWS 09/16/2026
+9.
+Benzinga
+
+NEWS 09/16/2026
+10.
+Bloomberg News
+
+NEWS 09/16/2026
+11.
+Bloomberg First Word
+
+NEWS 09/16/2026
+12.
+Bloomberg First Word
+
+NEWS 09/16/2026
+13.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+14.
+Bloomberg First Word
+
+NEWS 09/16/2026
+15.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+16.
+Bloomberg First Word
+
+NEWS 09/16/2026
+17.
+Dow Jones Institutional News Feed
+
+NEWS 09/15/2026
+18.
+Bloomberg First Word
+
+NEWS 09/16/2026
+19.
+Bloomberg News
+
+NEWS 09/16/2026
+20.
+Bloomberg First Word
+
+NEWS 09/16/2026
+21.
+Bloomberg First Word
+
+NEWS 09/16/2026
+22.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+23.
+Benzinga
+
+NEWS 09/16/2026
+24.
+Dow Jones Institutional News Feed
+
+NEWS 09/15/2026
+25.
+Bloomberg Government
+
+NEWS 09/16/2026
+26.
+Bloomberg News
+
+NEWS 09/16/2026
+27.
+Bloomberg First Word
+
+NEWS 09/16/2026
+28.
+Bloomberg News
+
+NEWS 09/16/2026
+29.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+30.
+Bloomberg News
+
+NEWS 09/16/2026
+31.
+Bloomberg News
+
+NEWS 09/16/2026
+32.
+Bloomberg First Word
+
+NEWS 09/16/2026
+33.
+Bloomberg News
+
+NEWS 09/16/2026
+34.
+Bloomberg First Word
+
+NEWS 09/16/2026
+35.
+Bloomberg News
+
+NEWS 09/16/2026
+36.
+Bloomberg First Word
+
+NEWS 09/16/2026
+37.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+38.
+Investor's Business Daily
+
+NEWS 09/16/2026
+39.
+Bloomberg News
+
+NEWS 09/16/2026
+40.
+Bloomberg First Word
+
+NEWS 09/16/2026
+41.
+Bloomberg First Word
+
+NEWS 09/16/2026
+42.
+Bloomberg First Word
+
+NEWS 09/16/2026
+43.
+Bloomberg News
+
+NEWS 09/16/2026
+44.
+Associated Press
+
+NEWS 09/16/2026
+45.
+Bloomberg News
+
+NEWS 09/16/2026
+46.
+Bloomberg News
+
+NEWS 09/15/2026
+47.
+Bloomberg First Word
+
+NEWS 09/14/2026
+48.
+Bloomberg News
+
+NEWS 09/02/2026
+49.
+Bloomberg Government
+
+NEWS 09/16/2026
+50.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+51.
+Bloomberg News
+
+NEWS 09/16/2026
+52.
+Bloomberg First Word
+
+NEWS 09/16/2026
+53.
+Bloomberg First Word
+
+NEWS 09/16/2026
+54.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+55.
+Bloomberg News
+
+NEWS 09/15/2026
+56.
+Bloomberg News
+
+NEWS 09/15/2026
+
+
+Workflow
+Theme,rotation
+
+Show Thinking
+
+Factor, Thematic & Positioning Market Pulse
+Based on the latest completed US trading session: Wednesday, September 16, 2026. The Federal Reserve raised rates 25bp to 3.75–4.00% — its first hike since 2023 — and Chair Warsh struck a hawkish tone, signaling further tightening is likely. The S&P 500 closed –0.45% at 7,551.81, the Dow –1.21%, and the Nasdaq Composite essentially flat (–0.01%). This macro shock is the dominant organizing event for all factor and thematic analysis below.
+(1)
+
+
+
+1. Factor Pulse
+
+What type of stocks did the US market reward or punish?
+All proxies below are long-only ETFs. Market beta influences all absolute return figures. 1D returns are 0.00% across all proxies, as the US session on September 17 has not yet opened as of JST morning. The 5D and 1M windows capture the full post-FOMC and pre-FOMC repricing.
+Factor	US Proxy Used	1D	5D	1M	Current Signal
+Momentum	MTUM (iShares MSCI USA Momentum)	0.00%	–6.72%	+0.24%	Reversing
+High Beta	SPHB (Invesco S&P 500 High Beta)	0.00%	–6.19%	–0.55%	Weakening
+Size (Small Cap)	IWM (iShares Russell 2000)	0.00%	–6.38%	–1.13%	Weakening
+Growth	IWF (iShares Russell 1000 Growth)	0.00%	–3.54%	–0.50%	Weakening
+Quality	QUAL (iShares MSCI USA Quality)	0.00%	–3.02%	–1.05%	Mixed
+Dividend	VIG (Vanguard Dividend Appreciation)	0.00%	–3.54%	–1.19%	Weakening
+Value	IWD (iShares Russell 1000 Value)	0.00%	–1.77%	–1.29%	Stable
+Low Volatility	USMV (iShares MSCI USA Min Vol)	0.00%	–1.58%	–1.38%	Stable
+Expand Table to Artifact Pane
+US Factor Performance: Momentum vs Growth vs Value vs Min Vol (Normalized, Aug 28 = 100)
+
+Momentum is the week's most significant casualty. MTUM's –6.72% over the five days ending September 16 is the sharpest factor drawdown in the universe surveyed, consistent with a hawkish rate shock unwinding crowded high-momentum positions. The 1M return of +0.24% confirms that momentum had been the dominant factor through mid-September before the reversal accelerated into the FOMC.
+(2)
+Value and Low Volatility are the relative winners. IWD (–1.77% 5D) and USMV (–1.58% 5D) significantly outperformed momentum and high beta over the week, consistent with a rate-driven rotation away from high-multiple, high-beta names toward more defensive and cheaper stocks. Both remain negative in absolute terms — this is a relative, not absolute, signal.
+Small caps are under acute rate pressure. IWM's –6.38% over 5 days reflects the well-documented sensitivity of smaller companies to higher short-term rates and tighter financial conditions.
+(3)
+
+
+Regional Factor Confirmation
+European proxies: iShares Edge MSCI Europe factor ETFs (IEVL, IEFM, IEQU, MVEU). Japan proxies: Bloomberg Japan Large & Mid Cap Value Index (JPVL), MSCI Japan Momentum Index (M4JPMMT). Global proxies: iShares Edge MSCI World factor ETFs (IWVL, IWMO, IWQU) and iShares MSCI Global Min Vol (ACWV). Methodologies differ across regions; direct absolute return comparisons should be treated with caution. 5D returns are used as the primary cross-regional signal.
+Factor	US (5D)	Europe (5D)	Japan (5D)	Global (5D)	Cross-Regional Signal
+Momentum	–6.72% (MTUM)	–1.60% (IEFM)	+0.26% (M4JPMMT)	–4.75% (IWMO)	US-Led / Partially Global
+Value	–1.77% (IWD)	–0.09% (IEVL)	+1.18% (JPVL)	–0.94% (IWVL)	Regionally Divergent
+Quality	–3.02% (QUAL)	+0.30% (IEQU)	N/A	–2.50% (IWQU)	US-Led
+Low Volatility	–1.58% (USMV)	+0.30% (MVEU)	N/A	–0.59% (ACWV)	Mixed / No Clear Signal
+Size (Small Cap)	–6.38% (IWM)	+0.40% (IEUS)	N/A	N/A	US-Led
+Expand Table to Artifact Pane
+The Momentum reversal is the most analytically significant cross-regional observation. The US (MTUM –6.72% 5D) and Global (IWMO –4.75% 5D) factor proxies both show sharp momentum drawdowns, suggesting the unwind has global reach — consistent with a Fed-driven repricing that affects globally integrated portfolios. Europe's momentum factor (IEFM –1.60%) shows a milder version of the same move. Japan is the outlier: the MSCI Japan Momentum index was essentially flat over 5 days (+0.26%), suggesting the momentum unwind is predominantly a US and global phenomenon rather than a Japan-specific development.
+Japan Value (JPVL +1.18% 5D) is the only factor showing a positive 5-day return across any region, consistent with the BOJ's own policy trajectory and a domestic rotation toward cheaper cyclicals. European and Global Value are broadly flat to slightly negative, suggesting Japan Value outperformance is locally driven rather than a global rotation signal.
+
+
+2. Thematic Market Pulse
+
+What investment narratives are currently working or failing?
+
+Thematic Leaders
+Theme	Proxy Used	1D	5D	1M	Regional Breadth	Main Catalyst	Signal
+Cybersecurity	HACK (ETFMG Prime Cyber Security)	0.00%	+8.70%	+3.37%	US-Led	AI slowdown call reduces disruption risk to incumbents; high-profile cyberattacks raise demand visibility
+(4)
+Accelerating
+AI Software / Enterprise SaaS	IGV (iShares Expanded Tech-Software)	0.00%	+3.39%	+2.91%	US-Led	AI leaders' call for slower development reduces near-term disruption risk to incumbent software; Snowflake reportedly raised guidance
+(5)
+(6)
+Improving
+Disruptive Innovation	ARKK (ARK Innovation ETF)	0.00%	–0.48%	+1.75%	US-Led	Broad innovation basket held up on software and biotech exposure, offsetting hardware weakness	Improving
+Expand Table to Artifact Pane
+
+Thematic Laggards
+Theme	Proxy Used	1D	5D	1M	Regional Breadth	Main Catalyst	Signal
+Aerospace & Defense	ITA (iShares US Aerospace & Defense)	0.00%	–1.71%	–14.30%	US-Led	No single catalyst identified from available news flow; persistent 1M underperformance suggests budget concern or sector-specific de-rating	Under Pressure
+Semiconductors / AI Compute	SOXX (iShares Semiconductor)	0.00%	–4.75%	–10.21%	Broad Cross-Regional	AI leaders reportedly called for slower frontier model development on Sep 14, triggering a sharp single-day drop in the semiconductor index
+(7)
+Under Pressure
+Uranium / Nuclear	URNM (Sprott Uranium Miners)	0.00%	–4.12%	–9.58%	US-Led	Linked to data-center power demand narrative; AI slowdown concerns reduce near-term power buildout urgency	Reversing
+Robotics / AI Hardware	BOTZ / ROBO	0.00%	–1.59% / –1.96%	–8.20% / –8.56%	Broad Cross-Regional	Hardware-adjacent AI exposure hit by AI slowdown narrative; European AI-linked stocks also fell on Sep 14
+(8)
+Under Pressure
+Electric Grid / Data-Center Power	GRID (First Trust NASDAQ Clean Edge Smart Grid)	0.00%	–3.62%	–7.91%	US-Led	Correlated with AI infrastructure capex cycle; AI slowdown call and higher rates both weigh on long-duration infrastructure names
+(9)
+Losing Momentum
+Expand Table to Artifact Pane
+
+
+3. Thematic Rotation
+
+The most important leadership shifts
+
+Rotation 1: AI Compute / Semiconductors → Cybersecurity / AI Software
+What previously led: Semiconductors (SOXX) had been the primary vehicle for AI exposure, rising to a 20-day high of 532 on September 9 — a gain of approximately +4.6% from the period start — as investors priced continued hyperscaler capex growth.
+What is now outperforming: Cybersecurity (HACK +3.4% over 20 days) and AI Software (IGV +3.4% over the 5 days ending September 16) have sharply outperformed semiconductors since September 14.
+Period of change: The divergence began abruptly on September 14, when AI leaders including Anthropic's Dario Amodei, OpenAI's Sam Altman, and Elon Musk reportedly called for a slower pace of frontier model development. The semiconductor index fell sharply that day; software and cybersecurity rallied.
+(10)
+Fundamental catalyst: Slower AI development reportedly reduces near-term demand for compute (chips, HBM memory, power infrastructure) while simultaneously reducing the disruption threat to incumbent software companies. Cybersecurity benefits from both the AI governance narrative and a separate wave of high-profile breaches.
+(11)
+Breadth: The rotation is broad enough to be meaningful — European semiconductor and data-center stocks also fell sharply on September 14, while software names outperformed across regions.
+(12)
+Regional confirmation: Partially cross-regional. The semiconductor selloff was global (US, Europe, Asia). The cybersecurity outperformance is primarily US-led.
+(13)
+Thematic Rotation: Cybersecurity vs Semiconductors vs AI Software vs Defense (Normalized, Aug 28 = 100)
+
+The chart above shows the sharp divergence beginning September 14: Cybersecurity (HACK) broke above its period-start level while Semiconductors (SOXX) reversed from a +4.6% peak back toward flat, and Defense (ITA) continued its persistent multi-week decline. The rotation from compute to software and security is the clearest thematic leadership change of the past 20 trading days.
+
+Rotation 2: AI Infrastructure (Power / Grid / Uranium) → Rate-Resilient Themes
+What previously led: The data-center power buildout narrative — encompassing electric grid (GRID), uranium/nuclear (URNM), and clean energy (ICLN) — had been a key beneficiary of the AI infrastructure cycle through August.
+What is now underperforming: All three are among the worst 1M performers: URNM –9.6%, GRID –7.9%, ICLN –4.4%. The AI slowdown call directly undermines the power demand growth thesis, while the Fed hike adds a rate headwind to long-duration infrastructure assets.
+Period of change: Underperformance has been building over the full 1-month window, with acceleration in the past week.
+Catalyst: Dual headwinds — the AI development slowdown narrative reducing power demand urgency, and the Fed hike raising the discount rate for long-duration infrastructure assets.
+(14)
+(15)
+Regional confirmation: Primarily US-led. The AI slowdown catalyst was globally visible, but comparable European or Japanese infrastructure ETF data are not available for direct confirmation.
+
+
+4. Theme Momentum / Heat
+Theme	Proxy	20D Return	Relative vs ACWI (–2.6% 5D)	Heat Signal
+Cybersecurity	HACK	+3.4%	Strong outperformance	High Theme Heat
+Semiconductors	SOXX	–1.3%	Moderate underperformance	Normal Range (post-reversal)
+AI Software	IGV	–4.1%	Underperformance, recovering	Normal Range
+Uranium / Nuclear	URNM	–11.4%	Significant underperformance	Negative Momentum Extreme
+Aerospace & Defense	ITA	–7.5%	Significant underperformance	Negative Momentum Extreme
+Robotics / AI Hardware	BOTZ / ROBO	–2.9% / –3.8%	Moderate underperformance	Normal Range
+Expand Table to Artifact Pane
+Cybersecurity (HACK) is the only theme displaying High Theme Heat on a 20-day basis, with a +3.4% absolute return while the broad market declined. The move is thematically specific rather than factor-driven — it does not coincide with broad Growth or Momentum tailwinds.
+Uranium (URNM –11.4% over 20 days) is at a Negative Momentum Extreme. The magnitude exceeds what broad High Beta or Growth factor weakness alone would explain, reflecting a double-hit from the AI slowdown narrative and rising rates.
+Aerospace & Defense (ITA –14.3% over 1M) is also at a Negative Momentum Extreme and is the worst performer in the thematic universe surveyed. No single catalyst has been identified from available news flow.
+
+
+8. Morning Presentation Summary
+
+Market Character
+The US market is rewarding defensive, rate-resilient, and software-oriented stocks — particularly cybersecurity and enterprise software — while punishing high-beta, momentum-driven, and AI hardware names in the wake of the Fed's first rate hike since 2023 and a concurrent AI development slowdown narrative.
+(16)
+(17)
+
+
+Global Factor Confirmation
+The dominant US factor move — the Momentum reversal — is Partially Confirmed globally: the Global Momentum factor (IWMO –4.75% 5D) and European Momentum (IEFM –1.60% 5D) both show the same directional move, though the magnitude is significantly larger in the US. Japan Momentum is essentially flat, making this a US-and-Global phenomenon rather than a fully broad global rotation.
+
+Dominant Themes
+Cybersecurity — Primarily US-led. Benefiting from both the AI governance/slowdown narrative and a separate wave of high-profile cyberattacks raising demand visibility.
+(18)
+AI Software / Enterprise SaaS — Primarily US-led. The AI slowdown call has paradoxically strengthened the near-term investment case for software companies by reducing the perceived disruption threat.
+(19)
+(20)
+Rate-Driven Factor Rotation (Value / Min Vol over Momentum / High Beta) — Cross-regional in direction, US-led in magnitude. The Fed hike and hawkish forward guidance are the organizing macro event.
+(21)
+(22)
+
+Rotation Signal
+The most important thematic leadership change is the rotation from AI Compute (semiconductors, power infrastructure, uranium) toward AI Software and Cybersecurity, triggered by the September 14 AI slowdown call and reinforced by the September 16 Fed hike. The rotation is emerging across multiple regions in the semiconductor-to-software direction, but the cybersecurity outperformance remains concentrated in the US.
+
+Positioning Signal
+Insufficient reliable positioning data to make a definitive crowding or short-covering call from available Bloomberg data. The sharp 5-day Momentum factor drawdown (–6.72%) is consistent with a crowding unwind in high-momentum names, and bond market positioning data reportedly showed extreme short positioning in Treasuries ahead of the FOMC.
+(23)
+Price momentum alone is not sufficient to classify this as a confirmed crowding unwind without direct positioning data.
+
+
+One Chart to Watch
+The Thematic Rotation chart (Cybersecurity vs Semiconductors vs AI Software vs Defense, normalized from August 28) is the single most informative visual for current market rotation. It captures the September 14 inflection point where the AI compute trade broke down and cybersecurity/software leadership emerged — the clearest evidence of a genuine thematic leadership change rather than a broad market move.
+Thematic Rotation: Cybersecurity vs Semiconductors vs AI Software vs Defense (Normalized, Aug 28 = 100)
+
+
+Today
+The most important upcoming catalyst for factor and thematic leadership is market pricing of the next Fed move: money markets are reportedly pricing approximately a 50% probability of an additional hike in October.
+(24)
+Any Fed communication, economic data release (particularly inflation or labor market data), or further commentary from Chair Warsh will directly determine whether the Momentum reversal deepens, whether the Value/Min Vol relative trade extends, and whether the AI infrastructure selloff stabilizes or continues.
+
+Data Query
+for ([ 'DGRO US Equity' , 'IWD US Equity' , 'IWF US Equity' , 'IWM US Equity' , 'MTUM US Equity' , 'QUAL US Equity' , 'SPHB US Equity' , 'USMV US Equity' , 'VIG US Equity'] ) get ( name , total_return ( calc_interval = 1D ) , total_return ( calc_interval = 1M ) , total_return ( calc_interval = 5D ))
+
+Data Query
+for ([ 'ARKK US Equity' , 'BOTZ US Equity' , 'COPX US Equity' , 'DRIV US Equity' , 'FIVG US Equity' , 'GRID US Equity' , 'HACK US Equity' , 'ICLN US Equity' , 'IGV US Equity' , 'ITA US Equity' , 'LIT US Equity' , 'ROBO US Equity' , 'SOXX US Equity' , 'URNM US Equity' , 'XBI US Equity'] ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 1M , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) ) with ( fill = PREV )
+
+Data Query
+for ([ 'ARKK US Equity' , 'BOTZ US Equity' , 'GRID US Equity' , 'HACK US Equity' , 'IGV US Equity' , 'ITA US Equity' , 'ROBO US Equity' , 'SOXX US Equity' , 'URNM US Equity'] ) get ( px_last ( dates = range( - 20D , 0D ) ))
+
+Data Query
+for ([ 'IEFM LN Equity' , 'IEQU IM Equity' , 'IEUS US Equity' , 'IEVL LN Equity' , 'MVEU LN Equity'] ) get ( name , total_return ( calc_interval = 1D ) , total_return ( calc_interval = 1M ) , total_return ( calc_interval = 5D ))
+
+Data Query
+for ([ 'DBJP US Equity' , 'EWJ US Equity' , 'JPVL Index' , 'M4JPMMT Index'] ) get ( name , total_return ( calc_interval = 1D ) , total_return ( calc_interval = 1M ) , total_return ( calc_interval = 5D ))
+
+Data Query
+for ([ 'ACWI US Equity' , 'ACWV US Equity' , 'IWMO LN Equity' , 'IWQU LN Equity' , 'IWVL LN Equity'] ) get ( name , total_return ( calc_interval = 1D ) , total_return ( calc_interval = 1M ) , total_return ( calc_interval = 5D ))
+
+Data Query
+for ([ 'HACK US Equity' , 'IGV US Equity' , 'ITA US Equity' , 'SOXX US Equity'] ) get ( px_last ( dates = range( - 20D , 0D ) ))
+
+Data Query
+for ([ 'IWD US Equity' , 'IWF US Equity' , 'MTUM US Equity' , 'USMV US Equity'] ) get ( px_last ( dates = range( - 20D , 0D ) ))
+
+
+Copy
+Save to
+
+Suggested Follow-Ups
+What is the current implied probability of a Fed rate hike in October, and how has it moved over the past two weeks?
+
+Which individual stocks within HACK and IGV have driven the cybersecurity and software outperformance over the past five days?
+
+How can the Bloomberg Terminal be used to monitor real-time factor rotation and thematic ETF flows across regions?
+
+Copy
+Save to
+
+
+Workflows
+
+Responses are generated by
+Bloomberg AI
+. Check to make sure they are correct and complete.
+
+1.
+Bloomberg News
+
+NEWS 09/16/2026
+2.
+Bloomberg First Word
+
+NEWS 09/16/2026
+3.
+Bloomberg First Word
+
+NEWS 09/03/2026
+4.
+Bloomberg First Word
+
+NEWS 09/14/2026
+5.
+Bloomberg First Word
+
+NEWS 09/14/2026
+6.
+Bloomberg News
+
+NEWS 09/03/2026
+7.
+Bloomberg First Word
+
+NEWS 09/14/2026
+8.
+Bloomberg First Word
+
+NEWS 09/14/2026
+9.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+10.
+Bloomberg First Word
+
+NEWS 09/14/2026
+11.
+Bloomberg First Word
+
+NEWS 09/14/2026
+12.
+Bloomberg First Word
+
+NEWS 09/14/2026
+13.
+Bloomberg First Word
+
+NEWS 09/14/2026
+14.
+Bloomberg First Word
+
+NEWS 09/14/2026
+15.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+16.
+Bloomberg News
+
+NEWS 09/16/2026
+17.
+Bloomberg First Word
+
+NEWS 09/14/2026
+18.
+Bloomberg First Word
+
+NEWS 09/14/2026
+19.
+Bloomberg First Word
+
+NEWS 09/14/2026
+20.
+Bloomberg News
+
+NEWS 09/03/2026
+21.
+Dow Jones Wall Street Journal
+
+NEWS 09/16/2026
+22.
+Benzinga
+
+NEWS 09/16/2026
+23.
+Bloomberg News
+
+NEWS 09/15/2026
+24.
+Bloomberg News
+
+NEWS 09/16/2026
+
+
+Workflow
+Non US market Brief
+
+Show Thinking
+
+NON-US EQUITY MORNING BRIEFING
+Session Date: Wednesday, 16 September 2026 | Prepared: Thursday, 17 September 2026, 05:31 JST
+All times JST unless otherwise stated. European session times shown in BST/CEST.
+
+
+1. REGIONAL MARKET WRAP
+
+Regional Overview
+Non-US equity markets snapped a four-day losing streak on 16 September, with all major indices advancing ahead of the Federal Reserve's widely anticipated rate decision. The common driver was a pullback in Brent crude from near $110/bbl, which relieved pressure on energy-importing economies and lifted cyclical and industrial stocks broadly. Japan led on a commodity-sector rotation, with energy and materials names surging while AI-linked semiconductors sold off sharply — the most important regional divergence of the session. Greater China was the weakest performer on a five-day basis despite a daily gain, as CATL reportedly suffered its steepest two-day decline in nearly a year. Europe's advance was broad (421 of 600 Stoxx 600 members rose), anchored by financials, industrials, and a sharp re-rating of UK housebuilder Barratt Redrow following annual results. The Fed's post-close hawkish signal — a 25bp hike with another pencilled in — sets a more challenging tone for Thursday's Asian open.
+(1)
+(2)
+
+
+Country / Market Highlights
+Japan: TOPIX +0.6%, Nikkei +0.7%, snapping a four-day losing streak. Commodity-related stocks led as oil held gains ahead of the Fed; energy names ENEOS (+5.0%) and Idemitsu (+4.3%) were the top large-cap movers. SoftBank Group fell 4.6% as its CDS reportedly hit a three-year high on OpenAI risk concerns, and Otsuka Holdings dropped 5.9% on competitive drug-trial data.
+(3)
+(4)
+Greater China: Hang Seng +0.2%, CSI 300 +0.7%. Lenovo surged 8.3% to lead the HSI after strong results; mainland investors bought a net HK$2.1bn via Stock Connect for an eighth consecutive day. CATL fell 2.9% in Hong Kong on a second day of heavy put-option activity amid concerns over its Q3 outlook. Hong Kong's inaugural five-year plan, targeting doubled tech spending and Northern Metropolis development, provided a policy tailwind for property and tech names.
+(5)
+(6)
+Europe: DAX +0.5%, FTSE 100 +0.3%, CAC +0.7% (per MT Newswires). Easing oil prices and a JPMorgan forecast of mid-to-high-teens trading revenue growth for Q3 drove a rebound in financials and cyclicals. Barratt Redrow surged 11.4% after annual profits beat expectations despite a cut to FY27 completions guidance. UK CPI came in at 3.1% YoY, in line with consensus, prompting traders to pare BOE hike bets and send gilt yields lower.
+(7)
+(8)
+
+
+2. INDEX DRIVERS AND KEY STOCK MOVERS
+
+TOPIX
+
+Index Performance
+TOPIX closed at 4,061.72 on 16 September, up +0.60% on the day and +0.83% over five sessions. Breadth was positive: 1,091 of 1,635 shares rose, 485 fell. 23 of 33 sectors gained. The advance was broad but concentrated in energy and materials; tech was a notable drag.
+(9)
+
+
+Main Drivers
+Oil-price relief and commodity rotation: Brent crude pulled back from near $110/bbl, easing cost-push fears while still supporting upstream energy names. Japanese refiners ENEOS and Idemitsu surged as they reportedly accelerated purchases of Middle Eastern crude following the Saudi pipeline shutdown, directly boosting the energy sector's index contribution.
+(10)
+(11)
+Pre-Fed positioning and yen weakness: USD/JPY rose 0.82% to 156.36 on 16 September, providing a tailwind for exporters and commodity-linked industrials. Investors positioned cautiously ahead of the FOMC, with the broad market rising but high-beta AI/semiconductor names sold.
+(12)
+Electric appliances sector leadership: The electric appliances sector led TOPIX higher, with Panasonic (+4.2%), Murata (+3.2%), and Nitto Denko (+3.3%) among the large-cap gainers — a rotation into hardware names with commodity-input exposure rather than pure AI plays.
+(13)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	ENEOS Holdings	5020 JT	+5.0%	Oil price support; Japanese refiners reportedly accelerating Mideast crude purchases after Saudi pipeline shutdown.
+(14)
+Largest energy company in Japan; move signalled broad commodity-sector rotation.
+Gainer	Idemitsu Kosan	5019 JT	+4.3%	Same as ENEOS; Idemitsu reportedly among refiners buying Oman crude for early October loading.
+(15)
+Confirmed supply-chain response to Saudi disruption; read-through for refining margins.
+Gainer	Panasonic Holdings	6752 JT	+4.2%	No confirmed company-specific catalyst; part of broad electric appliances sector rally.
+(16)
+Large-cap bellwether for Japan's industrial electronics sector.
+Decliner	SoftBank Group	9984 JT	-4.6%	5-year CDS reportedly hit a 3-year high (~385bp) as markets assessed risks around SoftBank's $64.6bn OpenAI commitment amid reports of a fresh OpenAI fundraise at ~$1.2tn valuation.
+(17)
+SoftBank is the largest single-stock weight in the Nikkei; its decline offset commodity gains.
+Decliner	Advantest	6857 JT	-4.1%	No confirmed company-specific catalyst; part of broad AI/semiconductor sector rotation.
+(18)
+Key read-through for global semiconductor capex cycle.
+Decliner	Otsuka Holdings	4578 JT	-5.9%	Rival Vera Therapeutics released updated late-stage data for Trutakna (kidney disorder), raising competitive concerns for Otsuka's Voyxact. Trading volume doubled.
+(19)
+Largest single-day drop in 17 months; highlighted pipeline competition risk in Japan pharma.
+Expand Table to Artifact Pane
+
+Other Significant Stock Moves
+Company	Ticker	Stock Return	Catalyst	Broader Read-Through
+Lasertec	6920 JT	-3.8%	No confirmed company-specific catalyst; part of semiconductor equipment sector sell-off.
+(20)
+Key proxy for EUV lithography demand; decline reinforces AI-chip rotation theme.
+Tokyo Electron	8035 JT	-3.5%	No confirmed company-specific catalyst; sector rotation away from AI/chip equipment.
+(21)
+Largest semiconductor equipment maker in Japan; move has global capex read-through.
+Taisei Corp	1801 JT	+2.4%	Trading volume surged; Taisei lost a Supreme Court appeal on an Antimonopoly Act case.
+(22)
+Counterintuitive reaction; market may have viewed legal outcome as already priced or limited in scope.
+Expand Table to Artifact Pane
+
+Index Takeaway
+TOPIX's advance on 16 September reflected a clear rotation from AI-linked technology into commodity-exposed energy and materials names, with the index's breadth masking a sharp divergence between these two themes.
+
+
+NIKKEI 225
+
+Index Performance
+Nikkei 225 closed at 63,923 on 16 September, up +0.69% (+438.9 points) on the day; five-day return was -0.14%. The index snapped a four-day losing streak. Performance was concentrated: SoftBank's 4.6% decline was a significant drag, offset by energy and industrial gains.
+(23)
+
+
+Main Drivers
+Energy and commodity stocks: Same transmission channel as TOPIX — oil-price pullback from highs supported refiner margins while still rewarding upstream names. ENEOS and Idemitsu were the top large-cap contributors.
+(24)
+SoftBank as index drag: SoftBank's 4.6% decline on 16 September was the largest single negative contributor given its index weight. The CDS reportedly widening to a 3-year high reflected market concern that SoftBank's $64.6bn OpenAI commitment creates balance-sheet risk if the AI valuation cycle turns.
+(25)
+Crypto-related sector weakness: The US Senate blocked a digital-currency regulatory bill, sending Bitcoin lower and dragging crypto-related Japanese equities including Metaplanet and Gumi.
+(26)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	ENEOS Holdings	5020 JT	+5.0%	See TOPIX section.
+(27)
+Largest energy company in Japan; direct read-through for oil supply disruption.
+Gainer	Idemitsu Kosan	5019 JT	+4.3%	See TOPIX section.
+(28)
+Confirmed refiner response to Saudi pipeline shutdown.
+Gainer	Mitsubishi Chemical Group	4188 JT	+3.9%	No confirmed company-specific catalyst; materials sector rotation.
+(29)
+Broad materials sector leadership alongside energy.
+Decliner	SoftBank Group	9984 JT	-4.6%	CDS reportedly at 3-year high on OpenAI risk.
+(30)
+Largest single negative contributor to Nikkei given index weight.
+Decliner	Otsuka Holdings	4578 JT	-5.9%	Competitive kidney drug trial data from Vera Therapeutics.
+(31)
+Largest pharma decliner; highlighted pipeline competition risk.
+Decliner	Fast Retailing	9983 JT	-2.9%	No confirmed company-specific catalyst identified.	High-weight Nikkei constituent; consumer discretionary sector underperformed.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The Nikkei's modest five-day loss despite a strong daily gain on 16 September reflects the ongoing tug-of-war between commodity-sector tailwinds and AI/tech headwinds, with SoftBank's OpenAI exposure emerging as a distinct Japan-specific risk factor.
+
+
+HANG SENG INDEX
+
+Index Performance
+Hang Seng closed at 24,713.78 on 16 September, up +0.20% on the day; five-day return was -0.37%. Breadth was slightly positive: 50 of 95 shares rose, 44 fell. The advance was concentrated — Lenovo's 8.3% gain was the dominant contributor.
+(32)
+
+
+Main Drivers
+Lenovo earnings-driven surge: Lenovo (+8.3% on 16 September) was the single largest contributor to the index gain, driven by strong results. The move provided a positive read-through for Hong Kong-listed tech hardware names.
+(33)
+Mainland Stock Connect inflows: Mainland investors bought a net HK$2.1bn via Stock Connect on 16 September — reportedly the eighth consecutive day of net purchases — providing a structural bid for large-cap H-shares and supporting financials.
+(34)
+Hong Kong five-year plan and policy address: Chief Executive John Lee's inaugural five-year plan targeted doubling tech and innovation spending and accelerating Northern Metropolis development. Property and tech names were identified as potential beneficiaries; baby-product makers also cited.
+(35)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Lenovo Group	992 HK	+8.3%	Strong results; largest single contributor to HSI gain on 16 September.
+(36)
+Largest PC maker globally; results provided positive read-through for hardware demand.
+Gainer	SMIC	981 HK	+4.8%	Chinese chip stocks rallied on expectations Beijing will remain supportive of AI development; Fed hike seen as largely priced in.
+(37)
+China's largest foundry; move signals domestic AI policy support as a distinct driver from global semis.
+Gainer	Trip.com Group	9961 HK	+3.9%	No confirmed company-specific catalyst; broader China consumer recovery narrative.
+(38)
+Key read-through for China outbound travel and consumer spending recovery.
+Decliner	Sands China	1928 HK	-5.6%	No confirmed company-specific catalyst; stock hit a 52-week low on 16 September.
+(39)
+Macau gaming bellwether; 52-week low signals persistent consumer discretionary pressure in HK.
+Decliner	CATL (HK-listed)	3750 HK	-2.9%	Second consecutive day of heavy put-option activity (reportedly 2.6x average volume); growing concerns over Q3 outlook and speculation over potential production scale-back.
+(40)
+Largest EV battery maker globally; two-day decline has broad EV supply-chain read-through.
+Decliner	Tencent Holdings	700 HK	-1.2%	No confirmed company-specific catalyst identified.	Largest HSI constituent by market cap; its decline capped the index advance.
+Expand Table to Artifact Pane
+
+Other Significant Stock Moves
+Company	Ticker	Stock Return	Catalyst	Broader Read-Through
+Hua Hong Semiconductor	1347 HK	+5.9%	Chinese chip stocks rallied on AI policy support expectations.
+(41)
+Domestic chip capacity expansion; read-through for China's semiconductor self-sufficiency drive.
+HKEX	388 HK	+0.5%	Morgan Stanley raised price target citing stronger trading value and robust IPO pipeline (HK$342bn raised Jan–Aug, 501 applications pending).
+(42)
+HKEX is a direct proxy for Hong Kong capital market activity; MS upgrade signals confidence in IPO cycle.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The HSI's narrow advance on 16 September masked a bifurcated market: policy-driven tech and hardware names surged while consumer discretionary and EV-related stocks continued to face structural selling pressure.
+
+
+CSI 300
+
+Index Performance
+CSI 300 closed at 4,480.27 on 16 September, up +0.70% on the day; five-day return was -0.66%. The advance was concentrated in tech and chip names; industrials were the main drag.
+(43)
+(44)
+
+
+Main Drivers
+AI policy support and chip sector rally: Chinese hardware tech stocks rallied on reports that President Trump opposed restrictions on frontier AI models and Beijing reiterated AI development support. The Fed hike was seen as largely priced in.
+(45)
+Goldman Sachs constructive view: Goldman Sachs analysts argued Chinese equities should weather the FOMC hike, noting valuations below fair value and a stronger corporate profit backdrop versus the September 2024 policy pivot anniversary. They reportedly preferred A-shares.
+(46)
+Industrials drag — 52-week lows: XCMG Construction Machinery, CATL, and Zoomlion hit 52-week lows on 16 September. Industrials and IT set the most new lows, reflecting ongoing concerns about infrastructure spending and EV battery demand.
+(47)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Eoptolink Technology	300502 CH	-	AI policy support; Beijing reiterated commitment to AI development.
+(48)
+Key optical transceiver maker for AI data centres; rally signals domestic AI infrastructure demand.
+Gainer	Piotech Inc	688072 CH	+3.5%	No confirmed company-specific catalyst; semiconductor equipment sector rally.
+(49)
+Domestic semiconductor equipment; read-through for China's chip self-sufficiency capex.
+Decliner	XCMG Construction Machinery	000425 CH	-5.5%	No confirmed company-specific catalyst; hit 52-week low on 16 September.
+(50)
+Largest construction machinery maker in China; decline signals continued infrastructure spending caution.
+Decliner	CATL (A-share)	300750 CH	-	Second consecutive day of heavy selling; concerns over Q3 outlook and potential production scale-back.
+(51)
+Largest EV battery maker globally; reportedly steepest two-day decline in nearly a year.
+Decliner	Zoomlion Heavy Industry	000157 CH	-	No confirmed company-specific catalyst; hit 52-week low on 16 September.
+(52)
+Major construction equipment maker; 52-week low reinforces industrials sector weakness.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The CSI 300's recovery on 16 September was driven by a narrow AI/chip cohort, while the breadth of 52-week lows in industrials and EV names signals that the index's underlying health remains uneven.
+
+
+EURO STOXX 50
+
+Index Performance
+Euro Stoxx 50 closed at 6,266.50 on 16 September; five-day return was -0.93%. Breadth was concentrated to the downside: only 17 of 50 members advanced, 33 declined. The index's positive close (Stoxx 600 +0.5% per Bloomberg Automation) was driven by a handful of large-cap gainers.
+(53)
+
+
+Main Drivers
+Oil price pullback: Brent retreating toward $105/bbl from near $110 provided relief for energy-importing European industrials and cyclicals. Cyclical stocks outperformed defensives.
+(54)
+European bank rebound: JPMorgan forecast mid-to-high-teens Q3 trading revenue growth and higher investment-banking fees, reversing Bank of America's earlier warning. Stoxx 600 Banks Index rose 0.7%; BNP Paribas +1.0%, AXA +1.4%.
+(55)
+Siemens Energy and power infrastructure demand: Siemens Energy was the top DAX and Euro Stoxx 50 gainer (+3.1%), supported by a report that YTL Power International secured four additional Siemens Energy gas turbines, underscoring AI data-centre power demand.
+(56)
+(57)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Siemens Energy	ENR GY	+3.1%	YTL Power secured four additional Siemens Energy gas turbines; AI power infrastructure demand narrative.
+(58)
+Top DAX and SX5E gainer; read-through for European power equipment demand from AI data centres.
+Gainer	adidas	ADS GY	+1.9%	No confirmed company-specific catalyst identified.	Large-cap consumer discretionary; move suggests some rotation into consumer names as oil eased.
+Gainer	ASML	ASML NA	+1.3%	No confirmed company-specific catalyst; tech rebound ahead of Fed.
+(59)
+Largest SX5E constituent by market cap; its contribution was the most significant to the index gain.
+Decliner	Volkswagen	VOW3 GY	-2.6%	Berenberg cut Stellantis (read-through for sector); broader auto sector underperformance.
+(60)
+Auto sector lagged as oil price relief did not offset structural EV transition concerns.
+Decliner	Mercedes-Benz	MBG GY	-2.6%	No confirmed company-specific catalyst; auto sector weakness.
+(61)
+Premium auto bellwether; decline alongside VW signals broad sector pressure.
+Decliner	Prosus	PRX NA	-2.4%	No confirmed company-specific catalyst identified.	Prosus is a proxy for Tencent; its decline tracked HK tech weakness.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The Euro Stoxx 50's advance on 16 September was narrow and concentrated in energy infrastructure and financials, while autos and tech proxies declined — a pattern consistent with a market navigating high energy costs and rate uncertainty rather than broad risk-on.
+
+
+FTSE 100
+
+Index Performance
+FTSE 100 closed at 10,688.47 on 16 September, up +0.30% (+30.3 points) on the day; five-day return was +0.36% — the strongest five-day performer among the selected European indices. 70 of 100 shares rose, 29 fell. Breadth was the best of the European indices.
+(62)
+
+
+Main Drivers
+UK CPI in line, BOE hike bets pared: August CPI rose 3.1% YoY, matching consensus. Traders cut BOE hike probability for Thursday's meeting to approximately 10–12%, sending 2-year gilt yields down approximately 8bp. Lower rate expectations supported rate-sensitive sectors including housebuilders and utilities.
+(63)
+(64)
+Barratt Redrow earnings beat: Annual adjusted profits beat expectations; current trading commentary provided relief despite a cut to FY27 completions guidance. Shares surged 11.4%, the most since April, dragging Persimmon (+5.5%) higher.
+(65)
+Oil price pullback — energy sector drag: BP (-2.6%) and Shell (-2.3%) declined as Brent retreated, partially offsetting the index advance. The FTSE 100's high energy weighting meant the oil pullback was a net negative for the index relative to continental peers.
+(66)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Barratt Redrow	BTRW LN	+11.4%	Annual adjusted profits beat expectations; current trading resilient despite FY27 completions guidance cut to 17,500–17,900 units.
+(67)
+UK's largest housebuilder; beat provided relief to a sector under pressure from Iran-war consumer confidence hit.
+Gainer	Persimmon	PSN LN	+5.5%	Sympathy move with Barratt Redrow; sector re-rating on BOE hike bets being pared.
+(68)
+Second-largest UK housebuilder; confirms sector-wide read-through from Barratt results.
+Gainer	Rolls-Royce Holdings	RR/ LN	+1.4%	No confirmed company-specific catalyst; reportedly the largest contributor to FTSE 100 gain.
+(69)
+Aerospace/defence bellwether; continued re-rating on defence spending and engine services demand.
+Decliner	BP	BP/ LN	-2.6%	Brent crude retreated from near $110/bbl; Saudi pipeline partial resumption reportedly expected within days.
+(70)
+FTSE 100's largest energy constituent; oil pullback directly transmitted to index.
+Decliner	Shell	SHEL LN	-2.3%	Same as BP.
+(71)
+Second-largest FTSE 100 energy name; combined BP/Shell drag partially offset the index advance.
+Decliner	Marks & Spencer	MKS LN	-4.7%	BNP Paribas cut its H1 profit estimate; UK CPI data showed petrol at highest since Oct 2022, signalling consumer pressure.
+(72)
+UK consumer bellwether; decline flagged that in-line CPI still implies mounting household cost pressure.
+Expand Table to Artifact Pane
+
+Other Significant Stock Moves
+Company	Ticker	Stock Return	Catalyst	Broader Read-Through
+Burberry Group	BRBY LN	+2.9%	No confirmed company-specific catalyst; luxury sector bounce.
+(73)
+UK luxury bellwether; move may reflect easing rate expectations supporting discretionary spending.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The FTSE 100's outperformance on a five-day basis reflects its defensive and commodity tilt, but within the 16 September session the index was pulled in opposite directions by housebuilder relief and energy sector weakness.
+
+
+CAC 40
+
+Index Performance
+CAC 40 closed at 8,140.59 on 16 September; five-day return was -0.48%. Per MT Newswires, the CAC advanced approximately 0.7% on the session. Stoxx 600 breadth (421/600 advancing) provides a directional proxy.
+(74)
+
+
+Main Drivers
+Oil pullback and cyclical relief: Same transmission as Euro Stoxx 50 — Brent retreating from highs supported French industrials and cyclicals. Schneider Electric (+1.5%) and Safran (+1.2%) were among the top gainers.
+(75)
+Financials rebound: BNP Paribas (+1.0%) and AXA (+1.4%) recovered after two days of declines, supported by JPMorgan's positive Q3 trading revenue outlook.
+(76)
+Kepler Cheuvreux downgrade: Kepler Cheuvreux downgraded European equities to neutral, citing deteriorating economic outlook and energy import vulnerability — a headwind for French industrials.
+(77)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Schneider Electric	SU FP	+1.5%	No confirmed company-specific catalyst; power infrastructure and AI data-centre demand narrative.
+(78)
+European leader in energy management; AI power demand read-through alongside Siemens Energy.
+Gainer	LVMH	MC FP	+1.1%	No confirmed company-specific catalyst; luxury sector recovery as oil eased.
+(79)
+Largest CAC 40 constituent; its move has outsized index impact.
+Gainer	Safran	SAF FP	+1.2%	No confirmed company-specific catalyst; aerospace/defence sector strength.
+(80)
+Key aerospace supplier; continued re-rating on defence and aviation demand.
+Decliner	Danone	BN FP	-1.1%	No confirmed company-specific catalyst identified.	Consumer staples underperformed as cyclicals led; UK CMA probe into McCormick/Unilever Foods deal adds sector regulatory noise.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The CAC 40's recovery on 16 September was led by financials and industrial infrastructure names, but Kepler Cheuvreux's downgrade of European equities to neutral underscores that the region's energy import dependency remains a structural overhang.
+
+
+DAX
+
+Index Performance
+DAX closed at 25,537.75 on 16 September, up +0.53% (+135.5 points), snapping a two-day losing streak. Five-day return was -0.12%. 28 of 40 shares rose, 11 fell — a broad advance. The index remains 3.88% below its record close of 26,569.99 set on 28 August 2026.
+(81)
+(82)
+
+
+Main Drivers
+Oil pullback and industrial relief: Brent retreating from highs supported German industrials and cyclicals. Eurozone industrial production fell 0.1% MoM in July (vs -0.2% expected), a modest beat that provided marginal support.
+(83)
+Siemens Energy leadership: Siemens Energy was the top DAX gainer (+3.1%), driven by AI power infrastructure demand. YTL Power's turbine order confirmed the structural demand narrative.
+(84)
+(85)
+Auto sector drag: BMW (-1.1%) and Mercedes-Benz (-2.6%) declined. Berenberg cut Stellantis and raised BMW, but the sector overall underperformed as EV transition concerns and high energy costs weighed.
+(86)
+
+Key Stock Movers
+Direction	Company	Ticker	Stock Return	Confirmed Catalyst	Why It Mattered
+Gainer	Siemens Energy	ENR GY	+3.1%	YTL Power turbine order; AI data-centre power demand.
+(87)
+(88)
+Top DAX gainer; power infrastructure as a structural AI beneficiary in Europe.
+Gainer	adidas	ADS GY	+1.9%	No confirmed company-specific catalyst; consumer discretionary rotation.
+(89)
+Large-cap consumer bellwether; move suggests selective consumer recovery.
+Gainer	Infineon Technologies	IFX GY	+1.2%	No confirmed company-specific catalyst; tech rebound ahead of Fed.
+(90)
+Key European semiconductor name; partial recovery after recent AI-chip sector sell-off.
+Decliner	Mercedes-Benz	MBG GY	-2.6%	No confirmed company-specific catalyst; auto sector weakness.
+(91)
+Premium auto bellwether; continued pressure from EV transition and high energy costs.
+Decliner	BMW	BMW GY	-1.1%	Berenberg raised BMW but cut Stellantis; market reaction suggests sector-wide caution overrode stock-specific upgrade.
+(92)
+Largest German auto by market cap; sector underperformance is a DAX structural drag.
+Expand Table to Artifact Pane
+
+Index Takeaway
+The DAX's recovery on 16 September was driven by power infrastructure and financials, but the auto sector's persistent underperformance — with the index 3.88% below its August record — signals that Germany's industrial base faces a more complex adjustment than a simple oil-price relief trade.
+
+
+3. SECTORS AND THEMES TO WATCH
+Sector / Theme	Relevant Markets	Direction	Main Catalyst	Key Companies	Read-Through
+Energy / Oil Supply Disruption	Japan, Europe (FTSE, DAX, CAC)	Mixed — upstream ↑, downstream ↓	Saudi East-West pipeline shutdown (drone attacks); Brent pulled back from $110 but Saudi reportedly seeking partial resumption within days.
+(93)
+ENEOS, Idemitsu (JP); BP, Shell (UK); TotalEnergies (FR)	Global. Upstream energy names benefit; energy importers (Europe, Japan) face cost pressure. Partial pipeline resumption is a near-term relief catalyst but structural supply risk persists.
+AI Power Infrastructure	Europe (DAX, SX5E, CAC)	↑	YTL Power secured four Siemens Energy gas turbines; AI data-centre power demand confirmed as structural.
+(94)
+(95)
+Siemens Energy (DE), Schneider Electric (FR), ABB (CH)	Regional (Europe). Power equipment makers are emerging as the primary European AI beneficiary, distinct from semiconductor plays.
+China AI / Domestic Chip Policy	Greater China (HSI, CSI 300)	↑	Beijing reiterated AI development support; Trump reportedly opposed frontier AI model restrictions.
+(96)
+SMIC, Hua Hong Semi, Eoptolink (CN/HK)	Country-specific (China). Domestic AI policy support is a distinct driver from global semiconductor trends; provides a floor for China tech even as global AI capex concerns persist.
+EV Battery / CATL Outlook	Greater China (HSI, CSI 300)	↓	CATL reportedly suffered its steepest two-day decline in nearly a year; put-option volume reportedly 2.6x average; speculation over Q3 outlook and potential production scale-back.
+(97)
+CATL (HK/A-share), Zoomlion, XCMG	Global. CATL's decline has read-through for global EV battery supply chains, auto OEMs, and lithium demand. Industrials 52-week lows in CSI 300 reinforce the theme.
+UK Housing / BOE Rate Expectations	UK (FTSE 100)	↑	Barratt Redrow annual profit beat; UK CPI in line at 3.1% prompted traders to cut BOE hike probability to approximately 10% for Thursday.
+(98)
+Barratt Redrow, Persimmon (UK)	Country-specific (UK). Housebuilder re-rating is directly linked to BOE rate path; BOE decision on 17 September is the immediate catalyst. London house prices fell 3.3% YoY in July — structural headwind remains.
+Expand Table to Artifact Pane
+Strongest leadership: Energy infrastructure (upstream oil in Japan; power equipment in Europe) showed the clearest cross-regional leadership on 16 September, driven by the Saudi pipeline disruption and AI power demand.
+(99)
+(100)
+Broadening vs. narrowing: Leadership is narrowing within technology — the AI/semiconductor cohort is bifurcating between domestic China policy beneficiaries (SMIC, Hua Hong) and global AI plays (SoftBank, Advantest, Lasertec) which sold off. Power infrastructure is broadening as a theme across Europe.
+(101)
+(102)
+Rotation evidence: A clear rotation from AI/semiconductor into commodity-exposed energy and materials was evident in Japan on 16 September. In Europe, a rotation from energy producers into industrials and financials occurred as oil prices eased. No evidence of a sustained growth-to-value rotation across the full region.
+(103)
+(104)
+
+
+4. CROSS-MARKET INSIGHTS
+1. Same oil shock, opposite transmission: Japan vs. Europe
+The Saudi pipeline shutdown affected both Japan and Europe, but through different channels. In Japan, the disruption boosted upstream energy names (ENEOS +5%, Idemitsu +4.3% on 16 September) as refiners reportedly accelerated Mideast crude purchases — a direct revenue benefit. In Europe, the same disruption weighed on BP (-2.6%) and Shell (-2.3%) as Brent retreated from overbought levels, while European refiners face longer voyage times and higher costs to replace Saudi crude. Japan's energy sector was a net beneficiary; Europe's was a net drag.
+(105)
+(106)
+
+2. AI theme divergence: China domestic policy vs. global AI capex risk
+Chinese chip names (SMIC +4.8%, Hua Hong +5.9% on 16 September) rallied on domestic AI policy support, while Japan's global AI proxies (SoftBank -4.6%, Advantest -4.1%, Lasertec -3.8%) sold off on OpenAI valuation risk and pre-Fed caution. The same AI theme produced opposite outcomes depending on whether the exposure was to domestic Chinese policy or to global AI capex cycles.
+(107)
+(108)
+
+3. FTSE 100 five-day outperformance vs. Euro Stoxx 50 underperformance
+The FTSE 100 is the only selected European index with a positive five-day return (+0.36%), while the Euro Stoxx 50 is down 0.93% over the same period. The FTSE's commodity and defensive tilt (energy, mining, healthcare) has provided relative resilience in a high-oil-price environment, whereas the Euro Stoxx 50's greater exposure to autos and rate-sensitive growth names has been a headwind. Kepler Cheuvreux's downgrade of European equities to neutral explicitly cited energy import vulnerability.
+(109)
+
+4. Onshore vs. offshore China: CSI 300 five-day underperformance vs. HSI
+The CSI 300 is down 0.66% over five sessions versus the HSI's -0.37%, despite both markets advancing on 16 September. The CSI 300's greater weight in industrials (XCMG, Zoomlion, CATL A-share) explains the divergence — these names hit 52-week lows. The HSI's recovery was driven by Lenovo's earnings beat and Stock Connect inflows, which are more concentrated in financials and tech hardware.
+(110)
+(111)
+
+5. Fed hike priced in during Asian/European hours; hawkish signal arrives post-close
+All selected markets advanced during their respective sessions on the expectation that the Fed hike was fully priced. The Fed's actual decision — a 25bp hike with another pencilled in for 2026 and the dot plot revised higher — arrived after European and Asian closes. The hawkish signal drove US equities lower post-close (S&P 500 -0.4%, Dow -1.2%), setting a more challenging tone for Thursday's Asian open.
+(112)
+(113)
+
+
+
+5. BENCHMARK TABLE
+Region	Country / Market	Index	Local Trading Date	Close	Daily Return	5-Day Return	Breadth	Main Driver
+Asia Pacific	Japan	TOPIX	16 Sep 2026	4,061.72	+0.60%	+0.83%	67% advancing (1,091/1,635)	Energy/commodity rotation; pre-Fed relief
+Asia Pacific	Japan	Nikkei 225	16 Sep 2026	63,923	+0.69%	-0.14%	-	Energy stocks led; SoftBank/semis dragged
+Asia Pacific	Greater China	Hang Seng Index	16 Sep 2026	24,713.78	+0.20%	-0.37%	53% advancing (50/95)	Lenovo earnings; Stock Connect inflows
+Asia Pacific	Greater China	CSI 300	16 Sep 2026	4,480.27	+0.70%	-0.66%	Negative early; recovered	AI policy support; chip sector rally
+Europe	Eurozone	Euro Stoxx 50	16 Sep 2026	6,266.50	+0.00%*	-0.93%	34% advancing (17/50)	Oil pullback; financials rebound
+Europe	United Kingdom	FTSE 100	16 Sep 2026	10,688.47	+0.30%	+0.36%	70% advancing (70/100)	UK CPI in-line; Barratt Redrow beat
+Europe	France	CAC 40	16 Sep 2026	8,140.59	+0.70%†	-0.48%	-	Financials rebound; oil pullback
+Europe	Germany	DAX	16 Sep 2026	25,537.75	+0.53%	-0.12%	70% advancing (28/40)	Siemens Energy; oil pullback; industrials
+Expand Table to Artifact Pane
+* Euro Stoxx 50 daily return returned as 0.00% from structured data; Bloomberg Automation and news sources confirm the index advanced on the session. † CAC 40 daily return per MT Newswires; structured data returned 0.00% due to date-offset timing.
+
+Reference Rates (16 Sep 2026)
+Instrument	Level	Daily Change
+USD/JPY	156.36	+0.82%
+EUR/USD	1.1465	-
+GBP/USD	1.3378	-
+USD/CNH	6.7131	-
+Brent Crude (settle)	$105.51/bbl	-
+WTI Crude (settle)	$102.08/bbl	-
+Gold Spot	$4,260.84/oz	-
+JGB 10-Year Yield	3.011%	-
+Bund 10-Year Yield	3.508%	-
+Gilt 10-Year Yield	5.296%	-
+Expand Table to Artifact Pane
+
+
+6. TODAY'S ZEITGEIST
+The dominant issue for Thursday's Asian and European sessions is the Fed's post-close hawkish signal. The FOMC raised rates 25bp to 3.75–4.00% and the dot plot now shows a median 2026 year-end rate of 4.125% — implying one more hike this year — while removing an expected cut in 2027. Fed Chair Warsh described the move as removing "a dose of accommodation." US equities fell post-close (S&P 500 -0.4%, Dow -1.2%), short-dated Treasury yields rose sharply, and the dollar strengthened. Asian markets that rallied on the expectation of a priced-in hike now face a more hawkish-than-anticipated dot plot as the primary overnight development.
+(114)
+(115)
+
+The second key issue is the Bank of Japan's two-day policy meeting (17–18 September). All 52 BOJ watchers surveyed by Bloomberg forecast a 25bp hike to 1.25% at the conclusion on 18 September. The JGB 10-year yield at 3.011% is approaching nominal GDP growth — a level that Bloomberg Intelligence notes has historically pressured Japanese equities. USD/JPY at 156.36 remains a key variable: further yen weakness could accelerate the BOJ's tightening timeline, while a post-hike yen strengthening would pressure exporters.
+(116)
+(117)
+
+The third issue is the Bank of England decision on 17 September. Markets imply only approximately 10% probability of a hike at this meeting following in-line UK CPI. However, headline CPI at 3.1% exceeded the BOE's own July forecast of 2.8%, and PPI input prices rose 6.1% YoY — above the 5.35% consensus. The BOE's forward guidance on the pace of future hikes will be the critical signal for UK rate-sensitive sectors.
+(118)
+
+The fourth issue is oil supply. Saudi Arabia is reportedly seeking to restore about half the East-West pipeline capacity within days. A confirmed resumption would provide relief to energy-importing markets (Japan, Europe) but could weigh on upstream energy names that rallied on the disruption. The situation remains fluid.
+(119)
+
+
+
+7. THE DAYBOOK
+
+Today — Thursday, 17 September 2026 (JST)
+08:50 JST: Japan — Weekly securities flow data (week ending 11 Sep): Japan buying foreign bonds (prior ¥111.9bn), foreign buying Japan bonds (prior ¥449.6bn), Japan buying foreign stocks (prior -¥481.6bn), foreign buying Japan stocks (prior ¥690.0bn).
+14:00 JST: Japan — Tokyo Condominiums for Sale YoY (Aug; prior +6.9%).
+All day: Bank of Japan two-day policy meeting begins (Day 1 of 2; decision expected 18 September). Market consensus: +25bp to 1.25%.
+~20:00 JST (12:00 BST): Bank of England interest-rate decision. Market implies approximately 10% probability of a hike; focus on forward guidance.
+(120)
+~20:30 JST (12:30 BST): Bank of England Governor Bailey press conference.
+~21:30 JST (13:30 BST): US — Weekly jobless claims; Philadelphia Fed Manufacturing Index (Sep).
+
+Tomorrow — Friday, 18 September 2026 (JST)
+Morning JST: Bank of Japan policy decision (Day 2; rate announcement and Governor Ueda press conference). Consensus: +25bp to 1.25%.
+~17:30 JST (09:30 BST): UK — Retail Sales (Aug).
+~22:30 JST (14:30 BST): Eurozone — CPI Final (Aug).
+
+
+8. ECONOMY CALENDAR AND COMMENT
+Time (JST)	Country	Event	Actual	Bloomberg Survey	Prior
+08:50	Japan	Trade Balance (Aug)	-¥1,105.6bn	-¥1,058.4bn	-¥634.5bn
+08:50	Japan	Exports YoY (Aug)	+19.3%	+18.4%	+23.2%
+08:50	Japan	Imports YoY (Aug)	+28.0%	+26.25%	+27.8%
+08:50	Japan	Core Machine Orders MoM (Jul)	-3.7%	-1.2%	+9.7%
+08:50	Japan	Core Machine Orders YoY (Jul)	+11.2%	+9.6%	+16.9%
+15:00 BST	United Kingdom	CPI YoY (Aug)	3.1%	3.1%	2.9%
+15:00 BST	United Kingdom	CPI MoM (Aug)	0.5%	0.5%	0.3%
+15:00 BST	United Kingdom	Core CPI YoY (Aug)	2.6%	2.6%	2.6%
+15:00 BST	United Kingdom	Services CPI YoY (Aug)	3.4%	3.5%	3.4%
+15:00 BST	United Kingdom	PPI Output YoY (Aug)	3.7%	3.3%	3.1%
+15:00 BST	United Kingdom	PPI Input YoY (Aug)	6.1%	5.35%	4.9%
+~14:00 CEST	Eurozone	Industrial Production MoM (Jul)	-0.1%	-0.2%	-0.1%
+Expand Table to Artifact Pane
+
+Commentary
+Japan Trade Balance (Aug): The deficit widened sharply to -¥1,105.6bn, missing the -¥1,058.4bn consensus and more than doubling from -¥634.5bn in July. Imports surged 28.0% YoY (above the 26.25% estimate), driven by elevated energy costs from the Middle East supply disruption. Exports grew 19.3% YoY, beating the 18.4% estimate but decelerating from 23.2% in July. The widening deficit reflects Japan's acute vulnerability to oil price shocks and supports the case for a weaker yen — a factor the BOJ must weigh at this week's meeting.
+(121)
+Japan Core Machine Orders (Jul): A sharp miss — MoM fell 3.7% versus the -1.2% consensus, reversing June's +9.7% surge. YoY growth of +11.2% beat the 9.6% estimate, suggesting the monthly decline is partly a mean-reversion. The data is a leading indicator for capital expenditure; the miss may temper optimism about Japan's investment cycle but does not materially alter the BOJ's near-term rate path given the strong YoY reading.
+UK CPI (Aug): Headline CPI rose 3.1% YoY, in line with consensus but above the BOE's own July forecast of 2.8%. The acceleration was driven by motor fuel prices and airfares. Core CPI held at 2.6% and services CPI came in at 3.4% — a slight undershoot of the 3.5% estimate. PPI input prices surged 6.1% YoY (vs 5.35% expected), signalling pipeline inflation pressure. The in-line headline print prompted traders to cut BOE hike probability for Thursday to approximately 10%, sending 2-year gilt yields down approximately 8bp. However, the BOE's own forecast undershoot means second-round effects are more pronounced than policymakers had projected.
+(122)
+Eurozone Industrial Production (Jul): A modest beat — production fell 0.1% MoM versus the -0.2% consensus. Non-durable consumer goods drove the decline. The data provides marginal support for the view that the eurozone economy is proving more resilient than feared, consistent with the ECB's hawkish stance.
+(123)
+
+
+9. CENTRAL BANKS
+Federal Reserve (post-close, 16 Sep): The FOMC unanimously raised the federal funds rate by 25bp to 3.75–4.00%, the first hike since 2023. The dot plot revised the 2026 median year-end rate to 4.125% (from 3.75%), implying one more hike this year, and removed an expected cut in 2027. Chair Warsh described the move as removing "a dose of accommodation" to return inflation to 2% in a "timelier" way. Deutsche Bank and KPMG economists described this as the start of a tightening cycle. The hawkish signal drove US equities lower and the dollar higher post-close.
+(124)
+(125)
+Bank of Japan (meeting in progress, 17–18 Sep): The BOJ's two-day meeting begins today. All 52 BOJ watchers surveyed by Bloomberg forecast a 25bp hike to 1.25% at the conclusion on 18 September. BOJ board member Masu reiterated the bank will continue raising rates given easy financial conditions. The JGB 10-year yield at 3.011% is approaching nominal GDP growth — a level that has historically pressured Japanese equities. USD/JPY at 156.36 and US Treasury Secretary Bessent's public pressure campaign on yen strength add complexity to the BOJ's communication challenge.
+(126)
+(127)
+Bank of England (decision 17 Sep): Markets imply only approximately 10% probability of a hike at Thursday's meeting following in-line UK CPI. However, headline CPI at 3.1% exceeded the BOE's own July forecast of 2.8%, and PPI input prices surged 6.1% YoY. Traders have pared aggressive hike bets from earlier in the week (from 125bp to approximately 99bp priced by end-2027). The BOE's forward guidance on the pace of future hikes will be the critical signal.
+(128)
+ECB (most recent decision: 10 Sep): The ECB raised its deposit rate by 25bp to 2.50% on 10 September — its second hike since the Iran war. ECB Executive Board member Schnabel described energy-price developments as "quite concerning." Governing Council member Simkus said further action can come at any meeting. Money markets price four more 25bp ECB hikes by end-2027. No new ECB communication on 16 September.
+(129)
+
+
+10. GOVERNMENTS
+Saudi Arabia pipeline partial resumption (global): Saudi Arabia is reportedly seeking to restore about half the capacity of its East-West pipeline within days after drone attacks forced a shutdown on 10 September. A confirmed resumption would ease European crude supply concerns and could weigh on upstream energy names that rallied on the disruption. European refiners face longer voyage times and higher costs regardless of pipeline status.
+(130)
+(131)
+Hong Kong five-year plan and policy address (HK equities): Chief Executive John Lee unveiled Hong Kong's inaugural five-year plan alongside his annual policy address. Key targets: double tech and innovation spending, accelerate Northern Metropolis development, expand land supply, and encourage AI integration across industries. Property developers, tech hardware names, and baby-product makers were identified as potential beneficiaries. No GDP growth target was set, unlike major mainland cities.
+(132)
+(133)
+US Senate blocks crypto regulatory bill (Japan, global): The US Senate blocked a wide-ranging digital-currency regulatory bill, sending Bitcoin lower and dragging crypto-related Japanese equities (Metaplanet, Gumi) down on 16 September. The setback is a near-term negative for crypto-exposed equities globally.
+(134)
+Trump reportedly opposes frontier AI model restrictions (China tech): Reports that President Trump opposed efforts by leading AI developers to impose restrictions on frontier AI models, combined with Beijing's reiteration of AI development support, lifted Chinese hardware tech stocks on 16 September. The development reinforces the view that US-China AI competition may accelerate domestic Chinese AI investment.
+(135)
+Kepler Cheuvreux downgrades European equities to neutral (Europe): Kepler Cheuvreux cut European equities to neutral from overweight, citing deteriorating economic outlook and high energy import dependency. The team warned that persistent energy inflation could revive a "stagflationary combination" for European equities. This is a sell-side strategic shift with potential implications for fund flows into European markets.
+(136)
+UK CMA probe into McCormick/Unilever Foods deal (UK consumer): The UK Competition and Markets Authority started a probe into McCormick's acquisition of Unilever's foods division. Adds regulatory uncertainty to UK consumer staples M&A.
+(137)
+
+
+11. PRESENTATION SUMMARY
+
+Core Message
+Non-US equity markets snapped a four-day losing streak on 16 September, with all major indices advancing ahead of the Fed's widely anticipated rate decision. The common driver was a pullback in Brent crude from near $110/bbl, which lifted cyclicals and industrials broadly. Japan led on a commodity-sector rotation; Greater China was the weakest performer on a five-day basis despite a daily gain. Europe's advance was broad, anchored by financials and the UK housebuilder Barratt Redrow's earnings beat. The Fed's post-close hawkish signal — a 25bp hike with another pencilled in and the dot plot revised higher — sets a more challenging tone for Thursday's open, with the BOJ decision on 18 September as the next major regional catalyst.
+
+Index Highlights
+TOPIX: +0.60% on 16 September; energy/commodity rotation led by ENEOS (+5.0%) and Idemitsu (+4.3%); SoftBank (-4.6%) and Otsuka (-5.9%) were the key drags.
+Nikkei 225: +0.69% on 16 September; same drivers as TOPIX; SoftBank's CDS reportedly at a 3-year high on OpenAI risk was the most important company-specific development.
+Hang Seng Index: +0.20% on 16 September; Lenovo (+8.3%) was the dominant contributor; CATL (-2.9%) continued its two-day decline on Q3 outlook concerns.
+CSI 300: +0.70% on 16 September; AI policy support drove chip names higher; XCMG and Zoomlion hit 52-week lows, highlighting industrials weakness.
+Euro Stoxx 50: Advanced on 16 September; Siemens Energy (+3.1%) led; autos (VW -2.6%, Mercedes -2.6%) were the main drag; breadth was narrow (17/50 advancing).
+FTSE 100: +0.30% on 16 September; UK CPI in-line prompted BOE hike bets to be pared; Barratt Redrow (+11.4%) was the standout mover; BP (-2.6%) and Shell (-2.3%) dragged.
+CAC 40: +0.70% on 16 September (per news sources); financials and industrials led; Kepler Cheuvreux downgrade of European equities to neutral was the key strategic development.
+DAX: +0.53% on 16 September; Siemens Energy led; autos underperformed; index remains 3.88% below its August record close.
+
+Three Takeaways
+Leadership: Energy infrastructure led across regions on 16 September — upstream oil names in Japan (ENEOS, Idemitsu) and power equipment in Europe (Siemens Energy, Schneider Electric) — driven by the Saudi pipeline disruption and AI data-centre power demand. Financials provided secondary leadership in Europe and Hong Kong.
+Divergence: The most important divergence was within the AI/technology theme: Chinese domestic chip names (SMIC, Hua Hong) surged on policy support while Japan's global AI proxies (SoftBank, Advantest, Lasertec) sold off sharply on OpenAI valuation risk and pre-Fed caution — the same theme producing opposite outcomes depending on domestic versus global exposure.
+Watch: The BOJ rate decision on 18 September is the next major regional catalyst; a hawkish surprise (50bp or aggressive forward guidance) could trigger yen strengthening that pressures Japanese exporters and reverberates through global bond markets via Japanese capital repatriation. The Fed's hawkish dot plot revision adds to the complexity of the BOJ's communication challenge.
+
+Sources: Bloomberg News, Bloomberg Automation, Bloomberg Intelligence, MT Newswires, Dow Jones, Alliance News, Office for National Statistics (UK), Eurostat. All index levels and returns from Bloomberg structured data. Stock returns from Bloomberg constituent data for 16 September 2026. Currency and commodity prices as of 16 September 2026 close.
+Data Query
+for ( 'TPX Index' ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) , px_last ( dates = 0D )) with ( fill = PREV )
+
+Data Query
+for ( 'NKY Index' ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) , px_last ( dates = 2026-09-16 )) with ( fill = PREV )
+
+Data Query
+for ( 'HSI Index' ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) , px_last ( dates = 2026-09-16 )) with ( fill = PREV )
+
+Data Query
+for ( 'SHSZ300 Index' ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) , px_last ( dates = 2026-09-16 )) with ( fill = PREV )
+
+Data Query
+for ([ 'CAC Index' , 'DAX Index' , 'SX5E Index' , 'UKX Index'] ) get ( pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) , pct_chg( px_last ( dates = range( - 5D , 0D ) ) ) , px_last ( dates = 0D )) with ( fill = PREV )
+
+Data Query
+for ([ 'EURUSD Curncy' , 'GBPUSD Curncy' , 'USDCNH Curncy' , 'USDJPY Curncy'] ) get ( px_last ( fill = PREV , dates = 2026-09-16 ))
+
+Data Query
+for ( 'GTJPY10Y Govt' ) get ( yield ( fill = PREV , dates = 2026-09-16 ))
+
+Data Query
+for ([ 'GTDEM10Y Govt' , 'GTGBP10Y Govt'] ) get ( yield ( fill = PREV , dates = 2026-09-16 ))
+
+Data Query
+for ([ 'CL1 Comdty' , 'CO1 Comdty' , 'XAU Curncy'] ) get ( name , px_last ( fill = PREV , dates = 2026-09-16 ))
+
+Data Query
+for ( union(top(filter(members( 'TPX Index' ) , cur_mkt_cap > 10B ) , 10 , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) )) , bottom(filter(members( 'TPX Index' ) , cur_mkt_cap > 10B ) , 10 , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ))) ) get ( cur_mkt_cap , name , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) ) with ( currency = JPY )
+
+Data Query
+for ( filter(members( 'NKY Index' , dates = 2026-09-16 ) , cur_mkt_cap >= 1000000000000 ) ) get ( name , px_last ( dates = 2026-09-16 , fill = PREV ) , pct_diff( px_last ( fill = PREV , dates = range( 2026-09-15 , 2026-09-16 ) ) ) , cur_mkt_cap ) preferences ( addCols = ALL )
+
+Data Query
+for ( members( 'HSI Index' , dates = 2026-09-16 ) ) get ( cur_mkt_cap ( dates = 2026-09-16 ) , name , pct_chg( px_last ( dates = range( 2026-09-15 , 2026-09-16 ) ) ) , px_last ( dates = 2026-09-16 )) with ( currency = HKD , fill = PREV )
+
+Data Query
+for ( members( 'SX5E Index' ) ) get ( name , pct_diff( px_last ( dates = range( 2026-09-15 , 2026-09-16 ) ) ) , px_last ( dates = 2026-09-16 )) with ( fill = PREV )
+
+Data Query
+for ( 'SX5E Index' ) get ( index_advancer_count ( dates = 2026-09-16 ) , index_decliner_count ( dates = 2026-09-16 )) with ( fill = PREV )
+
+Data Query
+for ( union(top(members( 'UKX Index' , dates = 2026-09-16 ) , 5 , pct_chg( px_last ( dates = range( 2026-09-15 , 2026-09-16 ) ) )) , bottom(members( 'UKX Index' , dates = 2026-09-16 ) , 5 , pct_chg( px_last ( dates = range( 2026-09-15 , 2026-09-16 ) ) ))) ) get ( name , pct_chg( px_last ( dates = range( 2026-09-15 , 2026-09-16 ) ) ) , px_last ( dates = 2026-09-16 )) with ( currency = USD , fill = PREV )
+
+Data Query
+for ( union(top(members( 'DAX Index' , dates = 2026-09-16 ) , 5 , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) )) , bottom(members( 'DAX Index' , dates = 2026-09-16 ) , 5 , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ))) ) get ( name , pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last ) with ( currency = USD )
+
+Data Query
+for ( union(top(members( 'CAC Index' ) , 5 , pct_chg( px_last ( dates = range( - 1D , 0D ) ) )) , bottom(members( 'CAC Index' ) , 5 , pct_chg( px_last ( dates = range( - 1D , 0D ) ) ))) ) get ( name , pct_chg( px_last ( dates = range( - 1D , 0D ) ) ) ) with ( currency = USD , fill = PREV )
+
+Data Query
+for ( members( 'TPX Index' , dates = 2026-09-16 ) ) get ( avg(group(pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , by = classification_name )) ) with ( currency = USD )
+
+Data Query
+for ( members( 'SX5E Index' ) ) get ( avg(group( total_return ( calc_interval = 1D ) , by = classification_name )) ) with ( currency = USD )
+
+Data Query
+for ( 'JP Country' ) get ( calendar ( dates = range( 2026-09-16 , 2026-09-17 ) ))
+
+Data Query
+for ([ 'EZ Country' , 'GB Country'] ) get ( calendar ( dates = 2026-09-16 , subtype = PRICES ))
+
+Data Query
+for ( 'USDJPY Curncy' ) get ( pct_diff( px_last ( fill = PREV , dates = range( 2026-09-15 , 2026-09-16 ) ) ) )
+
+Data Query
+for ( '6501 JT Equity' ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) )
+
+Data Query
+for ( '992 HK Equity' ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) , px_last )
+
+Data Query
+for ( '3750 HK Equity' ) get ( pct_chg( px_last ( fill = PREV , dates = range( - 1D , 0D ) ) ) )
+
+
+Copy
+Save to
+
+Suggested Follow-Ups
+What are the historical precedents for Japanese equity performance in the week following a BOJ rate hike, and which sectors have typically led or lagged?
+
+How has CATL's stock performed relative to the CSI 300 over the past 12 months, and what are the current consensus estimates for its Q3 earnings?
+
+How can the Bloomberg Terminal be used to monitor real-time BOJ policy decision impacts across Japanese equity sectors and the yen?
+
+Copy
+Save to
+
+
+Workflows
+
+Responses are generated by
+Bloomberg AI
+. Check to make sure they are correct and complete.
+
+1.
+Bloomberg First Word
+
+NEWS 09/16/2026
+2.
+Bloomberg News
+
+NEWS 09/16/2026
+3.
+Bloomberg First Word
+
+NEWS 09/16/2026
+4.
+Bloomberg News
+
+NEWS 09/16/2026
+5.
+Bloomberg News
+
+NEWS 09/16/2026
+6.
+Bloomberg First Word
+
+NEWS 09/16/2026
+7.
+Bloomberg News
+
+NEWS 09/16/2026
+8.
+Bloomberg First Word
+
+NEWS 09/16/2026
+9.
+Bloomberg News
+
+NEWS 09/16/2026
+10.
+Bloomberg News
+
+NEWS 09/16/2026
+11.
+Bloomberg First Word
+
+NEWS 09/16/2026
+12.
+Bloomberg First Word
+
+NEWS 09/16/2026
+13.
+Bloomberg News
+
+NEWS 09/16/2026
+14.
+Bloomberg News
+
+NEWS 09/16/2026
+15.
+Bloomberg News
+
+NEWS 09/16/2026
+16.
+Bloomberg News
+
+NEWS 09/16/2026
+17.
+Bloomberg News
+
+NEWS 09/16/2026
+18.
+Bloomberg First Word
+
+NEWS 09/16/2026
+19.
+Bloomberg First Word
+
+NEWS 09/15/2026
+20.
+Bloomberg First Word
+
+NEWS 09/16/2026
+21.
+Bloomberg First Word
+
+NEWS 09/16/2026
+22.
+Bloomberg News
+
+NEWS 09/15/2026
+23.
+MT Newswires
+
+NEWS 09/16/2026
+24.
+Bloomberg First Word
+
+NEWS 09/16/2026
+25.
+Bloomberg News
+
+NEWS 09/16/2026
+26.
+Bloomberg First Word
+
+NEWS 09/16/2026
+27.
+Bloomberg News
+
+NEWS 09/16/2026
+28.
+Bloomberg News
+
+NEWS 09/16/2026
+29.
+Bloomberg First Word
+
+NEWS 09/16/2026
+30.
+Bloomberg News
+
+NEWS 09/16/2026
+31.
+Bloomberg First Word
+
+NEWS 09/15/2026
+32.
+Bloomberg News
+
+NEWS 09/16/2026
+33.
+Bloomberg News
+
+NEWS 09/16/2026
+34.
+Bloomberg News
+
+NEWS 09/16/2026
+35.
+Bloomberg News
+
+NEWS 09/16/2026
+36.
+Bloomberg News
+
+NEWS 09/16/2026
+37.
+Bloomberg First Word
+
+NEWS 09/15/2026
+38.
+Bloomberg First Word
+
+NEWS 09/16/2026
+39.
+Bloomberg First Word
+
+NEWS 09/16/2026
+40.
+Bloomberg First Word
+
+NEWS 09/16/2026
+41.
+Bloomberg First Word
+
+NEWS 09/15/2026
+42.
+Bloomberg First Word
+
+NEWS 09/15/2026
+43.
+Bloomberg News
+
+NEWS 09/16/2026
+44.
+Bloomberg First Word
+
+NEWS 09/15/2026
+45.
+Bloomberg First Word
+
+NEWS 09/15/2026
+46.
+Bloomberg First Word
+
+NEWS 09/15/2026
+47.
+Bloomberg First Word
+
+NEWS 09/16/2026
+48.
+Bloomberg First Word
+
+NEWS 09/16/2026
+49.
+Bloomberg First Word
+
+NEWS 09/15/2026
+50.
+Bloomberg First Word
+
+NEWS 09/15/2026
+51.
+Bloomberg First Word
+
+NEWS 09/16/2026
+52.
+Bloomberg First Word
+
+NEWS 09/16/2026
+53.
+Bloomberg News
+
+NEWS 09/16/2026
+54.
+Bloomberg First Word
+
+NEWS 09/16/2026
+55.
+Bloomberg First Word
+
+NEWS 09/16/2026
+56.
+Bloomberg News
+
+NEWS 09/16/2026
+57.
+bne IntelliNews
+
+NEWS 09/16/2026
+58.
+bne IntelliNews
+
+NEWS 09/16/2026
+59.
+Bloomberg News
+
+NEWS 09/16/2026
+60.
+Bloomberg First Word
+
+NEWS 09/16/2026
+61.
+Bloomberg First Word
+
+NEWS 09/16/2026
+62.
+Bloomberg News
+
+NEWS 09/16/2026
+63.
+Bloomberg News
+
+NEWS 09/16/2026
+64.
+Bloomberg First Word
+
+NEWS 09/16/2026
+65.
+Bloomberg First Word
+
+NEWS 09/16/2026
+66.
+Bloomberg News
+
+NEWS 09/16/2026
+67.
+Bloomberg First Word
+
+NEWS 09/16/2026
+68.
+Bloomberg First Word
+
+NEWS 09/16/2026
+69.
+Bloomberg News
+
+NEWS 09/16/2026
+70.
+Bloomberg News
+
+NEWS 09/16/2026
+71.
+Bloomberg News
+
+NEWS 09/16/2026
+72.
+Bloomberg First Word
+
+NEWS 09/16/2026
+73.
+Bloomberg News
+
+NEWS 09/16/2026
+74.
+MT Newswires
+
+NEWS 09/16/2026
+75.
+Bloomberg First Word
+
+NEWS 09/16/2026
+76.
+Bloomberg First Word
+
+NEWS 09/16/2026
+77.
+Bloomberg First Word
+
+NEWS 09/16/2026
+78.
+Bloomberg News
+
+NEWS 09/16/2026
+79.
+Bloomberg News
+
+NEWS 09/16/2026
+80.
+Bloomberg News
+
+NEWS 09/16/2026
+81.
+Dow Jones Institutional News Feed
+
+NEWS 09/16/2026
+82.
+Bloomberg News
+
+NEWS 09/16/2026
+83.
+MT Newswires
+
+NEWS 09/16/2026
+84.
+Bloomberg News
+
+NEWS 09/16/2026
+85.
+bne IntelliNews
+
+NEWS 09/16/2026
+86.
+Bloomberg First Word
+
+NEWS 09/16/2026
+87.
+Bloomberg News
+
+NEWS 09/16/2026
+88.
+bne IntelliNews
+
+NEWS 09/16/2026
+89.
+Bloomberg News
+
+NEWS 09/16/2026
+90.
+Bloomberg News
+
+NEWS 09/16/2026
+91.
+Bloomberg First Word
+
+NEWS 09/16/2026
+92.
+Bloomberg First Word
+
+NEWS 09/16/2026
+93.
+Bloomberg News
+
+NEWS 09/16/2026
+94.
+bne IntelliNews
+
+NEWS 09/16/2026
+95.
+Dow Jones Barron's
+
+NEWS 09/16/2026
+96.
+Bloomberg First Word
+
+NEWS 09/15/2026
+97.
+Bloomberg First Word
+
+NEWS 09/16/2026
+98.
+Bloomberg First Word
+
+NEWS 09/16/2026
+99.
+Bloomberg First Word
+
+NEWS 09/16/2026
+100.
+Bloomberg News
+
+NEWS 09/16/2026
+101.
+Bloomberg News
+
+NEWS 09/16/2026
+102.
+Bloomberg First Word
+
+NEWS 09/15/2026
+103.
+Bloomberg First Word
+
+NEWS 09/16/2026
+104.
+Bloomberg News
+
+NEWS 09/16/2026
+105.
+Bloomberg News
+
+NEWS 09/16/2026
+106.
+Bloomberg First Word
+
+NEWS 09/16/2026
+107.
+Bloomberg News
+
+NEWS 09/16/2026
+108.
+Bloomberg First Word
+
+NEWS 09/15/2026
+109.
+Bloomberg First Word
+
+NEWS 09/16/2026
+110.
+Bloomberg First Word
+
+NEWS 09/16/2026
+111.
+Bloomberg News
+
+NEWS 09/16/2026
+112.
+Bloomberg News
+
+NEWS 09/16/2026
+113.
+Bloomberg First Word
+
+NEWS 09/16/2026
+114.
+Bloomberg News
+
+NEWS 09/16/2026
+115.
+Bloomberg First Word
+
+NEWS 09/16/2026
+116.
+Bloomberg News
+
+NEWS 09/10/2026
+117.
+Bloomberg First Word
+
+NEWS 09/15/2026
+118.
+Bloomberg News
+
+NEWS 09/16/2026
+119.
+Bloomberg News
+
+NEWS 09/16/2026
+120.
+Bloomberg News
+
+NEWS 09/16/2026
+121.
+MT Newswires
+
+NEWS 09/16/2026
+122.
+Bloomberg News
+
+NEWS 09/16/2026
+123.
+MT Newswires
+
+NEWS 09/16/2026
+124.
+Bloomberg News
+
+NEWS 09/16/2026
+125.
+Bloomberg First Word
+
+NEWS 09/16/2026
+126.
+Bloomberg News
+
+NEWS 09/10/2026
+127.
+Bloomberg First Word
+
+NEWS 09/15/2026
+128.
+Bloomberg First Word
+
+NEWS 09/16/2026
+129.
+Bloomberg News
+
+NEWS 09/10/2026
+130.
+Bloomberg News
+
+NEWS 09/16/2026
+131.
+Bloomberg First Word
+
+NEWS 09/16/2026
+132.
+Bloomberg News
+
+NEWS 09/16/2026
+133.
+Bloomberg First Word
+
+NEWS 09/16/2026
+134.
+Bloomberg First Word
+
+NEWS 09/16/2026
+135.
+Bloomberg First Word
+
+NEWS 09/15/2026
+136.
+Bloomberg First Word
+
+NEWS 09/16/2026
+137.
+Bloomberg First Word
+
+NEWS 09/16/2026
+

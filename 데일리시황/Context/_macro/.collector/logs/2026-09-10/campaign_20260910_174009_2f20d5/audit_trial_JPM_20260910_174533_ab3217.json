@@ -1,0 +1,61 @@
+{
+  "house": "JPM",
+  "start_date": "2026-06-08",
+  "end_date": "2026-09-09",
+  "run_status": "incomplete",
+  "eligible": false,
+  "gate_reasons": [
+    "Collector status must be 'complete', got 'incomplete'.",
+    "Collector reason: Child exit=2; final run/house summary missing. See C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-10\\campaign_20260910_174009_2f20d5\\trial_JPM_20260910_174533_ab3217.console.log",
+    "Collector must report a positive integer counts.in_range for fresh discovery."
+  ],
+  "coverage_evidence": "Collector completion and fresh in-range discovery; date spans are descriptive only.",
+  "counts": {
+    "reports_in_window": 798,
+    "downloaded": 798,
+    "validated_downloads": 798,
+    "no_original_pdf": 0,
+    "unresolved": 0,
+    "unknown_or_invalid_date": 0,
+    "file_error_count": 0
+  },
+  "status_counts": {
+    "downloaded": 798
+  },
+  "min_published": "2026-06-08",
+  "max_published": "2026-09-09",
+  "downloaded_min_published": "2026-06-08",
+  "downloaded_max_published": "2026-09-09",
+  "month_counts": {
+    "2026-06": {
+      "reports": 193,
+      "downloaded": 193,
+      "validated_downloads": 193,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    },
+    "2026-07": {
+      "reports": 270,
+      "downloaded": 270,
+      "validated_downloads": 270,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    },
+    "2026-08": {
+      "reports": 239,
+      "downloaded": 239,
+      "validated_downloads": 239,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    },
+    "2026-09": {
+      "reports": 96,
+      "downloaded": 96,
+      "validated_downloads": 96,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    }
+  },
+  "errors": [],
+  "unresolved": []
+}

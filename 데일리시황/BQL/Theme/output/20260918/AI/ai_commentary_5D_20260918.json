@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "target": {
+    "report": "ai",
+    "asOf": "2026-09-18",
+    "primary": "5D",
+    "baseSha256": "4c82ceca7f3a30ce82ca5defc50de9ce2bbc76734a4916a42ee69d5c15209855"
+  },
+  "global": [
+    {
+      "title": "AI 5D: 소프트웨어에서 컴퓨트로 리더십이 되돌아오는 구간",
+      "body": "Bloomberg의 별도 테마 프록시에서는 SOXX가 5D +6.18%로 반등한 반면 IGV는 -0.58%였다. 서버 수요, 반도체 실적, 데이터센터 네트워크와 보안 촉매가 동시에 확인됐다. 다만 소프트웨어의 90일 누적 우위는 남아 있어 컴퓨트의 리더십 전환이 완전히 확정된 단계는 아니다. 아래 단계별 수익률과 종목 순위는 이 프록시 숫자가 아니라 BQL S&P 500 구성종목 5D 계산값이다.",
+      "date": "BQL 공통 가격 기준일은 표 머리말 참조",
+      "source": "BQL AI 정량표; Bloomberg Factor, Thematic & Positioning Market Pulse"
+    },
+    {
+      "title": "AI 투자의 범위가 서버·서비스·연결망으로 확산",
+      "body": "Dell의 FY2027 매출 및 AI 서버 목표 상향, Accenture–Anthropic 제휴, Ciena의 데이터센터 광네트워크 평가가 컴퓨트 외부의 수요를 확인했다. Palo Alto의 전망은 AI가 공격면과 보안 수요를 동시에 키운다는 논리를 지지한다. 회사 발표·애널리스트 평가와 실제 단계별 EPS 전환은 구분한다.",
+      "date": "Bloomberg 원문 작성 2026-09-21",
+      "source": "Bloomberg US Weekly 및 Theme Rotation 원문"
+    },
+    {
+      "title": "다음 확인점",
+      "body": "반도체 반등이 장비·메모리·전력으로 확산되는지, 서버 가이던스가 실제 매출·EPS로 이어지는지, 사이버보안의 월간 강세 뒤 단기 피로가 해소되는지 확인한다. 프리마켓·장후 가격은 아래 정규장 5D 표에 소급하지 않는다.",
+      "date": "2026-09-21 이후",
+      "source": "Bloomberg 원문; BQL 5D 정량표"
+    }
+  ],
+  "stages": {
+    "power_equipment": "Bloomberg 프록시 GRID는 5D 개선됐지만 1M은 약했다. AI 데이터센터 전력수요가 단기 반등을 만들었어도 중기 추세 반전은 아직 확인이 필요하다.",
+    "server": "Dell은 FY2027 매출 전망을 약 1,920억달러로 높이고 AI 최적화 서버 매출 목표를 약 600억달러에서 740억달러로 상향했다. 인프라 지출 가속을 보여주는 직접 자료다.",
+    "compute": "SOXX의 주간 반등과 TSMC 매출 증가, Broadcom AI 칩 전망 상향이 펀더멘털을 지지했다. 90일 소프트웨어 우위가 남아 있으므로 리더십 전환은 미확정이다.",
+    "software": "IGV는 원문 프록시 5D에서 쉬었지만 Accenture–Anthropic 제휴는 기업 AI 수요가 평가·배포·거버넌스 서비스로 확장되고 있음을 보여준다.",
+    "hyperscale": "Dell의 AI 서버 목표 상향은 하이퍼스케일러와 기업 고객의 인프라 투자가 예상보다 빠르다는 간접 근거다. 원문에는 이 단계의 독립 5D 프록시가 없다.",
+    "network": "Evercore ISI는 데이터센터 광네트워크를 대형 언어모델 수익화의 병목으로 평가했다. 9월 21일 Ciena 프리마켓 움직임은 아래 BQL 5D 창 밖이므로 성과에 섞지 않는다.",
+    "semicap": "독립 장비 프록시는 없지만 SOXX 반등과 TSMC·Broadcom의 수요 신호는 첨단공정·패키징·장비 투자에 우호적이다. 장비 단계 자체 수익률은 아래 BQL 표를 따른다.",
+    "cyber": "HACK·CIBR은 원문에서 1M 강세 뒤 5D가 소폭 약했다. Palo Alto의 이익 전망과 보안 ARR은 구조적 수요를 지지하지만 가격은 단기 피로 구간이다."
+  }
+}

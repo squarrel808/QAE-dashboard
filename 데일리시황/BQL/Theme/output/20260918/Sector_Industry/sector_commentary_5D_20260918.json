@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "target": {
+    "report": "sector",
+    "asOf": "2026-09-18",
+    "primary": "5D",
+    "baseSha256": "82b2c00a4d9f4ea1c7a6a722bb39871c849904a85bd92276335a96cd3c97eff7"
+  },
+  "global": [
+    {
+      "title": "이번 5D의 공통축: AI 설비와 대형 성장주, 그러나 확산은 제한",
+      "body": "미국은 대형 기술주 중심의 반등이었고, 유럽·일본은 반도체 장비와 데이터센터 전력설비가 주도했다. 홍콩은 제약 육성책과 미·중 정상회담 기대가 일부 정책 수혜주를 끌어올렸다. 지역별 지수 상승의 공통점은 성장주 회복이지만, 미국 소형주와 여러 경기민감 업종까지 동반한 광범위한 위험선호는 아니었다.",
+      "date": "BQL 공통 가격 기준일은 아래 표 머리말 참조",
+      "source": "BQL 5D 정량표; Bloomberg US/Non-US Weekly 원문(사용자 제공, 2026-09-21)"
+    },
+    {
+      "title": "숫자와 해설의 기간을 분리",
+      "body": "아래 BM·섹터·산업·종목 수익률과 상승비중은 새 BQuant 원천으로 다시 계산한 BQL 5D 값이다. Bloomberg 원문은 미국 9월 15~19일, 비미국 5 calendar days 등 서로 다른 창을 사용하므로 그 수익률·순위를 표에 섞지 않고 촉매와 방향 설명에만 사용했다.",
+      "date": "보고서 작성 2026-09-21",
+      "source": "BQL 실행 기록; Bloomberg 원문 기간 표기"
+    },
+    {
+      "title": "다음 확인점",
+      "body": "미·중 정상회담의 관세·LNG·농산물 합의, 미국 PCE와 연준 인사의 추가 인상 신호, 일본 휴장 후 엔/달러와 BOJ 후속 커뮤니케이션을 확인한다. 이들 이벤트가 IT 단독 리더십을 산업재·소재·소비로 확산시키는지가 핵심이다.",
+      "date": "2026-09-21 이후",
+      "source": "Bloomberg US/Non-US Weekly 원문"
+    }
+  ],
+  "markets": {
+    "STOXX600": [
+      {
+        "title": "유럽: AI 설비·산업재가 강하고 에너지·소비는 부진",
+        "body": "원문은 ASML·Infineon과 Schneider Electric·Siemens Energy가 AI 반도체·데이터센터 전력투자 기대를 반영했다고 설명한다. 반면 유가 하락으로 에너지가 약했고 자동차·명품·통신도 뒤처졌다. 프랑스에서는 신용등급 강등과 국채 스프레드 확대가 내수주를 눌렀지만 Societe Generale의 수익성·주주환원 계획은 개별 호재였다.",
+        "date": "Bloomberg 원문 2026-09-15~21; BQL 표 기간은 별도",
+        "source": "Bloomberg Non-US Equity Weekly Briefing"
+      }
+    ],
+    "SP500": [
+      {
+        "title": "미국: 대형 기술주 중심의 좁은 반등",
+        "body": "원문의 별도 ETF 구간에서 Nasdaq 100은 S&P 500을 웃돌았고 Russell 2000은 거의 참여하지 않았다. WTI 하락과 장기금리 완화가 성장주를 도왔지만 상승 섹터와 지수 기여는 IT에 집중됐다. 따라서 경기민감주 전반의 재가속보다 AI·대형주 중심의 회복으로 해석한다.",
+        "date": "Bloomberg 원문 리뷰창 2026-09-15~19; BQL 표 기간은 별도",
+        "source": "Bloomberg US Macro & Equity Weekly Briefing"
+      },
+      {
+        "title": "기업 촉매는 서버·서비스·네트워크로 확산",
+        "body": "Dell의 AI 서버 매출 목표 상향, Accenture–Anthropic 제휴, Ciena의 데이터센터 광네트워크 평가가 AI 투자의 범위를 넓혔다. Steel Dynamics의 낮은 이익 가이던스는 소재·산업 수요의 약한 고리를 보여줬다. 장후·프리마켓 움직임은 아래 정규장 5D 표에 소급하지 않는다.",
+        "date": "원문 작성 2026-09-21",
+        "source": "Bloomberg US Macro & Equity Weekly Briefing"
+      }
+    ],
+    "TOPIX": [
+      {
+        "title": "일본: 반도체·제약 대 에너지·금융의 분화",
+        "body": "Lasertec·Advantest와 Chugai·Daiichi Sankyo가 강했고 Inpex·ENEOS와 Nomura는 약했다. BOJ가 25bp 인상했지만 반대 2표와 모호한 후속 지침으로 엔화가 약해져 수출·대형 기술주에는 완충이 됐다. 9월 19~22일 휴장 중 발생한 뉴스는 9월 18일 종가 성과의 원인으로 소급하지 않는다.",
+        "date": "일본 실제 종가 기준 2026-09-18",
+        "source": "Bloomberg Non-US Equity Weekly Briefing"
+      }
+    ],
+    "HANGSENG": [
+      {
+        "title": "홍콩: 정상회담 기대와 제약 육성책의 선택적 수혜",
+        "body": "중국 제약 5개년 계획이 CSPC Pharma·Akeso를 부각했고, 미·중 정상회담 기대는 Lenovo·Z.AI 등 일부 AI 종목과 위험선호를 지지했다. 반면 중국 소비지표 부진과 금값 하락은 가전·금광주에 부담이었다. 지수 반등을 전면적 경기회복보다 정책 수혜군 중심의 움직임으로 본다.",
+        "date": "Bloomberg 원문 기준 2026-09-21; BQL 표 기간은 별도",
+        "source": "Bloomberg Non-US Equity Weekly Briefing"
+      }
+    ]
+  },
+  "sectors": {
+    "SP500": {
+      "Information Technology": "Dell의 서버 전망 상향, Accenture–Anthropic 제휴와 광네트워크 수요가 AI 투자의 서버·서비스·연결망 확산을 확인했다. 상승이 대형 AI 관련주에 집중됐다는 점은 남는다.",
+      "Consumer Discretionary": "소매판매 호조와 연말 판매 전망이 단기 반등을 지지했지만 원문의 1M·3M 프록시는 여전히 약했다. 소비 회복의 추세 전환보다 중기 약세 안의 반등에 가깝다.",
+      "Industrials": "직전 유가·금리 충격에서 일부 회복했지만 중기 흐름은 약하다. 미·중 정상회담에서 관세 완화와 교역 합의가 나오는지가 다음 촉매다.",
+      "Energy": "유가가 100달러 위에서 후퇴해 단기 탄력이 둔화됐다. 러시아산 원유 제재와 중국 LNG 협상은 하단 요인이지만 3개월 강세와 최근 흐름을 구분한다.",
+      "Health Care": "중기 방어력은 남아 있으나 Novo Nordisk의 설명회 실망과 Eli Lilly의 비만치료제 리더십이 업종 내부 차별화를 키웠다.",
+      "Financials": "완만한 커브 스티프닝은 은행 마진에 우호적이지만 추가 인상 전망과 성장 둔화 시 신용비용 우려가 상쇄했다.",
+      "Utilities": "미 10년물 약 5%, 30년물 5.29% 수준의 금리가 배당·채권 대체 성격의 밸류에이션을 압박했다. 금리 하락 전에는 반전 촉매가 제한적이다.",
+      "Consumer Staples": "대형 성장주로의 자금 이동과 높은 국채금리가 배당주의 상대 매력을 낮췄다. 방어 논리보다 금리 경쟁과 스타일 로테이션이 우세했다.",
+      "Real Estate": "높은 장기금리가 자금조달비용과 배당 매력을 동시에 압박했다. 뚜렷한 금리 하락이 확인되기 전에는 업종 반전의 신뢰도가 낮다.",
+      "Materials": "Steel Dynamics의 시장 예상 하회 EPS 가이던스가 철강 수익성과 산업 수요 둔화 우려를 확인했다. 정상회담 결과가 산업재와 함께 다음 방향을 좌우한다.",
+      "Communication Services": "원문 프록시에서 중기 리더가 단기 최하위로 반전했다. Meta 배당락 효과는 일부 기술적 요인이지만 Alphabet·Meta가 리더십을 회복하는지 확인해야 한다."
+    },
+    "STOXX600": {
+      "Communication Services": "Orange와 Deutsche Telekom이 약했다. 확인된 공통 기업 촉매보다는 AI 설비·경기민감주로의 순환 속 방어적 통신의 상대 부진으로 본다.",
+      "Consumer Discretionary": "자동차와 명품주가 부진했다. EV 전환·중국 경쟁·명품 수요 우려가 배경이지만 모든 종목에 단일 촉매를 적용하지 않는다.",
+      "Consumer Staples": "원문은 일부 음료주의 큰 하락을 기록했으나 확인된 회사별 촉매는 없다. 필수소비재 전체에 동일 원인을 적용하지 않는다.",
+      "Energy": "Brent 하락으로 BP·Centrica·ENI 등 에너지주가 약했다. FTSE는 높은 에너지 비중 때문에 유럽 동종지수보다 덜 올랐다는 것이 원문 해석이다.",
+      "Financials": "Societe Generale의 수익성 목표와 대규모 주주환원 계획은 긍정적이었지만 프랑스 재정위험은 지역 금융주에 반대 방향의 부담이었다.",
+      "Health Care": "AstraZeneca는 중국 제약 육성책의 긍정적 read-through를 받았다. 중국 정책 수혜를 유럽 헬스케어 전체의 공통 촉매로 일반화하지 않는다.",
+      "Industrials": "Schneider Electric·Siemens Energy는 데이터센터 전력수요, DHL은 교역 기대에 강했다. AI 전력설비와 건설소재의 방향은 갈렸다.",
+      "Information Technology": "ASML과 Infineon이 AI 반도체 설비투자 기대를 반영해 유럽 기술주를 주도했다. High-NA EUV 수요가 장기 장비투자 기대를 지지했다.",
+      "Materials": "Antofagasta는 정상회담을 앞둔 구리수요 기대에 상승했다. 귀금속·건설소재와 구리 광산을 단일 원자재 요인으로 묶지 않는다.",
+      "Real Estate": "Bund·gilt 금리 하락은 금리민감 자산의 완충 요인이었지만 유럽 부동산 전반의 확인된 신규 촉매는 없다.",
+      "Utilities": "Engie가 약했으나 유틸리티 전체의 공통 촉매는 확인되지 않았다. 유가와 금리의 효과는 기업별 사업구조에 따라 다르다."
+    },
+    "TOPIX": {
+      "Communication Services": "LY Corp가 하락했으나 확인된 회사별 촉매는 없다. 반도체·제약으로의 자금 집중과 구분한다.",
+      "Consumer Discretionary": "엔화 약세는 수출기업에 완충이지만 경기소비재 전반의 확인된 신규 촉매는 제시되지 않았다.",
+      "Consumer Staples": "일본 필수소비재의 공통 촉매는 확인되지 않았다. 아래 BQL 가격과 상승비중을 우선한다.",
+      "Energy": "Brent 하락으로 Inpex·ENEOS가 약했고, 원문에서 에너지가 가장 부진한 일본 업종이었다.",
+      "Financials": "Nomura가 하락했다. BOJ 인상 자체보다 향후 경로의 불확실성과 엔화 변동성이 부담이었지만 금융주 전체의 확정 원인으로 확대하지 않는다.",
+      "Health Care": "Chugai·Daiichi Sankyo·Astellas가 강했다. 중국 제약 육성책은 글로벌 혁신신약 심리의 read-through이지 일본 기업의 직접 정책수혜와는 구분한다.",
+      "Industrials": "Mitsubishi Heavy Industries는 방산·산업투자 기대에 상승했다. 일본의 방산·설비투자 사이클을 산업재 전반의 동반 강세로 단정하지 않는다.",
+      "Information Technology": "Lasertec·Advantest·Kioxia가 AI 반도체 장비·메모리 수요 기대에 강했다. Nikkei가 TOPIX보다 강한 핵심 배경이었다.",
+      "Materials": "유가 하락은 일부 제조업의 투입비용 완화 요인이지만 소재 업종 전체의 직접 촉매는 없다.",
+      "Real Estate": "BOJ가 인상했음에도 후속 지침이 예상보다 명확하게 매파적이지 않았던 점이 금리민감주를 완충했다.",
+      "Utilities": "낮아진 에너지가격은 발전 원가에 우호적일 수 있으나 유틸리티 전체의 확인된 가격 촉매는 없다."
+    },
+    "HANGSENG": {
+      "Communication Services": "Z.AI 등 중국 AI 종목이 정상회담 기대에 반등했지만 9월 낙폭을 일부 되돌린 수준이다. 규제·모델 접근 위험은 별도다.",
+      "Consumer Discretionary": "Haier Smart Home은 예상보다 약한 중국 소매판매와 함께 부진했다. 무역 불확실성은 확인된 개별 촉매가 없는 종목에는 배경으로만 제시한다.",
+      "Consumer Staples": "홍콩 필수소비재 전체의 확인된 신규 촉매는 없다. 아래 BQL 수익률과 상승비중을 우선한다.",
+      "Energy": "유가는 하락했지만 정상회담을 앞둔 LNG 관세 협상 기대도 있었다. 현물 에너지와 LNG 운송·교역 수혜를 같은 방향으로 묶지 않는다.",
+      "Financials": "Stock Connect 순매수와 정상회담 기대가 홍콩 위험선호를 지지했으나 금융주 전반의 개별 촉매는 제시되지 않았다.",
+      "Health Care": "중국 제약 5개년 계획이 CSPC Pharma와 Akeso를 직접 부각했다. 혁신신약 성장과 first-in-class 확대 목표가 핵심이다.",
+      "Industrials": "무역·LNG 협상 기대는 운송·공급망 종목에 우호적일 수 있으나 산업재 전체의 확인된 공통 촉매는 없다.",
+      "Information Technology": "Lenovo는 AI 서버 수요, Z.AI는 정상회담 기대에 상승했다. 반등이 선택적이어서 기술주 전체의 추세 전환으로 단정하지 않는다.",
+      "Materials": "Zhaojin Mining은 금 가격 하락과 함께 약했다. 금광주 부진을 산업금속·건설소재까지 일반화하지 않는다.",
+      "Real Estate": "본토 부동산주는 정책 기대에 반등했고 홍콩 계획도 Northern Metropolis 개발을 강조했다. 주택 수요의 기초체력 개선을 확인한 것은 아니다.",
+      "Utilities": "홍콩 유틸리티 전체의 확인된 신규 촉매는 없다. 유가 하락과 금리 변화는 보조 배경으로만 본다."
+    }
+  }
+}

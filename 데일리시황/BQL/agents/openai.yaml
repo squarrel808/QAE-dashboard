@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bloomberg BQL Excel"
+  short_description: "Build and audit Bloomberg BQL Excel workbooks"
+  default_prompt: "Use $bql to build or audit a compact Bloomberg BQL Excel workbook."

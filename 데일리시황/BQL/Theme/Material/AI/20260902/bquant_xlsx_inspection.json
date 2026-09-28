@@ -1,0 +1,1742 @@
+[
+  {
+    "path": "C:\\Users\\USER\\Downloads\\유로존\\Bquant_All_19_Raw_Refreshed.xlsx",
+    "size": 8162026,
+    "indices": [
+      {
+        "code": "SX5E",
+        "name": "EURO STOXX 50",
+        "sheet": "SX5E Raw",
+        "members": 50,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1029,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "INDU",
+        "name": "Dow Jones Industrial Average",
+        "sheet": "INDU Raw",
+        "members": 30,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 588,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "SPX",
+        "name": "S&P 500",
+        "sheet": "SPX Raw",
+        "members": 503,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10425,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10458,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10479,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10458,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10563,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10563,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 9849,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10554,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10460,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              503,
+              21
+            ],
+            "finite": 10437,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "NDX",
+        "name": "NASDAQ 100",
+        "sheet": "NDX Raw",
+        "members": 102,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2037,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2100,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2100,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2100,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2142,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2142,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2016,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2142,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2126,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              102,
+              21
+            ],
+            "finite": 2142,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "SPTSX60",
+        "name": "S&P/TSX 60",
+        "sheet": "SPTSX60 Raw",
+        "members": 60,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1239,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1239,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1239,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1260,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              60,
+              21
+            ],
+            "finite": 1182,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "IBOV",
+        "name": "Bovespa",
+        "sheet": "IBOV Raw",
+        "members": 78,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1512,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1554,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1554,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1554,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1638,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1638,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1606,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1607,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1596,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              78,
+              21
+            ],
+            "finite": 1613,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "UKX",
+        "name": "FTSE 100",
+        "sheet": "UKX Raw",
+        "members": 100,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 2100,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 2037,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 2016,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1995,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              100,
+              21
+            ],
+            "finite": 1919,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "CAC",
+        "name": "CAC 40",
+        "sheet": "CAC Raw",
+        "members": 40,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "DAX",
+        "name": "DAX 40",
+        "sheet": "DAX Raw",
+        "members": 40,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              40,
+              21
+            ],
+            "finite": 840,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "IBEX",
+        "name": "IBEX 35",
+        "sheet": "IBEX Raw",
+        "members": 35,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 714,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "AEX",
+        "name": "AEX",
+        "sheet": "AEX Raw",
+        "members": 30,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 609,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              30,
+              21
+            ],
+            "finite": 630,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "NKY",
+        "name": "Nikkei 225",
+        "sheet": "NKY Raw",
+        "members": 225,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4699,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4725,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              225,
+              21
+            ],
+            "finite": 4597,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "HSI",
+        "name": "Hang Seng",
+        "sheet": "HSI Raw",
+        "members": 93,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1785,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1806,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1806,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1806,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1953,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1953,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1953,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1932,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1953,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              93,
+              21
+            ],
+            "finite": 1953,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "TPX",
+        "name": "TPX",
+        "sheet": "TPX Raw",
+        "members": 1636,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 23848,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 23869,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 23909,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 23902,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 34356,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 34356,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 34288,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 34316,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 19124,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              1636,
+              21
+            ],
+            "finite": 23595,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "SHSZ300",
+        "name": "CSI 300",
+        "sheet": "SHSZ300 Raw",
+        "members": 300,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5786,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5901,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5901,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5901,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 6300,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 6300,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 6300,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 6216,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5985,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              300,
+              21
+            ],
+            "finite": 5922,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "STAR50",
+        "name": "STAR 50",
+        "sheet": "STAR50 Raw",
+        "members": 50,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 903,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 888,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 888,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 888,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1050,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 1020,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 924,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              50,
+              21
+            ],
+            "finite": 945,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "AS51",
+        "name": "S&P/ASX 200",
+        "sheet": "AS51 Raw",
+        "members": 200,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 3845,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 3990,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 3990,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 3990,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4200,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4200,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4199,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4074,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4200,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              200,
+              21
+            ],
+            "finite": 4095,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "MEXBOL",
+        "name": "S&P/BMV IPC",
+        "sheet": "MEXBOL Raw",
+        "members": 35,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 714,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              35,
+              21
+            ],
+            "finite": 735,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      },
+      {
+        "code": "SXXP",
+        "name": "STOXX Europe 600",
+        "sheet": "SXXP Raw",
+        "members": 600,
+        "dates": 21,
+        "start": "2026-08-01",
+        "end": "2026-08-21",
+        "metrics": {
+          "pe": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12302,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps12": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12411,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy1": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12411,
+            "last_date_finite": "2026-08-21"
+          },
+          "eps_fy2": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12411,
+            "last_date_finite": "2026-08-21"
+          },
+          "price": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12600,
+            "last_date_finite": "2026-08-21"
+          },
+          "mcap": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12600,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_current": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12516,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_current": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12514,
+            "last_date_finite": "2026-08-21"
+          },
+          "roe_12m": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12474,
+            "last_date_finite": "2026-08-21"
+          },
+          "opm_12m": {
+            "shape": [
+              600,
+              21
+            ],
+            "finite": 12356,
+            "last_date_finite": "2026-08-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\Downloads\\유로존\\BACKUP\\Bquant_All_19_Grouped_Raw.xlsx",
+    "size": 19371393,
+    "indices": []
+  }
+]

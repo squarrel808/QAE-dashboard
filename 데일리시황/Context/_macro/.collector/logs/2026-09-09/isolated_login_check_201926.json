@@ -1,0 +1,32 @@
+{
+  "checked": "2026-09-09T20:19:26.991452+09:00",
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "houses": {
+    "HSBC": {
+      "status": "report_list_ready",
+      "title": "HSBC Global Investment Research",
+      "error": ""
+    },
+    "BofA": {
+      "status": "report_list_ready",
+      "title": "Global Economics - BofA Markets",
+      "error": ""
+    },
+    "JPM": {
+      "status": "report_list_ready",
+      "title": "Search - J.P. Morgan Markets",
+      "error": ""
+    },
+    "GS": {
+      "status": "report_list_ready",
+      "title": "Search",
+      "error": ""
+    },
+    "Citi": {
+      "status": "report_list_ready",
+      "title": "Citi Velocity",
+      "error": ""
+    }
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "claim_id": "EA-GS-20260904-policy-base-v1",
+    "doc_id": "b389455ffbdb940a5de86f8dc8dd395138ecd4eafbced34cad6f80aed1a77e2a",
+    "page": 1,
+    "country": "EA",
+    "topic": "monetary_policy",
+    "claim": "GS는 9월이 이번 긴축 사이클의 마지막 인상일 가능성이 더 높다는 기존 전망을 유지한다.",
+    "evidence_quote": "We maintain our view that September is more likely than not the last hike of this tightening cycle given our forecast for below-trend H2 growth, modest further core pressures, our forecast for lower energy prices than currently implied by forwards, and no Fed hikes.",
+    "assumptions": "하반기 추세 이하 성장, 제한적 추가 근원물가 압력, 선물곡선보다 낮은 에너지 가격, 연준 추가 인상 부재.",
+    "change_vs_prior": "문서의 maintain 표현 확인. 별도 이전 보고서 대조는 미완료."
+  },
+  {
+    "claim_id": "EA-GS-20260904-policy-risk-v1",
+    "doc_id": "b389455ffbdb940a5de86f8dc8dd395138ecd4eafbced34cad6f80aed1a77e2a",
+    "page": 1,
+    "country": "EA",
+    "topic": "monetary_policy",
+    "claim": "GS는 에너지 가격이 내려가지 않거나 물가가 뚜렷하게 강해지면 12월 추가 인상의 문턱이 낮아졌다고 평가한다.",
+    "evidence_quote": "That said, we now see a low hurdle for a third hike in December if energy prices do not fall from here or inflation firms more notably, especially if the Fed hikes in coming months.",
+    "assumptions": "조건부 리스크 시나리오이며 12월 인상이 기본 전망으로 변경됐다는 뜻은 아니다.",
+    "change_vs_prior": "문서 내 now 표현으로 리스크 평가 변경 확인. 이전 문서와 확률 수치 비교는 미완료."
+  },
+  {
+    "claim_id": "EA-JPM-20260903-policy-base-v1",
+    "doc_id": "77dee2a2cda398aa5c368de0488ce4857121762ffe0429f6bace84d26a5bcc00",
+    "page": 1,
+    "country": "EA",
+    "topic": "monetary_policy",
+    "claim": "JPM은 9월 인상에 이어 12월 세 번째 인상으로 ECB 금리가 2.75%에 도달하는 경로를 이제 예상한다.",
+    "evidence_quote": "We now expect the ECB to hike for a third time in December to 2.75% after a near-certain hike next week.",
+    "assumptions": "같은 페이지가 지속적 에너지 가격 압력, 견조한 성장, 끈적한 근원물가, ECB가 보는 중립금리 상승을 이유로 든다. 네 번째 인상은 기본 전망이 아니다.",
+    "change_vs_prior": "We now expect 및 종착금리 상향을 주저한 이유가 약해졌다는 자체 설명 기준. 이전 문서와 일대일 비교 미완료."
+  },
+  {
+    "claim_id": "EA-BofA-20260901-policy-december-v1",
+    "doc_id": "7794d146ebb20409fd5399c9e1502ef17f9d32023d15b928f59bdd298e096f9c",
+    "page": 1,
+    "country": "EA",
+    "topic": "monetary_policy",
+    "claim": "BofA는 9월 인상을 기본 전망으로 유지하지만 12월 인상은 가능성이 높아졌어도 기본 전망에 넣지 않는다.",
+    "evidence_quote": "September remains our base case, but December, while an increasing possibility, is not.",
+    "assumptions": "9월 1일 보고서 기준이며 이후에도 유지됐다고 단정하지 않는다.",
+    "change_vs_prior": "문서의 remains 및 increasing possibility라는 자체 설명만 확인."
+  },
+  {
+    "claim_id": "EA-BofA-20260901-policy-2027-v1",
+    "doc_id": "7794d146ebb20409fd5399c9e1502ef17f9d32023d15b928f59bdd298e096f9c",
+    "page": 1,
+    "country": "EA",
+    "topic": "monetary_policy",
+    "claim": "BofA는 2027년 여름 인하 전환 및 2027년 말 예금금리 약 2% 또는 그 이하를 여전히 예상한다.",
+    "evidence_quote": "Crucially, we still expect the ECB to pivot to cuts in the summer of 2027, taking the deposit rate back to around or below 2% by end-2027.",
+    "assumptions": "2026년 인상 경로와 2027년 인하 전망을 구분한다. IB의 전망이며 미래 실제 정책이 아니다.",
+    "change_vs_prior": "still expect라는 유지 표현 확인. 별도 과거 문서 대조 미완료."
+  },
+  {
+    "claim_id": "EA-BofA-20260901-growth-forecast-v1",
+    "doc_id": "7794d146ebb20409fd5399c9e1502ef17f9d32023d15b928f59bdd298e096f9c",
+    "page": 1,
+    "country": "EA",
+    "topic": "growth",
+    "claim": "BofA 연간 성장률 전망은 2026년 0.8%(0.3%p 상향), 2027년 1.1%(0.2%p 하향), 2028년 1.0%(불변)이다.",
+    "evidence_quote": "We now expect 0.8% growth for 2026 (+30bp), 1.1% for 2027 (-20bp) and at 1.0% in 2028 (unch).",
+    "assumptions": "2026년 연간 전망 상향만으로 앞으로의 분기 성장세 가속을 의미하지 않는다.",
+    "change_vs_prior": "변경 폭은 보고서가 직접 명시. 이전 보고서 원본과 대조는 미완료."
+  },
+  {
+    "claim_id": "EA-BofA-20260901-growth-carryover-v1",
+    "doc_id": "7794d146ebb20409fd5399c9e1502ef17f9d32023d15b928f59bdd298e096f9c",
+    "page": 1,
+    "country": "EA",
+    "topic": "growth",
+    "claim": "BofA는 상반기 성장 개선으로 연간 성장률 이월효과는 커졌지만 에너지 가격·실질금리 상승으로 2027년 봄까지 순차적 성장 전망은 조금 낮아졌다고 설명한다.",
+    "evidence_quote": "Better 1H26 growth lifts carryovers, but higher energy prices and yet another rise in real yields mean we expect slightly lower sequential growth into spring-27.",
+    "assumptions": "통계적 이월효과와 앞으로의 분기 성장 모멘텀을 구분한다.",
+    "change_vs_prior": "같은 페이지의 전망 변경 이유 확인. 별도 이전 문서 대조 미완료."
+  },
+  {
+    "claim_id": "EA-HSBC-20260901-inflation-core-v1",
+    "doc_id": "80fc4b5225f689dbdffb22c518426c4bed7ee965aab7607d88a0edb6091685df",
+    "page": 1,
+    "country": "EA",
+    "topic": "inflation",
+    "claim": "HSBC는 근원물가가 전년동월비 2.4%로 0.1%p 낮아져 보합 컨센서스와 자체 2.6% 전망을 밑돌았다고 기록한다.",
+    "evidence_quote": "Core inflation fell 0.1pp to 2.4% y-o-y, below consensus of unchanged (HSBC: 2.6%).",
+    "assumptions": "제목은 Aug flash이나 첫 본문의 헤드라인 설명은 in July라고 적혀 있어 대상 월 확인이 필요하다. 원문 수치 인용이며 공식 발표와 대조하지 않았다. 이 페이지로 HSBC의 ECB 최종금리를 추정하지 않는다.",
+    "change_vs_prior": "지표 관측 및 서프라이즈다. 통화정책 전망 변경 여부는 이 발췌로 확인 불가."
+  }
+]

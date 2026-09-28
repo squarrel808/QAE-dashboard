@@ -35,3 +35,20 @@ venv/
 .DS_Store
 Thumbs.db
 *.log
+*.lock
+*.bak
+*.bak_*
+~$*
+
+# Browser automation state can contain local session data and large caches.
+**/.collector/chrome-profile/
+
+# Local duplicate/cache archives (source folders are kept separately).
+/데일리시황/Context/_macro.zip
+/데일리시황/Context/_macro/__pycache__.zip
+
+# ───────────────────────────────────────────────
+# 📥 받은 원본 엑셀 (설명서만 올리고 데이터는 제외)
+# ───────────────────────────────────────────────
+/____Rawdata___/*
+!/____Rawdata___/README.md

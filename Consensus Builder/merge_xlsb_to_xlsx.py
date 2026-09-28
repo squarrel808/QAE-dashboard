@@ -27,6 +27,10 @@ from datetime import datetime, timedelta
 from openpyxl import load_workbook
 from pyxlsb import open_workbook as open_xlsb
 
+# 원본 xlsb 는 이제 QAE\____Rawdata___ 에 떨궈 넣으면 된다 (없으면 예전처럼 이 폴더).
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import rawdata  # noqa: E402
+
 # ============================================================
 # CONFIG
 # ============================================================
@@ -38,16 +42,19 @@ BASE_DIR = os.environ.get(
 )
 HISTORY_DIR = os.path.join(BASE_DIR, 'history')
 
-# (원본 xlsx, xlsb, 출력 파일 prefix). 모두 BASE_DIR 안에 있다고 가정.
+# (원본 xlsx, xlsb 파일명 prefix, 출력 파일 prefix).
+#  · xlsx(베이스)는 BASE_DIR / history 에서 찾는다.
+#  · xlsb(새 원본)는 ____Rawdata___ 를 먼저 보고, 없으면 BASE_DIR 를 본다.
+#    파일명 뒤가 바뀌어도( '_수정 (2).xlsb' 등) prefix 만 맞으면 집어간다.
 TARGETS = [
     {
         'xlsx': 'ECFC_Growth Consesus_수정.xlsx',
-        'xlsb': 'ECFC_Growth Consesus_수정.xlsb',
+        'xlsb_prefix': 'ECFC_Growth Consesus',
         'out_prefix': 'ECFC_Growth Consesus',
     },
     {
         'xlsx': 'ECFC_Inflation Consesus_수정.xlsx',
-        'xlsb': 'ECFC_Inflation Consesus_수정.xlsb',
+        'xlsb_prefix': 'ECFC_Inflation Consesus',
         'out_prefix': 'ECFC_Inflation Consesus',
     },
 ]
@@ -119,6 +126,16 @@ def coverage_of(path):
         return (None, 0)
 
 
+def pick_xlsb(target, base_dir=BASE_DIR):
+    """새로 받은 xlsb 를 고른다. ____Rawdata___ 우선, 없으면 이 폴더.
+
+    같은 prefix 가 여럿이면 수정시각이 가장 최근인 것. 두 폴더에 다 있으면
+    폴더가 아니라 시각으로 고르므로, 예전 폴더에 더 새 파일을 둬도 그게 이긴다.
+    """
+    return rawdata.require(target['xlsb_prefix'], exts=('.xlsb',),
+                           extra_dirs=[base_dir])
+
+
 def pick_base(target, base_dir=BASE_DIR, out_dir=HISTORY_DIR):
     """베이스로 쓸 xlsx 를 고른다.
 
@@ -159,7 +176,7 @@ def warn_if_gap(ws, max_gap_days=7):
 
 def merge_one(target, out_date_str, base_dir=BASE_DIR, out_dir=HISTORY_DIR,
               base_override=None):
-    xlsb_path = os.path.join(base_dir, target['xlsb'])
+    xlsb_path = pick_xlsb(target, base_dir)
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, target['out_prefix'] + '_' + out_date_str + '.xlsx')
 
@@ -168,6 +185,7 @@ def merge_one(target, out_date_str, base_dir=BASE_DIR, out_dir=HISTORY_DIR,
         raise FileNotFoundError(xlsx_path)
     if not os.path.exists(xlsb_path):
         raise FileNotFoundError(xlsb_path)
+    print("[Raw ] " + xlsb_path)
 
     _last, _rows = coverage_of(xlsx_path)
     print("[Load] " + os.path.basename(xlsx_path)
@@ -270,7 +288,7 @@ def main():
                             if base_arg.isdigit() and len(base_arg) == 8 else base_arg)
             outs.append(merge_one(t, date_str, base_override=override))
         except Exception as e:
-            print("!! 실패: " + t['xlsx'] + " -> " + str(e))
+            print("!! 실패: " + t['out_prefix'] + " -> " + str(e))
 
     print("\n=== Done ===")
     for o in outs:

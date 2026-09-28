@@ -1,0 +1,71 @@
+search
+Search Marquee
+ 
+help_outline
+notifications
+person
+search
+article
+Form a View
+chevron_right
+search
+View to a Trade
+chevron_right
+monitoring
+Manage Portfolio
+chevron_right
+scatter_plot
+Data Services
+chevron_right
+cloud_download
+Downloads
+chevron_right
+THOUGHT LEADERSHIP
+chevron_left
+Goldman Sachs Research
+expand_more
+Market Insights
+expand_more
+MarketView
+chevron_right
+Events
+My Content
+FX MORNING NOTES
+GS FX Research Notes: Energy and FX – Stickier, But Less Dominant
+Research | Economics | 15 September 2026 | 7:09PM UTC
+
+After rebounding to new highs in recent weeks, we see two key areas where energy prices’ impact on FX markets is similar now to earlier in the year, and one main area where it is different.
+
+First, similarly to in Q2, new highs in energy prices have driven front-end rates and energy-sensitive near-neighbour crosses (NOK/SEK and AUD/NZD) to the top of their post-conflict distributions , while the readthrough to the broad Dollar has been masked by other factors.  
+
+Second, as we have highlighted throughout the year so far, the energy terms of trade impact on FX has been more gradual, but more durable, than the moves in energy prices themselves. Our energy factor (which weighs exporters versus importers) has lagged the latest spike in oil and gas prices – doing so in a way that is broadly consistent with other spikes this year. We think there is a key additional time component to the relationship, where more time spent with energy at these levels can drive steady upside in terms of trade winners versus losers over time. In particular, we think these pressures have room to become clearer in major pairs (including as a headwind to EUR/USD), where the impact so far has been less visible.
+
+ 
+
+Third, where the recent moves have been different to earlier in the year is in being a smaller driver of realised FX vol. The re-build in energy prices over the past month has been slightly steadier than the fluctuations in March and April, coming alongside lower realised vol, and failing to dominate FX price action in the same way. As a result, correlations across Dollar pairs have continued to normalise lower, with recent price action able to reflect much more than just energy price shifts.  
+
+ 
+
+Stuart Jenkins
+Goldman Sachs International, London
+stuart.jenkins@gs.com
+Lexi Kanter
+Goldman Sachs & Co. LLC, New York
+alexandra.kanter@gs.com
+Teresa Alves
+Goldman Sachs International, London
+teresa.alves@gs.com
+Karen Reichgott Fishman
+Goldman Sachs & Co. LLC, New York
+karen.fishman@gs.com
+Michael Cahill
+Goldman Sachs International, London
+michael.e.cahill@gs.com
+© Copyright 2002-2026 Goldman Sachs All rights reserved.
+Need help?
+Contact Us
+
+Use of this site is subject to the Terms and Conditions of Use updated as of 12 August 2024.
+Marquee Regulatory Disclosures
+Important Disclosure Information About Goldman Sachs Research
+Please review our Interest Rate Benchmark Transition Notice, Privacy & Cookies Policy, Security, Market Data Attribution, Security Guidance and GS&Co.'s Statement of Financial Condition

@@ -1,0 +1,142 @@
+{
+  "house": "Citi",
+  "start_date": "2026-06-08",
+  "end_date": "2026-09-09",
+  "run_status": "incomplete",
+  "eligible": false,
+  "gate_reasons": [
+    "Collector status must be 'complete', got 'incomplete'.",
+    "Collector reason: Not started because the run stopped. User-approved restart: Playwright driver crashed on Page.handleJavaScriptDialog (No dialog is showing) at 17:31; stopped supervisor PID4500 and collector tree PID6660/48352; both Chrome ports retained.",
+    "Collector must report a positive integer counts.in_range for fresh discovery.",
+    "11 unresolved database reports remain (failed=10, pending=1)."
+  ],
+  "coverage_evidence": "Collector completion and fresh in-range discovery; date spans are descriptive only.",
+  "counts": {
+    "reports_in_window": 223,
+    "downloaded": 212,
+    "validated_downloads": 212,
+    "no_original_pdf": 0,
+    "unresolved": 11,
+    "unknown_or_invalid_date": 0,
+    "file_error_count": 0
+  },
+  "status_counts": {
+    "downloaded": 212,
+    "failed": 10,
+    "pending": 1
+  },
+  "min_published": "2026-07-28",
+  "max_published": "2026-09-09",
+  "downloaded_min_published": "2026-07-28",
+  "downloaded_max_published": "2026-09-09",
+  "month_counts": {
+    "2026-06": {
+      "reports": 0,
+      "downloaded": 0,
+      "validated_downloads": 0,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    },
+    "2026-07": {
+      "reports": 34,
+      "downloaded": 28,
+      "validated_downloads": 28,
+      "no_original_pdf": 0,
+      "unresolved": 6
+    },
+    "2026-08": {
+      "reports": 142,
+      "downloaded": 137,
+      "validated_downloads": 137,
+      "no_original_pdf": 0,
+      "unresolved": 5
+    },
+    "2026-09": {
+      "reports": 47,
+      "downloaded": 47,
+      "validated_downloads": 47,
+      "no_original_pdf": 0,
+      "unresolved": 0
+    }
+  },
+  "errors": [],
+  "unresolved": [
+    {
+      "doc_id": "11211898",
+      "published": "2026-07-28",
+      "status": "pending",
+      "error": "",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11216300",
+      "published": "2026-07-29",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11217188",
+      "published": "2026-07-30",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11218490",
+      "published": "2026-07-30",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11220256",
+      "published": "2026-07-31",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11221343",
+      "published": "2026-07-31",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11229748",
+      "published": "2026-08-05",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11236051",
+      "published": "2026-08-07",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11255220",
+      "published": "2026-08-17",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11261358",
+      "published": "2026-08-20",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    },
+    {
+      "doc_id": "11266948",
+      "published": "2026-08-24",
+      "status": "failed",
+      "error": "Incomplete: Original PDF did not arrive; check login, entitlement, or PDF button. HTML was not saved as PDF.",
+      "reason": "Report status is unresolved."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-17",
+  "source_snapshot_documents": 3551,
+  "scope_note": "사용자 요청에 따른 GS 미국 물가 하우스뷰 누락 보완. 9월 11일·14일·16일 원문 페이지 검토. 모두 검토 전 초안.",
+  "views": [
+    {
+      "house": "GS",
+      "country": "US",
+      "scope": "country_research",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "view_id": "GS-US-inflation.outlook-20260911",
+      "track": "inflation.outlook",
+      "effective_date": "2026-09-11",
+      "summary": "8월 근원 CPI가 전월비 0.29%로 예상보다 높게 나오자, 무선통신료·여행서비스 강세와 완만한 주거비를 구분했다. CPI·PPI 세부항목을 반영한 8월 근원 PCE 추정치를 0.24%에서 0.26%로 높였다.",
+      "assumptions": [
+        "8월 CPI·PPI 세부항목을 이용한 근원 PCE 추정이며 확정 발표값이 아니다."
+      ],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE"
+      ],
+      "analyst_questions": [
+        "무선통신료 상승이 되돌아오는가?",
+        "주거비 둔화가 지속되는가?"
+      ],
+      "limitations": [
+        "원문 발행일 9월 11일. CPI 실측과 아직 발표되지 않은 PCE 추정을 구별한다."
+      ],
+      "evidence": [
+        {
+          "doc_id": "fe41dcba4a312c24ba0d4ab0f25cdf3af49d86cdecca2db5952dee8f46a8b449",
+          "page": 1,
+          "quote": "BOTTOM LINE: Core CPI increased by 0.29% in August, above expectations. On the \nfirmer side, the volatile wireless phone services category boosted the core by about \n10bp. Travel services were also firm, matching the strong reading in the domestic \npassenger airfares component in yesterday’s August PPI report, with airfares and \nlodging each boosting the core by 4bp. On the softer side, the shelter categories—\nwhich carry a smaller weight in PCE than in CPI—were more benign than we \nexpected, with OER and rent boosting the core by 6bp and 2bp, respectively. Based \non details in the CPI and PPI reports, we estimate that the core PCE price index rose \n0.26% in August (vs. 0.24% before the CPI release), corresponding to a \nyear-over-year rate of +3.16%"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "새 물가 경로의 첫 저장 견해. 9월 2일의 물가 발표 전 약 0.2% 예상과 시점을 구별하며 같은 트랙의 저장 선행 견해는 없다."
+    },
+    {
+      "house": "GS",
+      "country": "US",
+      "scope": "country_research",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "view_id": "GS-US-inflation.trend-20260914",
+      "track": "inflation.trend",
+      "effective_date": "2026-09-14",
+      "summary": "GS는 목표 2%를 웃도는 물가를 주로 한시적 요인으로 보고, 최근 3개월 근원 PCE 상승 속도가 약 2.5%로 낮아진 점과 기대인플레이션의 즉각적인 이탈 위험이 낮다는 점을 강조했다. 다만 관세 영향으로 상승이 광범위해 보인다고 평가했다.",
+      "assumptions": [
+        "한시적 요인의 효과가 약해지고 최근 근원 PCE 둔화가 지속된다는 판단이다."
+      ],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE"
+      ],
+      "analyst_questions": [
+        "관세·에너지 충격의 파급이 예상보다 길어지는가?",
+        "근원 PCE의 3개월 속도가 다시 높아지는가?"
+      ],
+      "limitations": [
+        "원문 표지 9월 13일 밤 EDT, 수집 메타데이터 발행일 9월 14일을 기준일로 썼다. 9월 16일 한 달 수치 추정 변경이 이 중기 판단의 철회를 뜻한다는 근거는 없다."
+      ],
+      "evidence": [
+        {
+          "doc_id": "ff328255407318a562c3e3c05c17c2d919816860258f2c0d1a56437f2be5836f",
+          "page": 1,
+          "quote": "We do not see a strong economic case for raising the funds rate.  We think that all \nn\nof the overshoot of 2% can be attributed to one-time factors whose impact is \nlikely to fade, that the improvement in core PCE inflation to a roughly 2.5% pace \nover the last three months is an early sign of this, that high inflation looks \nbroad-based mainly because of tariff effects, that inflation expectations are not \nat immediate risk of unanchoring, and that the economy is not overheated, which \nis the usual rationale for raising rates."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "동일 미국 물가 추세 트랙의 선행 저장 견해가 없어 이력 연결을 만들지 않았다."
+    },
+    {
+      "house": "GS",
+      "country": "US",
+      "scope": "country_research",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports",
+      "view_id": "GS-US-inflation.outlook-20260916",
+      "track": "inflation.outlook",
+      "effective_date": "2026-09-16",
+      "summary": "8월 근원 수입물가가 예상보다 높고 해외여행비에 반영되는 국제항공료가 2.1% 오르자, GS는 8월 근원 PCE 전월비 추정을 0.26%에서 0.27%, 전년비 추정을 3.17%로 높였다. 전자제품 가격도 올해 근원물가의 상방 압력으로 봤다.",
+      "assumptions": [
+        "8월 근원 PCE 발표 전 추정치이며, 방법론 변경에 따른 과거치 수정 전망을 포함한다."
+      ],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE"
+      ],
+      "analyst_questions": [
+        "확정 8월 근원 PCE가 0.27% 추정과 일치하는가?",
+        "국제항공료와 전자제품 가격 압력이 다른 품목으로 확산되는가?"
+      ],
+      "limitations": [
+        "9월 16일 원문에 근거한 8월 한 달 추정과 올해 전자제품 가격 위험이다. 중장기 물가 경로 전체의 새로운 수치 전망으로 확대하지 않는다."
+      ],
+      "evidence": [
+        {
+          "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+          "page": 1,
+          "quote": "Core import prices \nrose 0.8% in August, well above expectations. The international airfares component \nof import prices, which is the source data for the foreign travel component of core \nPCE, increased 2.1% (SA by GS). We estimate that the core PCE price index rose \n0.27% in August (vs. our expectation of 0.26% prior to today’s import prices report), \ncorresponding to a year-over-year rate of +3.17%."
+        },
+        {
+          "doc_id": "8e03822df693ea50e9de6c75b92ec17a24fc38d64c7c54e84b78cd1862e28eb8",
+          "page": 2,
+          "quote": "3. Core import prices rose 0.8%, well above expectations, and headline import prices \nincreased 0.7% in August, above expectations. Import prices for computer peripherals \nand parts rose 4.9% month-over-month, and 48.8% year-over-year, pointing to further \nupward pressure on core inflation from electronics prices this year. The international \nairfares component of import prices, which is the source data for the foreign travel \ncomponent of core PCE, increased 2.1% (SA by GS)."
+        }
+      ],
+      "prior_view_id": "GS-US-inflation.outlook-20260911",
+      "change": "revised",
+      "change_note": "9월 11일 CPI 직후 근원 PCE 추정 0.26%를 9월 16일 수입물가 반영 후 0.27%로 0.01%p 상향했다. 두 원문을 직접 대조했다."
+    }
+  ]
+}

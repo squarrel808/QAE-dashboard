@@ -1,0 +1,1123 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-11",
+  "workbook_sha256": "475f068c06d8b66910ab9cd2b23e633666f0488253a8e9f4fbbde1327df6228b",
+  "comments": [
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-04",
+        "time": "15:00",
+        "event": "Factory Orders MoM",
+        "period": "Jul"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "7월 수주 +2.5%는 대형 운송장비 주문의 영향이 크다. 대형 주문 제외 수주는 -1.4%, 3개월 추세도 -2.2%여서 헤드라인 상회를 광범위한 회복으로 보지 않는다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "07bc375d8a9a7a8409c000b9dd3100029b1231f64e1603b1d488c6c23bab0b0e",
+          "page": 1,
+          "quote": "Manufacturing orders increased by +2.5%mom in July, notably above consensus expectations (+0.3%) and were up +2.9% on a less volatile 3m3m basis. That said, manufacturing orders were driven by major orders in other transport equipment, and excluding major orders were again weaker, declining by -1.4%mom and by -2.2% on a 3m3m basis."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 26,
+      "snapshot_actual": 2.5
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-04",
+        "time": "15:00",
+        "event": "Factory Orders MoM",
+        "period": "Jul"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "대형 주문을 제외한 수주 부진은 해외 수요가 이끌었다. 국내 주문은 7월 대체로 보합이고 재정지출 확대와 함께 지난 1년간 증가했다. 내수와 수출의 차이를 중시한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "00fadd7407b781cd5961d7c6973a52a5eef7f407ae01252b34eec8dad8203ecf",
+          "page": 1,
+          "quote": "The details, meanwhile, show that the decline in orders ex. bulk was driven by non-domestic orders. Domestic orders were broadly flat in July and have increased over the last twelve months as fiscal spending has stepped up."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 26,
+      "snapshot_actual": 2.5
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-07",
+        "time": "15:00",
+        "event": "Industrial Production SA MoM",
+        "period": "Jul"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "7월 생산 -1.1%는 3분기 초 제조업 부진을 보여준다. 다만 수주·설문·트럭 통행량이 향후 생산을 지지하고 자동차 생산 반등 가능성도 있어 지속적 침체로 단정하지 않는다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "7192a2cc12f9515040f56e67fdc4b0fad4c5c2f7250d251d9022351364e86ed1",
+          "page": 1,
+          "quote": "Taken together, the July spot industrial data was quite soft and indicates subdued manufacturing momentum at the beginning of Q3. Looking ahead, orders, the manufacturing surveys and truck toll mileage are still supportive for manufacturing activity over the next months, especially if autos production rebounds."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 36,
+      "snapshot_actual": -1.1
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-07",
+        "time": "15:00",
+        "event": "Industrial Production SA MoM",
+        "period": "Jul"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "제조업 실적은 약하지만 최근 PMI는 더 긍정적이다. 자동차 설비 전환에 따른 일시적 조업 중단과 라인강 수위 영향을 함께 점검한다.",
+      "limitation": "이 보고서는 전월비 생산을 직접 분석한다. 별도 전년비 행의 직접 코멘트로 확장하지 않았다.",
+      "evidence": [
+        {
+          "doc_id": "4ccb50d84321ee523b64a3b7fa0f28c94a68ba440fbd5f14913306cc3b4a3495",
+          "page": 1,
+          "quote": "Manufacturing output overall has remained weak in recent months. But the recent PMI readings sent a more encouraging signal of late."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 36,
+      "snapshot_actual": -1.1
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "23:00",
+        "event": "ISM Services Index",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "ISM 서비스 55.4의 내부 구성도 강하다고 평가한다. 신규주문·사업활동·고용의 개선을 확인하되, 고용 지수의 상승과 50 이상 회복은 구별해야 한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "0ddc6ab45f5519b2bdc73c45d06505b0d443fb48c8018ce89080ba6bf8330f9f",
+          "page": 1,
+          "quote": "The composition of the report was strong, with increases in the new orders, business activity, and employment components."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 25,
+      "snapshot_actual": 55.4
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "23:00",
+        "event": "ISM Services Index",
+        "period": "Aug"
+      },
+      "house": "Citi",
+      "kind": "reaction",
+      "summary": "ISM 활동과 신규주문은 견조하지만 고용지수가 여전히 위축 영역이므로 강한 활동을 강한 노동시장으로 곧바로 해석하지 않는다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "657af3e9e01c2addc81a31ec4d8b5011430af889ff7485d35cec80c4de60bb49",
+          "page": 1,
+          "quote": "But while activity remains solid, this has not been associated with a strengthening labor market, with the employment index remaining in contraction."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 25,
+      "snapshot_actual": 55.4
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "22:45",
+        "event": "S&P Global US Services PMI",
+        "period": "Aug F"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "서비스 PMI 확정치 56.5는 속보치보다 0.3포인트 낮지만 2024년 12월 이후 최고 수준이다. 이번 하향 수정과 월별 경기 둔화는 구별해야 한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "0ddc6ab45f5519b2bdc73c45d06505b0d443fb48c8018ce89080ba6bf8330f9f",
+          "page": 1,
+          "quote": "The S&P Global US services PMI was revised down by 0.3pt to 56.5 in the final August reading, its highest level since December 2024."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 23,
+      "snapshot_actual": 56.5
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "21:30",
+        "event": "Trade Balance",
+        "period": "Jul"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "적자 규모는 예상보다 작았지만 수정 전월 대비 확대됐다. 컴퓨터·반도체 수입 증가와 원유·비화폐용 금 수출 감소를 구분해 보며, 단순한 예상 상회를 성장 개선으로 치환하지 않는다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "454b353647299d698251452f61c4252de1923ebbed40bd3d763f60b604ab5897",
+          "page": 2,
+          "quote": "The trade deficit widened by $17.4bn to $88.6bn in July, somewhat below expectations. Total goods imports increased $11.4bn, driven by increases in computers and semiconductors. Total goods exports declined by $6.2bn, driven largely by declines in crude oil and nonmonetary gold."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 19,
+      "snapshot_actual": -88.6
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "21:30",
+        "event": "Initial Jobless Claims",
+        "period": "Aug 29"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "8월 29일 주 신규 청구 206천 명을 대체로 예상 부합으로 평가한다. 4주 평균은 207천 명으로 소폭 상승했다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "454b353647299d698251452f61c4252de1923ebbed40bd3d763f60b604ab5897",
+          "page": 2,
+          "quote": "Initial jobless claims increased by 2k to 206k in the week ended August 29, in line with expectations. The four-week moving average of claims increased by 1k to 207k."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 20,
+      "snapshot_actual": 206
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-03",
+        "time": "21:30",
+        "event": "Continuing Claims",
+        "period": "Aug 22"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "8월 22일 주 계속 청구 1,779천 명은 수정 전주 대비 8천 명 증가했지만 대체로 예상에 부합한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "454b353647299d698251452f61c4252de1923ebbed40bd3d763f60b604ab5897",
+          "page": 2,
+          "quote": "Nationwide continuing claims— the number of persons receiving benefits through standard programs—increased by 8k to 1,779k in the week ended August 22, in line with expectations."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 21,
+      "snapshot_actual": 1779
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Change in Nonfarm Payrolls",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "16.2만 명 증가는 레저·접객과 지방정부 교육의 반등 및 의료·건설의 강세가 이끌었다. 이전 두 달 상향 수정도 기조 고용 평가를 개선시켰지만 반등 업종의 계절 변동을 함께 본다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "fbc89b4799f11dcdc34cefcbf796479fb3130ad58c736da9673276923fa9ff69",
+          "page": 1,
+          "quote": "The increase in payrolls largely reflected a rebound in leisure and hospitality (+62k) and local government education (+42k)—as both sectors normalized after recent large declines—as well as continued strength in healthcare and construction."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 32,
+      "snapshot_actual": 162
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "표시 실업률은 4.1%로 같지만 비반올림 기준 4.14%로 5bp 올랐다. 고용 증가보다 노동공급 증가가 컸기 때문으로, 실업률 숫자만으로 수요 약화를 단정하지 않는다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "fbc89b4799f11dcdc34cefcbf796479fb3130ad58c736da9673276923fa9ff69",
+          "page": 1,
+          "quote": "The unemployment rate increased by 5bp to 4.14%, reflecting a 569k increase in household employment and a 683k increase in the size of the labor force."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 34,
+      "snapshot_actual": 4.1
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Change in Nonfarm Payrolls",
+        "period": "Aug"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "고용 반등·노동공급 증가·완만한 임금이라는 조합을 긍정적으로 본다. 소비를 지지하면서 물가 우려를 크게 키우지 않으며 CPI를 다음 정책 판단의 핵심으로 둔다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+          "page": 1,
+          "quote": "The spring-summer cooling in job growth turned around, labor supply took a leg up, and wage growth remained supportive of consumer spending without fanning inflation fears."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 32,
+      "snapshot_actual": 162
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Change in Manufact. Payrolls",
+        "period": "Aug"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "제조업 고용은 1.6만 명 증가해 3개월 연속 늘었고 지난해 5월 이후 최고 수준이다. 전체 고용과 별도로 제조업 개선을 확인한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+          "page": 1,
+          "quote": "Elsewhere, factory jobs were up 16,000, the third consecutive increase. Manufacturing employment is now the highest since last May."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 33,
+      "snapshot_actual": 16
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "Citi",
+      "kind": "reaction",
+      "summary": "예상한 실업률 상승이 나타나지 않아 인하 재개를 다음 해 6월로 늦췄다. 이는 인하 지연이며 곧바로 9월 인상 전망으로 바뀐 것은 아니다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "7ac041fa9cc24fede827723664dd5c84d514c681970cf82c2d547e81091688eb",
+          "page": 1,
+          "quote": "The rise in the unemployment rate we had forecast this year did not materialize and we now expect rate cuts to resume in June of next year with 25bp cuts in June, September and December."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 34,
+      "snapshot_actual": 4.1
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Change in Nonfarm Payrolls",
+        "period": "Aug"
+      },
+      "house": "Citi",
+      "kind": "reaction",
+      "summary": "8월 반등은 연준이 노동시장을 안정적으로 보는 데 힘을 준다. 이전에 약했던 레저·접객과 공교육의 반등을 함께 확인한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "7ac041fa9cc24fede827723664dd5c84d514c681970cf82c2d547e81091688eb",
+          "page": 2,
+          "quote": "After two months of softer payroll growth and falling labor force participation, the August report will have reassured Fed officials that the labor market remains “stable.”"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 32,
+      "snapshot_actual": 162
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Net Change in Employment",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "8월 고용 감소·임금 둔화는 2026년 BoC 2.25% 동결 전망을 뒷받침한다. 실업률 6.4% 보합에는 참가율 하락도 작용했다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b4ef0e136f0cee9edefebea00ffe6dee9c74358d8b40c49d98c220b98c92a2bc",
+          "page": 1,
+          "quote": "Today’s soft data support our forecast that the BoC will remain on hold at 2.25% in 2026."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 30,
+      "snapshot_actual": -41.7
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "reaction",
+      "summary": "8월 고용 감소·임금 둔화는 2026년 BoC 2.25% 동결 전망을 뒷받침한다. 실업률 6.4% 보합에는 참가율 하락도 작용했다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b4ef0e136f0cee9edefebea00ffe6dee9c74358d8b40c49d98c220b98c92a2bc",
+          "page": 1,
+          "quote": "Today’s soft data support our forecast that the BoC will remain on hold at 2.25% in 2026."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 31,
+      "snapshot_actual": 6.4
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Net Change in Employment",
+        "period": "Aug"
+      },
+      "house": "BofA",
+      "kind": "reaction",
+      "summary": "고용 순감소와 임금 둔화가 다음 회의 동결 근거를 강화한다. 다만 에너지·관세가 물가에 미치는 영향 때문에 다음 정책 판단은 물가까지 봐야 한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "9c98b0daff2a993159efb2b30405a9499cede474273dc03f5e7d7a25004e0b7b",
+          "page": 1,
+          "quote": "A relatively weak labor report — with a net job loss and wage growth decelerating to its slowest pace since 2021 — reinforces the case for the BoC to remain on hold at its next meeting."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 30,
+      "snapshot_actual": -41.7
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "BofA",
+      "kind": "reaction",
+      "summary": "고용 순감소와 임금 둔화가 다음 회의 동결 근거를 강화한다. 다만 에너지·관세가 물가에 미치는 영향 때문에 다음 정책 판단은 물가까지 봐야 한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "9c98b0daff2a993159efb2b30405a9499cede474273dc03f5e7d7a25004e0b7b",
+          "page": 1,
+          "quote": "A relatively weak labor report — with a net job loss and wage growth decelerating to its slowest pace since 2021 — reinforces the case for the BoC to remain on hold at its next meeting."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 31,
+      "snapshot_actual": 6.4
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Net Change in Employment",
+        "period": "Aug"
+      },
+      "house": "Citi",
+      "kind": "reaction",
+      "summary": "이전 3개월의 고용 강세를 지속적 수요 회복보다 변동성으로 봤던 판단을 재확인한다. 초과공급이 지속된다는 관점이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "9e5b80882af15c0d547ed1a473181a4f025e0a1ab4dd1bdc4f05edd84db7c9ae",
+          "page": 1,
+          "quote": "Employment fell by 42k jobs in August after three stronger months, reaffirming our view that recently stronger employment and activity data were a consequence of familiar volatility in recent data rather than a sustained pick-up in demand."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 30,
+      "snapshot_actual": -41.7
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "Citi",
+      "kind": "reaction",
+      "summary": "참가율이 하락했음에도 비반올림 실업률이 6.42%에서 6.45%로 올라간 점을 중시한다. 6.4%라는 표시값만 보면 이 변화를 놓칠 수 있다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "9e5b80882af15c0d547ed1a473181a4f025e0a1ab4dd1bdc4f05edd84db7c9ae",
+          "page": 2,
+          "quote": "The most important detail of the monthly employment reports will be the unemployment rate, which on an unrounded basis ticked up modestly to 6.45% from 6.42% despite a decline the labor force participation rate."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 31,
+      "snapshot_actual": 6.4
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Net Change in Employment",
+        "period": "Aug"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "8월 감소는 노동수요의 광범위한 붕괴보다는 최근 반등 모멘텀의 약화로 본다. 임금 둔화와 남아 있는 유휴는 BoC 동결을 지지한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "6e007e1712af7f66da422fa3b1015f14ac3bafccaa6c3ede9a812457d3ae6f85",
+          "page": 1,
+          "quote": "Still, total employment remained 1.0% above its year-ago level, suggesting that the August decline reflected a loss of momentum rather than a broader deterioration in labor demand."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 30,
+      "snapshot_actual": -41.7
+    },
+    {
+      "match": {
+        "country": "Canada",
+        "date": "2026-09-04",
+        "time": "21:30",
+        "event": "Unemployment Rate",
+        "period": "Aug"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "8월 감소는 노동수요의 광범위한 붕괴보다는 최근 반등 모멘텀의 약화로 본다. 임금 둔화와 남아 있는 유휴는 BoC 동결을 지지한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "6e007e1712af7f66da422fa3b1015f14ac3bafccaa6c3ede9a812457d3ae6f85",
+          "page": 1,
+          "quote": "Still, total employment remained 1.0% above its year-ago level, suggesting that the August decline reflected a loss of momentum rather than a broader deterioration in labor demand."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 31,
+      "snapshot_actual": 6.4
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-08",
+        "time": "08:50",
+        "event": "GDP Annualized SA QoQ",
+        "period": "2Q F"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "2분기 실질 GDP 연율이 1.1%에서 1.3%로 소폭 상향될 것을 예상했다. 파일의 확정치 1.4%는 이 사전 예상보다 0.1%p 높지만, 이를 GS의 발표 후 평가로 취급하지 않는다.",
+      "limitation": "보고서의 사전 전망이며 실제 발표 후 코멘트는 미확보. 헤드라인 연율만으로 민간수요 구성을 판단하지 않는다.",
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 1,
+          "quote": "We expect the Q2 real GDP growth to be revised up slightly, to +1.3% qoq annualized from +1.1% in the preliminary reading."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 39,
+      "snapshot_actual": 1.4
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-08",
+        "time": "08:30",
+        "event": "Labor Cash Earnings YoY",
+        "period": "Jul"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "7월 명목 현금급여 +3.6%를 예상했다. 파일 실제값 +4.7%는 이를 웃돌지만, 보너스·기본급·실질임금을 나눠 지속성을 확인해야 한다.",
+      "limitation": "본문의 6월 +4.8%와 같은 보고서 표의 +4.0%가 다르다. 종전·수정치는 ecocal의 3.4%·4.0%를 그대로 보존했다.",
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 1,
+          "quote": "We expect nominal cash wage growth to slow to +3.6% yoy in July, from +4.8% in June which was pushed up by the contribution of bonuses, but to maintain high growth of over 3%."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 38,
+      "snapshot_actual": 4.7
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-11",
+        "time": "08:50",
+        "event": "PPI MoM",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "8월 국내 기업물가를 전월비 +0.1%, 전년비 +7.5%로 예상한다. 파일 컨센서스는 각각 0.0%, 7.4%이며 실제값은 미수록이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 1,
+          "quote": "We expect the domestic corporate goods price index (CGPI) to continue a slight increase of +0.1% mom in August (July: +0.1%), but to accelerate further in year-on-year terms to +7.5% in August from +7.2% in July."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 70,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-11",
+        "time": "08:50",
+        "event": "PPI YoY",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "8월 국내 기업물가를 전월비 +0.1%, 전년비 +7.5%로 예상한다. 파일 컨센서스는 각각 0.0%, 7.4%이며 실제값은 미수록이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 1,
+          "quote": "We expect the domestic corporate goods price index (CGPI) to continue a slight increase of +0.1% mom in August (July: +0.1%), but to accelerate further in year-on-year terms to +7.5% in August from +7.2% in July."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 71,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Russia",
+        "date": "2026-09-11",
+        "time": "19:30",
+        "event": "Key Rate",
+        "period": "Sep 11"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "9월 11일 CBR 25bp 인하로 13.75%를 예상한다. 7월 회의 이후 물가 안정과 8월 가계 기대인플레이션 하락이 근거이며 파일 컨센서스 14% 동결과 다르다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "d9513f087ba0624bb88f05a5bb4132d7dca6b0e9ee05ef5af51c3df1aa8062e0",
+          "page": 1,
+          "quote": "In Russia, we expect the CBR to cut 25bp to +13.75% (consensus: +14.00%), as the stabilisation in inflation since the July meeting and the fall in households’ inflation expectations in August should allow the Bank to continue its easing cycle."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 78,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Russia",
+        "date": "2026-09-12",
+        "time": "01:00",
+        "event": "CPI YoY",
+        "period": "Aug"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "8월 CPI 전년비 약 6.3%를 예상한다. 연료시장 차질에도 보조금·배급 등 조치가 소비자가격 전가를 일부 제한할 것으로 본다.",
+      "limitation": "현지 금요일 발표와 파일의 토요일 새벽 표시는 시간대 차이 가능성이 있다. 파일 시간대는 확인되지 않았다.",
+      "evidence": [
+        {
+          "doc_id": "d9513f087ba0624bb88f05a5bb4132d7dca6b0e9ee05ef5af51c3df1aa8062e0",
+          "page": 1,
+          "quote": "In Russia, we and consensus expect headline inflation to increase by 0.3pp to +6.3%yoy. While fuel-market disruptions persist, the pass-through to consumer prices should be partly contained by policy measures, including refinery subsidies and rationing."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 86,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Italy",
+        "date": "2026-09-03",
+        "time": "16:45",
+        "event": "S&P Global Italy Composite PMI",
+        "period": "Aug"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "8월 PMI가 시사하는 이탈리아·독일 성장 속도는 연율 약 1%다. 유로존 보고서 안에서 해당 국가를 직접 언급한 분석이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "e8ca17f2b83ab99df2c372540d5fd13974fb08e983e18e04f135d771e42872a6",
+          "page": 1,
+          "quote": "In Italy and Germany, the survey implies growth running at around a 1% ar pace."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 12,
+      "snapshot_actual": 53.6
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-03",
+        "time": "16:55",
+        "event": "S&P Global Germany Composite PMI",
+        "period": "Aug F"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "8월 PMI가 시사하는 이탈리아·독일 성장 속도는 연율 약 1%다. 유로존 보고서 안에서 해당 국가를 직접 언급한 분석이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "e8ca17f2b83ab99df2c372540d5fd13974fb08e983e18e04f135d771e42872a6",
+          "page": 1,
+          "quote": "In Italy and Germany, the survey implies growth running at around a 1% ar pace."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 16,
+      "snapshot_actual": 51.8
+    },
+    {
+      "match": {
+        "country": "France",
+        "date": "2026-09-03",
+        "time": "16:50",
+        "event": "S&P Global France Composite PMI",
+        "period": "Aug F"
+      },
+      "house": "JPM",
+      "kind": "reaction",
+      "summary": "프랑스는 정치 불확실성의 압박을 받는 약한 부분이다. PMI가 3분기 약 0.7% 연율 성장을 시사하지만 최근 PMI가 성장을 과대예측해 실제 모멘텀이 더 약할 수 있다고 본다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "e8ca17f2b83ab99df2c372540d5fd13974fb08e983e18e04f135d771e42872a6",
+          "page": 1,
+          "quote": "The only soft spot is France, which remains under pressure from political uncertainty. For France, the survey is consistent with more modest growth of about 0.7% ar in 3Q, but growth could be running even softer given that the French PMI has in fact over-predicted growth in recent quarters."
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 14,
+      "snapshot_actual": 48.5
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-08",
+        "time": "08:50",
+        "event": "GDP Annualized SA QoQ",
+        "period": "2Q F"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "2분기 GDP 확정치의 사전 전망은 연율 1.9%다. 파일의 실제값 1.4%는 이 예상보다 낮지만 HSBC의 발표 후 해석은 아직 확인하지 못했다.",
+      "limitation": "캘린더의 명시적 HSBC 전망 열. 경제적 해석은 표에 없음.",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "Tuesday, 8 September Japan 00:50 GDP (Q2, final) % q-o-q saar 1.1 1.9"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 39,
+      "snapshot_actual": 1.4
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-07",
+        "time": "15:00",
+        "event": "Industrial Production SA MoM",
+        "period": "Jul"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "7월 독일 생산의 사전 전망은 전월비 +0.8%, 전년비 +0.7%였다. 파일의 -1.1%·-1.6%는 모두 하회하나 이 자료는 발표 전 수치 전망이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "Germany 07:00 Industrial production (Jul) % m-o-m sa/y-o-y wda 0.2/-0.1 0.8/0.7"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 36,
+      "snapshot_actual": -1.1
+    },
+    {
+      "match": {
+        "country": "Germany",
+        "date": "2026-09-07",
+        "time": "15:00",
+        "event": "Industrial Production WDA YoY",
+        "period": "Jul"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "7월 독일 생산의 사전 전망은 전월비 +0.8%, 전년비 +0.7%였다. 파일의 -1.1%·-1.6%는 모두 하회하나 이 자료는 발표 전 수치 전망이다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "Germany 07:00 Industrial production (Jul) % m-o-m sa/y-o-y wda 0.2/-0.1 0.8/0.7"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 37,
+      "snapshot_actual": -1.6
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-10",
+        "time": "21:30",
+        "event": "PPI Final Demand MoM",
+        "period": "Aug"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "8월 미국 최종수요 PPI는 전월비 +0.4%, 전년비 +5.3%를 예상한다. 파일 실제값은 아직 비어 있다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "US 13:30 PPI final demand (Aug) % m-o-m/y-o-y 0.0/4.7 0.4/5.3"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 63,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-10",
+        "time": "21:30",
+        "event": "PPI Final Demand YoY",
+        "period": "Aug"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "8월 미국 최종수요 PPI는 전월비 +0.4%, 전년비 +5.3%를 예상한다. 파일 실제값은 아직 비어 있다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "US 13:30 PPI final demand (Aug) % m-o-m/y-o-y 0.0/4.7 0.4/5.3"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 65,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-10",
+        "time": "23:00",
+        "event": "Existing Home Sales",
+        "period": "Aug"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "8월 기존주택판매 사전 전망은 연율 401만 건이다. 파일 컨센서스는 398만 건으로 보고서 작성 당시 컨센서스 399만 건과 시점 차이가 있다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 2,
+          "quote": "US 15:00 Existing home sales Millions, annual rate Aug 4.06 4.01 3.99"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 68,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-10",
+        "time": "23:00",
+        "event": "Wholesale Inventories MoM",
+        "period": "Jul F"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "7월 도매재고 확정치를 전월비 1.2%로 예상한다. 파일의 사전 컨센서스 1.3%와 구분하며 GDP 재고 기여는 별도 계산이 필요하다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 2,
+          "quote": "US 15:00 Wholesale inventories % m-o-m Jul, final 1.3 1.2 -"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 69,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-11",
+        "time": "23:00",
+        "event": "U. of Mich. Sentiment",
+        "period": "Sep P"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "9월 미시간대 소비심리 속보치를 50.9로 예상한다. 파일 컨센서스는 51.0이며 아직 실제값은 없다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 2,
+          "quote": "US 15:00 University of Michigan consumer sentiment Index Sep, flash 51.7 50.9 51.0"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 83,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Russia",
+        "date": "2026-09-11",
+        "time": "19:30",
+        "event": "Key Rate",
+        "period": "Sep 11"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "러시아 정책금리 13.75%를 예상한다. 현재 파일 컨센서스 14%보다 25bp 낮은 수치이며 실제 결정은 미수록이다.",
+      "limitation": "표의 HSBC 전망으로, 인하 근거 문장은 이 페이지에 없음.",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 1,
+          "quote": "11:30 Russia Key rate decision (%) 14.00 - 13.75"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 78,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-11",
+        "time": "21:30",
+        "event": "CPI YoY",
+        "period": "Aug"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "8월 헤드라인 CPI 전년비 3.4%를 예상한다. 전월비 전망은 0.4%로 별도 수치다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 2,
+          "quote": "US 13:30 CPI % m-o-m/y-o-y Aug 0.1/3.4 0.4/3.4 0.4/3.4"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 81,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "United States",
+        "date": "2026-09-11",
+        "time": "21:30",
+        "event": "Core CPI YoY",
+        "period": "Aug"
+      },
+      "house": "HSBC",
+      "kind": "preview",
+      "summary": "8월 근원 CPI 전년비 2.4%를 예상한다. 전월비 0.2% 전망과 구별한다.",
+      "limitation": "",
+      "evidence": [
+        {
+          "doc_id": "b8ae7891d7cde58ff594894bd1a43e0e4ed9144327cc9fa5f9c5e5f03ac3a354",
+          "page": 2,
+          "quote": "US 13:30 Core CPI % m-o-m/y-o-y Aug 0.2/2.5 0.2/2.4 0.2/2.4"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 82,
+      "snapshot_actual": "#N/A"
+    },
+    {
+      "match": {
+        "country": "Japan",
+        "date": "2026-09-08",
+        "time": "08:50",
+        "event": "BoP Current Account Balance",
+        "period": "Jul"
+      },
+      "house": "GS",
+      "kind": "preview",
+      "summary": "7월 경상수지 사전 전망은 1.80조 엔(1,800십억 엔)이다. 파일 실제값 2,988.9십억 엔보다 낮은 예상이며 흑자 구성에 대한 사후 평가는 이 표에 없다.",
+      "limitation": "표의 GS 열을 확인했으며 조 엔과 파일 b(십억 엔)를 구별했다.",
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 2,
+          "quote": "8:50 JP Balance of Payments (Jul) Current account +¥1.80 tn +¥2.85 tn -¥92.3 bn"
+        }
+      ],
+      "reviewed_on": "2026-09-11",
+      "source_workbook_row": 42,
+      "snapshot_actual": 2988.9
+    }
+  ],
+  "views": [
+    {
+      "view_id": "calendar-454b35364729-US-growth.trend",
+      "house": "GS",
+      "country": "US",
+      "track": "growth.trend",
+      "effective_date": "2026-09-03",
+      "summary": "7월 무역수지 등을 반영해 3분기 GDP 추적치를 연율 2.5%로 0.2%p 낮췄다.",
+      "watch": [
+        "US_GDP",
+        "US_CAPEX"
+      ],
+      "scope": "country_research",
+      "prior_view_id": null,
+      "assumptions": [],
+      "analyst_questions": [],
+      "limitations": [
+        "이번 대시보드에서 보강한 보고서 근거. 기존 IB DB 기록은 보존."
+      ],
+      "evidence": [
+        {
+          "doc_id": "454b353647299d698251452f61c4252de1923ebbed40bd3d763f60b604ab5897",
+          "page": 1,
+          "quote": "We lowered our Q3 GDP tracking estimate by 0.2pp to +2.5% (quarter-over-quarter annualized)."
+        }
+      ]
+    },
+    {
+      "view_id": "calendar-5d7f17013bce-US-growth.trend",
+      "house": "JPM",
+      "country": "US",
+      "track": "growth.trend",
+      "effective_date": "2026-09-04",
+      "summary": "3분기 GDP 성장률 연율 2.75%라는 견조한 전망을 유지한다.",
+      "watch": [
+        "US_GDP",
+        "US_PAYROLLS"
+      ],
+      "scope": "country_research",
+      "prior_view_id": null,
+      "assumptions": [],
+      "analyst_questions": [],
+      "limitations": [
+        "이번 대시보드에서 보강한 보고서 근거. 기존 IB DB 기록은 보존."
+      ],
+      "evidence": [
+        {
+          "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+          "page": 1,
+          "quote": "We continue to expect a solid 2.75% GDP growth outcome this quarter."
+        }
+      ]
+    },
+    {
+      "view_id": "calendar-80c8b8024ad7-JP-growth.trend",
+      "house": "GS",
+      "country": "JP",
+      "track": "growth.trend",
+      "effective_date": "2026-09-04",
+      "summary": "2분기 속보치에서 민간소비·설비투자가 모두 감소해 민간 내수의 약함을 지적했다. 확정치 상향을 예상해도 민간수요 구성을 별도로 본다.",
+      "watch": [
+        "JP_GDP",
+        "JP_CONSUMPTION",
+        "JP_WAGES"
+      ],
+      "scope": "country_research",
+      "prior_view_id": null,
+      "assumptions": [],
+      "analyst_questions": [],
+      "limitations": [
+        "이번 대시보드에서 보강한 보고서 근거. 기존 IB DB 기록은 보존."
+      ],
+      "evidence": [
+        {
+          "doc_id": "80c8b8024ad71e120b9f5e5d192cf84d666eeb0f30b0ab501c0c1bfee7d4ae04",
+          "page": 2,
+          "quote": "Private consumption and capex declined, highlighting the weakness of private domestic demand."
+        }
+      ]
+    }
+  ]
+}

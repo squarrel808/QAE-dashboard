@@ -13,6 +13,7 @@ const TABS = [
   { href: '/consensus', label: 'Consensus' },
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
+  { href: '/market-rotation', label: 'Market Rotation' },
 ]
 
 export default function NavTabs() {

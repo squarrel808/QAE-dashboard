@@ -1,0 +1,54 @@
+{
+  "run_id": "20260915_220051_c1a870",
+  "mode": "daily",
+  "start": "2026-09-09",
+  "end": "2026-09-15",
+  "started": "2026-09-15T22:01:05.366556+09:00",
+  "finished": null,
+  "overall_status": "running",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_220051_c1a870.log",
+  "houses": {
+    "BofA": {
+      "status": "complete",
+      "counts": {
+        "discovered": 963,
+        "in_range": 32,
+        "already_saved": 4,
+        "attempted": 28,
+        "downloaded": 28,
+        "outside_range": 931
+      },
+      "coverage_guard_version": 1
+    },
+    "JPM": {
+      "status": "complete",
+      "counts": {
+        "discovered": 75,
+        "in_range": 42,
+        "attempted": 37,
+        "downloaded": 37,
+        "already_saved": 5,
+        "outside_range": 33
+      },
+      "coverage_guard_version": 1
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Failed PDFs or unparseable publication dates remain.",
+      "counts": {
+        "discovered": 143,
+        "in_range": 102,
+        "attempted": 67,
+        "downloaded": 61,
+        "already_saved": 35,
+        "failed": 6,
+        "outside_range": 41
+      }
+    },
+    "Citi": {
+      "status": "running",
+      "counts": {}
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "run_id": "20260915_212916_a7e458",
+  "mode": "daily",
+  "start": "2026-09-09",
+  "end": "2026-09-15",
+  "houses": [
+    "BofA",
+    "JPM",
+    "GS",
+    "Citi"
+  ],
+  "port": 9223,
+  "profile": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\chrome-profile",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "started": "2026-09-15T21:29:16.458632+09:00",
+  "status": "running",
+  "scheduled": false,
+  "collector_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_212916_a7e458.log",
+  "collector_report": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-15\\run_20260915_212916_a7e458.json",
+  "console_log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\daily\\2026-09-15\\daily_20260915_212916_a7e458.console.log",
+  "updated": "2026-09-15T21:31:06.731484+09:00",
+  "disk_space": {
+    "checked": "2026-09-15T21:31:06.731116+09:00",
+    "minimum_free_gib": 5,
+    "volumes": [
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector",
+        "free_bytes": 36011978752
+      },
+      {
+        "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+        "free_bytes": 36011978752
+      }
+    ]
+  },
+  "worker_pid": 20716
+}

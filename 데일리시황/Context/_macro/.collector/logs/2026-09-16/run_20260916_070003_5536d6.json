@@ -1,0 +1,64 @@
+{
+  "run_id": "20260916_070003_5536d6",
+  "mode": "daily",
+  "start": "2026-09-15",
+  "end": "2026-09-15",
+  "started": "2026-09-16T07:00:20.104806+09:00",
+  "finished": "2026-09-16T07:05:54.067243+09:00",
+  "overall_status": "incomplete",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\.collector\\logs\\2026-09-16\\run_20260916_070003_5536d6.log",
+  "houses": {
+    "BofA": {
+      "status": "complete",
+      "counts": {
+        "discovered": 763,
+        "in_range": 3,
+        "attempted": 2,
+        "downloaded": 2,
+        "outside_range": 760,
+        "already_saved": 1
+      },
+      "coverage_guard_version": 1
+    },
+    "JPM": {
+      "status": "complete",
+      "counts": {
+        "discovered": 50,
+        "in_range": 9,
+        "attempted": 3,
+        "downloaded": 3,
+        "already_saved": 6,
+        "outside_range": 41
+      },
+      "coverage_guard_version": 1
+    },
+    "GS": {
+      "status": "complete",
+      "counts": {
+        "discovered": 50,
+        "outside_range": 35,
+        "in_range": 15,
+        "already_saved": 14,
+        "no_original_pdf": 1
+      },
+      "coverage_guard_version": 1
+    },
+    "Citi": {
+      "status": "complete",
+      "counts": {
+        "discovered": 97,
+        "in_range": 9,
+        "already_saved": 9,
+        "outside_range": 88
+      },
+      "coverage_guard_version": 1
+    },
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {},
+      "connection_lost": false
+    }
+  }
+}

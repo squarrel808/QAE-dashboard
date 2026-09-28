@@ -1,0 +1,322 @@
+[
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_Asia Economics Week Ahead_ 21– 27 September__bfc457549bcf.pdf",
+    "house": "Citi",
+    "bytes": 190964,
+    "mtime_ns": 1789683180092813500,
+    "sha256": "556823e8f0e871d4e64964e043062e510e793fb153d8fc9c2fa9df77508e4f00",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_Brazil Economics_ Copom cut the Selic by 25bps and kept the door__3b006568a33d.pdf",
+    "house": "Citi",
+    "bytes": 156369,
+    "mtime_ns": 1789683240386547300,
+    "sha256": "a87d6e79a70b6070a334e06bfd6eb00dfbda27f159ff0f6f1a51e600e1324098",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_India Economics_ Enhancing Savings and Investments__870b0df8b72d.pdf",
+    "house": "Citi",
+    "bytes": 489289,
+    "mtime_ns": 1789683198592395600,
+    "sha256": "360d0969e52b1b5c8ffe073707a1b7399ecc2ddc59137fb73eb6c4e4d70e1fec",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_US Economics_ FOMC – Hawkish 25bp rate hike__77be92eb49b8.pdf",
+    "house": "Citi",
+    "bytes": 188236,
+    "mtime_ns": 1789683281007993900,
+    "sha256": "2753726bb2e31b609e29965c594283052d3da740081efa1cc1f725854028bace",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_US Economics_ Housing activity to weaken further__5a97fa87c217.pdf",
+    "house": "Citi",
+    "bytes": 185870,
+    "mtime_ns": 1789683138888767300,
+    "sha256": "641766cc96a1c548e4ae0d755b4cd41dc3af51db4ed19d920020820ab00891db",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_US Economics_ Jobless claims stay low__f4ca51ad2057.pdf",
+    "house": "Citi",
+    "bytes": 147492,
+    "mtime_ns": 1789683120634420900,
+    "sha256": "5ea9015d6c426efcdeab271f1f29f58209944a02dc1d31c6c9059147c860d4de",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_US Economics_ The Daily Update - Pricing-in a hike cycle__6913dc41752c.pdf",
+    "house": "Citi",
+    "bytes": 189827,
+    "mtime_ns": 1789683158884187900,
+    "sha256": "a0e0ca27a2dd6f42a4b6aec6fe8508b190d0e2a255f9e30567bbb30373471ed7",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_モーニング経済メモ_ FOMCレビュー：タカ派的な25bp利上げ__6751dc0f74c4.pdf",
+    "house": "Citi",
+    "bytes": 417923,
+    "mtime_ns": 1789683257631203200,
+    "sha256": "c1897c8e45310759ddf3f9491c5562316b065f77b3fba11205c3d6d5667b7e26",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\Citi\\20260917_モーニング経済メモ_ 米小売売上高： 底堅い個人消費を示す__d5e8b8d529fe.pdf",
+    "house": "Citi",
+    "bytes": 339224,
+    "mtime_ns": 1789683220152552600,
+    "sha256": "3afc490e1fb99ff2cbef5ac721b6c0d736e4b2daa8c123ee73285516dbc948e3",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Brazil Copom_ 25bp Selic Cut to 13.75%; Repeats Agnostic Forward__3313b038e0c7.pdf",
+    "house": "GS",
+    "bytes": 403855,
+    "mtime_ns": 1789682955406358900,
+    "sha256": "6c8f9a7a1cb7502801f59408701eed95c7d2fdce3e52c6d3055329427ef0da08",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Colombia_ Very Weak Core Retail Sales and Flat Manufacturing in __e409f72db3b8.pdf",
+    "house": "GS",
+    "bytes": 264434,
+    "mtime_ns": 1789683064903746900,
+    "sha256": "ff0bca49544d26e02d36b48247dc9c729e71feb7d140aa619a5596db4b357411",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Euro Area_ Final Inflation Details Show Easing Underlying Moment__812b801e4660.pdf",
+    "house": "GS",
+    "bytes": 707262,
+    "mtime_ns": 1789682551132857500,
+    "sha256": "026fe43c3eca347d7d0e9d306000a6291e8baa6dd7795a3e07bfb1e67e52fd59",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_European Economics Analyst_ Switzerland—No Case for Hikes, As In__53b36c5e3d02.pdf",
+    "house": "GS",
+    "bytes": 2939317,
+    "mtime_ns": 1789683073949333200,
+    "sha256": "0916982f2c2590635fd8a29a13691210952076bb6f0b8d0c4cee35791f4d783c",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Global Markets Daily_ High Energy Carrying Returns in EM Frontie__3fa2553fbce3.pdf",
+    "house": "GS",
+    "bytes": 755315,
+    "mtime_ns": 1789682821189078600,
+    "sha256": "a12f5ea62bfad8c484c243933cfdf5f90aa3ce70870f2bef7de0842312110374",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Hong Kong_ Hong Kong's First Five Year Plan_ Identifying Sources__96cdbb23b6c6.pdf",
+    "house": "GS",
+    "bytes": 435474,
+    "mtime_ns": 1789682889184779500,
+    "sha256": "10bd4e94410267a3bb476518990de9ec44b0d15317e2044e9e96e9d8a746fbd8",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Japan Matters_ BoJ Preview & Implications for Banks [Replay]__9d4ce22d4ac9.pdf",
+    "house": "GS",
+    "bytes": 243675,
+    "mtime_ns": 1789682834400360700,
+    "sha256": "6371ae52a59295298f3dc514772a699b5856ed5988504985ecce858b70d20da1",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_LATAM Today_ September 17, 2026__62b3bbab43f4.pdf",
+    "house": "GS",
+    "bytes": 355273,
+    "mtime_ns": 1789682814355748000,
+    "sha256": "1c1e5192715fd72feb1f1616cad679c89528900f27640359e097c7d62ce11219",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_New Zealand_ GDP_ Growth slows as expected in 2Q2026__a8c3389584ed.pdf",
+    "house": "GS",
+    "bytes": 398584,
+    "mtime_ns": 1789682949565699200,
+    "sha256": "e9d4f5993559aa906faf39e78f5f306bb125185a6473dd21ef242fe4ed9c4076",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_Taiwan_ CBC on Hold as Expected on Benign Inflation Outlook__bd9fe1af31dc.pdf",
+    "house": "GS",
+    "bytes": 233363,
+    "mtime_ns": 1789682807870497500,
+    "sha256": "18ca3f8f00154e7a56b81f06cb000155bf66b5a1ac048f3388638e603d383fbe",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_TIC Data_ Continued Purchases of US Equities in July__1e5a8ffbc104.pdf",
+    "house": "GS",
+    "bytes": 469505,
+    "mtime_ns": 1789682960962072200,
+    "sha256": "ed407d9c08528c964a752cafa3c9e21e3d7fc58276cb5f747f8b7f9a33075f31",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_US Daily_ September FOMC Recap_ Hawkish Dots Show Two-Hike Basel__fbb530aeacf5.pdf",
+    "house": "GS",
+    "bytes": 310499,
+    "mtime_ns": 1789682943746964700,
+    "sha256": "746acae4ec7c44064400855ec1ae5be9bc1f97b534653a71f2cb2248f6135492",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\GS\\20260917_USA_ Philly Fed Manufacturing Declines Less Than Expected; Housi__2c2ea7dbe017.pdf",
+    "house": "GS",
+    "bytes": 310561,
+    "mtime_ns": 1789682611673809600,
+    "sha256": "25d34f23252b95d69cfcc8d8bcedeb3942bb35717ca21474f2e46b133765e187",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260917_BoE View Change_Irresistible forces__9fda3e5c1a61.pdf",
+    "house": "HSBC",
+    "bytes": 481681,
+    "mtime_ns": 1789683567782729800,
+    "sha256": "8568f1d6bfd06a62ad3af76123b9c24f56e76f25eea6bee504548165230d8d31",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260917_Czechia (CNB review)_Hold today, hike discussion in November__8057fc9e7aa4.pdf",
+    "house": "HSBC",
+    "bytes": 219363,
+    "mtime_ns": 1789683464685821100,
+    "sha256": "e9fc219ae576bfa8d22f939cc0fb51c8a3a7d503db50800e44889dca195aadf0",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260917_Downunder Digest_Housing price slump to weaken growth__883f6d895f5b.pdf",
+    "house": "HSBC",
+    "bytes": 442781,
+    "mtime_ns": 1789683684642127200,
+    "sha256": "429fbc2fb7e651b2e4e4d9379321f26ced426b7a02f7897d6f7f1552d9dc0634",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260917_Eurozone inflation briefing_Brace for September__1339f6eebfe4.pdf",
+    "house": "HSBC",
+    "bytes": 765397,
+    "mtime_ns": 1789683313495113200,
+    "sha256": "8c0e34fdf71ea4b816fbf5ecb358a216faf74746a1a379862a00e1425e29ae10",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\20260917_Türkiye_Reserves update__f2fc3ad4f325.pdf",
+    "house": "HSBC",
+    "bytes": 266941,
+    "mtime_ns": 1789683515848536000,
+    "sha256": "591c1fabacf155a55f1621546f147bb708320f3f7a886a04d37dfba98fcb3765",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_BoE_ On hold but gearing up to hike__b191647b1aa8.pdf",
+    "house": "JPM",
+    "bytes": 226322,
+    "mtime_ns": 1789682501306995800,
+    "sha256": "8927b631955b4f2fb03a217290754b6366cbcd322d96b30583d533e299bd3365",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_China alt-data trackers chartpack (Series 63) _ Exports the brig__901728330b66.pdf",
+    "house": "JPM",
+    "bytes": 2698351,
+    "mtime_ns": 1789682478096692600,
+    "sha256": "88c6a8be7e33b85ffff4712bf6782f6ba7c1038731f41f29401548b6dbc98ec6",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_CNB stays hawkish, but still far from market pricing__af1457439a2f.pdf",
+    "house": "JPM",
+    "bytes": 324184,
+    "mtime_ns": 1789682485515561100,
+    "sha256": "3932a175621e7f7a6709b6e24df809926f42464ff437531bbfc22c21422324af",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_Euro area_ Revising up inflation further__ed2ee85bb2de.pdf",
+    "house": "JPM",
+    "bytes": 1087594,
+    "mtime_ns": 1789682506304471900,
+    "sha256": "7fc1b9148a2fbaa07f138c8cd581ba6e268e419dd81c120a2a135391d75f14e0",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_EU_ von der Leyen reiterates existing policy ambitions__a151a67d3d5d.pdf",
+    "house": "JPM",
+    "bytes": 223172,
+    "mtime_ns": 1789682482333530700,
+    "sha256": "8ceb71fa809fbe6798ad8fd978b15b2966802056aa380d37af8172e5e7b5acaf",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_Hong Kong’s first Five-Year Plan and 2026 Policy Address _ From __14efdfc5033c.pdf",
+    "house": "JPM",
+    "bytes": 438467,
+    "mtime_ns": 1789682517325453000,
+    "sha256": "977dda0ed2ae4f32287f54f3421330f05b8f9dd5cb0c8e872aacc8bffbb84137",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_Norway_ RN Survey shows no major surprises__8e78760ebd8e.pdf",
+    "house": "JPM",
+    "bytes": 717670,
+    "mtime_ns": 1789682520958145400,
+    "sha256": "b12338d32a2f22056cbe8b52f5ff1f4ee9d2ee2b3a7fffc975ca9cecee1763ce",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_NZ GDP_ On track__ac0650bfc964.pdf",
+    "house": "JPM",
+    "bytes": 404350,
+    "mtime_ns": 1789682524876330500,
+    "sha256": "6afbef260f0e4d11f745f5bdea97c871cabf95114102bf0946213e80965dc6d8",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_Singapore_ Life in the Fast Lane _ Tech exports show no signs of__daf828c72b95.pdf",
+    "house": "JPM",
+    "bytes": 605525,
+    "mtime_ns": 1789682513438784400,
+    "sha256": "d1b1689daa19ec28c48d791c0d0828ee15e82629baafe8af19524cc25769fff9",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_Taiwan_ CBC holds in 3Q, with a hawkish tilt _ Inflation the mai__c6fb04a3c324.pdf",
+    "house": "JPM",
+    "bytes": 905333,
+    "mtime_ns": 1789682493983372700,
+    "sha256": "a8e840a9decde7a43933ca7c47fd5b61d969031e6caee17cd40ec10edeee2b41",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_US housing wrap_ Starts, pending home sales remain soft__96fb20e14ff3.pdf",
+    "house": "JPM",
+    "bytes": 650521,
+    "mtime_ns": 1789682489393472700,
+    "sha256": "5aff80dc3fd324bbf82b789ed4aa336d4df0aba94196273934af56d33c090254",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_US_ Jobless claims keep pointing to lower unemployment__a78cf15c8917.pdf",
+    "house": "JPM",
+    "bytes": 385732,
+    "mtime_ns": 1789682510093879300,
+    "sha256": "4151d6b219a363bc09ceb8066569d5487e03c4945601066bc5694b4c7e88ce95",
+    "stable": true
+  },
+  {
+    "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\20260917_US_ Philly survey points to strong activity, firmer prices__f23c2e493180.pdf",
+    "house": "JPM",
+    "bytes": 465167,
+    "mtime_ns": 1789682498111278100,
+    "sha256": "ff6b91e4ca8d4dae36223c9e3fabad8a0dfb62b55cbb1e86460851e04f1e5b8a",
+    "stable": true
+  }
+]

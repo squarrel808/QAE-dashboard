@@ -1,0 +1,300 @@
+{
+  "requested_at": "2026-09-11T16:22:31+09:00",
+  "mode": "tables_and_existing_evidence",
+  "inputs": {
+    "bquant": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\Bquant_All_19_Raw_Refreshed12시 (5).xlsb",
+      "name": "Bquant_All_19_Raw_Refreshed12시 (5).xlsb",
+      "sha256": "1357db1b4599ab9b9c205ae79c71ec02214ea76122e37b8dea3d4b86c8607306",
+      "modified": "2026-09-10T08:41:05+09:00"
+    },
+    "growth": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Growth Consesus_수정 (2).xlsb",
+      "name": "ECFC_Growth Consesus_수정 (2).xlsb",
+      "sha256": "012d49f5e08cebb575c56808128989fbfdde3f61bcfb8558c57822f3657389ae",
+      "modified": "2026-09-10T08:41:05+09:00"
+    },
+    "inflation": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ECFC_Inflation Consesus_수정 (2).xlsb",
+      "name": "ECFC_Inflation Consesus_수정 (2).xlsb",
+      "sha256": "94bed75fd1c9ed5a9d4b2acb474bfa16f6fb70c2723c3ca436b311c41840d72a",
+      "modified": "2026-09-10T08:41:06+09:00"
+    },
+    "weco": {
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (2).xlsx",
+      "name": "ecocal_fipjgrge (2).xlsx",
+      "sha256": "475f068c06d8b66910ab9cd2b23e633666f0488253a8e9f4fbbde1327df6228b",
+      "modified": "2026-09-10T08:41:07+09:00"
+    }
+  },
+  "new_ai_interpretations": false,
+  "markets": {
+    "1D": [
+      {
+        "key": "STOXX600",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-02",
+          "1M": "2026-08-07",
+          "3M": "2026-06-09",
+          "6M": "2026-03-09"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 1.0,
+          "3M": 1.0,
+          "6M": 0.9966666666666667
+        },
+        "sessionDates": [
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 600
+      },
+      {
+        "key": "SP500",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-01",
+          "1M": "2026-08-07",
+          "3M": "2026-06-09",
+          "6M": "2026-03-09"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 1.0,
+          "3M": 0.9980119284294234,
+          "6M": 0.9960238568588469
+        },
+        "sessionDates": [
+          "2026-08-26",
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 503
+      },
+      {
+        "key": "TOPIX",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-02",
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "sessionDates": [
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 1635
+      }
+    ],
+    "5D": [
+      {
+        "key": "STOXX600",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-02",
+          "1M": "2026-08-07",
+          "3M": "2026-06-09",
+          "6M": "2026-03-09"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 1.0,
+          "3M": 1.0,
+          "6M": 0.9966666666666667
+        },
+        "sessionDates": [
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 600
+      },
+      {
+        "key": "SP500",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-01",
+          "1M": "2026-08-07",
+          "3M": "2026-06-09",
+          "6M": "2026-03-09"
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": 1.0,
+          "3M": 0.9980119284294234,
+          "6M": 0.9960238568588469
+        },
+        "sessionDates": [
+          "2026-08-26",
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 503
+      },
+      {
+        "key": "TOPIX",
+        "asOf": "2026-09-09",
+        "periodStart": {
+          "1D": "2026-09-08",
+          "5D": "2026-09-02",
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "coverage": {
+          "1D": 1.0,
+          "5D": 1.0,
+          "1M": null,
+          "3M": null,
+          "6M": null
+        },
+        "sessionDates": [
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09"
+        ],
+        "memberCount": 1635
+      }
+    ],
+    "AI": {
+      "asOf": "2026-09-09",
+      "periodStarts": {
+        "1D": "2026-09-08",
+        "5D": "2026-09-01",
+        "1W": "2026-09-02",
+        "1M": "2026-08-07",
+        "3M": "2026-06-09",
+        "6M": "2026-03-09",
+        "YTD": "2025-12-31",
+        "Since 2025-07-01": "2025-07-01"
+      },
+      "stages": 12,
+      "stocks": 73
+    }
+  },
+  "consensus": {
+    "growth": {
+      "미국": "2026-09-10",
+      "영국": "2026-09-10",
+      "일본": "2026-09-10",
+      "독일": "2026-09-10",
+      "프랑스": "2026-09-10",
+      "호주": "2026-09-10",
+      "중국": "2026-09-10",
+      "캐나다": "2026-09-10"
+    },
+    "inflation": {
+      "미국": "2026-09-10",
+      "영국": "2026-09-10",
+      "일본": "2026-09-10",
+      "독일": "2026-09-10",
+      "프랑스": "2026-09-10",
+      "호주": "2026-09-10",
+      "중국": "2026-09-10",
+      "캐나다": "2026-09-10"
+    }
+  },
+  "weco": {
+    "title": "매크로 지표와 IB 해석",
+    "as_of": "2026-09-11",
+    "generated_at": "2026-09-11T16:24:20+09:00",
+    "workbook": "C:\\Users\\infomax\\Documents\\python\\QAE\\____Rawdata___\\ecocal_fipjgrge (2).xlsx",
+    "workbook_name": "ecocal_fipjgrge (2).xlsx",
+    "workbook_sha256": "475f068c06d8b66910ab9cd2b23e633666f0488253a8e9f4fbbde1327df6228b",
+    "workbook_modified": "2026-09-10T08:41:07",
+    "source_db": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\data\\research.sqlite3",
+    "source_date_max": "2026-09-09",
+    "event_count": 136,
+    "country_count": 8,
+    "reported": 51,
+    "missing": 85,
+    "start": "2026-09-03",
+    "end": "2026-09-17",
+    "months": [
+      "2026-09"
+    ],
+    "comment_counts": {
+      "uncovered": 229,
+      "basis": 400,
+      "reaction": 27,
+      "preview": 24
+    },
+    "reviewed_connections": 45,
+    "source_documents": 42,
+    "time_note": "발표시각은 파일 D열 그대로이며 시간대는 파일에 명시되지 않음. 실제값 존재 여부는 H열 기준. 현재 뷰 기반 해석은 사후적 검토이며 당시 이용 가능 정보만 사용한 분석이 아님.",
+    "monthly_note": "월 분류는 발표월 기준. 현재 파일에 없는 월·국가·지표는 만들지 않음. F열 대상 기간과 발표월은 별도로 보존.",
+    "requested_at": "2026-09-11T16:22:31+09:00",
+    "interpretation_mode": "data_and_existing_evidence",
+    "available_at_request": 51
+  },
+  "review_queue": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\WECO\\review_queue.json",
+  "queue_changes": {
+    "new_actual": 51,
+    "revised": 0,
+    "unchanged": 0
+  },
+  "outputs": [
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\Sector_Industry\\sector_1D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\Sector_Industry\\sector_5D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\AI\\ai_1D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\AI\\ai_5D.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\Consensus\\growth.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\Consensus\\inflation.html",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260911_162231_391498\\WECO\\index.html"
+  ]
+}

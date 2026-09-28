@@ -1,0 +1,18 @@
+{
+  "rows_preserved": 136,
+  "unique_events": 136,
+  "columns_preserved": "B:K",
+  "five_houses_per_event": true,
+  "quote_and_file_checks": "passed",
+  "status_counts": {
+    "candidate": 544,
+    "uncovered": 52,
+    "reaction": 27,
+    "basis": 33,
+    "preview": 24
+  },
+  "direct_event_house_connections": 45,
+  "indicator_candidate_documents": 288,
+  "indicator_candidate_pages": 1677,
+  "indicator_search_is_unreviewed": true
+}

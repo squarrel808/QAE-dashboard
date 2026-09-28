@@ -1,0 +1,46 @@
+{
+  "run_id": "20260908_020258_88a9f5",
+  "mode": "backfill",
+  "start": "2026-06-08",
+  "end": "2026-09-08",
+  "output": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated",
+  "houses": {
+    "JPM": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {
+        "discovered": 538,
+        "in_range": 538,
+        "attempted": 467,
+        "downloaded": 466,
+        "already_saved": 71
+      }
+    },
+    "HSBC": {
+      "status": "incomplete",
+      "reason": "Page did not reach the expected state (timeout). Check login or site layout.",
+      "counts": {
+        "discovered": 123,
+        "in_range": 123,
+        "attempted": 61,
+        "downloaded": 38,
+        "already_saved": 41,
+        "failed": 23,
+        "no_original_pdf": 21
+      }
+    },
+    "GS": {
+      "status": "incomplete",
+      "reason": "Locator.count: Target page, context or browser has been closed",
+      "counts": {
+        "discovered": 1424,
+        "in_range": 1424,
+        "attempted": 1307,
+        "downloaded": 1186,
+        "already_saved": 109,
+        "no_original_pdf": 8,
+        "failed": 121
+      }
+    }
+  }
+}

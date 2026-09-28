@@ -1,0 +1,444 @@
+{
+  "source": "C:\\Users\\infomax\\.codex\\attachments\\fb5b94b4-afe9-4207-b103-ef93eec66564\\pasted-text.txt",
+  "note": "사용자가 제공한 Bloomberg 코멘트의 Stocks in Focus, Key Stock Movers, Other Significant Stock Moves 표를 날짜 안에서 중복 제거하고 한국어로 완역한 데이터. 5D BQL 상하위 종목과는 별도 집합이다.",
+  "markets": {
+    "SP500": [
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Hewlett Packard Enterprise",
+        "direction": "상승",
+        "return": "+12.4%",
+        "catalyst": "Oracle의 AI 클라우드 실적이 하이퍼스케일러 설비투자 가속을 확인시켰고, HPE는 전주에 협업 확대를 발표했다.",
+        "readthrough": "하이퍼스케일러의 AI 서버 수요가 견조하다는 신호로, Dell·Nvidia·AMD에도 긍정적이다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Apple",
+        "direction": "상승",
+        "return": "+1.8%",
+        "catalyst": "당일 S&P 500 상승 기여도가 가장 컸고, 다년간의 iPhone 교체 주기와 AI 기능에 관한 애널리스트 코멘트가 부각됐다.",
+        "readthrough": "소비자 하드웨어 수요의 회복력을 보여주며, 폴더블 iPhone 주기가 2027년까지 교체 수요를 연장할 수 있다는 기대다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Oracle",
+        "direction": "하락",
+        "return": "-1.7%",
+        "catalyst": "FQ1 클라우드 인프라 매출은 전년 대비 121% 증가한 74억달러로 예상 71.9억달러를 웃돌고 FY27 EPS 가이던스도 상향했지만, 총마진이 66.3%에서 61%로 하락해 장중 약 8.5% 상승분을 반납했다.",
+        "readthrough": "AI 수요와 6,640억달러 백로그의 전환은 확인됐지만 데이터센터 증설에 따른 마진 압박은 업종 전체의 위험이다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Skyworks Solutions",
+        "direction": "상승",
+        "return": "+7~9%",
+        "catalyst": "CEO가 핵심 합병 진행 상황을 업데이트했고 Qorvo 채권 교환 제안 기한을 연장했다.",
+        "readthrough": "반도체 업계 통합은 이어지고 있지만 합병 실행 위험은 남아 있다. 주가는 2009년 이후 가장 강한 5D 구간을 기록했다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Communication Services",
+        "company": "Alphabet",
+        "direction": "상승",
+        "return": "+2.5%",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 대형 성장주로의 위험선호 회복이 주된 배경이었다.",
+        "readthrough": "커뮤니케이션 서비스 강세는 위험선호 회복과 AI 클라우드·광고 노출을 반영했다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Communication Services",
+        "company": "Meta Platforms",
+        "direction": "상승",
+        "return": "+0.9%",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 섹터 전반의 위험선호 회복에 동참했다.",
+        "readthrough": "광고 수요와 AI 투자 사이클에 대한 시장의 신뢰가 유지됐다는 의미다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Consumer Discretionary",
+        "company": "Amazon",
+        "direction": "상승",
+        "return": "+1.9%",
+        "catalyst": "확인된 단일 기업 촉매는 없었고 위험선호 회복과 AI 클라우드 수요의 긍정적 파급이 반영됐다.",
+        "readthrough": "AWS의 AI 수요와 전자상거래 소비의 회복력을 함께 보여주는 움직임이었다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Consumer Discretionary",
+        "company": "Tesla",
+        "direction": "상승",
+        "return": "+0.7% · 3M -8.9%",
+        "catalyst": "당일 확인된 단일 촉매는 없었고, SpaceX 상장이 Tesla에 부여되던 머스크 프리미엄을 희석한다는 우려가 계속됐다.",
+        "readthrough": "전기차 수요 불확실성과 머스크 프리미엄의 구조적 축소가 중기 부담으로 남아 있다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Consumer Staples",
+        "company": "Kroger",
+        "direction": "하락",
+        "return": "프리마켓 -2.9%",
+        "catalyst": "FY27 연료 제외 동일점포매출 가이던스를 +1~2%에서 +0.2~0.8%로 낮췄고 Q2 매출도 예상에 못 미쳤다.",
+        "readthrough": "소비 물량이 약해지고 필수소비재 업체의 가격결정력이 제한되고 있다는 신호다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Financials",
+        "company": "Ameriprise Financial",
+        "direction": "상승",
+        "return": "+0.7%",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 금리 인상 경로 재가격에 따른 금융주 수급이 반영됐다.",
+        "readthrough": "자산관리 사업의 회복력과 높은 금리 환경의 순이자마진 효과가 우호적이었다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Health Care",
+        "company": "Amgen",
+        "direction": "보합",
+        "return": "0.0% · 9/8 -10%",
+        "catalyst": "Novartis 심혈관 치료제 임상 실패의 여파와 HSBC·BMO의 하향 조정이 계속 부담이 됐다.",
+        "readthrough": "심혈관 치료제 파이프라인 위험이 업종 전체로 번졌고, 헬스케어는 주간 최하위 섹터가 됐다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Energy",
+        "company": "에너지 섹터 프록시",
+        "direction": "상승",
+        "return": "XLE +0.32%",
+        "catalyst": "IEA가 원유 수요 전망을 낮추고 걸프·이란 외교 접촉 소식이 전해졌다.",
+        "readthrough": "유가가 100달러를 웃돌아도 단기 모멘텀은 쉬어갔으며, 에너지는 여전히 3개월 기준 선두였다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Nvidia",
+        "direction": "하락",
+        "return": "장중 저점 약 -2.8% 이하",
+        "catalyst": "Amodei·Altman·Musk의 AI 개발 속도조절론이 매도를 촉발했고, Huang CEO는 All-In Summit에서 공개적으로 반박했다.",
+        "readthrough": "AI 설비투자 사이클의 대표 종목인 만큼 Huang의 반박이 다음 세션 심리를 안정시킬지가 핵심이다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Adobe",
+        "direction": "상승",
+        "return": "+4.4%",
+        "catalyst": "AI 개발 속도가 느려지면 기존 소프트웨어 업체의 교란 위험이 줄어든다는 기대가 반영됐다.",
+        "readthrough": "엔터프라이즈 소프트웨어의 해자와 가격결정력이 다시 평가받았다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Salesforce",
+        "direction": "상승",
+        "return": "+3.7%",
+        "catalyst": "Adobe와 마찬가지로 AI 개발 속도조절의 상대 수혜주로 인식됐다.",
+        "readthrough": "AI 교란 속도가 완만해질 경우 기업용 소프트웨어의 가격결정력과 고객 유지율이 덜 위협받는다는 해석이다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Broadcom",
+        "direction": "하락",
+        "return": "급락 · 추정치",
+        "catalyst": "맞춤형 ASIC과 네트워크 매출이 하이퍼스케일러 AI 설비투자에 연결돼 있어 속도조절 우려의 영향을 받았다.",
+        "readthrough": "AI 인프라 지출이 둔화되면 커스텀 실리콘 수요도 약해질 수 있다는 우려다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Financials",
+        "company": "Bank of America",
+        "direction": "하락",
+        "return": "약 -5.1~-5.7%",
+        "catalyst": "Moynihan CEO가 Q3 투자은행 수수료를 16~18억달러로 제시해 약 20억달러 컨센서스를 밑돌았고, 트레이딩 매출도 전년 대비 거의 보합이라고 설명했다.",
+        "readthrough": "3분기 월가 수익 둔화 위험이 부각되며 대형 은행 실적 기대가 낮아졌다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Financials",
+        "company": "Goldman Sachs",
+        "direction": "하락",
+        "return": "약 -4.0%",
+        "catalyst": "Bank of America의 부진한 사전 가이던스에 동반 매도됐고 7월 이후 최저 종가로 보도됐다.",
+        "readthrough": "Goldman 자체의 Q3 트레이딩·투자은행 수익도 기대에 못 미칠 수 있다는 우려가 반영됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Financials",
+        "company": "Morgan Stanley",
+        "direction": "하락",
+        "return": "약 -3.6%",
+        "catalyst": "Bank of America의 가이던스 충격에 따른 동반 매도였다.",
+        "readthrough": "월가 전반의 Q3 트레이딩·투자은행 수익 기대가 재평가됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Financials",
+        "company": "Enova International",
+        "direction": "하락",
+        "return": "시간외 -17%",
+        "catalyst": "은행 인가 신청을 철회했다.",
+        "readthrough": "핀테크의 은행 전환 과정에 규제 또는 전략적 난관이 있음을 시사하는 개별 기업 리스크다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Consumer Discretionary",
+        "company": "Boot Barn Holdings",
+        "direction": "상승",
+        "return": "시간외 상승",
+        "catalyst": "Q2 EPS 가이던스를 1.65달러, 매출 가이던스를 5.82억달러로 올려 기존 범위 상단에 맞췄다.",
+        "readthrough": "가치지향형 틈새 소비의 회복력을 보여주는 긍정적 예외다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Consumer Discretionary",
+        "company": "Dave & Buster's",
+        "direction": "하락",
+        "return": "시간외 하락",
+        "catalyst": "적자로 전환했고 엔터테인먼트 매출 감소가 이어졌다.",
+        "readthrough": "재량적 오락 지출 압박과 소비자의 절약 성향이 계속되고 있다는 신호다."
+      }
+    ],
+    "STOXX600": [
+      {
+        "date": "2026-09-11",
+        "sector": "Energy",
+        "company": "TotalEnergies",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었다. Brent 반락은 매출에는 부정적이지만 비용발 인플레이션 우려를 낮춘다는 점에서 혼합 신호다.",
+        "readthrough": "EURO STOXX 50의 최대 에너지 종목으로 단기 이익 방향은 유가가 좌우한다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Energy",
+        "company": "Shell",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었다. Brent 반락은 통합 에너지 기업에 혼합 신호다.",
+        "readthrough": "FTSE 100 최대 종목으로 단기 이익의 핵심 변수는 유가다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "ASML Holding",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고, 중국의 일본산 DCS 반덤핑 조치가 반도체 장비 공급망에 간접 부담으로 거론됐다.",
+        "readthrough": "유럽 최대 시총 종목이며 반도체 장비 수요는 AI 설비투자의 핵심 선행지표다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Industrials",
+        "company": "Airbus",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었지만 100달러를 웃도는 유가가 항공사 고객의 연료비 부담을 높였다.",
+        "readthrough": "유럽 대표 산업재 종목으로 수주잔고는 항공사의 연료비 전망에 민감하다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Financials",
+        "company": "HSBC Holdings",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "Pam Kaur의 2027년 퇴임 발표 뒤 CFO 후임 검색을 시작했고, 7.5억파운드 선순위채 발행과 독일 300명 감원도 발표됐다.",
+        "readthrough": "FTSE 100 상위 5위권 종목으로 CFO 전환과 구조조정 실행이 단기 핵심 변수다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Financials",
+        "company": "Allianz",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 촉매는 없었다. 금리 상승은 재투자 수익률에는 긍정적이지만 채권 포트폴리오 평가에는 부정적인 혼합 신호다.",
+        "readthrough": "DAX 최대 금융주로 금리 환경이 핵심 이익 변수다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Health Care",
+        "company": "AstraZeneca",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었다.",
+        "readthrough": "FTSE 100 두 번째 대형주로 위험회피 국면에서 방어적 헬스케어 노출이 중요했다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Health Care",
+        "company": "Bayer",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었다.",
+        "readthrough": "헬스케어와 농업에 걸친 대형주로 위험회피 주간의 방어주 성격이 주목됐다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Consumer Discretionary",
+        "company": "LVMH",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 HSBC가 유럽 명품업종의 하반기 환경이 어렵다고 지적했다.",
+        "readthrough": "CAC 40 최대 종목으로 중국 소비 회복을 가늠하는 핵심 바로미터다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Materials",
+        "company": "BASF",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 에너지집약적 화학업종이 높은 가스 가격에 가장 크게 노출됐다.",
+        "readthrough": "독일 최대 화학기업으로 에너지 비용이 마진의 핵심 변수이며 AfD발 정치 위험도 투자 불확실성을 높였다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "ASML Holding",
+        "direction": "하락",
+        "return": "시가-종가 -2.88% · 보도 약 -6.1%",
+        "catalyst": "AI 개발 속도조절론이 EUV 노광장비의 단기 수요 전망을 낮췄다.",
+        "readthrough": "EURO STOXX 50 최대 기술주이자 당일 지수 하락 기여도가 가장 큰 종목으로 보도됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Infineon Technologies",
+        "direction": "하락",
+        "return": "시가-종가 -2.54% · 보도 -6% 이상",
+        "catalyst": "AI 개발 속도조절론에 반도체 업종 전반이 매도됐다.",
+        "readthrough": "AI 데이터센터 전력반도체 노출이 높아 속도조절론의 직접 피해주로 인식됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Sage Group",
+        "direction": "상승",
+        "return": "시가-종가 +2.34% · 보도 +5.3~6.0%",
+        "catalyst": "5억유로 채권 상환 발표와 함께 AI 개발 속도조절론이 기존 소프트웨어 업체에 유리하게 작용했다.",
+        "readthrough": "AI 교란 속도 둔화가 소프트웨어에 유리하다는 이른바 'AI doomsday trade'로, 하드웨어에서 소프트웨어로의 회전을 보여줬다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Industrials",
+        "company": "Schneider Electric",
+        "direction": "하락",
+        "return": "시가-종가 -2.44%",
+        "catalyst": "AI 데이터센터 인프라 종목 매도가 확산됐고 관련 바스켓은 당일 6.2% 하락한 것으로 보도됐다.",
+        "readthrough": "데이터센터 에너지관리 사업이 AI 테마의 핵심 수혜였던 만큼 단기 설비투자 일정이 다시 평가됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Industrials",
+        "company": "Hochtief",
+        "direction": "하락",
+        "return": "시가-종가 -6.86% · 보도 -9.4%",
+        "catalyst": "하락을 설명할 확인된 개별 악재는 없었고, 호주 자회사의 재생에너지 계약 수주는 오히려 긍정적 뉴스였다.",
+        "readthrough": "당일 DAX 최대 하락 기여주로 보도됐으며 촉매 부재 때문에 지연 공시나 후속 뉴스 확인이 필요하다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Financials",
+        "company": "Deutsche Boerse",
+        "direction": "상승",
+        "return": "시가-종가 +1.44% · 보도 약 +3.0%",
+        "catalyst": "Euronext CEO가 Deutsche Boerse와의 합병 또는 사업 결합에 열려 있다고 밝혔고, Metzler는 EPS 추정치 상향과 함께 매수를 재확인한 것으로 전해졌다. 현재 진행 중인 협상은 확인되지 않았다.",
+        "readthrough": "거래소 통합 기대가 약한 독일 시장에서 드문 긍정적 개별 촉매가 됐다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Health Care",
+        "company": "AstraZeneca",
+        "direction": "상승",
+        "return": "시가-종가 +3.90%",
+        "catalyst": "Tagrisso의 8년 생존 데이터는 위약 대비 사망위험을 48% 낮췄고, Enhertu도 폐암 무진행생존기간을 6개월 개선했다. Etcamah의 유방암 1차 평가지표 미달은 애널리스트들이 대체로 예상한 결과였다.",
+        "readthrough": "FTSE 100 최대 구성종목으로 당일 유럽 대비 영국 지수의 초과성과를 이끈 핵심 종목이었다."
+      }
+    ],
+    "TOPIX": [
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Fujitsu",
+        "direction": "상승",
+        "return": "—",
+        "catalyst": "미국과 아시아로 AI 칩을 수출할 계획이라는 보도와 Palantir와의 기업용 AI 제휴 갱신이 있었다.",
+        "readthrough": "일본 AI·반도체 공급망에 긍정적이며 글로벌 AI 하드웨어에서 일본의 역할을 보여줬다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Consumer Discretionary",
+        "company": "Toyota Motor",
+        "direction": "하락",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 엔화 강세가 자동차 수출기업에 구조적 부담으로 작용했다.",
+        "readthrough": "TOPIX 최대 시총 종목으로 엔화 절상은 해외이익 환산가치를 직접 낮춘다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Tokyo Electron",
+        "direction": "하락",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 반도체주는 캐리트레이드 청산과 엔화 움직임에 민감했다.",
+        "readthrough": "JPMorgan은 엔화 강세가 AI·반도체주의 회복 시점을 앞당길 수 있다고 봤지만 단기적으로는 압박 요인이었다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Information Technology",
+        "company": "Advantest",
+        "direction": "하락",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었고 중국의 일본산 DCS 조치가 반도체 공급망 불확실성을 높였다.",
+        "readthrough": "대표 반도체 테스트장비 업체로 중국·일본 기술마찰에 민감하다."
+      },
+      {
+        "date": "2026-09-11",
+        "sector": "Financials",
+        "company": "Mitsubishi UFJ Financial Group",
+        "direction": "하락",
+        "return": "—",
+        "catalyst": "확인된 개별 기업 촉매는 없었다. JGB 금리 상승은 순이자마진에는 긍정적이지만 채권 포트폴리오에는 부정적인 혼합 신호다.",
+        "readthrough": "일본 최대 은행으로 BOJ 인상 기대가 핵심 재평가 변수다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Kioxia Holdings",
+        "direction": "상승",
+        "return": "시가-종가 +2.20% · 장중 -6%대에서 회복",
+        "catalyst": "100억달러 규모의 미국 상장을 검토한다는 보도와 메모리칩 수요 회복 기대가 있었다.",
+        "readthrough": "일본 대형 메모리 종목의 미국 상장은 중요한 자본시장 이벤트이며, 급반등이 Nikkei 낙폭을 제한했다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Information Technology",
+        "company": "Tokyo Electron",
+        "direction": "상승",
+        "return": "시가-종가 +0.93%",
+        "catalyst": "확인된 개별 기업 촉매는 없었지만 AI 매도 국면에서 동종업체보다 선방했다.",
+        "readthrough": "반도체 장비 수요가 칩 설계업체보다 AI 속도조절론의 영향을 덜 받는다는 시장의 차별화를 보여줬다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Communication Services",
+        "company": "SoftBank Group",
+        "direction": "하락",
+        "return": "시가-종가 -0.82% · 장중 보도 -11~-13%",
+        "catalyst": "AI 개발 속도조절론, OpenAI의 2026년 IPO 철회, 3월 이후 최고 수준으로 확대된 CDS가 겹쳤다.",
+        "readthrough": "일본 최대 AI 프록시이자 OpenAI에 약 650억달러를 약정한 기업으로, 당일 Nikkei 급락을 사실상 주도했다."
+      },
+      {
+        "date": "2026-09-14",
+        "sector": "Materials",
+        "company": "Nippon Steel",
+        "direction": "관찰",
+        "return": "—",
+        "catalyst": "슬로바키아 철강공장 현대화와 신규 전기로에 9억유로를 투자하고 EU 현대화기금에서 3.496억유로를 지원받을 계획이다.",
+        "readthrough": "일본 산업기업이 유럽 탈탄소 인프라에 계속 투자하고 있음을 보여주며 유럽 철강 공급에도 의미가 있다."
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "event_id": "US_CORE_CPI_YYYYMM_release_v1",
+  "country": "US",
+  "indicator": "US_CORE_CPI",
+  "released_at": "YYYY-MM-DDT08:30:00-04:00",
+  "reference_period": "YYYY-MM",
+  "unit": "pct_mom",
+  "actual": null,
+  "consensus": null,
+  "previous": null,
+  "revised_previous": null,
+  "source_url": "https://www.bls.gov/news.release/cpi.htm",
+  "source_label": "발표 기관/데이터 제공처와 컨센서스 출처를 입력",
+  "is_example": false
+}

@@ -1,0 +1,730 @@
+{
+  "operation": "register_existing_local_files_only",
+  "JPM_verified": 71,
+  "HSBC_verified": 1,
+  "new_registrations": 72,
+  "preserved_existing_keys": 1,
+  "entries": [
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5438635-0",
+      "published": "2026-09-07",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-07_Germany_ AfD falls short of a majority, despite vote jump__GPS-5438635-0.pdf",
+      "bytes": 223062,
+      "pages": 6,
+      "sha256": "39fbe120bda48bc84ac4925c0b85679c362030b04d9508fcbedae08c954f38c6",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5438406-0",
+      "published": "2026-09-07",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-07_Thailand_ Inflation starts to climb again in August _ We expect headline inflation to overshoot the__GPS-5438406-0.pdf",
+      "bytes": 508958,
+      "pages": 6,
+      "sha256": "94776b4dd96db028f4db6207b35f99f07c8120a7351ca79165731edbc7fa8074",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436620-0",
+      "published": "2026-09-06",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-06_Australia and New Zealand_ Weekly Prospects__GPS-5436620-0.pdf",
+      "bytes": 956797,
+      "pages": 11,
+      "sha256": "2016b1626c7ad70bbd654347168d011d40aa3473c23d8ccd7c0e3dcc19dc5374",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437781-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Mexico weekly _ 2027 Budget, USMCA, inflation and industrial production__GPS-5437781-0.pdf",
+      "bytes": 498878,
+      "pages": 11,
+      "sha256": "6a138db84474b15cb013dbe43380fb1ba8aae83edf6a456bd41928a58b454966",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437832-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Mexico _ Still cloudy with a chance of sunshine__GPS-5437832-0.pdf",
+      "bytes": 473871,
+      "pages": 7,
+      "sha256": "b469e55c4f3c004587825125b96ee2e98a38a77f77a8182d1aa173c717f3acc8",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437808-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_El Salvador_ A long-awaited IMF handshake__GPS-5437808-0.pdf",
+      "bytes": 267748,
+      "pages": 8,
+      "sha256": "b834bc7f3839ae95106f3a3bd6efd42892b49d250ebfc84f79c0d9c37d4fbf15",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437894-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Canada_ Labor market gives back some recent gains in August__GPS-5437894-0.pdf",
+      "bytes": 594619,
+      "pages": 8,
+      "sha256": "6e007e1712af7f66da422fa3b1015f14ac3bafccaa6c3ede9a812457d3ae6f85",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437810-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_US_ Not too shabby__GPS-5437810-0.pdf",
+      "bytes": 743744,
+      "pages": 10,
+      "sha256": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430752-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Brazil weekly _ The plot thickens__GPS-5430752-0.pdf",
+      "bytes": 562982,
+      "pages": 8,
+      "sha256": "de397da5c2bb2a9553bd918465458dcde86ffe987e6a79aa68a8778c801cd0a4",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432395-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_ECB preview_ A hike and hawkish (framework) guidance__GPS-5432395-0.pdf",
+      "bytes": 276732,
+      "pages": 6,
+      "sha256": "f1d1e7c4ecb48ef585d1d627abbb1c41e1ce2af5eb5f9798888ea399bacb376a",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437424-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Euro area_ Retail sales contracted in July__GPS-5437424-0.pdf",
+      "bytes": 629107,
+      "pages": 9,
+      "sha256": "9326c989b5f6fe1e76d578bad833dc3f689c4064225bdd615f1fd56565e9a288",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437557-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Germany_ Orders jumped due to bulk orders__GPS-5437557-0.pdf",
+      "bytes": 480470,
+      "pages": 7,
+      "sha256": "00fadd7407b781cd5961d7c6973a52a5eef7f407ae01252b34eec8dad8203ecf",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430410-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Hong Kong_ Growth on track, Policy Address in focus__GPS-5430410-0.pdf",
+      "bytes": 639758,
+      "pages": 8,
+      "sha256": "baba7006ebb7a6f23219ae2dd7d23c5c91469b84c2e395cd24a1d58ce80a41cb",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437494-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_UK_ DMP shows modest response to higher energy prices__GPS-5437494-0.pdf",
+      "bytes": 371981,
+      "pages": 6,
+      "sha256": "da79e027ac972eda3e9c25822d8fc73125f870e4d415b08c9da57bd2b78e0c66",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437339-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_India_ FCNR surge, liquidity overhang and sterilization__GPS-5437339-0.pdf",
+      "bytes": 352482,
+      "pages": 8,
+      "sha256": "238c130cfc5542a62c923290628467e6726f26006a972f284fa0926696128daa",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436491-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Czech core CPI stays near 3%__GPS-5436491-0.pdf",
+      "bytes": 370548,
+      "pages": 7,
+      "sha256": "4849666c78de9bb2a2f47df1062475a1e94c9b339bb3dfb60ccc4acb15a2144d",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5437177-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Philippines_ Inflation stays elevated in August _ Core CPI run rate picks up again; maintain 5.5% te__GPS-5437177-0.pdf",
+      "bytes": 586575,
+      "pages": 8,
+      "sha256": "a69a45dc3de1cc0fe708db7dfe3d70c4c41d5e502516da310f7cbf890e05bde9",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436199-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Vietnam_ Manufacturing eases, strong momentum holds__GPS-5436199-0.pdf",
+      "bytes": 611351,
+      "pages": 6,
+      "sha256": "e3f9f452f6ab3024fa191b4310453bade040ef46798caaebd9963af9262a537b",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435365-0",
+      "published": "2026-09-04",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-04_Korea_ July CA eases from the record but still high__GPS-5435365-0.pdf",
+      "bytes": 576210,
+      "pages": 7,
+      "sha256": "4a65d460e27ad55100835170cdb7b0c57149a5739f67caed15c9d7d277468a92",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5434750-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Mexico _ Economic policy commentary - 2027 Budget preview__GPS-5434750-0.pdf",
+      "bytes": 462262,
+      "pages": 7,
+      "sha256": "cdc42e3cb7b82c6af739d6565bc368e3f6ed13671c53da632f7bf03b28a0e50f",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5423673-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_US_ August Employment Scorecard__GPS-5423673-0.pdf",
+      "bytes": 1083575,
+      "pages": 8,
+      "sha256": "216d41457faec4a035e7ac134ce147132e37c1803ac3aa85e1d382acf0fb671d",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5434745-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Brazil_ Preview of the August CPI__GPS-5434745-0.pdf",
+      "bytes": 297643,
+      "pages": 5,
+      "sha256": "bca17ac4c7ceda8f326f4a5e3d2fcdf06be3aa40d08568cedea31ae26d3c320c",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436089-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_DomRep_ Growth runs hotter, inflation expectations drift up _ BCRD stays firmly on hold__GPS-5436089-0.pdf",
+      "bytes": 485481,
+      "pages": 7,
+      "sha256": "bc4de541e1d662f1f9312995307f54c86daf38e08cddab52ce330994fcca189e",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436181-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_ECB_ A third hike for good measure__GPS-5436181-0.pdf",
+      "bytes": 224082,
+      "pages": 6,
+      "sha256": "77dee2a2cda398aa5c368de0488ce4857121762ffe0429f6bace84d26a5bcc00",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5436136-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_US_ Services surveys improve but price pressures persist__GPS-5436136-0.pdf",
+      "bytes": 558463,
+      "pages": 7,
+      "sha256": "cdefbe36bf40cffda6c0469e1ddadc13bb3096c6aa25bef1cc6aab58b9729cdc",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435956-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_US_ Ongoing positive job news from claims, Challenger__GPS-5435956-0.pdf",
+      "bytes": 536343,
+      "pages": 6,
+      "sha256": "86bd695696b03c2433482b3b48f9ece2937c5f84eea357da0be24ebded20c1fa",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435342-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Malaysia_ Hawkish, but not hawkish enough _ Pushing out BNM rate hike from November to 1Q27__GPS-5435342-0.pdf",
+      "bytes": 326259,
+      "pages": 6,
+      "sha256": "582a3147fc1718c299e8e11dfb97d08e364d7f9e453fb5f6099521d6552325aa",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433903-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Türkiye_ Softer August CPI keeps September meeting live__GPS-5433903-0.pdf",
+      "bytes": 383774,
+      "pages": 7,
+      "sha256": "73f1844c0f6e4ada664c6af797155339e989d30a19749f834ad438ea31e3d17c",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435667-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Czech Republic_ Wages give CNB some respite, but not much__GPS-5435667-0.pdf",
+      "bytes": 329623,
+      "pages": 7,
+      "sha256": "0a87c67c6c2972ae2bb367a5a4dc4439b91686d475b1db54e76f76d261f690a8",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435746-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Vietnam_ Fuel prices interrupt disinflation _ SBV to remain on hold, but macroprudential easing is p__GPS-5435746-0.pdf",
+      "bytes": 521352,
+      "pages": 7,
+      "sha256": "a94d09acc0b0963c12247c75c0afebc528154a029133da1a81194e0f8120d979",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435672-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Euro area_ Final PMIs confirm resilience through August__GPS-5435672-0.pdf",
+      "bytes": 787372,
+      "pages": 10,
+      "sha256": "e8ca17f2b83ab99df2c372540d5fd13974fb08e983e18e04f135d771e42872a6",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433900-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_France_ Monthly data point to fiscal slippage__GPS-5433900-0.pdf",
+      "bytes": 355298,
+      "pages": 7,
+      "sha256": "ec58c3d7d6f18fc364c3298fcbdb2d64013417b1a1bd144f851e2b2f5df012e5",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432126-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Sweden_ PMI shows output strength, mixed news on prices__GPS-5432126-0.pdf",
+      "bytes": 740657,
+      "pages": 7,
+      "sha256": "a2aa48f73654a76a8b04826439af4786aecba2858fb387d0f094ca3862927cd2",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431464-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Romania_ still good fiscal outlook, but rising risks__GPS-5431464-0.pdf",
+      "bytes": 450875,
+      "pages": 7,
+      "sha256": "17e8dc83dee10ba50bbcae6f82cf1e939e5a911b0e1d215fd34cf5826f94b708",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5435333-0",
+      "published": "2026-09-03",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-03_Australian trade_ Going for gold__GPS-5435333-0.pdf",
+      "bytes": 349558,
+      "pages": 6,
+      "sha256": "4269b59dc36b783ee3677e56a9840fb5ced83eccd465596455fb21c3a9417fcc",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430773-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Brazil _ Weekly trade and financial flows__GPS-5430773-0.pdf",
+      "bytes": 808837,
+      "pages": 9,
+      "sha256": "0565d461d819f48da951a1f1ac7feb6e4beb17bae68018db68816d730e8af21b",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5434310-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Bank of Canada_ A modest hawkish lean__GPS-5434310-0.pdf",
+      "bytes": 591565,
+      "pages": 8,
+      "sha256": "0f29546194cefe113e8d84d54caffa36820271c2bf77f6f4d0ca0c8cf4f7e8b1",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430607-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_China alt-data trackers chartpack (Series 62) _ Fiscal catch-up still limited, pre-sales system phas__GPS-5430607-0.pdf",
+      "bytes": 2653844,
+      "pages": 14,
+      "sha256": "ce0c1f5c18c9cc6b9a91ca48ec54c068a56c7e41fa8a38812d0d7c22e83945e4",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430764-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Brazil _ July IP disappoints amid rising inventories and weak demand__GPS-5430764-0.pdf",
+      "bytes": 538853,
+      "pages": 7,
+      "sha256": "52c72deabf29a46c7788b3d11398b70aaf8cf45afd4d29c5612f17d258e2a7b3",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5434281-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_US_ ADP points to another month of slow job growth__GPS-5434281-0.pdf",
+      "bytes": 403207,
+      "pages": 6,
+      "sha256": "6e0888ac8bf75382e669838af3d7a636adf9e9afbe7cc9f35723b516fdac104a",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432392-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Germany_ A key election in Sachsen-Anhalt__GPS-5432392-0.pdf",
+      "bytes": 280222,
+      "pages": 6,
+      "sha256": "a4e23c4c254846dfa96fc79616bb4e4047aee245dd284b801b74b4fe325cecc1",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5434055-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Israel_ Cut me, maybe, one more time__GPS-5434055-0.pdf",
+      "bytes": 221914,
+      "pages": 5,
+      "sha256": "5c1f7d0fe0dfb2f8ee27c2ced437df6fae431b0ab6a10da9ab9743602384609f",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432577-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Mexico _ August surveys - Some encouraging details__GPS-5432577-0.pdf",
+      "bytes": 437256,
+      "pages": 7,
+      "sha256": "02edef1e5a048c832b65e1ecc6bae352ea8002e48584c210f21b74dbea82ee08",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433333-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Romania_ again no sign of FX intervention__GPS-5433333-0.pdf",
+      "bytes": 379576,
+      "pages": 6,
+      "sha256": "c5ec0bfffba644e27f70e5fb42033e3179cc94c6dffa916572cb225e5027b6c2",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433592-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_RBNZ tightens, hiking bias preserved__GPS-5433592-0.pdf",
+      "bytes": 365578,
+      "pages": 8,
+      "sha256": "5a81f1f111f66dd7a939dc5b12b6dd0e66ea1d8f0058c890b111f2b251ec63e0",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433661-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Korea_ August CPI undershoot the expectation__GPS-5433661-0.pdf",
+      "bytes": 435062,
+      "pages": 7,
+      "sha256": "d758efccf7ccdd85e6090e2937e78cd54d68cb056bd00b01c75a2ecb998f015c",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5433560-0",
+      "published": "2026-09-02",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-02_Australian GDP_ The path to potential__GPS-5433560-0.pdf",
+      "bytes": 420308,
+      "pages": 7,
+      "sha256": "2300df8234bc3226995e6bb021300babd761494c6ee575a27daa18fef8a201f1",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432854-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Mexico _ July remittances - An improvement with a pinch of salt__GPS-5432854-0.pdf",
+      "bytes": 431449,
+      "pages": 6,
+      "sha256": "cd5c825c4236c4ace02c41b585cf35b37e7322ce81981f990da2f906fc2617f8",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432814-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Mexico _ Banxico survey - Sticky inflation expectations; all eyes on the budget next week__GPS-5432814-0.pdf",
+      "bytes": 497042,
+      "pages": 8,
+      "sha256": "e2d64b42f58db2ac50a8214e0f6c8e64951c05315fdef87e559e0611e0ae78a8",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432714-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_US_ Construction spending weakens amid homebuilding malaise__GPS-5432714-0.pdf",
+      "bytes": 477803,
+      "pages": 7,
+      "sha256": "26fd4757cee1598c6e749dbfdb155ed187032bcffc6bd0b0b49cce6130e79a64",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430960-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Indonesia_ A return to a small trade surplus in July _ A renewed increase in global energy prices is__GPS-5430960-0.pdf",
+      "bytes": 555783,
+      "pages": 7,
+      "sha256": "bfef5ecb0ab1a3758fcc24a1ef6ba911486a75c13f4b07133ee97aa5b2a6c010",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432605-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_US_ Manufacturing surveys still signal solid activity__GPS-5432605-0.pdf",
+      "bytes": 642029,
+      "pages": 8,
+      "sha256": "fb0b7d374d3f6b52617d6b0641db27dc53f25b2b259516f7b7aa0ea68cdb056a",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432868-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Peru _ Inflation remains above target as El Niño risks build__GPS-5432868-0.pdf",
+      "bytes": 357448,
+      "pages": 6,
+      "sha256": "af238a0b24e0695e912352e62d916aea36801fb09c382d1bbf175a234ebdb7d6",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432732-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_US_ V_U suggests wage deceleration will end soon__GPS-5432732-0.pdf",
+      "bytes": 474947,
+      "pages": 6,
+      "sha256": "d25d571bb7727e888162d40862f4a32687fba26f786931e9ed4a21b0024e6a03",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432560-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Chile _ Activity hits a wall in July__GPS-5432560-0.pdf",
+      "bytes": 431286,
+      "pages": 6,
+      "sha256": "a21e2a7aa9cf8dc08466fd654ad549870ea7e612015c6b16009b21e3142da0ef",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432733-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Euro area inflation forecasts (linkers)__GPS-5432733-0.pdf",
+      "bytes": 270120,
+      "pages": 5,
+      "sha256": "a4b103ee67dccb047c6417ffcc7e132475623070b7419a42c33398f6e6c04b5e",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5428627-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Indonesia_ Inflation climbs and broadens in August _ A BI hike remains on the table, but the near-te__GPS-5428627-0.pdf",
+      "bytes": 488768,
+      "pages": 7,
+      "sha256": "f67b937cdd181e917e34291440b50699d8bd66d89716926f0eaf90001d5bd346",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430760-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Brazil _ 2Q GDP reinforces expectations for deceleration__GPS-5430760-0.pdf",
+      "bytes": 712091,
+      "pages": 9,
+      "sha256": "2b30a1df05dc887fba42e1ff5643a538edd04f1ea95448187dc2f0ea43a94183",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432155-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Euro area_ Core inflation down a tick, helped by services__GPS-5432155-0.pdf",
+      "bytes": 677819,
+      "pages": 10,
+      "sha256": "c11fadf2d0be3fd0d0c4d6406e1564a3467e01a2dd196661a59a884b7ca201d0",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432347-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Istat confirms Italy’s resilience to energy shock__GPS-5432347-0.pdf",
+      "bytes": 538010,
+      "pages": 8,
+      "sha256": "476b9ae658c64b0c97ebf4bdba9a9330c0453f9b27341ec60442ad04ae047fc2",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432205-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Euro area_ Unemployment rate stands at 6.4% in July__GPS-5432205-0.pdf",
+      "bytes": 494222,
+      "pages": 7,
+      "sha256": "04b9701eb60e1bc30a485c559735052b68c56b04aa387d659b9cc24f6f738826",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5432049-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Germany_ Retail sales drop sharply in July__GPS-5432049-0.pdf",
+      "bytes": 339320,
+      "pages": 6,
+      "sha256": "a5b34fcf6f07af3a9aeb10abfa543ace951340942e72376c8d6968101a23c5f8",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431876-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Japan_ August consumer confidence up on softer price outlook__GPS-5431876-0.pdf",
+      "bytes": 472067,
+      "pages": 7,
+      "sha256": "05a99ac43d3a6ff5b0e169780aa3f73818670a5144dea05a5d2dfba4d3761488",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430581-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_China RatingDog PMI_ modest recovery, elusive reflation__GPS-5430581-0.pdf",
+      "bytes": 626760,
+      "pages": 7,
+      "sha256": "5412d23bbc50dca324ac22ebc28821cf8759cd5986a937bf4c0c18a0f55ee108",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431816-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Korea_ August exports rebound; trade surplus hits new record__GPS-5431816-0.pdf",
+      "bytes": 432245,
+      "pages": 6,
+      "sha256": "e3cd22ee2991b06fc694cf0bf2fa16ecfc3ebb8b17a1a3e9192f69713d4367ae",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431617-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Taiwan_ August PMI remained elevated despite moderate easing__GPS-5431617-0.pdf",
+      "bytes": 577592,
+      "pages": 6,
+      "sha256": "3e46fcb1a15aad4ba77ed1f18a956379d7bbd2a9dfd4bed7e04b0e51abf14fa7",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5430409-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Korea_ Manufacturing PMI expansion took a breather in August__GPS-5430409-0.pdf",
+      "bytes": 476045,
+      "pages": 7,
+      "sha256": "3a7d42109205f32190b0542f9cc7485979350fea3c07c189e7f41adf5b6a49f9",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431699-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Australia_ 2Q GDP tracking 0.2%q_q__GPS-5431699-0.pdf",
+      "bytes": 407483,
+      "pages": 7,
+      "sha256": "09779f68c94f6e6605ef1ffd52a9ac52d2a8e540b3c99c0b0cb6a26930ccd814",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5431504-0",
+      "published": "2026-09-01",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-01_Japan_ 2Q corporate survey shows strong profits and capex__GPS-5431504-0.pdf",
+      "bytes": 575308,
+      "pages": 8,
+      "sha256": "9df5b690dd9400c40fd08ba8f17651f7e034654a227a6d2bb51e0fb44d3e4d57",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5438947-0",
+      "published": "2026-09-07",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-07_Japan_ July CAI signals normalizing consumption momentum__GPS-5438947-0.pdf",
+      "bytes": 428428,
+      "pages": 7,
+      "sha256": "89753e84185d5855cf459d64fc5512225d16e4863694062793c2426f44a71479",
+      "already_registered": false
+    },
+    {
+      "house": "JPM",
+      "doc_id": "GPS-5438994-0",
+      "published": "2026-09-07",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\JPM\\2026-09-07_UK_ REC jobs report shows further hiring lift__GPS-5438994-0.pdf",
+      "bytes": 500530,
+      "pages": 7,
+      "sha256": "9247c7070ffb8c1460380ae7f77ad5e30da15beb452e0375f27456a8b321c54f",
+      "already_registered": false
+    },
+    {
+      "house": "HSBC",
+      "doc_id": "hQdKCJlCxjQZ",
+      "published": "2026-09-07",
+      "path": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\outdated\\HSBC\\2026-09-07_Türkiye MTP__hQdKCJlCxjQZ.pdf",
+      "bytes": 277609,
+      "pages": 6,
+      "sha256": "5c846587f05b3fcf631bc3dc25054ed34f4cc5cab7eb3dca69880794e02fc78f",
+      "already_registered": false
+    }
+  ],
+  "manifest_export_deferred": true
+}

@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-09-21T20:21:19+09:00",
+  "change": "Homepage recent 3 calendar days feed across countries/themes; release and commentary dates separate; selectable KST anchor; links into existing detail",
+  "current_items": 17,
+  "validation": "Embedded data unchanged; JS syntax and date boundary, missing/future exclusion, filter independence, detail navigation, empty state passed",
+  "files": {
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\Context\\_macro\\Research_Context\\ecocal_dashboard\\dashboard.html": "8c2f468914d3d4cd1c80bed3739f2c8f4a5e4763cf64087411f596a46aa8e01d",
+    "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\표_업데이트\\runs\\20260917_084915_860309\\WECO\\index.html": "87b923195f19ef3d9b64084af77d14a66f4e6e8bd7f8e2191217d93b8c847997"
+  }
+}

@@ -1,0 +1,2472 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-09",
+  "source_snapshot_documents": 2270,
+  "scope_note": "현재 자료에서 선별한 주요 전망·지표 코멘트의 초기 해석. 전체 PDF 의미 분석 완료가 아니며 견해는 모두 검토 초안.",
+  "views": [
+    {
+      "view_id": "GS-US-policy.near_term-d594c42e3a23",
+      "house": "GS",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "8월 근원 CPI·PCE가 전월비 약 0.2%로 나오면 9월 연준 동결을 뒷받침하고 미 단기금리 상승이 되돌려질 것으로 본다.",
+      "scope": "country_research",
+      "assumptions": [
+        "향후 물가 뉴스가 우호적이라는 조건.",
+        "8월 지표 발표 전 전망이며 실제 발표값으로 저장하지 않음."
+      ],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS"
+      ],
+      "analyst_questions": [
+        "물가가 약 0.2% 전망보다 높게 나왔는가?",
+        "구성 항목의 재가속이 동결 전제를 약화시키는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "d594c42e3a233e5f89913f650197ba60bae546e6c255088037fccfc9ddfbf616",
+          "page": 1,
+          "quote": "We continue to expect August core CPI and PCE inflation to print around 0.2%, which would reinforce the case for the Fed to remain on hold in September and lead front-end US Treasury yields lower."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-US-labor.participation-4be06b209116",
+      "house": "GS",
+      "country": "US",
+      "track": "labor.participation",
+      "effective_date": "2026-09-04",
+      "summary": "경제활동참가율 하락은 고소득·고학력 고령층의 은퇴, 인구구성 및 표본·계절성 영향이 커 경기순환 측면의 우려를 낮춰 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_PAYROLLS",
+        "US_UNEMPLOYMENT",
+        "US_PARTICIPATION"
+      ],
+      "analyst_questions": [
+        "참가율 변화가 실망실업 증가인지 은퇴·표본 변화인지 구분할 수 있는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "4be06b20911657a62431f024d7c556b251d000b084b957915f4deacda9035133",
+          "page": 1,
+          "quote": "the fact that it mainly reflects retirement of older, higher-income workers who are potentially well-positioned to do so rather than an increase in discouraged or other marginally attached workers makes the decline somewhat less concerning from a cyclical perspective."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-US-labor.participation-cf25d8e1c9a9",
+      "house": "GS",
+      "country": "US",
+      "track": "labor.participation",
+      "effective_date": "2026-09-05",
+      "summary": "8월 고용 발표 후에도 참가율 하락의 주된 원인이 고령 고소득층 은퇴라는 해석을 유지한다. 실업률만으로 노동시장 과열을 단정하지 않는다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_PAYROLLS",
+        "US_UNEMPLOYMENT",
+        "US_PARTICIPATION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "cf25d8e1c9a98652752b16b94ab750aab13560221452accb98c865d9d79da496",
+          "page": 2,
+          "quote": "The fact that this year’s decline in participation mainly reflects retirement of older, higher-income workers rather than an increase in discouraged workers makes the decline somewhat less concerning from a cyclical perspective."
+        }
+      ],
+      "prior_view_id": "GS-US-labor.participation-4be06b209116",
+      "change": "maintained",
+      "change_note": "9월 3일자 Daily(수집일 표기 9/4)와 9월 4일자 Wrap-Up(수집일 표기 9/5)의 은퇴 중심 해석을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-EA-policy.near_term-b389455ffbdb",
+      "house": "GS",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-04",
+      "summary": "9월 인상이 이번 긴축 사이클의 마지막일 가능성을 기본으로 보지만 12월 추가 인상 위험은 높아졌다고 평가한다.",
+      "scope": "country_research",
+      "assumptions": [
+        "하반기 추세 이하 성장.",
+        "에너지 가격은 현재 선물곡선보다 낮아짐.",
+        "추가 근원물가 압력 제한, 연준 추가 인상 없음."
+      ],
+      "watch": [
+        "EA_HICP",
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "EA_GDP",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [
+        "에너지 가격 하락 전제가 유지되는가?",
+        "기조 물가와 임금으로 충격이 확산되는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "b389455ffbdb940a5de86f8dc8dd395138ecd4eafbced34cad6f80aed1a77e2a",
+          "page": 1,
+          "quote": "We maintain our view that September is more likely than not the last hike of this tightening cycle given our forecast for below-trend H2 growth, modest further core pressures, our forecast for lower energy prices than currently implied by forwards, and no Fed hikes."
+        },
+        {
+          "doc_id": "b389455ffbdb940a5de86f8dc8dd395138ecd4eafbced34cad6f80aed1a77e2a",
+          "page": 1,
+          "quote": "we now see a low hurdle for a third hike in December if energy prices do not fall from here or inflation firms more notably, especially if the Fed hikes in coming months."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "원문이 유지·리스크 변경을 명시하지만 이전 ECB 전망 PDF와의 직접 대조는 미완료.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-EA-inflation.outlook-cf25d8e1c9a9",
+      "house": "GS",
+      "country": "EA",
+      "track": "inflation.outlook",
+      "effective_date": "2026-09-05",
+      "summary": "8월 근원물가 하회 이후 2026년 근원물가 전망을 2.5%에서 2.4%로, 2027년 1분기 정점을 2.7%에서 2.6%로 낮췄다. 헤드라인 정점은 2026년 4분기 3.4%로 유지한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_HICP",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "cf25d8e1c9a98652752b16b94ab750aab13560221452accb98c865d9d79da496",
+          "page": 3,
+          "quote": "We now see core inflation at 2.4%yoy in 2026 (down from 2.5%yoy previously), peaking at 2.6%yoy in 2027Q1 (vs 2.7%yoy before)."
+        },
+        {
+          "doc_id": "cf25d8e1c9a98652752b16b94ab750aab13560221452accb98c865d9d79da496",
+          "page": 3,
+          "quote": "As for headline inflation, we continue to see the peak at 3.4%yoy in 2026Q4."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "변경 폭은 원문 자체의 설명이며 이전 원본과 별도 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-GB-policy.near_term-2b2ae72515e6",
+      "house": "GS",
+      "country": "GB",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-25",
+      "summary": "영국 물가 압력이 BoE 인상으로 이어질 정도는 아니라고 보고 2026년 동결 후 2027년 인하를 예상한다.",
+      "scope": "country_research",
+      "assumptions": [
+        "노동비용 증가세 완화.",
+        "에너지 가격이 선물곡선보다 낮아지며 2027년 소비자 에너지 물가 하락."
+      ],
+      "watch": [
+        "GB_CPI",
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "BOE_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [
+        "서비스 물가 둔화와 임금 완화 전제가 유지되는가?"
+      ],
+      "limitations": [
+        "8월 25일 자료 기준. 더 최근의 직접 BoE 전망이 확보되면 재검토."
+      ],
+      "evidence": [
+        {
+          "doc_id": "2b2ae72515e6beb20684cae02c11561b0ef2df610b800a027c0fd5950a6e1941",
+          "page": 1,
+          "quote": "We instead expect the MPC to hold this year before cutting in 2027."
+        },
+        {
+          "doc_id": "2b2ae72515e6beb20684cae02c11561b0ef2df610b800a027c0fd5950a6e1941",
+          "page": 1,
+          "quote": "With labour cost growth now easing, underlying services inflation should slow next year"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-GB-inflation.outlook-2b2ae72515e6",
+      "house": "GS",
+      "country": "GB",
+      "track": "inflation.outlook",
+      "effective_date": "2026-08-25",
+      "summary": "헤드라인 물가는 2026년 11월 3.3%에서 정점을 예상한다. 2027년에는 에너지 가격 하락으로 BoE 예상보다 빠른 둔화를 전망한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_CPI",
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "2b2ae72515e6beb20684cae02c11561b0ef2df610b800a027c0fd5950a6e1941",
+          "page": 1,
+          "quote": "Our estimates imply that headline inflation will peak at 3.3% in November, slightly above the BoE’s projection but below the threshold that would likely cause the MPC to become more concerned about second-round effects."
+        },
+        {
+          "doc_id": "2b2ae72515e6beb20684cae02c11561b0ef2df610b800a027c0fd5950a6e1941",
+          "page": 1,
+          "quote": "We then expect inflation to fall faster than the Bank forecasts next year as energy prices drop."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-CA-policy.near_term-9e05895c7d0e",
+      "house": "GS",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-03",
+      "summary": "BoC의 매파적 소통에도 무역 불확실성과 온건한 물가로 2026년 동결을 예상하되, 물가가 강해지면 조기 인상 위험이 있다고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CPI",
+        "CA_CORE_CPI",
+        "CA_EMPLOYMENT",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "9e05895c7d0e45a908436cc887a410720b090675a8e6c0c5b5bf6f08a75adffc",
+          "page": 1,
+          "quote": "While we expect elevated trade uncertainty and benign inflation to keep the BoC on hold in 2026, today’s meeting raises some risk of earlier hikes if inflation data firms."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-CA-policy.near_term-b4ef0e136f0c",
+      "house": "GS",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-04",
+      "summary": "8월 고용·임금 약화가 BoC의 2026년 정책금리 2.25% 동결 전망을 뒷받침한다고 평가한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_EMPLOYMENT",
+        "CA_WAGES",
+        "CA_CORE_CPI",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "b4ef0e136f0cee9edefebea00ffe6dee9c74358d8b40c49d98c220b98c92a2bc",
+          "page": 1,
+          "quote": "Today’s soft data support our forecast that the BoC will remain on hold at 2.25% in 2026."
+        }
+      ],
+      "prior_view_id": "GS-CA-policy.near_term-9e05895c7d0e",
+      "change": "maintained",
+      "change_note": "앞선 BoC 회의 코멘트의 2026년 동결 전망을 다음 고용 코멘트가 명시적으로 재확인.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-AU-policy.near_term-3734e85885ac",
+      "house": "GS",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-03",
+      "summary": "기본 전망은 11월 한 차례 인상으로 4.60%. 9월 인상 가능성도 45%로 열어두지만 주택시장 하강이 추가 긴축 여력을 제한한다고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_CPI",
+        "AU_TRIMMED_CPI",
+        "AU_GDP",
+        "AU_HOUSE_PRICES",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "같은 페이지에 향후 완화 시점을 2H2026으로 적은 시간상 불일치가 있어 완화 개시 시점은 채택하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "3734e85885ac8ed9f69164e9d60dfc1c95fb57ace2a7b9d2201fb45a94f1297a",
+          "page": 1,
+          "quote": "Our base case is for the RBA to balance these risks by raising the cash rate once more in November to 4.60%, although a September hike remains finely balanced (45% probability) and further increases cannot be ruled out."
+        },
+        {
+          "doc_id": "3734e85885ac8ed9f69164e9d60dfc1c95fb57ace2a7b9d2201fb45a94f1297a",
+          "page": 1,
+          "quote": "The faster housing downturn should limit the scope for additional tightening."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-AU-housing.outlook-3734e85885ac",
+      "house": "GS",
+      "country": "AU",
+      "track": "housing.outlook",
+      "effective_date": "2026-09-03",
+      "summary": "주택가격의 고점 대비 하락 전망을 5%에서 9%로 확대하고 성장·노동시장 전망을 낮췄다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_HOUSE_PRICES",
+        "AU_EMPLOYMENT",
+        "AU_GDP"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "3734e85885ac8ed9f69164e9d60dfc1c95fb57ace2a7b9d2201fb45a94f1297a",
+          "page": 1,
+          "quote": "We now expect house prices to fall by a historically large 9% peak-to-trough (GS prior: -5%), prompting us to lower our growth and labour market forecasts."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "변경 폭은 원문 자체가 명시. 별도 이전 주택 전망 원본과 대조하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-JP-policy.near_term-d594c42e3a23",
+      "house": "GS",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "다음 BoJ 인상 시점을 종전 2027년 1월에서 2026년 9월로 앞당겼다. 엔 약세와 6월 인상 후에도 완화적인 금융여건이 배경이다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "JP_CPI",
+        "JP_WAGES",
+        "JPY_FX",
+        "BOJ_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "d594c42e3a233e5f89913f650197ba60bae546e6c255088037fccfc9ddfbf616",
+          "page": 2,
+          "quote": "We now expect the next BoJ rate hike in September 2026 (vs. January 2027 previously) amid recent Yen weakness and the BoJ’s view that financial conditions remain accommodative even after the June hike."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "GS의 종합 리서치 요약이 전후 전망을 직접 기술. 원래 일본 전망 보고서와 대조는 미완료.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "GS-GLOBAL-energy.risks-d594c42e3a23",
+      "house": "GS",
+      "country": "GLOBAL",
+      "track": "energy.risks",
+      "effective_date": "2026-09-02",
+      "summary": "원유 추가 상승에는 제약이 있을 수 있지만 정제마진과 유럽 천연가스의 상방 위험은 더 크고 지속적이라고 본다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [
+        "원유 가격과 가스·정제마진을 분리했을 때 각국 물가 전제는 어떻게 달라지는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "d594c42e3a233e5f89913f650197ba60bae546e6c255088037fccfc9ddfbf616",
+          "page": 2,
+          "quote": "We continue to see greater upside risk for refined product margins, which we expect to remain higher for longer, as well as for European natural gas prices"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-US-labor.trend-5d7f17013bce",
+      "house": "JPM",
+      "country": "US",
+      "track": "labor.trend",
+      "effective_date": "2026-09-04",
+      "summary": "8월 고용은 봄·여름 둔화에서 반등했고 노동공급 증가와 완만한 임금 상승이 함께 나타났다고 평가한다. 소비를 지지하면서 물가 우려를 크게 높이지 않는 조합이다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_PAYROLLS",
+        "US_UNEMPLOYMENT",
+        "US_AHE",
+        "US_PARTICIPATION"
+      ],
+      "analyst_questions": [
+        "고용 반등이 일부 업종 반등을 넘어 확산되는가?",
+        "노동시간·임금·참가율이 소비 회복을 함께 뒷받침하는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+          "page": 1,
+          "quote": "The spring-summer cooling in job growth turned around, labor supply took a leg up, and wage growth remained supportive of consumer spending without fanning inflation fears."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-US-policy.reaction-5d7f17013bce",
+      "house": "JPM",
+      "country": "US",
+      "track": "policy.reaction",
+      "effective_date": "2026-09-04",
+      "summary": "다음 FOMC의 결정적 지표는 CPI라고 보며, 판단이 팽팽하다면 강한 고용이 매파 쪽에 힘을 실어준다고 평가한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "이 문단만으로 JPM의 확정적 연준 금리 경로를 지정하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "5d7f17013bce028db754bcd13b87fa5e413b34969c6d3740aad5dbc8bfe561d5",
+          "page": 1,
+          "quote": "Before today, Fed speakers pointed to next week’s CPI report as the decisive data point for the next FOMC meeting. That is still undoubtedly true, though if it’s a toss-up, today’s report will support the hawks."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-EA-policy.near_term-217898ba6104",
+      "house": "JPM",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-27",
+      "summary": "9월 인상은 거의 확실하게 보되 12월 마지막 인상은 위험이 기운 방향으로 표현했다. 일부 물가·임금 자료는 온건한 경로의 가능성을 유지했다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "217898ba6104768f343a0acac0bb0ac66d30534399daa5ce4475b2c252501b34",
+          "page": 1,
+          "quote": "We continue to see risks skewed to a final hike in December, but with some aspects of the inflation/wage data keeping a more benign inflation trajectory alive."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-EA-policy.near_term-77dee2a2cda3",
+      "house": "JPM",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-03",
+      "summary": "9월에 이어 12월 세 번째 인상으로 ECB 금리 2.75%를 예상한다. 네 번째 인상은 기본 전망이 아니다.",
+      "scope": "country_research",
+      "assumptions": [
+        "에너지 가격 압력이 오래 지속됨.",
+        "성장이 견조해 추가 인상의 비용을 낮춤.",
+        "근원물가·실효임금 압력이 쉽게 해소되지 않음."
+      ],
+      "watch": [
+        "EA_HICP",
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "EA_GDP",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "77dee2a2cda398aa5c368de0488ce4857121762ffe0429f6bace84d26a5bcc00",
+          "page": 1,
+          "quote": "We now expect the ECB to hike for a third time in December to 2.75% after a near-certain hike next week."
+        },
+        {
+          "doc_id": "77dee2a2cda398aa5c368de0488ce4857121762ffe0429f6bace84d26a5bcc00",
+          "page": 1,
+          "quote": "The reasons: An interaction between more persistent energy price pressures, solid growth, sticky core inflation and a neutral rate that the ECB sees edging higher."
+        },
+        {
+          "doc_id": "77dee2a2cda398aa5c368de0488ce4857121762ffe0429f6bace84d26a5bcc00",
+          "page": 1,
+          "quote": "A fourth hike cannot be ruled out, but is not our base case."
+        }
+      ],
+      "prior_view_id": "JPM-EA-policy.near_term-217898ba6104",
+      "change": "revised",
+      "change_note": "8/27에는 12월 인상을 위험 방향으로 표현했고 9/3에는 now expect로 기본 전망에 반영. 두 원본 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-EA-growth.trend-481bb328ef13",
+      "house": "JPM",
+      "country": "EA",
+      "track": "growth.trend",
+      "effective_date": "2026-09-07",
+      "summary": "에너지 충격에도 가계 소비와 서비스가 견조하다고 평가한다. 2분기 GDP 상향 대부분은 아일랜드 효과라 이를 제외한 기조와 구분한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_GDP",
+        "EA_PMI",
+        "EA_RETAIL_SALES",
+        "EA_WAGES"
+      ],
+      "analyst_questions": [
+        "아일랜드 제외 성장과 국내 최종수요가 함께 유지되는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "481bb328ef130964c9292855a056b62026c0640c0ef2856bc59a3d71b094cc72",
+          "page": 1,
+          "quote": "This revision was entirely driven by Ireland, now up 47.4% ar. On an ex. Ireland basis, the Euro area GDP print is largely unchanged and is up 1.2% ar, the same pace as seen in 1Q."
+        },
+        {
+          "doc_id": "481bb328ef130964c9292855a056b62026c0640c0ef2856bc59a3d71b094cc72",
+          "page": 1,
+          "quote": "services output was resilient in 2Q despite the purchasing power drag."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-GB-policy.near_term-f924df3e5579",
+      "house": "JPM",
+      "country": "GB",
+      "track": "policy.near_term",
+      "effective_date": "2026-07-30",
+      "summary": "7월 말 보고서에서 11월 BoE 인상을 예상했다. 다만 이후 확인할 징후가 필요하다는 조건을 붙였다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_CPI",
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "BOE_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "7월 30일의 정책 경로이며 최신 확정 전망으로 간주하지 않음. 9월의 물가·임금 코멘트는 별도 반응 조건으로 유지."
+      ],
+      "evidence": [
+        {
+          "doc_id": "f924df3e5579228599cff166f71073ecd7f6c841ca8f79ee1599cf9349646c23",
+          "page": 1,
+          "quote": "We still anticipate a November hike, but lay out some clear markers required for this to happen by then"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-GB-policy.reaction-da79e027ac97",
+      "house": "JPM",
+      "country": "GB",
+      "track": "policy.reaction",
+      "effective_date": "2026-09-04",
+      "summary": "물가 초과의 높이뿐 아니라 지속 기간을 중시한다. 2027년 임금상승률이 3.5%를 넘을 징후는 MPC를 인상 쪽으로 움직이는 유의미한 신호라고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_WAGES",
+        "GB_DMP",
+        "GB_SERVICES_CPI",
+        "BOE_DECISION"
+      ],
+      "analyst_questions": [
+        "DMP·Agents의 2027년 임금 예상이 3.5%를 넘는 쪽으로 바뀌는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "da79e027ac972eda3e9c25822d8fc73125f870e4d415b08c9da57bd2b78e0c66",
+          "page": 1,
+          "quote": "We have argued that any sign that wage growth is set to exceed 3.5% next year would be significant for the MPC in terms of pushing it closer to raising rates."
+        },
+        {
+          "doc_id": "da79e027ac972eda3e9c25822d8fc73125f870e4d415b08c9da57bd2b78e0c66",
+          "page": 1,
+          "quote": "We have argued that these concerns will be amplified not just by the peak of inflation but the longevity of the overshoot."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-GB-labor.trend-9247c7070ffb",
+      "house": "JPM",
+      "country": "GB",
+      "track": "labor.trend",
+      "effective_date": "2026-09-07",
+      "summary": "채용과 임금 모멘텀이 개선될 초기 신호를 보지만, 빈 일자리·인력 가용성은 약하고 통계 간 괴리가 있어 수급의 질적 불일치도 고려한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_EMPLOYMENT",
+        "GB_WAGES",
+        "GB_REC",
+        "GB_VACANCIES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "9247c7070ffb8c1460380ae7f77ad5e30da15beb452e0375f27456a8b321c54f",
+          "page": 1,
+          "quote": "One possible reconciliation of these mixed signals is that there is available labour, but not the type that employers are necessarily looking for."
+        },
+        {
+          "doc_id": "9247c7070ffb8c1460380ae7f77ad5e30da15beb452e0375f27456a8b321c54f",
+          "page": 1,
+          "quote": "this uptick combined with a firming in job growth may suggest that the momentum in wage growth is also tentatively improving."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-CA-policy.near_term-0f29546194ce",
+      "house": "JPM",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "BoC는 소통상 매파적으로 이동했지만 무역전쟁의 여파, 초과공급, 기업 가격결정력 제약으로 기본 전망은 다음 해까지 동결이다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_EMPLOYMENT",
+        "CA_WAGES",
+        "BOC_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "0f29546194cefe113e8d84d54caffa36820271c2bf77f6f4d0ca0c8cf4f7e8b1",
+          "page": 1,
+          "quote": "Nonetheless, our base case remains for the BoC to stay on hold into next year, as we forecast a lingering drag from the trade war, with continued excess supply, limited scope for firms to raise prices, and broadly anchored inflation expectations."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-CA-policy.near_term-6e007e1712af",
+      "house": "JPM",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-04",
+      "summary": "8월 임금 상승 둔화와 남은 노동시장 유휴가 당분간 BoC 동결을 뒷받침한다. 최근 고용 감소는 광범위한 수요 악화보다는 이전 반등의 모멘텀 약화로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_EMPLOYMENT",
+        "CA_WAGES",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "6e007e1712af7f66da422fa3b1015f14ac3bafccaa6c3ede9a812457d3ae6f85",
+          "page": 1,
+          "quote": "That should reinforce the Bank of Canada’s view that some slack remains in the labor market and keep the Governing Council on hold for now, even as it remains attentive to rising upside risks to inflation."
+        }
+      ],
+      "prior_view_id": "JPM-CA-policy.near_term-0f29546194ce",
+      "change": "maintained",
+      "change_note": "9/2의 동결 기본 전망과 9/4의 고용·임금 코멘트를 직접 대조. 후자는 단기 동결을 재확인하며 장기 경로의 추가 변경은 명시하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-AU-growth.trend-2300df8234bc",
+      "house": "JPM",
+      "country": "AU",
+      "track": "growth.trend",
+      "effective_date": "2026-09-02",
+      "summary": "2분기 GDP는 예상을 웃돌았지만 연간 성장률은 잠재 수준으로 둔화해 수요의 필요한 감속이 이미 일어났다는 평가와 부합한다고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_GDP",
+        "AU_EMPLOYMENT",
+        "AU_RETAIL_SALES",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "2300df8234bc3226995e6bb021300babd761494c6ee575a27daa18fef8a201f1",
+          "page": 1,
+          "quote": "implying enough has been done and the necessary downshift relative to supply potential has already taken place. We think today’s data are consistent with this view."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-AU-growth.trend-2016b1626c7a",
+      "house": "JPM",
+      "country": "AU",
+      "track": "growth.trend",
+      "effective_date": "2026-09-07",
+      "summary": "주간 보고서에서도 2분기 성장 둔화가 공급 잠재력에 맞추는 조정이라는 해석을 유지한다. 단순한 GDP 예상 상회만으로 재가속을 판단하지 않는다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_GDP",
+        "AU_EMPLOYMENT",
+        "AU_CPI",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "2016b1626c7ad70bbd654347168d011d40aa3473c23d8ccd7c0e3dcc19dc5374",
+          "page": 2,
+          "quote": "implying enough has been done and the necessary downshift relative to supply potential has already taken place. We think the 2Q data are consistent with this view."
+        }
+      ],
+      "prior_view_id": "JPM-AU-growth.trend-2300df8234bc",
+      "change": "maintained",
+      "change_note": "9/2 GDP 코멘트와 9/7자 주간 보고서(수집 표기 9/6)의 같은 설명을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-JP-policy.near_term-64c14296422a",
+      "house": "JPM",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-07-31",
+      "summary": "기본 전망은 다음 BoJ 인상 10월이며, 달러/엔 상승이 재개되면 9월로 앞당겨질 위험을 열어뒀다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "JPY_FX",
+        "JP_CPI",
+        "BOJ_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "64c14296422a190591858450f4db7e7540d42536b3c13d9cc4f53fff34f0c648",
+          "page": 1,
+          "quote": "We maintain our long-held view that the next hike will come in October—somewhat earlier than a strictly semi-annual pace."
+        },
+        {
+          "doc_id": "64c14296422a190591858450f4db7e7540d42536b3c13d9cc4f53fff34f0c648",
+          "page": 1,
+          "quote": "we acknowledge the risk of the timing being brought forward to September should USDJPY resume a stronger upward trend."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-JP-policy.near_term-f21c6cdfb974",
+      "house": "JPM",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-18",
+      "summary": "다음 BoJ 인상을 10월에서 9월로 앞당기고 12월 인상을 추가해 2026년 말 1.5%를 예상한다. 재정 기조에 큰 변화가 없으면 2027년 세 차례 추가 인상으로 연말 2.25%를 전망한다.",
+      "scope": "country_research",
+      "assumptions": [
+        "재정 기조에 큰 변화가 없음."
+      ],
+      "watch": [
+        "JP_CPI",
+        "JP_WAGES",
+        "JPY_FX",
+        "BOJ_DECISION",
+        "JP_FISCAL"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "8월 18일 자료 기준으로 정책 경로 최신성 재확인 필요."
+      ],
+      "evidence": [
+        {
+          "doc_id": "f21c6cdfb974c8d65a793c3e7dce38664e5eac124f725eca34ee727e60fb7712",
+          "page": 1,
+          "quote": "We bring forward our call for the next BoJ hike from October to September"
+        },
+        {
+          "doc_id": "f21c6cdfb974c8d65a793c3e7dce38664e5eac124f725eca34ee727e60fb7712",
+          "page": 1,
+          "quote": "We now also expect a December hike, raising our end-2026 policy rate forecast to 1.5%"
+        },
+        {
+          "doc_id": "f21c6cdfb974c8d65a793c3e7dce38664e5eac124f725eca34ee727e60fb7712",
+          "page": 1,
+          "quote": "Assuming no major shift in the fiscal stance, we expect three hikes in 2027 (Apr/Jul/Dec), taking the policy rate to 2.25% by end-2027"
+        }
+      ],
+      "prior_view_id": "JPM-JP-policy.near_term-64c14296422a",
+      "change": "revised",
+      "change_note": "7/31의 10월 기본 전망·9월 위험과 8/18의 9월 기본 전망을 직접 대조. 원문이 12월 추가 인상도 명시.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "JPM-JP-consumption.trend-89753e84185d",
+      "house": "JPM",
+      "country": "JP",
+      "track": "consumption.trend",
+      "effective_date": "2026-09-07",
+      "summary": "정책에 따른 내구재 수요 변동을 평탄화하면 일본 소비의 기조는 견조하다고 본다. 소득 여건 개선에 따른 서비스 소비가 내구재 반락을 완충한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "JP_CONSUMPTION",
+        "JP_WAGES",
+        "JP_GDP",
+        "JP_CPI"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "89753e84185d5855cf459d64fc5512225d16e4863694062793c2426f44a71479",
+          "page": 1,
+          "quote": "Looking through this noise by smoothing across 2Q and 3Q, CAI signals resilient underlying consumer spending, consistent with our view."
+        },
+        {
+          "doc_id": "89753e84185d5855cf459d64fc5512225d16e4863694062793c2426f44a71479",
+          "page": 1,
+          "quote": "continued strength in services spending, supported by improved income conditions, should help offset any durable goods payback."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-US-policy.near_term-204a808560cf",
+      "house": "Citi",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-29",
+      "summary": "매파적 잭슨홀 발언에도 9월 이전 지표가 충분히 약해 연준이 동결할 것으로 예상했다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "204a808560cf0f33ead8793a58d979baf1862023d106fff09c69ab8ebe71d1cc",
+          "page": 1,
+          "quote": "We continue to think data before September will be soft enough for officials to keep policy rates unchanged."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-US-policy.near_term-7ac041fa9cc2",
+      "house": "Citi",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-05",
+      "summary": "8월 고용 이후에도 9월 인상 가능성은 낮게 보고, 근원 CPI 전월비 0.18% 전망이 9월 동결을 지지한다고 판단한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "7ac041fa9cc24fede827723664dd5c84d514c681970cf82c2d547e81091688eb",
+          "page": 1,
+          "quote": "Core CPI projected at 0.18%MoM would have the Fed staying on hold at their September 16th meeting."
+        }
+      ],
+      "prior_view_id": "Citi-US-policy.near_term-204a808560cf",
+      "change": "maintained",
+      "change_note": "8/29 주간 보고서와 9/5 주간 보고서의 9월 동결 판단을 직접 대조. 별도의 인하 재개 시점은 변경됨.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-US-policy.easing_start-cfba8f653481",
+      "house": "Citi",
+      "country": "US",
+      "track": "policy.easing_start",
+      "effective_date": "2026-09-03",
+      "summary": "9월 초 중국 보고서의 정책 캘린더에는 연준 동결 후 10월 인하 재개로 기재되어 있었다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "US_UNEMPLOYMENT",
+        "US_CORE_PCE",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "중국 보고서의 타지역 전망 요약. 이후 직접 미국 보고서로 교체."
+      ],
+      "evidence": [
+        {
+          "doc_id": "cfba8f653481e70c27a99a5f47d0ca3abdecda2ceaa529cb2e46ab86d1a8920a",
+          "page": 6,
+          "quote": "Fed FOMC Citi E: On hold, with cuts to resume in October"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-US-policy.easing_start-7ac041fa9cc2",
+      "house": "Citi",
+      "country": "US",
+      "track": "policy.easing_start",
+      "effective_date": "2026-09-05",
+      "summary": "예상했던 실업률 상승이 나타나지 않아 인하 재개를 2027년 6월로 늦추고, 6·9·12월 각각 25bp 인하를 전망한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_UNEMPLOYMENT",
+        "US_PAYROLLS",
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "7ac041fa9cc24fede827723664dd5c84d514c681970cf82c2d547e81091688eb",
+          "page": 1,
+          "quote": "The rise in the unemployment rate we had forecast this year did not materialize and we now expect rate cuts to resume in June of next year with 25bp cuts in June, September and December."
+        }
+      ],
+      "prior_view_id": "Citi-US-policy.easing_start-cfba8f653481",
+      "change": "revised",
+      "change_note": "9/3 수집된 타지역 정책 캘린더의 10월 재개와 9/5 직접 미국 주간 보고서의 2027년 6월 재개를 대조. 이전 근거의 범위가 약하므로 직접 미국 과거 원본 추가 확인 권장.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-US-inflation.preview-c8c862fae85b",
+      "house": "Citi",
+      "country": "US",
+      "track": "inflation.preview",
+      "effective_date": "2026-09-08",
+      "summary": "8월 근원 CPI 전월비 0.184%, 근원 PCE 전월비 0.19%를 예상한다. PCE 방법론 변경·수정치가 물가 경로 평가에 중요하다고 본다.",
+      "scope": "country_research",
+      "assumptions": [
+        "PPI 세부 항목에 따라 CPI·PCE 전망 미세 조정 가능.",
+        "PCE 수정 전후 수치를 별도 비교해야 함."
+      ],
+      "watch": [
+        "US_CORE_CPI",
+        "US_PPI",
+        "US_CORE_PCE"
+      ],
+      "analyst_questions": [
+        "실제치가 0.184% 전망과 얼마나 다른가?",
+        "PCE 개정이 기존 기조 판단을 바꾸는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "c8c862fae85baf9de9c09a63d395749c63a5d2bb5a7af73e1461992775b60b50",
+          "page": 1,
+          "quote": "Our final (for now) forecast is for a 0.184%MoM increase in core CPI in August, with the year-on-year reading falling to 2.3% (but with risk it stays at 2.4%)."
+        },
+        {
+          "doc_id": "c8c862fae85baf9de9c09a63d395749c63a5d2bb5a7af73e1461992775b60b50",
+          "page": 1,
+          "quote": "Details of CPI and PPI lead us to pencil in a 0.19%MoM increase in core PCE in August, which will incorporate new methodologies to calculate key components."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-EA-policy.near_term-cfba8f653481",
+      "house": "Citi",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-03",
+      "summary": "중국 보고서의 9월 정책 캘린더에는 ECB 인상 후 12개월 동결로 기재되어 있다. 유로존 직접 전망을 대신하는 확정 견해로 취급하지 않는다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "ECB_DECISION",
+        "EA_CORE_HICP",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "유로존 직접 보고서를 아직 연결하지 못함. 전망의 전제·변경 조건은 미확인.",
+        "표의 ECB 행을 이미지로 대조했으나 전망 최신성은 별도 확인 필요."
+      ],
+      "evidence": [
+        {
+          "doc_id": "cfba8f653481e70c27a99a5f47d0ca3abdecda2ceaa529cb2e46ab86d1a8920a",
+          "page": 6,
+          "quote": "ECB monetary policy meeting Citi E: Hike, and on hold for the next 12 months"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-GB-productivity.trend-f08f20021e22",
+      "house": "Citi",
+      "country": "GB",
+      "track": "productivity.trend",
+      "effective_date": "2026-09-07",
+      "summary": "영국 생산성 개선을 ICT·AI 활용과 관련된 의미 있는 변화로 보지만 데이터 선택에 민감하며 인과관계나 물가 효과는 확정하지 않는다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_PRODUCTIVITY",
+        "GB_WAGES",
+        "GB_EMPLOYMENT",
+        "GB_SERVICES_CPI"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "이 구조적 분석에서 단기 BoE 금리 경로를 추론하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "f08f20021e22bd8ae151566577ca97d27c3f92b4c52f9621f1aaec1539610ec6",
+          "page": 1,
+          "quote": "We think this development is both positive and meaningful, although we remain cautious."
+        },
+        {
+          "doc_id": "f08f20021e22bd8ae151566577ca97d27c3f92b4c52f9621f1aaec1539610ec6",
+          "page": 1,
+          "quote": "While not causation, this is highly correlated with increased productivity in that sector."
+        },
+        {
+          "doc_id": "f08f20021e22bd8ae151566577ca97d27c3f92b4c52f9621f1aaec1539610ec6",
+          "page": 1,
+          "quote": "The outcome on inflation is unclear."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-CA-policy.easing_start-652c23b9ca8f",
+      "house": "Citi",
+      "country": "CA",
+      "track": "policy.easing_start",
+      "effective_date": "2026-09-03",
+      "summary": "수요 부진이 에너지의 근원물가 전가를 제약하겠지만, BoC가 유가·물가 위험에 민감해 인하는 2027년까지 늦춰질 것으로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_GDP",
+        "CA_EMPLOYMENT",
+        "ENERGY_PRICES",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "652c23b9ca8fc7cdf635b11ed43187cc2579e992792f00ff13ecc0841adda7cf",
+          "page": 1,
+          "quote": "we now think the rate cuts necessary to close the output gap will not be delivered until 2027."
+        },
+        {
+          "doc_id": "652c23b9ca8fc7cdf635b11ed43187cc2579e992792f00ff13ecc0841adda7cf",
+          "page": 1,
+          "quote": "This soft demand backdrop will in turn continue to limit any pass through of higher energy costs to core inflation."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-CA-policy.easing_start-b4727b2c3b2f",
+      "house": "Citi",
+      "country": "CA",
+      "track": "policy.easing_start",
+      "effective_date": "2026-09-05",
+      "summary": "최근 강한 지표를 지속적인 수요 개선보다 변동성으로 보고 약 1% 성장·초과공급을 기본으로 둔다. 매파적 소통 탓에 인하 재개는 2027년으로 예상한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_GDP",
+        "CA_EMPLOYMENT",
+        "ENERGY_PRICES",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "b4727b2c3b2f74f7534740ef15af5408ad696b959822d48d920fea388e098a87",
+          "page": 1,
+          "quote": "Our base case remains that sluggish ~1% growth will keep the economy in excess supply until policy rates become more accommodative."
+        },
+        {
+          "doc_id": "b4727b2c3b2f74f7534740ef15af5408ad696b959822d48d920fea388e098a87",
+          "page": 1,
+          "quote": "But with hawkish communications that are likely dependent on oil prices, we now do not expect rate cuts until 2027."
+        }
+      ],
+      "prior_view_id": "Citi-CA-policy.easing_start-652c23b9ca8f",
+      "change": "maintained",
+      "change_note": "9/3 회의 코멘트의 2027년 인하 전망을 9/5 주간 보고서가 유지. 성장과 고용 변동성이 근거로 추가됨.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-AU-policy.near_term-a9696a47fd54",
+      "house": "Citi",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-20",
+      "summary": "7월 고용 약화를 방학 관련 통계 왜곡으로 해석하고, 임금 위험과 약한 생산성 때문에 11월 마지막 25bp 인상으로 4.60%를 예상했다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_EMPLOYMENT",
+        "AU_WAGES",
+        "AU_CPI",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "a9696a47fd5476c02c5dd1e26e779d21753073c4ad18f267bef170344e0ad2fe",
+          "page": 1,
+          "quote": "We continue to expect one final 25bp increase from the MPB to 4.60% in November."
+        },
+        {
+          "doc_id": "a9696a47fd5476c02c5dd1e26e779d21753073c4ad18f267bef170344e0ad2fe",
+          "page": 1,
+          "quote": "With productivity growth remaining weak, this combination of higher wages and prices would require tighter monetary policy."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-AU-policy.near_term-f0bdc10fe2fb",
+      "house": "Citi",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-28",
+      "summary": "RBA 인상 시점을 11월에서 9월로 앞당겼다. 물가가 전망을 더 웃돌면 11월 추가 인상 위험도 있다고 본다.",
+      "scope": "cross_region_summary",
+      "assumptions": [
+        "가계 지출·물가가 강하고 큰 폭의 실업률 상승은 예상하지 않음."
+      ],
+      "watch": [
+        "AU_CPI",
+        "AU_TRIMMED_CPI",
+        "AU_RETAIL_SALES",
+        "AU_EMPLOYMENT",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "변경 근거는 아시아 보고서의 호주 요약이며 연결된 원래 호주 전망 원본은 추가 확인 필요."
+      ],
+      "evidence": [
+        {
+          "doc_id": "f0bdc10fe2fb4ee3bfde10465c54a8196994bfff215c48428705a9fe2d9cbb84",
+          "page": 2,
+          "quote": "Australia: We bring forward our long-held view of a hike in November instead to a 25bps hike in September."
+        },
+        {
+          "doc_id": "f0bdc10fe2fb4ee3bfde10465c54a8196994bfff215c48428705a9fe2d9cbb84",
+          "page": 2,
+          "quote": "the risk to our view is then for another hike in November should inflation exceed our current forecast."
+        }
+      ],
+      "prior_view_id": "Citi-AU-policy.near_term-a9696a47fd54",
+      "change": "revised",
+      "change_note": "8/20의 직접 호주 고용 보고서와 8/28 아시아 요약의 호주 전망 변경 문단을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "Citi-JP-policy.near_term-eb1a72bbcdfb",
+      "house": "Citi",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-07",
+      "summary": "미일 공동 환율 개입이 BoJ의 제약을 줄였다고 보고 다음 인상을 12월에서 9월로 앞당겼다. 2027년 1·6·12월 인상으로 연말 2%를 예상한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "BOJ_DECISION",
+        "JPY_FX",
+        "FED_DECISION",
+        "JP_CPI",
+        "JP_WAGES"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "8월 7일 직접 일본 보고서 기준. 9/3 타지역 캘린더도 방향을 언급하지만 최신 직접 일본 전망 확인 필요."
+      ],
+      "evidence": [
+        {
+          "doc_id": "eb1a72bbcdfb63cd77e6f802003a3a63111cd794ea68008b83d4c9da027f49a3",
+          "page": 1,
+          "quote": "we are bringing forward our next rate hike forecast from December to September, and we expect the BoJ to continue hiking in January, June, and December of next year, with the policy rate reaching 2% by the end of next year."
+        },
+        {
+          "doc_id": "eb1a72bbcdfb63cd77e6f802003a3a63111cd794ea68008b83d4c9da027f49a3",
+          "page": 1,
+          "quote": "The risk of more aggressive hikes remains, depending on Fed policy."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "전후 경로 변경은 원문 자체 설명. 별도 이전 일본 보고서와 대조는 미완료.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-US-policy.near_term-c354fadbe16c",
+      "house": "BofA",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-04",
+      "summary": "근원물가가 충분히 둔화하지 않아 9월 연준 인상을 예상한다. CPI·PCE 발표를 결정적 입력으로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "c354fadbe16c7b8f716964d4301acfe45cf35ba616dbf0c165040f04e80f2792",
+          "page": 1,
+          "quote": "Next week's inflation data could be the decisive factor for a September hike. We expect the report to be firm enough for the FOMC to follow through."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-US-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "견조한 성장·균형에 있는 노동시장·높은 물가를 근거로, 9월부터 2026년 총 75bp 연준 인상이라는 컨센서스 밖의 전망을 유지한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 6,
+          "quote": "Finally, we maintain our out-of-\nconsensus call that the Fed will hike by 75bp this year, starting in September."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 6,
+          "quote": "Growth is solid, the labor market is in balance, inflation is too high and monetary policy is too easy."
+        }
+      ],
+      "prior_view_id": "BofA-US-policy.near_term-c354fadbe16c",
+      "change": "maintained",
+      "change_note": "9/4 미국 주간 보고서의 9월 인상 방향을 9/8 글로벌 보고서 미국 담당자 장에서 직접 재확인. 75bp 연간 경로는 후자에서 확인.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-US-inflation.preview-87d785a3d22d",
+      "house": "BofA",
+      "country": "US",
+      "track": "inflation.preview",
+      "effective_date": "2026-09-04",
+      "summary": "8월 근원 CPI 전월비 0.22%, 근원 PCE 0.24%를 예상한다. 이 정도도 인상 근거가 된다고 보지만 위원 간 판단 차이로 근소한 결정임을 인정한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [
+        "수치뿐 아니라 위원회가 같은 물가를 어떻게 평가하는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "87d785a3d22d541e7510915c363aa9eed20419b148a4d2b4f07fd5e2c157a449",
+          "page": 1,
+          "quote": "We forecast core CPI to rise a trend-like 0.22% m/m in August, while core PCE should come in slightly firmer at 0.24% m/m."
+        },
+        {
+          "doc_id": "87d785a3d22d541e7510915c363aa9eed20419b148a4d2b4f07fd5e2c157a449",
+          "page": 1,
+          "quote": "Admittedly, our forecast for August inflation is not a slam dunk for a September hike."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-US-growth.drivers-476c53a21b3b",
+      "house": "BofA",
+      "country": "US",
+      "track": "growth.drivers",
+      "effective_date": "2026-09-08",
+      "summary": "미국 수요의 핵심 동력은 AI 투자와 소비다. 에너지 물가 상승은 실질 소비와 설비투자를 한계적으로 낮추지만 기본 성장 견조성은 유지한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "US_RETAIL_SALES",
+        "US_GDP",
+        "US_CAPEX",
+        "US_PAYROLLS",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 6,
+          "quote": "More generally, we continue to see AI-related investment and consumer spending as the key drivers of demand."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 6,
+          "quote": "The consumer, meanwhile, remains supported by a stable labor market and strong wealth effects."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-EA-policy.near_term-7794d146ebb2",
+      "house": "BofA",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-01",
+      "summary": "9월 ECB 인상을 기본 전망으로 유지하고 12월 인상은 가능성이 커졌지만 기본 전망에 넣지 않았다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "7794d146ebb20409fd5399c9e1502ef17f9d32023d15b928f59bdd298e096f9c",
+          "page": 1,
+          "quote": "September remains our base case, but December, while an increasing possibility, is not."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-EA-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "9월 추가 인상을 예상하되 12월 인상은 여전히 기본 전망이 아니다. 에너지 경로가 더 지속적이면 판단이 바뀔 수 있다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 11,
+          "quote": "We still expect one more hike in September (this week). And yes, the risks of another hike in December has increased, and a bit more persistence on the energy profile could make it the base case."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 11,
+          "quote": "we don’t think a final hike in December should be the base case."
+        }
+      ],
+      "prior_view_id": "BofA-EA-policy.near_term-7794d146ebb2",
+      "change": "maintained",
+      "change_note": "9/1 유로존 개별 보고서와 9/8 글로벌 보고서 유로존 장의 12월 위험/기본 전망 구분을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-EA-policy.easing_start-476c53a21b3b",
+      "house": "BofA",
+      "country": "EA",
+      "track": "policy.easing_start",
+      "effective_date": "2026-09-08",
+      "summary": "2027년 인하 개시를 3월에서 6월로 늦추되 연말 예금금리 2% 또는 이하라는 방향을 유지한다. 2026년 12월 추가 인상 시 인하가 더 지연될 수 있다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "ECB_DECISION",
+        "EA_CORE_HICP",
+        "EA_GDP",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 11,
+          "quote": "Crucially, we still expect cuts in 2027, but rather than starting in March, we move them to June."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 11,
+          "quote": "Our bigger conviction remains that cuts will follow in 2027, bringing the ECB deposit rate to or below 2% by end-27 again."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 11,
+          "quote": "A hike in December of this year could delay further those cuts."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "개시 시점 변경은 원문 자체가 명시. 9/1 문서는 이미 여름 인하를 적었으므로 9/1→9/8에 새로 변경됐다고 해석하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-EA-growth.trend-476c53a21b3b",
+      "house": "BofA",
+      "country": "EA",
+      "track": "growth.trend",
+      "effective_date": "2026-09-08",
+      "summary": "2026년 연간 성장 전망 상향은 상반기 이월효과가 크며 앞으로의 분기 경로는 에너지·실질금리 상승으로 약해졌다고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_GDP",
+        "EA_PMI",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [
+        "연간 성장률의 이월효과와 앞으로의 국내수요를 분리했는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 10,
+          "quote": "Changes reflect better carryovers from 1H26 and a marginal lowering of the sequential growth path on the back of higher energy prices and real yields."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-EA-inflation.outlook-476c53a21b3b",
+      "house": "BofA",
+      "country": "EA",
+      "track": "inflation.outlook",
+      "effective_date": "2026-09-08",
+      "summary": "근원물가와 광범위한 2차 효과는 억제되고, 수요 부족과 긴축이 궁극적으로 물가 목표 하회를 가져올 것으로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "EA_GDP",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "이 PDF의 전체 요약표와 국가 장에 물가 수치 차이가 있어 정확한 연간 수치 전망은 이번 상태에 채택하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 10,
+          "quote": "We continue to expect core inflation and broad second-round effects to remain contained. Instead, we stick to our view that insufficient aggregate demand and tight policy will ultimately lead to an inflation undershoot."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-GB-policy.near_term-18f4e3e9235c",
+      "house": "BofA",
+      "country": "GB",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "2026년 동결 후 2027년 11월 25bp 인하로 3.5%를 예상한다. 에너지 충격의 2차 효과가 나타나면 인상 위험이 있다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_CPI",
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "BOE_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "18f4e3e9235c1880e382c7977b2ee68aa4df5db1b1ba4b7e7b19b8fa0eadf47b",
+          "page": 1,
+          "quote": "We keep our BoE call unchanged, expecting rates to remain on hold through 2026, followed by a 25bp cut in November 2027 to 3.5%."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-GB-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "GB",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "2026년 BoE 동결 및 2027년 11월 한 차례 인하 전망을 유지하되, 위험은 인상 방향이고 11·12·2월 회의를 열어둔다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_CPI",
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "BOE_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 15,
+          "quote": "We keep our BoE call unchanged with BoE on hold in 2026, followed by a single 25bp cut in November 2027 to 3.5%."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 15,
+          "quote": "The balance of risks still leans towards a hike, with Nov., Dec. and Feb. live meetings."
+        }
+      ],
+      "prior_view_id": "BofA-GB-policy.near_term-18f4e3e9235c",
+      "change": "maintained",
+      "change_note": "9/2 영국 개별 보고서와 9/8 글로벌 보고서 영국 장을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-GB-growth.trend-476c53a21b3b",
+      "house": "BofA",
+      "country": "GB",
+      "track": "growth.trend",
+      "effective_date": "2026-09-08",
+      "summary": "상반기는 예상보다 좋았지만 에너지 물가·금융여건·예산 불확실성으로 하반기 수요는 완만해질 것으로 본다. 재정 완화는 상방 위험이다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_GDP",
+        "GB_RETAIL_SALES",
+        "GB_FISCAL",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 15,
+          "quote": "But with inflation set to rise in H2, tighter financial conditions and domestic policy uncertainty, demand is likely to be modest in the months ahead."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 15,
+          "quote": "potential fiscal loosening in the Autumn Budget can pose upside risks, as long as it isn’t accompanied by a significant tightening in financial conditions"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-CA-policy.near_term-9c98b0daff2a",
+      "house": "BofA",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-04",
+      "summary": "고용·임금 약화가 BoC의 2026년 2.25% 동결 전망을 재확인하며 다음 판단은 물가가 좌우한다고 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_EMPLOYMENT",
+        "CA_WAGES",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "9c98b0daff2a993159efb2b30405a9499cede474273dc03f5e7d7a25004e0b7b",
+          "page": 1,
+          "quote": "We continue to expect the BoC to hold the policy rate at 2.25% through 2026."
+        },
+        {
+          "doc_id": "9c98b0daff2a993159efb2b30405a9499cede474273dc03f5e7d7a25004e0b7b",
+          "page": 1,
+          "quote": "inflation remains the data point that will ultimately determine the BoC’s next decision."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-CA-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "CA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "무역 불확실성과 근원물가 안정으로 2.25% 동결이 2027년까지 이어질 것으로 본다. 연준 인상이 BoC 인상을 자동 유발한다고 보지 않는다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_EMPLOYMENT",
+        "CA_GDP",
+        "BOC_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "같은 페이지의 weak jobs report in July 표현은 앞 페이지의 August와 다름. 고용 대상 월을 이 문구로 확정하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 19,
+          "quote": "We expect the BoC to hold at 2.25% for the rest of the year and into next, keeping a cautious, data-dependent tone."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 19,
+          "quote": "We do not think Fed hikes will prompt the BoC to hike either."
+        }
+      ],
+      "prior_view_id": "BofA-CA-policy.near_term-9c98b0daff2a",
+      "change": "maintained",
+      "change_note": "9/4 캐나다 고용 코멘트와 9/8 글로벌 보고서 캐나다 장의 2026년 동결 방향을 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-AU-policy.near_term-b6e5645cbaf8",
+      "house": "BofA",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "가계 수요와 약한 생산성에 따른 초과수요가 9월 RBA 25bp 인상 근거를 강화한다고 평가한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_CPI",
+        "AU_GDP",
+        "AU_PRODUCTIVITY",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "PDF에 Corrected 표기. 수정 전 버전은 확인하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "b6e5645cbaf808f5a3a1b47206d2f8aeaa48268ce70e3cd78f22c9607757ebe1",
+          "page": 1,
+          "quote": "In our view, these data are consistent with ongoing excess demand pressures and strengthen the case for a 25bp hike in September."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-AU-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "9월 25bp 인상으로 4.60%에 도달한 뒤 2027년 중반까지 동결을 예상한다. 높은 물가와 하방 성장·고용 위험을 함께 고려한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_CPI",
+        "AU_TRIMMED_CPI",
+        "AU_EMPLOYMENT",
+        "AU_HOUSE_PRICES",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 20,
+          "quote": "We expect the RBA will hike by 25bps in September to a peak of 4.60%, then hold through to mid-2027 as they balance above-target inflation against downside growth/labour risks."
+        }
+      ],
+      "prior_view_id": "BofA-AU-policy.near_term-b6e5645cbaf8",
+      "change": "maintained",
+      "change_note": "9/2 호주 GDP 보고서와 9/8 호주 담당자 장에서 9월 인상 경로를 재확인.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-JP-policy.near_term-476c53a21b3b",
+      "house": "BofA",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "BoJ가 대략 분기당 한 번으로 인상을 가속해 2026년 9·12월과 2027년 3·7월 인상으로 2%에 도달할 것으로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "JP_CPI",
+        "JP_WAGES",
+        "JPY_FX",
+        "BOJ_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 13,
+          "quote": "Our new base case is for the BoJ to accelerate to a roughly quarterly pace, with hikes in September and December 2026 and March and July 2027, taking the policy rate to 2%"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "본문은 8/14에 수정한 경로라고 설명. 9/8 신규 변경으로 기록하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-JP-inflation.outlook-476c53a21b3b",
+      "house": "BofA",
+      "country": "JP",
+      "track": "inflation.outlook",
+      "effective_date": "2026-09-08",
+      "summary": "식품 물가 재가속으로 근원물가가 다시 높아질 것으로 본다. 신선식품·에너지 제외 BoJ식 근원 CPI는 2027년 초 약 3%로 상승할 전망이다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "JP_CPI",
+        "JP_CORE_CORE_CPI",
+        "JP_FOOD_PRICES",
+        "JPY_FX"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 13,
+          "quote": "We continue to expect BoJ-style core CPI inflation (excluding fresh food and energy), currently running at around 2%, to rise back to around 3% by early next year."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "BofA-GLOBAL-growth.risks-476c53a21b3b",
+      "house": "BofA",
+      "country": "GLOBAL",
+      "track": "growth.risks",
+      "effective_date": "2026-09-08",
+      "summary": "AI 투자·아시아 수출이 글로벌 회복력을 뒷받침하지만 호르무즈 차질, 재고 재축적, 미국 금리 상승으로 금융여건이 더 긴축되는 위험을 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "ENERGY_PRICES",
+        "US_CAPEX",
+        "GLOBAL_PMI",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 2,
+          "quote": "The global economy has continued to prove resilient despite the energy shock and the Iran war, on the back of the AI-driven investment boom in the US and the export cycle in Asia."
+        },
+        {
+          "doc_id": "476c53a21b3b772e65fe68f67d252d89efadb0c2ec3ca06030e597886bab951c",
+          "page": 2,
+          "quote": "risks will continue to build as long as traffic through the Strait of Hormuz remains low and the need to rebuild oil inventories eventually surfaces."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-US-policy.near_term-09e680b3efda",
+      "house": "HSBC",
+      "country": "US",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "연준이 2026~2027년 동결한다는 기본 전망은 유지하지만, 9월 25bp 인상 가능성은 거의 반반으로 높아졌다고 본다.",
+      "scope": "rates_and_economics",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_PAYROLLS",
+        "FED_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "09e680b3efdaf448d102a37eb6b0d95126e9be019036f19f76052be44e0f3a6a",
+          "page": 1,
+          "quote": "Since the start of the year, we have projected that the FOMC will hold policy rates steady through 2026 and 2027. That view remains our base case, but we now see a nearly even likelihood of a 25bp rate hike in September"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "유지와 위험 분포 변경은 원문 설명. 같은 하우스의 경제 전망과 금리 전략이 함께 작성한 문서.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-US-rates.outlook-09e680b3efda",
+      "house": "HSBC",
+      "country": "US",
+      "track": "rates.outlook",
+      "effective_date": "2026-09-02",
+      "summary": "미 국채 금리 전망을 전 구간 상향했다. 10년물은 2026년 말 4.65%, 2027년 말 4.75%로 전망하며 장기 수급·재정 부담에 따른 기간 프리미엄 상승을 중시한다.",
+      "scope": "rates_and_economics",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_PCE",
+        "FED_DECISION",
+        "US_FISCAL",
+        "UST_SUPPLY"
+      ],
+      "analyst_questions": [
+        "정책금리 위험과 장기물 수급·기간 프리미엄을 구분했는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "09e680b3efdaf448d102a37eb6b0d95126e9be019036f19f76052be44e0f3a6a",
+          "page": 1,
+          "quote": "we now see 10Y USTs at 4.65% by end-2026 (4.30% previously), rising to 4.75% by end-2027 (4.40% previously)."
+        },
+        {
+          "doc_id": "09e680b3efdaf448d102a37eb6b0d95126e9be019036f19f76052be44e0f3a6a",
+          "page": 1,
+          "quote": "Across a longer horizon, however, we continue to see structural supply-demand dynamics pointing towards upward pressure on long-end rates and a steepening of the Treasury curve."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "수치 변경은 원문 자체가 전후 값을 명시.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-US-inflation.trend-202e2c3d6e88",
+      "house": "HSBC",
+      "country": "US",
+      "track": "inflation.trend",
+      "effective_date": "2026-09-08",
+      "summary": "에너지·식품의 헤드라인 위험에도 미국을 포함한 순차적 근원물가는 통제되고 있으며, 강한 고용 증가에도 임금 상승은 완화됐다고 평가한다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "US_CORE_CPI",
+        "US_CORE_PCE",
+        "US_AHE",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "202e2c3d6e88d6968ebbaad1c4ab75b4c4ffcda273a63c1c47d666ab89197f21",
+          "page": 1,
+          "quote": "Despite these headline inflation risks from food and energy, sequential core inflation data remains remarkably under control, even in the US, where core inflation has slowed a little and wage growth has cooled to 3.1% y-o-y despite strong payroll gains in August."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-EA-policy.near_term-cba3cc0fa43a",
+      "house": "HSBC",
+      "country": "EA",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-01",
+      "summary": "9월 ECB 인상을 이번 사이클의 마지막으로 예상한다. 노동시장에서 발생하는 국내 물가 압력과 2차 효과를 상대적으로 온건하게 보지만 공급·지정학 위험은 상방이다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_CORE_HICP",
+        "EA_WAGES",
+        "ENERGY_PRICES",
+        "ECB_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "cba3cc0fa43a7bbb27f05f0560044d639789e8fa8e309174f2706af54f783eca",
+          "page": 1,
+          "quote": "Our forecast is for September to be the final hike in this cycle. We are relatively sanguine about second-round effects and see little domestic inflationary pressure building from the labour market."
+        },
+        {
+          "doc_id": "cba3cc0fa43a7bbb27f05f0560044d639789e8fa8e309174f2706af54f783eca",
+          "page": 1,
+          "quote": "a range of supply-side and geopolitical factors mean the risks to policy rates and inflation are skewed firmly to the upside"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-EA-growth.trend-36254e1f045b",
+      "house": "HSBC",
+      "country": "EA",
+      "track": "growth.trend",
+      "effective_date": "2026-09-01",
+      "summary": "독일 재정·AI 투자·심리 회복은 지속력이 있지만 수출 기여와 실질소득에는 부담이 있어 하반기에는 완만한 둔화를 예상한다. 아일랜드 포함과 제외 성장률을 별도로 본다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "EA_GDP",
+        "EA_PMI",
+        "EA_RETAIL_SALES",
+        "DE_FISCAL",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [
+        "상향된 연간 전망과 이후 분기 모멘텀을 구분했는가?"
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "36254e1f045bfb344d1a0bd02108d21e3fb100bab3b8544343d292190f4baca2",
+          "page": 1,
+          "quote": "We think some areas of resilience, including buoyant sentiment, German fiscal effects and AI investment, have legs. Other tailwinds might prove more fleeting though."
+        },
+        {
+          "doc_id": "36254e1f045bfb344d1a0bd02108d21e3fb100bab3b8544343d292190f4baca2",
+          "page": 1,
+          "quote": "So we still expect growth to slow, albeit modestly, in H2."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-GB-policy.near_term-b861e08af099",
+      "house": "HSBC",
+      "country": "GB",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-07",
+      "summary": "9월 BoE는 6대3으로 3.75% 동결을 예상한다. 아직 2차 효과가 나타나지 않았지만 에너지 가격에 좋은 뉴스가 없으면 11월은 인상 가능성이 열린 회의다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GB_SERVICES_CPI",
+        "GB_WAGES",
+        "GB_CPI",
+        "BOE_DECISION",
+        "ENERGY_PRICES"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "보고서가 인용한 adverse scenario의 4.50~4.75%를 HSBC 기본 전망으로 채택하지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "b861e08af09953456fa0c2af477f5831c4ca67d454712548d75cfa08f1af6a37",
+          "page": 1,
+          "quote": "We expect the BoE’s Monetary Policy Committee (MPC) to vote by 6-3 to keep Bank Rate on hold at 3.75% on 17 September"
+        },
+        {
+          "doc_id": "b861e08af09953456fa0c2af477f5831c4ca67d454712548d75cfa08f1af6a37",
+          "page": 1,
+          "quote": "They said they would consider a move if evidence of ‘second-round effects’ started to appear, and, so far, that’s not the case."
+        },
+        {
+          "doc_id": "b861e08af09953456fa0c2af477f5831c4ca67d454712548d75cfa08f1af6a37",
+          "page": 1,
+          "quote": "Without good news on energy, that meeting is very much live"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-CA-policy.reaction-c6040dcf630f",
+      "house": "HSBC",
+      "country": "CA",
+      "track": "policy.reaction",
+      "effective_date": "2026-09-02",
+      "summary": "BoC는 무역 불확실성에 따른 성장 위험과 물가 상방 위험 사이에서 비교적 균형적인 입장이라고 해석한다. 이 보고서만으로 확정적 다음 금리 경로는 지정하지 않는다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "CA_CORE_CPI",
+        "CA_GDP",
+        "CA_EMPLOYMENT",
+        "ENERGY_PRICES",
+        "BOC_DECISION"
+      ],
+      "analyst_questions": [
+        "관세의 직접 충격보다 투자·고용·신뢰의 간접 영향이 큰가?",
+        "근원물가가 에너지 위험을 따라 재가속하는가?"
+      ],
+      "limitations": [
+        "확정적인 향후 금리 수치·일정은 이 원문에서 확인되지 않음."
+      ],
+      "evidence": [
+        {
+          "doc_id": "c6040dcf630fb4293a3db4c42a117d3930640cc1ab60e60e12cf15d4c29d01b5",
+          "page": 1,
+          "quote": "There are clear arguments on both sides, and today’s opening statement appeared pretty finely balanced between the two perspectives."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-AU-policy.near_term-872d75a080e2",
+      "house": "HSBC",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-08-31",
+      "summary": "GDP가 약하면 스태그플레이션에 가까워지지만 예상보다 강하면 추가 인상이 필요할 수 있다는 조건을 제시했다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_GDP",
+        "AU_TRIMMED_CPI",
+        "AU_PRODUCTIVITY",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "872d75a080e2daddc0c16709959ad9dc0a1edddc44514b59c941e2226a2b6a46",
+          "page": 1,
+          "quote": "If, instead, this week's GDP print shows stronger than expected growth, the RBA may be forced to lift its cash rate further, increasing the risk of pushing the economy into a recession"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-AU-policy.near_term-781a9ced77cd",
+      "house": "HSBC",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-02",
+      "summary": "CPI와 GDP의 연속 상회, 생산성 하락을 근거로 종전 동결에서 9월·4분기 인상으로 4.85%까지 올리는 전망으로 바꿨다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_TRIMMED_CPI",
+        "AU_GDP",
+        "AU_PRODUCTIVITY",
+        "AU_EMPLOYMENT",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "781a9ced77cd39df34ec7107ce38c81e2a7178291e00a648ce0d9dff7295030e",
+          "page": 1,
+          "quote": "We now expect the RBA to lift is cash rate in September and in Q4 to 4.85% (previously on hold)."
+        },
+        {
+          "doc_id": "781a9ced77cd39df34ec7107ce38c81e2a7178291e00a648ce0d9dff7295030e",
+          "page": 1,
+          "quote": "It is clear that demand growth is still tangibly exceeding growth in the supply capacity of the economy."
+        }
+      ],
+      "prior_view_id": "HSBC-AU-policy.near_term-872d75a080e2",
+      "change": "revised",
+      "change_note": "8/31에 GDP 상회 시 추가 인상 조건을 제시했고 9/2에 CPI·GDP 상회로 이를 기본 전망에 반영. 두 원본 직접 대조. 종전 동결이라는 설명은 9/2 원문 기준.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-AU-policy.near_term-a9dbf29fd2b4",
+      "house": "HSBC",
+      "country": "AU",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-07",
+      "summary": "9월 25bp와 4분기 추가 25bp 인상 전망을 재확인한다. RBA가 물가의 목표 복귀 지연을 덜 용인하는 방향으로 바뀌었다는 반응함수 해석을 중시한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_TRIMMED_CPI",
+        "AU_GDP",
+        "AU_PRODUCTIVITY",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "a9dbf29fd2b48627b92c7bf9e48075fa163038226246172a7349825b7347bb2e",
+          "page": 1,
+          "quote": "We see the RBA needing to lift its cash rate further and expect a 25bp hike in September. In addition, and where our view differs from most observers, is that we think they may have to deliver another 25bp beyond this (pencilled in for Q4)."
+        },
+        {
+          "doc_id": "a9dbf29fd2b48627b92c7bf9e48075fa163038226246172a7349825b7347bb2e",
+          "page": 1,
+          "quote": "Our sense from recent RBA commentary is that they have become more impatient and are now less tolerant of allowing the timing of the planned return of inflation to the target mid-point to be delayed further."
+        }
+      ],
+      "prior_view_id": "HSBC-AU-policy.near_term-781a9ced77cd",
+      "change": "maintained",
+      "change_note": "9/2 View change와 9/7 RBA 반응함수 코멘트에서 9월+4분기 인상 경로 직접 대조.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-AU-housing.outlook-781a9ced77cd",
+      "house": "HSBC",
+      "country": "AU",
+      "track": "housing.outlook",
+      "effective_date": "2026-09-02",
+      "summary": "추가 긴축에 따른 주택가격 고점 대비 하락 전망을 8%에서 13%로 확대한다. 성장 약화로 인하는 2027년 3분기부터 예상한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "AU_HOUSE_PRICES",
+        "AU_GDP",
+        "AU_EMPLOYMENT",
+        "RBA_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "781a9ced77cd39df34ec7107ce38c81e2a7178291e00a648ce0d9dff7295030e",
+          "page": 1,
+          "quote": "We expect higher rates will now mean an even bigger housing correction, with a peak-to-trough decline of 13% (previously 8%)."
+        },
+        {
+          "doc_id": "781a9ced77cd39df34ec7107ce38c81e2a7178291e00a648ce0d9dff7295030e",
+          "page": 1,
+          "quote": "We retain our view that rate cuts will begin from Q3 2027"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "주택 전망 변경과 인하 시점 유지는 원문 자체 설명.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-JP-policy.near_term-202e2c3d6e88",
+      "house": "HSBC",
+      "country": "JP",
+      "track": "policy.near_term",
+      "effective_date": "2026-09-08",
+      "summary": "글로벌 경제 보고서에서 9월 BoJ 인상을 예상한다. 이후 인상 횟수·최종금리와 일본 고유의 전제는 이 요약만으로 확정하지 않는다.",
+      "scope": "cross_region_summary",
+      "assumptions": [],
+      "watch": [
+        "JP_CPI",
+        "JP_WAGES",
+        "JPY_FX",
+        "BOJ_DECISION"
+      ],
+      "analyst_questions": [],
+      "limitations": [
+        "일본 직접 통화정책 보고서와 연결하지 못한 글로벌 요약 근거."
+      ],
+      "evidence": [
+        {
+          "doc_id": "202e2c3d6e88d6968ebbaad1c4ab75b4c4ffcda273a63c1c47d666ab89197f21",
+          "page": 1,
+          "quote": "We expect the ECB and BoJ to raise rates again in September, but policymakers the world over must balance the resilience in growth and the upside headline inflation risks against more benign core price data and cooler labour markets."
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    },
+    {
+      "view_id": "HSBC-GLOBAL-growth.risks-202e2c3d6e88",
+      "house": "HSBC",
+      "country": "GLOBAL",
+      "track": "growth.risks",
+      "effective_date": "2026-09-08",
+      "summary": "AI 수혜가 작거나 없는 경제도 예상보다 버티고 있어 글로벌 성장의 회복력을 넓게 본다. 동시에 헤드라인 물가 위험과 통제된 근원물가를 구분한다.",
+      "scope": "country_research",
+      "assumptions": [],
+      "watch": [
+        "GLOBAL_PMI",
+        "ENERGY_PRICES",
+        "US_CORE_PCE",
+        "EA_CORE_HICP"
+      ],
+      "analyst_questions": [],
+      "limitations": [],
+      "evidence": [
+        {
+          "doc_id": "202e2c3d6e88d6968ebbaad1c4ab75b4c4ffcda273a63c1c47d666ab89197f21",
+          "page": 1,
+          "quote": "Growth data are faring better than expected – even in economies not seeing much of an AI-related boost"
+        },
+        {
+          "doc_id": "202e2c3d6e88d6968ebbaad1c4ab75b4c4ffcda273a63c1c47d666ab89197f21",
+          "page": 1,
+          "quote": "Headline inflation risks are growing again but core price data remain well-behaved for now"
+        }
+      ],
+      "prior_view_id": null,
+      "change": "uncompared",
+      "change_note": "이전 원본과 직접 비교하지 않음.",
+      "review_status": "draft",
+      "origin": "assistant_review_of_local_reports"
+    }
+  ]
+}
