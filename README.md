@@ -76,8 +76,8 @@
 
 | 넣는 파일 (앞부분) | 확장자 | 집어가는 곳 | 결과 |
 |---|---|---|---|
-| `ECFC_Growth Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` GDP |
-| `ECFC_Inflation Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` CPI |
+| `ECFC_Growth_Consensus` (구 `ECFC_Growth Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` GDP |
+| `ECFC_Inflation_Consensus` (구 `ECFC_Inflation Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | `/consensus` CPI |
 | `Bquant_` | `.xlsb` `.xlsx` | `데일리시황\BQL\Rawfile\update_master.py` | 유럽·TOPIX·AI·Top10 |
 | (모든 `.xlsx`) | `.xlsx` | `블벅경제지표\load_weco.py` | `/econ` 경제지표 |
 
@@ -95,6 +95,7 @@
 - 자세히: `블벅경제지표\사용법.md`
 
 **ECFC 컨센서스**
+- 국가 시트는 `미국26`·`미국27`처럼 연도 접미사를 붙일 수 있고, `/consensus`에서 2026·2027을 전환한다
 - xlsb 에는 최근 60일치만 들어있고, 누적 시계열은 `Consensus Builder\history\` 에 쌓인다
 - 병합 시 `history` 의 **최신 산출물**을 베이스로 이어붙인다 (원본 `_수정.xlsx` 는 오래 전에 멈춰 있음)
 - 7일 넘는 공백이 생기면 로그에 경고가 찍힌다

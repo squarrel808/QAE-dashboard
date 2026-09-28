@@ -36,10 +36,10 @@ RAW_DIR = os.environ.get("QAE_RAWDATA_DIR") or os.path.join(REPO_DIR, "____Rawda
 # 어떤 prefix 를 어느 파이프라인이 집어가는지 — 점검 출력과 문서용.
 # (실제 매칭은 각 스크립트가 자기 prefix 로 직접 호출한다)
 KNOWN = [
-    ("ECFC_Growth Consesus",   (".xlsb",),          "Consensus Builder — GDP 컨센서스"),
-    ("ECFC_Inflation Consesus", (".xlsb",),         "Consensus Builder — CPI 컨센서스"),
-    ("Bquant_",                (".xlsb", ".xlsx"),  "데일리시황 BQL — BQuant_Master"),
-    ("",                       (".xlsx",),          "블벅경제지표 — WECO/BQuant 캘린더 (내용으로 판별)"),
+    (("ECFC_Growth_Consensus", "ECFC_Growth Consesus"), (".xlsb",), "Consensus Builder — GDP 컨센서스"),
+    (("ECFC_Inflation_Consensus", "ECFC_Inflation Consesus"), (".xlsb",), "Consensus Builder — CPI 컨센서스"),
+    (("Bquant_",),             (".xlsb", ".xlsx"),  "데일리시황 BQL — BQuant_Master"),
+    (("",),                    (".xlsx",),          "블벅경제지표 — WECO/BQuant 캘린더 (내용으로 판별)"),
 ]
 
 
@@ -98,6 +98,18 @@ def find(prefix, exts=(".xlsx", ".xlsb"), extra_dirs=()):
     return hits[0] if hits else None
 
 
+def find_any(prefixes, exts=(".xlsx", ".xlsb"), extra_dirs=()):
+    """여러 허용 prefix 중 수정시각이 가장 최근인 파일 하나."""
+    hits = []
+    for prefix in prefixes:
+        hits.extend(find_all(prefix, exts, extra_dirs))
+    if not hits:
+        return None
+    hits = list(dict.fromkeys(hits))
+    hits.sort(key=lambda p: (os.path.getmtime(p), os.path.basename(p)), reverse=True)
+    return hits[0]
+
+
 def require(prefix, exts=(".xlsx", ".xlsb"), extra_dirs=()):
     """없으면 FileNotFoundError. 어디를 뒤졌는지 메시지에 담는다."""
     hit = find(prefix, exts, extra_dirs)
@@ -107,6 +119,17 @@ def require(prefix, exts=(".xlsx", ".xlsb"), extra_dirs=()):
     raise FileNotFoundError(
         "'{}*{}' 파일을 못 찾았습니다. 넣을 곳: {}".format(
             prefix, "|".join(exts), looked))
+
+
+def require_any(prefixes, exts=(".xlsx", ".xlsb"), extra_dirs=()):
+    """여러 허용 prefix 중 하나도 없으면 FileNotFoundError."""
+    hit = find_any(prefixes, exts, extra_dirs)
+    if hit:
+        return hit
+    looked = " / ".join(search_dirs(extra_dirs)) or RAW_DIR
+    raise FileNotFoundError(
+        "'{}*{}' 파일을 못 찾았습니다. 넣을 곳: {}".format(
+            " 또는 ".join(prefixes), "|".join(exts), looked))
 
 
 def describe(prefix, exts=(".xlsx", ".xlsb"), extra_dirs=()):
@@ -137,10 +160,10 @@ def main():
         print("  - {:<55} {:%Y-%m-%d %H:%M}  {:>9,}B".format(
             os.path.basename(p), ts, os.path.getsize(p)))
     print("\n[매칭] prefix -> 집어가는 곳")
-    for prefix, exts, who in KNOWN:
-        hit = find(prefix, exts)
+    for prefixes, exts, who in KNOWN:
+        hit = find_any(prefixes, exts)
         mark = os.path.basename(hit) if hit else "(없음)"
-        label = prefix or "(모든 xlsx)"
+        label = " / ".join(prefixes) if any(prefixes) else "(모든 xlsx)"
         print("  {:<26} {:<40} {}".format(label, mark, who))
     return 0
 

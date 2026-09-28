@@ -19,17 +19,19 @@
 
 | 넣는 파일 (앞부분) | 확장자 | 집어가는 곳 | 만들어지는 것 |
 |---|---|---|---|
-| `ECFC_Growth Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | GDP 컨센서스 (`/consensus`) |
-| `ECFC_Inflation Consesus` | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | CPI 컨센서스 (`/consensus`) |
+| `ECFC_Growth_Consensus` (구 `ECFC_Growth Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | GDP 컨센서스 (`/consensus`) |
+| `ECFC_Inflation_Consensus` (구 `ECFC_Inflation Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | CPI 컨센서스 (`/consensus`) |
 | `Bquant_` | `.xlsb` `.xlsx` | `데일리시황\BQL\Rawfile\update_master.py` | BQuant_Master → 유럽·TOPIX·AI·Top10 대시보드 |
 | (모든 `.xlsx`) | `.xlsx` | `블벅경제지표\load_weco.py` | 경제지표 캘린더 (`/econ`) |
 
 ```
-ECFC_Growth Consesus_수정.xlsb
-ECFC_Growth Consesus_수정 (2).xlsb        ← 브라우저가 붙인 (2). 그대로 둬도 된다
-ECFC_Growth Consesus_수정_20260909.xlsb
+ECFC_Growth_Consensus_26_27_시트추가.xlsb
+ECFC_Growth_Consensus_26_27_시트추가 (2).xlsb  ← 브라우저가 붙인 (2). 그대로 둬도 된다
+ECFC_Growth_Consensus_20260928.xlsb
 ^^^^^^^^^^^^^^^^^^^^ 여기까지만 맞으면 전부 같은 파일로 본다
 ```
+
+컨센서스 시트는 `미국26`·`미국27` 형식으로 2026·2027을 함께 넣을 수 있다.
 
 같은 prefix 가 여러 개면 **수정시각이 가장 최근인 것 하나**를 쓴다.
 경제지표(WECO)만 예외로, 최근 2주치 여러 개를 합쳐 쓴다 (같은 일정은 최신 파일 값).

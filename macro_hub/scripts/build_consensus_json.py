@@ -76,11 +76,15 @@ def build_real():
                 except Exception as e:
                     print(f"  [warn] {sheet} long median 실패({e}) — 원본 6M 사용")
                 data[sheet] = res
-        bundle = {"data": data, "names": mod.COUNTRY_NAMES,
+        years = mod.nest_flat_data(data)
+        default_year = "2026" if "2026" in years else next(iter(years), "2026")
+        bundle = {"data": years.get(default_year, {}), "years": years,
+                  "defaultYear": default_year, "names": mod.COUNTRY_NAMES,
                   "generatedAt": dt.datetime.now().strftime("%Y-%m-%d %H:%M")}
         os.makedirs(OUT_DIR, exist_ok=True)
         json.dump(bundle, open(os.path.join(OUT_DIR, out_name), "w", encoding="utf-8"), ensure_ascii=False)
-        print(f"[saved] {out_name}  ({len(data)} countries)")
+        coverage = ", ".join(f"{year}: {len(values)} countries" for year, values in years.items())
+        print(f"[saved] {out_name}  ({coverage})")
 
 
 def build_mock():
@@ -91,24 +95,28 @@ def build_mock():
     base_day = dt.date(2024, 7, 4)
     days = [(base_day + dt.timedelta(weeks=w)).isoformat() for w in range(0, 104)]  # ~24mo
     for out_name, center in [("consensus_cpi.json", 2.6), ("consensus_gdp.json", 1.8)]:
-        data = {}
-        for c in names:
-            base = center + random.uniform(-0.4, 0.4)
-            def sample(mu):
-                return [round(mu + random.gauss(0, 0.18), 2) for _ in range(random.randint(8, 16))]
-            two = [{"date": d, "values": sample(base + i * 0.01)} for i, d in enumerate(days[-10:])]
-            six = [{"date": d, "values": sample(base + i * 0.02)} for i, d in enumerate(days[-26::2])]
-            ml = []
-            for i, d in enumerate(days):
-                v = sorted(sample(base + i * 0.004))
-                n = len(v)
-                ml.append({"d": d, "med": round(v[n // 2], 3),
-                           "q1": round(v[n // 4], 3), "q3": round(v[3 * n // 4], 3)})
-            data[c] = {"2w": two, "6m": six, "ml": ml, "bw": 0.12}
-        bundle = {"data": data, "names": names, "generatedAt": dt.datetime.now().strftime("%Y-%m-%d %H:%M")}
+        years = {}
+        for year, shift in (("2026", 0.0), ("2027", -0.15)):
+            data = {}
+            for c in names:
+                base = center + shift + random.uniform(-0.4, 0.4)
+                def sample(mu):
+                    return [round(mu + random.gauss(0, 0.18), 2) for _ in range(random.randint(8, 16))]
+                two = [{"date": d, "values": sample(base + i * 0.01)} for i, d in enumerate(days[-10:])]
+                six = [{"date": d, "values": sample(base + i * 0.02)} for i, d in enumerate(days[-26::2])]
+                ml = []
+                for i, d in enumerate(days):
+                    v = sorted(sample(base + i * 0.004))
+                    n = len(v)
+                    ml.append({"d": d, "med": round(v[n // 2], 3),
+                               "q1": round(v[n // 4], 3), "q3": round(v[3 * n // 4], 3)})
+                data[c] = {"2w": two, "6m": six, "ml": ml, "bw": 0.12}
+            years[year] = data
+        bundle = {"data": years["2026"], "years": years, "defaultYear": "2026",
+                  "names": names, "generatedAt": dt.datetime.now().strftime("%Y-%m-%d %H:%M")}
         os.makedirs(OUT_DIR, exist_ok=True)
         json.dump(bundle, open(os.path.join(OUT_DIR, out_name), "w", encoding="utf-8"), ensure_ascii=False)
-        print(f"[saved-mock] {out_name}  ({len(data)} countries, ml {len(ml)}pts)")
+        print(f"[saved-mock] {out_name}  (2026/2027, {len(data)} countries, ml {len(ml)}pts)")
 
 
 if __name__ == "__main__":

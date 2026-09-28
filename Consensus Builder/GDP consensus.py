@@ -15,6 +15,7 @@ import glob
 import json
 import os
 import re
+import sys
 from datetime import datetime
 
 import numpy as np
@@ -26,6 +27,9 @@ import pandas as pd
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 스크립트 폴더 기준 (PC 무관)
 _HISTORY_DIR = os.path.join(_BASE_DIR, 'history')
 _FILE_PREFIX = 'ECFC_Growth Consesus'
+if _BASE_DIR not in sys.path:
+    sys.path.insert(0, _BASE_DIR)
+from consensus_years import COUNTRY_NAMES, find_source, nest_flat_data, sheet_file_map
 
 
 def _find_latest_excel(prefix: str, history_dir: str, base_dir: str) -> str:
@@ -42,26 +46,14 @@ def _find_latest_excel(prefix: str, history_dir: str, base_dir: str) -> str:
     return os.path.join(base_dir, f'{prefix}_수정.xlsx')
 
 
-_LATEST_GROWTH = _find_latest_excel(_FILE_PREFIX, _HISTORY_DIR, _BASE_DIR)
+_GROWTH_FALLBACK = _find_latest_excel(_FILE_PREFIX, _HISTORY_DIR, _BASE_DIR)
+_LATEST_GROWTH = find_source('growth', _GROWTH_FALLBACK, extra_dirs=[_BASE_DIR])
 print(f'[Excel file in use] {_LATEST_GROWTH}')
 
-EXCEL_FILES = {
-    '미국': _LATEST_GROWTH,
-    '영국': _LATEST_GROWTH,
-    '일본': _LATEST_GROWTH,
-    '독일': _LATEST_GROWTH,
-    '프랑스': _LATEST_GROWTH,
-    '호주': _LATEST_GROWTH,
-    '중국': _LATEST_GROWTH,
-    '캐나다': _LATEST_GROWTH,
-}
+EXCEL_FILES = sheet_file_map(_LATEST_GROWTH)
 
 OUTPUT_PATH = os.path.join(_BASE_DIR, 'gdp_consensus_dashboard.html')
 
-COUNTRY_NAMES = {
-    '미국': 'US', '영국': 'UK', '일본': 'JP', '독일': 'DE',
-    '프랑스': 'FR', '호주': 'AU', '중국': 'CN', '캐나다': 'CA'
-}
 # ============================================================
 
 
@@ -168,6 +160,9 @@ def clean_numeric_values(row: pd.Series) -> np.ndarray:
     s = s.str.replace('%', '', regex=False)
 
     vals = pd.to_numeric(s, errors='coerce').dropna()
+    # 일부 ECFC 시트는 예측기관 열 뒤에 보조 날짜 열(Excel serial)을 한 번 더 둔다.
+    # 이를 예측치로 포함하면 KDE 범위와 bandwidth가 수만 단위로 왜곡된다.
+    vals = vals[~vals.between(20000, 80000)]
     if vals.empty:
         return np.array([], dtype=float)
     return vals.to_numpy(dtype=float)
@@ -320,15 +315,17 @@ def extract_country(df: pd.DataFrame):
 
 
 def generate_html(all_data, updated_date):
-    data_json = json.dumps(all_data, separators=(',', ':'))
+    year_data = nest_flat_data(all_data)
+    data_json = json.dumps(year_data, separators=(',', ':'))
     nm_json = json.dumps(COUNTRY_NAMES, ensure_ascii=False)
+    default_year = '2026' if '2026' in year_data else next(iter(year_data), '2026')
 
     return f'''<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 GDP Growth Consensus Dashboard</title>
+<title>GDP Growth Consensus Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{{
@@ -342,6 +339,11 @@ h1{{font-size:22px;font-weight:600;color:var(--text-main);margin-bottom:4px;font
 .sub{{font-size:13px;color:var(--text-muted);margin-bottom:24px}}
 .header-row{{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}}
 .header-left{{flex:1}}
+.header-controls{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}}
+.year-toggle{{display:flex;gap:4px}}
+.year-btn{{background:var(--card-bg);border:1px solid var(--border);color:var(--text-main);font:600 14px var(--font-base);padding:9px 13px;border-radius:8px;cursor:pointer}}
+.year-btn:hover{{border-color:var(--text-muted)}}
+.year-btn.active{{background:var(--accent);border-color:var(--accent);color:#fff}}
 .country-select{{background:var(--card-bg);border:1px solid var(--border);color:var(--text-main);font-family:var(--font-base);font-size:14px;font-weight:500;padding:10px 16px;border-radius:8px;cursor:pointer;outline:none;min-width:180px}}
 .country-select:hover{{border-color:var(--text-muted)}}
 .country-select:focus{{border-color:var(--accent)}}
@@ -357,16 +359,19 @@ canvas{{width:100%;height:auto}}
 <body>
 <div class="header-row">
 <div class="header-left">
-<h1>2026 GDP growth consensus</h1>
+<h1><span id="year-title">{default_year}</span> GDP growth consensus</h1>
 <p class="sub">Distribution of broker forecasts · updated {updated_date}</p>
 </div>
+<div class="header-controls">
+<div class="year-toggle" id="year-toggle"></div>
 <select class="country-select" id="country-filter" onchange="filterCountry(this.value)">
 <option value="ALL">All countries</option>
 </select>
 </div>
+</div>
 <div id="root"></div>
 <script>
-const D={data_json};
+const YD={data_json};
 const NM={nm_json};
 const CL=[[46,139,87],[60,160,100],[80,180,115],[110,195,130],[145,210,150],[185,220,160],[215,225,140],[240,210,100],[245,180,60],[240,145,40],[230,110,30],[220,90,20],[210,75,15],[200,60,10]];
 const MO={{'01':'Jan','02':'Feb','03':'Mar','04':'Apr','05':'May','06':'Jun','07':'Jul','08':'Aug','09':'Sep','10':'Oct','11':'Nov','12':'Dec'}};
@@ -566,23 +571,44 @@ function drawMedian(cv,ml){{
 
 const root=document.getElementById('root');
 const filterSel=document.getElementById('country-filter');
-Object.keys(D).forEach(c=>{{
-  const d=D[c];const nm=NM[c]||c;
-  const opt=document.createElement('option');opt.value=c;opt.textContent=nm+' ('+c+')';
-  filterSel.appendChild(opt);
-  const div=document.createElement('div');div.className='country';div.dataset.country=c;
-  const lastN=d['2w']&&d['2w'].length?d['2w'][d['2w'].length-1].values.length:0;
-  div.innerHTML=`<div class="ctitle">${{nm}} (${{c}})</div><div class="row"><div class="panel"><div class="plabel">2W chg (daily, weekdays)</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">#${{lastN}}</div><canvas id="a_${{nm}}"></canvas></div><div class="panel"><div class="plabel">6M chg (bi-weekly)</div><canvas id="b_${{nm}}"></canvas></div><div class="panel"><div class="plabel">6M median + IQR (daily)</div><canvas id="m_${{nm}}"></canvas></div></div>`;
-  root.appendChild(div);
-  setTimeout(()=>{{
-    const state2w=buildRidgeState(d['2w']||[], d.bw);
-    const state6m=buildRidgeState(d['6m']||[], d.bw);
-    const sharedMaxY=Math.max(state2w?.maxY||0, state6m?.maxY||0, 1e-6);
-    drawRidge(document.getElementById('a_'+nm), state2w, 185, sharedMaxY);
-    drawRidge(document.getElementById('b_'+nm), state6m, 185, sharedMaxY);
-    drawMedian(document.getElementById('m_'+nm), d.ml);
-  }},10);
+const yearToggle=document.getElementById('year-toggle');
+const yearTitle=document.getElementById('year-title');
+const YEARS=Object.keys(YD).sort();
+let currentYear=YD['{default_year}']?'{default_year}':YEARS[0];
+
+function renderYear(year){{
+  currentYear=year;
+  const D=YD[year]||{{}};
+  yearTitle.textContent=year;
+  yearToggle.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.year===year));
+  filterSel.innerHTML='<option value="ALL">All countries</option>';
+  root.innerHTML='';
+  Object.keys(D).forEach((c,i)=>{{
+    const d=D[c];const nm=NM[c]||c;const uid=year+'_'+i;
+    const opt=document.createElement('option');opt.value=c;opt.textContent=nm+' ('+c+')';
+    filterSel.appendChild(opt);
+    const div=document.createElement('div');div.className='country';div.dataset.country=c;
+    const lastN=d['2w']&&d['2w'].length?d['2w'][d['2w'].length-1].values.length:0;
+    div.innerHTML=`<div class="ctitle">${{nm}} (${{c}})</div><div class="row"><div class="panel"><div class="plabel">2W chg (daily, weekdays)</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">#${{lastN}}</div><canvas id="a_${{uid}}"></canvas></div><div class="panel"><div class="plabel">6M chg (bi-weekly)</div><canvas id="b_${{uid}}"></canvas></div><div class="panel"><div class="plabel">6M median + IQR (daily)</div><canvas id="m_${{uid}}"></canvas></div></div>`;
+    root.appendChild(div);
+    setTimeout(()=>{{
+      if(currentYear!==year||!div.isConnected)return;
+      const state2w=buildRidgeState(d['2w']||[], d.bw);
+      const state6m=buildRidgeState(d['6m']||[], d.bw);
+      const sharedMaxY=Math.max(state2w?.maxY||0, state6m?.maxY||0, 1e-6);
+      drawRidge(document.getElementById('a_'+uid), state2w, 185, sharedMaxY);
+      drawRidge(document.getElementById('b_'+uid), state6m, 185, sharedMaxY);
+      drawMedian(document.getElementById('m_'+uid), d.ml);
+    }},10);
+  }});
+  filterSel.value='ALL';
+}}
+
+YEARS.forEach(year=>{{
+  const btn=document.createElement('button');btn.type='button';btn.className='year-btn';btn.dataset.year=year;btn.textContent=year;
+  btn.addEventListener('click',()=>renderYear(year));yearToggle.appendChild(btn);
 }});
+renderYear(currentYear);
 
 function filterCountry(val){{
   document.querySelectorAll('.country').forEach(div=>{{

@@ -19,12 +19,18 @@ function sliceMl(ml: ConsensusCountry['ml'], months: number) {
 
 export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: ConsensusBundle }) {
   const [ds, setDs] = useState<'cpi' | 'gdp'>('cpi')
+  const [year, setYear] = useState('2026')
   const [country, setCountry] = useState('ALL')
   const [mlMonths, setMlMonths] = useState(6)
   const hostRef = useRef<HTMLDivElement>(null)
 
   const bundle = ds === 'cpi' ? cpi : gdp
-  const D = bundle.data || {}
+  const yearData = bundle.years && Object.keys(bundle.years).length
+    ? bundle.years
+    : { [bundle.defaultYear || '2026']: bundle.data || {} }
+  const years = Object.keys(yearData).sort()
+  const resolvedYear = yearData[year] ? year : (bundle.defaultYear || years[0] || '2026')
+  const D = yearData[resolvedYear] || {}
   const NM = bundle.names || {}
   const countries = Object.keys(D)
   const visible = country === 'ALL' ? countries : countries.filter((c) => c === country)
@@ -46,7 +52,7 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
       if (m) drawMedian(m, sliceMl(d.ml || [], mlMonths))
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ds, country, bundle, mlMonths])
+  }, [ds, country, bundle, mlMonths, resolvedYear])
 
   const Panel = ({ label, control, children }: { label: string; control?: React.ReactNode; children: React.ReactNode }) => (
     <div className="flex-1 min-w-[500px] bg-white border border-[var(--line)] rounded-[10px] p-4">
@@ -74,15 +80,24 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
     <section>
       <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
         <div>
-          <h2 className="serif text-[18px] m-0">{ds === 'cpi' ? '2026 CPI consensus' : '2026 GDP growth consensus'}</h2>
+          <h2 className="serif text-[18px] m-0">{ds === 'cpi' ? `${resolvedYear} CPI consensus` : `${resolvedYear} GDP growth consensus`}</h2>
           <p className="text-xs text-[var(--muted)] mt-1">
             Distribution of broker forecasts{bundle.generatedAt ? ` · updated ${bundle.generatedAt}` : ''}
           </p>
         </div>
         <div className="flex items-center gap-2">
           <div className="flex gap-1">
+            {years.map((y) => (
+              <button key={y} onClick={() => { setYear(y); setCountry('ALL') }}
+                className={'rounded-lg border px-3 py-2 text-sm font-semibold ' +
+                  (resolvedYear === y ? 'bg-[var(--badge)] text-white border-[var(--badge)]' : 'bg-white border-[var(--line)] hover:bg-[var(--head)]')}>
+                {y}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-1">
             {(['cpi', 'gdp'] as const).map((t) => (
-              <button key={t} onClick={() => setDs(t)}
+              <button key={t} onClick={() => { setDs(t); setCountry('ALL') }}
                 className={'rounded-lg border px-3 py-2 text-sm font-semibold ' +
                   (ds === t ? 'bg-[var(--badge)] text-white border-[var(--badge)]' : 'bg-white border-[var(--line)] hover:bg-[var(--head)]')}>
                 {t.toUpperCase()}

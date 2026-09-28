@@ -26,6 +26,7 @@ from datetime import datetime, timedelta
 
 from openpyxl import load_workbook
 from pyxlsb import open_workbook as open_xlsb
+from consensus_years import source_sheet_for_country
 
 # 원본 xlsb 는 이제 QAE\____Rawdata___ 에 떨궈 넣으면 된다 (없으면 예전처럼 이 폴더).
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -49,12 +50,12 @@ HISTORY_DIR = os.path.join(BASE_DIR, 'history')
 TARGETS = [
     {
         'xlsx': 'ECFC_Growth Consesus_수정.xlsx',
-        'xlsb_prefix': 'ECFC_Growth Consesus',
+        'xlsb_prefixes': ('ECFC_Growth_Consensus', 'ECFC_Growth Consesus'),
         'out_prefix': 'ECFC_Growth Consesus',
     },
     {
         'xlsx': 'ECFC_Inflation Consesus_수정.xlsx',
-        'xlsb_prefix': 'ECFC_Inflation Consesus',
+        'xlsb_prefixes': ('ECFC_Inflation_Consensus', 'ECFC_Inflation Consesus'),
         'out_prefix': 'ECFC_Inflation Consesus',
     },
 ]
@@ -132,8 +133,8 @@ def pick_xlsb(target, base_dir=BASE_DIR):
     같은 prefix 가 여럿이면 수정시각이 가장 최근인 것. 두 폴더에 다 있으면
     폴더가 아니라 시각으로 고르므로, 예전 폴더에 더 새 파일을 둬도 그게 이긴다.
     """
-    return rawdata.require(target['xlsb_prefix'], exts=('.xlsb',),
-                           extra_dirs=[base_dir])
+    return rawdata.require_any(target['xlsb_prefixes'], exts=('.xlsb',),
+                               extra_dirs=[base_dir])
 
 
 def pick_base(target, base_dir=BASE_DIR, out_dir=HISTORY_DIR):
@@ -192,6 +193,8 @@ def merge_one(target, out_date_str, base_dir=BASE_DIR, out_dir=HISTORY_DIR,
           + " (베이스: ~" + (str(_last.date()) if _last else "?")
           + ", " + str(_rows) + "행)")
     wb = load_workbook(xlsx_path)
+    with open_xlsb(xlsb_path) as source_wb:
+        source_sheets = set(source_wb.sheets)
 
     total_appended = 0
     for sn in wb.sheetnames:
@@ -207,8 +210,12 @@ def merge_one(target, out_date_str, base_dir=BASE_DIR, out_dir=HISTORY_DIR,
 
         template_cells = [ws.cell(last_row, c) for c in range(1, last_col + 1)]
 
+        source_sheet = source_sheet_for_country(sn, source_sheets, year='2026')
+        if source_sheet is None:
+            print("  [" + sn + "] WARN: xlsb 2026 시트를 찾지 못함. 스킵.")
+            continue
         try:
-            xlsb_rows = read_xlsb_sheet(xlsb_path, sn)
+            xlsb_rows = read_xlsb_sheet(xlsb_path, source_sheet)
         except Exception as e:
             print("  [" + sn + "] WARN: xlsb 시트 읽기 실패 (" + str(e) + "). 스킵.")
             continue

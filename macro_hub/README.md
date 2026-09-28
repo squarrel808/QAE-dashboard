@@ -25,7 +25,7 @@
 |---|---|---|---|
 | **Equity Factors** `/equity` | GS Pair Baskets 섹터×팩터 히트맵·추이·TOP/BOTTOM | Recharts + 히트맵 | `pairbaskets.json` |
 | **Policy Tone** `/policy` | 중앙은행 hawk/dove 막대 + 추세 + 위원 코멘트 | Recharts(ComposedChart) | `policy.json` |
-| **Consensus** `/consensus` | CPI/GDP 브로커 예측 분포 (Ridge plot + Median/IQR) | Canvas 포팅(`lib/consensus-draw.ts`) | `consensus_{cpi,gdp}.json` |
+| **Consensus** `/consensus` | 2026·2027 CPI/GDP 브로커 예측 분포 (연도 토글, Ridge plot + Median/IQR) | Canvas 포팅(`lib/consensus-draw.ts`) | `consensus_{cpi,gdp}.json` |
 | **PCA** `/pca` | 활동지수 요인 분해 (GDP proxy / LEI) | Recharts(스택 기여도+라인) | `pca.json` |
 | **CAI · MAP** `/caimap` | GS Current Activity Indicator & MAP | Recharts(섹터 스택+headline) | `caimap.json` |
 | **Report** `/reports` | 리서치 목록 + 하우스뷰 | 목록·필터 | `reports.json`, `houseviews.json` |
@@ -37,7 +37,7 @@
 네이티브 탭 데이터는 `public/data/*.json` 으로 분리되어 있고, `scripts/build_*.py`(및 `report_pipeline/`)가
 원본에서 생성합니다. 임베드 탭 HTML 은 `scripts/sync_embeds.py` 가 원본 대시보드에서 복사합니다.
 
-> Consensus 6M median 패널에는 **1M/3M/6M/12M/All 구간 토글**이 있습니다.
+> Consensus에는 **2026/2027 연도 토글**이 있고, 6M median 패널에는 **1M/3M/6M/12M/All 구간 토글**이 있습니다.
 > PCA·CAI·MAP·Policy 차트는 **호버 시 값/지표명 툴팁**을 제공합니다.
 
 ---
@@ -48,7 +48,7 @@
 |---|---|---|
 | `build_pairbaskets_json.py` | GS Marquee (gs_api/.env, CSV) | `--mock` 지원 |
 | `build_policy_json.py` | policytone CSV/JSON | 잘린 JSON 자동 복구 |
-| `build_consensus_json.py` | ECFC 엑셀 (원본 추출 로직 재사용) | `--mock` 지원, median 24M 윈도우 |
+| `build_consensus_json.py` | ECFC 엑셀 (`국가26`·`국가27` 시트, 원본 추출 로직 재사용) | `--mock` 지원, median 24M 윈도우 |
 | `build_pca_json.py` | PCA/pca_dashboard.html 의 `const DATA` 추출 | |
 | `build_caimap_json.py` | gs_api/cai_map_dashboard.html 의 `const D` 추출 | |
 | `sync_embeds.py` | 원본 대시보드 HTML → `public/embeds/` | `npm run data` 에는 안 들어 있음. 따로 실행 |

@@ -39,6 +39,8 @@ export type ConsensusCountry = {
 }
 export type ConsensusBundle = {
   data: Record<string, ConsensusCountry>
+  years?: Record<string, Record<string, ConsensusCountry>>
+  defaultYear?: string
   names: Record<string, string>
   generatedAt?: string
 }

@@ -75,16 +75,17 @@ def save_json(path, value):
 
 
 def discover(raw):
-    specs = {'bquant': ('Bquant_', ('.xlsb', '.xlsx')),
-             'growth': ('ECFC_Growth Consesus', ('.xlsb',)),
-             'inflation': ('ECFC_Inflation Consesus', ('.xlsb',)),
-             'weco': ('ecocal', ('.xlsx',))}
+    specs = {'bquant': (('Bquant_',), ('.xlsb', '.xlsx')),
+             'growth': (('ECFC_Growth_Consensus', 'ECFC_Growth Consesus'), ('.xlsb',)),
+             'inflation': (('ECFC_Inflation_Consensus', 'ECFC_Inflation Consesus'), ('.xlsb',)),
+             'weco': (('ecocal',), ('.xlsx',))}
     found = {}
-    for key, (prefix, suffixes) in specs.items():
+    for key, (prefixes, suffixes) in specs.items():
         candidates = [p for p in raw.iterdir() if p.is_file() and not p.name.startswith('~$')
-                      and p.name.lower().startswith(prefix.lower()) and p.suffix.lower() in suffixes]
+                      and any(p.name.lower().startswith(prefix.lower()) for prefix in prefixes)
+                      and p.suffix.lower() in suffixes]
         if not candidates:
-            raise FileNotFoundError(f'{raw} 에 {prefix}* 파일이 없습니다.')
+            raise FileNotFoundError(f'{raw} 에 {" 또는 ".join(prefixes)}* 파일이 없습니다.')
         found[key] = max(candidates, key=lambda p: (p.stat().st_mtime_ns, p.name))
     return found
 
@@ -194,12 +195,16 @@ def build_consensus(qae, inputs, out, observed_date):
         target.parent.mkdir(parents=True, exist_ok=True)
         generated = datetime.now(KST).strftime('%Y-%m-%d %H:%M')
         target.write_text(mod.generate_html(data, generated), encoding='utf-8')
-        bundle = {'data': data, 'names': mod.COUNTRY_NAMES, 'generatedAt': generated,
+        years = mod.nest_flat_data(data)
+        default_year = '2026' if '2026' in years else next(iter(years), '2026')
+        bundle = {'data': years.get(default_year, {}), 'years': years,
+                  'defaultYear': default_year, 'names': mod.COUNTRY_NAMES, 'generatedAt': generated,
                   'source': str(inputs[key]), 'sourceSHA256': digest(inputs[key]),
                   'history_scope': '이번 원본에 수록된 기간. 별도의 누적 컨센서스 이력은 변경하지 않음.'}
         save_json(target.with_suffix('.json'), bundle)
         outputs.append(target)
-        meta[key] = {s: d['2w'][-1]['date'] for s, d in data.items()}
+        meta[key] = {year: {country: d['2w'][-1]['date'] for country, d in values.items()}
+                     for year, values in years.items()}
     return outputs, meta
 
 

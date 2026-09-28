@@ -32,8 +32,8 @@ C:\Users\infomax\Documents\python\QAE\데일리시황\데일리_표_업데이트
 | 파일명 앞부분 | 형식 | 반영할 내용 |
 |---|---|---|
 | `Bquant_` | `.xlsb` 또는 `.xlsx` | S&P 500 AI 밸류체인, STOXX Europe 600·S&P 500·TOPIX·Hang Seng 섹터·산업 성과 |
-| `ECFC_Growth Consesus` | `.xlsb` | 국가별 GDP 성장 컨센서스 |
-| `ECFC_Inflation Consesus` | `.xlsb` | 국가별 CPI 컨센서스 |
+| `ECFC_Growth_Consensus` (구 `ECFC_Growth Consesus`도 지원) | `.xlsb` | 국가별 GDP 성장 컨센서스 (2026·2027) |
+| `ECFC_Inflation_Consensus` (구 `ECFC_Inflation Consesus`도 지원) | `.xlsb` | 국가별 CPI 컨센서스 (2026·2027) |
 | `ecocal` | `.xlsx` | WECO 경제지표 B~K열 전체 |
 
 파일 뒤에 `(2)`, 날짜 등이 붙어도 된다. 같은 종류가 여럿이면 수정시각이 가장 최근인 하나를 읽고 Excel 임시 파일은 제외한다. 파일명이 다르거나 필수 파일이 없으면 확인 메시지를 내고 멈춘다. 현재 이 실행기의 WECO 파일명은 `ecocal`로 시작해야 한다.
@@ -41,7 +41,7 @@ C:\Users\infomax\Documents\python\QAE\데일리시황\데일리_표_업데이트
 ## 실행 결과
 
 - **AI·섹터:** 기존 분류·표·사업 설명을 유지하고 숫자를 갱신한다. 섹터 화면은 STOXX Europe 600·S&P 500·TOPIX·Hang Seng을 시장 탭으로 제공한다. 기본은 1D 표이며 1D·5D·1M·3M·6M 비교 숫자를 함께 보여준다. 별도 시황 해설이나 Word/PDF 보고서를 만들지 않는다.
-- **ECFC:** 이번 원본에 들어 있는 기간의 컨센서스 숫자·분포를 갱신한다. 기존 `Consensus Builder/history` 누적 자료는 별도로 유지된다.
+- **ECFC:** 이번 원본에 들어 있는 기간의 컨센서스 숫자·분포를 갱신하고, 2026·2027 연도 토글을 제공한다. 기존 `Consensus Builder/history` 누적 자료는 별도로 유지된다.
 - **WECO:** 국가 → 발표월 → 경기·물가·통화정책으로 나눈다. 기본 화면은 최신 원본의 실제값과 누적된 과거 실제값이다. `전체 일정`은 최신 원본에 있는 미발표 항목도 보여준다. 이전 실행에서 확인한 실제값은 이동하는 원본 기간 밖으로 나가도 누적 이력에서 계속 표시한다.
 - **IB 근거:** GS·JPM·Citi·BofA·HSBC의 검토된 직접 코멘트·사전 전망·관련 기존 견해와 원문을 연결한다.
 - **검토 대상:** 신규 실제값, 실제·예상·종전·수정값 변경, 변동 없음을 구분해 저장한다.
