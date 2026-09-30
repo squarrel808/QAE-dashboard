@@ -1,6 +1,6 @@
 {
-  "runId": "20261001_030658_raw",
-  "generatedAt": "2026-10-01T03:06:58+09:00",
+  "runId": "20261001_031316_raw",
+  "generatedAt": "2026-10-01T03:13:16+09:00",
   "latestSummary": "2026-09-28",
   "latestReport": "2026-09-28",
   "latestHouseview": "2026-09-02",
@@ -19,7 +19,7 @@
     "embeds/consensus_gdp.html": "53dda06d77c86ebe46c5683cd9fbab5d7c07db71e81d73d0394cca65d73ed87e",
     "embeds/cpi_dist.html": "4a2307d9d9ba1fb73ed1a8e7b38fea0ef171cb05ad3e128e08493fc60a4bb6a7",
     "embeds/earnings.html": "8ae1faf216fc13f063ca46fb4504ad7ba16a547fb0fe98845d5c14abf5220a5c",
-    "embeds/econ.html": "a820dfa97b69caa2338fdf8ddf453e0efb3db6ce9055842734bfd896eafb5b6f",
+    "embeds/econ.html": "dd0218198e5cf873160710d8ff2f64018352be635ca0ac557630f500f3f7f97b",
     "embeds/market_rotation.html": "b28cf48192eadecc76cd135e3cd4af89e18a39097cb42184b2ca7fbcd36f31b7",
     "embeds/pca.html": "7329e342bacffb3679d76cd1dcef331f47e00ff0efe5e3ab3ec12ceb41ed264e"
   }

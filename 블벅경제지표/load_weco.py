@@ -96,11 +96,13 @@ def _blank(v):
     return str(v).strip().lower() in NULLS
 
 
-def fmt(v):
+def fmt(v, *, scale_decimal_percent=True):
     """weco_dashboard.fmt() 와 같은 표시 포맷.
     값 없음 -> '', |v|<1 인 소수는 % 환산, |v|>=1000 -> 천단위 콤마 정수,
     그 외 숫자 -> 유효숫자 4자리.
     '16.30m' / '$159.3b' 처럼 단위가 붙은 문자열은 원문 유지.
+    BQuant CALENDAR 숫자는 이미 표시 단위이므로 scale_decimal_percent=False로
+    전달해 소수의 크기를 보존한다. 아래 % 환산은 기존 WECO 입력에만 적용한다.
 
     % 환산은 블룸버그가 MoM/YoY 를 소수(-0.003)로 내보내기 때문이다.
     이걸 그대로 두면 화면에 '-0.003' 으로 나와 읽기 나쁘다 — 기존 대시보드와
@@ -117,7 +119,7 @@ def fmt(v):
         return ""
     if f == 0:
         return "0"
-    if abs(f) < 1:
+    if scale_decimal_percent and abs(f) < 1:
         return "{:.1f}%".format(f * 100)
     if abs(f) >= 1000:
         return "{:,.0f}".format(f)
@@ -223,6 +225,9 @@ def _read(path):
     df.columns = [str(c).strip() for c in df.columns]
     if _is_bquant(set(df.columns)):
         df = _from_bquant(df)
+        # BQuant CALENDAR exports percentage-point numbers (0.3 means 0.3%),
+        # unlike the legacy WECO fractional convention. Keep its numeric scale.
+        df.attrs["scale_decimal_percent"] = False
     return df
 
 
@@ -272,6 +277,7 @@ def load_rows(verbose=True):
     rows, stat, seen = [], [], set()
     for p, df, kind, _score, diag in frames:
         kept = dropped = skipped = dup = 0
+        scale_decimal_percent = df.attrs.get("scale_decimal_percent", True)
         for _, r in df.iterrows():
             ev = "" if _blank(r.get("Event")) else str(r.get("Event")).strip()
             if not ev or ev.lower() == "event":
@@ -306,10 +312,10 @@ def load_rows(verbose=True):
                 "flag": FLAG.get(cc, GLOBE),
                 "ev": ev,
                 "p": _period(r.get("Period")),
-                "svy": fmt(r.get("Survey")),
-                "act": fmt(r.get("Actual")),
-                "pri": fmt(r.get("Prior")),
-                "rev": fmt(r.get("Revised")),
+                "svy": fmt(r.get("Survey"), scale_decimal_percent=scale_decimal_percent),
+                "act": fmt(r.get("Actual"), scale_decimal_percent=scale_decimal_percent),
+                "pri": fmt(r.get("Prior"), scale_decimal_percent=scale_decimal_percent),
+                "rev": fmt(r.get("Revised"), scale_decimal_percent=scale_decimal_percent),
                 "rel": round(rel, 1),
                 "kind": kind,
             })
