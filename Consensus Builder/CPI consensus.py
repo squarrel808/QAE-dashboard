@@ -29,7 +29,7 @@ _HISTORY_DIR = os.path.join(_BASE_DIR, 'history')
 _FILE_PREFIX = 'ECFC_Inflation Consesus'
 if _BASE_DIR not in sys.path:
     sys.path.insert(0, _BASE_DIR)
-from consensus_years import COUNTRY_NAMES, find_source, nest_flat_data, sheet_file_map
+from consensus_years import merge_median_history, COUNTRY_NAMES, find_source, nest_flat_data, sheet_file_map
 
 
 def _find_latest_excel(prefix: str, history_dir: str, base_dir: str) -> str:
@@ -288,7 +288,7 @@ def extract_country(df: pd.DataFrame):
             vals_6m.append(v)
 
     median_line = []
-    for idx, d in rows_6m:
+    for idx, d in rows:
         if d.weekday() >= 5:
             continue
         v = clean_numeric_values(df.iloc[idx, 1:])
@@ -589,7 +589,7 @@ function renderYear(year){{
     filterSel.appendChild(opt);
     const div=document.createElement('div');div.className='country';div.dataset.country=c;
     const lastN=d['2w']&&d['2w'].length?d['2w'][d['2w'].length-1].values.length:0;
-    div.innerHTML=`<div class="ctitle">${{nm}} (${{c}})</div><div class="row"><div class="panel"><div class="plabel">2W chg (daily, weekdays)</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">#${{lastN}}</div><canvas id="a_${{uid}}"></canvas></div><div class="panel"><div class="plabel">6M chg (bi-weekly)</div><canvas id="b_${{uid}}"></canvas></div><div class="panel"><div class="plabel">6M median + IQR (daily)</div><canvas id="m_${{uid}}"></canvas></div></div>`;
+    div.innerHTML=`<div class="ctitle">${{nm}} (${{c}})</div><div class="row"><div class="panel"><div class="plabel">2W chg (daily, weekdays)</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">#${{lastN}}</div><canvas id="a_${{uid}}"></canvas></div><div class="panel"><div class="plabel">6M chg (bi-weekly)</div><canvas id="b_${{uid}}"></canvas></div><div class="panel"><div class="plabel">Median + IQR (daily)</div><div class="median-ranges" style="display:flex;gap:4px;margin-bottom:8px"></div><canvas id="m_${{uid}}"></canvas></div></div>`;
     root.appendChild(div);
     setTimeout(()=>{{
       if(currentYear!==year||!div.isConnected)return;
@@ -598,7 +598,30 @@ function renderYear(year){{
       const sharedMaxY=Math.max(state2w?.maxY||0, state6m?.maxY||0, 1e-6);
       drawRidge(document.getElementById('a_'+uid), state2w, 185, sharedMaxY);
       drawRidge(document.getElementById('b_'+uid), state6m, 185, sharedMaxY);
-      drawMedian(document.getElementById('m_'+uid), d.ml);
+      const controls=div.querySelector('.median-ranges');
+      let selected=6;
+      const ranges=[['1M',1],['3M',3],['6M',6],['12M',12],['All',0]];
+      function redrawMedian(){{
+        const ml=d.ml||[];
+        let points=ml;
+        if(selected && ml.length){{
+          const last=new Date(ml[ml.length-1].d+'T00:00:00Z');
+          const day=last.getUTCDate();
+          last.setUTCDate(1);last.setUTCMonth(last.getUTCMonth()-selected);
+          const end=new Date(Date.UTC(last.getUTCFullYear(),last.getUTCMonth()+1,0)).getUTCDate();
+          last.setUTCDate(Math.min(day,end));
+          const cutoff=last.toISOString().slice(0,10);
+          points=ml.filter(p=>p.d>=cutoff);
+        }}
+        controls.querySelectorAll('button').forEach(b=>b.classList.toggle('active',Number(b.dataset.months)===selected));
+        drawMedian(document.getElementById('m_'+uid),points);
+      }}
+      ranges.forEach(([label,months])=>{{
+        const b=document.createElement('button');b.type='button';b.className='year-btn';
+        b.style.padding='4px 8px';b.textContent=label;b.dataset.months=months;
+        b.onclick=()=>{{selected=months;redrawMedian();}};controls.appendChild(b);
+      }});
+      redrawMedian();
     }},10);
   }});
   filterSel.value='ALL';
@@ -704,6 +727,7 @@ def main():
         print("\n데이터가 없습니다. 엑셀 경로/시트명을 확인하세요.")
         return
 
+    merge_median_history(sys.modules[__name__], all_data)
     updated = datetime.now().strftime('%Y-%m-%d %H:%M')
     html = generate_html(all_data, updated)
 

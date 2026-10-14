@@ -69,6 +69,45 @@ def split_sheet_name(sheet: str) -> tuple[str, str]:
     return '2026', sheet
 
 
+def merge_median_history(mod, data, observed_date=None):
+    """Restore cumulative median history; the uploaded snapshot wins on overlap.
+
+    Unsuffixed historical sheets belong to 2026 only, never to 2027.
+    Historical files remain read-only.
+    """
+    import glob
+    import pandas as pd
+    paths = sorted(glob.glob(os.path.join(mod._HISTORY_DIR, mod._FILE_PREFIX + '_*.xlsx')))
+    if not paths:
+        return None
+    path = paths[-1]  # Each dated workbook contains accumulated observations.
+    with pd.ExcelFile(path) as xl:
+        available = set(xl.sheet_names)
+        for sheet, result in data.items():
+            year, country = split_sheet_name(sheet)
+            historic_sheet = sheet if sheet in available else (country if year == '2026' and country in available else None)
+            if historic_sheet is None:
+                continue
+            historic = mod.extract_country(xl.parse(historic_sheet, header=None))
+            if not historic:
+                continue
+            last = max(p['d'] for p in result['ml'])
+            if observed_date is not None:
+                last = min(last, observed_date.isoformat())
+            merged = {p['d']: p for p in historic['ml'] if p['d'] <= last}
+            merged.update({p['d']: p for p in result['ml'] if p['d'] <= last})
+            result['ml'] = [merged[d] for d in sorted(merged)]
+            cutoff = (pd.Timestamp(last) - pd.DateOffset(months=6)).strftime('%Y-%m-%d')
+            distributions = {p['date']: p for p in historic['6m'] if cutoff <= p['date'] <= last}
+            distributions.update({p['date']: p for p in result['6m'] if cutoff <= p['date'] <= last})
+            selected = []
+            for date in sorted(distributions, reverse=True):
+                if not selected or (pd.Timestamp(selected[-1]['date']) - pd.Timestamp(date)).days >= 13:
+                    selected.append(distributions[date])
+            result['6m'] = list(reversed(selected[:mod.MAX_BIWEEKLY_POINTS]))
+    return path
+
+
 def nest_flat_data(flat: Mapping[str, object]) -> dict[str, dict[str, object]]:
     years: dict[str, dict[str, object]] = {}
     for sheet, value in flat.items():

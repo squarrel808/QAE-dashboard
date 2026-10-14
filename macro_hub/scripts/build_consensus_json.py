@@ -5,7 +5,7 @@ build_consensus_json.py — Consensus(CPI/GDP) 데이터 빌더 (JSON 출력판)
 importlib로 그대로 재사용 → public/data/consensus_{cpi,gdp}.json.
 화면(components/Consensus.tsx)이 canvas(ridge/median)로 그린다.
 
-median(ml) 은 토글(1M/3M/6M/12M/All)을 위해 원본 6M 대신 더 긴 윈도우로 다시 뽑는다.
+median(ml)은 누적 이력과 업로드 전체 기간을 유지한다 (1M/3M/6M/12M/All).
 
 실행:  python scripts/build_consensus_json.py          (엑셀 필요)
        python scripts/build_consensus_json.py --mock   (엑셀 없이 샘플)
@@ -71,11 +71,8 @@ def build_real():
             df = xl.parse(sheet, header=None)
             res = mod.extract_country(df)
             if res:
-                try:
-                    res["ml"] = long_median(mod, df) or res["ml"]
-                except Exception as e:
-                    print(f"  [warn] {sheet} long median 실패({e}) — 원본 6M 사용")
                 data[sheet] = res
+        mod.merge_median_history(mod, data)
         years = mod.nest_flat_data(data)
         default_year = "2026" if "2026" in years else next(iter(years), "2026")
         bundle = {"data": years.get(default_year, {}), "years": years,

@@ -21,7 +21,7 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
   const [ds, setDs] = useState<'cpi' | 'gdp'>('cpi')
   const [year, setYear] = useState('2026')
   const [country, setCountry] = useState('ALL')
-  const [mlMonths, setMlMonths] = useState(6)
+  const [mlMonths, setMlMonths] = useState(999)
   const hostRef = useRef<HTMLDivElement>(null)
 
   const bundle = ds === 'cpi' ? cpi : gdp
