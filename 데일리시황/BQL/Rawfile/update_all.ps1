@@ -20,13 +20,15 @@ if ($LASTEXITCODE -ne 0) {
 
 $master = Join-Path $rawDir 'BQuant_Master.xlsx'
 $dashboardRoot = Join-Path $bqlDir 'Dashbaord'
+$qaeRoot = Split-Path -Parent (Split-Path -Parent $bqlDir)
+$marketEmbed = Join-Path $qaeRoot 'macro_hub\public\embeds\market_rotation.html'
 $euroDir = Join-Path $dashboardRoot '유로존_dashboard'
 $topixDir = Join-Path $dashboardRoot 'TOPIX_dashboard'
 $usDir = Join-Path $dashboardRoot 'US_dashboard'
 $aiDir = Join-Path $bqlDir 'Theme\Material\AI'
 $top10Dir = Join-Path $bqlDir 'Theme\Material\Top10_Down10'
 
-& $pythonCommand.Source (Join-Path $dashboardRoot 'build_regional_dashboards.py') --region all $master
+& $pythonCommand.Source (Join-Path $dashboardRoot 'build_regional_dashboards.py') --region all --sync-embed $marketEmbed $master
 if ($LASTEXITCODE -ne 0) {
     throw "Regional dashboards build failed with exit code $LASTEXITCODE"
 }
@@ -46,6 +48,7 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "완료"
 Write-Host "Master: $master"
 Write-Host "Market dashboard: $(Join-Path $euroDir 'Market_Rotation_Dashboard_17_Indices.html')"
+Write-Host "Local web copy: $marketEmbed"
 Write-Host "TOPIX dashboard: $(Join-Path $topixDir 'TOPIX_Rotation_Dashboard.html')"
 Write-Host "US dashboard: $(Join-Path $usDir 'US_Rotation_Dashboard.html')"
 Write-Host "AI dashboard: $aiOutputPath"

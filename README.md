@@ -16,6 +16,7 @@
             └ run_qae.py
                 ├ 수집   Haver / 증권사 리포트
                 ├ 가공   폴더별 BeforeHTML → AfterHTML → 각 dashboard.html
+                ├ 주식   기존 BQuant Master → Market Rotation (Stock Map 포함) → 해당 embed 동기화
                 ├ 변환   macro_hub/scripts/build_*_json.py → public/data/*.json
                 ├ 동기   sync_embeds.py → public/embeds/*.html
                 └ 전송   git commit + push
@@ -23,6 +24,16 @@
 ```
 
 **배포는 push 가 트리거다.** 따로 배포 명령이 없다.
+
+Market Rotation은 `AfterHTML_master.py` 다음에 공통 대시보드 생성기를 호출해 매번 다시 만듭니다. Industry와 별개인 첫 페이지 `Stock Map`도 코드·템플릿에 포함되어 있으며 1D·1W·1M·MTD·3M·6M·YTD를 지원합니다. 이 단계는 기존 `BQuant_Master.xlsx`를 읽습니다. 새 BQuant 파일 병합은 `데일리시황/BQL/Rawfile/update_all.ps1` 등으로 별도 실행해야 합니다. `/webonly`와 `/nightly`는 Market Rotation 재계산을 생략하고 기존 HTML을 동기화합니다.
+
+Master가 최신이고 이 화면만 다시 만들려면 QAE 루트에서 다음을 실행합니다.
+
+```powershell
+python 데일리시황\BQL\Dashbaord\유로존_dashboard\build_market_rotation_dashboard.py
+```
+
+기본 운영 경로에서는 통합 HTML 생성 후 로컬 웹용 `macro_hub/public/embeds/market_rotation.html`까지 동기화하며, 내용이 같으면 다시 쓰지 않습니다. `--no-sync-embed`는 HTML만 생성합니다. 이 개별 대시보드 명령은 Git push나 웹 배포를 실행하지 않습니다. 전체 QAE 실행의 전송 동작은 기존 옵션을 따릅니다. 별도 출력 경로와 공통 생성기 옵션, 계산 기준은 [통합 대시보드 README](데일리시황/BQL/Dashbaord/유로존_dashboard/README.md)를 참고하세요.
 
 ---
 

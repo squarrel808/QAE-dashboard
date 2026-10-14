@@ -13,9 +13,13 @@
 - `Dashbaord\build_regional_dashboards.py`: 세 대시보드를 한 번에 생성하는 공통 계산 코드
 - `Theme`: AI, Top10/Down10, 유럽·미국·일본 섹터/산업 HTML 산출물
 
-매일 갱신은 `Rawfile\update_all.ps1` 하나만 실행한다. 자세한 방법은 `Rawfile\README.md`를 참고한다.
+새 BQuant 자료로 대시보드를 갱신할 때는 `Rawfile\update_all.ps1`을 실행한다. Master 병합과 지역별 HTML 생성 후 통합 화면의 로컬 웹용 `macro_hub/public/embeds/market_rotation.html`도 동기화한다. 자세한 방법은 [Rawfile README](Rawfile/README.md)를 참고한다.
 
 Master를 바꾸지 않고 지역별 대시보드만 다시 만들려면 BQL 폴더에서 `python Dashbaord\build_regional_dashboards.py --region all`을 실행한다. `--region europe|us|japan`으로 한 지역만 선택할 수도 있다. 상세 경로와 집계 기준은 `REGIONAL_DASHBOARDS.md`를 참고한다.
+
+통합 화면과 로컬 웹용 파일만 함께 다시 만들 때는 BQL 폴더에서 `python Dashbaord\유로존_dashboard\build_market_rotation_dashboard.py`를 실행한다. 기본 운영 경로에서는 자동 동기화하며 `--no-sync-embed`를 붙이면 HTML만 생성한다. 공통 생성기를 직접 사용할 때의 `--sync-embed PATH` 및 검증용 경로 설정은 [공통 생성 설명서](REGIONAL_DASHBOARDS.md)에 정리되어 있다. 이 명령들은 Git push나 웹 배포를 실행하지 않는다.
+
+통합 화면의 첫 페이지 `Stock Map`은 Industry와 별개이며, 종목별 시가총액 면적과 주가 수익률 색상을 매번 원자료에서 다시 계산한다. 기간은 1D·1W·1M·MTD·3M·6M·YTD다. 계산 기준과 화면 설명은 [통합 대시보드 README](Dashbaord/유로존_dashboard/README.md)를 참고한다.
 
 ## 섹터·산업 HTML 보고서
 

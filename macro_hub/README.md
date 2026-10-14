@@ -4,7 +4,7 @@
 
 탭은 두 종류다.
 - **네이티브 React** (Equity / Policy / Consensus / PCA / CAI·MAP / Report) — `public/data/*.json` 을 읽어 Recharts·Canvas 로 직접 그린다. 호버 툴팁이 있다.
-- **임베드** (경제지표 / 실적 캘린더 / CPI 분포) — 원본 대시보드 HTML 을 `public/embeds/` 로 복사해 그대로 띄운다.
+- **임베드** (Market Rotation / 경제지표 / 실적 캘린더 / CPI 분포) — 원본 대시보드 HTML 을 `public/embeds/` 로 복사해 그대로 띄운다.
 
 네이티브 탭도 JSON 이 없으면 임베드로 자동 폴백한다.
 
@@ -17,12 +17,25 @@
 ### Market Rotation (2026-09-23 추가)
 
 `/market-rotation` 탭은 `데일리시황/BQL/Dashbaord/유로존_dashboard/Market_Rotation_Dashboard_17_Indices.html`을 표시합니다.
-원본 HTML을 갱신한 뒤 기존 `scripts/sync_embeds.py`를 실행하면 `public/embeds/market_rotation.html`로 복사됩니다.
-동기화는 원본 대시보드를 재계산하지 않습니다. 로컬 생성 → 동기화 → 기존 QAE Git push 순서로 배포합니다.
-최초 배포에는 새 라우트·NavTabs·동기화 코드도 함께 커밋해야 합니다. 이후 데이터 갱신에는 갱신된 임베드 파일을 포함합니다.
+첫 페이지 `Stock Map`은 Industry와 별개의 종목 트리맵이며, 면적은 시가총액 비중, 색상은 주가 수익률입니다. 1D·1W·1M·MTD·3M·6M·YTD를 선택할 수 있습니다. 계산 코드와 화면 템플릿에 포함되어 HTML 생성 때마다 다시 만들어집니다.
+
+기간 버튼 옆 시작일·종료일 달력과 **기간 적용**으로 임의 기간의 원자료 주가 수익률도 볼 수 있습니다. 주말·휴일은 직전 유효 거래일을 사용하고 실제 비교 날짜를 표시합니다. 가격이 없으면 회색 N/A이며, 면적은 과거 기간 선택 시에도 최신 시가총액 기준입니다. 가용 이력과 날짜 검증은 지수별로 적용됩니다. 이 기능의 가격 이력도 기존 Master → HTML → embed 갱신에 포함됩니다.
+
+Master가 최신이면 이 `macro_hub` 폴더에서 아래 명령으로 통합 화면과 로컬 웹용 파일을 함께 갱신합니다.
+
+```powershell
+python ..\데일리시황\BQL\Dashbaord\유로존_dashboard\build_market_rotation_dashboard.py
+```
+
+기본 운영 경로 실행은 생성 성공 후 `public/embeds/market_rotation.html`만 동기화하며, 내용이 같으면 다시 쓰지 않습니다. `--no-sync-embed`는 HTML만 생성합니다. 별도 `--asset-root`, `--output-root`, `--region`을 지정하면 자동 동기화는 생략하며, 필요한 경우 `--sync-embed PATH`로 대상을 직접 지정합니다. 공통 생성기의 동기화 옵션은 `--region europe|all`에서만 지원하며 요청한 대시보드가 모두 성공한 뒤 실행합니다.
+
+QAE 전체 갱신은 `AfterHTML_master.py` 다음에 기존 BQuant Master로 이 화면을 다시 생성합니다. `/webonly`와 `/nightly`는 이 생성 단계를 생략합니다. 새 BQuant 파일의 Master 병합은 BQL의 `Rawfile/update_all.ps1` 등으로 별도 수행합니다. 두 BQL 갱신 파일(`Rawfile/update_all.ps1`, `Dashbaord/유로존_dashboard/update_dashboard.ps1`)도 통합 화면의 로컬 웹용 HTML을 동기화합니다.
+
+기존 `scripts/sync_embeds.py`는 모든 모듈의 원본 HTML을 `public/embeds/`로 복사하며, 원본을 재계산하지 않습니다. 위 대시보드 생성·동기화 명령 자체는 Git push나 배포를 실행하지 않습니다. 배포는 기존 QAE 전송 절차를 따릅니다. 자세한 실행 방법과 계산 기준은 [통합 대시보드 README](../데일리시황/BQL/Dashbaord/유로존_dashboard/README.md)를 참고합니다.
 
 | 탭 | 내용 | 차트 | 데이터 |
 |---|---|---|---|
+| **Market Rotation** `/market-rotation` | Stock Map · Industry · Valuation · Earnings | 임베드 | `embeds/market_rotation.html` |
 | **Equity Factors** `/equity` | GS Pair Baskets 섹터×팩터 히트맵·추이·TOP/BOTTOM | Recharts + 히트맵 | `pairbaskets.json` |
 | **Policy Tone** `/policy` | 중앙은행 hawk/dove 막대 + 추세 + 위원 코멘트 | Recharts(ComposedChart) | `policy.json` |
 | **Consensus** `/consensus` | 2026·2027 CPI/GDP 브로커 예측 분포 (연도 토글, Ridge plot + Median/IQR) | Canvas 포팅(`lib/consensus-draw.ts`) | `consensus_{cpi,gdp}.json` |

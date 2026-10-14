@@ -1,6 +1,6 @@
 {
-  "runId": "20261014_230002",
-  "generatedAt": "2026-10-14T23:06:25",
+  "runId": "stock-map-dates-20261014",
+  "generatedAt": "2026-10-14T23:27:56",
   "latestSummary": "2026-10-14",
   "latestReport": "2026-10-14",
   "latestHouseview": "2026-09-02",
@@ -20,7 +20,7 @@
     "embeds/cpi_dist.html": "91f87e283565ec96ca8c7bce772e19fdda4a0da145f61d57e6c2c75166bf3582",
     "embeds/earnings.html": "72c1f6a9857d4e9af4cbbf3b27dd56873b0fddf9fbcba24d7dc301014a7e8eaa",
     "embeds/econ.html": "226a7081ae19df50b9b7618463816921b0504e78ca2ad1386258b8b6c6c58587",
-    "embeds/market_rotation.html": "4de7cd967b2619e451366b406741588a1548923d6432fe02a2d345591f6309a4",
+    "embeds/market_rotation.html": "246172621045af4c4e4deb3d9e541db3f4ecdc838abbab35d2e5286d8303490c",
     "embeds/pca.html": "e9ed925eb7bda114fcbfb8015a97e6f3fccb05a3ecf461ed5119f73057096899"
   }
 }

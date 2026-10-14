@@ -100,6 +100,9 @@ PIPELINE = [
      ".", "BeforeHTML_master.py"),
     ("build", "HTML (AfterHTML_master.py)", "AfterHTML_master.py",
      ".", "AfterHTML_master.py"),
+    # Rebuild from the existing BQuant Master before web embeds are copied.
+    ("build", "HTML (build_market_rotation_dashboard.py)", "build_market_rotation_dashboard.py",
+     os.path.join("데일리시황", "BQL", "Dashbaord", "유로존_dashboard"), "build_market_rotation_dashboard.py"),
 
     ("web", "JSON (build_pairbaskets_json.py)", "build_pairbaskets_json.py",
      "macro_hub", os.path.join("scripts", "build_pairbaskets_json.py")),

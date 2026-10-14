@@ -7,7 +7,7 @@
 - `Daily_Input`: 처리한 일별 원본 보관함. `update_master.py` 가 자동으로 여기에 복사한다
 - `BQuant_Master.xlsx`: 과거 자료와 Daily Input을 합친 전체 Master
 - `update_master.py`: Daily Input을 Master에 병합하고 재검증하는 코드
-- `update_all.ps1`: Master 갱신 후 공통 Python 코드로 유럽·미국·TOPIX 대시보드를 생성하고, AI·Top10/Down10도 갱신하는 실행 파일
+- `update_all.ps1`: Master 갱신 후 공통 Python 코드로 유럽·미국·TOPIX 대시보드를 생성하고, 통합 화면의 로컬 웹용 HTML 동기화와 AI·Top10/Down10 갱신까지 수행하는 실행 파일
 - `rawfile_manifest.json`: 이미 처리한 파일의 SHA-256과 Master 요약
 
 ## 매일 사용법
@@ -31,6 +31,10 @@ Set-Location -LiteralPath 'C:\Users\infomax\Documents\python\QAE\데일리시황
 ```
 
 이 경우 입력 파일은 내용 해시로 중복 검사한 뒤 `Daily_Input`에 복사된다.
+
+지역별 대시보드 생성이 모두 성공하면 통합 화면을 QAE의 `macro_hub/public/embeds/market_rotation.html`로 동기화한다. 내용이 같으면 다시 쓰지 않으며, 다른 웹 모듈의 임베드는 이 단계에서 건드리지 않는다. `Stock Map`도 공통 생성 코드와 템플릿에 포함되어 매번 다시 만들어진다. 기간은 1D·1W·1M·MTD·3M·6M·YTD다. 상세 계산 기준은 [통합 대시보드 README](../Dashbaord/유로존_dashboard/README.md)를 참고한다.
+
+Master가 이미 최신이고 통합 화면만 다시 만들 때는 이 폴더에서 `python ..\Dashbaord\유로존_dashboard\build_market_rotation_dashboard.py`를 실행하면 된다. 기본 운영 경로에서는 로컬 웹용 HTML도 동기화하며, `--no-sync-embed`를 붙이면 HTML만 생성한다. `update_all.ps1`과 이 생성 명령은 Git push나 웹 배포를 실행하지 않는다.
 
 ## 병합 규칙
 

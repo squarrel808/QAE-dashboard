@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import argparse
+import calendar
 import html
 import json
 import math
 import re
+import tempfile
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -1144,6 +1146,107 @@ def aggregate_group(
     return row, box, history
 
 
+def stock_map_month_back(value: date, months: int) -> date:
+    """Subtract calendar months, clipping the day to the target month's end."""
+    month_number = value.year * 12 + value.month - 1 - months
+    year, month_offset = divmod(month_number, 12)
+    month = month_offset + 1
+    return date(year, month, min(value.day, calendar.monthrange(year, month)[1]))
+
+
+def build_stock_map(raw: RawIndex) -> dict[str, Any]:
+    """Build independently dated, unclipped price returns for the stock treemap.
+
+    All windows end at the same latest active market session. Calendar windows
+    need a real observation on or before their target; missing history is never
+    replaced by the first available date. Missing constituent endpoint prices
+    stay missing instead of being carried forward or interpreted as a 0% return.
+    """
+    periods = ("1d", "1w", "1m", "mtd", "3m", "6m", "ytd")
+    result: dict[str, Any] = {
+        "asOf": None,
+        "currency": raw.currency,
+        "dates": [],
+        "periods": {period: {"startDate": None, "endDate": None} for period in periods},
+        "stocks": [],
+        "method": (
+            "Tile area uses market-cap share at the latest active price session. "
+            "Returns are constituent price changes excluding dividends, with no clipping or base-market-cap requirement. "
+            "1D and 1W use 1 and 5 active sessions; 1M/3M/6M use calendar months with month-end clipping. "
+            "MTD/YTD start at the last active session on or before the prior month/year end. "
+            "Missing full windows or endpoint prices remain unavailable. Active sessions use the dashboard's price-update heuristic. "
+            "Custom date ranges use the session dates and aligned constituent price history; "
+            "each selected calendar date resolves to the last active session on or before it. "
+            "Tile areas remain at the latest active session even for historical custom ranges. "
+            "Market-cap shares are approximate where source currencies are mixed."
+        ),
+    }
+    prices = raw.metrics.get("price")
+    mcap = raw.metrics.get("mcap")
+    shape = (len(raw.tickers), len(raw.dates))
+    if not raw.dates or not raw.tickers or prices is None or prices.shape != shape:
+        return result
+    sessions = active_market_session_indices(raw.dates, prices)
+    if not sessions:
+        return result
+    current = sessions[-1]
+    as_of = raw.dates[current]
+    result["asOf"] = as_of.isoformat()
+    result["dates"] = [raw.dates[position].isoformat() for position in sessions]
+    targets = {
+        "1m": stock_map_month_back(as_of, 1),
+        "mtd": as_of.replace(day=1) - timedelta(days=1),
+        "3m": stock_map_month_back(as_of, 3),
+        "6m": stock_map_month_back(as_of, 6),
+        "ytd": date(as_of.year, 1, 1) - timedelta(days=1),
+    }
+    starts: dict[str, int | None] = {
+        "1d": sessions[-2] if len(sessions) >= 2 else None,
+        "1w": sessions[-6] if len(sessions) >= 6 else None,
+    }
+    for period, target in targets.items():
+        candidates = [position for position in sessions if raw.dates[position] <= target]
+        starts[period] = candidates[-1] if candidates else None
+
+    current_prices = prices[:, current]
+    valid_current = np.isfinite(current_prices) & (current_prices > 0)
+    returns: dict[str, np.ndarray] = {}
+    for period in periods:
+        start = starts[period]
+        result["periods"][period] = {
+            "startDate": raw.dates[start].isoformat() if start is not None else None,
+            "endDate": as_of.isoformat(),
+        }
+        values = np.full(len(raw.tickers), np.nan, dtype=np.float64)
+        if start is not None:
+            base = prices[:, start]
+            valid = valid_current & np.isfinite(base) & (base > 0)
+            with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
+                values[valid] = current_prices[valid] / base[valid] - 1.0
+        returns[period] = values
+
+    caps = mcap[:, current] if mcap is not None and mcap.shape == shape else np.full(len(raw.tickers), np.nan)
+    valid_caps = np.isfinite(caps) & (caps > 0)
+    total_cap = float(caps[valid_caps].sum()) if valid_caps.any() else 0.0
+    for position, ticker in enumerate(raw.tickers):
+        result["stocks"].append({
+            "ticker": ticker,
+            "company": raw.companies[position] if position < len(raw.companies) else "",
+            "sector": raw.sectors[position] if position < len(raw.sectors) else "",
+            "industry": raw.industries[position] if position < len(raw.industries) else "",
+            "weight": float(caps[position] / total_cap) if total_cap > 0 and valid_caps[position] else None,
+            "prices": [
+                float(value) if np.isfinite(value) and value > 0 else None
+                for value in prices[position, sessions]
+            ],
+            "returns": {
+                period: float(values[position]) if np.isfinite(values[position]) else None
+                for period, values in returns.items()
+            },
+        })
+    return result
+
+
 def build_stock_rows(raw: RawIndex, strict_lookback: bool = False) -> list[dict[str, Any]]:
     """Build compact constituent return rows without stock-level P/E histories.
 
@@ -1411,6 +1514,7 @@ def build(
 
     rows: list[dict[str, Any]] = []
     stock_rows: list[dict[str, Any]] = []
+    stock_maps: dict[str, dict[str, Any]] = {}
     boxes: list[dict[str, Any]] = []
     pe_histories: list[dict[str, Any]] = []
     coverage: list[dict[str, Any]] = []
@@ -1424,6 +1528,7 @@ def build(
         )
         rows.extend(group_rows)
         stock_rows.extend(build_stock_rows(raw, True))
+        stock_maps[code] = build_stock_map(raw)
         boxes.extend(group_boxes)
         pe_histories.extend(group_histories)
         coverage.append(group_coverage)
@@ -1469,6 +1574,7 @@ def build(
             },
             "rows": [[item[field] for field in ROW_FIELDS] for item in rows],
             "stockRows": [[item[field] for field in STOCK_FIELDS] for item in stock_rows],
+            "stockMap": stock_maps,
             "industrySectorMap": industry_sector_maps,
             "boxes": [
                 [
@@ -1558,16 +1664,50 @@ def build(
     return data
 
 
+def sync_dashboard_embed(source: Path, destination: Path) -> bool:
+    """Refresh only the requested local HTML copy after a successful build.
+
+    Identical output is left untouched. A temporary file in the destination
+    directory prevents a partially written embed from replacing the last one.
+    """
+    source, destination = source.resolve(), destination.resolve()
+    if source == destination:
+        raise ValueError("Embed destination must differ from the standalone HTML")
+    if destination.suffix.lower() != ".html":
+        raise ValueError("Embed destination must be an .html file")
+    payload = source.read_bytes()
+    if destination.is_file() and destination.read_bytes() == payload:
+        print(f"embed_unchanged={destination}")
+        return False
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=destination.parent, prefix=".market_rotation_", suffix=".tmp", delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(payload)
+        temporary.replace(destination)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+    print(f"embed_synced={destination}")
+    return True
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build Europe, US, and Japan dashboards from one BQuant master.")
+    parser = argparse.ArgumentParser(description="Build Europe, US, and Japan dashboards from one BQuant master.", allow_abbrev=False)
     parser.add_argument("--region", choices=("all", *REGIONS), default="all")
     parser.add_argument("--asset-root", type=Path, default=DASHBOARD_DIR, help="Dashboard directory containing the region templates and D3 asset")
     parser.add_argument("--output-root", type=Path, default=None, help="Output directory; defaults to --asset-root")
     parser.add_argument("--europe-template", type=Path, default=None, help="Optional Europe template override for validation")
     parser.add_argument("--us-template", type=Path, default=None, help="Optional US template override for validation")
     parser.add_argument("--japan-template", type=Path, default=None, help="Optional Japan template override for validation")
+    parser.add_argument("--sync-embed", type=Path, metavar="HTML_PATH", help="After successful europe/all builds, update this local market_rotation HTML copy (no deployment)")
     parser.add_argument("sources", nargs="*", type=Path)
     args = parser.parse_args()
+    if args.sync_embed is not None and args.region not in ("all", "europe"):
+        parser.error("--sync-embed requires --region europe or all")
+    if args.sync_embed is not None and args.sync_embed.suffix.lower() != ".html":
+        parser.error("--sync-embed must name an .html file")
     asset_root = args.asset_root.resolve()
     output_root = (args.output_root or asset_root).resolve()
     sources = args.sources or DEFAULT_SOURCES
@@ -1592,6 +1732,9 @@ def main() -> None:
             valuation_source,
             standalone_path,
         )
+    if args.sync_embed is not None:
+        europe = REGIONS["europe"]
+        sync_dashboard_embed(output_root / europe["directory"] / europe["standalone"], args.sync_embed)
 
 
 if __name__ == "__main__":

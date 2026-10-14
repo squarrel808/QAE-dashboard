@@ -12,16 +12,19 @@ $pythonCommand = Get-Command python -ErrorAction Stop
 $masterUpdater = Join-Path $bqlDir 'Rawfile\update_master.py'
 $master = Join-Path $bqlDir 'Rawfile\BQuant_Master.xlsx'
 $dashboardBuilder = Join-Path $dashboardRoot 'build_regional_dashboards.py'
+$qaeRoot = Split-Path -Parent (Split-Path -Parent $bqlDir)
+$marketEmbed = Join-Path $qaeRoot 'macro_hub\public\embeds\market_rotation.html'
 
 & $pythonCommand.Source $masterUpdater @InputFiles
 if ($LASTEXITCODE -ne 0) {
     throw "Master append failed with exit code $LASTEXITCODE"
 }
 
-& $pythonCommand.Source $dashboardBuilder --region europe $master
+& $pythonCommand.Source $dashboardBuilder --region europe --sync-embed $marketEmbed $master
 if ($LASTEXITCODE -ne 0) {
     throw "Integrated dashboard build failed with exit code $LASTEXITCODE"
 }
 
 Write-Host "Master: $master"
 Write-Host "Dashboard: $(Join-Path $dashboardDir 'Market_Rotation_Dashboard_17_Indices.html')"
+Write-Host "Local web copy: $marketEmbed"
