@@ -113,7 +113,7 @@ def resolve_descriptor(header, pk_to_desc):
         norm = normalize_to_pk(pk_part)
         if norm in pk_to_desc:
             return pk_to_desc[norm]
-        return h.rsplit(' (', 1)[0]
+        return h  # Parentheses may contain units such as (Y/Y %Chg), not a ticker.
 
     # 2) 헤더 자체를 ticker_pk로 정규화해서 lookup
     norm = normalize_to_pk(h)
@@ -657,6 +657,11 @@ def extract_all_from_haver():
 def generate_html(all_data):
     """데이터를 받아서 HTML 대시보드를 생성합니다."""
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    coverage = ' · '.join(
+        f"{country}: {data['stats_timeline'][-1]['month']}"
+        for country, data in all_data.items() if data.get('stats_timeline')
+    )
+    source_modified = datetime.datetime.fromtimestamp(DASHBOARD_XLSX.stat().st_mtime).strftime('%Y-%m-%d %H:%M')
     data_json = json.dumps(all_data, ensure_ascii=False)
 
     js_code = r"""
@@ -1119,7 +1124,7 @@ canvas{{width:100%;height:auto}}
 <div class="header-row">
 <div class="header-left">
 <h1>CPI YoY distribution</h1>
-<p class="sub">All items · 4-panel layout · updated {now} · source: dashboard_data.xlsx</p>
+<p class="sub">화면 생성 {now} · 원본 파일 갱신 {source_modified}<br>실제 자료 기준월 — {coverage}</p>
 </div>
 <select class="country-select" id="window-filter" onchange="applyWindow(parseInt(this.value))" style="margin-right:10px">
 <option value="1">1M</option>

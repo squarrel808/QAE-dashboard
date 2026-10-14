@@ -36,7 +36,12 @@ META_COLS = ["code", "descriptor", "datatype", "frequency"]
 # 상태 파일
 # ─────────────────────────────────────────────────────
 def load_state():
-    return json.loads(STATE_FILE.read_text(encoding="utf-8")) if STATE_FILE.exists() else {}
+    raw = json.loads(STATE_FILE.read_text(encoding="utf-8")) if STATE_FILE.exists() else {}
+    normalized = {}
+    for ticker, date in raw.items():
+        pk = ticker_to_pk(ticker)
+        normalized[pk] = max(normalized.get(pk, ""), date)
+    return normalized
 
 
 def save_state(state):
@@ -62,8 +67,18 @@ def build_metadata_sheet(all_tickers, logger, category_map=None):
     if not all_tickers:
         return pd.DataFrame(columns=empty_cols)
 
-    log_event(logger, "info", "Fetching metadata", ticker_count=len(all_tickers))
-    meta_df = haver.fetch_metadata(all_tickers)
+    # Keep verified descriptors instead of re-fetching thousands of unchanged
+    # tickers. A failed metadata call must not discard the existing mappings.
+    cached = pd.DataFrame(columns=empty_cols)
+    if OUTPUT_FILE.exists():
+        cached = pd.read_excel(OUTPUT_FILE, sheet_name="Metadata")
+    if "ticker_pk" in cached:
+        cached["ticker_pk"] = cached["ticker_pk"].map(ticker_to_pk)
+    known = set(cached["ticker_pk"].astype(str)) if "ticker_pk" in cached else set()
+    missing = [t for t in all_tickers if ticker_to_pk(t) not in known]
+    log_event(logger, "info", "Fetching missing metadata", ticker_count=len(missing), cached_count=len(known))
+    fresh = haver.fetch_metadata(missing) if missing else pd.DataFrame()
+    meta_df = pd.concat([fresh, cached], ignore_index=True)
     if meta_df.empty:
         log_event(logger, "warning", "Metadata fetch returned empty")
         return pd.DataFrame(columns=empty_cols)
@@ -194,14 +209,14 @@ def main():
     state   = load_state()
 
     # 1) 티커를 (기존 / 신규) 두 그룹으로 분리
-    existing_tickers = [t for t in tickers if t in state]
-    new_tickers      = [t for t in tickers if t not in state]
+    existing_tickers = [t for t in tickers if ticker_to_pk(t) in state]
+    new_tickers      = [t for t in tickers if ticker_to_pk(t) not in state]
 
     frames = []
 
     # 2) 기존 티커: last_date - 안전마진 (단 DEFAULT_START 이전으로는 안 내려감)
     if existing_tickers:
-        min_last = min(pd.to_datetime(state[t]) for t in existing_tickers)
+        min_last = min(pd.to_datetime(state[ticker_to_pk(t)]) for t in existing_tickers)
         start_ts = min_last - timedelta(days=SAFETY_DAYS)
         floor_ts = pd.to_datetime(DEFAULT_START)
         if start_ts < floor_ts:
@@ -222,9 +237,14 @@ def main():
             frames.append(df)
 
     new_data = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+    if new_data.empty:
+        log_event(logger, "error", "No observations fetched; keeping existing workbook and state")
+        return 1
+    new_data["ticker_pk"] = new_data["ticker_pk"].map(ticker_to_pk)
 
     # 4) 기존 엑셀 + 새 데이터 머지
     panel  = load_existing_panel()
+    panel["ticker_pk"] = panel["ticker_pk"].map(ticker_to_pk)
     merged = pd.concat([panel, new_data], ignore_index=True)
     merged = merged.drop_duplicates(subset=["date", "ticker_pk"], keep="last")
     merged = merged.sort_values(["ticker_pk", "date"])
@@ -242,7 +262,9 @@ def main():
 
     # 8) Wide 컬럼을 descriptor로 리네임
     header_map = build_header_map(list(wide_internal.columns), meta_sheet)
-    wide_display = wide_internal.rename(columns=header_map)
+    # Stable ticker keys preserve database identity and avoid treating a
+    # descriptor's unit suffix as a ticker suffix in downstream consumers.
+    wide_display = wide_internal
 
     # 9) 저장 — Wide / Metadata 시트만 갱신하고, 사용자가 추가한 다른 시트는 보존
     tmp = OUTPUT_FILE.with_suffix(".xlsx.tmp")
