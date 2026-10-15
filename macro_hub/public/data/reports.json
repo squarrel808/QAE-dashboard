@@ -1,5 +1,844 @@
 [
  {
+  "id": "fc84396cf712",
+  "date": "2026-10-15",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "중국: 신용 반등은 대출 약세를 가려 (Credit rebound masks persistent loan weakness)",
+  "summary": [
+   "• JPM은 9월 반등이 계절적이고 정책 주도이며 자생적이지 않다고 본다.",
+   "신규 위안화 대출은 CNY1,080bn(JPM CNY1,047bn)이나 대출 증가율은 4.",
+   "8% oya로 사상 최저(0.1%p 하락)다. • TSF는 CNY3,548bn(JPM CNY3,434bn)이며 정부채 CNY1,536bn, 그림자금융 CNY248bn, 회사채 -CNY39bn이다.",
+   "TSF 증가율은 7.1% oya로 0.1%p 둔화했다.",
+   "• M2 증가율 7.2% oya, M1 3.2%로 M1–M2 갭 -4."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "da03d0849fa7",
+  "date": "2026-10-15",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Asia Financials Credit Fundamentals — 입문(보험·은행)",
+  "summary": [
+   "• 보험·은행 크레딧 분석 입문 프레젠테이션(69페이지): 보험 소개, 은행 소개, 은행 자본 분석, 용어집으로 구성.",
+   "JACI APAC 보험채 시가총액은 10/12 기준 약 US$54bn이며 은행채는 약 US$465bn.",
+   "• 보험은 CSM(Contractual Service Margin)·손익 구조·후순위 채권 구조(Tier 2 등), 은행은 자산건전성·수익성·유동성·자본 분석을 설명(교육용, 투자의견·신규 수치 없음)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "f947880b2fd5",
+  "date": "2026-10-15",
+  "source": "JPM",
+  "section": "주식",
+  "title": "유럽 주식 파생상품 전략: 포지셔닝 약화, skew 유지 (European equity derivatives positioning weaker, keep skew)",
+  "summary": [
+   "• 본문 미수록(포털 'Past Issues' 화면 캡처).",
+   "목록에는 10월 7일자(8월 말 UST 10Y 약 4.",
+   "6%에서 수익률이 약 5%를 넘으면 Banks/Cyclicals가 부진하기 쉽다는 이전 주장)와 9월 30일자(SX5E put ratio로 skew·convexity 프리미엄 수취 추천) 발췌문만 보인다."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "631e5f0011f4",
+  "date": "2026-10-15",
+  "source": "HSBC",
+  "section": "주식",
+  "title": "영상: Talking Digital Assets — 대전환 (HSBC)",
+  "summary": [
+   "• HSBC Corporate & Institutional Banking CEO Michael Roberts가 디지털 자산·디지털 통화의 급속한 진화와 금융 변화 가능성을 논의하는 영상 안내 페이지(1페이지).",
+   "본문 수치/의견은 수록되지 않음."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "d06b9925d7d4",
+  "date": "2026-10-15",
+  "source": "BofA",
+  "section": "주식",
+  "title": "글로벌 테마 퀀트 뷰: Air Defense·Agricultural Production 신규 편입, AI 리더십 지속",
+  "summary": [
+   "• BofA 퀀트는 AI 관련 테마 분산 목적으로 Air Defense(다층 방공 수요, Defense보다 News Pulse 강함)와 Agricultural Production(식량안보, 롱온리 펀드 OW 확대) 2개 신규 테마를 추가해 현재 22개 글로벌 테마를 모니터링한다.",
+   "• 최근 1개월 수익률: Cybersecurity +17%, SaaS +10%, AI Compute +5% 최고; Nuclear Energy -14%, Rare Earths -12%, Gold -11% 최저(09-Oct-26 기준).",
+   "최근 1주는 Cybersecurity(+6.2%)와 SaaS가 최고였다.",
+   "• Triple Momentum(이익·가격·뉴스) 순위: AI Compute, Photonics, Data Centers가 최상위, Nuclear Energy, Alcoholic Beverages, Consulting이 최하위.",
+   "• 테마 내 Triple Momentum 1위 종목: AI Compute는 TSMC, Photonics Fujikura, Data Centers Kioxia, Grid Modernisation Siemens Energy, Air Defense Hanwha Aerospace, Agricultural Production Archer Daniels Midland."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "fe12a73fbb1e",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "J.P. 모건 모닝리포트(일본어, 10/14): 반도체주 하락·미 장기금리 하락·USD 전면 약세",
+  "summary": [
+   "• (일본어 PDF 가나 일부 판독 불가, 수치·한자 기준 요약) 미 국채: 2년 4.",
+   "789%(+0.2bp), 5년 5.001%(-1.",
+   "4bp), 10년 5.208%(-2.9bp), 30년 5.",
+   "557%(-3.9bp). 한국 반도체 급락·주가 하락에 유럽 금리 하락 연동으로 장기금리가 내렸고, 뉴욕연은 Williams 총재가 연내 추가 1회 인상이 적절하다고 밝히며 2027년 인상은 불필요하다는 견해를 시사(2년물 일시 반응 제한적).",
+   "9월 CPI는 JPM 미국 이코노미스트가 헤드라인 +0."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "cae46a0c2e62",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "Flows & Liquidity: AI 인프라주 조정(작년 7월과 차이)·경기민감주 포지셔닝/침체확률",
+  "summary": [
+   "• JPM은 한국 메모리주 주도의 최근 AI 인프라주 조정이 작년 7월 조정과 유사하나 환경은 덜 우호적이라고 평가: (1) 10월 들어 개인의 'buy the dip' 신호가 미약(7월에는 레버리지·비레버리지 ETF가 적극 매수), (2) 대규모 숏 베이스 부재(EWY 등), (3) 레버리지 주식 ETF AUM/기초 시총 비율이 7월 말 저점 이후 8-9월 상승, (4) 한국 메모리 2사의 합산 $40bn 자사주 매입이 8/20 시작해 당초 11월까지 예정이었으나 조기 완료로 10월 중순 종료되는 'buyback flow cliff'.",
+   "• 다만 JPM은 단기 기술적 취약성에도 불구하고 중장기로는 tech/AI 복합체에 펀더멘털상 건설적인 환경이라는 기존 견해를 유지한다고 서술.",
+   "• 10/12 기준 자산별 내재 미국 경기침체 확률(JPM 추정): S&P 500 1%, US HG 6%, US HY 8%, 5y UST 4%, 기초금속 13%, Russell 2000 28%, 경기민감 vs 방어 섹터 32%.",
+   "대형주·크레딧·금리는 침체 위험을 거의 반영하지 않고 소형주·경기민감주만 반영.",
+   "• 경기민감주는 8월 중순 이후 조정에도 포지셔닝·자금흐름 기준으로 과매도가 아니다: 경기민감 vs 방어 ETF 순유입은 2026년 중반부터 상대적 유출로 전환(최근 가속), 포지셔닝은 상대적으로 줄었으나 숏으로 전환하지 않음."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "6b2db05cd306",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "FX Macro Quant: USD 중립~소폭 긍정, 캐리 바스켓 회복, 장기 REER 밸류에이션",
+  "summary": [
+   "• JPM의 T.E.A.M. 시스템 프레임워크는 소폭 USD 롱 유지(미국 주식 상대 강세, 양호한 캐리, 원자재 교역조건(ToT) 모멘텀).",
+   "성장 모멘텀 프레임워크의 USD 비중은 -20%에서 0%로 상향: 유의한 상방 성장 모멘텀 통화 비중이 7월 고점 40%+에서 현재 11%(GBP, EUR, IDR)로 감소, 유의한 하방은 11%(ZAR, CLP, BRL).",
+   "GBP·EUR이 성장 모멘텀 1,2위, USD는 27개 중 14위.",
+   "• 캐리: 글로벌/EM 캐리 바스켓은 9/28 저점 이후 +2-3% 반등, 글로벌 위험조정 캐리 YTD +8%(연중 고점), 글로벌 real carry YTD +15%(가장 우수), G10 real/nominal carry +7%, 위험조정 +4%.",
+   "회복은 LatAm(COP, BRL) 주도, EUR 숏(funder) 기여."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "03a883b1bc11",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "우간다: BoU, 긴급 225bp 인상으로 급제동 (Uganda: BoU attempts to slam the brakes)",
+  "summary": [
+   "• JPM은 BoU가 CBR을 225bp 긴급 인상해 12.",
+   "0%로 올렸다고 전한다. 9월 CRR 250bp 인상(11.",
+   "0%→13.5%)에도 USD/UGX가 4,000을 넘어서자 정책금리로 대응했다.",
+   "• BoU에 따르면 12개월 경상수지 적자는 8월까지 US$1.",
+   "4bn 확대된 US$4.6bn이다. 커피/코코아 수출가격 하락, 관광 약화, 유가 상승이 원인이다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "54ac5ac5c03b",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "브라질: 8월 서비스 부진이 경기 둔화 재확인 (Brazil services output)",
+  "summary": [
+   "• JPM은 8월 서비스 생산이 -0.1% m/m sa로 JPM 예상 +0.",
+   "4%, 컨센서스 +0.5%를 하회했으며 4월 이후 사실상 증가가 없다고 본다.",
+   "• 서비스는 3m/3m saar 약 1.4%로 성장 중이나 3Q26은 대체로 보합 추정이고 하방 skew가 있다.",
+   "JPM nowcaster는 3Q 성장을 약 -1.",
+   "2% q/q saar(10월 13일 기준)로 추적하며 3Q forecast는 1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "5affdf69aa99",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "유로존: 독일 재정 확대가 건설 데이터에 뚜렷 (German fiscal easing in construction data)",
+  "summary": [
+   "• JPM은 NGEU가 3Q에 마무리되고 독일 재정확대·인프라 투자가 본격화되면서 건설 지표가 점점 중요해졌다고 본다.",
+   "• 프랑스·이탈리아·스페인의 3Q 건설 생산은 감소 추적 중이며 7월까지 유로존 전체로는 연율 약 -4% 수준이다.",
+   "• 독일은 8월 +9.3% m/m로 2Q 대비 +20.",
+   "5%ar 추적이며, 독일 건설 GVA 약 +8.",
+   "5%ar 증가와 부합한다(2Q는 +5.9%ar)."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "e3243b611fc3",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "중국: 9월 무역 서프라이즈, 가격 효과로 일부 증폭 (Sept trade beat)",
+  "summary": [
+   "• 9월 수출은 +6.6% m/m sa, 36.",
+   "3% oya(컨센서스 25.7%, JPM 28.",
+   "3%), 수입은 +3.1% m/m sa, 31.",
+   "0% oya(컨센서스 25.0%, JPM 26.",
+   "3%)다. 무역흑자는 US$133.5bn, 연초 이후 US$939bn으로 연간 약 $1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "806467982b6a",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "싱가포르: MAS 정책 동결 (MAS holds policy settings)",
+  "summary": [
+   "• MAS는 10월 14일 S$NEER 밴드의 기울기·폭·중심을 모두 유지했다.",
+   "JPM과 컨센서스는 25bp 상당의 추가 slope 인상을 예상했다.",
+   "• MAS는 올해 약 75bp(JPM 추정) 긴축을 이미 단행했다.",
+   "2026년 근원 인플레이션 전망은 1.5-2.5%에서 1.",
+   "5%-2%(JPMf 1.7%)로 좁혔고, 2027년 헤드라인·근원은 1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "b9387516368f",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "중국: 9월 PPI 연중 최고, CPI는 온화 (Sept PPI at YTD high; CPI benign)",
+  "summary": [
+   "• 9월 PPI는 +1.1% m/m sa, 5.",
+   "0% oya(JPM 4.3%, 컨센서스 4.4%)로 6월 4.",
+   "1%를 넘어섰다. 헤드라인 CPI는 0.9% oya(JPM 0.",
+   "9%, Bloomberg 컨센서스 1.0%), 근원 CPI는 1.",
+   "0%다. • PPI는 유가·운임, 비철금속, 석탄, 철강·시멘트 가격이 이끌었다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "c264eb9019a1",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "중국-EU 무역: 시간 벌기, 긴장 관리 (Buying Time, Managing Tensions)",
+  "summary": [
+   "• JPM은 10월 8–9일 베이징 합의를 '안정화 패키지이지 전략적 reset이 아니다'로 평가한다.",
+   "EU 대중 상품수지 적자는 하루 약 €1bn 수준이며 이 합의는 근본 불균형을 해소하지 못한다.",
+   "• 16개 항목 중 가장 구체적인 것은 HEV/PHEV에 대한 WTO 정합적 이해다.",
+   "EU는 중국산 출하가 절반 이상 줄 수 있다고 하나 쿼터·시기·법적 수단은 명시되지 않았다.",
+   "• 약 €4bn 규모 EU 대중 수출품에 대해 저율/무관세를 검토하며(연 관세 절감 최소 €225mn), 희토류·영구자석 수출허가 'green channel'이 마련된다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "0071665af370",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "브라질: 8월 투자활동지수 전반적 하락 (Investment Activity Index)",
+  "summary": [
+   "• JPM의 투자활동지수(IAI)는 8월 -2.",
+   "3% m/m sa로 하락했고, 3m/3m saar는 1.",
+   "8%로 2% 미만이다. 소프트웨어 지출(+0.5%)을 제외하면 하락이 전반적이었다.",
+   "• 구성 항목은 건설 -1.9%, 자본재 생산 -2.",
+   "8%, 자본재 수입 -3.7% (모두 m/m sa)다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "9d25af1be2a5",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "브라질: 주간 무역·금융 FX 흐름 (Weekly trade and financial flows)",
+  "summary": [
+   "• 10월 둘째 주 순유입은 US$2.4bn이며, 금융 유입 US$4.",
+   "1bn과 상업(commercial) 유출 US$1.",
+   "7bn으로 구성됐다. • 월 누적(MTD) 순유입은 US$3.",
+   "2bn으로, 금융 유입 US$4.1bn과 상업 유출 US$0.",
+   "9bn이다. • 본문에는 수출·수입 관련 흐름 갭, 금융 흐름과 외국인 Bovespa 포지션, BCB 개입 등 도표가 이어진다(차트 위주 노트)."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "f006952d91f9",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "도미니카공화국: 디스인플레이션 지연, 상방 위험 확대 (Disinflation delayed)",
+  "summary": [
+   "• 9월 인플레이션은 5.1% oya(0.3% m/m)로 JPM 예상과 같고 8월과 동일하다.",
+   "근원은 4.6% oya로 변화가 없다. • 기저효과로 연말 4.",
+   "5%까지 하락하나, JPM은 엘니뇨, 고유가, DOP 약세 때문에 상방 위험이 더 커 인플레이션이 목표 범위 상단 이상에 머물 것으로 본다.",
+   "• 비교역재는 서비스 5.1% oya로 둔화하나 교역재는 약 6% oya로 끈질기다.",
+   "연료가격은 +2.0% m/m(+12.6% oya)이며 10월 연료가격 동결로 올해 보조금은 GDP의 약 0."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "9e5326d1f43e",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "미국 CPI와 TIPS: 더 탄탄한 기반 (US CPI & TIPS: On firmer footing)",
+  "summary": [
+   "• 9월 헤드라인 CPI는 +0.65% m/m(3.",
+   "7% oya)로 에너지 +5.2%가 이끌었고, 근원 CPI는 +0.",
+   "33% m/m(JPMC 0.18%, 컨센서스 0.",
+   "2%), 2.6% oya(8월 2.4%)였다. 근원 상품 +0.",
+   "25%, 서비스 +0.37%, supercore +0."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "e8eb8a5f34d2",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "튀르키예 경제·전략: CBRT, USDTRY 절하 속도 소폭 상향(Tweak, no treat)",
+  "summary": [
+   "• JPM은 CBRT가 이번 주 USDTRY 절하 속도를 상향 조정했고(Karahan 총재 발언으로 확인) 이를 정책 변경이 아닌 '기계적 조정'으로 설명할 가능성이 높다고 본다.",
+   "USDTRY는 4월 말 45.0에서 현재 49.",
+   "4이며, JPM은 새 속도를 주당 2100 pips로 가정(수치는 미공표).",
+   "이는 4월의 1800 pips 대비 큰 차이가 없다는 평가.",
+   "• JPM은 만기 도래한 USDTRY 선물 숏을 1."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "17215094426e",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "J.P. Morgan Municipal Morning Intelligence: 지방채 시장 랠리·기록적 BWIC, 9월 core CPI 상회",
+  "summary": [
+   "• 화요일 HG muni 스케일 6-8bp 인하(금요일 12bp 랠리 연장), UST 0-4bp 불 플래트닝, 펀드 합계 $432mn 순유입.",
+   "BWIC 물량은 $8.6bn으로 직전 기록($8.",
+   "0bn)을 경신, hit ratio 63%. 이번 주 신규발행은 tax-exempt 약 $6.",
+   "5bn(지난주 $14.5bn의 절반 미만) 예정, 당일 $3.",
+   "8bn(tax-exempt $2.1bn, taxable $1."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "2e06400e890c",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "트레이드 노트: Dec26 Buxl basis 매도 (Sell Dec26 Buxl basis)",
+  "summary": [
+   "• JPM은 독일 30년 b/m 금리가 9월 초 이후 약 20bp 박스권(고점은 Buxl 계약 명목 쿠폰 4%에 못 미침)에서 하단으로 내려오며 Dec26 Buxl delivery option 가치도 함께 하락했다고 설명.",
+   "현 수준에서 DBR 2.5% Aug54가 인도 시점까지 CTD로 남을 확률을 약 85%로 본다(CTD 전환에는 30년 b/m 금리 약 32bp 상승 또는 Aug52/Aug54 커브 7.",
+   "3bp 플래트닝 필요). • 순 basis는 현재 약 13센트로 여전히 고평가.",
+   "옵션조정 net basis는 약 7-8센트로 선물이 공정가 대비 싸다.",
+   "현 net basis는 Buxl 변동성 5-5."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "360108c997ad",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "영국 10월 예산안은 금리시장에 깜짝 요인이 되지 않을 것 (October Budget unlikely to surprise UK rates markets)",
+  "summary": [
+   "• JPM은 이달 말 예산안이 재정 중립적이고 재정 규칙을 재확인하며 재정 headroom을 약 £15bn 수준으로 소폭 복원할 것으로 본다(소규모 증세 약 £5bn, 일부는 생계비 지원 지출).",
+   "headroom은 3월 £23.6bn에서 약 £12bn으로 감소한 것으로 추정되며 원인은 글로벌 금리 상승과 미-이란 전쟁발 에너지 가격 상승이다.",
+   "• 올해 재정적자는 JPM 이코노미스트 전망으로 약 4%(3월 OBR 3.",
+   "6%)로 소폭 상향; 8월까지 PSNB £77bn으로 3월 OBR 전망 대비 £8bn 높다.",
+   "CGNCR은 OBR 전망과 거의 일치. • FY26/27 gross gilt 발행을 £6bn 늘린 £252bn으로 예상(net financing requirement £9bn 증가, 이 중 T-Bill £3bn 증가)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "39f6a30f2629",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "중남미 회사채 — 금리 변동성 속 캐리·회복력 플레이북 (Latin America Corporates)",
+  "summary": [
+   "• JPM은 최근 금리발 매도세를 활용해 Financials, Metals & Mining, Oil & Gas의 우량 종목 비중을 늘렸고, 수익률이 높지만 개별 이슈가 큰 신용은 계속 피한다고 밝혔다.",
+   "그 결과 포지션은 OW가 UW보다 더 많은 쪽으로 기울었다(섹터는 Financials·Oil & Gas, 국가는 Mexico 중심).",
+   "• CEMBI LatAm은 210bp로 9월 저점 183bp를 크게 웃돌며, 수익률은 7% 이상으로 5년 평균보다 35bp 높다.",
+   "JPM은 이 확대가 탄탄한 펀더멘털·건전한 재무구조·양(+)의 FCF를 가진 종목에 매력적인 진입 지점을 만들었다고 본다.",
+   "• 리스크로 지정학, 원자재 가격, 개별 사례, 미국 금리 경로를 들며 선별적 접근이 필요하다고 했다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "8a0ca4a904cd",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "LATAM Corporates Daily — Televisa/AT&T Mexico JV, Embraer E2 수주",
+  "summary": [
+   "• Televisa와 Fintech Holdings는 50/50 JV로 AT&T Mexico를 현금 US$2.",
+   "0bn(조정 전)에 인수하기로 했고, 자금은 보유현금과 JV 수준의 담보 비소구 차입으로 조달한다.",
+   "Televisa 현금 기여는 US$400mn이며 지분법 처리돼 연결 EBITDA에는 반영되지 않는다.",
+   "종결은 1Q27/2027년 초 예정이며 JPM은 Televisa 채권 NR.",
+   "• Japan Airlines가 Embraer E190-E2 26대(확정 16, 옵션 10)를 주문했다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "2af45c9e2279",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "JPM EM Corporate Strategy Daily — Rising Star가 Fallen Angel을 크게 상회",
+  "summary": [
+   "• 2026년 들어 Rising Star 물량이 Fallen Angel을 크게 넘어섰다.",
+   "3Q26에 약 $15bn이 IG로 상향돼 연초 이후 $25bn(Teva $12bn 포함, Latam Airlines +$2bn), Fallen Angel은 연초 이후 $8bn으로 변동 없고 최근 분기 신규 없음.",
+   "• 앞으로는 잠재 Fallen Angel 물량이 $20bn으로 잠재 Rising Star $16bn을 웃돈다(ZHOSHK·CMPC 추가로 약 $3bn).",
+   "잠재 Rising Star에는 오만 준정부 3곳($3bn), 인도 인프라 발행사, STANLN perp($9bn) 등이 신규 편입.",
+   "• 지수 성과(10/13 기준 표): CEMBI Broad 167bp(1d +2, 1m +21, YTD +3), IG 104bp, HY 323bp; EMBIG Div 188bp; US HG(JULI) 95bp; US HY 348bp."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "4371090fb7ca",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "JPM Daily Credit Strategy Update — FAB 지수 고점 부근, 야간 순매수 확대",
+  "summary": [
+   "• JPM FAB(Foreign Attractiveness of USD IG Bonds) 지수는 WoW 5bp 하락한 63bp로, 지난주 1.",
+   "5년 고점에서 내려왔다. 미국 IG 회사채 수익률이 WoW 5bp 하락한 것이 유일한 요인.",
+   "선물시장은 10월 Fed 인상 확률을 약 20% 반영 중이며 JPM 이코노미스트는 0%로 본다.",
+   "• 헤지 후 수익률 픽업(WoW): EUR +50bp(3bp 하락), GBP +61bp(11bp 하락), JPY +10bp(3bp 상승, 2025년 4월 이후 최고), CHF 115bp.",
+   "10y TWD는 181bp. 야간 순매수는 $300mn/night(WoW +25%)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "2f8bae994604",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "HY·레버리지론 Morning Intelligence — 9월 등급 추세·CLO 2027 전망",
+  "summary": [
+   "• 프리오픈 지표: HY 수익률 8.39%(+3bp), HY 스프레드 348bp(+4bp), Loan 3년 스프레드 506bp(+2bp).",
+   "5년 UST 4.98%, 10년 UST 5.19%, WTI $95.",
+   "4, Brent $106.4. • 9월 HY 업/다운그레이드 비율(발행사 기준) 1.",
+   "53:1로 11개월 만에 가장 긍정적(업그레이드 23건 $26.",
+   "8bn, 다운그레이드 15건 $36.1bn; 금액 기준 0."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "f139fc040283",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Credit Calls (10/14) — Albertsons UW 유지, Citi UW·GS Neutral",
+  "summary": [
+   "• Albertsons는 사업 전반 검토를 발표하고 가이던스를 철회했다.",
+   "JPM은 ACI를 Underweight로 유지하며 '29s가 동일 만기 BB 대비 타이트한 것은 부당하다고 본다.",
+   "Macy's(Ba1/BB+/BBB-, 순리스조정레버리지 1.",
+   "8x)가 ACI(3.2x)보다 상향 후보라고 언급.",
+   "KR 소송 재판은 10/19 시작. • Citigroup 3Q26: 소폭 beat, FY26 NII(ex markets)·ROTCE 가이던스 상향, 2027·2028 ROTCE 11-13% 재확인."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "0974f0775a26",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "CD Player — 크레딧 파생 시장 테마와 RV 트레이드 아이디어",
+  "summary": [
+   "• 크레딧 스프레드는 최근 매도 후 박스권: CDX IG 58-60bp, iTraxx Main 62-65bp.",
+   "저등급 합성지수의 변동폭이 더 컸으며 금리 변동성도 안정되는 가운데 유럽·미국 선거와 실적을 앞두고 있다고 JPM은 서술.",
+   "• 트레이드 1: CDX.IG Junior mezz 롱(Main 대비 미국 vs 유럽) — Main은 CDX.",
+   "IG 대비 와이드이나 Junior mezz는 반대로 재조정, 낮은 내재 상관관계와 가파른 커브로 time value가 매력적이라는 논리.",
+   "• 트레이드 2: Xover 11월 스트래들을 팔아 SX5E 11월 스트래들 매수(제로 코스트, 내재 베타 2."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "d5e239e35e0a",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Global Covered Bond Wrap (10/14) — 프라이머리 스냅샷",
+  "summary": [
+   "• Fairstone Bank of Canada가 inaugural 3년 €500mm 커버드본드를 MS+40(가이던스 MS+45a, 수익률 3.",
+   "838%, 커버리지 약 2.8x)에 발행. Toronto-Dominion은 3년 $1.",
+   "5bn을 SOFR MS+46(가이던스 MS+48a)에 발행(올해 TD의 세 번째 벤치마크, 첫 USD).",
+   "신규 파이프라인 없음. • Fitch는 Kookmin Bank와 Shinhan Bank 모기지 커버드본드를 'AAA'/Stable로 확인(IDR 'A' 대비 2노치 버퍼)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "a2445a47295a",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "High Yield Talking Points — 유럽 HY 발행사 펀더멘털 2Q26",
+  "summary": [
+   "• 유럽 HY 부채가중 순레버리지는 5.0x에서 4.",
+   "9x로 하락(구성조정 기준 q/q -0.1x, y/y +0.",
+   "2x). 중간값은 3.9x. 매출 +2% y/y, EBITDA +3% y/y(q/q +7%, +16%), Basic Materials가 견인(Ineos 영향).",
+   "• 이자보상배율은 0.1x 하락한 5.1x, 2.",
+   "0x 미만 발행사 비중은 15%에서 14%로 하락."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "a2069ec9962a",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "APAC Credit Roundup — Shriram Finance, 중국 부동산, Genting",
+  "summary": [
+   "• Bloomberg 보도에 따르면 MUFG가 Shriram Finance 지분을 약 20%에서 50% 초과로 늘리는 방안을 검토(추가 투자 US$10bn 이상).",
+   "JPM은 신용에 긍정적이나 SHFLIN 2028s는 z+120bp로 대형 국유은행 대비 고평가라며 Underweight 유지.",
+   "• 중국 부동산 전문가 콜: 모기지 보조금은 기대보다 강하나 판도를 바꿀 정도는 아님(Golden Week 12개 도시 2차 주택 거래량 +41% y/y).",
+   "'828' 정책으로 선분양 퇴출이 개발사 현금흐름을 압박, 내년 토지 매입 30-50% 감소·신규 주택 판매 20-30% 감소 가능.",
+   "JPM은 Longfor 커브(약 10%) 선호 유지."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "85308eb79b01",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Curveball: HG Credit Curve Opportunities — 모든 스프레드 커브가 1년 범위 중간",
+  "summary": [
+   "• JULI Non-Fins 3s5s는 WoW 0.",
+   "5bp 플래트닝해 16bp(7월 초 이후 가장 평평), 5s10s는 0.",
+   "5bp 스티프닝해 24bp, 10s30s는 0.",
+   "3bp 스티프닝해 17bp. 세 커브 모두 1년 범위의 중간 수준.",
+   "• 10s30s는 하이퍼스케일러 제외 시 13bp(WoW +0."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "7195715e8472",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "HG Energy Rel Val Snapshot — BP, DVN, CVX 및 섹터 스프레드",
+  "summary": [
+   "• BP 3Q26 순부채는 $13.5-14.5bn으로 2Q26 $22.",
+   "3bn에서 감소 예상(2027 목표 $14-18bn 이미 내).",
+   "DVN은 Eagle Ford 자산을 Crescent Energy에 $4.",
+   "2bn 현금으로 매각(연말 종결 예상, 자사주 매입·부채 감축).",
+   "CVX는 HESM 지분을 이전해 Bakken 미드스트림 비용을 약 50% 절감, HESM 부채 약 $3."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "da8f3c52bf05",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "채권",
+  "title": "US HG Credit Ratings Review 3Q26 — 순상향 지속, 등급 변동은 둔화",
+  "summary": [
+   "• 3Q26 업그레이드 $64bn vs 다운그레이드 $21bn(순 $43bn), 비율 3.",
+   "1x(2Q26 4.6x). YTD 비율은 2.3x로 2025년 1.",
+   "9x보다 높다. 3Q 등급 재조정 총액은 $85bn으로 2Q26 $270bn에서 급감.",
+   "• HG 시장 등급 구성: BBB 비중 42.8%(2Q12 이후 최저), BBB- 7.",
+   "4%(2Q26 기록 저점 7.1%에서 소폭 상승), A등급 45."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "5300a3a5a6f3",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Japan Quant Strategy: 금융 매도·내수 Quality/Beta 매수, 경제서프라이즈 유사연도 시즈널리티",
+  "summary": [
+   "• JPM은 10/14 오전(11:00 도쿄) Nikkei가 약 68,200에서 전일 급락 후 기술적 반등 중이며 68,000선 유지로 선물 등 수급 붕괴 징후는 없다고 본다.",
+   "전일 AI 반도체 매도는 중국 반도체 기술 진전 관측이 계기였으나, 9월 말 이후 급반등에 따른 차익실현 구실이었다고 진단하고 소폭 과잉 반응이라 평가.",
+   "Nikkei VI는 27 수준까지 하락. • 팩터 동향: 외수(반도체·AI 인프라 포함) 그룹 전 팩터 약세, 특히 최근 3일 Momentum·Beta 둔화.",
+   "내수(금융 제외)는 Beta·Quality 매수가 강해지고 Momentum도 가세, 금융은 Momentum 매도 가속(채권선물 숏커버링으로 금리도 소폭 하락).",
+   "JPM은 내수가 AI 복귀를 기다리는 '대기실' 역할을 한다고 해석하며, ASML(10/14), TSMC(10/15) 실적 이후 시장 내러티브 개선 여부에 주목한다고 서술."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "86af2ec96c2d",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "European Equity Derivatives Strategy: 유럽 선물 포지셔닝 급약화, SX5E 풋 레이쇼 재구성, 3분기 실적시즌 내재변동 프리뷰",
+  "summary": [
+   "• JPM은 최근 3주간 유럽 주식선물 포지셔닝이 지수 하락폭 대비 크게 악화됐다고 진단: Euro STOXX 50 선물 Agent(바이사이드 대용) 순 OI가 약 €10bn 감소, STOXX 600 선물은 순매도로 복귀, DAX는 원래 순매도 상태.",
+   "은행(SX7E) 선물은 연초 이후 저점 근처까지 하락.",
+   "JPM은 유로존 은행 약세가 과도하다고 보고 콜스프레드·KO 콜을 계속 추천.",
+   "• 스큐 수익화: JPM은 SX5E 스큐가 최근 주가 하락·내재/실현 변동성 상승에도 실현되지 않아 skew risk premium이 여전히 매력적이라며, 델타헤지·감마중립 SX5E 풋 레이쇼의 숏스큐 노출 유지를 권고.",
+   "스팟 하락으로 원 거래가 숏감마가 되어 Dec-26 6100 풋 1x 매수 / Dec-26 5650 풋 2."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "aa5e31c5a10d",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Asia Pacific Index Roundup (10/14): MSCI·FTSE 지수 이벤트",
+  "summary": [
+   "• 당일 효력 이벤트 없음(NIL). 익영업일(10/15 종가) MSCI India Small Cap: Dr Agarwal's Health Care(AGARWALE IN) 대주주가 블록세일로 40,060,000주 매각, MSCI는 NOS 유지·FIF/DIF 상향 → indexer 수요 0.",
+   "949M주(거래량의 343%). • FTSE Japan Small Cap: Shinko Shoji(8141 JP)는 상장폐지 절차(주총 승인)에 따라 10/28 종가로 지수에서 삭제 예정, indexer 공급 -0.",
+   "21M주(거래량의 -368%). 나머지는 지수 핸드북·ETF 핸드북·FTSE/MSCI 분류 심사 안내."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "25372645f2aa",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Russell/S&P 지수 변경 업데이트 (US Index Update)",
+  "summary": [
+   "• 지수 이벤트 표: S&P 500에서 Paramount Skydance(PSKY) warrants 삭제(10/14 종가, 확정, 'Ineligible warrants', indexer 순매도 -70.",
+   "88M주). Medtronic 교환제안에 따라 10/14 종가로 Russell 1000 MDT 주식수 1,279.",
+   "54M→1,224.69M주(indexer -1.",
+   "61M주), Russell 2000/Russell Small(R2/RS)에는 MMED(Minimed Group) 신규 편입(주식수 28.",
+   "00M→280.81M, indexer +23.65M주) 확정."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "6b2a30e86919",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "S&P 500 Dividend Weekly: 배당선물 보합, 2026 배당 84.1pt 전망",
+  "summary": [
+   "• 지난 한 주 S&P 500 구성종목 19개가 기존과 같은 배당을 발표, 3개가 인상(SBUX 약 2%, LMT 약 4%, AOS 약 6%; 합계 SPX 연간 배당 약 0.",
+   "02 index point 추가), 삭감은 없음.",
+   "JNJ, PG, GS, O는 예상대로 배당 동결.",
+   "• SPX 배당선물은 전 구간 w/w 보합, 미결제약정(OI)도 보합.",
+   "배당옵션 OI는 약 3% 증가(약 80%가 콜; Z7 83/90, Z8 90/96/100 콜과 Z8 82/88 풋 증가)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "4396fe3c3e17",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Japan Equity Strategy 주간 업데이트 & 대시보드 (10/14): 미국 은행·ASML·TSMC 실적 주목",
+  "summary": [
+   "• 지난주(10/05-10/09) 수익률: TOPIX +0.",
+   "3%, Nikkei +1.1%, S&P 500 +1.",
+   "2%, NASDAQ +0.6%, KOSPI -5.",
+   "4%. 미국 고용지표 약세로 연준 조기 인상 기대가 후퇴하며 반도체 등 하이테크 매수가 이어졌으나, FT의 OpenAI 연환산 매출 시장 전망 하회 보도로 주 후반 AI/테크 심리가 악화됐다(Advantest, Tokyo Electron, SoftBank Group 하락).",
+   "10년 JGB 금리는 3% 상회 유지, USDJPY는 약 ¥158/$."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "6b3fb2215f8e",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Asia Pacific Single Stock Weekly Volatility Chartbook: 콜/풋 매수·매도 후보 스크린",
+  "summary": [
+   "• JPM은 아시아·태평양 개별종목 옵션 유니버스에서 콜 오버라이팅/콜 매수, 풋 매도/풋 매수, 내재변동성 저평가·고평가, 변동성 상·하위 변동 종목 스크린을 제시.",
+   "스크린 하이라이트 종목: CBA AT, 2628 HK, 2382 HK, 000660 KS, 1211 HK, 1299 HK, 2015 HK, WES AT, 3968 HK, 4502 JT, 4568 JT, 9433 JT, 6367 JT, 7974 JT.",
+   "• 방법론: 매수/매도 타이밍용 기술·펀더멘털 지표 5개(동일가중)와 내재변동성 고/저평가 판단용 정량 지표 2개(3M ATM IV 2년 백분위, 3M 내재-실현 스프레드 2년 백분위)로 신호를 산출(콜 3M 105%, 풋 3M 95% 기준).",
+   "종목별 세부 순위는 표 중심이라 본 요약에서는 생략."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "ca245077da61",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "일본 기업이익은 왜 강한가: 지속적 이익성장 전망에 따른 JPM TOPIX EPS 상향 (Japan Equity Strategy)",
+  "summary": [
+   "• JPM은 Bloomberg 컨센서스 기준 TOPIX 500 매출 성장률이 FY24-25의 +3-4%에서 FY26 +9.",
+   "2%로 가속한 뒤 FY27-28은 +4% 초반으로 정상화될 것으로 본다.",
+   "FY26 +9.2% 중 외수 기여 +3.4ppt, 내수 +2.",
+   "6ppt, 소재·자원 +2.5ppt. • 영업이익 성장률은 FY24-25 약 +8%에서 FY26 +26.",
+   "5%, 순이익은 +5.7%에서 +33.8%로 가속하고, FY27-28은 영업이익 +14."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "d466855b01e4",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "National Fuel Gas(NFG) — 스핀오프 발표 후 Overweight 상향 (Previous: Neutral)",
+  "summary": [
+   "• JPM은 NFG를 Neutral에서 Overweight로 상향했다.",
+   "회사가 Integrated Upstream & Gathering(IUG) 사업을 최소 80.",
+   "1% 지분의 비과세 분배로 스핀오프하고(최대 19.",
+   "9% 보유 후 추후 매각, 2027년 하반기 완료 목표) 발표한 데 따른 것이다.",
+   "Moody's Baa3/S&P BBB-, 전망 Stable."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "f71e1911d393",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "B&G Foods(BGS) — 비핵심 브랜드 매각, Overweight 유지",
+  "summary": [
+   "• BGS는 B&M과 Joan of Arc Brands를 McCall Farms에 매각한다고 발표했고 순매각대금은 장기부채 상환에 사용한다.",
+   "JPM 추정 연매출은 $10-15mn으로 규모는 작다.",
+   "Moody's B3(Neg), S&P B-(Stable).",
+   "• JPM은 8.000% 1L notes '28을 Overweight 유지, 11.",
+   "000% sr unsecured '31과 S+350 TLB '29는 Neutral 유지."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "d3e67ca536a8",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Business Services 3Q26 실적 캘린더 — Rekeep·Manutencoop 포인트",
+  "summary": [
+   "• 3Q26 실적 캘린더(10/14~11/30)를 게시했다.",
+   "11월 둘째 주(11/9-13)에 HOUSEH·ADENVX·MANTEN 등 주요 HR/인력 서비스 발행사 실적이 몰려 있다.",
+   "• Rekeep(N)은 Q2 조정 EBITDA -22% 감소 후 3Q 실적이 관심이며, JPM은 또 한 분기 약한 마진을 예상.",
+   "MANTEN은 9/25 Moody's가 Caa1/Stable로 하향(B3/Negative에서), S&P는 B/Negative.",
+   "JPM은 MANTEN 회수 시나리오(FY EBITDA €95m 기준)를 제시."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "7e7dc541c44a",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Hong Kong Property — 'A Rising Tide Lifts Most Boats'",
+  "summary": [
+   "• JPM은 2025년 초 이후 홍콩 부동산 회복으로 개발사 IG 스프레드가 평균 약 50bp 축소됐다고 본다.",
+   "A등급 홍콩 개발사가 지역 Single-A와 같거나 더 타이트해 BBB/BB 종목과 일부 부실 종목이 sweet spot이라는 입장.",
+   "• IG: Hysan 7.2% perp(Baa3, 수익률 6.",
+   "6%) 선호. Swire Properties·Hongkong Land는 Underweight 유지, SHK Properties는 Neutral로 상향, Wharf REIC는 Neutral로 신규 개시, Link REIT Neutral 유지(수익률 6%).",
+   "• HY: NWDEVL 계열 Overweight, 10."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "3544604c1083",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Cipher Digital(CIFR) — 상대가치 이유로 Neutral 하향 (Previous: Overweight)",
+  "summary": [
+   "• JPM은 Cipher Digital 신용을 Overweight에서 Neutral로 하향했다(상대가치 사유).",
+   "1년간 데이터센터 지연이 만연한 가운데 일정보다 앞서 이행했고(8월 기준 CIFR·STNGRY 일정 준수, BLKPRL은 2개월 앞섬), 이 때문에 프로젝트 채권이 HY HPC 지수 대비 약 250bp 타이트(4월에는 약 100bp)해졌다.",
+   "• JPM은 프로젝트 품질과 단기 energization을 고려하면 프리미엄이 정당하나, 채권이 더 이상 싸지 않다고 판단.",
+   "비교표상 Cipher Compute 7.125% '30은 Neutral, 수익률 7.",
+   "19%, 스프레드 209bp(Ba3), Black Pearl 6."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "96e8bbd1fafa",
+  "date": "2026-10-14",
+  "source": "JPM",
+  "section": "주식",
+  "title": "REIT Detailed Debt Maturities — 2Q26 기준 72개 REIT 만기 스케줄",
+  "summary": [
+   "• 2026-06-30 기준 72개 REIT의 연결 부채 만기: 2026년 $34.",
+   "8bn, 2027년 $52.1bn, 2028년 $64.",
+   "8bn, 2029년 $73.8bn, 2030년 $63.",
+   "3bn, 이후 $248.9bn, 총 $537.6bn.",
+   "• 섹터별 총 만기: Retail $94.7bn, Net Lease $93."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
   "id": "eaa7c4ab2e30",
   "date": "2026-10-14",
   "source": "HSBC",
@@ -14,6 +853,803 @@
   ],
   "keywords": [
    "매크로"
+  ]
+ },
+ {
+  "id": "5ec27a247965",
+  "date": "2026-10-14",
+  "source": "HSBC",
+  "section": "매크로",
+  "title": "India: RBI의 플레이북 — 정책금리의 역할은?",
+  "summary": [
+   "• HSBC는 RBI가 25bp 인상하고 스탠스를 중립에서 'calibrated tightening'으로 전환한 뒤 FX 규제를 개편(투기적 포지션 억제, 수입업자 헤지 비용 상승, 은행의 온·오프쇼어 베이시스 거래 억제)했다고 설명.",
+   "최근 1주간 유가 USD105/b, USDINR 5개월 고점 96.",
+   "8, 인플레이션 2년 고점 5.5%. • HSBC 기준 시나리오는 총 75bp 인상(10월 25bp 완료, 잔여 50bp는 12월)으로 repo rate 2026년 말 6%(기존 총 50bp 전망에서 상향).",
+   "실질금리가 2H27 평균 c1.7%로 복귀해 중앙은행이 평가한 중립 실질금리 범위 1.",
+   "4-1.9% 중간에 위치하기 때문. • 리스크 시나리오는 추가 75bp(사이클 총 150bp, OIS 반영 수준)이나 '문턱이 높다'고 평가."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "0a5e474e0235",
+  "date": "2026-10-14",
+  "source": "HSBC",
+  "section": "매크로",
+  "title": "FX Snap — TWD: FX 전환 격차",
+  "summary": [
+   "• HSBC는 USD-TWD가 8월 중순 이후 처음으로 32를 상회했고 주식 순유출이 이번 주 재가속(어제 USD1.",
+   "8bn, 오늘 USD5bn)했으며 10/8 TSMC 배당(USD3.",
+   "9bn)이 압력을 더했다고 서술. LSEG 포지셔닝 서베이는 9/17 매도 편향에서 순매수로 전환.",
+   "• HSBC는 수출대금의 FX 전환이 제한적이어서 TWD가 KRW보다 취약하다고 평가: CBC에 따르면 연초 이후 수출대금 +34% y/y이나 TWD로 직접 전환된 금액은 월 약 USD1bn으로 전년과 비슷.",
+   "수입대금 +44% y/y, 해외직접투자(ODI)는 분기 약 USD10bn."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "ffe387f5b9a3",
+  "date": "2026-10-14",
+  "source": "HSBC",
+  "section": "주식",
+  "title": "India equities: 확신 개선, 일부 경계",
+  "summary": [
+   "• HSBC는 Nifty 50이 12개월 선행 PE c16x로 최근 10년간 두 번만 도달한 수준이며 mid-cap도 24x(5년 평균 대비 13% 낮음)라고 설명.",
+   "FTSE India는 19x로 아시아에서 여전히 가장 비쌈.",
+   "투자자들이 non-AI 스토리에 열려 있어 분산 투자처로 부각.",
+   "• HSBC는 금융(특히 민간은행, 분산형 NBFC)이 위험 대비 수익이 가장 매력적이고 산업재(자본재, 방산, 항만, EMS)·재생에너지에도 기회가 있다고 평가.",
+   "금속은 알루미늄, 소비재는 일부 리테일/자동차 선호."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "b570ae7c7bef",
+  "date": "2026-10-14",
+  "source": "HSBC",
+  "section": "주식",
+  "title": "Global Memory: 중국 DRAM이 실질적 위협이 되나?",
+  "summary": [
+   "• HSBC는 중국 DRAM 업체 추격 보도(Maeil 10/12: CXMT가 2026년 말 4F2 셀 구조 서버 DRAM 개발 완료, 한국 업체보다 2-3년 빠름)로 메모리 주가가 최근 2일 하락했으나 '우려하기엔 이르다'고 평가.",
+   "원가 효율과 양산성(수율)이 해결 과제이며, JEDEC 표준 및 CPU 업체 검증도 필요.",
+   "• HSBC는 향후 2-3년간 메모리 가격/업계 구도에 미치는 영향이 제한적이라고 보고 최근 조정으로 위험 대비 보상이 개선됐다고 판단.",
+   "• 4Q26e DRAM 가격은 HBM로의 캐파 배분과 Rubin·ASIC 수요로 high single digit 상승 전망.",
+   "HBM4 전환과 CSP capex 40% 증가 가정 하에 2027e HBM blended ASP는 y/y +65% 전망."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "1415ae6c0789",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "매크로",
+  "title": "주간 매크로 Top of Mind: 예상 상회 미 인플레·고금리, EM 증시 집중도",
+  "summary": [
+   "• GS는 예상보다 강한 미국 근원 CPI로 UST 금리가 올랐고 프랑스·이탈리아 재정 우려로 유럽 국채 스프레드도 넓게 유지되나 G4 국채금리는 하락 방향 편향이 있다고 본다.",
+   "다만 장기금리 고수준이 상당 기간 지속될 수 있고 에너지발 상방 리스크가 있다고 밝혔다.",
+   "• 금리가 현 수준에 머물면 2027년 미국 성장에서 0.",
+   "5pp, DM 성장에서 0.4-0.6pp가 차감된다고 추정했다(기준 시나리오에서는 미국 약 0.",
+   "2pp). 금리가 추가로 급등하면 특히 금리 변동성 확대 시 주식과 회사채에 부담이 된다고 본다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "9f10c9f89e82",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "매크로",
+  "title": "Macro at a Glance: GS 최신 전망 요약",
+  "summary": [
+   "• GS는 글로벌 실질 GDP 성장률을 2026년 2.",
+   "6%로 전망(중동 분쟁발 에너지 가격 상승이 역풍), 글로벌 근원 인플레는 연말 2.",
+   "8%로 본다. 미국은 2026년 Q4/Q4 GDP 2.",
+   "3%(AI 붐 기여), 근원 PCE 3.0%(Q4/Q4), 실업률 연말 4.",
+   "2%, Fed는 12월 25bp 추가 인상으로 정책금리 정점 4."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "7dad39e52266",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "매크로",
+  "title": "미국 9월 CPI: 근원 CPI 예상 상회, 근원 PCE 0.32% 추정 (USA: Core CPI Above Expectations)",
+  "summary": [
+   "• 9월 근원 CPI는 전월비 +0.33%로 GS 예상 +0.",
+   "24%, 시장 중위값 +0.2%를 상회했다(직전월 +0.",
+   "29%). 헤드라인 CPI는 전월비 +0.65%(GS +0.",
+   "59%, 직전 +0.40%), 전년비 +3.74%, 근원 CPI 전년비 +2.",
+   "56%(직전 +2.45%). • 상방 서프라이즈는 주거(OER 전월비 +0."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "bf954343e993",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "매크로",
+  "title": "중국 9월 신용: 정부채 발행 확대로 예상 상회, 가계·기업 대출 수요는 부진",
+  "summary": [
+   "• 9월 TSF flow는 RMB 3,550bn으로 GS 예상 RMB 3,500bn, Bloomberg 컨센서스 RMB 3,341bn을 상회했다.",
+   "계절조정 후 정부채 순발행이 RMB 1,221bn(8월 RMB 649bn)으로 늘어난 것이 주된 요인이다.",
+   "TSF 잔액 증가율은 7.1% yoy(8월 7.",
+   "2%). • 신규 위안화 대출은 RMB 1,080bn(GS 예상 RMB 1,100bn, 컨센서스 RMB 1,025bn), 대출 잔액 증가율은 4.",
+   "8% yoy(8월 4.9%)다. 가계 대출 잔액은 9월에 거의 변화가 없었고(전년 동월 RMB 389bn 증가), 기업 대출은 RMB 1,290bn 증가(전년 RMB 1,220bn)해 수요가 전반적으로 약하다고 평가했다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "944f78d4ca56",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "매크로",
+  "title": "중국 9월 CPI/PPI: PPI 신고점, 에너지 가격 주도; PPI 상향·CPI 하향",
+  "summary": [
+   "• 9월 헤드라인 CPI는 +0.9% yoy(8월 +0.",
+   "8%; GS·컨센서스 +1.0%), 근원 CPI는 +1.",
+   "0% yoy로 에너지·교통서비스 가격이 상승을 이끌었다.",
+   "식품은 -1.7% yoy(돼지고기 -10% yoy).",
+   "• PPI는 +5.0% yoy(8월 +3.8%; GS +4."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "0500a0348c41",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "채권",
+  "title": "주택·모기지 모니터: 모기지금리 7.4%, 주택시장 붕괴 아닌 구매력 부담 (Housing and Mortgage Monitor)",
+  "summary": [
+   "• 모기지금리가 7.4%로 2023년 이후 최고 수준이다.",
+   "GS 분해 결과 이번 상승은 2023년과 달리 주로 기준금리(10년 UST) 상승 때문이며, 10년물 금리가 9월 5.",
+   "3%(2023년 10월 고점 5.0%)까지 올라 모기지금리의 70% 이상을 설명한다(Freddie Mac 2023년 10월 고점 7.",
+   "8%). • GS는 최근 주택가격 상승률(HPA)이 모기지금리보다 노동시장과 더 밀접하다고 본다.",
+   "2025년 하반기 금리 하락에도 HPA는 부진(2025년 9월 약 0."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "aab39360b83c",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Midday Market Intelligence: 인플레이션, AI, 은행",
+  "summary": [
+   "• GS는 9월 core CPI가 +0.33%로 예상을 상회(4월 이후 최고 상승률)했고, 이를 근거로 9월 core PCE를 +0.",
+   "32%(y/y +3.09%)로 추정. 10월 인상 확률이 높아졌으나 David Mericle 팀은 두 번째 인상을 12월로 여전히 예상.",
+   "• CPI 발표 후 주식과 채권이 동반 하락. 헬스케어·필수소비재만 상승했고 Tech·커뮤니케이션 서비스가 부진.",
+   "장중(13:43) S&P 500 -1.2%, DJIA 0.",
+   "0%, NASDAQ -1.9%, Russell 2000 -2."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "ccb5fa516882",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "미국 반도체: SEMICON West 2026 — 업계 가시성 확대, 그룹에 강세 유지",
+  "summary": [
+   "• GS는 10/13~14 SEMICON West 참석 후 2027·2028년 WFE 성장에 대해 '점증적으로 긍정적'이라고 밝힘.",
+   "기업들은 WFE 정량 전망은 주지 않았으나 2027년이 8-10개 신규 fab 개장에 힘입어 매우 강한 해가 될 것이라는 데 의견 일치.",
+   "• GS 추정은 2027년 WFE가 y/y 약 45% 성장한 ~$218 bn이며 DRAM, 선단 파운드리/로직, NAND가 견인.",
+   "GS는 TSMC capex를 2026년 $85 bn으로 예상하고 Intel·Terafab 등 고객에서 추가 상승 여지가 있다고 봄.",
+   "• DRAM: 메모리 업체들이 NAND보다 DRAM 공급 증설을 우선시한다는 체크 결과."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "c1edf65e7692",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Ulta Beauty (ULTA): 경영진 미팅 및 매장 투어 시사점",
+  "summary": [
+   "• GS는 ULTA에 대해 Buy 의견, 12개월 목표주가 $673을 유지(reiterate).",
+   "건강한 화장품 카테고리와 마케팅·인력·서비스 투자에 따른 점유율 확대가 comp 성장을 이끈다고 판단.",
+   "• 경영진은 뷰티 수요가 전 카테고리에서 견조하며 바스켓의 ~80-85%에 신제품이 포함된다고 언급.",
+   "K-beauty가 두드러지고 독점 브랜드가 매출의 52%.",
+   "매출의 ~80%가 매장에서 발생하며 온라인 단독은 10% 미만."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "68d0791cf629",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Workday (WDAY): Investor Day — 제품 전략 성숙, 초점은 도입(adoption)으로",
+  "summary": [
+   "• GS는 WDAY를 Neutral로 유지, 12m 목표주가 $164.",
+   "00(주가 $186.02, 하락여력 11.8%).",
+   "목표주가는 SNTM(Q5-Q8) GAAP EPS의 24X 기준.",
+   "• 10/13 Financial Analyst Day에서 Workday는 Sana를 통합 프런트엔드로 제시하고, headless 포함 다중 수익화 경로, 추가 $100bn TAM 규모를 제시.",
+   "C1.ai 인수가 완료되면 identity governance로 TAM이 확대된다고 설명."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "be393fccf52f",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "미국 디지털 광고 3Q26 프리뷰: 업계 논점과 운영환경",
+  "summary": [
+   "• GS는 디지털 광고 환경을 '견조한 최종 수요, 대형 플랫폼 중심의 분기 말 강한 모멘텀, 하위 퍼널(performance) 채널로의 구조적 재배분 가속'으로 요약.",
+   "5대 테마: AI가 점유율 이동의 핵심 메커니즘, 직접반응(DR)이 브랜드 광고보다 구조적으로 강함, 업종별 추세 양호하나 예산 가시성 단기화, 미국이 상대적 강세(중간선거 정치광고로 단가 상승 압력), 소형 업체의 차별화 필요성.",
+   "• 업종별로는 커머스/리테일, 여행, 자동차(CTV 전환)가 가장 강했고 가전도 3Q 강세.",
+   "일부 제품 가격 인상 후 소비 지속성은 4Q 의문이며, 광고주의 단기 예산 결정으로 연말 쇼핑시즌 코멘트가 중립/보수적일 수 있다고 GS는 언급.",
+   "• 가격: Gupta Media 데이터상 Meta 미국 평균 CPM은 3Q에 q/q 약 +8%, y/y 약 +21%."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "7ffb52a61483",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Accenture (ACN): Investor Day — 개선되는 성장 전망과 건설적 재무 목표",
+  "summary": [
+   "• GS는 ACN에 대해 Buy 유지, 12m 목표주가 $260.",
+   "00(주가 $213.56). 목표주가는 1년 선행 EPS의 16X 기준.",
+   "추정 EPS는 2026/27/28E $14.80/$16.",
+   "35/$17.75로 유지. • Accenture는 FY27-29 중기 가이던스로 FY27·FY28 매출 mid-single digit 성장, FY29 mid-to-high single digit 성장, 연 10-30bps 영업이익률 개선, FCF/순이익 FY27 ~1.",
+   "2X-1.3X, FY28-29 ~1.1X를 제시."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "bc1c7c5e3168",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Verisure (VSURE.ST): Apple Home 컬렉션 read-across",
+  "summary": [
+   "• GS는 VSURE에 대해 Buy, 12m 목표주가 €13.",
+   "00(주가 €8.88, upside 46.4%) 유지.",
+   "목표주가는 2027/28E 기준 EV/EBITA 14.",
+   "75x. • Apple은 10/13 LG·Schneider Electric과 스마트홈 액세서리 라인업을 발표.",
+   "GS는 카메라가 유선(mains-powered)이어서 Verisure의 무선·배터리 방식과 다르며, 12월 출시 예정이고 영국 외 유럽 출시 여부가 불확실하므로 유럽 출시 이후에야 VSURE 영향을 논할 수 있다고 봄."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "0a2f90ad0e34",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Bank of America (BAC) 3Q26 First Take: 수수료 수익 부진으로 실적 하회, 자사주 매입은 q/q 동일",
+  "summary": [
+   "• GS는 BAC에 대해 Buy, 12m 목표주가 $66(주가 $53.",
+   "96, upside 22.3%) 유지. 목표주가는 2027E EPS 13.",
+   "0x 기준. • GS는 결과를 '예상보다 나쁨'으로 평가: core PPNR $11.",
+   "6bn으로 GSe/Street 대비 4% 낮고, core 수수료 4% 하회(트레이딩 약세), core ROTCE 15.",
+   "0%로 Street 대비 50bps 낮음. 3Q26 EPS는 91¢(GSe/컨센서스 $1."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "a9acf85084e2",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "Morgan Stanley (MS) 3Q26: 자산관리 구조적 성장 지속, 추정치 대체로 유지",
+  "summary": [
+   "• GS는 MS를 Neutral로 유지, 12m 목표주가 $200.",
+   "00(기존 $207에서 하향; 주가 $186.64, upside 7.",
+   "2%). 2027E P/E 목표배수를 0.5x 낮춰 14.",
+   "0x 적용. • 3Q26 EPS $3.03(GSe/컨센서스 $2.",
+   "97/$2.91), core EPS $3.09."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "f481a7d4987e",
+  "date": "2026-10-14",
+  "source": "GS",
+  "section": "주식",
+  "title": "ASML (ASML.AS) 3Q26 First Take: 4Q26 가이던스 컨센서스 상회, 강한 가시성과 수주",
+  "summary": [
+   "• GS는 ASML에 대해 Buy(Conviction List 포함), 12m 목표주가 €2,200(주가 €1,509.",
+   "60, upside 45.7%) 유지. • 3Q26 매출은 컨센서스 부합, EBIT은 5% 상회(총마진 c.",
+   "57% vs 컨센서스 56%). 2026 가이던스를 매출 €44bn-€45bn(기존 €43bn-€45bn), 총마진 약 56%(기존 54%-56%)로 상향.",
+   "4Q26 매출 €14.2bn-€15.2bn, 총마진 57% 제시(중간값 기준 매출/총이익/EBIT 컨센서스 대비 3%/3%/7% 상회).",
+   "• EUV 2026년 y/y +45%, non-EUV 약 +20%, installed base +50%, EUV 출하 65대 예상."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "1bbada76af72",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "The RIC Report: 60/40의 종말 이후 자산배분 — 집중도·상관·'completion portfolio'",
+  "summary": [
+   "• BofA RIC는 2019년 이후 장기 Treasury가 거의 1/3 가치를 잃었고(20+년물 -31.",
+   "9% 누적), US Agg는 실질수익이 없었으며, 주식 지수 집중도와 주식·채권 상관이 모두 과도하다고 평가했다.",
+   "G7 인플레이션이 2020년 이후 4~5%로 '2%의 세계'에서 '5%의 세계'로 이동했고, 주식·채권 상관의 절반이 인플레로 설명되며 전통 자산배분은 CPI <2.",
+   "4%가 필요하다고 밝혔다. • '60'의 집중: 성장 섹터가 S&P 500의 67%, AI Big 10이 미국 시총의 42%(차트상 41%), 미국이 MSCI ACWI의 약 70%.",
+   "대안으로 국제 소형가치(2020년 10월 이후 +166% vs 미국 성장 +136%, P/E 11x vs 24."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "59ebb6736f80",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "싱가포르 MAS 리뷰: 예상 밖 동결, 비둘기파적 전환 (MAS Review: A surprise dovish pivot)",
+  "summary": [
+   "• MAS가 정책을 동결했다. Bloomberg 설문 20명 중 17명(BofA 포함)은 긴축을 예상했으나 이를 깼고, 톤도 뚜렷하게 비둘기파적이었다.",
+   "BofA는 금리 상승·AI 투자 급감 등 중기 성장 하방 리스크에 MAS가 더 신경 쓰는 것으로 본다.",
+   "• 3Q26 GDP는 전기비(SA) +1.1%(전년비 +5.",
+   "4%). BofA 시나리오상 4Q26~4Q27 분기 평균 성장률이 >0.",
+   "5% q/q면 2026년 GDP는 5.5% 초과(공식 전망 범위 상회), 2027년은 3% 상회."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "d7cd8931fec4",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "일본: 기대인플레이션 숨 고르기, 상방 리스크는 잔존 (Inflation expectations take a breather, but upside risks remain)",
+  "summary": [
+   "• BofA 일본 종합 기대인플레이션 지표(BoJ 방법론 기반)는 3Q26 약 2%에서 대체로 보합이다.",
+   "BoJ 기존 시리즈는 약 1.8%, 하방 편향을 보정한 신규 시리즈는 약 2.",
+   "1%로, 둘 다 2Q26 급등 이후 3Q26에는 큰 변화가 없었다.",
+   "• 가계: BoJ 여론조사에서 5년 후 물가가 '크게 오른다'는 응답이 과반이고, '약간 오른다'까지 합하면 86.",
+   "5%가 상승을 예상했다. 5년 후 물가 기대 평균(연율)은 2Q26 10."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "98f239977e99",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "미국 9월 CPI: 광범위한 물가 강세로 10월 인상 시나리오 강화 (Broad based CPI strengthens the case for an October hike)",
+  "summary": [
+   "• 9월 헤드라인 CPI는 전월비 +0.65%, 전년비 3.",
+   "7%로 BofA 예상을 상회. 에너지가 전월비 +5.",
+   "2% 급등했다. 근원 CPI는 전월비 +0.35%(BofA 예상 0.",
+   "23%), 전년비 2.6%(0.2%p 상승)로 2개월 연속 상방 서프라이즈.",
+   "• 8월과 달리 근원 상품·서비스가 모두 가속해 특이 요인으로 설명되지 않는다고 BofA는 평가(장난감 가격 +4."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "61b1d7bde2dc",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "미국 9월 PCE 트래킹: 근원 PCE 전월비 0.32% (September PCE inflation tracking)",
+  "summary": [
+   "• CPI 상방 서프라이즈 후 BofA의 9월 근원 PCE 트래킹은 전월비 0.",
+   "32%(전년비 3.1%)로, 초기 추정 0.22%에서 상향됐다.",
+   "최근 3개월 평균 0.19% m/m에서 뚜렷한 가속이다.",
+   "• 내일 PPI와 금요일 수입물가 발표 후 추정치가 바뀔 수 있다.",
+   "법률서비스·컴퓨터 소프트웨어/액세서리·포트폴리오 운용 자문 등의 방법론 변경으로 평소보다 불확실성이 크다고 BofA는 밝혔다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "eb0d1f0f5236",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "미국 경제 컨퍼런스콜 안내: 9월 CPI 퀵테이크 (September CPI quick take)",
+  "summary": [
+   "• 9월 CPI, 최근 시장 동향, 미국 경제·FX·금리 전망을 논의하는 콜.",
+   "일시: 2026-10-14(수) 미 동부 10:00.",
+   "• 연사: Aditya Bhave(미국 경제 헤드), Stephen Juneau(미국 이코노미스트), Alex Cohen(미국 G10 FX 스트래티지스트), Meghan Swiber(미국 금리 스트래티지스트).",
+   "초청장으로 분석 내용은 없음."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "952d4d6a5c36",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "중국 9월 통화·신용: 신용은 부진하나 정책 효과로 완만한 개선 전망 (Credit remained tepid, but modest policy-led improvement likely ahead)",
+  "summary": [
+   "• 9월 신규 위안화 대출 RMB1,080bn(컨센서스 RMB1,025bn), TSF는 본문 기준 RMB3,570bn(컨센서스 RMB3,341bn)로 컨센서스를 소폭 상회(Exhibit 1 표의 TSF는 3,549로 본문과 차이, 원문 불일치).",
+   "잔액 기준 TSF 증가율 7.1%(전월 7.2%), 대출 증가율 4.",
+   "8%(전월 4.9%), M2 7.2%, M1 3.",
+   "2%. • BofA 중국 금융여건지수(FCI)는 99.",
+   "0으로 8월 99.2에서 소폭 완화(TSF 6개월 이동평균 위축 완화, 위안 절상 축소, 명목금리 소폭 하락)."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "743d8c9e6042",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "Morning Market Tidbits: 소득 안정은 채권 불안정 (Income stability = bond instability)",
+  "summary": [
+   "• 고령화로 사회안전망 수령액이 늘어 다음 경기침체에서 소비를 완충할 수 있다고 BofA는 본다.",
+   "지난 40년간 임금·급여·복지(피용자 보수)는 개인소득의 68%에서 60%로 하락했고, 정부 이전지급은 11%에서 18%로 상승(증가분의 약 절반이 Medicare·Social Security).",
+   "• 그러나 현재 소득 구조는 지속 불가능하다고 주장.",
+   "재정 건전화가 없으면 채권시장 스트레스가 이어질 가능성이 높고, 결국 증세·지출 삭감(아마도 둘 다)이 필요하다.",
+   "그때까지는 채권시장 불안이 안정된 소득 구조의 이점을 상쇄할 것이라는 시각이다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "7ba5a0c832a5",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "유럽 경제 주간 컨퍼런스콜 안내 (The weekly view)",
+  "summary": [
+   "• 주간 유럽 경제 콜: 15분 요약(최신 전망, 지난주 이슈, 다음 주 일정) 후 Q&A.",
+   "일시: 2026-10-16(금) 중부유럽 11:30.",
+   "• 진행: Ruben Segura Cayuela(유럽 경제 헤드), Evelyn Herrmann, Chiara Angeloni(유럽 이코노미스트), Sonali Punhani(영국 이코노미스트); 게스트: Edvard Davidsson(유럽 금리 스트래티지스트).",
+   "분석 내용은 없는 초청장."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "65cfaa75c24a",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "한국은행 10월 프리뷰: 인상 사이클 중 한 번 쉬어가기 (One pause in the middle of the hiking cycle)",
+  "summary": [
+   "• BofA는 10월 22일 금통위에서 7월·8월 연속 인상 후 동결을 예상하며, 그럼에도 인상 사이클 중간에 있다고 본다.",
+   "국제유가 재상승(Brent $105/b, 중동 긴장 재확산)에도 소매 유류 가격 상한제(현 계획상 11월까지)가 전가를 억제.",
+   "9월 헤드라인 CPI는 8월 3.1%에서 2.9% yoy로 둔화, 4Q 약 2.",
+   "5%, 1H27 목표 범위 수렴 전망. • 대외·금융 리스크는 안정: 서울 주택가격 상승률은 9월 중순 이후 주간 0.",
+   "1%로 6월~9월 초 평균 0.3%에서 둔화, USDKRW는 1,350 아래로 하락."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "b9d9dfc2c59b",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "워싱턴 이슈: 데이터센터 배치·정책 FAQ - 미국 성장의 새 축 (Getting local: an FAQ on data center deployment and policy)",
+  "summary": [
+   "• 데이터센터는 2026년 상반기 미국 성장에 약 70bp를 더했고 최근 14개 분기 중 한 분기를 제외하고 모두 성장에 기여했다.",
+   "하이퍼스케일러 capex가 내년 35% 늘 수 있어 30~50bp의 성장 충격(impulse)이 예상된다고 BofA는 본다.",
+   "• 정치: 전국 투표 이슈로서의 비중은 낮으나(인플레, 물가부담, 이란 분쟁 대비) 지역 차원에서는 응답자 약 70%가 자기 지역 데이터센터 건설에 반대, 환경 문제가 주된 이유.",
+   "• 규제 주도권은 주·지방정부에 있다: 38개 주가 인센티브(주로 판매세 면제)를 제공하나 16개 주에서 모라토리엄 법안이 발의됐다.",
+   "2026년 지방정부는 모라토리엄 184건, 용도지역 제한 63건, 조례 변경 26건을 시행했고 52건이 추가 검토 중."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "79fbb448c259",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "인도 9월 WPI·PPI: 예상보다 높은 11.4% (WPI inflation at 4Y highs)",
+  "summary": [
+   "• 9월 WPI는 전년비 11.39%로 8월 9.",
+   "92%에서 상승, 49개월 최고이자 시장 예상 10.",
+   "6%를 상회. 연료·전력 +25.9%, 제조업 9.",
+   "8%(2022년 5월 이후 최고), 1차 산품 +8.",
+   "7%. 전월비 +1.5%. 비식품 제조업 근원 WPI는 9."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "e5609760f467",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "중국 9월 무역: 모멘텀 강화, 기술 외로 확산 (Trade momentum strengthened further in September)",
+  "summary": [
+   "• 9월 수출은 달러 기준 전년비 +36.3%(8월 +25%, 컨센서스 25.",
+   "7%, BofA 24.5%), 수입 +31%(8월 28.",
+   "2%, 컨센서스 25.0%). 무역수지 $133.",
+   "5bn으로 2025년 1월 이후 최대. • AI 관련이 핵심 동력: IC 수출 +136.",
+   "6%(헤드라인 기여 약 8%p), ADP 기기 +93."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "1d88d61017e2",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "중국: 소폭 정책 조치로는 부양 갭을 메우지 못한다 (Policy baby steps fail to close the stimulus gap)",
+  "summary": [
+   "• 다음 주 발표될 3Q GDP와 9월 활동지표에서 내수 전반의 회복을 기대하는 이는 적다.",
+   "2Q 대비 뚜렷한 성장 가속 확률은 매우 낮다고 BofA는 본다.",
+   "다만 8월 RMB800bn 구조적 대출 도구, 10월 9일 발표된 RMB550bn 지방채 추가 발행을 감안하면 4Q 후반 전기비 반등 가능성이 더 크나 지속 여부는 불확실.",
+   "• 부양 갭은 확대 중: 정책당국의 낮은 성장 용인도와 20%+ 수출 증가 때문.",
+   "9월 말 표적 통화·재정 완화가 나왔지만 '너무 작고 늦어' 강한 완화 신호가 못 된다고 평가."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "1854fe47a37b",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "중국 9월 물가: 에너지 가격이 인플레이션 끌어올려 (Higher energy prices drove inflation higher)",
+  "summary": [
+   "• 9월 CPI는 전년비 0.9%(8월 0.8%, 컨센서스 1.",
+   "0%, BofA 0.9%), 전월비 +0.2%.",
+   "식품·에너지 제외 근원은 1.0%로 8월과 동일.",
+   "PPI는 전년비 5.0%(컨센서스 4.4%, BofA 4.",
+   "3%)로 2022년 8월 이후 최고(전월비 +1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "7aebc2639b0e",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "남아공: 세수 증가·적자 축소, 등급 회복? - EXD 전략 포함판 (Revenues up, deficit down – ratings recovery?)",
+  "summary": [
+   "• BofA는 2026/27 재정수입이 10월 21일 MTBPS에서 예산 가정을 R70bn 상회할 수 있다고 추정(금·귀금속 법인세 호조).",
+   "지출 증가가 재무부 전망을 웃돌지만 세수가 상쇄해 2026/27 적자 GDP 대비 3.",
+   "5%(정부 목표 3.7%) 전망. 지출 억제 시 3.",
+   "0%까지 가능. 주적자가 2016년 이후 처음 4% 아래로 내려갈 수 있다.",
+   "• 재무부는 5개월 만에 2026/27 조달 필요액의 약 60%를 확보했고 대외 조달은 사실상 완료."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "63a83559cb74",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "싱가포르: MAS 소폭 비둘기파에 SORA 리시버 추가 (EM Alpha - Add SORA receiver)",
+  "summary": [
+   "• 트레이드: SGD SORA swap 1년 receiver 추가 - 현재 1.",
+   "71%, 목표 1.5%, 손절 1.9%, carry/roll 4bp/월.",
+   "MAS 정책이 단기적으로 약간 비둘기파적이고 국내 물가 압력에 대한 우려가 낮아, 긴축이 FX 절상에 국한되고 금리 경로를 쓸 필요가 줄었다는 판단.",
+   "• 리스크: 수입물가 압력 확산·싱가포르 근원물가 상방 현실화로 MAS가 금리를 추가 긴축하는 경우, 글로벌 금리 상승으로 SORA 커브가 올라가는 경우.",
+   "헤지로 SOFR 페이(약 0.5x DV01, 베타 조정)가 가능하나 캐리 일부를 포기해야 한다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "2862cd0f7eef",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "우즈베키스탄: UZS/금리 vs 유가/달러 (UZS/rates vs oil/USD)",
+  "summary": [
+   "• 정책금리는 성장·리스크 대비 적정하나 2027년에 글로벌 정상화와 함께 150~200bp(핵심 요약은 '최대 200bp', 차트 제목은 100~200bp) 인하 여지가 있다고 BofA는 본다.",
+   "에너지·호조인 내수·요금 조정으로 인플레 압력이 강해 실질 정책금리는 한동안 7% 이상일 것.",
+   "• 헤드라인 CPI는 큰 충격이 없다면 2027년 초 6% 아래로 내려갈 수 있으나 5% 목표 도달은 어려워 인하 여지를 남긴다.",
+   "• UZS는 유가/달러 대비 5~6% 고평가로, 달러/유가의 되돌림이 없으면 약세 가능.",
+   "글로벌 정상화 또는 기업 외화채 재발행이 지지 요인이 될 수 있으나, 낮은 예상 캐리 때문에 통화완화가 UZS 강세 논리를 약화시킬 수 있다고 본다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "626f00b58eed",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "미 금리 트레이드: 10월 FOMC OIS 페이 목표 도달 (Target reached on pay Oct FOMC OIS)",
+  "summary": [
+   "• BofA는 10월 FOMC OIS 페이 포지션을 종료: 10월 8일 3.",
+   "925%에서 진입, 4.02%에서 종료(목표 4.",
+   "00%). 강한 CPI 이후 목표에 도달. • 시장은 10월 인상 확률을 약 50/50로 반영 중이며 이번 주 Fed 인사 발언이 더 높은 확률을 정당화할지가 관건.",
+   "최근 Fed 발언이 프라이싱을 되돌렸기에 Warsh의 내일 메시지에는 확신이 낮다고 밝혔다.",
+   "• BofA는 인상 폭에 대한 확신이 시점보다 높아 2년 페이(paid 2y) 포지션은 유지한다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "390e4b20a4b6",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "EEMEA 재정 리스크 점검: 남아공·폴란드·체코·튀르키예·이스라엘 (Fiscal risk back in focus: a check-in on EEMEA)",
+  "summary": [
+   "• 남아공: 2026/27 적자 GDP 대비 3.",
+   "5%(재무부 목표 3.7% 하회) 전망. ASW 스프레드는 2025년 이후 이미 크게 타이트닝되어 재정 개선이 상당 부분 반영됐고, 추가 타이트닝은 구조개혁과 잠재성장 개선에 달렸다고 BofA는 본다(중기적 ASW 일부 타이트닝).",
+   "• 폴란드: 2026~27년 적자 GDP 대비 약 7% 지속, 강한 국내 수요·은행 유동성으로 자금조달 스트레스는 없음.",
+   "재정 리스크는 가격에 반영, 특히 10년 ASW가 과도하게 넓어 소폭 타이트닝 가능.",
+   "체코: 2027 예산상 적자 확대·중기 건전화 연기로 재정 신뢰는 약화됐으나 관리 가능, 10년 ASW는 재정·역사 대비 과도하게 넓다고 판단."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "3f105a1a80d9",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "영국 예산: 조달 수요 증가로 WAM 단축 불가피 - 1y fwd 2s10s Sonia 스티프너 (UK Budget - Increased financing need makes WAM shortening imperative)",
+  "summary": [
+   "• 9월 BoE의 능동적 QT 매각 일시중단과 온건한 예산 기대로 장기 길트가 선방.",
+   "매파적 Fed가 글로벌 장기금리 상승을 제한할 수 있고, 10월 28일 Autumn Statement/길트 Remit 업데이트에서 DMO의 추가 WAM 단축과 T-bill 시장 확대 의지가 길트에 우호적일 수 있다고 BofA는 본다.",
+   "• BofA는 올해 총조달필요액(GFR)이 £10bn 추가될 것으로 보고(위험은 상방), 이를 순 T-bill 발행으로 충당(길트 발행은 불변)할 것으로 예상.",
+   "예산에서 2026~31년 차입이 3월 전망보다 연평균 약 £11bn 높을 수 있고, 2026-27·2027-28 각 £15bn 높다고 추정.",
+   "QT 개편이 연 £8~10bn 추가(2027-28 £10bn 최대)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "5ae67aa794d3",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "채권",
+  "title": "KRW 기업 헤징: 변화 중이나 아직 기울지는 않았다 (KRW Corporate Hedging – Shifting, not yet tilting)",
+  "summary": [
+   "• 한국 기업은 2026년 USD 매도로 크게 돌아섰다: 1H26 현물·선물 합산 순 $187bn 매도(전년 동기의 3배 이상, 59%가 2Q), USD/KRW가 2Q(6월) 1,559.",
+   "55로 2009년 이후 최고(연초 이후 6월 말까지 7.",
+   "6% 절하)일 때. 2Q 선물 순매도 $17bn은 2008년 이후 최대.",
+   "• 그러나 USD/KRW에 대한 효과는 불분명: 기업 USD 매도 물량이 주식 순유출과 NDF 매수에 대부분 상쇄됐고, 3Q 잠정치는 순선물 USD 매수 복귀.",
+   "9월 USD/KRW는 1,350 아래로 하락(DXY 대비 이탈 확대, 단기 되돌림 가능성)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "dc64333a352b",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "주식",
+  "title": "유럽 Beat Factor(10월): 컨센서스 대비 BofA 애널리스트 최선호/최비선호",
+  "summary": [
+   "• Beat Factor Top 10(애널리스트가 컨센서스 대비 가장 긍정적): Danske Bank(점수 100, 2026/27 EPS 컨센서스 대비 +4%/+5%), Endesa, STMicroelectronics, Nokia, Prysmian, Deutsche Bank, AENA, ASM International, ASML, RWE.",
+   "Tech 4종목, 금융·유틸·산업 각 2종목이며 신규 편입은 Prysmian, AENA, ASML, RWE.",
+   "• Bottom 10(가장 부정적): Bankinter, Mapfre(금융), Boliden, UPM(소재), Ericsson, Logitech(Tech), ABF, Henkel(Staples), Alfa Laval(산업), Alcon(헬스케어).",
+   "Alfa Laval이 최저점(2026/27 EPS 컨센서스 대비 -3%/-13%).",
+   "Alcon은 Underperform인데 컨센서스 72%가 Buy."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "50593f01436a",
+  "date": "2026-10-14",
+  "source": "BofA",
+  "section": "주식",
+  "title": "Morning Meeting Notes (10/14): 등급 변경·프리뷰·매크로 요약",
+  "summary": [
+   "• 등급 변경: Albertsons(ACI) Underperform으로 하향(Neutral에서), PO $12(기존 $16), 7x F28E EPS $1.",
+   "75 기준; Weyerhaeuser(WY) Buy로 상향, PO $25(기존 $28), $18-19 주가가 SOTP 대비 40% 할인.",
+   "• UnitedHealth(UNH) Buy 유지: Q3 EPS가 컨센서스를 15.",
+   "6% 상회, 2027 컨센서스가 3% 낮다고 평가하며 추정 상향·PO 유지.",
+   "Johnson Controls(JCI) Buy: HVAC 5개 종목 3Q EPS 성장 중앙값 19% vs 커버리지 14%."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "b5ef4c356bfe",
+  "date": "2026-10-13",
+  "source": "JPM",
+  "section": "채권",
+  "title": "US Treasury Market Daily: 9월 CPI 앞두고 2s/10s 플래트닝, 인플레 시장 하방 편향",
+  "summary": [
+   "• 10/13 종가(10년 5.22%, 2년 4.",
+   "79%, 5년 5.01%, 30년 5.56%): 유럽국채 랠리에 연동해 야간 하락했으나 뉴욕장에서 절반 반납, 장기물 3bp 하락 마감.",
+   "뉴욕연은 Williams 총재는 정책이 소폭 긴축적이라며 2026년 1회 추가 인상, 2027년 없음 견해를 밝혔고 JPM은 시장이 CPI 앞두고 이를 비중있게 봤다고 서술.",
+   "• JPM은 9월 CPI-U SA를 +55bp m/m(전년비 3.",
+   "6% 유지; 컨센서스 57bp), core CPI +0."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "614e233903dc",
+  "date": "2026-10-13",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Citigroup Inc.(C) 3Q26 실적 — Underweight 유지",
+  "summary": [
+   "• JPM은 Citigroup을 Underweight로 유지(Moody's A3/S&P BBB+, Stable).",
+   "실적은 소폭 beat, FY26 NII(ex markets)와 ROTCE 가이던스 상향, 2027·2028 ROTCE 11-13% 재확인.",
+   "9월 off-cycle 발행으로 추가 공급이 제한돼 기술적 요인은 우호적이나 수익성은 동종 대비 낮다는 평가.",
+   "• C 5.860% '37s가 최근 발행된 WFC '37s 대비 7bp 와이드.",
+   "NII $17.0bn(+14% y/y), NIM 2."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "8d37fe4d6553",
+  "date": "2026-10-13",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Goldman Sachs(GS) 3Q26 실적 — Neutral 유지",
+  "summary": [
+   "• JPM은 GS를 Neutral로 유지(Moody's A2/S&P BBB+, Stable).",
+   "3Q26 수익·실적은 강했으나(Equities·IB·AWM 호조, FICC 부진) CET1이 계속 하락하고 기술적 요인이 약해 Neutral 유지.",
+   "• CET1 12.4%(y/y -190bp, q/q -50bp).",
+   "규제 버퍼 약 100bp이며 경영진은 50-100bp를 편안한 수준이라고 언급.",
+   "대차대조표 $54bn 증가(2Q $68bn, 1Q $251bn), 무담보 차입 증가는 $6bn."
+  ],
+  "keywords": [
+   "주식"
   ]
  },
  {
@@ -95,6 +1731,23 @@
    "• Reduce: Eli Lilly(비만·당뇨 수요 견조하나 밸류 부담), Tesla(단기 이익 약화·capex 증가), Twilio(AI 기대 선반영).",
    "• 톱다운 시각은 별도 노트 '3Q26 Preview: Can unloved sectors broaden the rally?",
    "'(10/13) 참조 — 본 노트는 종목 아이디어 중심."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "1574bb693c8a",
+  "date": "2026-10-13",
+  "source": "HSBC",
+  "section": "주식",
+  "title": "China Equity Strategy 4Q26 전망: Reality check",
+  "summary": [
+   "• HSBC Qianhai는 연말(end-2026e) SHCOMP/CSI300/SZCOMP 목표를 9-15% 하향해 4,100/4,800/14,500(기존 4,500/5,400/17,000)으로 제시, 10/9 지수 기준 upside 8-15%(SHCOMP 7.",
+   "5%, CSI300 11.2%, SZCOMP 14.",
+   "7%). 사유: 글로벌 유동성 긴축과 위험선호 하락.",
+   "• A-share 일평균 거래대금이 6월 RMB3.",
+   "5-4.0trn에서 RMB1.5-2.0trn으로 감소."
   ],
   "keywords": [
    "주식"
@@ -365,6 +2018,295 @@
    "본 파일은 팟캐스트 안내 페이지로 수치 본문은 관련 리서치에 있음.",
    "JPM — 포털 캡처본(본문 미수록) JPM 파일 52건 중 전일 폴더와 동일 제목 8건을 제외한 44건이 신규 제목이나 모두 포털 화면 캡처로 본문이 없어 요약하지 않음(제목만 확인).",
    "• Credit(16): EM Corporate Strategy Daily, Daily Credit Strategy Update, High-Yield and Leveraged Loan Morning Intelligence, Global Covered Bond Wrap, Heathrow, APAC Credit Roundup, Genting Berhad, APAC Cross Regional Credit Weekly, Amaggi, Albertsons, REIT Benchmark(HG·HY), Transportation Benchmark(HG·HY), Transportation Earnings Calendar 3Q26, HG Credit Foreign Demand Monitor, REIT Earnings Calendar 3Q26, LATAM Corporates Daily • Econ(9): Romania(core 인플레 예상보다 끈질김), Global Data Watch 일본어판, Australian NAB survey(추가 둔화), RBA minutes, Australian construction, Daily Financial Markets Monitor, Daily Economic Briefing, Argentina, US Existing home sales remain muted • MktStrat(19): Global Macro Outlook and Strategy presentation, Beyond Money Markets Conference, Municipal Morning Intelligence, Fixed Income Cross Product RV Monitor, China A-shares Equity Strategy, FX Fast T."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "eed3b3c4d1ce",
+  "date": "2026-10-13",
+  "source": "GS",
+  "section": "매크로",
+  "title": "Top of Mind 152: 채권금리 상승, 얼마나 우려해야 하나 (Higher bond yields: how concerning?)",
+  "summary": [
+   "• GS는 글로벌 채권금리가 수십 년 내 최고 수준으로 올랐음에도 성장과 시장은 견조하다고 진단하고, 10-year UST 연말 전망을 2026년 4.",
+   "75%, 2027년 4.4%로 제시했다(독일 3.",
+   "25%, 영국 5%, 일본 3%). 다만 장기금리는 당분간 높은 수준이 유지되며 에너지·재정 압력으로 상방 리스크가 있다고 본다.",
+   "• GS 미국 이코노미스트는 Fed가 연내 1회 추가 인상 후 내년 인하를 가정하면 2027년 성장 하방 압력은 0.",
+   "2pp에 그치지만, 금리가 현 수준에 머물면 0."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "edc0bd1d4709",
+  "date": "2026-10-13",
+  "source": "GS",
+  "section": "매크로",
+  "title": "AI 수요가 인플레이션에 미치는 영향 (The Impact of AI Demand on Inflation)",
+  "summary": [
+   "• GS는 AI 가격 압력이 현재 근원 PCE 인플레이션을 약 45bp 끌어올리고 있으며 그중 약 절반만 실제 효과이고 나머지는 측정 오류라고 추정한다.",
+   "이 효과는 2026년 말 50bp에서 정점을 찍은 뒤 2027년 말 10bp로 감소할 것으로 전망한다(헤드라인 PCE 영향은 5-10bp 더 큼).",
+   "• 경로별로 보면 소프트웨어·액세서리가 근원 PCE에 약 20bp를 기여하나 대부분이 액세서리 가격 왜곡·품질조정 미반영에 따른 측정 오류다.",
+   "기타 소비자 전자기기는 2026년 후반까지 총 약 15bp, 데이터센터 전력 수요는 근원에 5-10bp(헤드라인에 추가 5-10bp), 산업금속은 약 5bp를 기여한다.",
+   "• 건설 임금은 소폭 상승에 그쳐 데이터센터 건설발 임금 파급 증거는 거의 없다고 평가했다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "fc3f10a14822",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "Global Energy Weekly: 디젤에 만능해법은 없다 — 증류유 타이트, 하락 시 매수 기회",
+  "summary": [
+   "• BofA는 ICE gasoil crack이 약 $80/bbl, NYH distillate crack이 $100/bbl 이상으로 원유 가격이 아니라 정제제품 부족을 반영한다고 진단했다.",
+   "Hormuz 해상 공격과 러시아 정제설비 공격이 공급을 제약하고, 정제 가동률이 낮아 높은 마진에도 공급 반응이 제한적이며 OECD 소비는 견조하다.",
+   "• 정책 대응은 한계가 있다: 유럽의 5천만 배럴 전략비축 방출은 미래 공급을 앞당길 뿐이며, 미국의 연료세 인하·규제 완화는 수요를 지지해 재균형을 늦추고, 수출 제한은 부족을 유럽·중남미로 이전시키는 효과다.",
+   "미국의 러시아 디젤 제재 일시 중단 효과는 제한적이다.",
+   "• BofA는 겨울 진입 시 글로벌 원유 재고가 계절 저점 부근이고 유럽 상품·천연가스 재고가 낮아 여유가 거의 없다고 보며, 증류유 가격 조정은 매수 기회로 본다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "0ddd8da681fa",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "EEMEA 컨퍼런스콜 초청: 남아공 지방선거 전망 (South Africa local elections – what to expect ahead)",
+  "summary": [
+   "• 남아공 지방정부 선거(2026-11-04)를 앞두고 여론조사, 예상 결과, 주요 대도시 연정 시사점을 논의하는 콜.",
+   "지방선거 결과가 국민통합정부(GNU)의 안정성에 영향을 줄 수 있는지가 핵심 질문으로 제시됐다.",
+   "• 일시: 2026-10-28(수) 런던 13:00.",
+   "진행: Tatonga Rusike(Chief Economist on Africa), Michael Jacks(소비재 주식 리서치); 게스트: Wayne Sussman(정치 분석가).",
+   "본문 분석 없이 초청장 성격."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "f6d7cf75613d",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "Morning Market Tidbits: 문제는 대체로 재정 (It's Mostly Fiscal)",
+  "summary": [
+   "• BofA는 정부가 긍정적 충격은 영구적, 부정적 충격은 일시적으로 받아들이는 경향 때문에 시간 비일관적 재정정책이 나타난다고 주장한다.",
+   "이는 금리가 낮을 때는 조달이 쉬운 대규모 적자로 이어지고, 금리가 오르면 조정이 어렵다는 것.",
+   "• 최근 글로벌 금리 급등으로 선진국 재정의 지속 불가능성이 드러나고 있으며, 미국·프랑스가 우선 주목받고 있다(일본·영국·기타 유럽도 해당).",
+   "지난 20년간 부채/GDP는 프랑스 약 50%p, 미국 약 60%p 늘었고 대부분 저금리 시기에 발생했다.",
+   "• r<g일 때 구조적 적자를 '싼 부채'로 메운 뒤 금리가 오르면 재정긴축이 정치적으로 어렵다고 BofA는 지적."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "51b25936bb55",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "매크로",
+  "title": "유로존: 이탈리아 현지 방문 인상 - 정치가 전면에, BTP 시험대 (Impressions from Italy)",
+  "summary": [
+   "• BofA는 로마 2일 방문 결과, 이탈리아 고유 거시 리스크는 대체로 통제되나 정치 불확실성이 커지고 있다고 판단.",
+   "현 정부 안정의 문턱이 높아지고 연정 구성·정책 플랫폼·총리 후보 논의가 중도우파·중도좌파 모두에서 본격화.",
+   "선거 시점은 2Q27 컨센서스에서 2027년 가을까지로 범위가 넓어졌다.",
+   "• 신선거법('Stabilicum') 통과: 42% 문턱을 넘는 연합이 의석 보너스를 받고 못 넘으면 의회가 파편화돼 결과가 매우 이분법적일 수 있다(BofA 판단).",
+   "여론조사가 유동적이라 예측이 어렵다. • 재정: 2026 적자 목표 GDP 대비 2."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "3aa7cfb3331f",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "채권",
+  "title": "Credit Situation Room: HG 펀드 자금흐름의 내부는 약하다",
+  "summary": [
+   "• BofA는 10/7까지 주간 HG 펀드·ETF 유입이 $10.",
+   "2bn으로 3개월 내 최대였으나, ETF(기관 성격)와 월초(10/1) 계절성 유입이 주도했다고 지적했다.",
+   "펀드(ex-ETF, 리테일 성격)를 10/1 영향 조정하면 10월 일평균 유입은 -$257mn으로 'Liberation Day' 이후 가장 약하다.",
+   "• BofA는 Fed 인상 사이클이 금리 상승·주식 부진을 통해 HG 펀드 유입에 부정적이라고 설명했다.",
+   "반면 HG ETF 유입은 10월 일평균 $1.8bn(9월 $1."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "9280eff6a4a5",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "채권",
+  "title": "멕시코: 홀(Hall)의 교훈, 소비 (Hall's lesson for consumption)",
+  "summary": [
+   "• 멕시코 민간소비는 7월 실질 전년비 약 2%로 연초 약 3%에서 예상 밖으로 둔화했다(2024년 상반기 약 5%).",
+   "• 실질임금총액·정부 이전·소비자신용·소비자신뢰 등 통상 요인은 모두 소비 강세를 가리키며 예외는 페소 송금과 부진한 고용창출뿐.",
+   "• 2026 노벨경제학상 공동수상자 Robert E.",
+   "Hall이 보였듯 소비자는 미래지향적인데 멕시코는 미래 소득 기대가 악화돼 둔화에 보다 영구적인 요소가 있다고 BofA는 본다.",
+   "중간선거 전 지원책이 일시적으로 소비를 끌어올릴 수 있으나 성장 전망이 개선되기 전에는 지속적 회복이 어렵다는 판단."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "cc0241f39c49",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "채권",
+  "title": "이탈리아 국채: 거시·밸류에이션·수요 (Italian bonds: macro, valuations & demand)",
+  "summary": [
+   "• BofA는 이탈리아 거시 리스크는 통제되나 연정 역학과 2027 총선까지의 경로로 초점이 옮겨간다고 본다.",
+   "재정 유연성(NEC 발동: 2027~28년 연간 최대 €15bn의 추가 재정 여력)이 국방지출을 지지하나, 금리가 오르면 부채 경로가 다시 이슈가 될 수 있다.",
+   "• BTP는 OAT-Bund 확대에 연동해 약세: 10년 OAT-Bund는 2012년 이후 최대 수준 부근이고, 10년 BTP-Bund는 2025년 5월 수준.",
+   "미-이란 전쟁 발발 이후 BTP-Bund는 에너지 가격·금리 베타로 움직였으나 최근에는 프랑스 매도가 주된 동인으로 관계가 약해졌다.",
+   "• 수급: 상대적 저평가가 외국 민간 수요를 끌 수 있으나 국내 투자자는 여력·의향이 제한."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "6b8aa756b011",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "BofA 고객 주식 자금흐름: Staples/금융/TMT 순매수, Industrials 매도 지속 가능성 (Equity Client Flow Trends)",
+  "summary": [
+   "• BofA는 지난주(S&P 500 +1.2%, 신고점) 고객이 미국 주식을 순매수했고 개별종목 $1.",
+   "1bn이 주도했다고 밝혔다. 직전주 개별종목 순매도는 사상 최대에 근접했고, 주식 ETF는 6월 중순 이후 처음으로 $0.",
+   "2bn 순매도였다. 기관이 매수를 주도했고 헤지펀드·리테일도 순매수, 대형주 매도/중소형주 매수였다.",
+   "• 섹터별로는 11개 중 6개 섹터에서 순매수, Staples가 선두(6주 만의 첫 순유입)였다.",
+   "Tech·Comm. Svcs.도 직전주 대규모 유출 후 유입 전환, Financials는 5주 만에 첫 유입이다."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "825ecd5482cb",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "남아공 펀드매니저 서베이 (#348): 강세 확대, 밸류에이션 확신은 약화",
+  "summary": [
+   "• 12개월 남아공 주식 강세 응답 순비율 90%(9월 64%, 2021년 8월 이후 최고), 6개월 전망 순 70%.",
+   "12개월 기대 주가수익률 11.0%(10.5%), EPS 성장 기대 12.",
+   "5%(11.7%). 반면 '저평가' 순비율은 30%(45%)로 하락했다.",
+   "• 포지션: 총 주식 비중 70%(74%)(국내 39%+해외 31%), 남아공 주식 순 20% OW.",
+   "현금은 순 -60% UW(-45%). 섹터는 Metals & mining이 6개월 연속 최대 OW(순 15%), Banks 순 12% OW, Software 순 10% OW; 최대 UW는 Healthcare(-9%), Personal goods·Life insurance(-7%)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "76453008a592",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "일본 주식 전략: 아시아 투자자 미팅 — 미국 금리 정점 이후 종목 선택 변화",
+  "summary": [
+   "• BofA는 10/5~9 홍콩·싱가포르에서 43개 투자자를 만났고, 10월 이후 일본 주식이 모멘텀을 얻었음에도 금리 상승과 7~9월 급격한 로테이션 여파로 적극적 위험선호는 제한적이며 전반적 포지션은 가볍다고 평가했다.",
+   "• BofA는 연말까지 상승 여력이 남아있지만 10월 이후 랠리에는 뚜렷한 촉매가 없어 취약하다고 보고, 미국 금리가 10월~11월 초 정점을 찍을 가능성(과거 금리 상승 연도에 그 시기 전환이 흔함)을 제시했다.",
+   "단 경제지표 둔화나 금융여건 추가 긴축 없이는 낙관하기 어렵다고 단서를 달았다.",
+   "• BofA는 미국 10년-2년 스프레드가 steepening 국면일 때 beta·value·USD/JPY 민감도 팩터가 강하고(Exhibit 3), flattening 국면에서는 이익 안정성·배당 같은 퀄리티 팩터가 우위(Exhibit 4)라고 제시하며 IT 서비스·인터넷·게임 등 quality-growth 비중 확대 필요성을 설명했다.",
+   "• 11월 미국 중간선거: 민주당 승리 시 데이터센터 규제 강화 요구가 AI 관련주 매도 촉매가 될 수 있고, 배터리·수처리 등 에너지효율 관련주가 부각될 수 있다고 BofA는 지적했다."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "fbca19f3d757",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "아시아 펀드매니저 서베이(10월): AI 수익화 신뢰 회복, Taiwan·Japan 선호",
+  "summary": [
+   "• AI: 'AI의 긍정적 영향이 적정 또는 과도하게 반영'이라는 응답이 35%(9월 55%)로 하락.",
+   "AI 비중확대 또는 AI 내 로테이션 응답 45%(25%).",
+   "70%가 AI 수익화를 향후 12개월 APAC 주식 최대 동인으로 선택했다(Exhibit 1).",
+   "• 매크로: 성장 기대는 보합이나 아시아 ex-Japan 인플레이션 상승 예상 순비율 50%(전월 25%, +25ppt).",
+   "60%가 다음 BoJ 인상 시점을 12월로 예상했다."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "f7b32d713acd",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "글로벌 펀드매니저 서베이(10월): 현금 3.9%, 6%대 금리 기다리는 낙관 (The Sixth Sense)",
+  "summary": [
+   "• 심리/현금: FMS 평균 현금비중 3.9%(9월과 동일, 8월 저점 3.",
+   "5%, 2025년 4월 고점 4.8%). Cash Rule은 4.",
+   "0% 이하 'sell signal' 구간이 유지됐고 Bull & Bear Indicator 8.",
+   "1. 광의 심리지표는 7.0→6.4로 하락해 6월 이후 가장 덜 강세다.",
+   "• 매크로: 'boom'(성장·인플레 모두 추세 상회) 순 47%로 2022년 2월 이후 최고, 인플레 기대는 2025년 1월 이후 최저(순 5%가 낮은 CPI 예상)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "636e9f571030",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "유럽 펀드매니저 서베이(10월): 유럽 내부 낙관 vs 글로벌 투자자 UW 확대",
+  "summary": [
+   "• 유럽 투자자 순 44%가 1~3개월 유럽 주식 상승 예상이나, 12개월 기대 상승률은 4.",
+   "53%로 2025년 1월 이후 최저(12개월 선행 EPS 기대 상승 6.",
+   "09%). 반면 글로벌 투자자의 순 23%는 유럽 주식 UW 의향(2022년 9월 이후 가장 부정적, 유럽이 최소 선호 지역), 현재 순 8% UW.",
+   "• 매크로: 유럽 성장 강화 기대 순 22%(39%에서 하락), 66%가 higher-for-longer 레짐 예상, 인플레 상승 예상은 순 3%로 반전, 순 44%가 12개월 후 ECB 예금금리 상승 예상.",
+   "유럽 투자자 순 94%가 유럽 침체 회피를 예상(86%에서 상승)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "6af2f6063ab2",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "US 1 리스트: BURL 유지, RTX 제외",
+  "summary": [
+   "• BofA US 1 Committee는 Burlington Stores(BURL)를 52주 편입 후 신규 기간으로 갱신(renew)하고, RTX Corp.",
+   "(RTX)를 US 1 리스트에서 제외한다고 밝혔다.",
+   "RTX는 Buy 등급을 유지한다. • US 1 리스트는 BofA Global Research 펀더멘털 애널리스트가 커버하는 Buy 등급 미국 상장 종목(ADR 포함) 중 최선호 아이디어 모음으로, 통상 30~40종목(최소 25종목), 시총 가중(시총 <$100bn 2%, $100~400bn 4%, >$400bn 6%), 편입 기간은 약 12개월이다.",
+   "• Exhibit 1 기준 리스트에는 META(Date added 9-Jul-26), WMT, V, JPM, NVDA, MSFT, AAPL 등이 포함되어 있다(전체 목록은 원문 표 참조).",
+   "이번 변경은 종목 교체 중심의 소규모 조정이다 (제 해석)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "9a6402c23001",
+  "date": "2026-10-13",
+  "source": "BofA",
+  "section": "주식",
+  "title": "Morning Meeting Notes (10/13): 투자의견 변경·프리뷰·매크로 요약",
+  "summary": [
+   "• 신규 커버/등급 변경: IRSA(IRS US) Buy 신규, PO US$23.",
+   "6; Pershing Square(PS US)는 Underperform으로 하향(플래그십 펀드가 NAV 대비 >20% 할인, Ventures 펀드레이징 지연 가능성 언급); Telefonica Brasil(VIV US)은 Neutral로 상향.",
+   "• PO 조정: Amphenol(APH) Buy 유지, PO $104로 상향(C3Q rev/EPS $9.",
+   "62bn/$0.73 추정); Equifax(EFX) Buy, PO $200(기존 $210)로 하향(모기지 활동 약화); FirstEnergy(FE) Neutral, PO $47로 하향.",
+   "• 3Q26 프리뷰: JD.com Buy, PO US$37/HK$145; Norwegian Cruise(NCLH) Neutral(CCL·NCLH 수요 시사점 긍정); Southern Co(SO) Neutral, Q3 EPS $1."
   ],
   "keywords": [
    "주식"
@@ -2028,6 +3970,23 @@
   ]
  },
  {
+  "id": "9244fd1c1fd7",
+  "date": "2026-09-24",
+  "source": "GS",
+  "section": "주식",
+  "title": "US Equity Views: AI capex, 필요 매출, 그리고 AI 트레이드에 반영된 것",
+  "summary": [
+   "• 대형 hyperscaler의 2026년 capex는 약 $800 billion 수준이며 컨센서스는 2027년 $1.",
+   "1 trillion이다. 2027년 컨센서스는 Q2 실적 시즌 시작 이후 $175 billion 상향됐다.",
+   "GS 주식 애널리스트 전망은 2027년 $1.2 trillion, 2028년 $1.",
+   "4 trillion(컨센서스 대비 각각 $130 billion, $100 billion 높음)으로 capex 증가율이 2026년 거의 100%에서 2027년 54%, 2028년 12%로 둔화함을 시사한다.",
+   "• hyperscaler capex가 영업현금흐름을 넘어서 부채·주식 발행 의존이 커지고 있다."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
   "id": "553a6f5cf1c4",
   "date": "2026-09-23",
   "source": "JPM",
@@ -3113,6 +5072,23 @@
   ],
   "keywords": [
    "기타"
+  ]
+ },
+ {
+  "id": "6d93c8623119",
+  "date": "2026-09-21",
+  "source": "BofA",
+  "section": "주식",
+  "title": "Global Quantessential Style (파일명은 'Flows & Liquidity'이나 본문은 BofA 퀀트 리포트)",
+  "summary": [
+   "• 파일명(JPMM_Research, 'Flows & Liquidity | Differences to last July's correction')과 본문이 일치하지 않는다.",
+   "실제 본문은 BofA의 Global Quantessential Style(174페이지, 2026-09-21)이다.",
+   "• BofA는 Quality Growth 30종목 스크린이 MSCI ACWI를 YTD 32.",
+   "3% 아웃퍼폼(2009.9 이후 연 12.7%)했다고 한다.",
+   "모멘텀은 7월 -10.5%(AI 트레이드 의구심) 이후 8월 +1."
+  ],
+  "keywords": [
+   "주식"
   ]
  },
  {
@@ -18491,159 +20467,6 @@
    "R&D 증가를 SG&A 레버리지로 상쇄, Non-GAAP 순이익 $428m(+3% vs 컨센)은 이자수익 덕.",
    "FY27 가이드: 바이백+배당으로 $1.85bn 이상 환원 — 자본환원 스텝업이 헤드라인.",
    "(제 해석: 실적 자체보다 환원 확대가 주가 반응의 키가 될 소지."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "12a38abc59df",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "매크로",
-  "title": "GS What's Top of Mind — 엔 개입·테크 반등 속 주도주 교체·금요일 고용보고서",
-  "summary": [
-   "주간 매크로 다이제스트. ①엔: 공조 개입에 대한 USD/JPY의 완만한 반응은 '엔 약세가 펀더멘털에 부합'한다는 방증 — 지속적 강세엔 국내 정책조합 변화나 글로벌 성장 악화가 필요하나 둘 다 가능성 낮음.",
-   "BoJ는 완만한 인상, 미 재무부 참여도 일본 정책 대전환의 전조가 아니라는 판단.",
-   "최강 카드는 '자본 송환 유도'(단, 상당한 트레이드오프).",
-   "②주식: 테크가 월초 급반등했지만 리더십은 메가캡 테크 독주에서 가치주·소형주·'올드 이코노미'로 구조적 회전 — 에너지 안보·인프라·방산 투자가 산업재를 지지, 액티브 섹터·지역 배분의 알파 여지 확대.",
-   "③레이더: 금요일 고용(GS +75k·실업률 4."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "c0ee3cd67f5f",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "매크로",
-  "title": "GS Global Markets Daily — '중국의 균형잡기: 더 강한 위안과 더 강한 내수가 모두 필요'",
-  "summary": [
-   "상반기 중국은 수출 초강세(수출액 +27% yoy)·내수 부진(부동산 착공 -26%)의 극단적 이분법 — '내수부양 vs 절상' 논쟁이 재점화됐지만 GS는 이를 가짜 이분법으로 규정.",
-   "Swan 모델 프레임: 대외균형과 대내균형이라는 2개 목표에는 2개 정책수단이 필요.",
-   "①대외: CNY는 GSDEER/GSFEER(60:40) 기준 최소 20% 저평가, 경상흑자는 GDP의 3.",
-   "8%로 지속가능 norm(1.7%)을 크게 상회 — 점진적 절상이 외부균형 복원과 보호주의 압력 완화에 기여.",
-   "②대내: 2Q 내수의 순차적 악화로 성장이 목표·잠재 아래로 떨어질 위험 — 단기 재정 부양+15차 5개년계획의 소비비중 확대 구조개혁 필요."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "95998151e765",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "매크로",
-  "title": "GS Housing & Mortgage Monitor — 'HPA의 지역 분산은 버그가 아니라 특성'",
-  "summary": [
-   "5월 케이스-실러 전국 HPA +1.1% yoy — 0~2% 밴드에 12개월째 머물며 1993년 8월 이후 최장 기록(전후 시기엔 1950~60년대 외 드문 현상).",
-   "원인은 affordability: 높은 집값+2022년 이전 대비 크게 높은 모기지금리가 4년째 체감부담을 사상 최악권에 묶어둠, 고용 불확실성에 따른 소비자심리 위축도 가세.",
-   "전국 숫자의 이면엔 큰 지역 분산 — 최근 수년 재고가 늘어난 남부·서부 메트로는 하락, 북동부·중서부는 견조하며 분산 수준은 2015-19년과 유사(즉 위기 신호가 아니라 정상적 국면별 차별화라는 진단).",
-   "신규주택 공급도 남부에 집중. 전망: 집값·금리 모두 당분간 고원 유지 → 약한 HPA 지속, 2026년 모기지 신규취급 ~$2.",
-   "2tn. 가계 대차대조표는 견조하나 서브프라임 오토 ABS 손실 증가·CMBS 오피스 부담 등 주변부 균열은 관찰."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "30f51496a6dc",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "채권",
-  "title": "GS Global Rates Notes — 3Q26 리펀딩 총정리: '증액'이 '변화'로 바뀐 의미",
-  "summary": [
-   "3Q 시장성 차입 조달계획은 $739bn(+$68bn 상향)으로 GS 예상 하회 — FY26 마지막 분기 적자 가정이 낮아졌음을 시사.",
-   "4Q 전망은 예상 부합이나 기말 TGA 목표($850bn)는 예상보다 낮음.",
-   "쿠폰·TIPS·FRN 입찰규모는 또 동결, '최소 향후 몇 분기 유지' 가이던스 지속.",
-   "주목할 변화는 문구 — '향후 증액(increases) 검토'가 '향후 변화(changes) 검토'로 대칭화되어, 수요 여건에 맞춰 한 구간을 늘리며 다른 구간을 줄이는 조합 가능성이 열림.",
-   "GS는 이 현상유지 가이던스로 FY27 내내 동결될 리스크가 커졌다고 보되, 베이스라인은 2027년 5월부터 2~7y 중심 증액+장기물 동결, 7y는 1Q27부터 분기 신규발행 전환을 전망."
-  ],
-  "keywords": [
-   "채권"
-  ]
- },
- {
-  "id": "aaa1ffeec76a",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "주식",
-  "title": "SpaceX(SPCX) — 상장 후 첫 실적: 매출 +17%·EBIT +92% beat, TP $220으로 상향(Buy)",
-  "summary": [
-   "첫 실적발표에서 매출은 GS 대비 +17%(총 $7.",
-   "81bn), GAAP EBIT은 +92% 상회 — 3개 세그먼트 모두 호조.",
-   "①Space: Starship 12·13차 시험비행으로 모멘텀 축적, 한 달 내 14차(첫 궤도 시도·Starlink V3 실전 배치·공중 회수 가능성), 2027년 말 5개 발사대 경로.",
-   "②Connectivity: Starlink 가입자 예상 상회+ARPU 희석 미미, 기업·정부 백로그 낙관.",
-   "③AI: 2Q 수준 capex가 2H26에도 지속되며 궤도 컴퓨트 확장 — 가정 단가를 웃도는 컴퓨트 수익화로 추정치 상향."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "870fcddbb734",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "주식",
-  "title": "SanDisk(SNDK) — '매우 강한 분기, 그러나 가장 강세인 기대엔 못 미친 가이던스'(Buy, TP $2,200)",
-  "summary": [
-   "2Q(FY) 매출 $8.97bn(+372% yoy)으로 GS·스트리트 상회, GM 84.",
-   "6%, non-GAAP EPS $39.25(스트리트 +10.",
-   "7%). 그러나 3Q 가이던스는 매출 $10.55bn(중간값)으로 스트리트 -5.",
-   "4%·GS -9.5%, GM 84.0%(스트리트 -267bp), EPS $45.",
-   "00은 스트리트 부합 — 강한 가격·AI 데이터센터 NAND 채택 기대가 매우 높았던 만큼 주가는 하락 예상(6월 고점 대비 이미 -40%)."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "676a811aa7b0",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "주식",
-  "title": "디즈니(DIS) — F3Q26 EPS $2.06 beat: 파크가 다시 성장 엔진으로(Buy, TP $144)",
-  "summary": [
-   "Adj. EPS $2.06(관세 환급 +$0.04 포함)으로 GS $1.",
-   "77·컨센 $1.84 상회. 포인트: ①국내 파크 입장객 +3% yoy(컨센 +1%)로 F2Q23 이후 최고, 인당지출 +4% — 신규 어트랙션으로 수년간 성장 지속 전망, F2026 Experiences OI 가이던스를 기존 한자릿수 후반 레인지 상단으로 상향.",
-   "②Disney+의 종합 경험 진화(2027년 봄 신기능 — 파크·소비재·ESPN·AI 콘텐츠·무료 티어·큐레이션 피드).",
-   "③크루즈 확장 가시성(2030년까지 신규 선박 파이프라인, 선실 +50% yoy).",
-   "다만 Sports OI는 NBA 중계권 비용 타이밍·NFL Network-컴캐스트 분쟁으로 -17% yoy 미스(연간 MSD% 성장 가이던스는 유지)."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "6d184c6c6afe",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "주식",
-  "title": "우버(UBER) — Q2 예약·EBITDA beat, 3Q 가이던스는 다소 아쉬움(Buy, TP $115)",
-  "summary": [
-   "Q2 총예약 $58.02bn(GS +2.1%·스트리트 +1.",
-   "4%), 매출 $14.19bn(스트리트 소폭 하회), Adj.",
-   "EBITDA $2.82bn(가이던스 상단 초과 beat), EPS $0.",
-   "81(부합). 수요 지표는 견조 — Uber for Business +40% yoy, 식료품·리테일 연환산 $15bn 도달.",
-   "AV: 상용화에 $10bn+ 투자 계획, 현재 7개 도시 운영 → 연말 최대 15개 도시 확장."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "596618aabfa2",
-  "date": "2026-08-06",
-  "source": "GS",
-  "section": "주식",
-  "title": "쇼피파이(SHOP) — 매출 가속+가이던스 상회에 +18%: '좋은 스티키 비즈니스'의 재평가",
-  "summary": [
-   "2Q GMV 스트리트 +3%·매출 +4%·EBIT 마진 +100bp 상회, 8/5 장중 +18%.",
-   "3Q 가이던스는 매출 +low-30s% yoy(스트리트 27%) — cc 매출 100bp 가속과 가이던스 상회가 주가 반응의 본질.",
-   "GS 프레임: 혁신하고 고객이 사랑하는 '좋은 스티키 비즈니스'가 디스로케이션일 때 사는 전략 — 오늘 급등 후에도 성장궤도 대비 저평가 판단, 2028년 FCF/주 $3.",
-   "50 경로. 구조 동력: ①Catalog(상품 10억 개+)가 AI 에이전트와 머천트를 잇는 데이터 레이어로 부상 — Catalog 기반 AI 검색 전환율이 스크래핑 대비 약 2배 ②AI발 트래픽·주문 모두 3배 yoy(신규구매자 주문율 2배), 단 전통 검색도 여전히 성장(세션의 1/3) ③GMV 성장은 미 이커머스의 3.",
-   "0x(TTM 4.2x)로 8분기 연속 2.5x 상회 — 고소득 소비자 노출+자체 점유율 확대."
   ],
   "keywords": [
    "주식"
