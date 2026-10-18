@@ -17,6 +17,40 @@
   ]
  },
  {
+  "id": "cc398f8b0695",
+  "date": "2026-10-17",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "The J.P. Morgan View: \"AI gain, Cyclicals pain, Fed strain\" — 좁은 risk-on 주도",
+  "summary": [
+   "• MSCI Korea의 연초 이후 수익률이 2주 만에 +99%에서 +55%로 반토막.",
+   "글로벌 core CPI는 2026년 말 2.8%(y/y)를 전망하고, 미 9월 core CPI로 core PCE 추정이 3.",
+   "1% y/y로 올라 10월 Fed 인상 확률이 순간 약 50%까지 올랐다가 15%로 되돌았다.",
+   "• 기본 시나리오는 연말까지 Fed·ECB·BoJ 각 1회 인상, BoE는 11월 인상 개시.",
+   "Fed는 2027년에 1~2회 추가 인상 위험이 있으며, 인상 속도가 빨라지면 risk-asset 낙관론이 흔들린다고 경고했다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "656f1b8f22d0",
+  "date": "2026-10-17",
+  "source": "JPM",
+  "section": "주식",
+  "title": "Indonesia Equity Strategy: MSCI Standalone 재분류 협의 — JCI -11.6%, 신중 전망",
+  "summary": [
+   "• 10/15 MSCI가 인도네시아를 EM에서 Standalone으로 재분류하는 협의를 개시했고, 시장 예상보다 훨씬 나빠 JCI가 당일 -11.",
+   "6%(연초 이후 -40% 이상). 의견 수렴은 2027.",
+   "4.30까지, 결정은 2027.6.30 이전이며 그때까지 overhang.",
+   "• 인도네시아는 MSCI EM의 약 0.5%, 외국인 보유 약 $63bn(2Q26).",
+   "EM/지역 펀드의 80%가 MSCI를 추종하고 분류에 따른다는 가정으로 JPM은 전체 유출 약 $13."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
   "id": "5b9982f69f4a",
   "date": "2026-10-17",
   "source": "GS",
@@ -28,6 +62,40 @@
    "5bn, 기타 −11.5bn), 금융은 +1.1bn 순매수.",
    "• 헤지펀드는 9월 순매수 후 10월 순매도 전환(AI 롱 중심, 롱 매도:숏 커버 3:1).",
    "장기 펀드의 대만 비중은 10년 저점 부근, TSMC 비중은 지역펀드 12."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "d6c557ed5c22",
+  "date": "2026-10-17",
+  "source": "GS",
+  "section": "주식",
+  "title": "Asia-Pacific Weekly Kickstart: MXAPJ -4%, 반도체 포지션 청산으로 한국(-16%)·대만(-5%) 기록적 이탈; 인도네시아 -13%",
+  "summary": [
+   "• MXAPJ -4.9%(인도·필리핀·호주 각 +2%, 한국 -16%, 인도네시아 -14%, 대만 -5%).",
+   "Software·Banks·Transportation이 앞섰고 Tech Hardware & Semis·Capital Goods·Materials이 부진.",
+   "미 1·10년 금리와 Brent가 동반 상승(10년 5%대)하며 고금리·Tech risk-off 구도.",
+   "• EM Asia ex-China 주간 외국인 순유출 -$27.",
+   "5bn은 사상 최대(대만 -$19.2bn, 한국 -$8."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "059467b67ca7",
+  "date": "2026-10-17",
+  "source": "GS",
+  "section": "주식",
+  "title": "China Weekly Kickstart: 시장 -2~-3%, 9월 PPI 상승률 신고점, 신용·무역 지표 예상 상회",
+  "summary": [
+   "• MXCN -1.6%, CSI300 -3.4%(ChiNext -8.",
+   "9%, STAR50 -6.8%). Comm Services·Growth가 상대 강세, IT(-7.",
+   "2%)·New China(-5.2%) 부진. Southbound 주간 $0.",
+   "9bn 순유출(연초 이후 $56bn 순유입). • 9월 수출·수입 +36.",
+   "3%·+31.0% y/y, 무역흑자 사상 최대 $133."
   ],
   "keywords": [
    "주식"
@@ -385,6 +453,243 @@
    "HY 화학지수 YTD +318bp vs HY 전체 +6bp, 투자등급 화학 −103bp vs JULI −232bp.",
    "• 에너지: HY 에너지지수 YTD +432bp(HY 전체 +6bp).",
    "Venture Global이 GE Vernova·Baker Hughes와 파워 아일랜드 프레임워크 체결(최대 16기, 2034년까지 10GW 컴퓨트)."
+  ],
+  "keywords": [
+   "주식"
+  ]
+ },
+ {
+  "id": "5acccb3ccb7e",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "JPM 시장 점검 Market Watch(10/16): 중간선거·유로 하이퍼스케일러·금리/FX/원자재 한 장 요약",
+  "summary": [
+   "• 중간선거는 크레딧에 큰 지속 영향을 준 적이 드물다(2000년 이후 선거 후 3개월: HY 약 +2.",
+   "9%, HG 약 7bp 타이트, 2002년 제외).",
+   "다만 AI·데이터센터 규제, 무역정책, M&A 둔화 등 섹터 시사점은 크다.",
+   "• 유로 IG 하이퍼스케일러 스프레드는 5bp 확대된 112bp로 연초 이후 최대.",
+   "2026년 유로화 하이퍼스케일러 공급은 예상 €50bn에 못 미치는 €23."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "2b8d3f99e24b",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "Key Currency Views: \"AI와 달러의 90년대 후반 유추\" — USD 강세 편향 유지(옵션으로 롱), carry 선호",
+  "summary": [
+   "• 미국 예외주의가 이어지는 한 USD 강세 편향은 유지하되, 목표를 달성해 현물 롱은 이익 실현하고 EUR/USD put spread로 보유.",
+   "성장 모멘텀 개선은 멈췄지만 안정적 성장만으로 carry가 작동하며, carry가 연초 이후 가장 성과가 좋은 신호다.",
+   "• 외국인의 미국 증권 매수 구성이 국채·agency에서 주식 쪽으로 이동했다.",
+   "90년대 후반 유추로 보면, 높은 USD 밸류에이션과 미국 재정 불균형은 AI 주도 예외주의가 끝나는 시점에 두 자릿수 USD 약세 세팅이나 타이밍은 기본 시나리오상 임박하지 않았다고 본다.",
+   "• 전망 조정(4Q): GBP/USD 1.30(1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "0bf33ad65dfb",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "FX 묶음: FX forecasts vs forwards·FX Models·JPY·FXO Quant(\"Everything, Everywhere, All at Vol\")",
+  "summary": [
+   "• FX 전망표(10/16 spot → 12월): EUR/USD 1.",
+   "12→1.13, USD/JPY 158→164, GBP 1.",
+   "33→1.30, AUD 0.70→0.71, USD/CNY 6.",
+   "69→6.60, USD/KRW 1,333→1,360, USD/BRL 5.",
+   "10→5.00, USD/MXN 18.39→17."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "02f8fefab6d8",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "원자재 묶음: Global Commodities 주간 · Base Metals Outlook(LME Week) · Oil/Gas 요약",
+  "summary": [
+   "• 호르무즈 해협 상황이 에너지뿐 아니라 농산물(운임·연료·물류)로 확산.",
+   "디젤이 정책 협조의 초점이다. • 구리: 중국 수입 수요와 공급 위험으로 연말까지 강세.",
+   "미국 수입 불확실성이 2027년 폭을 넓히며(bull >$15k, bear ~$12k), 미국 외 시장은 균형에 가깝고 재고가 매우 낮아 가격 하단이 높다.",
+   "• 알루미늄은 2027년 공급과잉, 아연은 중국/비중국 괴리 해소와 광산 공급 회복으로 약세.",
+   "니켈은 약 $15,000/mt로 인도네시아가 선호하는 $16,000~18,000보다 낮아 박스 매매."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "1844e079d1d8",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "EM Flows Weekly: EM 채권 펀드 자금 다시 순유출",
+  "summary": [
+   "• EM 채권 펀드 -$718mn(경화 -$718mn, 현지통화 보합), EM 주식 펀드 +$2.",
+   "8bn(ETF +$4.1bn). 연초 이후 EM 채권 +$33.",
+   "9bn, 주식 +$71.5bn. • 비거주자 EM 포트폴리오 자금은 주식 순유출(대만 -$17.",
+   "7bn 주도), 현지채권은 헝가리(+$1.2bn) 주도로 순유입.",
+   "미국 HG 펀드 -$399mn, HY -$1.3bn."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "1f0ca30f9f51",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "Global Data Watch(10/16): \"Between the devil and the deep blue (FOM)C\" — 공통 글로벌 인플레 충격",
+  "summary": [
+   "• 글로벌 소비자물가는 중동 전쟁 직후 3개월 연율 6%, 7월까지 3개월 1.",
+   "8%로 둔화했다가 에너지 재상승으로 10월까지 3개월 연율 약 5%로 올라선다.",
+   "글로벌 core 상품 CPI는 이번 분기 연 2.",
+   "5%(전년의 약 2배)로 가속하며, 9월 서비스 core도 최근 3개월 연율 3.",
+   "5% 이상(미국·유로존 주도). • 중앙은행은 인내에서 인상으로 전환했으나 글로벌 정책금리는 연초 대비 17bp 상승에 그쳤다."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "eb380d408fc0",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "Economic Activity Tracking(10/16): 3Q 글로벌 GDP nowcast 2.7%, 실질금리·중립금리 비교",
+  "summary": [
+   "• 3Q 글로벌 GDP nowcast 2.7%로 JPM 전망(2.",
+   "8%)과 유사하며 4Q 전망도 2.7%. 3Q 미국 nowcast 2.",
+   "1%(전망 3.5%), 중국 6.5%·대만 7.",
+   "3%·한국 5.9%로 EM Asia가 강하다. • PMI: 글로벌 제조업 53.",
+   "2, 서비스 53.6(3Q 평균). 글로벌 자동차 판매는 3Q -1."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "c7beb3767515",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "매크로",
+  "title": "Global Data Diary · 각국 경제 캘린더(미국·유로·영국·캐나다·LatAm·EMEA) · Market movers",
+  "summary": [
+   "• 다음 주 핵심 일정: 10/19 중국 3Q GDP(전기 4.",
+   "3%)·9월 IP·소매, 10/20 독일 ZEW, 10/21 영국 9월 CPI(전월 3.",
+   "1%)·BI 금리, 10/22 BoK 금리(3.",
+   "00%)·튀르키예 CBRT, 10/23 DM 10월 flash PMI·미 미시간 소비심리, 10/28 FOMC, 10/29 미 3Q GDP·PCE."
+  ],
+  "keywords": [
+   "매크로"
+  ]
+ },
+ {
+  "id": "25edb65ef9f4",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "채권",
+  "title": "U.S. Fixed Income Markets Weekly(185p) 및 챕터: US Fixed Income Overview · Treasuries · Interest Rate Derivatives · Short-Term FI",
+  "summary": [
+   "• Fed: 강한 CPI에도 다음 인상은 12월로 본다(core PCE 9월 +0.",
+   "31% 추정, 3.0→3.1% y/y). Warsh 의장과 Bowman 이사가 연속 인상에 선을 그었고, 10월 인상 확률은 CPI 직후 50%에서 약 15%로 하락.",
+   "• 국채: 10년물 5.0~5.35% 30bp 변동폭 후 하락 마감.",
+   "2·5·10·30년 금리가 -11/-17/-19/-20bp.",
+   "하락 배경은 AI 주식 우려(KOSPI -15%), Treasury 장기 발행 축소 기대, 포지션 정리."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "0ce51cd7fee7",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "채권",
+  "title": "TIPS Strategy: \"Playing catch-up\" — 1Yx1Y 인플레 스왑 wideners 신규",
+  "summary": [
+   "• 9월 CPI는 스왑 시장 가격 대비 +7bp 초과해 2024년 3월 이후 최대 상방 서프라이즈.",
+   "상품(+0.25% m/m, 1년 최고)·shelter(+0.",
+   "25%, OER 18개월 최대 상승)·통신 등이 지속 신호.",
+   "core PCE 추정 +0.30% m/m. • 5·10·30년 실질금리는 각각 -18/-19/-19bp, breakeven은 보합권.",
+   "VIX 15→20 위험회피와 휘발유 -2.5%가 인플레 서프라이즈를 상쇄."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "4a219472374a",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Global Fixed Income Markets Weekly(99p) 및 챕터: 유로 현금·유럽 파생·영국·스칸디나비아 · Interest rate forecasts · Technical Update",
+  "summary": [
+   "• 유럽 금리는 9월 급등 후 안정(커브 5~6bp 평탄화), 미국은 AI 주식 우려로 10bp 이상 불 플래트닝.",
+   "유럽 금리는 10월 초부터 에너지 가격과 분리됐다.",
+   "5~10년 JPM GBI의 1년 후 수익률이 지금 수준 진입금리에서 영국·미국은 100%, 유로존은 75~100% 확률로 플러스였다.",
+   "• 유로: 독일 중기 듀레이션 선호(OW Germany vs US), 이탈리아 10Y vs 유로 IG 신규, 스페인 10Y vs 이탈리아·독일(50:50 fly) 신규.",
+   "시장의 ECB 중립금리 3.0% 초과 가정은 과도하다고 본다."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "c0b7ca54530f",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "채권",
+  "title": "Credit Market Outlook & Strategy: \"Hyper-ventilating again\" — 하이퍼스케일러 확대는 과도",
+  "summary": [
+   "• JULI 스프레드 +4bp, 96bp로 최근 와이드 재시험.",
+   "수요일 CPI 충격이 incremental debt 의존도가 큰 HY neocloud, 나아가 HG 하이퍼스케일러를 압박했다.",
+   "하이퍼스케일러는 12bp 확대된 148bp(7월 이후 최대, 연초 이후 최대 154bp).",
+   "• 분산: JULI 섹터 가중 분산 21.2bp(2025년 5월 이후 최대), BBB-A 비금융 스프레드 차 37bp(4월 이후 최대).",
+   "투자자가 HG 전체를 팔기보다 저등급·자본집약 발행사에 더 큰 보상을 요구하는 모습."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "88651bd71540",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "채권",
+  "title": "지방채 묶음: Municipal Markets Weekly · Municipal Morning Intelligence",
+  "summary": [
+   "• HG 지방채 금리가 주중 17~23bp 하락해 2·5·10·30년 구간에서 국채를 19·12·9·2bp 아웃퍼폼.",
+   "세금 매도(tax trading)로 15~20년 구간 2차시장 스프레드가 신규발행 대비 7~20bp 넓어 2차시장 매수 권고.",
+   "다음 주 비과세 공급 약 $11~12bn. • 비정상 구조(조기상환 2031 이하·odd lot·AMT·5% 미만 쿠폰)에서 스프레드 확대.",
+   "LIHTC 담보 non-agency 세금면제 CMBS는 연 부실률 0.",
+   "1% 미만 대비 스프레드 이점(구조 복잡·유동성 낮음)."
+  ],
+  "keywords": [
+   "채권"
+  ]
+ },
+ {
+  "id": "5605b27ab41d",
+  "date": "2026-10-16",
+  "source": "JPM",
+  "section": "주식",
+  "title": "지수 이벤트 묶음: Global Index Mail · Russell Index Changes · Supply and Data Outlook",
+  "summary": [
+   "• Russell 2000 삭제: Beazer Homes·Atkore(10/19), ACV Auctions(10/20, Copart 현금 인수 $10.",
+   "50), Weave(10/22). MSCI Taiwan: GlobalWafers 신주 발행(5천만주, TWD908.",
+   "32) 반영(10/23 종가). • 유럽 국채 발행(2주): 10/21 미 20년물 $13bn, 10/26 미 2년 $69bn·5년 $70bn 등 일정 정리(상세 표).",
+   "전일/기존 동일본 목록 (전일 261017 폴더·요약본 또는 오늘 폴더 내 중복 — 상세 요약 생략) • HSBC 전일(261017)과 동일본 10건: Need babies · MSCI raises the stakes for Indonesia and Türkiye · Global Economic Calendar · Global Rates Ideas · Video(Asia Chart of the Week) · CEEMEA Rates views · Currency Outlook · Podcast(The Macro Brief) · GEMs Investor · GEMs in the week.",
+   "• GS 전일 동일본(1페이지 제목 기준): US Weekly Kickstart(What to own when slowing growth meets narrow breadth) · EM Weekly Kickstart(2건 중복) · GOAL: Global Opportunity Asset Locator(2건 중복)."
   ],
   "keywords": [
    "주식"
@@ -20427,195 +20732,6 @@
   ],
   "keywords": [
    "매크로"
-  ]
- },
- {
-  "id": "90c7688b31af",
-  "date": "2026-08-09",
-  "source": "JPM",
-  "section": "매크로",
-  "title": "JPM — The J.P. Morgan View: Brent Softens, Jobs Bend — Fed 압력 완화, 엔은 방패를 얻다",
-  "summary": [
-   "크로스에셋 주간 뷰. 헤드라인 기준 브렌트 연화와 고용 둔화가 Fed 인상 압력을 낮추고, 공조 개입이 엔에 '방패'를 제공했다는 구도.",
-   "포털 화면 캡처본으로 본문 미수록 — 상세 논거는 원문 확인 필요."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "b5399b196775",
-  "date": "2026-08-09",
-  "source": "JPM",
-  "section": "매크로",
-  "title": "JPM — FX Markets Weekly: \"Is this an intervention?\"",
-  "summary": [
-   "제목부터 이번 조치의 '개입다움'에 물음표 — 규모·공조에도 지속성에 대한 회의가 깔린 뉘앙스로, GS의 '일시적 유예' 진단과 방향이 같다.",
-   "(제 해석: 양대 하우스 모두 개입 단독으론 엔 추세 전환에 불충분하다는 쪽 — USD/JPY 하방 베팅보다 변동성 매수가 정합적 구도.",
-   ") 포털 캡처본으로 본문 미수록."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "f70760c7568e",
-  "date": "2026-08-09",
-  "source": "JPM",
-  "section": "채권",
-  "title": "JPM — Global Fixed Income Markets Weekly: 지정학 헤드라인 관망과 여름 시즌성",
-  "summary": [
-   "글로벌 금리 주간. 목차상 Global Data Watch('Jobs go low, GDP forecasts go high')·Flows & Liquidity(7월 디레버리징의 중심은 TMT 섹터·멀티스트랫 헤지펀드) 등이 함께 수록된 패키지.",
-   "포털 캡처본으로 본문 미수록."
-  ],
-  "keywords": [
-   "채권"
-  ]
- },
- {
-  "id": "d7dc41d67907",
-  "date": "2026-08-09",
-  "source": "JPM",
-  "section": "채권",
-  "title": "JPM — Securitized Products Weekly (8/7)",
-  "summary": [
-   "에이전시 MBS·CMO·ABS·RMBS 전략 주간.",
-   "포털 캡처본으로 본문 미수록."
-  ],
-  "keywords": [
-   "채권"
-  ]
- },
- {
-  "id": "5f41436310ff",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "매크로",
-  "title": "GS — 엔 공조개입 10문10답: $85bn '최대 화력'에도 반응은 최소 — 불안정 균형",
-  "summary": [
-   "7/30~31 일본 당국이 최대 $85bn 엔 매입 — 2011년 이후 최대 2일 오퍼레이션이며 사상 첫 15년 만의 미국 공조.",
-   "그러나 규모·공조를 스케일 조정하면 USD/JPY 반응은 과거 개입 대비 최소급 — 최근 엔 약세가 매크로 펀더멘털에 부합했다는 방증이라는 판단.",
-   "미 재무부의 EUR/JPY 경유 거래와 FIMA 레포 활용 유도는 'UST·달러 영향 최소화+엔 효과 극대화' 설계 — UST 시장기능 훼손·외환보유고 소진 우려는 과도하다고 반박.",
-   "재무부 참여가 일본 국내 정책 대전환의 전조라는 해석에도 회의적 — UST 변동성 관리 차원의 저비용 옵션에 가깝다는 평가.",
-   "BoJ 인상 가속 확률은 여전히 낮게 보나, 개입 효과가 소진되면 더 공격적(내구적) 옵션 검토 가능성은 열어둠."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "b9abd50bb385",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "매크로",
-  "title": "GS — 주간 펀드플로우: KRW Sees Strong Inflows — 한국펀드 유입·서학개미 순유출 전환",
-  "summary": [
-   "8/5 주간 글로벌 주식펀드 +$33bn(전주 +$64bn) — DM은 미국·일본, EM은 한국·GEM 벤치마크·대만 펀드가 유입 주도.",
-   "섹터는 산업재 최대 유입 vs 테크 최대 유출(수주 연속 유입 후 반전).",
-   "채권펀드는 단기듀레이션·물가연동 중심 유입 지속, EM은 하드커런시 유입 vs 로컬커런시 유출.",
-   "MMF +$54bn. 크로스보더 FX 플로우에선 USD와 KRW가 최강 순수요 — 금주의 차트는 한국발 미국 주식펀드 자금의 순유출 전환과 원화 강세의 동행을 조명, 7월 원화 반등이 정책 긴축·레버리지 억제·자본 유입과 동시 진행됐다고 지적.",
-   "(제 해석: 외국인 수급+국내자금 환류의 쌍끌이 — 원화자산 비중 확대 논거를 수급 측면에서 보강하는 데이터."
-  ],
-  "keywords": [
-   "매크로"
-  ]
- },
- {
-  "id": "d08c4806e7a5",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "채권",
-  "title": "GS — Global Rates Trader(Paradigm Lost): Warsh Fed의 화법 전환, 장기물이 압력밸브",
-  "summary": [
-   "7월 FOMC는 6월의 미러이미지 — 실질커브 스팁·브레이크이븐 전반 상승.",
-   "'금리 상승이 인상을 대신할 수 있다'는 Warsh 의장 화법이 Fed 반응함수를 흐려 장기물의 핫데이터 취약성을 키웠다는 진단 — 2023년엔 포워드가 적정가 대비 100bp까지 이탈했던 전례.",
-   "다만 약한 인플레·고용 지표가 나오면 듀레이션 수요 복원 — 전면적 베어스팁의 지속은 어렵다고 보고 미국 스티프너는 유럽 대비 크로스마켓으로 제시.",
-   "유럽은 에너지가 단기 방향타 — EUR 2y2y가 커브상 과도하게 높다는 판단(인플레 완화·격화 양 시나리오 모두에서), 영국은 비둘기 BoE+디스인플레로 2s10s 스티프닝.",
-   "JGB는 개입만으론 장기물 인플레 리스크 안정에 불충분 — 인상 가속이 동반돼야 하며 그 전까진 벨리·장기물 변동성 지속 전망."
-  ],
-  "keywords": [
-   "채권"
-  ]
- },
- {
-  "id": "2b59caf055e8",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "주식",
-  "title": "GS — US Conviction List 8월: 브로드닝 장세용 개편 — AMAT·MSFT·DAL·ORLY·VIK·UPS 추가",
-  "summary": [
-   "AVGO·DKS·JNJ·NOW 제외, 6종목 추가로 23종목 재편 — 부제 자체가 'Stocks for a broadening market'.",
-   "AI 축은 AVGO→AMAT(장비)·MSFT(Azure 수익화)로 이동 — MSFT PT $640(상방 38%), Azure 불케이스 시 전망 대비 4~10% 상방.",
-   "AMAT PT $645(27%)는 WFE 수요의 바텀업 분석 근거.",
-   "비AI에선 DAL(96% 바이 컨센)·UPS(패키지당 EBIT 반등)·ORLY(점포망 밀도 우위)·VIK($9bn 바이백 여력) 등 시클리컬·퀄리티 보강.",
-   "리스트 평균 상방 ~30%, GS vs 컨센 FY2 이익 갭 최대는 CLS +13%."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "7c16b1c10fcd",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "주식",
-  "title": "GS — TWIG Notes: 이번주 글로벌 리서치 총정리 — AI 투자·엔 개입·브로드닝",
-  "summary": [
-   "금주 하우스 리서치 다이제스트. ①AI: 글로벌 투자 ~$1tn·미국 $581bn(컨센 상회), AI 채택률 21.",
-   "5%로 상승 ②북아시아: 테크 수출 붐이 대만·한국 흑자 확대 — 에너지 수입국엔 역풍(Tilton) ③주식: 리더십의 지역·섹터·팩터 확산(Oppenheimer), 미국은 주요 지역 중 최약 — 멀티플 확장 아닌 이익이 수익 동력 ④한국: 7월 급락에도 반도체 수요 견조·비테크 이익 성장으로 전략적 긍정 뷰 유지(Tim Moe) ⑤크레딧: AI 관련 IG 스프레드가 비AI 대비 언더퍼폼 — 다년 capex 사이클의 자금조달 프리미엄(Lynam) ⑥엔: ¥164 40년 최저치 부근에서 15년 만의 미일 공조 개입."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "46a7cd5074a9",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "주식",
-  "title": "GS — 글로벌 파마 Friday Fodder: 전 종목 탑라인 비트의 '인상적' 실적시즌",
-  "summary": [
-   "대형 바이오파마 2Q — 전 종목 탑라인 비트, 과반이 매출 가이던스 상향, 매출 리비전 평균 +1.",
-   "3%. 헬스케어 타 하위섹터의 변동성 대비 '상대 안정의 보루'로 S&P 대비 소폭 아웃퍼폼.",
-   "실적 후 REGN 최강(+1,270bp) vs ABBV(-483bp)·AZN(-532bp) 부진 — ABBV는 호실적에도 '다음 촉매 부재', BMY는 AZN 메가딜 보도(회사 부인)로 변동 후 IPF 임상 결과가 관건.",
-   "EU 파마 후기임상 실패 연발(AZN·GSK·Novo·Sanofi)로 바이너리 임상 리스크 경계감 부상 — M&A가 핵심 화두로 부상하며 8월 소강 국면 진입."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "c059380b3d14",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "주식",
-  "title": "GS — ResMed(RMD.AX): R&D 스텝업 속 두자릿수 기저 EPS 성장 — Buy(CL) PT A$45.3",
-  "summary": [
-   "4Q26 실적은 예상 부합, FY27 EPS 가이드는 Astral 리콜·MatrixCare 매각 희석에도 VA 컨센 상단 ~1.",
-   "5% 상회. 논거는 ①FY26 수면치료 프랜차이즈 +9% 성장+FY27 가격 순풍 ②NIV·Noctrix 신제품 스케일업 ③R&D·capex 증액은 '성장모드' 신호.",
-   "FY27 바이백 가이던스 $1.5bn로 대폭 증액, 피어 대비 ~300bp 할인.",
-   "EPS는 리콜·매각 반영해 FY27~29 ~-4% 하향 조정 — 그래도 블렌디드 밸류에이션 A$45.",
-   "3(DCF 44.7·상대 45.9), 현가 대비 상방 56."
-  ],
-  "keywords": [
-   "주식"
-  ]
- },
- {
-  "id": "aef4d7a7d0f0",
-  "date": "2026-08-09",
-  "source": "GS",
-  "section": "주식",
-  "title": "GS — Casella Waste(CWST): 매립 물량 가속·Mid-Atlantic 변곡 가시성 — Buy PT $120",
-  "summary": [
-   "2Q EBITDA 컨센 부합(GSe -$2mn) — 매출은 컨센 +3% 상회했으나 마진 22.",
-   "7%(컨센 23.3%·GSe 23.6%)가 상쇄.",
-   "유기적 EBITDA +5.7% — 고형폐기물 가격 +5.",
-   "5%(1Q 5.1%에서 가속), 물량 -0.6%(GSe -1.",
-   "3%보다 양호), 매립 물량 +8.5% yoy가 견인."
-  ],
-  "keywords": [
-   "주식"
   ]
  },
  {
