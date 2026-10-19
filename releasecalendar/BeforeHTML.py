@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """BeforeHTML — releasecalendar: 별도 데이터 단계 없음(융합형).
-기업실적.xlsx 는 블룸버그에서 수동으로 받아 폴더에 두면 되고,
+____Rawdata___의 최신 실적발표*.txt를 사용하며 기존 엑셀 연결은 사용하지 않는다.
 build_earnings_calendar.py 가 읽기+HTML 생성을 한 번에 수행."""
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
