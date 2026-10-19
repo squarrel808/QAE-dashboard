@@ -9,3 +9,5 @@
 기존 `AfterHTML.py` → `build_earnings_calendar.py` → `macro_hub/scripts/sync_embeds.py` 경로를 사용합니다. 웹 경로는 `/earnings`입니다. 배포는 기존 Git push 절차입니다.
 
 검증: `python -X utf8 test_earnings.py`
+
+입력 확인은 QAE 루트의 `python -X utf8 rawdata.py`로 합니다. `/webonly`·`/nightly`·로컬 일간 표 전용 실행은 새 실적 TXT를 재생성하지 않습니다. 먼저 생성기를 실행한 뒤 웹 표시본을 동기화하세요. AfterHTML 실행기는 생성 실패를 종료 코드 1로 반환합니다.

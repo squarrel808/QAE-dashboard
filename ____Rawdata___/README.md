@@ -4,9 +4,9 @@
 > 새 AI 해석은 별도 요청 시 작성합니다. 아래 보고서 실행 예시는 과거 수동 경로입니다.
 > 결과: `QAE\데일리시황\표_업데이트\index.html` · 상세 규칙: `데일리시황\데일리_작업규칙.md`
 
-# `____Rawdata___` — 받은 엑셀은 전부 여기에
+# `____Rawdata___` — 받은 엑셀·실적 TXT는 전부 여기에
 
-블룸버그·BQuant에서 내려받은 원본 엑셀을 **파이프라인 폴더에 나눠 넣지 말고 여기 한 곳에** 떨궈 넣는다.
+블룸버그·BQuant에서 내려받은 원본 엑셀·실적 TXT를 **파이프라인 폴더에 나눠 넣지 말고 여기 한 곳에** 떨궈 넣는다.
 각 스크립트가 실행할 때 여기서 자기 파일을 집어간다.
 
 ---
@@ -22,6 +22,7 @@
 | `ECFC_Growth_Consensus` (구 `ECFC_Growth Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | GDP 컨센서스 (`/consensus`) |
 | `ECFC_Inflation_Consensus` (구 `ECFC_Inflation Consesus`도 지원) | `.xlsb` | `Consensus Builder\merge_xlsb_to_xlsx.py` | CPI 컨센서스 (`/consensus`) |
 | `Bquant_` | `.xlsb` `.xlsx` | `데일리시황\BQL\Rawfile\update_master.py` | BQuant_Master → 유럽·TOPIX·AI·Top10 대시보드 |
+| `실적발표` | `.txt` | `releasecalendar/build_earnings_calendar.py` | 실적 예상 일정 (`/earnings`) |
 | (모든 `.xlsx`) | `.xlsx` | `블벅경제지표\load_weco.py` | 경제지표 캘린더 (`/econ`) |
 
 ```
@@ -76,7 +77,7 @@ python rawdata.py
 
 ## 규칙 몇 가지
 
-- **예전 폴더에 그냥 둬도 계속 돈다.** `Consensus Builder\`, `블벅경제지표\` 도 같이 훑고,
+- **컨센서스·경제지표는 예전 폴더에 둬도 읽는다.** `Consensus Builder\`, `블벅경제지표\` 도 같이 훑고,
   두 곳에 다 있으면 **수정시각이 최신인 쪽**을 쓴다. 옮기는 중에 깨지지 않게 남겨둔 폴백이다.
 - **다 쓴 파일을 지워도 된다.** 컨센서스는 `history\` 에, BQuant 는 `BQuant_Master.xlsx` 에
   누적되므로 원본이 사라져도 과거 자료는 남는다. 단, 지운 다음엔 그 파이프라인을 다시
@@ -88,5 +89,22 @@ python rawdata.py
 
 ## 코드는 어디에
 
-`QAE\rawdata.py` 하나가 찾는 일을 다 한다. 폴더 위치를 옮기려면 환경변수
+`QAE\rawdata.py`로 입력 매칭을 확인한다. 실적 TXT는 달력 생성기가 같은 원본 폴더에서 직접 선택한다. 폴더 위치를 옮기려면 환경변수
 `QAE_RAWDATA_DIR` 로 덮어쓴다.
+
+## 실적 달력 갱신 — 2026-10-19 변경
+
+`____Rawdata___/실적발표*.txt` 중 수정시각이 최신인 파일로 `/earnings`를 생성합니다. TXT의 기업명·티커·USD 시가총액·예상 발표일을 사용하며, 원본 날짜를 변환하지 않습니다. 시간·시간대·회계분기는 원본에 없어 표시하지 않습니다. 공식 IR 일정 자동 수집 기능은 없습니다.
+
+QAE 루트에서 아래 순서로 실행합니다.
+
+```powershell
+python -X utf8 releasecalendar/build_earnings_calendar.py
+python -X utf8 macro_hub/scripts/sync_embeds.py
+```
+
+생성이 성공한 뒤에만 동기화·배포합니다. `sync_embeds.py`는 복사만 하므로 단독 실행으로 새 TXT가 반영되지 않습니다. 전체 갱신의 AfterHTML 단계에서도 TXT를 읽습니다. `/webonly`와 `/nightly`는 달력 재생성을 생략하므로 먼저 위 생성기를 실행해야 합니다. 로컬 표 전용 `update_daily_tables.py`도 실적 달력을 갱신하지 않습니다.
+
+화면의 원본 파일명·수정시각·예상 일정 범위를 확인하고 변경된 게시 파일만 커밋·push합니다. 코드 변경이 있으면 관련 코드·안내 문서도 함께 커밋합니다. 배포 후 `/earnings`와 `/embeds/earnings.html`의 내용까지 확인합니다. TXT가 없거나 해석에 실패하면 옛 엑셀로 폴백하지 않습니다. 기존 `기업실적.xlsx`·`marketcap.json`은 보관 자료이며 실행에서 사용하지 않습니다.
+
+입력 형식과 검증 방법: [실적 달력 안내](../releasecalendar/README.md).

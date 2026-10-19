@@ -36,6 +36,7 @@ RAW_DIR = os.environ.get("QAE_RAWDATA_DIR") or os.path.join(REPO_DIR, "____Rawda
 # 어떤 prefix 를 어느 파이프라인이 집어가는지 — 점검 출력과 문서용.
 # (실제 매칭은 각 스크립트가 자기 prefix 로 직접 호출한다)
 KNOWN = [
+    (("실적발표",), (".txt",), "releasecalendar — 실적 예상 일정"),
     (("ECFC_Growth_Consensus", "ECFC_Growth Consesus"), (".xlsb",), "Consensus Builder — GDP 컨센서스"),
     (("ECFC_Inflation_Consensus", "ECFC_Inflation Consesus"), (".xlsb",), "Consensus Builder — CPI 컨센서스"),
     (("Bquant_",),             (".xlsb", ".xlsx"),  "데일리시황 BQL — BQuant_Master"),
@@ -151,7 +152,7 @@ def main():
     if not os.path.isdir(RAW_DIR):
         print("  !! 폴더가 없습니다. 만들어서 엑셀을 넣으세요.")
         return 1
-    files = _candidates(RAW_DIR, (".xlsx", ".xlsb", ".xls", ".csv"))
+    files = _candidates(RAW_DIR, (".xlsx", ".xlsb", ".xls", ".csv", ".txt"))
     if not files:
         print("  (비어 있음)")
     for p in sorted(files, key=os.path.getmtime, reverse=True):

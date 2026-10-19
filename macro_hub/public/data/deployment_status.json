@@ -1,6 +1,6 @@
 {
-  "runId": "earnings-txt-20261019",
-  "generatedAt": "2026-10-19T17:49:01",
+  "runId": "earnings-txt-manuals-20261019",
+  "generatedAt": "2026-10-19T17:52:34",
   "latestSummary": "2026-10-18",
   "latestReport": "2026-10-17",
   "latestHouseview": "2026-09-02",
@@ -18,7 +18,7 @@
     "embeds/consensus_cpi.html": "91f88f49aafd9d31000420acad1acf24a520c4c8a5acbca426f23dbd0e17b16f",
     "embeds/consensus_gdp.html": "3bb81ae5fd50c99eec3d55236bc5b3791b8d96773ea1798fb7c035bdb6480719",
     "embeds/cpi_dist.html": "0df41122de3e5bc370f9b928d584d64f0749daa90a6f8184b3f0ed063eefe1dd",
-    "embeds/earnings.html": "ad0c46eea8d64d13201bc5bb91918b41d64a3a5f224cf5b92f653faa36a30cef",
+    "embeds/earnings.html": "fd8eaa7c0a473826a1e0ab495456c76da031abd118378ddac7bb01a6817a74ca",
     "embeds/econ.html": "b0e0ce8426d5c572a49c106a683f3ad2b0ccee431a8a1e784e99d7a403bbece0",
     "embeds/market_rotation.html": "d61850f634ecb3099900193a060319e235411b2b8f990db14677e3795d8e1204",
     "embeds/pca.html": "9a2fac7b9ad6b1fdaccdf13d9563ba780b9ea1e1a44ba8f4207a174ea47755fc"

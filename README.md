@@ -70,7 +70,7 @@ python 데일리시황\BQL\Dashbaord\유로존_dashboard\build_market_rotation_d
 | 탭 | 화면 | 출처 | 갱신 방법 |
 |---|---|---|---|
 | 경제지표 | `/econ` | `____Rawdata___\*.xlsx` | **파일을 폴더에 넣으면 끝** |
-| 실적 캘린더 | `/earnings` | releasecalendar | 자동 |
+| 실적 캘린더 | `/earnings` | `____Rawdata___/실적발표*.txt` | TXT 업로드 후 생성·동기화 |
 | Report | `/reports` | `Desktop\보따리\*\일일리서치통합요약_*.docx` | 통합요약 DOCX 생성 시 자동 |
 | PCA | `/pca` | Haver (`haver-api_PCA`) | Haver 로그인 후 수집 |
 | CAI | `/caimap` | GS Marquee API | 자동 |
@@ -217,3 +217,20 @@ QAE/
 | `macro_hub\DEPLOY.md` | Vercel 최초 연결 |
 | `report_pipeline\README.md` | 리서치 수집 파이프라인 |
 | `사용법.md` | 이전 버전 문서 (2026-08 기준, 일부 낡음) |
+
+## 실적 달력 갱신 — 2026-10-19 변경
+
+`____Rawdata___/실적발표*.txt` 중 수정시각이 최신인 파일로 `/earnings`를 생성합니다. TXT의 기업명·티커·USD 시가총액·예상 발표일을 사용하며, 원본 날짜를 변환하지 않습니다. 시간·시간대·회계분기는 원본에 없어 표시하지 않습니다. 공식 IR 일정 자동 수집 기능은 없습니다.
+
+QAE 루트에서 아래 순서로 실행합니다.
+
+```powershell
+python -X utf8 releasecalendar/build_earnings_calendar.py
+python -X utf8 macro_hub/scripts/sync_embeds.py
+```
+
+생성이 성공한 뒤에만 동기화·배포합니다. `sync_embeds.py`는 복사만 하므로 단독 실행으로 새 TXT가 반영되지 않습니다. 전체 갱신의 AfterHTML 단계에서도 TXT를 읽습니다. `/webonly`와 `/nightly`는 달력 재생성을 생략하므로 먼저 위 생성기를 실행해야 합니다. 로컬 표 전용 `update_daily_tables.py`도 실적 달력을 갱신하지 않습니다.
+
+화면의 원본 파일명·수정시각·예상 일정 범위를 확인하고 변경된 게시 파일만 커밋·push합니다. 코드 변경이 있으면 관련 코드·안내 문서도 함께 커밋합니다. 배포 후 `/earnings`와 `/embeds/earnings.html`의 내용까지 확인합니다. TXT가 없거나 해석에 실패하면 옛 엑셀로 폴백하지 않습니다. 기존 `기업실적.xlsx`·`marketcap.json`은 보관 자료이며 실행에서 사용하지 않습니다.
+
+입력 형식과 검증 방법: [실적 달력 안내](releasecalendar/README.md).
