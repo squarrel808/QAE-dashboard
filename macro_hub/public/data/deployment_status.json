@@ -1,18 +1,18 @@
 {
-  "runId": "20261026_split_comparison",
-  "generatedAt": "2026-10-26T20:11:45",
+  "runId": "20261026_230002",
+  "generatedAt": "2026-10-26T23:04:27",
   "latestSummary": "2026-10-21",
   "latestReport": "2026-10-21",
   "latestHouseview": "2026-09-02",
   "reports": 1285,
   "files": {
     "data/caimap.json": "3161106216269ce95be2d064a71d09f217f6be417c8f2412a6e395c4b4bee846",
-    "data/consensus_cpi.json": "7674d703037e64796e887297e4e3e59426d0de59be6122d31a367233871844b2",
-    "data/consensus_gdp.json": "0eea265d729e66581572cf0ebafbb003fb7ca0af0546387fbace2793b9929996",
+    "data/consensus_cpi.json": "d725e1ca4efcb3c0b785ec9e62371aa98d3690ab08ec8f15f000b86b2dced48b",
+    "data/consensus_gdp.json": "ad7a54c0246eb1e69975a26b30526a3c7855dbba070f2fc7913585bf55eee8db",
     "data/houseviews.json": "76f0474e2a158236a37f5a356f2108e6cb8637ea1f7f9df81f151f1394e3020e",
-    "data/pairbaskets.json": "70855fea3d782d281f82261e7bbacac70f2ce9dfb746a6a71de53f29b945848b",
+    "data/pairbaskets.json": "8332cee4374c375b3b50e64ce0a6f4635147d990971e24d53574e07af94ae4de",
     "data/pca.json": "4ceccd3d48b257024692a435c3296887ac6f1e80f4f884489ccc78c1ed68568b",
-    "data/policy.json": "26ab19c3d3f778eabaa5a529eac2a344b41469aab99dabad06c51f1e4c916303",
+    "data/policy.json": "fdebb15e2a748ded10e37dd39b02f93b8b768c5481d5df7df1f5f29185844d8a",
     "data/reports.json": "202463e615391a6b9882749039ec291bb4a09645f82c105c8225752cf3db0a00",
     "embeds/caimap.html": "a76c5b390dabc6414ab9726fe7865adaf53a5df8e9a8c11deee8249213eddbd4",
     "embeds/consensus_cpi.html": "0f388023cf9a7d5702adb7f96c46e6c2428c59ebcc021245ba88a09bb67acaa2",
@@ -20,98 +20,8 @@
     "embeds/cpi_dist.html": "4a032956ec1f6cd24d07bac718c9f3e4af1ec95ab315a98e0a21fd42598f9295",
     "embeds/earnings.html": "75d2b012c48ceb988378c9af21685530526be49aa821cb593f472aad43e0ad05",
     "embeds/econ.html": "8f34aba77d7d92bc9b5cfd5c3ed2663497608102aa40f901b3b1b1f1e5fcc018",
-    "embeds/market_rotation.html": "6d5cb030234bf4625dd5cdaf2c22b2753a1d214440dde371790e73d40399cb51",
+    "embeds/market_rotation.html": "84d2d6d5b453970902b4779976814152a9192d5c7c12b0b6212b88f3ec6829c4",
     "embeds/pca.html": "dc7c5f809b43ca66bc043ec3033ad401006224c00e06e4b33f2f51bf4fdab1f0",
-    "weekly/index.html": "c7e8df77f0bb274c53373f4fef15a715c746dcf821c04d742666e7f989973bb8",
-    "weekly/데일리_시황_5D_세트_20261023.html": "c7e8df77f0bb274c53373f4fef15a715c746dcf821c04d742666e7f989973bb8",
-    "weekly/AI/ai_5D.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
-    "weekly/AI/SP500_AI_밸류체인_5D_코멘터리_20261023.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
-    "weekly/Factor_Theme/팩터_테마_로테이션_20261023.html": "daeebac1a369d5434647b741e64c12ecf08b12a573f5000140b591e0e2eb3f88",
-    "weekly/Sector_Industry/sector_5D.html": "b71699139bef5ed41af3bf790f65b33df23fd7f55c7202edf82f714cb49c884e",
-    "weekly/Sector_Industry/유럽_미국_일본_섹터_산업_5D_코멘터리_20261023.html": "b71699139bef5ed41af3bf790f65b33df23fd7f55c7202edf82f714cb49c884e",
-    "weekly/Sector_Industry/sector_5D.json": "7c7b47f187f07562bca653e1e7de5049d55aa07515e0858a8f560202c85cce79"
-  },
-  "sourceRefresh": {
-    "failedSteps": [
-      "haver_pca",
-      "haver_cpi",
-      "reports_views",
-      "policy_score"
-    ],
-    "sourceDates": {
-      "policy": {
-        "BOE": "2026-06-25",
-        "BOJ": "2026-06-03",
-        "ECB": "2026-05-28",
-        "FED": "2026-06-24"
-      },
-      "pca": {
-        "US": {
-          "YoY": "2026-09",
-          "Momentum": "2026-09"
-        },
-        "AU": {
-          "YoY": "2026-09",
-          "Momentum": "2026-09"
-        },
-        "CA": {
-          "YoY": "2026-08",
-          "Momentum": "2026-08"
-        },
-        "DE": {
-          "YoY": "2026-09",
-          "Momentum": "2026-09"
-        },
-        "JP": {
-          "YoY": "2026-08",
-          "Momentum": "2026-08"
-        },
-        "UK": {
-          "YoY": "2026-08",
-          "Momentum": "2026-08"
-        }
-      },
-      "caimap": {
-        "US": "2026-10-01",
-        "EAagg": "2026-10-01",
-        "JP": "2026-10-01",
-        "GB": "2026-10-01",
-        "CA": "2026-10-01",
-        "CH": "2026-10-01",
-        "SE": "2026-10-01",
-        "NO": "2026-10-01",
-        "AU": "2026-10-01",
-        "NZ": "2026-10-01",
-        "CN": "2026-09-01",
-        "KR": "2026-09-01",
-        "TW": "2026-09-01",
-        "IN": "2026-09-01",
-        "ID": "2026-09-01",
-        "HK": "2026-10-01",
-        "SG": "2026-10-01"
-      },
-      "pairbaskets": {
-        "Factor": "2026-10",
-        "Tech": "2026-10"
-      },
-      "reports": "2026-10-21",
-      "houseviews": "2026-09-02"
-    },
-    "marketRotationAsOf": {
-      "2026-10-26": 12,
-      "2026-10-23": 4
-    },
-    "note": "Haver 신규 수집 시간 초과. 리서치 하우스뷰 신규 추출은 외부 API 잔액 부족. Policy Tone 신규 채점은 API 인증 설정 누락. 해당 모듈은 저장된 원천 기준일 유지."
-  },
-  "sectorMarketExpansion": {
-    "asOf": "2026-10-23",
-    "marketCount": 8,
-    "added": [
-      "DAX",
-      "UKX",
-      "ASX200",
-      "CSI300"
-    ],
-    "contributionUnit": "bp"
+    "embeds/surprise.html": "e4114bb8b73242142d419cff71b77be3551177cb1b17d3c2c3b816bbd3332250"
   }
 }
