@@ -1,5 +1,5 @@
 {
-  "runId": "20261026_eight_market_expansion",
+  "runId": "20261026_split_comparison",
   "generatedAt": "2026-10-26T20:11:45",
   "latestSummary": "2026-10-21",
   "latestReport": "2026-10-21",
@@ -27,8 +27,8 @@
     "weekly/AI/ai_5D.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
     "weekly/AI/SP500_AI_밸류체인_5D_코멘터리_20261023.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
     "weekly/Factor_Theme/팩터_테마_로테이션_20261023.html": "daeebac1a369d5434647b741e64c12ecf08b12a573f5000140b591e0e2eb3f88",
-    "weekly/Sector_Industry/sector_5D.html": "4d04dfc05c2d249e54d7be1a5a81a94f596a97fe8a6edc7b4404f085459474cd",
-    "weekly/Sector_Industry/유럽_미국_일본_섹터_산업_5D_코멘터리_20261023.html": "4d04dfc05c2d249e54d7be1a5a81a94f596a97fe8a6edc7b4404f085459474cd",
+    "weekly/Sector_Industry/sector_5D.html": "b71699139bef5ed41af3bf790f65b33df23fd7f55c7202edf82f714cb49c884e",
+    "weekly/Sector_Industry/유럽_미국_일본_섹터_산업_5D_코멘터리_20261023.html": "b71699139bef5ed41af3bf790f65b33df23fd7f55c7202edf82f714cb49c884e",
     "weekly/Sector_Industry/sector_5D.json": "7c7b47f187f07562bca653e1e7de5049d55aa07515e0858a8f560202c85cce79"
   },
   "sourceRefresh": {
