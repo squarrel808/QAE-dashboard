@@ -1,5 +1,5 @@
 {
-  "runId": "20261026_evening_full_refresh",
+  "runId": "20261026_eight_market_expansion",
   "generatedAt": "2026-10-26T20:11:45",
   "latestSummary": "2026-10-21",
   "latestReport": "2026-10-21",
@@ -22,13 +22,14 @@
     "embeds/econ.html": "8f34aba77d7d92bc9b5cfd5c3ed2663497608102aa40f901b3b1b1f1e5fcc018",
     "embeds/market_rotation.html": "6d5cb030234bf4625dd5cdaf2c22b2753a1d214440dde371790e73d40399cb51",
     "embeds/pca.html": "dc7c5f809b43ca66bc043ec3033ad401006224c00e06e4b33f2f51bf4fdab1f0",
-    "weekly/index.html": "4a0cad003695795c88286fe1c0d17c186018a6fdbe93218d262b9d6db61050ed",
-    "weekly/데일리_시황_5D_세트_20261023.html": "4a0cad003695795c88286fe1c0d17c186018a6fdbe93218d262b9d6db61050ed",
+    "weekly/index.html": "c7e8df77f0bb274c53373f4fef15a715c746dcf821c04d742666e7f989973bb8",
+    "weekly/데일리_시황_5D_세트_20261023.html": "c7e8df77f0bb274c53373f4fef15a715c746dcf821c04d742666e7f989973bb8",
     "weekly/AI/ai_5D.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
     "weekly/AI/SP500_AI_밸류체인_5D_코멘터리_20261023.html": "569e0cf03315db44c8e9b48b968f9501f08983160d84ee9fb5c6865856f0de47",
     "weekly/Factor_Theme/팩터_테마_로테이션_20261023.html": "daeebac1a369d5434647b741e64c12ecf08b12a573f5000140b591e0e2eb3f88",
-    "weekly/Sector_Industry/sector_5D.html": "d7220dbc9028cb84cb819e648ef470f903f82b0b88e05768832716503093097b",
-    "weekly/Sector_Industry/유럽_미국_일본_섹터_산업_5D_코멘터리_20261023.html": "d7220dbc9028cb84cb819e648ef470f903f82b0b88e05768832716503093097b"
+    "weekly/Sector_Industry/sector_5D.html": "4d04dfc05c2d249e54d7be1a5a81a94f596a97fe8a6edc7b4404f085459474cd",
+    "weekly/Sector_Industry/유럽_미국_일본_섹터_산업_5D_코멘터리_20261023.html": "4d04dfc05c2d249e54d7be1a5a81a94f596a97fe8a6edc7b4404f085459474cd",
+    "weekly/Sector_Industry/sector_5D.json": "7c7b47f187f07562bca653e1e7de5049d55aa07515e0858a8f560202c85cce79"
   },
   "sourceRefresh": {
     "failedSteps": [
@@ -101,5 +102,16 @@
       "2026-10-23": 4
     },
     "note": "Haver 신규 수집 시간 초과. 리서치 하우스뷰 신규 추출은 외부 API 잔액 부족. Policy Tone 신규 채점은 API 인증 설정 누락. 해당 모듈은 저장된 원천 기준일 유지."
+  },
+  "sectorMarketExpansion": {
+    "asOf": "2026-10-23",
+    "marketCount": 8,
+    "added": [
+      "DAX",
+      "UKX",
+      "ASX200",
+      "CSI300"
+    ],
+    "contributionUnit": "bp"
   }
 }
