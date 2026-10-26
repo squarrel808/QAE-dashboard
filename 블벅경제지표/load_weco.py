@@ -264,14 +264,9 @@ def load_rows(verbose=True):
         kind, score, diag = classify(df)
         frames.append([p, df, kind, score, diag])
 
-    # 파일이 딱 2개인데 둘 다 같은 종류로 판정되면 상대비교로 갈라준다
-    # (한 세트를 같은 종류로 두 번 내보낸 경우. 3개 이상이면 점수 그대로 믿는다 —
-    #  지표 파일 2개 + 이벤트 1개 같은 정상 조합을 억지로 갈라놓지 않기 위해서다)
-    if len(frames) == 2 and frames[0][2] == frames[1][2]:
-        hi, lo = (0, 1) if frames[0][3] >= frames[1][3] else (1, 0)
-        frames[hi][2], frames[lo][2] = "ind", "evt"
-        for f in frames:
-            f[4] += "  [동점 판정 -> 상대비교로 재분류]"
+    # Classify each export independently: two recent files may both contain
+    # economic indicators (or both contain events). File count is not evidence
+    # that one file belongs to the other category.
 
     # frames 는 최신순이다. 같은 일정이 여러 파일에 있으면 먼저 만난(=최신) 값을 쓴다.
     rows, stat, seen = [], [], set()

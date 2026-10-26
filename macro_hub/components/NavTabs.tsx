@@ -14,6 +14,7 @@ const TABS = [
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
   { href: '/market-rotation', label: 'Market Rotation' },
+  { href: '/weekly/index.html', label: '주간 시황' },
 ]
 
 export default function NavTabs() {
