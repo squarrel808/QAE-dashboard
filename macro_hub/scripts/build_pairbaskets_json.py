@@ -23,16 +23,29 @@ GS_DIR = os.path.join(os.path.dirname(ROOT), "gs_api")   # ../gs_api
 OUT = os.path.join(ROOT, "public", "data", "pairbaskets.json")
 
 
+def apply_display_labels(data):
+    with open(os.path.join(HERE, "pairbasket_labels.json"), encoding="utf-8") as f:
+        labels = json.load(f)
+    collections = [data.get("universe", []), *data.get("groups", {}).values()]
+    for collection in collections:
+        for item in collection:
+            entry = labels.get(item["bbid"])
+            if entry:
+                item["label"] = f'{entry["label"]} ({item["bbid"]})'
+                item["nameNote"] = entry["note"] + "\n" + entry["description"]
+    return data
+
+
 def read_csv(path):
     with open(path, encoding="utf-8-sig") as f:
         return list(csv.DictReader(f))
 
 
-def series_monthly(sub):
+def series_daily(sub):
     import pandas as pd
     s = sub.set_index("date")["closePrice"].sort_index()
-    m = s.groupby(s.index.to_period("M")).last().dropna()
-    return [str(p) for p in m.index], [round(float(x), 4) for x in m.values]
+    s = s.groupby(s.index.normalize()).last().dropna()
+    return [p.strftime("%Y-%m-%d") for p in s.index], [round(float(x), 4) for x in s.values]
 
 
 def build_real():
@@ -55,7 +68,7 @@ def build_real():
     if "date" not in df.columns:
         df = df.reset_index()
     df["date"] = pd.to_datetime(df["date"])
-    series = {b: series_monthly(sub) for b, sub in df.groupby("bbid")}
+    series = {b: series_daily(sub) for b, sub in df.groupby("bbid")}
 
     data = {"groups": {}, "sector": {}}
     for r in short:
@@ -103,9 +116,11 @@ def build_real():
                 udf = udf[udf["bbid"].notna()]
                 uni = []
                 for b, sub in udf.groupby("bbid"):
-                    d, c = series_monthly(sub)
+                    d, c = series_daily(sub)
                     if len(c) >= 2:
-                        uni.append({"label": known.get(b) or id2name.get(sub["assetId"].iloc[0], b),
+                        name = known.get(b) or id2name.get(sub["assetId"].iloc[0])
+                        label = name.strip() if isinstance(name, str) and name.strip() else b
+                        uni.append({"label": label,
                                     "bbid": b, "dates": d, "close": c})
                 data["universe"] = uni
                 print(f"[OK] universe {len(uni)}개")
@@ -143,6 +158,8 @@ def build_mock():
 def main():
     mock = "--mock" in sys.argv
     data = build_mock() if mock else build_real()
+    apply_display_labels(data)
+    data["frequency"] = "monthly" if mock else "daily"
     data["generatedAt"] = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:

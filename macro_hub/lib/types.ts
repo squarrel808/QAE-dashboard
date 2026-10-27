@@ -1,13 +1,15 @@
 // pairbaskets.json 의 데이터 형태 (Python 빌드 스크립트가 생성)
 export type Series = {
   label: string
+  nameNote?: string
   bbid: string
-  dates: string[]   // 'YYYY-MM' 월별
+  dates: string[]   // 'YYYY-MM-DD' daily (legacy: 'YYYY-MM')
   close: number[]
 }
 export type SectorItem = Series & { sector: string; factor: string }
 
 export type PairBasketsData = {
+  frequency?: 'daily' | 'monthly'
   groups: Record<string, Series[]>          // { Factor: [...], Tech: [...] }
   sector: { sectors: string[]; factors: string[]; items: SectorItem[] }
   universe?: Series[]

@@ -1,22 +1,35 @@
 'use client'
 import { useMemo, useState } from 'react'
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
-} from 'recharts'
-import type { PairBasketsData, Series, SectorItem } from '@/lib/types'
+import ChartImage from './EquityChartImage'
+import type { PairBasketsData, Series } from '@/lib/types'
 
 const PALETTE = ['#378ADD', '#1D9E75', '#BA7517', '#D4537E', '#9b8cff', '#46b0c9', '#e0833b', '#cf5fd0', '#6fcf6f', '#d24b4a']
 const RANGES: [string, number][] = [['1M', 1], ['3M', 3], ['6M', 6], ['12M', 12], ['2Y', 24], ['3Y', 36], ['5Y', 60], ['10Y', 120]]
 const POS = '#1a7a4c', NEG = '#c0392b'
 
-// m개월 수익률: 마지막 값 / m개월 전 값 - 1
-function chgN(close: number[], m: number): number | null {
-  const n = close.length
-  if (n < 2) return null
-  let bi = n - 1 - m
-  if (bi < 0) bi = 0
-  const a = close[bi], z = close[n - 1]
-  return a && z != null && a !== 0 ? z / a - 1 : null
+// Calendar periods remain valid for both daily and legacy monthly observations.
+function cutoff(end: string, months: number): string {
+  const d = new Date(end.length === 7 ? `${end}-01T00:00:00Z` : `${end}T00:00:00Z`)
+  const day = d.getUTCDate()
+  d.setUTCDate(1)
+  d.setUTCMonth(d.getUTCMonth() - months)
+  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate()
+  d.setUTCDate(Math.min(day, last))
+  return d.toISOString().slice(0, end.length)
+}
+function windowDates(dates: string[], months: number): string[] {
+  if (!dates.length) return []
+  const start = cutoff(dates[dates.length - 1], months)
+  return dates.filter(d => d >= start)
+}
+function chgN(p: Series, m: number): number | null {
+  if (p.close.length < 2) return null
+  const start = cutoff(p.dates[p.dates.length - 1], m)
+  let bi = -1
+  p.dates.forEach((d, i) => { if (d <= start) bi = i })
+  if (bi < 0) return null
+  const a = p.close[bi], z = p.close[p.close.length - 1]
+  return Number.isFinite(a) && Number.isFinite(z) && a !== 0 ? z / a - 1 : null
 }
 
 // 초록(+)/빨강(-) 히트맵 색 — scale 기준으로 정규화
@@ -32,18 +45,15 @@ function heatColor(pct: number | null, scale = 0.08): string {
 
 // 한 시계열을 window(months) 구간에서 100-리베이스 (구간 첫 유효값 = 100)
 function rebaseSeries(p: Series, months: string[]): (number | null)[] {
-  const dm: Record<string, number> = {}
-  p.dates.forEach((d, i) => { dm[d] = p.close[i] })
+  let cursor = -1
   let base: number | null = null
-  return months.map((mo) => {
-    let v: number | null = dm[mo] ?? null
-    if (v == null) {
-      const dd = p.dates.filter((d) => d <= mo)
-      if (dd.length) v = dm[dd[dd.length - 1]]
-    }
-    if (v == null) return null
+  return months.map(day => {
+    while (cursor + 1 < p.dates.length && p.dates[cursor + 1] <= day) cursor++
+    if (cursor < 0 || day > p.dates[p.dates.length - 1]) return null
+    const v = p.close[cursor]
+    if (!Number.isFinite(v)) return null
     if (base == null) base = v
-    return base ? +((v / base) * 100).toFixed(1) : null
+    return base ? +((v / base) * 100).toFixed(2) : null
   })
 }
 
@@ -59,7 +69,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
 
   // universe: 있으면 그대로, 없으면 groups + sector 로 대체 (원본 HTML과 동일한 fallback)
   const universe: Series[] = useMemo(() => {
-    if (data.universe?.length) return data.universe
+    if (data.universe?.length) return data.universe.map(p => ({ ...p, label: p.label?.trim() || p.bbid }))
     const out: Series[] = []
     const seen = new Set<string>()
     Object.values(data.groups || {}).forEach((arr) =>
@@ -80,22 +90,18 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   // ── 히트맵 셀 조회
   const cell = (sec: string, fac: string): number | null => {
     const it = data.sector.items.find((x) => x.sector === sec && x.factor === fac)
-    return it ? chgN(it.close, rHeat) : null
+    return it ? chgN(it, rHeat) : null
   }
 
   // ── 라인차트용: 선택 섹터의 팩터별 100-리베이스 시계열
   const lineData = useMemo(() => {
     const its = data.sector.items.filter((x) => x.sector === sector)
     const allMonths = Array.from(new Set(its.flatMap((it) => it.dates))).sort()
-    const months = allMonths.slice(-(rLines + 1))
-    return months.map((mo) => {
+    const months = windowDates(allMonths, rLines)
+    const rebased = its.map(it => ({ it, values: rebaseSeries(it, months) }))
+    return months.map((mo, i) => {
       const row: Record<string, number | string | null> = { month: mo }
-      its.forEach((it) => {
-        const idx = it.dates.indexOf(it.dates.filter((d) => d <= mo).slice(-1)[0])
-        const baseIdx = it.dates.indexOf(months[0])
-        const base = baseIdx >= 0 ? it.close[baseIdx] : it.close[0]
-        row[it.factor] = idx >= 0 && base ? +(it.close[idx] / base * 100).toFixed(1) : null
-      })
+      rebased.forEach(({ it, values }) => { row[it.factor] = values[i] })
       return row
     })
   }, [data, sector, rLines])
@@ -108,8 +114,8 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   // ── TOP/BOTTOM 랭킹
   const ranked = useMemo(() => {
     return universe
-      .map((p) => ({ label: p.label, v: chgN(p.close, rTop) }))
-      .filter((r): r is { label: string; v: number } => r.v != null)
+      .map((p) => ({ label: p.label, nameNote: p.nameNote, v: chgN(p, rTop) }))
+      .filter((r): r is { label: string; nameNote: string | undefined; v: number } => r.v != null)
       .sort((a, b) => b.v - a.v)
   }, [universe, rTop])
   const top10 = ranked.slice(0, 10)
@@ -118,13 +124,13 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   // ── ⑤ 추이 비교: TOP10 기본 선택 + 유니버스 체크박스 라인차트
   const [rUniv, setRUniv] = useState(36)
   const univTop = useMemo(
-    () => universe.map((p) => ({ bbid: p.bbid, v: chgN(p.close, rUniv) }))
+    () => universe.map((p) => ({ bbid: p.bbid, v: chgN(p, rUniv) }))
       .filter((r): r is { bbid: string; v: number } => r.v != null)
       .sort((a, b) => b.v - a.v),
     [universe, rUniv]
   )
   const [checked, setChecked] = useState<Set<string>>(() => {
-    const t = universe.map((p) => ({ bbid: p.bbid, v: chgN(p.close, 36) }))
+    const t = universe.map((p) => ({ bbid: p.bbid, v: chgN(p, 36) }))
       .filter((r): r is { bbid: string; v: number } => r.v != null)
       .sort((a, b) => b.v - a.v)
     return new Set(t.slice(0, 10).map((r) => r.bbid))
@@ -136,7 +142,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   const selected = useMemo(() => universe.filter((p) => checked.has(p.bbid)), [universe, checked])
   const univRows = useMemo(() => {
     const allMonths = Array.from(new Set(universe.flatMap((p) => p.dates))).sort()
-    const months = allMonths.slice(-(rUniv + 1))
+    const months = windowDates(allMonths, rUniv)
     const reb = selected.map((p) => ({ p, vals: rebaseSeries(p, months) }))
     return months.map((mo, i) => {
       const row: Record<string, number | string | null> = { month: mo }
@@ -155,19 +161,20 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
     </select>
   )
 
-  const Bars = ({ rows }: { rows: { label: string; v: number }[] }) => {
+  const Bars = ({ rows }: { rows: { label: string; nameNote?: string; v: number }[] }) => {
     const mx = Math.max(...rows.map((r) => Math.abs(r.v)), 0.0001)
     return (
       <div className="flex flex-col gap-1.5">
         {rows.map((r, i) => {
-          const w = (Math.abs(r.v) / mx) * 50
+          const mixed = rows.some(r => r.v < 0) && rows.some(r => r.v >= 0)
+          const w = (Math.abs(r.v) / mx) * (mixed ? 50 : 100)
           const col = r.v >= 0 ? POS : NEG
           return (
-            <div key={`${r.label}-${i}`} className="grid items-center gap-2 text-xs" style={{ gridTemplateColumns: '230px 1fr 60px' }}>
-              <span className="text-right text-[var(--muted)] truncate">{r.label}</span>
+            <div key={`${r.label}-${i}`} className="grid items-center gap-2 text-xs" style={{ gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 3fr) 60px' }}>
+              <span title={`${r.label}\n${r.nameNote || ''}`} className="text-right text-[var(--muted)] truncate">{r.label}</span>
               <span className="relative h-3.5">
-                <span className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--line)]" />
-                <span className="absolute top-0.5 h-2.5 rounded-sm" style={{ background: col, ...(r.v >= 0 ? { left: '50%', width: `${w}%` } : { right: '50%', width: `${w}%` }) }} />
+
+                <span className="absolute top-0.5 h-2.5 rounded-sm" style={{ background: col, width: `${w}%`, ...(mixed ? (r.v >= 0 ? { left: '50%' } : { right: '50%' }) : { left: 0 }) }} />
               </span>
               <span className="text-right" style={{ color: col }}>{r.v >= 0 ? '+' : ''}{(r.v * 100).toFixed(1)}%</span>
             </div>
@@ -209,7 +216,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
                     return (
                       <td key={f} className="text-center">
                         <span className="block py-1.5 rounded font-bold" style={{ background: heatColor(pc), minWidth: 26 }}>
-                          {pc == null ? '' : (pc * 100).toFixed(0)}
+                          {pc == null ? '—' : (pc * 100).toFixed(0)}
                         </span>
                       </td>
                     )
@@ -232,20 +239,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
           </span>
         }
       >
-        <div style={{ height: 300 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={lineData} margin={{ top: 6, right: 12, left: -12, bottom: 0 }}>
-              <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fontSize: 10, fill: '#5a5f66' }} minTickGap={32} />
-              <YAxis tick={{ fontSize: 10, fill: '#5a5f66' }} domain={['auto', 'auto']} />
-              <Tooltip contentStyle={{ fontSize: 11 }} />
-              <Legend wrapperStyle={{ fontSize: 10 }} />
-              {sectorFactors.map((f, i) => (
-                <Line key={f} type="monotone" dataKey={f} stroke={PALETTE[i % PALETTE.length]} strokeWidth={1.5} dot={false} connectNulls />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+        <ChartImage rows={lineData} series={sectorFactors.map((f, i) => ({ key: f, label: f, color: PALETTE[i % PALETTE.length] }))} title={`${sector} · ${rLines}M · 100 리베이스`} />
       </Card>
 
       <div className="grid gap-3.5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
@@ -268,31 +262,17 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
         <div className="max-h-40 overflow-y-auto border border-[var(--line)] rounded-lg p-2 mb-2.5 grid gap-x-3.5 gap-y-0.5"
           style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
           {universe.map((p) => (
-            <label key={p.bbid} className="text-xs flex items-center gap-1.5 truncate">
+            <label key={p.bbid} title={`${p.label}\n${p.nameNote || ''}`} className="text-xs flex items-center gap-1.5 truncate">
               <input type="checkbox" checked={checked.has(p.bbid)} onChange={() => toggle(p.bbid)} />
               <span className="truncate">{p.label}</span>
             </label>
           ))}
         </div>
-        <div style={{ height: 340 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={univRows} margin={{ top: 6, right: 12, left: -12, bottom: 0 }}>
-              <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fontSize: 10, fill: '#5a5f66' }} minTickGap={32} />
-              <YAxis tick={{ fontSize: 10, fill: '#5a5f66' }} domain={['auto', 'auto']} />
-              <Tooltip contentStyle={{ fontSize: 11 }} />
-              <Legend wrapperStyle={{ fontSize: 10 }} />
-              {selected.map((p, i) => (
-                <Line key={p.bbid} type="monotone" dataKey={p.bbid} name={p.label}
-                  stroke={PALETTE[i % PALETTE.length]} strokeWidth={1.3} dot={false} connectNulls />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+        <ChartImage rows={univRows} series={selected.map((p, i) => ({ key: p.bbid, label: p.label, color: PALETTE[i % PALETTE.length] }))} title={`선택 바스켓 · ${rUniv}M · 100 리베이스`} />
       </Card>
 
       <p className="text-[11px] text-[var(--muted)] mt-2">
-        데이터: GS Marquee PAIR_BASKETS_LEVELS (월별){data.generatedAt ? ` · 생성 ${data.generatedAt}` : ''}
+        데이터: GS Marquee PAIR_BASKETS_LEVELS ({data.frequency === 'daily' ? '일별 종가' : '월별'}){data.generatedAt ? ` · 생성 ${data.generatedAt}` : ''}
       </p>
     </section>
   )
