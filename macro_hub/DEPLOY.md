@@ -1,5 +1,11 @@
 # 배포 가이드 (Vercel) — 차근차근
 
+## Surprise Index 배포 연결 (2026-10-26)
+
+Consensus 다음에 `/surprise` 탭을 추가했습니다. 두 지수의 국가별 그래프와 히트맵은 `public/embeds/surprise.html` 하나에 데이터까지 포함됩니다. 전체 업데이트 web 단계는 Snowflake 조회→HTML 생성→동기화를 실행합니다. `npm run build`는 로컬 원본을 배포용 HTML로 동기화하거나 원본이 없으면 커밋된 public HTML을 검증합니다. Vercel에 CME 인증파일이나 API 키를 올릴 필요가 없습니다.
+
+첫 배포에는 탭·route·build/sync 코드 변경도 함께 커밋해야 합니다. 기본 업데이트의 산출물 전용 커밋은 최초 기능 코드까지 포함하지 않습니다. 이후에는 기존 public 산출물 업데이트 흐름으로 반영됩니다. 이번 연결 작업 자체는 commit/push 또는 운영 배포를 실행하지 않습니다.
+
 아침에 이 순서대로만 따라오시면 됩니다. 크게 **3단계**예요:
 (A) 로컬에서 데이터 채우고 화면 확인 → (B) GitHub에 올리기 → (C) Vercel 연결.
 

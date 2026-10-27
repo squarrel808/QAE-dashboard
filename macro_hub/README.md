@@ -14,6 +14,16 @@
 
 ## 1. 모듈
 
+### Surprise Index (2026-10-26 추가)
+
+탭 순서는 **Consensus → Surprise Index → Policy Tone**입니다. `/surprise`는 국가별 Economic 5DMA와 Inflation 월별 원자료의 개별 그래프·히트맵을 표시합니다. 원본은 `데일리시황/표_업데이트/surprise index/index.html`, 배포 파일은 `public/embeds/surprise.html`입니다.
+
+원본 `update_surprise.cmd` 실행 후 배포 파일이 자동 동기화됩니다. `전체업데이트.bat`의 web 단계에도 Snowflake 조회·생성 단계를 추가했으므로 `/webonly`·`/nightly`를 포함한 웹 갱신에서 함께 처리합니다. 조회 실패는 기존 실행기의 실패 처리에 따르며 Snowflake 인증정보는 로컬 연결 프로필과 키 파일에서만 읽습니다.
+
+`scripts/sync_embeds.py` 및 `npm run build`에서도 성공한 최신 HTML을 동기화·검증합니다. Vercel 빌드에서는 Snowflake에 접속하지 않습니다. QAE 원본이 빌드 환경에 없으면 이미 커밋된 `public/embeds/surprise.html`을 검증해 사용합니다. 데이터 기준일과 조회일을 구분하며, DB가 갱신되지 않으면 배포해도 관측일은 그대로입니다.
+
+최초 배포 시 새 route, NavTabs, package.json, scripts/sync_surprise.mjs 및 동기화 코드도 커밋해야 합니다. 기본 `전체업데이트.bat`의 Git 단계는 산출물만 담으므로 최초 기능 코드 커밋을 대신하지 않습니다. 이후 갱신된 public HTML은 기존 산출물 배포 대상에 자동 포함됩니다.
+
 ### Market Rotation (2026-09-23 추가)
 
 `/market-rotation` 탭은 `데일리시황/BQL/Dashbaord/유로존_dashboard/Market_Rotation_Dashboard_17_Indices.html`을 표시합니다.

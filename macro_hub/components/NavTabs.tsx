@@ -11,6 +11,7 @@ const TABS = [
   { href: '/caimap', label: 'CAI' },
   { href: '/cpidist', label: 'CPI 분포' },
   { href: '/consensus', label: 'Consensus' },
+  { href: '/surprise', label: 'Surprise Index' },
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
   { href: '/market-rotation', label: 'Market Rotation' },

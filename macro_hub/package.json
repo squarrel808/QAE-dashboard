@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/sync_surprise.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "data": "python scripts/build_pairbaskets_json.py && python scripts/build_policy_json.py && python scripts/build_consensus_json.py && python scripts/build_pca_json.py && python scripts/build_caimap_json.py",

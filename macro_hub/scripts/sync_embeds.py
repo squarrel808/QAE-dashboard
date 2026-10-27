@@ -16,6 +16,7 @@ React로 새로 그리지 않고 '원본 렌더러를 그대로 재사용'한다
 """
 import os
 import shutil
+import subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                 # macro_hub/
@@ -37,6 +38,7 @@ SOURCES = {
 
 def main():
     os.makedirs(DEST, exist_ok=True)
+    subprocess.run(['node', os.path.join(HERE, 'sync_surprise.mjs')], check=True)
     ok, miss = 0, 0
     for name, src in SOURCES.items():
         dst = os.path.join(DEST, name)
