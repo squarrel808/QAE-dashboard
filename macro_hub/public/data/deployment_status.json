@@ -1,5 +1,5 @@
 {
-  "runId": "20261026_230002",
+  "runId": "20261027_restore_dashboard_colors",
   "generatedAt": "2026-10-26T23:04:27",
   "latestSummary": "2026-10-21",
   "latestReport": "2026-10-21",
@@ -20,7 +20,7 @@
     "embeds/cpi_dist.html": "4a032956ec1f6cd24d07bac718c9f3e4af1ec95ab315a98e0a21fd42598f9295",
     "embeds/earnings.html": "75d2b012c48ceb988378c9af21685530526be49aa821cb593f472aad43e0ad05",
     "embeds/econ.html": "8f34aba77d7d92bc9b5cfd5c3ed2663497608102aa40f901b3b1b1f1e5fcc018",
-    "embeds/market_rotation.html": "84d2d6d5b453970902b4779976814152a9192d5c7c12b0b6212b88f3ec6829c4",
+    "embeds/market_rotation.html": "89a2d7b4639799b4988720cde6355eb17f05696ea13cc15a8cafb629d526a67e",
     "embeds/pca.html": "dc7c5f809b43ca66bc043ec3033ad401006224c00e06e4b33f2f51bf4fdab1f0",
     "embeds/surprise.html": "e4114bb8b73242142d419cff71b77be3551177cb1b17d3c2c3b816bbd3332250"
   }
