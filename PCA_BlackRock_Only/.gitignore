@@ -1,0 +1,15 @@
+# Rebuild locally; public/embeds/pca-iii contains the committed website snapshot.
+index.html
+dashboard_data.json
+classification_signs.*
+component_signs.csv
+indices.csv
+inputs.csv
+loadings.csv
+weights.csv
+selection_audit.csv
+blackrock_coverage.*
+validation.json
+update_status.json
+*.png
+logs/

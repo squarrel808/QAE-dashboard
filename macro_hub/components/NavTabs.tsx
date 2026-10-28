@@ -9,6 +9,7 @@ const TABS = [
   { href: '/reports', label: 'Report' },
   { href: '/pca', label: 'PCA' },
   { href: '/gdp-pca', label: 'PCA II' },
+  { href: '/pca-iii', label: 'PCA III' },
   { href: '/caimap', label: 'CAI' },
   { href: '/cpidist', label: 'CPI 분포' },
   { href: '/consensus', label: 'Consensus' },
@@ -25,7 +26,7 @@ export default function NavTabs() {
   return (
     <nav className="flex gap-2 flex-wrap mt-3">
       {TABS.map((t) => {
-        const active = path.startsWith(t.href)
+        const active = path === t.href || path.startsWith(t.href + '/')
         return (
           <Link
             key={t.href}

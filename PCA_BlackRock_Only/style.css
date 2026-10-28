@@ -1,0 +1,18 @@
+/* Full-width paired views keep the latest month visible on desktop. */
+.heat-pair{grid-template-columns:minmax(0,1fr)}
+.charts{display:block}.charts>.panel{margin:18px 0}
+.metric-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.metric-stack h3{font-size:14px;margin:0 0 7px}
+.metric-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.metric-end{font-size:15px;font-weight:600;white-space:nowrap}
+.latest-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0}
+.latest-pair .value{font-size:24px}.latest-pair small{display:block;font-size:11px;color:#738391}
+.sector-heatmap table,.heat-pair table{table-layout:fixed}
+.sector-heatmap th:first-child,.heat-pair th:first-child{width:100px}
+.sector-heatmap td,.sector-heatmap th,.heat-pair td,.heat-pair th{padding:8px 3px;font-size:11px}
+.heat-pair td:last-child,.sector-heatmap td:last-child{font-weight:700;box-shadow:inset -2px 0 #55758c,inset 2px 0 #55758c}
+.endpoint{font-weight:700;fill:#172e43;font-size:13px}
+.missing{color:#9a6b42;background:#fbf5ee;padding:12px;border-radius:6px}
+.end-values{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:5px}
+#mainchart svg,#momentumChart svg{max-height:270px}
+@media(max-width:700px){.sector-heatmap table,.heat-pair table{min-width:600px}.sector-heatmap th:first-child,.heat-pair th:first-child{width:90px}.metric-head{align-items:flex-start}.latest-pair .value{font-size:21px}}

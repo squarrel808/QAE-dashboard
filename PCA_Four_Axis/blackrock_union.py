@@ -9,7 +9,7 @@ import pandas as pd
 B=Path(__file__).resolve().parent
 GROUP={'Consumer':'C_actual','Capex':'I_business','Housing':'I_housing','Export':'X'}
 
-def extend(wide,specs,meta,core):
+def extend(wide,specs,meta,core,write_audit=True):
     rows=json.loads((B/'blackrock_reference.json').read_text(encoding='utf8'))
     baseline=json.loads((B/'pre_blackrock_union.json').read_text(encoding='utf8'))
     original={(r['country'],r['pk']) for r in baseline['indicators']}
@@ -57,5 +57,5 @@ def extend(wide,specs,meta,core):
             s=specs[key];r.update(kind=s['kind'],direction=s['direction'])
             s.setdefault('reference_matches',[]).append(r['reference'])
     assert original <= {(s['country'],s['pk']) for s in specs.values() if s['group'] in ['C_actual','C_labor','C_sentiment','I_business','I_housing','X']}
-    pd.DataFrame(audit).to_csv(B/'blackrock_coverage.csv',index=False,encoding='utf-8-sig')
+    if write_audit:pd.DataFrame(audit).to_csv(B/'blackrock_coverage.csv',index=False,encoding='utf-8-sig')
     return audit

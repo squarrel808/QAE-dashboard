@@ -17,6 +17,7 @@ def main():
     node=shutil.which('node')
     if not node:raise RuntimeError('Node.js is required to synchronize the dashboard snapshot')
     commands.append(('sync_dashboard',[node,str(BASE.parent/'macro_hub/scripts/sync_gdp_weighted.mjs')]))
+    commands.append(('pca_iii',[sys.executable,'-X','utf8',str(BASE.parent/'PCA_BlackRock_Only/run_update.py'),'--cached']))
     status={'started_kst':now.isoformat(),'cached':args.cached,'log':str(logfile),'steps':[],'success':False}
     try:
         with logfile.open('w',encoding='utf8') as log:

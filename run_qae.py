@@ -112,6 +112,8 @@ PIPELINE = [
      "macro_hub", os.path.join("scripts", "build_consensus_json.py")),
     ("web", "JSON (build_pca_json.py)", "build_pca_json.py",
      "macro_hub", os.path.join("scripts", "build_pca_json.py")),
+    ("web", "PCA III (pca_iii_update.py)", "pca_iii_update.py",
+     "PCA_BlackRock_Only", "run_update.py"),
     ("web", "JSON (build_caimap_json.py)", "build_caimap_json.py",
      "macro_hub", os.path.join("scripts", "build_caimap_json.py")),
     ("web", "embeds (sync_embeds.py)", "sync_embeds.py",
