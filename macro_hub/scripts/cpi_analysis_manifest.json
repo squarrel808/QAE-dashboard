@@ -532,5 +532,99 @@
         "divisor": 100
       }
     ]
+  },
+  "AustraliaQuarterly": {
+    "database": "ANZ",
+    "frequency": "Q",
+    "groups": [
+      {
+        "name": "Food and Nonalcoholic Beverages",
+        "weight": "auncwff@ANZ",
+        "index": "aunpcf@ANZ",
+        "descriptor": "AU: Consumer Price Index: Food and Nonalcoholic Beverages (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Food and Nonalcoholic Beverages (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Alcohol and Tobacco",
+        "weight": "auncwb@ANZ",
+        "index": "aunpcb@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Alcohol and Tobacco (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Alcohol and Tobacco (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Clothing and Footwear",
+        "weight": "auncwa@ANZ",
+        "index": "aunpca@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Clothing and Footwear (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Clothing and Footwear (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Housing",
+        "weight": "auncww@ANZ",
+        "index": "aunpch@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Housing (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Housing (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Furnishings, Household Equipment and Services",
+        "weight": "auncwg@ANZ",
+        "index": "aunpco@ANZ",
+        "descriptor": "AU: CPI: Furnishings, Household Equipment and Services (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Household Contents and Services (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Health",
+        "weight": "auncwm@ANZ",
+        "index": "aunpcph@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Health (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Health (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Transport",
+        "weight": "auncwtc@ANZ",
+        "index": "aunpct@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Transport (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Transport (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Communication",
+        "weight": "auncwc@ANZ",
+        "index": "aunpcc@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Communication (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Communication (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Recreation and Culture",
+        "weight": "auncwr@ANZ",
+        "index": "aunpcr@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Recreation and Culture (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Recreation (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Education",
+        "weight": "auncwe@ANZ",
+        "index": "aunpcd@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Education (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Education (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Insurance and Financial Services",
+        "weight": "auncwfs@ANZ",
+        "index": "aunpcif@ANZ",
+        "descriptor": "AU: Consumer Price Index: Insurance and Financial Services (NSA, Sep-25=100)",
+        "weight_descriptor": "Australia: CPI Weights: Financial and Insurance Services (Parts per 100)",
+        "divisor": 100
+      }
+    ]
   }
 }

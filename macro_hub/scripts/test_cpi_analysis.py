@@ -13,7 +13,7 @@ class CpiSnapshotTests(unittest.TestCase):
         cls.raw=json.loads((ROOT/'haver/haver-api_CPI/cpi_analysis_raw.json').read_text())
 
     def test_baskets_cover_all_six_countries_without_duplicate_indices(self):
-        self.assertEqual(set(self.data['countries']),{'US','Japan','UK','Germany','Australia','Canada'})
+        self.assertEqual(set(self.data['countries']),{'US','Japan','UK','Germany','Australia','Canada','AustraliaQuarterly'})
         for country,v in self.data['countries'].items():
             groups=v['groups']
             self.assertEqual(len(groups),len({g['index'] for g in groups}),country)
@@ -27,10 +27,11 @@ class CpiSnapshotTests(unittest.TestCase):
     def test_calendar_rates_match_raw_prices(self):
         for v in self.data['countries'].values():
             for g in v['groups']:
-                raw={k[:7]:x for k,x in self.raw[g['index']].items()}
+                frequency='Q' if v.get('frequency')=='Q' else 'M'
+                raw={str(pd.Period(k,frequency)):x for k,x in self.raw[g['index']].items()}
                 for o in g['observations'][-24:]:
-                    d=pd.Period(o['date'],'M')
-                    for key,lag in [('mom',1),('yoy',12)]:
+                    d=pd.Period(o['date'],frequency)
+                    for key,lag in [('mom',1),('yoy',4 if frequency=='Q' else 12)]:
                         before=raw.get(str(d-lag))
                         if before is None:self.assertIsNone(o[key])
                         else:self.assertAlmostEqual(o[key],(raw[str(d)]/before-1)*100,places=4)

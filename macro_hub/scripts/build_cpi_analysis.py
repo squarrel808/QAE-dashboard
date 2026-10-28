@@ -71,6 +71,9 @@ def make_manifest():
                            'divisor':10000 if '10000' in w['descriptor'] else 1000 if '1000' in w['descriptor'] else 100})
         result[country]={'database':db,'groups':groups}
         print(country,len(groups),[(g['weight'],g['index']) for g in groups],flush=True)
+    if CONFIG.exists():
+        previous=json.loads(CONFIG.read_text(encoding='utf-8'))
+        if 'AustraliaQuarterly' in previous:result['AustraliaQuarterly']=previous['AustraliaQuarterly']
     CONFIG.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
 
 def fetch(manifest):
@@ -88,7 +91,7 @@ def fetch(manifest):
         same=[t for t in ordered if frequencies[t.lower().split('@')[0]+'@'+t.split('@')[1]]==freq]
         chunks.extend(same[i:i+20] for i in range(0,len(same),20))
     for chunk in chunks:
-        data=Haver.data(chunk,startdate='2017-01-01',dates=True,codeformat=['@','full'],underscore=False)
+        data=Haver.data(chunk,startdate='1990-01-01',dates=True,codeformat=['@','full'],underscore=False)
         if not isinstance(data,pd.DataFrame) or data.shape[1]!=len(chunk):
             raise RuntimeError(f'Haver incomplete batch: {chunk}')
         columns={str(c).lower():c for c in data.columns}
@@ -111,26 +114,33 @@ def build(manifest):
     dates=pd.period_range('2017-01',pd.Timestamp.today().to_period('M'),freq='M')
     countries={}
     for country,v in manifest.items():
+        quarterly=v.get('frequency')=='Q'
+        period_dates=pd.period_range('1990Q1',pd.Timestamp.today().to_period('Q'),freq='Q') if quarterly else dates
         groups=[]
         for g in v['groups']:
-            p=monthly(raw[g['index']]).reindex(dates)
-            w=monthly(raw[g['weight']]).reindex(dates).ffill()/g['divisor']*100
+            p=monthly(raw[g['index']])
+            w=monthly(raw[g['weight']])
+            if quarterly:
+                p.index=p.index.asfreq('Q');p=p.groupby(level=0).last()
+                w.index=w.index.asfreq('Q');w=w.groupby(level=0).last()
+            p=p.reindex(period_dates)
+            w=w.reindex(period_dates).ffill()/g['divisor']*100
             records=[]
-            for lag,key in [(1,'mom'),(12,'yoy')]:
+            for lag,key in [(1,'mom'),(4 if quarterly else 12,'yoy')]:
                 rate=(p/p.shift(lag)-1)*100
                 # Explicit estimate: reference-period basket weight times rate.
                 contribution=rate*w.shift(lag)/100
                 records.append((key,rate,contribution))
             obs=[]
-            for i,d in enumerate(dates):
+            for i,d in enumerate(period_dates):
                 if pd.isna(p.iloc[i]):continue
                 row={'date':str(d),'weight':w.iloc[i]}
                 for key,rate,contrib in records:
                     row[key]=rate.iloc[i];row[key+'_contribution']=contrib.iloc[i]
-                    row[key+'_weight']=w.shift(1 if key=='mom' else 12).iloc[i]
+                    row[key+'_weight']=w.shift(1 if key=='mom' else (4 if quarterly else 12)).iloc[i]
                 obs.append({k:(None if pd.isna(x) else round(float(x),5)) if k!='date' else x for k,x in row.items()})
             groups.append({**g,'descriptor':descriptions.get(g['index'],g['descriptor']),'observations':obs})
-        countries[country]={'groups':groups,'method':'estimate'}
+        countries[country]={'groups':groups,'method':'estimate','frequency':'Q' if quarterly else 'M'}
     payload={'generated':pd.Timestamp.now().isoformat(),'countries':countries,
              'method':'기준시점 가중치 × 항목 상승률 / 100. YoY는 12개월 전, MoM은 1개월 전 가중치. 공식 기여도가 아닌 근사치이며 연쇄지수·가중치 개편으로 총 CPI와 차이가 날 수 있습니다.'}
     cores=[]

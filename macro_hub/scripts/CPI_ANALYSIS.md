@@ -17,3 +17,7 @@ Run `python macro_hub/scripts/build_cpi_analysis.py --fetch` from the repository
 - Full history begins in 2017 where available; UI dates reflect actual observed dates. No synthetic inflation or missing-month interpolation is used.
 
 Validation: `python macro_hub/scripts/test_cpi_analysis.py`, `npx tsc --noEmit`, `npm run build`, and browser interaction checks.
+
+## Australia quarterly
+
+The country selector includes 호주 (분기), independently sourced from 11 native quarterly ANZ price indices and quarterly basket weights. History starts in 1990 where available; insurance/financial services starts in 2005Q2. QoQ uses a one-quarter lag, YoY four quarters, and the corresponding reference-quarter weight. The JSON retains the internal `mom` key for the one-period return, but the quarterly UI always labels it QoQ. Quarterly history is not synthesized from the short monthly series. Missing components remain blank and coverage is shown. Display windows are 12/24/40/80/160 quarters.
