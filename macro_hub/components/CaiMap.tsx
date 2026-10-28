@@ -31,6 +31,19 @@ function heatColor(v: number | null | undefined, maxAbs: number) {
 export default function CaiMap({ data }: { data: CaiMapData }) {
   const [view, setView] = useState<'cai' | 'map'>('cai')
   const [months, setMonths] = useState(60)
+  const [overview, setOverview] = useState(true)
+  const dm = [['EAagg','유로존'],['DE','독일'],['FR','프랑스'],['IT','이탈리아'],['ES','스페인'],['NL','네덜란드'],['BE','벨기에'],['AT','오스트리아'],['FI','핀란드'],['IE','아일랜드'],['PT','포르투갈'],['GR','그리스'],['US','미국'],['GB','영국'],['CA','캐나다'],['AU','호주'],['JP','일본']]
+  const overviewHeat = useMemo(() => {
+    const dates = Array.from(new Set(dm.flatMap(([id]) => data.cai[id]?.dates || []))).sort()
+    const selected = dates.slice(months >= 9999 ? 0 : -months)
+    const matrix = dm.map(([id, label]) => {
+      const series = data.cai[id]
+      const lookup = new Map(series?.dates.map((d, i) => [d, series.headline[i]]) || [])
+      return { id, label, values: selected.map(d => lookup.get(d) ?? null) }
+    })
+    const maxAbs = Math.max(1, ...matrix.flatMap(r => r.values.map(v => Math.abs(v ?? 0))))
+    return { dates: selected, matrix, maxAbs }
+  }, [data, months])
   const pool = view === 'cai' ? data.cai : data.map
   const available = data.countries.filter((c) => pool[c.id])
   const [country, setCountry] = useState('US')
@@ -95,24 +108,33 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
     <section>
       <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
         <div>
-          <h2 className="serif text-[18px] m-0">CAI · MAP — {label}</h2>
+          <h2 className="serif text-[18px] m-0">CAI · MAP — {view === 'cai' && overview ? '주요 DM 전체' : label}</h2>
           <p className="text-xs text-[var(--muted)] mt-1">
             {view === 'cai' ? 'Current Activity Indicator (월별)' : 'MAP (일별)'} · 막대/선에 마우스를 올리면 값 표시
           </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <div className="flex gap-1">
-            <Btn on={view === 'cai'} onClick={() => setView('cai')}>CAI</Btn>
+            <Btn on={view === 'cai' && overview} onClick={() => { setView('cai'); setOverview(true) }}>CAI 전체</Btn>
+            <Btn on={view === 'cai' && !overview} onClick={() => { setView('cai'); setOverview(false) }}>CAI 국가별</Btn>
             <Btn on={view === 'map'} onClick={() => setView('map')}>MAP</Btn>
           </div>
-          <select value={activeId} onChange={(e) => setCountry(e.target.value)}
+          {!(view === 'cai' && overview) && <select value={activeId} onChange={(e) => setCountry(e.target.value)}
             className="bg-[var(--head)] border border-[var(--line)] rounded-lg px-3 py-2 text-sm font-medium">
             {available.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}
-          </select>
+          </select>}
           <div className="flex gap-1">{RANGES.map(([lab, m]) => <Btn key={m} on={months === m} onClick={() => setMonths(m)}>{lab}</Btn>)}</div>
         </div>
       </div>
 
+      {view === 'cai' && overview ? <div className="rounded-xl border border-[var(--line)] bg-white p-3.5">
+        <h3 className="serif text-[15px] mb-2">주요 DM · CAI 헤드라인</h3>
+        <p className="text-xs text-[var(--muted)] mb-3">초록 = 양수 · 빨강 = 음수 · 진하기 = 표시 기간 내 상대 크기 · — = 데이터 없음</p>
+        <div className="overflow-x-auto"><table style={{ borderSpacing: 2, borderCollapse: 'separate', fontSize: 11, width: '100%' }}>
+          <thead><tr><th className="sticky left-0 bg-white">국가</th>{overviewHeat.dates.map(d => <th key={d} className="whitespace-nowrap font-normal px-1">{d.slice(2,7)}</th>)}</tr></thead>
+          <tbody>{overviewHeat.matrix.map(r => <tr key={r.id}><th scope="row" className="sticky left-0 bg-white text-left whitespace-nowrap pr-3">{r.label}</th>{r.values.map((v,i) => { const c = heatColor(v, overviewHeat.maxAbs); return <td key={i} title={`${r.label} · ${overviewHeat.dates[i]}: ${v ?? '데이터 없음'}`} style={{ background: c.bg, color: c.fg, minWidth: 42, textAlign: 'center', padding: '8px 4px', borderRadius: 4 }}>{v == null ? '—' : v.toFixed(1)}</td> })}</tr>)}</tbody>
+        </table></div>
+      </div> : <>
       <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-3.5">
         <h3 className="serif text-[15px] mb-2.5">
           {view === 'cai' ? 'Headline + 섹터 기여도' : 'Headline + 섹터별 서프라이즈'}
@@ -216,6 +238,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
           </div>
         </div>
       )}
+      </>}
     </section>
   )
 }
