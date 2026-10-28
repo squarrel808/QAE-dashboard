@@ -5,7 +5,7 @@ haver-api 의 dashboard_data.xlsx 에서 직접 읽어 국가별 CPI 분포 대�
 
 데이터 흐름:
   dashboard_data.xlsx (Wide=원자료, Metadata=설명) → YoY% 계산
-  (기준연도 변경으로 끊긴 지수는 이어붙인 뒤 계산 — find_level_steps 주석 참고)
+  (동시 단절이 있는 국가는 단절을 가로지르는 전년비 구간 제외)
   → descriptor 콜론 앞부분으로 국가 분류 → 4-panel 시각화
 
 4패널 구성:
@@ -198,21 +198,9 @@ def compute_yoy_smart(series):
 # ------------------------------------------------------------
 # 기준연도 변경(리베이스) 이어붙이기
 # ------------------------------------------------------------
-# 통계청이 지수 기준연도를 바꾸면(예: 일본 2020=100 -> 2025=100) 원계열의 수준이
-# 그 달에 통째로 내려앉는다. 겹치는 구간을 같이 주지 않으므로 레벨만 보고 YoY 를
-# 계산하면 그 뒤 12개월이 통째로 가짜 마이너스가 된다.
-#   실제로 일본은 2025-01 에 731개 중 532개가 한꺼번에 끊겨(125.6 -> 98.0)
-#   2025년 내내 중앙값 YoY 가 -10% 로 찍혔다.
-# 그래서 끊긴 시점 이전 구간에 링크 비율을 곱해 수준을 맞춘 뒤 YoY 를 계산한다.
-#
-# 한계를 알고 쓸 것: 겹치는 구간이 원자료에 없어서 링크 비율에는 이음매 달의 실제
-# 월간 상승분이 섞여 들어간다. 중앙값은 제자리를 찾지만(일본 2025년 1.5~1.9%,
-# 연속 시리즈인 코어CPI 대비 평소 격차 +0.25%p 그대로) 품목별로는 그 달의 가격
-# 변동이 서로 달라서, 이어붙인 12개월 동안 '0% 미만 품목' 비중이 실제보다 약 9%p
-# 높게 나온다. 이걸 마저 없애려면 구 기준 계열이나 공식 링크계수가 필요하다.
-#
-# 품목 하나가 실제로 급등한 것과 구분하는 기준은 **동시성**이다. 리베이스는 한 나라
-# 시리즈가 같은 달에 우르르 끊기고, 에너지 급등 같은 건 품목마다 시점이 흩어진다.
+# 동시 수준 단절은 기준연도 혼합의 의심 신호이며 공식 리베이스 확인이 아니다.
+# 검증된 연결계수 없이 직전월 비율로 이어붙이지 않는다.
+# 국가 분포는 마지막 단절로부터 12개월이 지난 동일 기준 비교 가능 구간만 표시한다.
 REBASE_MIN_STEP = 0.08      # 한 달 만에 로그수익률이 이만큼 튀면 후보
 REBASE_PERSIST = 0.06       # 튄 뒤 12개월 평균이 이전 12개월과 이만큼 차이나야 (되돌아오는 급등 제외)
 REBASE_MIN_SHARE = 0.20     # 그 달에 그 나라 레벨 시리즈의 이 비율 이상이 같이 튀어야 리베이스
@@ -463,7 +451,7 @@ def build_country_data(country_yoy_df):
         # Median
         median = vals[n // 2] if n % 2 == 1 else (vals[n // 2 - 1] + vals[n // 2]) / 2
 
-        # Trimmed Mean #1 (16% — 상하위 8%씩 대칭 절단, Cleveland Fed 방식)
+        # Trimmed Mean #1 (16% — 상하위 8%씩 대칭 절단, 가중치 미적용)
         cut = max(1, int(n * TRIMMED_MEAN_CUT))
         trimmed = vals[cut:n - cut] if n > cut * 2 else vals
         trimmed_mean = sum(trimmed) / len(trimmed) if trimmed else median
@@ -581,6 +569,8 @@ def extract_all_from_haver():
         if country is None:
             skipped_no_country += 1
             continue
+        if not re.search(r'\bCPI(?:-U|H)?\b|\bHICP\b|consumer price', descriptor, re.I):
+            continue
         chg_type = detect_change_type(descriptor)
         if chg_type == 'yoy':
             n_chg_yoy += 1
@@ -603,8 +593,8 @@ def extract_all_from_haver():
         steps_by_col = {col: find_level_steps(wide[col]) for col in level_cols}
         rebase_dates = detect_rebase_dates(steps_by_col, len(level_cols))
         for d, k in sorted(rebase_dates.items()):
-            print(f"  [REBASE] {country}: {d:%Y-%m} 기준연도 변경 감지 "
-                  f"— {k}/{len(level_cols)}개 시리즈 이어붙임")
+            print(f"  [REBASE] {country}: {d:%Y-%m} 원지수 동시 단절 감지 "
+                  f"— {k}/{len(level_cols)}개 시리즈 — 연결 보정 없이 비교 불가 기간 제외")
 
         yoy_per_col = {}
         for col, desc, chg_type in items:
@@ -614,13 +604,19 @@ def extract_all_from_haver():
             elif chg_type in ('mom', 'qoq'):
                 yoy_per_col[col] = derive_yoy_from_mom_pct(s)
             else:
-                yoy_per_col[col] = compute_yoy_smart(
-                    chain_link(s, rebase_dates, steps_by_col.get(col, {})))
+                yoy_per_col[col] = compute_yoy_smart(s)
         sub_df = pd.DataFrame(yoy_per_col)
         sub_df.columns = [parse_subcategory(d) for _, d, _ in items]
         sub_df = sub_df.loc[:, ~sub_df.columns.duplicated()]
 
+        quality_note = ''
+        if rebase_dates:
+            safe_start = (max(rebase_dates).to_period('M') + 12).to_timestamp()
+            sub_df = sub_df.loc[sub_df.index >= safe_start]
+            quality_note = f'원지수 동시 단절 감지: {max(rebase_dates):%Y-%m}. 공식 연결계수 미확인으로 단절을 가로지르는 전년비를 제외했습니다. {safe_start:%Y-%m} 이후만 표시합니다.'
         data = build_country_data(sub_df)
+        if data:
+            data['quality_note'] = quality_note
         if data:
             result[country] = data
             print(f"  [OK] {country}: {data['item_count']} items, "
@@ -639,6 +635,10 @@ def extract_all_from_haver():
             print(f"         desc: {sel['descriptor'][:100]}")
         else:
             result[country]['core_momentum'] = None
+
+    for missing in ('Korea', 'China'):
+        if missing not in result:
+            result[missing] = {'unavailable': True, 'quality_note': '현재 원자료에 CPI 세부 품목이 없습니다. PMI·금리·수출은 CPI 분포에서 제외했습니다.', 'ridge': [], 'stats_timeline': [], 'core_momentum': None}
 
     # 6) 표시 순서 정렬 (US 먼저)
     ordered = {}
@@ -715,11 +715,11 @@ function drawRidge(cv,state,sharedMaxY){
   const N=items.length;const range=xH-xL;
 
   const dpr=window.devicePixelRatio||1;
-  const W=640,pH=120,rS=N<=8?36:N<=12?30:24;
+  const W=Math.max(540,Math.round(cv.parentElement.clientWidth-28)),pH=120,rS=N<=8?36:N<=12?30:24;
   const tP=14,bP=30,lP=120,rP=14;
   const H=tP+pH+(N-1)*rS+bP;
   cv.width=W*dpr;cv.height=H*dpr;
-  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth=W+'px';
+  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const pL=lP,pR=W-rP;
   function xP(v){return pL+((v-xL)/(xH-xL||1))*(pR-pL);}
@@ -730,11 +730,11 @@ function drawRidge(cv,state,sharedMaxY){
     const px=xP(v);x.beginPath();x.moveTo(px,tP-3);x.lineTo(px,H-bP+6);x.stroke();
   }
   x.setLineDash([]);
-  x.font='10px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.85)';x.textAlign='center';
+  x.font='13px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.85)';x.textAlign='center';
   for(let v=Math.ceil(xL/st)*st;v<=xH+1e-9;v+=st)x.fillText(v.toFixed(st<1?1:0)+'%',xP(v),H-bP+18);
 
   // 우상단에 KDE bandwidth 값 표시 (국가간 비교 시 참고용)
-  x.textAlign='right';x.fillStyle='rgba(255,200,120,0.55)';x.font='600 10px DM Sans,sans-serif';
+  x.textAlign='right';x.fillStyle='rgba(255,200,120,0.55)';x.font='600 13px DM Sans,sans-serif';
   x.fillText('bw='+(state.bw||0).toFixed(2),W-rP,tP-2);
 
   for(let i=N-1;i>=0;i--){
@@ -766,11 +766,11 @@ function drawRidge(cv,state,sharedMaxY){
     function dot(xV,sz,lb,side){
       const ky=fky(c,xV);const px=xP(xV),py=bl-(ky/mY)*pH;
       x.beginPath();x.arc(px,py,sz,0,Math.PI*2);x.fillStyle=dc;x.fill();x.strokeStyle='rgba(0,0,0,0.35)';x.lineWidth=1.2;x.stroke();
-      if(lb){x.fillStyle=lc;x.font='600 11px DM Sans,sans-serif';x.textAlign=side==='center'?'center':side;
+      if(lb){x.fillStyle=lc;x.font='600 14px DM Sans,sans-serif';x.textAlign=side==='center'?'center':side;
         const o=side==='left'?6:side==='right'?-6:0;x.fillText(lb,px+o,py-6);}
     }
     dot(av,3.5,av.toFixed(1)+'%','center');dot(mn,2,mn.toFixed(1)+'%','right');dot(mx,2,mx.toFixed(1)+'%','left');
-    x.textAlign='right';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 12px DM Sans,sans-serif';
+    x.textAlign='right';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 16px DM Sans,sans-serif';
     x.fillText(items[i].date,lP-6,bl+4);
   }
 }
@@ -778,9 +778,9 @@ function drawRidge(cv,state,sharedMaxY){
 function drawDualLine(cv,stats){
   if(!stats||!stats.length)return;
   const dpr=window.devicePixelRatio||1;
-  const W=640,H=520;
+  const W=Math.max(540,Math.round(cv.parentElement.clientWidth-28)),H=460;
   cv.width=W*dpr;cv.height=H*dpr;
-  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth=W+'px';
+  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const tP=20,bP=40,lP=50,rP=60;
   const pW=W-lP-rP,pH_=H-tP-bP;
@@ -796,9 +796,9 @@ function drawDualLine(cv,stats){
   const st=(yMax-yMin)>3?1:(yMax-yMin)>1?0.5:0.2;
   for(let v=Math.ceil(yMin/st)*st;v<=yMax+1e-9;v+=st){const py=yP(v);x.beginPath();x.moveTo(lP,py);x.lineTo(W-rP,py);x.stroke();}
   x.setLineDash([]);
-  x.font='12px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
+  x.font='16px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
   for(let v=Math.ceil(yMin/st)*st;v<=yMax+1e-9;v+=st)x.fillText(v.toFixed(1)+'%',lP-6,yP(v)+4);
-  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 12px DM Sans,sans-serif';
+  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 16px DM Sans,sans-serif';
   const skip=Math.max(1,Math.ceil(N/6));
   for(let i=0;i<N;i+=skip){x.fillText(stats[i].month,xP(i),H-bP+20);}
   // 3개 라인
@@ -821,25 +821,25 @@ function drawDualLine(cv,stats){
     const px=xP(N-1),py=yP(v);
     x.beginPath();x.arc(px,py,4,0,Math.PI*2);x.fillStyle=color;x.fill();
     x.strokeStyle='rgba(0,0,0,0.4)';x.lineWidth=1.5;x.stroke();
-    x.fillStyle=color;x.font='bold 12px DM Sans,sans-serif';x.textAlign='left';
+    x.fillStyle=color;x.font='bold 16px DM Sans,sans-serif';x.textAlign='left';
     x.fillText(v.toFixed(2)+'%',px+8,py+offset);
   }
   dotLabel(last.median,'#5DCAA5',-6);
   dotLabel(last.trimmed_mean,'#42a5f5',4);
   dotLabel(last.trimmed_mean_32,'#ab47bc',14);
   // 범례
-  x.textAlign='left';x.font='600 12px DM Sans,sans-serif';
+  x.textAlign='left';x.font='600 16px DM Sans,sans-serif';
   x.fillStyle='#5DCAA5';x.fillRect(lP+4,tP+2,12,3);x.fillText('Median',lP+22,tP+10);
-  x.fillStyle='#42a5f5';x.fillRect(lP+90,tP+2,12,3);x.fillText('Trimmed Mean(16%)',lP+108,tP+10);
-  x.fillStyle='#ab47bc';x.fillRect(lP+250,tP+2,12,3);x.fillText('Trimmed Mean(24%/31%)',lP+268,tP+10);
+  x.fillStyle='#42a5f5';x.fillRect(lP+105,tP+2,12,3);x.fillText('Trimmed Mean(16%)',lP+123,tP+10);
+  x.fillStyle='#ab47bc';x.fillRect(lP+290,tP+2,12,3);x.fillText('Trimmed Mean(24%/31%)',lP+308,tP+10);
 }
 
 function drawDistChart(cv,stats){
   if(!stats||!stats.length)return;
   const dpr=window.devicePixelRatio||1;
-  const W=640,H=520;
+  const W=Math.max(540,Math.round(cv.parentElement.clientWidth-28)),H=460;
   cv.width=W*dpr;cv.height=H*dpr;
-  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth=W+'px';
+  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const tP=20,bP=40,lP=50,rP=20;
   const pW=W-lP-rP,pH_=H-tP-bP;
@@ -852,7 +852,7 @@ function drawDistChart(cv,stats){
   x.strokeStyle='rgba(0,0,0,.07)';x.lineWidth=0.5;x.setLineDash([2,4]);
   for(let p=0;p<=100;p+=20){x.beginPath();x.moveTo(lP,yP(p));x.lineTo(W-rP,yP(p));x.stroke();}
   x.setLineDash([]);
-  x.font='12px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
+  x.font='16px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
   for(let p=0;p<=100;p+=20)x.fillText(p+'%',lP-6,yP(p)+4);
   const stackH=[];
   for(let i=0;i<N;i++){const s=[0];for(let ki=0;ki<keys.length;ki++){s.push(s[s.length-1]+(stats[i].dist[keys[ki]]||0));}stackH.push(s);}
@@ -862,12 +862,12 @@ function drawDistChart(cv,stats){
     for(let i=N-1;i>=0;i--)x.lineTo(xP(i),yP(stackH[i][ki]));
     x.closePath();x.fillStyle=colors[ki];x.globalAlpha=0.8;x.fill();x.globalAlpha=1;
   }
-  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 12px DM Sans,sans-serif';
+  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 16px DM Sans,sans-serif';
   const skip=Math.max(1,Math.ceil(N/6));
   for(let i=0;i<N;i+=skip){x.fillText(stats[i].month,xP(i),H-bP+22);}
-  x.font='600 12px DM Sans,sans-serif';x.textAlign='left';
+  x.font='600 16px DM Sans,sans-serif';x.textAlign='left';
   for(let ki=0;ki<labels.length;ki++){
-    const lx=lP+ki*78;
+    const lx=lP+ki*((W-lP-rP)/6);
     x.fillStyle=colors[ki];x.fillRect(lx,tP+2,10,10);
     x.fillStyle='rgba(26,28,31,0.7)';x.fillText(labels[ki],lx+13,tP+11);
   }
@@ -876,9 +876,9 @@ function drawDistChart(cv,stats){
 function drawMovingAvg(cv,stats){
   if(!stats||!stats.length)return;
   const dpr=window.devicePixelRatio||1;
-  const W=640,H=520;
+  const W=Math.max(540,Math.round(cv.parentElement.clientWidth-28)),H=460;
   cv.width=W*dpr;cv.height=H*dpr;
-  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth=W+'px';
+  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const tP=20,bP=40,lP=50,rP=60;
   const pW=W-lP-rP,pH_=H-tP-bP;
@@ -901,7 +901,7 @@ function drawMovingAvg(cv,stats){
   x.strokeStyle='rgba(0,0,0,.07)';x.lineWidth=0.5;x.setLineDash([2,4]);
   for(let p=Math.ceil(yMin/gStep)*gStep;p<=yMax;p+=gStep){x.beginPath();x.moveTo(lP,yP(p));x.lineTo(W-rP,yP(p));x.stroke();}
   x.setLineDash([]);
-  x.font='12px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
+  x.font='16px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
   for(let p=Math.ceil(yMin/gStep)*gStep;p<=yMax;p+=gStep)x.fillText(p+'%',lP-6,yP(p)+4);
 
   if(yMin<=50&&yMax>=50){x.strokeStyle='rgba(0,0,0,0.18)';x.lineWidth=1;x.setLineDash([4,4]);
@@ -919,23 +919,23 @@ function drawMovingAvg(cv,stats){
 
   const lastV=ma3[N-1];
   x.beginPath();x.arc(xP(N-1),yP(lastV),4,0,Math.PI*2);x.fillStyle='#ff9800';x.fill();x.strokeStyle='rgba(0,0,0,0.4)';x.lineWidth=1.5;x.stroke();
-  x.fillStyle='#ffb74d';x.font='bold 12px DM Sans,sans-serif';x.textAlign='left';
+  x.fillStyle='#ffb74d';x.font='bold 16px DM Sans,sans-serif';x.textAlign='left';
   x.fillText(lastV.toFixed(1)+'%',xP(N-1)+8,yP(lastV)+4);
 
-  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 12px DM Sans,sans-serif';
+  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.85)';x.font='600 16px DM Sans,sans-serif';
   const skip=Math.max(1,Math.ceil(N/6));
   for(let i=0;i<N;i+=skip){x.fillText(stats[i].month,xP(i),H-bP+22);}
 
-  x.fillStyle='rgba(90,95,102,0.9)';x.font='600 12px DM Sans,sans-serif';x.textAlign='left';
+  x.fillStyle='rgba(90,95,102,0.9)';x.font='600 16px DM Sans,sans-serif';x.textAlign='left';
   x.fillStyle='#ff9800';x.fillText('3M MA (Expanding %)',lP+4,tP+10);
 }
 
 function drawCoreMomentum(cv,mom){
   if(!cv||!mom)return;
   const dpr=window.devicePixelRatio||1;
-  const W=1300,H=420;
+  const W=Math.max(540,Math.round(cv.parentElement.clientWidth-28)),H=400;
   cv.width=W*dpr;cv.height=H*dpr;
-  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth=W+'px';
+  cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const tP=24,bP=44,lP=58,rP=110;
   const pW=W-lP-rP,pH_=H-tP-bP;
@@ -958,7 +958,7 @@ function drawCoreMomentum(cv,mom){
   if(yMin<=2&&yMax>=2){
     x.strokeStyle='rgba(180,180,180,0.30)';x.lineWidth=1;x.setLineDash([6,4]);
     x.beginPath();x.moveTo(lP,yP(2));x.lineTo(W-rP,yP(2));x.stroke();x.setLineDash([]);
-    x.fillStyle='rgba(180,180,180,0.6)';x.font='10px DM Sans,sans-serif';x.textAlign='left';
+    x.fillStyle='rgba(180,180,180,0.6)';x.font='13px DM Sans,sans-serif';x.textAlign='left';
     x.fillText('2%',W-rP+4,yP(2)+3);
   }
   // 0% 라인
@@ -967,7 +967,7 @@ function drawCoreMomentum(cv,mom){
     x.beginPath();x.moveTo(lP,yP(0));x.lineTo(W-rP,yP(0));x.stroke();
   }
 
-  x.font='12px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
+  x.font='16px DM Sans,sans-serif';x.fillStyle='rgba(90,95,102,0.9)';x.textAlign='right';
   for(let v=Math.ceil(yMin/st)*st;v<=yMax+1e-9;v+=st)x.fillText(v.toFixed(st<1?1:0)+'%',lP-6,yP(v)+4);
 
   // 시리즈 그리기 (3개 라인: 12M YoY, 3M/3M ann, 6M/6M ann)
@@ -993,7 +993,7 @@ function drawCoreMomentum(cv,mom){
     const v=arr[i];const px=xP(i),py=yP(v);
     x.beginPath();x.arc(px,py,4,0,Math.PI*2);x.fillStyle=color;x.fill();
     x.strokeStyle='rgba(0,0,0,0.4)';x.lineWidth=1.2;x.stroke();
-    x.fillStyle=color;x.font='bold 12px DM Sans,sans-serif';x.textAlign='left';
+    x.fillStyle=color;x.font='bold 16px DM Sans,sans-serif';x.textAlign='left';
     x.fillText(v.toFixed(2)+'%',px+8,py+offset);
   }
   dotLabel(yoy,'#5DCAA5',-6);
@@ -1001,18 +1001,18 @@ function drawCoreMomentum(cv,mom){
   dotLabel(m6,'#42a5f5',14);
 
   // X축 라벨
-  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.7)';x.font='600 11px DM Sans,sans-serif';
+  x.textAlign='center';x.fillStyle='rgba(26,28,31,0.7)';x.font='600 14px DM Sans,sans-serif';
   const skip=Math.max(1,Math.ceil(N/10));
   for(let i=0;i<N;i+=skip){x.fillText(dates[i],xP(i),H-bP+22);}
 
   // 범례 (좌상단)
-  x.textAlign='left';x.font='600 12px DM Sans,sans-serif';
+  x.textAlign='left';x.font='600 16px DM Sans,sans-serif';
   x.fillStyle='#5DCAA5';x.fillRect(lP+4,tP+2,12,3);x.fillText('12M YoY',lP+22,tP+10);
-  x.fillStyle='#ff9800';x.fillRect(lP+110,tP+2,12,3);x.fillText('3M/3M ann.',lP+128,tP+10);
-  x.fillStyle='#42a5f5';x.fillRect(lP+230,tP+2,12,3);x.fillText('6M/6M ann.',lP+248,tP+10);
+  x.fillStyle='#ff9800';x.fillRect(lP+150,tP+2,12,3);x.fillText('3M/3M ann.',lP+168,tP+10);
+  x.fillStyle='#42a5f5';x.fillRect(lP+320,tP+2,12,3);x.fillText('6M/6M ann.',lP+338,tP+10);
 
   // 티커명 (우상단)
-  x.textAlign='right';x.fillStyle='rgba(90,95,102,0.7)';x.font='10px DM Sans,sans-serif';
+  x.textAlign='right';x.fillStyle='rgba(90,95,102,0.7)';x.font='13px DM Sans,sans-serif';
   x.fillText(mom.ticker||'',W-rP,tP+10);
 }
 
@@ -1032,7 +1032,7 @@ function sliceMomentum(mom,win){
 }
 
 function drawCountry(c,win){
-  const d=D[c];const hasMom=d.core_momentum?true:false;
+  const d=D[c];if(d.unavailable)return;const hasMom=d.core_momentum?true:false;
   // Ridge는 항상 최근 12개월 고정 (드롭다운 영향 안 받음)
   const RIDGE_FIXED=12;
   const ridge=(d.ridge||[]).slice(-RIDGE_FIXED);
@@ -1064,8 +1064,10 @@ Object.keys(D).forEach(c=>{
   filterSel.appendChild(opt);
   const div=document.createElement('div');div.className='country';div.dataset.country=c;
   const hasMom=d.core_momentum?true:false;
-  const momRow=hasMom?`<div class="row" style="margin-top:12px"><div class="panel" style="flex:1 1 100%"><div class="plabel">Core CPI Momentum — 12M YoY · 3M/3M annualized · 6M/6M annualized</div><canvas id="cm_${c}"></canvas></div></div>`:'';
-  div.innerHTML=`<div class="ctitle">${c} <span class="items-count" style="font-size:13px;color:var(--text-muted);font-weight:400"></span></div><div class="row"><div class="panel"><div class="plabel">CPI 분포(%YoY)</div><div class="psub">최근 12개월 품목별 YoY 분포 · 상하위 10% 트림 (Ridge KDE)</div><canvas id="r_${c}"></canvas></div><div class="panel"><div class="plabel">Median & Trimmed Mean(% YoY)</div><div class="psub">Trimmed Mean(16%): 상하위 8%씩 제외 (Cleveland Fed 방식) · Trimmed Mean(24%/31%): 하위 24% / 상위 31% 제외 (Dallas Fed 비대칭 방식) · 모두 개수 기준 근사</div><canvas id="d_${c}"></canvas></div></div><div class="row" style="margin-top:12px"><div class="panel"><div class="plabel">CPI 분포(% YoY)</div><div class="psub">품목 갯수 기준</div><canvas id="s_${c}"></canvas></div><div class="panel"><div class="plabel">물가 상승폭 확대 품목(% YoY)</div><div class="psub">전월 대비 상승폭 확대 품목 수 비중(3MMA)</div><canvas id="m_${c}"></canvas></div></div>${momRow}`;
+  const momRow=hasMom?`<div class="row" style="margin-top:12px"><div class="panel" style="flex:1 1 100%"><div class="plabel">원지수 기반 자체 환산 · Core CPI Momentum — 12M YoY · 3M/3M annualized · 6M/6M annualized</div><canvas id="cm_${c}"></canvas></div></div>`:'';
+  div.innerHTML=`<div class="ctitle">${c} <span class="items-count" style="font-size:13px;color:var(--text-muted);font-weight:400"></span></div><div class="row"><div class="panel"><div class="plabel">CPI 분포(%YoY)</div><div class="psub">최근 최대 12개월 품목별 YoY 분포 · 상하위 10% 트림 (Ridge KDE)</div><canvas id="r_${c}"></canvas></div><div class="panel"><div class="plabel">자체 계산 · Median & Trimmed Mean(% YoY)</div><div class="psub">Trimmed Mean(16%): 상하위 8%씩 제외 (가중치 미적용) · Trimmed Mean(24%/31%): 하위 24% / 상위 31% 제외 (가중치 미적용) · 모두 개수 기준 근사</div><canvas id="d_${c}"></canvas></div></div><div class="row" style="margin-top:12px"><div class="panel"><div class="plabel">CPI 분포(% YoY)</div><div class="psub">품목 갯수 기준</div><canvas id="s_${c}"></canvas></div><div class="panel"><div class="plabel">물가 상승폭 확대 품목(% YoY)</div><div class="psub">전월 대비 상승폭 확대 품목 수 비중(3MMA)</div><canvas id="m_${c}"></canvas></div></div>${momRow}`;
+  if(d.unavailable) div.innerHTML=`<div class="ctitle">${c}</div><div class="panel">${d.quality_note}</div>`;
+  else if(d.quality_note) div.querySelector('.ctitle').insertAdjacentHTML('afterend',`<p class="quality-note">${d.quality_note}</p>`);
   root.appendChild(div);
 });
 
@@ -1077,10 +1079,12 @@ function applyWindow(val){
   Object.keys(D).forEach(c=>drawCountry(c,val));
 }
 
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>Object.keys(D).forEach(c=>{if(!document.querySelector(`.country[data-country="${c}"]`).classList.contains('hidden'))drawCountry(c,CURRENT_WINDOW)}),150)});
 function filterCountry(val){
   document.querySelectorAll('.country').forEach(div=>{
     if(val==='ALL'||div.dataset.country===val){
       div.classList.remove('hidden');
+      drawCountry(div.dataset.country,CURRENT_WINDOW);
     }else{
       div.classList.add('hidden');
     }
@@ -1114,10 +1118,12 @@ h1{{font-size:22px;font-weight:600;color:var(--text-main);margin-bottom:4px;font
 .country.hidden{{display:none}}
 .ctitle{{font-size:16px;font-weight:600;color:var(--text-main);margin-bottom:8px;font-family:Georgia,serif}}
 .row{{display:flex;gap:12px;flex-wrap:wrap}}
-.panel{{flex:1;min-width:380px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px 14px 10px}}
+.panel{{flex:1;min-width:0;width:calc(50% - 6px);background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px 14px 10px}}
 .plabel{{font-size:16px;font-weight:600;color:var(--text-main);margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px}}
-.psub{{font-size:11px;font-weight:400;color:var(--text-muted);margin-bottom:10px;letter-spacing:0.2px}}
-canvas{{width:100%;height:auto}}
+.psub{{font-size:13px;font-weight:400;color:var(--text-muted);margin-bottom:10px;letter-spacing:0.2px}}
+canvas{{width:100%;height:auto;display:block}}
+.quality-note{{background:#fff4db;color:#785b1b;padding:12px;font-size:14px;line-height:1.7}}
+@media(max-width:900px){{.header-row{{flex-direction:column;gap:12px}}.header-right{{flex-wrap:wrap;max-width:100%}}.row{{display:block}}.panel{{width:100%;margin-bottom:12px}}body{{padding:14px}}}}
 </style>
 </head>
 <body>
@@ -1164,6 +1170,13 @@ def main():
         raise SystemExit(1)   # 자동화(_runner)가 실패로 인식하도록
 
     html = generate_html(all_data)
+    official_path = BASE / 'cb_official_snapshot.json'
+    if not official_path.exists():
+        raise FileNotFoundError('Official CB snapshot missing; refresh before building')
+    official = json.loads(official_path.read_text(encoding='utf-8-sig'))
+    payload = json.dumps(official, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
+    panel = (BASE/'cb_official_panel.html').read_text(encoding='utf-8-sig').replace('__CB_DATA__', payload)
+    html = html.replace('</body>', panel + '</body>')
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:

@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PMI · Global cycle monitor</title>
+<style>
+:root{--ink:#173d46;--muted:#728289;--line:#dce5e1;--paper:#f5f6f0;--navy:#164e83}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Malgun Gothic',Arial,sans-serif;font-size:13px}main{max-width:1400px;margin:auto;padding:30px}h1{font-size:32px;letter-spacing:-1px;margin:8px 0}h2{font-size:20px;margin:0}h3{font-size:16px;margin:0}.eyebrow{font-size:11px;letter-spacing:2px;color:#5c817b;font-weight:700}.muted,.note{color:var(--muted);line-height:1.7}.hero{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:24px}.stamp{text-align:right;font-size:12px;line-height:1.8}.badge{display:inline-block;border-radius:20px;background:#e4eee7;color:#316951;padding:5px 10px;font-size:11px;font-weight:bold}.toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:22px 0}.toolbar label{display:flex;align-items:center;gap:8px}select,button{font:inherit;border:1px solid var(--line);border-radius:7px;background:white;padding:8px 12px;color:var(--ink);cursor:pointer}button:hover{background:#edf3f0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:32px 0 14px}.section-head p{margin:5px 0 0}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 3px 10px #25453704}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card-top{display:flex;justify-content:space-between;align-items:start;gap:10px}.metric{font-size:28px;font-weight:700;letter-spacing:-1px}.metric small{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:0}.phase{font-size:11px;font-weight:700}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:11px;margin:14px 0}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}.chart{width:100%;height:auto;display:block}.chart text{font-family:'Malgun Gothic',Arial,sans-serif;font-size:10px;fill:#809098}.chart .quad{font-size:11px;fill:#a8b6b5}.chart .label{font-size:11px;fill:#24434b;font-weight:bold}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:11px 13px;border-bottom:1px solid #edf0ed;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{color:#71848a;font-size:10px}tbody tr:last-child td{border-bottom:0}.table-wrap{overflow:auto}.latest-note{font-size:11px;color:#8c7442;background:#faf6e9;border-radius:8px;padding:10px 14px;margin-top:14px}.line-panel{margin-bottom:18px}.country-toggle{padding:5px 9px;font-size:11px}.country-toggle.off{opacity:.35}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.heat td{padding:7px 9px;font-variant-numeric:tabular-nums}.heat th{font-size:10px;padding:7px}.foot{border-top:1px solid var(--line);margin-top:24px;padding:20px 0;font-size:11px;line-height:1.8;color:var(--muted)}details{margin:20px 0}summary{cursor:pointer;font-weight:bold}a{color:#1d7778}.tooltip{position:fixed;display:none;pointer-events:none;background:#163d46;color:white;padding:9px 12px;border-radius:7px;font-size:11px;z-index:20;white-space:pre-line}.empty{padding:30px;color:var(--muted)}@media(max-width:850px){main{padding:16px}.grid,.detail-grid{grid-template-columns:1fr}.hero{align-items:start}.stamp{max-width:160px}h1{font-size:25px}.panel{padding:15px}.section-head{align-items:start;flex-direction:column}}
+.overview-heat{table-layout:fixed;min-width:950px;border-collapse:separate;border-spacing:3px}.overview-heat th{font-size:13px;text-align:center;padding:10px 4px}.overview-heat td{font-size:17px;font-weight:700;text-align:center;padding:14px 3px;border:0;border-radius:4px;font-variant-numeric:tabular-nums}.overview-heat th:first-child{width:100px;text-align:left;font-size:15px;position:sticky;left:0;background:white;z-index:1}.heat-key{display:flex;gap:12px;align-items:center;font-size:13px;margin:0 0 14px}.heat-gradient{width:180px;height:12px;border-radius:4px;background:linear-gradient(90deg,#316cad,#f5f6f2,#b84642)}.overview-heat td.missing{background:#f0f2f2;color:#859295}.heat-controls{display:flex;gap:8px;flex-wrap:wrap}
+</style></head><body><main>
+<header class="hero"><div><div class="eyebrow">GLOBAL ACTIVITY / 08 ECONOMIES</div><h1>PMI · 경기 사이클</h1><div class="muted">Composite로 국면을 읽고, 제조업과 서비스업의 흐름을 비교합니다.</div></div><div class="stamp"><span class="badge">배포 전 미리보기</span><div id="stamp"></div><div>Snowflake · Haver</div></div></header>
+<div class="toolbar"><label>조회 기준 <select id="basis"><option value="latest">국가별 최신월</option><option value="common">8개국 공통월</option></select></label><label>표시 기간 <select id="period"><option value="36">최근 36개월</option><option value="24">최근 24개월</option><option value="60">최근 60개월</option></select></label><button id="download">데이터 다운로드</button></div>
+<section id="pmi-heat-section"><div class="section-head"><div><h2>01 / 국가별 PMI 히트맵</h2><p class="muted">최근 12개월 · 숫자는 PMI 원지수 · 50 미만 수축 / 50 초과 확장</p></div><div class="heat-controls"><select id="heat-kind" aria-label="히트맵 PMI 종류"><option value="composite">Composite PMI</option><option value="manufacturing">제조업 PMI</option><option value="services">서비스업 PMI</option></select></div></div><div class="panel"><div class="heat-key"><span>40 이하 · 수축</span><span class="heat-gradient"></span><span>60 이상 · 확장</span><span class="muted">중앙 50 · 미발표 —</span></div><div class="table-wrap" id="overview-heat"></div></div></section>
+<section><div class="section-head"><div><h2>02 / 현재 위치</h2><p class="muted">Composite PMI 기준 · 국가별 관측월과 국면을 함께 확인하세요.</p></div><span id="asof" class="badge"></span></div><div class="panel table-wrap" id="summary"></div><div class="latest-note">관측월은 발표일이 아닙니다. 당월 값은 잠정치가 포함될 수 있으며, 원천에 Flash/Final 구분이 없어 확정치로 표시하지 않습니다. 중국은 RatingDog 계열, 미국은 국가 비교용 PMI와 ISM을 구분합니다.</div></section>
+<section><div class="section-head"><div><h2>03 / Composite PMI 사이클</h2><p class="muted">가로: 12개월 평균 − 50 · 세로: 3개월 평균 − 50 · 점선: 월별 경로 · 작은 ★ 최신월 · 기본: 국가별 축 자동 맞춤</p></div><label><input type="checkbox" id="scale"> 국가 간 동일 축</label></div><div id="phase-legend" class="legend"></div><div id="cycles" class="grid"></div></section>
+<section><div class="section-head"><div><h2>04 / 업종별 PMI 추이</h2><p class="muted">제조업끼리, 서비스업끼리 비교 · 점선 50은 전월 대비 변화의 기준선 · 범례를 누르면 국가 표시를 바꿀 수 있습니다.</p></div></div><div id="lines"></div></section>
+<section><div class="section-head"><div><h2>05 / 세부 항목</h2><p class="muted">확인된 세부 시계열 · 최근 6개월 · 값은 원지수, 색은 50과의 차이입니다.</p></div></div><div class="latest-note">가격·배송·재고 지수의 상승은 경기 개선을 뜻하지 않을 수 있습니다. 중국 공식 PMI와 캐나다 Ivey는 위 국가 비교에 사용한 PMI와 조사 범위가 다릅니다.</div><div id="details" class="detail-grid" style="margin-top:18px"></div></section>
+<details class="panel"><summary>국면 판단 방식 · 출처 · 데이터 범위</summary><p class="note">이 화면의 국면은 Composite PMI 이동평균으로 분류한 자체 보조지표이며 공식 경기침체 판정이 아닙니다. 제조업·서비스업 지수를 단순 평균하지 않고 원천 Composite 시계열을 사용합니다. 12개 연속 월이 있을 때만 계산하며 결측은 보간하지 않습니다. 세로축은 단기 PMI 수준이며 변화율이 아닙니다.</p><p class="note">x = 12개월 평균 − 50, y = 3개월 평균 − 50.<br>확장 초기: x ≥ 0, y ≥ x · 확장 후기: x ≥ 0, 0 ≤ y &lt; x · 수축 초기: x ≥ 0, y &lt; 0 · 수축 후기: x &lt; 0, y ≤ x · 회복: x &lt; 0, y &gt; x.</p><p><a href="https://www.spglobal.com/market-intelligence/en/solutions/products/resources/pmi-faq" target="_blank" rel="noopener">S&amp;P Global PMI 산출 방식</a></p><div class="table-wrap" id="sources"></div></details>
+<footer class="foot">QAE / PMI MONITOR · 월별 관측값 · 값의 차이는 %가 아닌 지수 포인트입니다.<br>국가별 최신월이 다를 수 있습니다. 공통월 모드에서는 모든 국가의 Composite·제조업·서비스업 데이터가 존재하는 가장 최근 월을 사용합니다.</footer></main><div class="tooltip" id="tip"></div>
+<script id="payload" type="application/json">__PAYLOAD__</script><script>
+'use strict';
+const D=JSON.parse(document.getElementById('payload').textContent), $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const colors=['#205e91','#109a94','#9a679e','#c58c29','#789546','#e07859','#637bba','#a05061'];
+const phases={'확장 초기':'#124f96','확장 후기':'#0aa595','수축 초기':'#8773ae','수축 후기':'#66b6f7','회복':'#e8b300'};
+const hidden={manufacturing:new Set(),services:new Set()};
+const all=D.countries.flatMap(c=>['composite','manufacturing','services'].map(k=>c[k].points));
+const common=all[0].map(p=>p[0]).filter(m=>all.every(s=>s.some(p=>p[0]===m))).at(-1);
+const latest=all.flat().map(p=>p[0]).sort().at(-1);
+const cut=()=>$('basis').value==='common'?common:latest;
+const n=()=>Number($('period').value), val=v=>v==null?'—':v.toFixed(1);
+const pts=(s)=>s.points.filter(p=>p[0]<=cut());
+const last=s=>pts(s).at(-1), cp=c=>c.cycle.filter(p=>p[0]<=cut()).slice(-n());
+const showMonth=m=>m||'—';
+$('stamp').textContent='조회 '+D.retrievedAt.slice(0,16).replace('T',' ')+' KST';
+$('phase-legend').innerHTML=Object.entries(phases).map(([s,c])=>`<span><i class="dot" style="background:${c}"></i>${s}</span>`).join('');
+function svg(content,w=600,h=360){return `<svg class="chart" role="img" viewBox="0 0 ${w} ${h}">${content}</svg>`;}
+function line(x1,y1,x2,y2,stroke='#e8eeeb',extra=''){return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${stroke}" ${extra}/>`;}
+function text(x,y,t,extra=''){return `<text x="${x}" y="${y}" ${extra}>${esc(t)}</text>`;}
+function circle(x,y,r,c,title){return `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" data-tip="${esc(title)}"/>`;}
+function summary(){
+ $('asof').textContent=$('basis').value==='common'?'공통 기준 '+common:'국가별 최신 · 최대 '+latest;
+ $('summary').innerHTML='<table><thead><tr><th>국가·지역</th><th>Composite</th><th>전월차</th><th>제조업</th><th>서비스업</th><th>관측월</th><th>PMI 국면</th></tr></thead><tbody>'+D.countries.map(c=>{let p=pts(c.composite),z=p.at(-1),prev=p.at(-2),phase=cp(c).at(-1)?.[3],diff=z&&prev?Math.round((z[1]-prev[1])*10)/10:null;return `<tr><td><b>${c.name}</b></td><td><b>${val(z?.[1])}</b></td><td>${diff==null?'—':(diff>=0?'+':'')+val(diff)}</td><td>${val(last(c.manufacturing)?.[1])}</td><td>${val(last(c.services)?.[1])}</td><td>${showMonth(z?.[0])}</td><td style="color:${phases[phase]}">${phase||'산출 불가'}</td></tr>`}).join('')+'</tbody></table>';
+}
+function cycles(){
+ const globalMax=Math.max(1,...D.countries.flatMap(c=>cp(c).flatMap(p=>[Math.abs(p[1]),Math.abs(p[2])])))*1.15;
+ $('cycles').innerHTML=D.countries.map(c=>{
+  let p=cp(c);if(!p.length)return `<div class="panel empty">${c.name} · 연속 12개월 데이터 부족</div>`;
+  function bounds(axis){const values=p.map(v=>v[axis]),lo=Math.min(0,...values),hi=Math.max(0,...values),pad=Math.max(.15,(hi-lo)*.12);return [lo-pad,hi+pad];}
+  const [xmin,xmax]=$('scale').checked?[-globalMax,globalMax]:bounds(1);
+  const [ymin,ymax]=$('scale').checked?[-globalMax,globalMax]:bounds(2);
+  const X=v=>65+(v-xmin)/(xmax-xmin)*470,Y=v=>295-(v-ymin)/(ymax-ymin)*250;
+  let h='';for(let i=0;i<=4;i++){let xv=xmin+(xmax-xmin)*i/4,yv=ymin+(ymax-ymin)*i/4;h+=line(X(xv),45,X(xv),295)+line(65,Y(yv),535,Y(yv))+text(X(xv),312,xv.toFixed(1),'text-anchor="middle"')+text(54,Y(yv)+4,yv.toFixed(1),'text-anchor="end"');}
+  h+=line(X(0),45,X(0),295,'#b6c8c5')+line(65,Y(0),535,Y(0),'#b6c8c5');
+  const dlo=Math.max(xmin,ymin),dhi=Math.min(xmax,ymax);
+  if(dlo<=dhi)h+=line(X(dlo),Y(dlo),X(dhi),Y(dhi),'#aebebd','stroke-dasharray="6 6"');
+  h+='<polyline fill="none" stroke="#bdc9cc" stroke-dasharray="3 4" points="'+p.map(v=>X(v[1])+','+Y(v[2])).join(' ')+'"/>';
+  p.forEach((v,i)=>{h+=circle(X(v[1]),Y(v[2]),i===p.length-1?3:3.5,phases[v[3]],`${c.name} ${v[0]}\nx ${v[1].toFixed(2)} / y ${v[2].toFixed(2)}\n${v[3]}`)});
+  let z=p.at(-1),actual=last(c.composite);
+  h+=text(X(z[1]),Y(z[2])+4,'★','style="fill:#123e46;font-size:13px" text-anchor="middle"');
+  h+=text(535,29,'★ 최신 '+z[0],'text-anchor="end" class="label"');
+  h+=text(300,343,'Direction · 12M MA − 50','text-anchor="middle"')+text(15,170,'Momentum · 3M MA − 50','text-anchor="middle" transform="rotate(-90 15 170)"');
+  return `<article class="panel"><div class="card-top"><div><h3>${c.name}</h3><p class="phase" style="color:${phases[z[3]]}">${z[3]} · ${z[0]}</p></div><div class="metric">${val(actual[1])} <small>Composite</small></div></div>${svg(h)}<div class="note" style="font-size:10px">${c.code==='CN'?'RatingDog':'S&P Global 계열'} · ${p.length}개 월별 위치 · ${p[0][0]}–${z[0]}</div></article>`;
+ }).join('');
+}
+function lineCharts(){
+ $('lines').innerHTML=['manufacturing','services'].map(k=>{
+ const end=cut(), idx=Number(end.slice(0,4))*12+Number(end.slice(5,7))-1;
+ const months=Array.from({length:n()},(_,i)=>{let t=idx-n()+1+i;return Math.floor(t/12)+'-'+String(t%12+1).padStart(2,'0')});
+ const sets=D.countries.map(c=>new Map(pts(c[k]))), values=sets.flatMap((s,i)=>hidden[k].has(i)?[]:months.map(m=>s.get(m)).filter(v=>v!=null));
+ const lo=Math.min(45,Math.floor(Math.min(...values,50)/5)*5),hi=Math.max(55,Math.ceil(Math.max(...values,50)/5)*5);
+ const X=i=>55+i/(months.length-1)*1080,Y=v=>310-(v-lo)/(hi-lo)*255;let h='';
+ for(let v=lo;v<=hi;v+=5){h+=line(55,Y(v),1135,Y(v),v===50?'#9caaa7':'#e9eeec',v===50?'stroke-dasharray="5 5"':'')+text(43,Y(v)+4,v,'text-anchor="end"');}
+ months.forEach((m,i)=>{if(i%6===0||i===months.length-1)h+=text(X(i),333,m,'text-anchor="middle"');});
+ sets.forEach((s,i)=>{if(hidden[k].has(i))return;let path='',prev=false;months.forEach((m,j)=>{let v=s.get(m);if(v==null){prev=false;return;}path+=(prev?'L':'M')+X(j)+','+Y(v)+' ';prev=true;h+=circle(X(j),Y(v),3,colors[i],D.countries[i].name+' '+m+'\n'+v.toFixed(1));});h+=`<path d="${path}" fill="none" stroke="${colors[i]}" stroke-width="2.2" pointer-events="none"/>`;});
+ return `<article class="panel line-panel"><div class="card-top"><h3>${k==='manufacturing'?'Manufacturing / 제조업':'Services / 서비스업'}</h3><span class="note">50 = 전월 대비 불변</span></div><div class="legend">${D.countries.map((c,i)=>`<button class="country-toggle ${hidden[k].has(i)?'off':''}" data-kind="${k}" data-index="${i}" aria-pressed="${!hidden[k].has(i)}"><i class="dot" style="background:${colors[i]}"></i>${c.name}</button>`).join('')}</div>${svg(h,1200,355)}</article>`;
+ }).join('');
+ document.querySelectorAll('.country-toggle').forEach(b=>b.onclick=()=>{let s=hidden[b.dataset.kind],i=Number(b.dataset.index);s.has(i)?s.delete(i):s.add(i);lineCharts()});
+}
+function details(){
+ $('details').innerHTML=D.details.map(g=>{
+ let months=[...new Set(g.items.flatMap(s=>pts(s).map(p=>p[0])))].sort().slice(-6);
+ return `<article class="panel"><h3>${g.name}</h3><div class="table-wrap"><table class="heat"><thead><tr><th>항목</th>${months.map(m=>'<th>'+m.slice(2)+'</th>').join('')}</tr></thead><tbody>${g.items.map(s=>{let map=new Map(pts(s));return '<tr><th>'+s.name+'</th>'+months.map(m=>{let v=map.get(m),a=v==null?0:Math.min(.65,Math.abs(v-50)/20);return `<td style="background:${v>=50?'rgba(26,143,128,'+a+')':'rgba(109,139,181,'+a+')'}">${val(v)}</td>`}).join('')+'</tr>'}).join('')}</tbody></table></div></article>`;
+ }).join('');
+}
+function overviewHeat(){
+ const k=$('heat-kind').value,end=cut(),idx=Number(end.slice(0,4))*12+Number(end.slice(5,7))-1;
+ const months=Array.from({length:12},(_,i)=>{const t=idx-11+i;return Math.floor(t/12)+'-'+String(t%12+1).padStart(2,'0')});
+ function color(v){const t=Math.min(1,Math.abs(v-50)/10),base=v>=50?[184,70,66]:[49,108,173];return 'rgb('+base.map((b)=>Math.round(246+(b-246)*t)).join(',')+')'}
+ $('overview-heat').innerHTML='<table class="overview-heat"><thead><tr><th>국가·지역</th>'+months.map(m=>'<th>'+m.slice(2).replace('-','.')+'</th>').join('')+'</tr></thead><tbody>'+D.countries.map(c=>{const map=new Map(pts(c[k]));return '<tr><th scope="row">'+c.name+'</th>'+months.map(m=>{const v=map.get(m);return v==null?'<td class="missing" title="'+c.name+' '+m+' 관측값 없음">—</td>':'<td style="background:'+color(v)+';color:'+(Math.abs(v-50)>=6?'#fff':'#18343d')+'" title="'+c.name+' '+m+' · '+v.toFixed(2)+'">'+v.toFixed(1)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table>';
+}
+$('heat-kind').addEventListener('change',overviewHeat);
+function render(){overviewHeat();summary();cycles();lineCharts();details();}
+['basis','period','scale'].forEach(id=>$(id).addEventListener('change',render));
+$('sources').innerHTML='<table><thead><tr><th>국가</th><th>종류</th><th>원천 시계열</th><th>시작월</th><th>최신월</th></tr></thead><tbody>'+D.countries.flatMap(c=>['composite','manufacturing','services'].map(k=>`<tr><td>${c.name}</td><td>${k}</td><td>${esc(c[k].meta.DISPLAY_NAME)} · ${esc(c[k].meta.SOURCE_SERIES_KEY)}</td><td>${c[k].points[0][0]}</td><td>${c[k].points.at(-1)[0]}</td></tr>`)).join('')+'</tbody></table>';
+$('download').onclick=()=>{let blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pmi_snapshot.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+addEventListener('pointermove',e=>{let t=e.target.closest('[data-tip]');$('tip').style.display=t?'block':'none';if(t){$('tip').textContent=t.dataset.tip;$('tip').style.left=Math.min(e.clientX+14,innerWidth-210)+'px';$('tip').style.top=Math.max(5,e.clientY-65)+'px'}});render();
+</script></body></html>

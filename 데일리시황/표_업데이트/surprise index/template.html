@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Citi Surprise Index · 국가별 그래프와 히트맵</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f8f4;color:#203a33;font:15px/1.6 "Malgun Gothic",sans-serif}main{max-width:1500px;margin:auto;padding:32px 24px}h1{font-size:30px;margin:8px 0}h2{font-size:24px;margin:36px 0 8px}h3{font-size:17px;margin:0}.muted,small{color:#687b73}.topnav,.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}a,button,select{font:inherit;color:#24694c}a{text-decoration:none}button,select,.topnav a{background:white;border:1px solid #d3dfd6;border-radius:7px;padding:8px 12px}button{cursor:pointer}.notice{padding:12px 16px;border-left:3px solid #a78339;background:#fbf6e9}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}.country{background:white;border:1px solid #d3dfd6;border-radius:10px;padding:16px;min-width:0}.country header{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.value{font-size:22px;font-variant-numeric:tabular-nums;font-weight:bold}.plot{width:100%;height:220px;display:block}.plot text{font:11px "Malgun Gothic",sans-serif;fill:#61756d}.hover{min-height:24px;font-size:12px;font-variant-numeric:tabular-nums}.heat-wrap{overflow-x:auto;background:white;border:1px solid #d3dfd6;border-radius:10px;padding:16px}.heat{width:100%;border-collapse:separate;border-spacing:2px;font-size:11px;table-layout:fixed;min-width:850px}.heat th:first-child{width:110px;text-align:left;position:sticky;left:0;background:white}.heat th:last-child{width:60px}.heat td{height:26px;text-align:center}.heat th{font-weight:normal;padding:4px}.legend{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:12px}.gradient{width:180px;height:12px;background:linear-gradient(90deg,#2166ac,#f7f7f7,#b2182b)}.meta{overflow-x:auto}.meta table{border-collapse:collapse;width:100%;font-size:12px}.meta td,.meta th{border-bottom:1px solid #d3dfd6;text-align:left;padding:8px}details{margin:24px 0}summary{cursor:pointer}footer{margin-top:30px;font-size:12px;color:#687b73}label{display:flex;gap:8px;align-items:center}.section-label{margin:24px 0 4px;font-weight:bold;color:#526c60}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){main{padding:24px 14px}.grid{grid-template-columns:1fr}h1{font-size:25px}.country{padding:12px}}
+</style>
+<main>
+<h1>Citi Surprise Index</h1>
+<p class="muted">국가별 경기 5일 이동평균 · 물가 월별 원자료</p>
+<nav class="topnav"><a href="../index.html" id="home-link">데일리 시황</a><a href="#economic">Economic</a><a href="#inflation">Inflation</a><a href="#method">계산 기준·다운로드</a></nav>
+<p id="updated" class="muted"></p>
+<div class="notice" id="freshness"></div>
+<div class="controls"><label>그래프 기간 <select id="period"><option value="1">1년</option><option value="3" selected>3년</option><option value="5">5년</option><option value="all">전체</option></select></label><label><input type="checkbox" id="shared"> 같은 지수 내 공통 Y축 (기본: 국가별 자동 맞춤)</label></div>
+<section id="economic"><h2>Economic Surprise Index</h2><p>각 국가의 개별 그래프: <span style="color:#b4c4bc">회색 원자료</span> · <span style="color:#24694c">초록색 5DMA</span>. 양수는 예상 상회, 음수는 예상 하회입니다.</p><p id="economic-status" class="muted"></p><div id="economic-grid"></div><h3>국가별 5DMA 히트맵</h3><div class="controls"><label>히트맵 기간 <select id="economic-heat-period"><option value="recent" selected>최근 60개 관측일</option><option value="1">1년</option><option value="3">3년</option><option value="5">5년</option><option value="all">전체</option></select></label></div><p class="muted" id="economic-heat-status"></p><div id="economic-heat"></div></section>
+<section id="inflation"><h2>Inflation Surprise Index</h2><p>각 국가의 월별 원자료입니다. 양수는 예상보다 높은 물가 발표, 음수는 예상보다 낮은 물가 발표이며 물가상승률 자체가 아닙니다.</p><p id="inflation-status" class="muted"></p><div id="inflation-grid"></div><h3>국가별 월별 히트맵</h3><p class="muted">최근 24개 관측월 · 월별 원자료</p><div id="inflation-heat"></div></section>
+<section id="method"><h2>계산 기준·데이터</h2><div class="controls"><button type="button" id="download-economic">경기 원자료·5DMA JSON</button><button type="button" id="download-inflation">물가 원자료 JSON</button></div>
+<p>경기 5DMA는 주말 행을 제외하고 날짜순으로 정렬한 뒤, 당일을 포함한 최근 5개 유효 평일 관측치의 단순평균입니다. 관측치가 5개 미만이면 표시하지 않습니다. 휴일·결측을 임의로 채우지 않습니다. 물가 자료는 월별이며 일별로 변환하거나 5개월 평균으로 대체하지 않습니다.</p>
+<p>Snowflake의 활성 시계열 마스터와 CORE 시계열을 사용합니다. 이는 현재 저장된 수정 반영 값이며 당시 발표 시점 기준 이력을 보장하지 않습니다. 두 히트맵은 각각 0 중심의 대칭 색상 범위를 사용합니다. 회색 셀은 결측이며, 셀 위에 마우스를 올리면 날짜와 값을 볼 수 있습니다.</p>
+<p>출처: Snowflake TAA_DB_DEV.CORE.FACT_TIME_SERIES · CORE.SERIES_MASTER. 경기 지수는 활성 일별 Citi 시계열(Haver 및 BRIC Bloomberg), 물가 지수는 Haver 월별 Citi 시계열입니다. APAC는 원천 설명의 Asia-Pacific Currencies, G10은 G10 Currencies 기준입니다. 한국 등 미수록 국가는 추가하거나 다른 지역 값으로 대신하지 않습니다. 단위는 지수 포인트입니다.</p>
+<details><summary>국가별 티커·기간·제외 행</summary><div class="meta" id="coverage"></div></details></section>
+<footer>원천 DB는 읽기 전용으로 조회합니다. 갱신 시각과 실제 데이터 기준일은 다릅니다. API 갱신 실행: 이 폴더의 update_surprise.cmd.</footer>
+</main>
+<script id="payload" type="application/json">__SURPRISE_DATA__</script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('payload').textContent);
+const el=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=v=>v===null?'—':(v>=0?'+':'')+v.toFixed(1);
+const time=d=>Date.parse(d+'T00:00:00Z');
+const dateText=t=>new Date(t).toISOString().slice(0,10);
+const svgns='http://www.w3.org/2000/svg';
+function svgEl(tag,attrs,text){const n=document.createElementNS(svgns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n;}
+el('updated').textContent='Snowflake 조회: '+DATA.retrievedAt.replace('T',' ')+' · 화면 생성: '+DATA.builtAt.replace('T',' ');
+el('freshness').textContent=['economic','inflation'].map(k=>{const dates=DATA[k].map(s=>s.last).sort();return (k==='economic'?'경기':'물가')+' 관측 기준 '+dates[0]+(dates.at(-1)!==dates[0]?' ~ '+dates.at(-1):'');}).join(' / ')+' — 저장된 관측일 기준이며 오늘의 최신치와 다를 수 있습니다.';
+if(location.pathname.replace(/\\/g,'/').includes('/runs/'))el('home-link').href='../../../index.html';
+function visible(kind){const all=DATA[kind];const end=Math.max(...all.map(s=>time(s.last)));const start=new Date(end);const p=el('period').value;if(p==='all')start.setTime(Math.min(...all.map(s=>time(s.first))));else start.setUTCFullYear(start.getUTCFullYear()-Number(p));return {end,start:+start,series:all.map(s=>({...s,shown:s.points.filter(p=>time(p[0])>=+start)}))};}
+function domain(series){let low=0,high=0;for(const s of series)for(const p of s.shown)for(const v of [p[1],p[2]])if(v!==null){low=Math.min(low,v);high=Math.max(high,v);}const pad=Math.max(1,(high-low||10)*.05);return [low-pad,high+pad];}
+function drawChart(host,s,range,limits,kind){
+ const W=Math.max(280,host.clientWidth),H=220,L=46,R=12,T=14,B=30;const [low,high]=limits;
+ const svg=svgEl('svg',{class:'plot',viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':s.name+' '+kind+' 시계열'});host.append(svg);
+ const X=t=>L+(t-range.start)/(range.end-range.start||1)*(W-L-R),Y=v=>H-B-(v-low)/(high-low)*(H-T-B);
+ const span=high-low,rough=span/4,power=10**Math.floor(Math.log10(rough)),step=[1,2,2.5,5,10].map(v=>v*power).find(v=>v>=rough)||power*10;
+ for(let v=Math.ceil(low/step)*step;v<=high+1e-8;v+=step){if(Math.abs(v)<1e-8)continue;const y=Y(v);svg.append(svgEl('line',{x1:L,x2:W-R,y1:y,y2:y,stroke:'#e6ece8'}));svg.append(svgEl('text',{x:L-6,y:y+4,'text-anchor':'end'},v.toFixed(step<1?1:0)));}
+ svg.append(svgEl('line',{class:'zero-baseline',x1:L,x2:W-R,y1:Y(0),y2:Y(0),stroke:'#526f63','stroke-width':1.8,'stroke-dasharray':'5 3'}));
+ svg.append(svgEl('text',{class:'zero-label',x:L-6,y:Y(0)+4,'text-anchor':'end',style:'font-weight:700;fill:#2e5143'},'0'));
+ const ticks=W<360?3:4;for(let i=0;i<ticks;i++){const t=range.start+(range.end-range.start)*i/(ticks-1);svg.append(svgEl('text',{x:X(t),y:H-7,'text-anchor':i===0?'start':i===ticks-1?'end':'middle'},dateText(t).slice(2,7)));}
+ svg.append(svgEl('text',{x:3,y:12},'pt'));
+ function path(col,color,width){let d='',active=false,lastTime=null;for(const p of s.shown){const stamp=time(p[0]);if(p[col]===null){active=false;continue;}if(lastTime!==null&&stamp-lastTime>(kind==='economic'?7:62)*86400000)active=false;d+=(active?'L':'M')+X(stamp).toFixed(2)+','+Y(p[col]).toFixed(2);active=true;lastTime=stamp;}svg.append(svgEl('path',{d,fill:'none',stroke:color,'stroke-width':width}));}
+ if(kind==='economic')path(1,'#c6d1cb',1);path(2,kind==='economic'?'#24694c':'#b16a24',2);
+ const guide=svgEl('line',{x1:0,x2:0,y1:T,y2:H-B,stroke:'#82978b',visibility:'hidden'}),dot=svgEl('circle',{r:3,fill:kind==='economic'?'#24694c':'#b16a24',visibility:'hidden'});svg.append(guide,dot);
+ const note=host.parentElement.querySelector('.hover');
+ svg.addEventListener('pointermove',ev=>{const box=svg.getBoundingClientRect(),x=(ev.clientX-box.left)*W/box.width;if(x<L||x>W-R)return;const t=range.start+(x-L)/(W-L-R)*(range.end-range.start);let p=s.shown.reduce((a,b)=>Math.abs(time(a[0])-t)<Math.abs(time(b[0])-t)?a:b);guide.setAttribute('x1',X(time(p[0])));guide.setAttribute('x2',X(time(p[0])));guide.setAttribute('visibility','visible');if(p[2]!==null){dot.setAttribute('cx',X(time(p[0])));dot.setAttribute('cy',Y(p[2]));dot.setAttribute('visibility','visible');}note.textContent=p[0]+' · '+(kind==='economic'?'5DMA '+fmt(p[2])+' / 원자료 '+fmt(p[1]):'월별 '+fmt(p[1]))+' pt';});
+ svg.addEventListener('pointerleave',()=>{guide.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden');note.textContent='최근 관측 '+s.last+' · '+s.rows.toLocaleString()+'개 관측';});
+}
+function draw(kind){const r=visible(kind),shared=domain(r.series),grid=el(kind+'-grid');grid.replaceChildren();
+ for(const region of [false,true]){const ss=r.series.filter(s=>s.region===region);if(!ss.length)continue;const label=document.createElement('p');label.className='section-label';label.textContent=region?'지역·그룹':'개별 국가';grid.append(label);const group=document.createElement('div');group.className='grid';grid.append(group);
+ for(const s of ss){const c=document.createElement('article');c.className='country';c.dataset.country=s.id;c.innerHTML='<header><h3>'+esc(s.name)+'</h3><span class="value">'+fmt(s.points.at(-1)[2])+'</span></header><div class="chart-host"></div><div class="hover">최근 관측 '+esc(s.last)+' · '+s.rows.toLocaleString()+'개 관측</div>';group.append(c);if(s.shown.length)drawChart(c.querySelector('.chart-host'),s,r,el('shared').checked?shared:domain([s]),kind);else c.querySelector('.chart-host').textContent='선택 기간 데이터 없음';}}
+ el(kind+'-status').textContent=DATA[kind].length+'개 국가·지역 · 그래프 '+dateText(r.start)+' ~ '+dateText(r.end)+' · '+(kind==='economic'?'5DMA':'월별 원자료');
+}
+function heat(kind){const series=DATA[kind],dates=[...new Set(series.flatMap(s=>s.points.map(p=>p[0])))].sort();let chosen=dates.slice(kind==='economic'?-60:-24);if(kind==='economic'){const period=el('economic-heat-period').value;if(period==='all')chosen=dates;else if(period!=='recent'){const start=new Date(time(dates.at(-1)));start.setUTCFullYear(start.getUTCFullYear()-Number(period));chosen=dates.filter(d=>time(d)>=+start);}const count=chosen.length;chosen=chosen.filter((d,i,a)=>i%5===0||i===a.length-1);el('economic-heat-status').textContent=(chosen.length?chosen[0]+' ~ '+chosen.at(-1)+' · ':'')+count+'개 관측일 · 5개 관측일 간격으로 표시 · 마지막 관측일 포함';}
+ const maps=series.map(s=>new Map(s.points.map(p=>[p[0],p[2]])));let max=1;for(const map of maps)for(const d of chosen){const v=map.get(d);if(v!=null)max=Math.max(max,Math.abs(v));}
+ function color(v){if(v==null)return '#e5e7eb';const a=Math.min(1,Math.abs(v)/max),target=v>=0?[178,24,43]:[33,102,172];return 'rgb('+target.map(n=>Math.round(247+(n-247)*a)).join(',')+')';}
+ let h='<div class="legend"><span>예상 하회 −'+max.toFixed(1)+'</span><span class="gradient"></span><span>예상 상회 +'+max.toFixed(1)+' pt</span></div><div class="heat-wrap"><table class="heat"><thead><tr><th>국가·지역</th>'+chosen.map(d=>'<th>'+d.slice(2,7)+(kind==='economic'?'<br>'+d.slice(8):'')+'</th>').join('')+'<th>최신</th></tr></thead><tbody>';
+ series.forEach((s,i)=>{h+='<tr><th scope="row">'+esc(s.name)+'</th>'+chosen.map(d=>{const v=maps[i].get(d);return '<td style="background:'+color(v)+'" title="'+esc(s.name+' · '+d+' · '+(v==null?'결측':fmt(v)+' pt'))+'">'+(v==null?'—':'')+'</td>';}).join('')+'<th title="'+s.last+'">'+fmt(s.points.at(-1)[2])+'</th></tr>';});
+ el(kind+'-heat').innerHTML=h+'</tbody></table></div>';
+ el(kind+'-heat').querySelector('table').style.minWidth=Math.max(850,170+chosen.length*65)+'px';
+}
+el('economic-heat-period').addEventListener('change',()=>heat('economic'));
+function download(kind){const blob=new Blob([JSON.stringify({retrievedAt:DATA.retrievedAt,columns:['date','raw_value',kind==='economic'?'ma5':'monthly_value'],series:DATA[kind]},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='citi_'+kind+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+for(const k of ['economic','inflation']){heat(k);el('download-'+k).addEventListener('click',()=>download(k));}
+el('coverage').innerHTML='<table><thead><tr><th>지수</th><th>국가·지역</th><th>Series ID</th><th>공급자</th><th>원천 키</th><th>시작</th><th>최신</th><th>관측수</th><th>제외 주말</th></tr></thead><tbody>'+['economic','inflation'].flatMap(k=>DATA[k].map(s=>'<tr>'+[k,s.name,s.seriesId,s.provider,s.ticker,s.first,s.last,s.rows,s.weekendsExcluded].map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>')).join('')+'</tbody></table>';
+function redraw(){draw('economic');draw('inflation');}el('period').addEventListener('change',redraw);el('shared').addEventListener('change',redraw);let timer;window.addEventListener('resize',()=>{clearTimeout(timer);timer=setTimeout(redraw,120);});redraw();
+</script>
+</html>

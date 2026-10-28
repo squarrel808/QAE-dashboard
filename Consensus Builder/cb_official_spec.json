@@ -1,0 +1,130 @@
+{
+  "US": [
+    [
+      "Headline PCE",
+      "JCBM@USECON",
+      "M",
+      "index"
+    ],
+    [
+      "Core PCE",
+      "JCXFEBM@USECON",
+      "M",
+      "index"
+    ],
+    [
+      "Dallas Fed Trimmed Mean PCE",
+      "PCE12@USECON",
+      "M",
+      "yoy"
+    ]
+  ],
+  "Australia": [
+    [
+      "公式 Trimmed Mean · 월간",
+      "AUWPCTRY@ANZ",
+      "M",
+      "yoy"
+    ],
+    [
+      "공식 Weighted Median · 월간",
+      "AUWPCWY@ANZ",
+      "M",
+      "yoy"
+    ],
+    [
+      "공식 Trimmed Mean · 분기",
+      "AUSPCTRY@ANZ",
+      "Q",
+      "yoy"
+    ]
+  ],
+  "Canada": [
+    [
+      "CPI-trim",
+      "V1M85715@CANADA",
+      "M",
+      "yoy"
+    ],
+    [
+      "CPI-median",
+      "V1M85714@CANADA",
+      "M",
+      "yoy"
+    ]
+  ],
+  "Japan": [
+    [
+      "신선식품 제외 CPI",
+      "JPCIJE@JAPAN",
+      "M",
+      "index"
+    ],
+    [
+      "BoJ Trimmed Mean",
+      "JPNPCT@JAPAN",
+      "M",
+      "yoy"
+    ],
+    [
+      "BoJ Weighted Median",
+      "JPNPCW@JAPAN",
+      "M",
+      "yoy"
+    ]
+  ],
+  "Eurozone": [
+    [
+      "식품·에너지 제외 HICP",
+      "H025PCX@G10",
+      "M",
+      "index"
+    ]
+  ],
+  "Germany": [
+    [
+      "식품·에너지 제외 HICP",
+      "H134PCX@G10",
+      "M",
+      "index"
+    ]
+  ],
+  "France": [
+    [
+      "식품·에너지 제외 HICP",
+      "H132PCX@G10",
+      "M",
+      "index"
+    ]
+  ],
+  "UK": [
+    [
+      "CPI · 정책목표 지표",
+      "H112CY@G10",
+      "M",
+      "yoy"
+    ],
+    [
+      "BoE 절사평균 서비스 물가",
+      "UNMPCSTI@UK",
+      "M",
+      "yoy"
+    ]
+  ],
+  "Korea": [
+    [
+      "식품·에너지 제외 CPI",
+      "H542PCX@EMERGE",
+      "M",
+      "index"
+    ]
+  ],
+  "China": [
+    [
+      "식품·에너지 제외 CPI",
+      "H924PCX@EMERGE",
+      "M",
+      "index"
+    ]
+  ]
+}
