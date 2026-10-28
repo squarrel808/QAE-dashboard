@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-pca_gdp.py — 국가별 카테고리 Time-Varying PCA → GDP 프록시 + LEI + HTML 대시보드
+pca_gdp.py — 국가별 카테고리 CFNAI형 일반 PCA → GDP 프록시 + LEI + HTML 대시보드
 
 입력: haver/haver-api_PCA/Meta data_Raw data.xlsx
   - Wide     : 날짜 x 지표 (헤더 = CODE@DATABASE)
@@ -11,12 +11,12 @@ pca_gdp.py — 국가별 카테고리 Time-Varying PCA → GDP 프록시 + LEI +
   - 전처리   : ticker_pk / code / (level | diffusion)
 
 버전 2개 (국가마다 각각):
-  - YoY      : level은 12개월 로그차분, diffusion은 그대로. 반감기 24개월
-  - Momentum : 3m/3m — 3개월평균의 3개월 전 대비 (level=로그차분, diffusion=차분). 반감기 12개월
+  - YoY      : level은 3개월 평균의 12개월 로그차분, diffusion은 그대로. 전체 표본 표준화
+  - Momentum : 완성된 Level의 최근 3개월 평균 - 직전 3개월 평균
 
 구조:
   국가별로 지표를 나눈 뒤 →
-  카테고리별 TV-PCA(EWM 상관행렬 + eigh) → 카테고리 지수(EWM z-score)
+  카테고리별 일반 PCA(전체 표본 상관행렬 + eigh) → 카테고리 지수(전체 표본 z-score)
   → lei 제외 카테고리 동일가중 평균 = GDP 프록시 / lei는 별도 LEI 지수
 
 출력:
@@ -29,6 +29,9 @@ import re
 import numpy as np
 import pandas as pd
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent))
+from PCA_Common.fixed_pca import standardize,fit as fixed_pca,POLICY as ESTIMATION
 
 # ============================================================
 # CONFIG
@@ -58,8 +61,8 @@ COUNTRIES = {
 DEFAULT_COUNTRY = "US"      # country 컬럼이 없는 구버전 데이터의 폴백
 
 VERSIONS = {
-    "YoY":      {"halflife": 24, "mode": "yoy"},
-    "Momentum": {"halflife": 12, "mode": "m3m3"},
+    "YoY":      {"halflife": None, "mode": "yoy"},
+    "Momentum": {"halflife": None, "mode": "post_pca_3m3m"},
 }
 
 CAT_LABEL = {"consumer": "Consumer", "capex": "Capex", "export": "Export",
@@ -233,7 +236,7 @@ def ewm_zscore(df, halflife):
 
 
 # ============================================================
-# 3. Time-Varying PCA (EWM 상관행렬 + 고유분해)
+# 3. Legacy Time-Varying PCA (retained for historical audit; not used by main)
 # ============================================================
 def tv_pca(z, halflife):
     """
@@ -337,10 +340,11 @@ def tv_pca(z, halflife):
 # 4. (국가 하나의) 버전 하나 전체 실행
 # ============================================================
 def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
-    z_all = ewm_zscore(transform(wide, rule_map, mode), halflife)
+    if mode!='yoy':raise ValueError('Momentum must be derived from the completed Level PCA')
+    z_all = standardize(transform(wide, rule_map, mode))
 
     cats = sorted(set(cat_map.get(c) for c in z_all.columns))
-    res = {"z": z_all, "cat_index": {}, "cat_loadings": {}, "cat_contrib": {}}
+    res = {"z": z_all, "cat_index": {}, "cat_loadings": {}, "cat_contrib": {},"fit_details":{}}
 
     for cat in cats:
         cols = [c for c in z_all.columns if cat_map[c] == cat]
@@ -352,9 +356,12 @@ def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
         if len(cols) < 2 or len(sub) <= len(cols):
             print(f"  [WARN] {tag}{cat}: 지표 {len(cols)}개/표본 {len(sub)} — 스킵")
             continue
-        pc1, loadings, contrib = tv_pca(sub, halflife)
-        # 카테고리 지수도 EWM z-score로 스케일 통일
-        pc1_z = ewm_zscore(pc1.to_frame(), halflife).iloc[:, 0]
+        # Only the component's overall orientation is anchored economically.
+        # Individual coefficients remain unrestricted, including negatives.
+        direction={c:ECONOMIC_DIRECTIONS.get(c,1) for c in cols}
+        pc1_z,loadings,_,_,detail=fixed_pca(sub,direction,min_available=1)
+        contrib=sub*loadings
+        res['fit_details'][cat]=detail
         res["cat_index"][cat] = pc1_z
         res["cat_loadings"][cat] = loadings
         res["cat_contrib"][cat] = contrib
@@ -386,6 +393,26 @@ def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
     return res
 
 
+ECONOMIC_DIRECTIONS={}
+
+def difference_3m3m(x):
+    if x.empty:return x.copy()
+    full=x.reindex(pd.date_range(x.index.min(),x.index.max(),freq='ME'))
+    return full.rolling(3,min_periods=3).mean().diff(3).reindex(x.index)
+
+def momentum_from_level(level):
+    """No separate PCA, normalization, or refit for Momentum."""
+    r=dict(level)
+    for key in ['z','gdp','lei']:r[key]=difference_3m3m(level[key])
+    # An absent category has zero contribution to an otherwise valid headline.
+    # This is accounting only: do not impute its raw input or category score.
+    # Differencing these contributions preserves their sum when coverage changes.
+    contribution=level['gdp_contrib'].fillna(0).where(level['gdp'].notna(),axis=0)
+    r['gdp_contrib']=difference_3m3m(contribution)
+    for key in ['cat_index','cat_contrib']:r[key]={k:difference_3m3m(v) for k,v in level[key].items()}
+    return r
+
+
 # ============================================================
 # 5. 엑셀 저장 (국가별 시트 프리픽스)
 # ============================================================
@@ -395,10 +422,10 @@ def save_excel(all_results, cat_map, desc_map):
             "항목": ["국가", "버전", "전처리", "z-score", "PCA", "합산", "LEI", "시트명"],
             "내용": [
                 " / ".join(f"{cc}={country_label(cc)}" for cc in all_results),
-                "YoY(반감기24) / Momentum 3m3m(반감기12)",
-                "level→로그차분(YoY=12개월, Mom=3mma 3개월), diffusion→그대로(Mom은 3mma 차분)",
-                f"EWM 평균·표준편차 (min_periods={MIN_EWM_OBS}, 룩어헤드 없음)",
-                "국가·카테고리별 EWM 상관행렬 고유분해, 시점별 PC1",
+                "Level: CFNAI형 일반 PCA / Momentum: 완성된 Level의 3M/3M 차분",
+                "level→3개월 평균의 12개월 로그변화, diffusion→원수준. Momentum은 완성 지수에서 계산",
+                "전체 표본 평균·표준편차. 매 갱신 시 과거 전체 개정; 실시간 빈티지 백테스트 아님",
+                "전체 표본 쌍별 상관·PSD 보정 → 부호 무제약 PC1. 한 발표 안에서 로딩 고정. 결측 보간 없음",
                 "lei 제외 카테고리 지수(z) 동일가중 평균 = GDP 프록시",
                 "별도 산출 (합산 미포함)",
                 "국가코드_버전_내용 (예: US_YoY_indices)",
@@ -469,7 +496,7 @@ def build_payload(all_results, cat_map, desc_map):
             "versions": build_country_versions(results, cat_map, desc_map),
         }
     default = DEFAULT_COUNTRY if DEFAULT_COUNTRY in countries else next(iter(countries))
-    return {"default": default, "countries": countries}
+    return {"default": default, "countries": countries,"estimation":ESTIMATION,"momentum_method":"post_pca_3m3m"}
 
 
 # ============================================================
@@ -527,7 +554,8 @@ select:hover,.vbtn:hover{border-color:var(--muted)}
 <div class="header-row">
   <div class="header-left">
     <h1 id="page-title">Activity Index</h1>
-    <p class="sub">Category PCA · Equal-Weight GDP Proxy · YoY half-life 24m / Momentum 3m3m half-life 12m · EWM z-score · generated __NOW__</p>
+    <p class="sub">CFNAI형 일반 PCA · 카테고리 동일가중 · 전체 표본 표준화·고정 로딩·음수 허용 · Momentum = 완성된 Level의 3M/3M 차분 · generated __NOW__</p>
+    <p class="sub">이번 표본으로 과거 전체를 다시 계산합니다. 실시간 빈티지 백테스트가 아닙니다. <a href="/pca-comparison">미국·영국 변경 전후 비교</a></p>
   </div>
   <select class="country-select" id="country-filter"></select>
 </div>
@@ -765,6 +793,10 @@ def main():
     print("Country PCA / GDP Proxy (AU CA DE JP UK US)")
     print("=" * 60)
     wide, cat_map, rule_map, desc_map, ctry_map = load_data()
+    global ECONOMIC_DIRECTIONS
+    # Used only for the global factor sign, never to constrain each loading.
+    from PCA_GDP_Weighted.build_model import NEGATIVE
+    ECONOMIC_DIRECTIONS={c:-1 if any(word in desc_map.get(c,'').lower() for word in NEGATIVE) else 1 for c in wide}
     print(f"데이터: {wide.shape[0]}행 x {wide.shape[1]}지표 "
           f"({wide.index[0]:%Y-%m} ~ {wide.index[-1]:%Y-%m})")
 
@@ -785,8 +817,8 @@ def main():
         sub = wide[cols].dropna(how="all")
         results = {}
         for ver, cfg in VERSIONS.items():
-            print(f"[{cc}·{ver}] halflife={cfg['halflife']}, mode={cfg['mode']}")
-            r = run_version(sub, cat_map, rule_map, cfg["halflife"], cfg["mode"], tag=f"{cc}·")
+            print(f"[{cc}·{ver}] CFNAI-style fixed loadings, mode={cfg['mode']}")
+            r = run_version(sub, cat_map, rule_map,None,'yoy',tag=f"{cc}·") if ver=='YoY' else momentum_from_level(results['YoY'])
             g = r["gdp"].dropna()
             if len(g):
                 nv = r["gdp_navail"].get(g.index[-1], r["gdp_ncats"])
@@ -808,6 +840,14 @@ def main():
 
     save_excel(all_results, cat_map, desc_map)
     save_dashboard(build_payload(all_results, cat_map, desc_map))
+    import pickle
+    with (BASE/'model_results.pkl').open('wb') as f:pickle.dump(all_results,f)
+    rows=[]
+    for cc,results in all_results.items():
+        for cat,loads in results['YoY']['cat_loadings'].items():
+            for pk,value in loads.iloc[0].dropna().items():rows.append({'country':cc,'axis':cat,'pk':pk,'label':desc_map.get(pk,pk),'loading':float(value)})
+    pd.DataFrame(rows).to_csv(BASE/'fixed_loadings.csv',index=False,encoding='utf-8-sig')
+    (BASE/'methodology.json').write_text(json.dumps({'estimation':ESTIMATION,'countries':{cc:r['YoY']['fit_details'] for cc,r in all_results.items()}},ensure_ascii=False,indent=2),encoding='utf8')
     print(f"\n완료. 국가: {list(all_results.keys())}")
     return all_results
 

@@ -16,13 +16,13 @@ const EMPTY_VER: PcaVersion = { dates: [], gdp: { index: [], contrib: {} }, lei:
 
 // 버전 이름이 'YoY' 라서 지수 전체가 YoY 인 것처럼 읽히는데, 실제로는 그렇지 않다.
 // 변환은 지표 유형별로 갈린다 (pca_gdp.py transform):
-//   level(수준지표, 81/181)      YoY: 3mma 의 12개월 로그차분 / Mom: 3mma 의 3개월 로그차분
-//   diffusion(서베이·PMI, 100/181) YoY: 원계열 그대로     / Mom: 3mma 의 3개월 차분
-// 즉 절반 이상이 YoY 변환을 아예 받지 않는다. 두 버전의 실제 차이는 '관측 주기와 반감기'다.
+//   level(수준지표, 81/181)      Level: 3mma 의 12개월 로그차분
+//   diffusion(서베이·PMI, 100/181) Level: 원계열 그대로
+// Momentum은 완성된 Level의 3개월 평균 차분이며 추가 PCA를 추정하지 않는다.
 const VER_LABEL: Record<string, string> = { YoY: '장기', Momentum: '모멘텀' }
 const VER_DESC: Record<string, string> = {
-  YoY: '수준지표는 전년동월비, 서베이는 원계열 · 반감기 24M',
-  Momentum: '수준지표는 3m/3m, 서베이는 3개월 차분 · 반감기 12M',
+  YoY: '수준지표는 전년동월비, 서베이는 원계열 · 전체 표본 표준화·고정 로딩',
+  Momentum: '완성된 Level의 최근 3개월 평균 − 직전 3개월 평균',
 }
 
 function tail<T>(arr: T[], months: number) {
@@ -211,7 +211,8 @@ export default function Pca({ data }: { data: PcaData }) {
       <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
         <div>
           <h2 className="serif text-[18px] m-0">{node ? node.label : countryLabel} — Activity Index</h2>
-          <p className="text-xs text-[var(--muted)] mt-1">Category PCA · Equal-Weight GDP Proxy · EWM z-score · 막대/선 호버 시 값 표시</p>
+          <p className="text-xs text-[var(--muted)] mt-1">CFNAI형 일반 PCA · 카테고리 동일가중 · 갱신별 고정 로딩 · 음수 계수 허용</p>
+          <p className="text-xs text-[var(--muted)] mt-1">전체 표본을 다시 추정하므로 과거 값도 바뀝니다. GDP 성장률이 아닌 표준화 지수입니다. <a className="underline" href="/pca-comparison">미국·영국 변경 전후 비교</a></p>
         </div>
         <span className="flex items-center gap-2">
           <span className="text-xs text-[var(--muted)]">국가</span>

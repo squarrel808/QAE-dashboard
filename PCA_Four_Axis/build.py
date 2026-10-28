@@ -4,6 +4,8 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 BASE=Path(__file__).resolve().parent;ROOT=BASE.parent
+sys.path.insert(0,str(ROOT))
+from PCA_Common.fixed_pca import standardize,fit as fixed_pca,POLICY as ESTIMATION,DESCRIPTION
 sys.path.insert(0,str(ROOT/'PCA_GDP_Weighted'))
 import build_model as core
 from derive_momentum import difference
@@ -61,14 +63,14 @@ def main(output_base=None,reference_only=False):
             else:records[key]=record
     legacy_backup=output/'annual_weights_gross_export_v1.json'
     if any(r['policy']==OLD_POLICY for r in records.values()) and not legacy_backup.exists():shutil.copy2(ledger_path,legacy_backup)
-    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs, nonnegative loadings, EWM half-life 24 months; frozen January GDP shares per year; Export weighted by 0.5 * nominal gross exports/GDP','weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
+    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs; '+DESCRIPTION+'; frozen January GDP shares; Export = 0.5 * gross exports/GDP','estimation':ESTIMATION,'weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
     if reference_only:payload.update(model='PCA III',universe='blackrock_reference_only',excluded_countries={cc:n for cc,n in review['names'].items() if cc not in names})
     classifications=[];timeseries=[];weights_rows=[];loads=[]
     input_series={}
     def vals(s):return [None if pd.isna(v) else float(v) for v in s]
     for cc in names:
         sp={k:s for k,s in specs.items() if s['country']==cc and s['group'] in MAPPING}
-        z=core.zscore(pd.DataFrame({k:core.transform(wide[s['pk']],s,'YoY') for k,s in sp.items()}),24)
+        z=standardize(pd.DataFrame({k:core.transform(wide[s['pk']],s,'YoY') for k,s in sp.items()}))
         input_series[cc]={'dates':[str(t)[:7] for t in wide.index], 'latest_raw':str(wide[[s['pk'] for s in sp.values()]].notna().any(axis=1).loc[lambda s:s].index[-1])[:7], 'series':{
             s['pk']:{'raw':vals(wide[s['pk']].round(6)), 'zscore':vals(z[k].round(6))}
             for k,s in sp.items()}}
@@ -80,9 +82,9 @@ def main(output_base=None,reference_only=False):
                 blocks[axis]=pd.Series(np.nan,index=z.index)
                 diagnostics[axis]={'count':0,'single':False,'available_latest':0}
                 continue
-            score,loading,explained,n=core.pca(z[keys],24)
+            score,loading,explained,n,fit_detail=fixed_pca(z[keys])
             blocks[axis]=score;block_loads[axis]=loading
-            diagnostics[axis]={'count':len(keys),'single':len(keys)==1}
+            diagnostics[axis]={'count':len(keys),'single':len(keys)==1,'fit':fit_detail}
             for t in loading.index:
                 if t.year>=2005:
                     loads.extend(dict(country=cc,date=str(t)[:10],axis=axis,indicator=k,loading=float(v)) for k,v in loading.loc[t].dropna().items())
@@ -113,7 +115,7 @@ def main(output_base=None,reference_only=False):
             # masquerade as a collapse of the full Consumer block.
             bp=bp.copy();bp.loc[bp.index>last,:]=np.nan
             assert (cp[active].sum(axis=1,min_count=len(active))-hp).abs().max()<1e-10
-            versions[mode]={'dates':[str(t)[:7] for t in idx],'headline':vals(hp.loc[idx]),'blocks':{a:vals(bp.loc[idx,a]) for a in AXES},'contributions':{a:vals(cp.loc[idx,a]) for a in AXES},'latest':str(last)[:7],'latest_value':float(hp[last]),'negative_loadings':0}
+            versions[mode]={'dates':[str(t)[:7] for t in idx],'headline':vals(hp.loc[idx]),'blocks':{a:vals(bp.loc[idx,a]) for a in AXES},'contributions':{a:vals(cp.loc[idx,a]) for a in AXES},'latest':str(last)[:7],'latest_value':float(hp[last]),'negative_loadings':sum(diagnostics[a]['fit']['negative_loadings'] for a in active)}
             for t in idx:timeseries.append(dict(country=cc,version=mode,date=str(t)[:10],headline=hp[t],weight_year=t.year,weight_quarter=weight_quarters[t],**{'weight_'+a:wp.at[t,a] for a in AXES},**{a:bp.at[t,a] for a in AXES},**{'contrib_'+a:cp.at[t,a] for a in AXES}))
         last=headline.last_valid_index()
         for axis in AXES:
@@ -140,6 +142,6 @@ def main(output_base=None,reference_only=False):
     (output/'dashboard_data.json').write_text(json.dumps(payload,ensure_ascii=False,allow_nan=False),encoding='utf8')
     assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in hashes.items())
     save_ledger(ledger_path,records)
-    (output/'validation.json').write_text(json.dumps({'blackrock_unchanged':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','halflife':24,'weights':POLICY},indent=2),encoding='utf8')
+    (output/'validation.json').write_text(json.dumps({'pca_i_unchanged_during_this_build':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','estimation':ESTIMATION,'weights':POLICY},indent=2),encoding='utf8')
 
 if __name__=='__main__':main()

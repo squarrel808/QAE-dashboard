@@ -10,7 +10,7 @@ Export 가중치 = 0.5 × 연초 명목 총수출/GDP. 다른 부문에 재배�
 
 실행 로그는 `logs/`, 마지막 성공/실패는 `update_status.json`에 남긴다. 어느 단계든 실패하면 종료코드가 실패로 반환되며 이후 화면 동기화를 중단한다. 저장 원자료로만 재검증할 때는 `update.cmd --cached`를 사용한다. 정상 갱신에는 옵션을 붙이지 않는다.
 
-Consumer: 소비실적·고용/소득·소비심리 전체를 직접 PCA. Capex: 기업/비주거 투자 지표 전체를 직접 PCA. Housing: 주택 지표 전체를 직접 PCA. Export: 수출 지표 전체를 직접 PCA. 중간 하위분류 PCA 없음. 기존 경제적 방향 제약 및 주 PCA 반감기 24개월 유지. 단일지표 축은 PCA가 아닌 표준화 지수.
+Consumer: 소비실적·고용/소득·소비심리 전체를 직접 PCA. Capex: 기업/비주거 투자 지표 전체를 직접 PCA. Housing: 주택 지표 전체를 직접 PCA. Export: 수출 지표 전체를 직접 PCA. 중간 하위분류 PCA 없음. 전체 표본 표준화·갱신별 고정 로딩의 CFNAI형 일반 PCA. 개별 음수 계수 허용, 반감기 없음. 단일지표 축은 PCA가 아닌 표준화 지수.
 
 주 지수 = 네 축 점수 × 해당 연도의 연초 명목 GDP 비중 합계. 각 연도 1월 1일을 기준으로 이용 가능하다고 판정된 최신 완결 4분기 비중을 선택한다. 발표 가능 시점은 분기말+3개월, 일본은 +9개월이다. 예를 들어 2026년은 일반적으로 2025Q3까지의 4분기 합, 일본은 2025Q1까지의 4분기 합을 사용한다. 해당 연도 1월~12월에 같은 비중을 적용한다.
 
@@ -20,7 +20,7 @@ Momentum = 완성된 주 PCA의 최근 3개월 평균 − 직전 3개월 평균.
 
 2026년 연초 가중치 기준: 6개국 2025Q3, 일본 2025Q1. 일본 일반정부 투자 상세 지연. 프랑스 Housing은 자영업자를 제외한 가계 GFCF 대리값, 기업 보유 주택까지 완전 분리 아님. 프랑스 Capex는 월별 자본재 생산 france:frsdk를 추가.
 
-원자료: source/는 기존 검토 지표+국민계정 재조회, values.csv/metadata.json은 주택 및 프랑스 자본재 보완 조회. build.py는 기존 PCA_GDP_Weighted의 변환/PCA 함수만 가져오며 해당 폴더나 BlackRock 산출물을 쓰지 않는다. 이전 결과는 보존.
+원자료: source/는 기존 검토 지표+국민계정 재조회, values.csv/metadata.json은 주택 및 프랑스 자본재 보완 조회. build.py는 기존 PCA_GDP_Weighted의 변환과 PCA_Common의 일반 PCA를 가져오며 해당 폴더나 BlackRock 산출물을 쓰지 않는다. 이전 결과는 보존.
 
 파일: index.html / classification_signs.html / weights.csv(연도별 이력) / annual_weights.json(고정 원장) / indices.csv(월별 적용 가중치 포함) / selection_audit.csv. Dashboard /gdp-pca와 Vercel build는 이 폴더를 공개 스냅샷에 동기화한다.
 

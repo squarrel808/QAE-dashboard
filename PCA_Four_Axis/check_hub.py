@@ -24,7 +24,7 @@ with sync_playwright() as p:
  page.screenshot(path=str(B/'pca_ii_hub_preview.png'))
  # Existing PCA stays on its original route and renders its native content.
  response=page.goto(base+'/pca');assert response.status==200
- assert page.get_by_text('Category PCA · Equal-Weight GDP Proxy',exact=False).count()==1
+ assert page.get_by_text('CFNAI형 일반 PCA',exact=False).count()==1
  assert not errors,errors
  browser.close()
 print('PASS: PCA II navigation, iframe expansion/shrink, published input cards, and existing PCA route')

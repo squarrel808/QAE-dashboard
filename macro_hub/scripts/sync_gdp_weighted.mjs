@@ -14,10 +14,11 @@ function validate(html) {
   const data = JSON.parse(match[1])
   if (!data.method?.includes('Four direct block PCAs') || Object.keys(data.countries || {}).length !== 7) throw new Error('GDP-weighted model validation failed')
   if (data.weight_policy !== 'january_1_ttm_lagged_frozen_half_exports_v3') throw new Error('January weight policy is missing')
+  if (data.estimation?.id !== 'cfna_style_fixed_full_sample_v1' || data.estimation.constraint !== 'unrestricted') throw new Error('CFNAI-style estimation policy missing')
   for (const country of Object.values(data.countries)) {
     if (!country.annual_weights?.length || !country.weight_year) throw new Error('Annual weight snapshots are missing')
     for (const version of Object.values(country.versions)) {
-      if (!version.latest || version.negative_loadings !== 0) throw new Error('Missing model or economic direction failure')
+      if (!version.latest || !Number.isInteger(version.negative_loadings)) throw new Error('Missing model diagnostics')
     }
   }
 }

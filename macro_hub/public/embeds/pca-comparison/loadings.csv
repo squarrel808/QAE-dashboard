@@ -1,0 +1,217 @@
+﻿country,model,axis,pk,label,old_loading,new_loading,economic_direction,old_signed,new_signed
+US,I,Capex,surveys:bofcex,"Philly Fed Mfg Bus Outlook: Future Capital Expenditures Diffusion Indx(SA, %Bal)",0.4503381882485577,0.30279807670277026,1,0.4503381882485577,0.30279807670277026
+US,I,Capex,surveys:em6ci,"Empire State Mfg Svy: Cap Expenditures, 6 Mos Ahead: Diffusion Index (SA, %Bal)",0.5587239240041584,0.3796740879291338,1,0.5587239240041584,0.3796740879291338
+US,I,Capex,usecon:fabwc,"C & I Loans in Bank Credit: All Commercial Banks (SA, Bil.$)",-0.3060057195546444,-0.06435466509191692,1,-0.3060057195546444,-0.06435466509191692
+US,I,Capex,usecon:ipmfn,"Industrial Production: Manufacturing [NAICS] (SA, 2017=100)",,0.44583305086225494,1,,0.44583305086225494
+US,I,Capex,surveys:nfib11,"NFIB: Percent Planning Capital Expenditures next 3 to 6 Months (SA, %)",0.5732421323014414,0.29814425154477886,1,0.5732421323014414,0.29814425154477886
+US,I,Capex,surveys:nfib25,NFIB: Businesses Making a Capital Expenditure During the Last 6 Months (%),0.2505534879117482,0.21791445421215014,1,0.2505534879117482,0.21791445421215014
+US,I,Capex,usecon:nmoxt,"Mfrs' New Orders: All Manufacturing Industries Ex Transportation (SA, Mil.$)",,0.4637011003038465,1,,0.4637011003038465
+US,I,Capex,usecon:nmsxt,"Mfrs' Shipments: All Manufacturing Industries Ex Transportation (SA, Mil.$)",,0.4581013698225215,1,,0.4581013698225215
+US,I,Consumer,cbdb:ccin,"Consumer Confidence (SA, 1985=100)",0.7071067811865475,0.3388159479103899,1,0.7071067811865475,0.3388159479103899
+US,I,Consumer,usecon:cdbhm,"Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)",,0.43851309285939144,1,,0.43851309285939144
+US,I,Consumer,usecon:cnbhm,"Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)",,0.4507995739882707,1,,0.4507995739882707
+US,I,Consumer,usecon:csbhm,"Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)",,0.32488395000658965,1,,0.32488395000658965
+US,I,Consumer,usecon:fot,"Consumer Credit Outstanding (EOP, SA, Bil.$)",,0.20717217287769463,1,,0.20717217287769463
+US,I,Consumer,usecon:nrstxm7,"Retail Sales & Food Svc Ex Motor Vehicle/Parts Dealers & Gas Stations(SA, Mil.$)",,0.4743178377637713,1,,0.4743178377637713
+US,I,Consumer,usecon:tvsar,"Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)",0.7071067811865475,0.34094349021035664,1,0.7071067811865475,0.34094349021035664
+US,I,Export,usecon:bpxmm,"Exports: Goods, BOP Basis (SA, Mil.$)",,0.5328180854853719,1,,0.5328180854853719
+US,I,Export,surveys:kc6nxea,"KC Fed Mfg Survey: New Orders for Exports: Expected in 6 Months (SA, %Bal)",0.7071067811865475,0.4819020082569829,1,0.7071067811865475,0.4819020082569829
+US,I,Export,usecon:napmnxi,"ISM Mfg: New Export Orders Index (SA, 50+ = Econ Expand)",0.7071067811865475,0.45768567701783436,1,0.7071067811865475,0.45768567701783436
+US,I,Export,usecon:tmxah,"Exports, FAS Value (SA, Mil.Chn.2017$)",,0.5238312354855491,1,,0.5238312354855491
+US,I,Housing,surveys:hbshmi,"Home Builders: Housing Market Index  [Composite] (SA, All Good = 100)",1.0,0.40959046010819755,1,1.0,0.40959046010819755
+US,I,Housing,usecon:hn1us,"New 1-Family Houses Sold: United States (SAAR, Thous)",,0.5056523449123345,1,,0.5056523449123345
+US,I,Housing,usecon:hpt,"New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)",,0.5389075929497051,1,,0.5389075929497051
+US,I,Housing,usecon:hst,"Housing Starts (SAAR, Thous.Units)",,0.5349111770510763,1,,0.5349111770510763
+US,I,Labor,cbdb:ehn,"Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)",-0.5838485695746461,-0.46097024992237456,1,-0.5838485695746461,-0.46097024992237456
+US,I,Labor,usecon:kut27p,"Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)",-0.27447698769383033,-0.3229751871981881,1,-0.27447698769383033,-0.3229751871981881
+US,I,Labor,usecon:ljhtpa,"JOLTS: Hires Rate: Total (SA, %)",,0.3614911198043711,1,,0.3614911198043711
+US,I,Labor,usecon:ljjtla,"JOLTS: Job Openings: Total (EOP, SA, Thous)",,0.11623568824718902,1,,0.11623568824718902
+US,I,Labor,usecon:ljqtpa,"JOLTS: Quits Rate: Total (SA, %)",,0.46251731126613205,1,,0.46251731126613205
+US,I,Labor,g10:s111eh,"U.S.: Avg Hourly Earnings, Prod & Nonsupervisory Employees: Pvt Nonfarm(SA,$/Hr)",0.3171651726484876,0.33291790259075443,1,0.3171651726484876,0.33291790259075443
+US,I,Labor,g10:s111elen,"U.S.: Total Employees on Nonfarm Payrolls (SA, Thous)",0.4643446545183811,0.21760751215909702,1,0.4643446545183811,0.21760751215909702
+US,I,Labor,g10:s111elur,"U.S.: Civilian Unemployment Rate (SA, %)",-0.5172750971303574,-0.40853062282616254,1,-0.5172750971303574,-0.40853062282616254
+UK,I,Capex,uk:engw,"UK: Imports of Capital Goods (SA, Mil.Chn.2023.GBP)",,0.2973798841321237,1,,0.2973798841321237
+UK,I,Capex,uk:k24s,"UK: Industrial Production: Capital Goods(SA, 2023=100)",,0.2746828847938876,1,,0.2746828847938876
+UK,I,Capex,intsrvys:s112vpmc,"U.K. PMI: Construction (SA, 50+=Expansion)",0.3950318277866198,0.3991420815026641,1,0.3950318277866198,0.3991420815026641
+UK,I,Capex,uk:unvaa3,"UK: BoE Agents' Survey: Current Capacity Utilization (NSA, % Bal)",0.48696861892734045,0.40744495033769657,1,0.48696861892734045,0.40744495033769657
+UK,I,Capex,uk:unvai3,"UK: BoE Agents' Survey: Investment Intentions (NSA, % Bal)",0.5983082430691514,0.5412117546218866,1,0.5983082430691514,0.5412117546218866
+UK,I,Capex,uk:unvao3,"UK: BoE Agents' Survey: Construction Output (NSA, % Bal)",0.49883731365152145,0.46677464069077634,1,0.49883731365152145,0.46677464069077634
+UK,I,Consumer,uk:j5ek,"Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2023=100)",,0.4143360927868308,1,,0.4143360927868308
+UK,I,Consumer,intsrvys:m112vpms,"UK PMI: Services Business Activity [Latest Est incl Flash] (SA, 50+=Expansion)",0.3771842687102939,0.430965231526094,1,0.3771842687102939,0.430965231526094
+UK,I,Consumer,uk:ucbrss,"UK: Dist Trades: Retail: Vol of Stocks to Expected Sales, Bal (% Bal)",-0.2550408342106175,-0.19110289819179122,1,-0.2550408342106175,-0.19110289819179122
+UK,I,Consumer,uk:ucbwsa,"UK: Dist Trades: Wholesale: Vol of Sales with Year Ago, Bal (% Bal)",0.3480325002478518,0.38618753436088915,1,0.3480325002478518,0.38618753436088915
+UK,I,Consumer,uk:ugfcgl,"UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)",0.5003329875700544,0.3230273026582921,1,0.5003329875700544,0.3230273026582921
+UK,I,Consumer,uk:ugfcm,"UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)",0.5648040998820005,0.358011885430614,1,0.5648040998820005,0.358011885430614
+UK,I,Consumer,uk:uncregp,"UK: New Car Registrations: Private (NSA, Units)",0.319723019814916,0.3181447640035794,1,0.319723019814916,0.3181447640035794
+UK,I,Consumer,uk:usb3pu,"UK: Consumer Credit ex Student Loans: Gross Lending (SA, Mil.GBP)",,0.35099601536426295,1,,0.35099601536426295
+UK,I,Export,uk:ikbe,"UK: Exports of Services (SA, Mil.Chn.2023.GBP)",,0.6933925789654403,1,,0.6933925789654403
+UK,I,Export,uk:ikbg,"UK: Trade Balance of Services (SA, Mil.Chn.2023.GBP)",,0.4553232611870427,1,,0.4553232611870427
+UK,I,Export,uk:ucbieo,UK: CBI Industrial Trends: Current Export Order Book(% Balance),1.0,0.5584688525402757,1,1.0,0.5584688525402757
+UK,I,Housing,uk:ukspt,"UK: Residential Property Transactions over 40,000 GBP(SA, Thous)",,0.36021814168478417,1,,0.36021814168478417
+UK,I,Housing,uk:urshg,"England & Wales: RICS Housing Survey: Change in Newly Agreed Sales (SA, % Bal)",0.6642930459252963,0.5922888580654055,1,0.6642930459252963,0.5922888580654055
+UK,I,Housing,uk:urshq,"England & Wales: RICS Housing Survey: Change in New Buyer Enquiries (SA, % Bal)",0.6691016755615624,0.5705350814912167,1,0.6691016755615624,0.5705350814912167
+UK,I,Housing,uk:urshv,"England & Wales: RICS Housing Srvy: Stocks Avg/Chart Surveyor (EOP, Number, SA)",0.33319318254730534,-0.3901861404392518,1,0.33319318254730534,-0.3901861404392518
+UK,I,Housing,uk:usvtvc,"UK: Mortgage Lending: Total [incl Housing Assns]: Gross New Loans (SA, Mil.GBP)",,0.20415997553308307,1,,0.20415997553308307
+UK,I,Labor,uk:ap2y,"UK: Job Vacancies excluding Agriculture, Forestry & Fishing (SA, Thous)",,0.4449321965503825,1,,0.4449321965503825
+UK,I,Labor,uk:ka46,"Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)",,0.5470605145782617,1,,0.5470605145782617
+UK,I,Labor,g10:s112ele,"U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)",,0.4587140738030763,1,,0.4587140738030763
+UK,I,Labor,g10:s112elur,"U.K.: Unemployment Rate: Aged 16 and Over [3-Mo Moving Avg](SA, %)",,-0.5406861680838564,1,,-0.5406861680838564
+US,II,Consumer,usecon:kr,"Civilian Unemployment Rate: 16 yr + (SA, %)",0.19643962740057846,0.16868055345097657,-1,-0.19643962740057846,-0.16868055345097657
+US,II,Consumer,usecon:klu6,"Unempl+Margin Attach+Part Time Econ Reasons/CLF + Margin Attach (SA,%)",0.2010917152347161,0.16706701668477897,-1,-0.2010917152347161,-0.16706701668477897
+US,II,Consumer,usecon:lanagra,"All Employees: Total Nonfarm (SA, Thous)",0.24143685839403697,0.20841472029435834,1,0.24143685839403697,0.20841472029435834
+US,II,Consumer,usecon:lapriva,"All Employees: Total Private Industries (SA, Thous)",0.2443880774190808,0.21078221611949627,1,0.2443880774190808,0.21078221611949627
+US,II,Consumer,usecon:lamanua,"All Employees: Manufacturing (SA, Thous)",0.22893203166846143,0.18188911878797207,1,0.22893203166846143,0.18188911878797207
+US,II,Consumer,usecon:lrtpriva,"Average Weekly Hours: Total Private Industries (SA, Hrs)",0.07862949371760271,0.16826802885496683,1,0.07862949371760271,0.16826802885496683
+US,II,Consumer,usecon:lrpriva,"Average Weekly Hours: Prod & Nonsupervisory: Private Industries (SA, Hrs)",0.052903316109106584,0.1647781903566372,1,0.052903316109106584,0.1647781903566372
+US,II,Consumer,usecon:ke,"Civilian Employment: Sixteen Years & Over (SA, Thous)",0.23174082908355312,0.20413233516339627,1,0.23174082908355312,0.20413233516339627
+US,II,Consumer,usecon:kq,"Civilian Employment/Population Ratio: 16 yr + (SA, %)",0.1506213404246342,0.08893168323618085,1,0.1506213404246342,0.08893168323618085
+US,II,Consumer,usecon:ljjtpa,"JOLTS: Job Openings Rate: Total (EOP, SA, %)",0.17359294111402007,0.1505778986129818,1,0.17359294111402007,0.1505778986129818
+US,II,Consumer,usecon:ljhtpa,"JOLTS: Hires Rate: Total (SA, %)",0.0802526179012292,0.12488703867543213,1,0.0802526179012292,0.12488703867543213
+US,II,Consumer,usecon:ljstpa,"JOLTS: Total Separations Rate (SA, %)",0.0,-0.029725891650801868,-1,-0.0,0.029725891650801868
+US,II,Consumer,surveys:cgcto,"Challenger, Gray & Christmas: Announced Job Cuts, Total (Number)",0.1468060184050238,0.09864952963986619,-1,-0.1468060184050238,-0.09864952963986619
+US,II,Consumer,usecon:laxepa,"ADP Nonfarm Private Payroll Employment (SA, Thous.)",0.15085053517162186,0.049003785087799824,1,0.15085053517162186,0.049003785087799824
+US,II,Consumer,usecon:lepriva,"Avg Hourly Earnings: Prod & Nonsupervisory: Total Private Industries(SA, $/Hour)",0.020053940349457514,0.04333981424976997,1,0.020053940349457514,0.04333981424976997
+US,II,Consumer,usecon:litpriva,"Aggregate Weekly Hours Index: Total Private Industries (SA, 2007=100)",0.24932361086047933,0.21356637468150444,1,0.24932361086047933,0.21356637468150444
+US,II,Consumer,usecon:ypxtphm,"Real Personal Income excluding Current Transfer Receipts (SAAR, Bil.Chn.2017$)",0.15548882942083436,0.19882708346435257,1,0.15548882942083436,0.19882708346435257
+US,II,Consumer,usecon:lrmanua,"Average Weekly Hours: Prod & Nonsupervisory: Manufacturing (SA, Hrs)",0.05718991435337869,0.13288678732526177,1,0.05718991435337869,0.13288678732526177
+US,II,Consumer,bci:a0m005,"Average Weekly Initial Claims Unemployment Insurance (SA, Thous)",0.22630930553328674,0.16858802290974179,-1,-0.22630930553328674,-0.16858802290974179
+US,II,Consumer,bci:a0m008,"Manufacturers New Orders: Consumer Goods & Materials (SA, Mil. 1982$)",0.16473369509656371,0.1684911745664485,1,0.16473369509656371,0.1684911745664485
+US,II,Capex,bci:a0m033,"Mfrs' New Orders: Nondefense Capital Goods ex Aircraft (SA, Mil.Chn.1982$)",0.350044599761601,0.31405131137191955,1,0.350044599761601,0.31405131137191955
+US,II,Housing,usecon:hpt,"New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)",0.5304970595709924,0.49310165009793633,1,0.5304970595709924,0.49310165009793633
+US,II,Housing,usecon:hst,"Housing Starts (SAAR, Thous.Units)",0.5013752671443146,0.48437306872956676,1,0.5013752671443146,0.48437306872956676
+US,II,Housing,usecon:hn1us,"New 1-Family Houses Sold: United States (SAAR, Thous)",0.30791713156393063,0.46996500986319617,1,0.30791713156393063,0.46996500986319617
+US,II,Housing,usecon:hxtus,"NAR Total Existing Home Sales, United States (SAAR, Thous)",0.4967157744938749,0.4054096162565717,1,0.4967157744938749,0.4054096162565717
+US,II,Consumer,usecon:nrst,"Retail Sales & Food Services (SA, Mil.$)",0.19785280643625752,0.21362341773462637,1,0.19785280643625752,0.21362341773462637
+US,II,Consumer,usecon:nrstxm,"Retail Sales & Food Services Excl Motor Vehicles & Parts Dealers (SA, Mil.$)",0.19762512706834537,0.20965771762930946,1,0.19762512706834537,0.20965771762930946
+US,II,Consumer,usecon:tvsar,"Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)",0.12440093401988478,0.1268582018231364,1,0.12440093401988478,0.1268582018231364
+US,II,Consumer,cbdb:ccin,"Consumer Confidence (SA, 1985=100)",0.12753518198805308,0.1772006163658013,1,0.12753518198805308,0.1772006163658013
+US,II,Consumer,usecon:csent,"University of Michigan: Consumer Sentiment (NSA, Q1-66=100)",0.04476942322321711,0.09859322000593065,1,0.04476942322321711,0.09859322000593065
+US,II,Consumer,usecon:ypm,"Personal Income (SAAR, Bil.$)",0.0,0.1350272435583134,1,0.0,0.1350272435583134
+US,II,Consumer,usecon:cbm,"Personal Consumption Expenditures (SAAR, Bil.$)",0.25396851809687837,0.225913031416009,1,0.25396851809687837,0.225913031416009
+US,II,Consumer,usecon:ypsvrm,"Personal Saving Rate (SA, %)",0.11242042053378612,0.05886149379895492,-1,-0.11242042053378612,-0.05886149379895492
+US,II,Export,usecon:bgsx,"Exports: Goods and Services, BOP Basis (SA, Mil.$)",0.5118146569809571,0.5013287098730774,1,0.5118146569809571,0.5013287098730774
+US,II,Export,usecon:bpxmm,"Exports: Goods, BOP Basis (SA, Mil.$)",0.5205151388445525,0.5056155492199296,1,0.5205151388445525,0.5056155492199296
+US,II,Consumer,usecon:cdbhm,"Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)",0.08624738100379317,0.15232865469988308,1,0.08624738100379317,0.15232865469988308
+US,II,Consumer,usecon:cnbhm,"Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)",0.09549780812517057,0.17705397779689785,1,0.09549780812517057,0.17705397779689785
+US,II,Consumer,usecon:csbhm,"Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)",0.2396319569667441,0.19403553690660838,1,0.2396319569667441,0.19403553690660838
+US,II,Consumer,cbdb:ehn,"Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)",0.15776541453771073,0.16721494930248512,-1,-0.15776541453771073,-0.16721494930248512
+US,II,Capex,usecon:ipmfn,"Industrial Production: Manufacturing [NAICS] (SA, 2017=100)",0.2687252836330684,0.29629388866005224,1,0.2687252836330684,0.29629388866005224
+US,II,Consumer,usecon:kut27p,"Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)",0.0,0.043767538867675475,-1,-0.0,-0.043767538867675475
+US,II,Consumer,usecon:ljjtla,"JOLTS: Job Openings: Total (EOP, SA, Thous)",0.17331532793131504,0.1897250333986383,1,0.17331532793131504,0.1897250333986383
+US,II,Consumer,usecon:ljqtpa,"JOLTS: Quits Rate: Total (SA, %)",0.18255398235071377,0.17954727802969211,1,0.18255398235071377,0.17954727802969211
+US,II,Consumer,usecon:nrstxm7,"Retail Sales & Food Svc Ex Motor Vehicle/Parts Dealers & Gas Stations(SA, Mil.$)",0.18898975261073206,0.2178404244705677,1,0.18898975261073206,0.2178404244705677
+US,II,Export,usecon:tmxah,"Exports, FAS Value (SA, Mil.Chn.2017$)",0.47839136394962833,0.4849056916292437,1,0.47839136394962833,0.4849056916292437
+US,II,Capex,usecon:fabwc,"C & I Loans in Bank Credit: All Commercial Banks (SA, Bil.$)",0.0,-0.052812106170882035,1,0.0,-0.052812106170882035
+US,II,Capex,usecon:nmscnx,"Mfrs' Shipments: Nondefense Capital Goods ex Aircraft (SA, Mil.$)",0.30607517794548356,0.24571381337589943,1,0.30607517794548356,0.24571381337589943
+US,II,Capex,surveys:em6ci,"Empire State Mfg Svy: Cap Expenditures, 6 Mos Ahead: Diffusion Index (SA, %Bal)",0.281486439789026,0.31897490631123954,1,0.281486439789026,0.31897490631123954
+US,II,Capex,surveys:nfib25,NFIB: Businesses Making a Capital Expenditure During the Last 6 Months (%),0.0,0.13696166904706153,1,0.0,0.13696166904706153
+US,II,Capex,surveys:nfib11,"NFIB: Percent Planning Capital Expenditures next 3 to 6 Months (SA, %)",0.11230575125672256,0.17623558430843073,1,0.11230575125672256,0.17623558430843073
+US,II,Capex,surveys:bofcex,"Philly Fed Mfg Bus Outlook: Future Capital Expenditures Diffusion Indx(SA, %Bal)",0.26988493039041317,0.2738672934573412,1,0.26988493039041317,0.2738672934573412
+US,II,Capex,surveys:ri6cx,"Richmond Fed Mfg Survey: Expected Manufacturing Capital Expenditures (SA, %Bal)",0.2903377034353943,0.28502591163461866,1,0.2903377034353943,0.28502591163461866
+US,II,Capex,usecon:napmc,"ISM Mfg: PMI Composite Index (SA, 50+ = Econ Expand)",0.3760526531054688,0.35796838114005936,1,0.3760526531054688,0.35796838114005936
+US,II,Capex,usecon:napmni,"ISM Mfg: New Orders Index (SA, 50+ = Econ Expand)",0.3494907583818086,0.3234805517068968,1,0.3494907583818086,0.3234805517068968
+US,II,Capex,surveys:bocgx,"Philly Fed Mfg Business Outlook: Current Activity Diffusion Index(SA, %Bal)",0.29672016688035535,0.3197847985498993,1,0.29672016688035535,0.3197847985498993
+US,II,Capex,surveys:rimcx,"Richmond Fed Mfg Survey: Current Manufacturing Composite (SA, %Bal)",0.33315189446532256,0.32797625914747075,1,0.33315189446532256,0.32797625914747075
+US,II,Consumer,usecon:fot,"Consumer Credit Outstanding (EOP, SA, Bil.$)",0.16996641906328458,0.14130280695879324,1,0.16996641906328458,0.14130280695879324
+US,II,Consumer,usecon:tsrh,"Real Sales: Retail Trade (SA, Mil.Chn.2017$)",,0.16610800631179773,1,,0.16610800631179773
+US,II,Export,usecon:napmnxi,"ISM Mfg: New Export Orders Index (SA, 50+ = Econ Expand)",0.31541479666631717,0.355676154464609,1,0.31541479666631717,0.355676154464609
+US,II,Export,surveys:kcmnxea,"Kansas City Fed Mfg Survey: New Orders for Exports: Versus a Month Ago(SA, %Bal)",0.372511685824031,0.36246845988976273,1,0.372511685824031,0.36246845988976273
+US,II,Housing,surveys:hbshmi,"Home Builders: Housing Market Index  [Composite] (SA, All Good = 100)",0.35448016974280727,0.37014784277526336,1,0.35448016974280727,0.37014784277526336
+UK,II,Consumer,derived:uk_mgsx_endmonth,"UK: LFS: Unemployment Rate: Aged 16 and Over (SA, %)",0.0,0.07064350288064523,-1,-0.0,-0.07064350288064523
+UK,II,Consumer,uk:bcje,"UK: Unemployment: Claimant Count Rate (SA, %)",0.21415303511255337,0.10032892527938964,-1,-0.21415303511255337,-0.10032892527938964
+UK,II,Consumer,uk:bcjd,"UK: Unemployment: Claimant Count (SA, Thous)",0.2315978566347171,0.22335344772029933,-1,-0.2315978566347171,-0.22335344772029933
+UK,II,Consumer,uk:kac3,"Great Britain: AWE: Total Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)",0.17794524396332373,0.14154065334026505,1,0.17794524396332373,0.14154065334026505
+UK,II,Consumer,uk:kai9,"Great Britain: AWE, Regular Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)",0.11787231705992232,0.09098054007881662,1,0.11787231705992232,0.09098054007881662
+UK,II,Capex,uk:k222,"UK: Industrial Production (SA, 2024=100)",0.19465631114530488,0.20935530549948042,1,0.19465631114530488,0.20935530549948042
+UK,II,Consumer,uk:j45u,"Great Britain: Retail Sales Volume: Retail excluding Auto Fuel(SA, Yr/Yr %Chg)",0.2364195506146402,0.25468700732222954,1,0.2364195506146402,0.25468700732222954
+UK,II,Consumer,uk:uncreg,"UK: New Car Registrations (NSA, Units)",0.28686780178870097,0.22703288148556378,1,0.28686780178870097,0.22703288148556378
+UK,II,Consumer,uk:ugfci,"UK: GfK Consumer Confidence Barometer (NSA, % Bal)",0.1749481242548252,0.23538015579982616,1,0.1749481242548252,0.23538015579982616
+UK,II,Export,uk:ikbh,"U.K.: Exports: Goods and Services (SA, Mil.Pounds)",0.6130001556382922,0.6167498424657437,1,0.6130001556382922,0.6167498424657437
+UK,II,Consumer,uk:ap2y,"UK: Job Vacancies excluding Agriculture, Forestry & Fishing (SA, Thous)",0.2779457121311042,0.21831151258779624,1,0.2779457121311042,0.21831151258779624
+UK,II,Consumer,uk:ukseppfc,"UK: Payrolled Employees from PAYE RTI: Change (SA, Number)",0.19770669986594155,0.24565998875761705,1,0.19770669986594155,0.24565998875761705
+UK,II,Consumer,uk:a3ww,"Great Britain: AWE: Whole Economy: Total Pay in Real Terms: 3M Growth (SA, %)",0.14143633483339108,0.21329176893875912,1,0.14143633483339108,0.21329176893875912
+UK,II,Export,uk:ikbe,"UK: Exports of Services (SA, Mil.Chn.2024.GBP)",0.615027879668367,0.6097858284410428,1,0.615027879668367,0.6097858284410428
+UK,II,Consumer,uk:j5ek,"Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)",0.2784523943207589,0.28403972940704897,1,0.2784523943207589,0.28403972940704897
+UK,II,Capex,uk:k24s,"UK: Industrial Production: Capital Goods(SA, 2024=100)",0.35486879695658613,0.22559091599250125,1,0.35486879695658613,0.22559091599250125
+UK,II,Consumer,uk:ka46,"Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)",0.18323496010471416,0.15964753752945807,1,0.18323496010471416,0.15964753752945807
+UK,II,Consumer,g10:s112ele,"U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)",0.15761139395799215,0.12873227824385308,1,0.15761139395799215,0.12873227824385308
+UK,II,Consumer,uk:ugfcgl,"UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)",0.14873098642280935,0.22769887500957464,1,0.14873098642280935,0.22769887500957464
+UK,II,Consumer,uk:ugfcm,"UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)",0.1966489784774277,0.23921116939679124,1,0.1966489784774277,0.23921116939679124
+UK,II,Housing,uk:ukspt,"UK: Residential Property Transactions over 40,000 GBP(SA, Thous)",0.473723149627975,0.529222948483746,1,0.473723149627975,0.529222948483746
+UK,II,Consumer,uk:uncregp,"UK: New Car Registrations: Private (NSA, Units)",0.29421133636651864,0.20651957124913992,1,0.29421133636651864,0.20651957124913992
+UK,II,Capex,uk:unvaa3,"UK: BoE Agents' Survey: Current Capacity Utilization (NSA, % Bal)",0.3018823035155612,0.2822783267270288,1,0.3018823035155612,0.2822783267270288
+UK,II,Capex,uk:unvai3,"UK: BoE Agents' Survey: Investment Intentions (NSA, % Bal)",0.4231896871385435,0.4265690511851975,1,0.4231896871385435,0.4265690511851975
+UK,II,Capex,uk:unvao1,"UK: BoE Agents' Survey: Total Manufacturing Output Including Exports(NSA, % Bal)",0.40636692438847516,0.4379026425275087,1,0.40636692438847516,0.4379026425275087
+UK,II,Capex,uk:ucbito,UK: CBI Industrial Trends: Current Total Order Book(% Balance),0.391362695722251,0.3952661252433989,1,0.391362695722251,0.3952661252433989
+UK,II,Capex,uk:ucbivo,UK: CBI Industrial Trends: Volume of Output Over Next 3 Months(% Bal),0.3726687029943287,0.3583342516277958,1,0.3726687029943287,0.3583342516277958
+UK,II,Capex,uk:k22a,"UK: Industrial Production: Manufacturing (SA, 2024=100)",0.3298087657570622,0.29055070610406586,1,0.3298087657570622,0.29055070610406586
+UK,II,Capex,intsrvys:s112vpmg,"U.K. PMI: Manufacturing Output (SA, 50+=Expansion)",0.0,0.2877841251829297,1,0.0,0.2877841251829297
+UK,II,Consumer,uk:ucbvrs,"UK: CBI Dist Trades: Retail: Volume of Sales, Moving Average (% Bal)",0.14862230906919627,0.21984921381410333,1,0.14862230906919627,0.21984921381410333
+UK,II,Consumer,uk:usb3pu,"UK: Consumer Credit ex Student Loans: Gross Lending (SA, Mil.GBP)",0.3545769003098142,0.2876593537817422,1,0.3545769003098142,0.2876593537817422
+UK,II,Consumer,uk:uksrsf,"Great Britain: Retail Sales Value: Retailing excluding Auto Fuel(SA, Thous.GBP)",0.2281635698289576,0.23223685361896745,1,0.2281635698289576,0.23223685361896745
+UK,II,Consumer,uk:ukstrs,"Great Britain: Retail Sales Value: Retailing including Auto Fuel(SA, Thous.GBP)",0.25655353493665883,0.2549689212480244,1,0.25655353493665883,0.2549689212480244
+UK,II,Consumer,intsrvys:s112vpms,"U.K. PMI: Services Business Activity (SA, 50+=Expansion)",0.028398262531812875,0.23863904678923376,1,0.028398262531812875,0.23863904678923376
+UK,II,Export,uk:ucbieo,UK: CBI Industrial Trends: Current Export Order Book(% Balance),0.49595515565226467,0.497775928758062,1,0.49595515565226467,0.497775928758062
+UK,II,Housing,uk:usvtvc,"UK: Mortgage Lending: Total [incl Housing Assns]: Gross New Loans (SA, Mil.GBP)",0.4105992625193102,0.43177682794209815,1,0.4105992625193102,0.43177682794209815
+UK,II,Housing,uk:urshg,"England & Wales: RICS Housing Survey: Change in Newly Agreed Sales (SA, % Bal)",0.41131697732168837,0.3504973415216925,1,0.41131697732168837,0.3504973415216925
+UK,II,Housing,uk:urshs,"England & Wales: RICS Survey: Sales Avg/Chartered Surveyor: Last 3Mo(Number, SA)",0.5169958786356589,0.5048671982256432,1,0.5169958786356589,0.5048671982256432
+UK,II,Housing,uk:urshv,"England & Wales: RICS Housing Srvy: Stocks Avg/Chart Surveyor (EOP, Number, SA)",0.0,0.252123388181729,-1,-0.0,-0.252123388181729
+UK,II,Housing,uk:urshq,"England & Wales: RICS Housing Survey: Change in New Buyer Enquiries (SA, % Bal)",0.412950637202369,0.3036220751595821,1,0.412950637202369,0.3036220751595821
+US,III,Capex,bci:a0m033,"Mfrs' New Orders: Nondefense Capital Goods ex Aircraft (SA, Mil.Chn.1982$)",0.350044599761601,0.31405131137191955,1,0.350044599761601,0.31405131137191955
+US,III,Housing,usecon:hpt,"New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)",0.5947477044194113,0.5377645341557256,1,0.5947477044194113,0.5377645341557256
+US,III,Housing,usecon:hst,"Housing Starts (SAAR, Thous.Units)",0.5674308884351961,0.5320068852445413,1,0.5674308884351961,0.5320068852445413
+US,III,Housing,usecon:hn1us,"New 1-Family Houses Sold: United States (SAAR, Thous)",0.33242360030508794,0.5049847113475467,1,0.33242360030508794,0.5049847113475467
+US,III,Consumer,usecon:tvsar,"Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)",0.4081897196640269,0.3227257438590722,1,0.4081897196640269,0.3227257438590722
+US,III,Consumer,cbdb:ccin,"Consumer Confidence (SA, 1985=100)",0.37030007795626796,0.3446853734658659,1,0.37030007795626796,0.3446853734658659
+US,III,Consumer,usecon:csent,"University of Michigan: Consumer Sentiment (NSA, Q1-66=100)",0.3724153013920633,0.32996447467982937,1,0.3724153013920633,0.32996447467982937
+US,III,Export,usecon:bgsx,"Exports: Goods and Services, BOP Basis (SA, Mil.$)",0.5645355951749732,0.5411795559811532,1,0.5645355951749732,0.5411795559811532
+US,III,Consumer,usecon:cdbhm,"Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)",0.4780742412533729,0.43974783898646186,1,0.4780742412533729,0.43974783898646186
+US,III,Consumer,usecon:cnbhm,"Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)",0.44081983936898206,0.4180242855695393,1,0.44081983936898206,0.4180242855695393
+US,III,Consumer,usecon:csbhm,"Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)",0.36699964221230574,0.250587896121283,1,0.36699964221230574,0.250587896121283
+US,III,Capex,usecon:ipmfn,"Industrial Production: Manufacturing [NAICS] (SA, 2017=100)",0.2687252836330684,0.29629388866005224,1,0.2687252836330684,0.29629388866005224
+US,III,Export,usecon:tmxah,"Exports, FAS Value (SA, Mil.Chn.2017$)",0.5276300412249764,0.5298921084890769,1,0.5276300412249764,0.5298921084890769
+US,III,Capex,usecon:fabwc,"C & I Loans in Bank Credit: All Commercial Banks (SA, Bil.$)",0.0,-0.052812106170882035,1,0.0,-0.052812106170882035
+US,III,Capex,usecon:nmscnx,"Mfrs' Shipments: Nondefense Capital Goods ex Aircraft (SA, Mil.$)",0.30607517794548356,0.24571381337589943,1,0.30607517794548356,0.24571381337589943
+US,III,Capex,surveys:em6ci,"Empire State Mfg Svy: Cap Expenditures, 6 Mos Ahead: Diffusion Index (SA, %Bal)",0.281486439789026,0.31897490631123954,1,0.281486439789026,0.31897490631123954
+US,III,Capex,surveys:nfib25,NFIB: Businesses Making a Capital Expenditure During the Last 6 Months (%),0.0,0.13696166904706153,1,0.0,0.13696166904706153
+US,III,Capex,surveys:nfib11,"NFIB: Percent Planning Capital Expenditures next 3 to 6 Months (SA, %)",0.11230575125672256,0.17623558430843073,1,0.11230575125672256,0.17623558430843073
+US,III,Capex,surveys:bofcex,"Philly Fed Mfg Bus Outlook: Future Capital Expenditures Diffusion Indx(SA, %Bal)",0.26988493039041317,0.2738672934573412,1,0.26988493039041317,0.2738672934573412
+US,III,Capex,surveys:ri6cx,"Richmond Fed Mfg Survey: Expected Manufacturing Capital Expenditures (SA, %Bal)",0.2903377034353943,0.28502591163461866,1,0.2903377034353943,0.28502591163461866
+US,III,Capex,usecon:napmc,"ISM Mfg: PMI Composite Index (SA, 50+ = Econ Expand)",0.3760526531054688,0.35796838114005936,1,0.3760526531054688,0.35796838114005936
+US,III,Capex,usecon:napmni,"ISM Mfg: New Orders Index (SA, 50+ = Econ Expand)",0.3494907583818086,0.3234805517068968,1,0.3494907583818086,0.3234805517068968
+US,III,Capex,surveys:bocgx,"Philly Fed Mfg Business Outlook: Current Activity Diffusion Index(SA, %Bal)",0.29672016688035535,0.3197847985498993,1,0.29672016688035535,0.3197847985498993
+US,III,Capex,surveys:rimcx,"Richmond Fed Mfg Survey: Current Manufacturing Composite (SA, %Bal)",0.33315189446532256,0.32797625914747075,1,0.33315189446532256,0.32797625914747075
+US,III,Consumer,usecon:fot,"Consumer Credit Outstanding (EOP, SA, Bil.$)",0.0,0.20023915222625313,1,0.0,0.20023915222625313
+US,III,Consumer,usecon:tsrh,"Real Sales: Retail Trade (SA, Mil.Chn.2017$)",,0.44401695466795377,1,,0.44401695466795377
+US,III,Export,usecon:napmnxi,"ISM Mfg: New Export Orders Index (SA, 50+ = Econ Expand)",0.4143575017643487,0.4598852864202818,1,0.4143575017643487,0.4598852864202818
+US,III,Export,surveys:kcmnxea,"Kansas City Fed Mfg Survey: New Orders for Exports: Versus a Month Ago(SA, %Bal)",0.48084712966698284,0.46351328447324786,1,0.48084712966698284,0.46351328447324786
+US,III,Housing,surveys:hbshmi,"Home Builders: Housing Market Index  [Composite] (SA, All Good = 100)",0.46237636714876323,0.4156542086421268,1,0.46237636714876323,0.4156542086421268
+UK,III,Capex,uk:k222,"UK: Industrial Production (SA, 2024=100)",0.19465631114530488,0.20935530549948042,1,0.19465631114530488,0.20935530549948042
+UK,III,Consumer,uk:j45u,"Great Britain: Retail Sales Volume: Retail excluding Auto Fuel(SA, Yr/Yr %Chg)",0.39643611079351193,0.34876550043024207,1,0.39643611079351193,0.34876550043024207
+UK,III,Consumer,uk:uncreg,"UK: New Car Registrations (NSA, Units)",0.2803747505297554,0.24023992980064557,1,0.2803747505297554,0.24023992980064557
+UK,III,Consumer,uk:ugfci,"UK: GfK Consumer Confidence Barometer (NSA, % Bal)",0.3674822283745047,0.32321029109083405,1,0.3674822283745047,0.32321029109083405
+UK,III,Export,uk:ikbh,"U.K.: Exports: Goods and Services (SA, Mil.Pounds)",0.6130001556382922,0.6167498424657437,1,0.6130001556382922,0.6167498424657437
+UK,III,Export,uk:ikbe,"UK: Exports of Services (SA, Mil.Chn.2024.GBP)",0.615027879668367,0.6097858284410428,1,0.615027879668367,0.6097858284410428
+UK,III,Consumer,uk:j5ek,"Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)",0.4238643973171124,0.36990886712408616,1,0.4238643973171124,0.36990886712408616
+UK,III,Capex,uk:k24s,"UK: Industrial Production: Capital Goods(SA, 2024=100)",0.35486879695658613,0.22559091599250125,1,0.35486879695658613,0.22559091599250125
+UK,III,Consumer,uk:ugfcgl,"UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)",0.3132529104687784,0.30267573587162877,1,0.3132529104687784,0.30267573587162877
+UK,III,Consumer,uk:ugfcm,"UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)",0.3792473717410562,0.3181476066063441,1,0.3792473717410562,0.3181476066063441
+UK,III,Housing,uk:ukspt,"UK: Residential Property Transactions over 40,000 GBP(SA, Thous)",0.473723149627975,0.529222948483746,1,0.473723149627975,0.529222948483746
+UK,III,Capex,uk:unvaa3,"UK: BoE Agents' Survey: Current Capacity Utilization (NSA, % Bal)",0.3018823035155612,0.2822783267270288,1,0.3018823035155612,0.2822783267270288
+UK,III,Capex,uk:unvai3,"UK: BoE Agents' Survey: Investment Intentions (NSA, % Bal)",0.4231896871385435,0.4265690511851975,1,0.4231896871385435,0.4265690511851975
+UK,III,Capex,uk:unvao1,"UK: BoE Agents' Survey: Total Manufacturing Output Including Exports(NSA, % Bal)",0.40636692438847516,0.4379026425275087,1,0.40636692438847516,0.4379026425275087
+UK,III,Capex,uk:ucbito,UK: CBI Industrial Trends: Current Total Order Book(% Balance),0.391362695722251,0.3952661252433989,1,0.391362695722251,0.3952661252433989
+UK,III,Capex,uk:ucbivo,UK: CBI Industrial Trends: Volume of Output Over Next 3 Months(% Bal),0.3726687029943287,0.3583342516277958,1,0.3726687029943287,0.3583342516277958
+UK,III,Capex,uk:k22a,"UK: Industrial Production: Manufacturing (SA, 2024=100)",0.3298087657570622,0.29055070610406586,1,0.3298087657570622,0.29055070610406586
+UK,III,Capex,intsrvys:s112vpmg,"U.K. PMI: Manufacturing Output (SA, 50+=Expansion)",0.0,0.2877841251829297,1,0.0,0.2877841251829297
+UK,III,Consumer,uk:ucbvrs,"UK: CBI Dist Trades: Retail: Volume of Sales, Moving Average (% Bal)",0.05178128936733677,0.28361838512327353,1,0.05178128936733677,0.28361838512327353
+UK,III,Consumer,uk:usb3pu,"UK: Consumer Credit ex Student Loans: Gross Lending (SA, Mil.GBP)",0.29606690560706866,0.2845204942212338,1,0.29606690560706866,0.2845204942212338
+UK,III,Consumer,uk:uksrsf,"Great Britain: Retail Sales Value: Retailing excluding Auto Fuel(SA, Thous.GBP)",0.21783013947814223,0.2619742459540575,1,0.21783013947814223,0.2619742459540575
+UK,III,Consumer,uk:ukstrs,"Great Britain: Retail Sales Value: Retailing including Auto Fuel(SA, Thous.GBP)",0.23227264352418658,0.2701018140811277,1,0.23227264352418658,0.2701018140811277
+UK,III,Consumer,intsrvys:s112vpms,"U.K. PMI: Services Business Activity (SA, 50+=Expansion)",0.12582040308102738,0.2890374428949606,1,0.12582040308102738,0.2890374428949606
+UK,III,Export,uk:ucbieo,UK: CBI Industrial Trends: Current Export Order Book(% Balance),0.49595515565226467,0.497775928758062,1,0.49595515565226467,0.497775928758062
+UK,III,Housing,uk:usvtvc,"UK: Mortgage Lending: Total [incl Housing Assns]: Gross New Loans (SA, Mil.GBP)",0.4105992625193102,0.43177682794209815,1,0.4105992625193102,0.43177682794209815
+UK,III,Housing,uk:urshg,"England & Wales: RICS Housing Survey: Change in Newly Agreed Sales (SA, % Bal)",0.41131697732168837,0.3504973415216925,1,0.41131697732168837,0.3504973415216925
+UK,III,Housing,uk:urshs,"England & Wales: RICS Survey: Sales Avg/Chartered Surveyor: Last 3Mo(Number, SA)",0.5169958786356589,0.5048671982256432,1,0.5169958786356589,0.5048671982256432
+UK,III,Housing,uk:urshv,"England & Wales: RICS Housing Srvy: Stocks Avg/Chart Surveyor (EOP, Number, SA)",0.0,0.252123388181729,-1,-0.0,-0.252123388181729
+UK,III,Housing,uk:urshq,"England & Wales: RICS Housing Survey: Change in New Buyer Enquiries (SA, % Bal)",0.412950637202369,0.3036220751595821,1,0.412950637202369,0.3036220751595821

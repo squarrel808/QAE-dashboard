@@ -13,9 +13,10 @@ function validate(html){
   if(d.universe!=='blackrock_reference_only'||Object.keys(d.countries).sort().join(',')!=='AU,CA,DE,JP,UK,US')throw new Error('PCA III universe mismatch')
   if(d.weight_policy!=='january_1_ttm_lagged_frozen_half_exports_v3')throw new Error('PCA III weight policy mismatch')
   if(new Set(d.indicators.map(r=>r.country+'|'+r.pk)).size!==d.indicators.length)throw new Error('Duplicate inputs')
+  if(d.estimation?.id!=='cfna_style_fixed_full_sample_v1'||d.estimation.constraint!=='unrestricted')throw new Error('CFNAI-style estimation policy missing')
   for(const c of Object.values(d.countries)){
     if(!c.annual_weights?.length||!c.active_axes?.length)throw new Error('Missing weights or active sectors')
-    for(const v of Object.values(c.versions))if(!v.latest||v.negative_loadings!==0)throw new Error('Model validation failed')
+    for(const v of Object.values(c.versions))if(!v.latest||!Number.isInteger(v.negative_loadings))throw new Error('Model validation failed')
   }
   if(!html.includes('id="momentumChart"'))throw new Error('Paired Level/Momentum view missing')
 }

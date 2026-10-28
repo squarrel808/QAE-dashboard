@@ -35,7 +35,11 @@ def main():
     d=json.loads((BASE/'dashboard_data.json').read_text(encoding='utf8'))
     assert d['weight_policy']==POLICY
     x=pd.read_csv(BASE/'indices.csv',parse_dates=['date']);load=pd.read_csv(BASE/'loadings.csv')
-    assert len(d['countries'])==7 and (load.loading>=0).all()
+    assert len(d['countries'])==7
+    assert d['estimation']['constraint']=='unrestricted' and d['estimation']['halflife'] is None
+    assert (load.groupby(['country','axis','indicator']).loading.nunique()==1).all()
+    fixed=load.drop_duplicates(['country','axis','indicator'])
+    np.testing.assert_allclose(fixed.assign(sq=fixed.loading**2).groupby(['country','axis']).sq.sum(),1.,atol=1e-10)
     for cc,c in d['countries'].items():
         assert set(c['weights'])==set(d['axes']) and all(c['weights'][a]>0 for a in ['Consumer','Capex','Housing'])
         assert np.isfinite(c['weights']['Export']) and c['weights']['Export']>=0
@@ -104,5 +108,5 @@ def main():
         last_raw=merged.loc[merged.pk.isin(actual_codes),'month'].max()
         assert pd.Period(c['versions']['YoY']['latest'],freq='M').to_timestamp('M')<=last_raw
     print('PASS: original inputs, seven-region geography, no duplicate inputs, monthly-only additions, unchanged annual weights, no US ISM in Canada')
-    print('PASS: 7 countries, January cutoffs, frozen revisions, automatic year rollover, annual fixed weights, contributions, post-PCA Momentum, nonnegative loadings')
+    print('PASS: 7 countries, January cutoffs, frozen revisions, automatic year rollover, annual fixed weights, contributions, post-PCA Momentum, fixed unrestricted loadings')
 if __name__=='__main__':main()

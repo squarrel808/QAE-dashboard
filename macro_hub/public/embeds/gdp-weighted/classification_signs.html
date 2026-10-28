@@ -1,4 +1,4 @@
-<meta charset="utf-8"><style>body{font:14px Malgun Gothic;padding:25px}td,th{padding:8px;border:1px solid #ddd}table{border-collapse:collapse}</style><h1>네 축의 국가별 지표 분류 및 로딩</h1><p>각 축의 지표 전체를 직접 PCA. Momentum은 주 PCA의 차분이며 독립 로딩 없음. 지표 1개인 축은 표준화 단일지표.</p><table border="1" class="dataframe">
+<meta charset="utf-8"><style>body{font:14px Malgun Gothic;padding:25px}td,th{padding:8px;border:1px solid #ddd}table{border-collapse:collapse}</style><h1>네 축의 국가별 지표 분류 및 로딩</h1><p>각 축의 지표 전체를 일반 PCA. 전체 표본 표준화, 갱신별 고정 로딩, 음수 계수 허용. 경제적 부호는 전처리 방향이며 최종 계수의 부호를 제한하지 않습니다. Momentum은 주 PCA의 차분이며 독립 로딩 없음. 지표 1개인 축은 표준화 단일지표.</p><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>국가</th>
@@ -26,8 +26,8 @@
       <td>Civilian Unemployment Rate: 16 yr + (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.196440</td>
-      <td>-0.196440</td>
+      <td>0.168681</td>
+      <td>-0.168681</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -42,8 +42,8 @@
       <td>Unempl+Margin Attach+Part Time Econ Reasons/CLF + Margin Attach (SA,%)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.201092</td>
-      <td>-0.201092</td>
+      <td>0.167067</td>
+      <td>-0.167067</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -58,8 +58,8 @@
       <td>All Employees: Total Nonfarm (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.241437</td>
-      <td>0.241437</td>
+      <td>0.208415</td>
+      <td>0.208415</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -74,8 +74,8 @@
       <td>All Employees: Total Private Industries (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.244388</td>
-      <td>0.244388</td>
+      <td>0.210782</td>
+      <td>0.210782</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -90,8 +90,8 @@
       <td>All Employees: Manufacturing (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.228932</td>
-      <td>0.228932</td>
+      <td>0.181889</td>
+      <td>0.181889</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -106,8 +106,8 @@
       <td>Average Weekly Hours: Total Private Industries (SA, Hrs)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.078629</td>
-      <td>0.078629</td>
+      <td>0.168268</td>
+      <td>0.168268</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -122,8 +122,8 @@
       <td>Average Weekly Hours: Prod &amp; Nonsupervisory: Private Industries (SA, Hrs)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.052903</td>
-      <td>0.052903</td>
+      <td>0.164778</td>
+      <td>0.164778</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -138,8 +138,8 @@
       <td>Civilian Employment: Sixteen Years &amp; Over (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.231741</td>
-      <td>0.231741</td>
+      <td>0.204132</td>
+      <td>0.204132</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -154,8 +154,8 @@
       <td>Civilian Employment/Population Ratio: 16 yr + (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.150621</td>
-      <td>0.150621</td>
+      <td>0.088932</td>
+      <td>0.088932</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -170,8 +170,8 @@
       <td>JOLTS: Job Openings Rate: Total (EOP, SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.173593</td>
-      <td>0.173593</td>
+      <td>0.150578</td>
+      <td>0.150578</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -186,8 +186,8 @@
       <td>JOLTS: Hires Rate: Total (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.080253</td>
-      <td>0.080253</td>
+      <td>0.124887</td>
+      <td>0.124887</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -202,8 +202,8 @@
       <td>JOLTS: Total Separations Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>-0.029726</td>
+      <td>0.029726</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -218,8 +218,8 @@
       <td>Challenger, Gray &amp; Christmas: Announced Job Cuts, Total (Number)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.146806</td>
-      <td>-0.146806</td>
+      <td>0.098650</td>
+      <td>-0.098650</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -234,8 +234,8 @@
       <td>ADP Nonfarm Private Payroll Employment (SA, Thous.)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.150851</td>
-      <td>0.150851</td>
+      <td>0.049004</td>
+      <td>0.049004</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -250,8 +250,8 @@
       <td>Avg Hourly Earnings: Prod &amp; Nonsupervisory: Total Private Industries(SA, $/Hour)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.020054</td>
-      <td>0.020054</td>
+      <td>0.043340</td>
+      <td>0.043340</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -266,8 +266,8 @@
       <td>Aggregate Weekly Hours Index: Total Private Industries (SA, 2007=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.249324</td>
-      <td>0.249324</td>
+      <td>0.213566</td>
+      <td>0.213566</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -282,8 +282,8 @@
       <td>Real Personal Income excluding Current Transfer Receipts (SAAR, Bil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.155489</td>
-      <td>0.155489</td>
+      <td>0.198827</td>
+      <td>0.198827</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -298,8 +298,8 @@
       <td>Average Weekly Hours: Prod &amp; Nonsupervisory: Manufacturing (SA, Hrs)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.057190</td>
-      <td>0.057190</td>
+      <td>0.132887</td>
+      <td>0.132887</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -314,8 +314,8 @@
       <td>Average Weekly Initial Claims Unemployment Insurance (SA, Thous)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.226309</td>
-      <td>-0.226309</td>
+      <td>0.168588</td>
+      <td>-0.168588</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -330,8 +330,8 @@
       <td>Manufacturers New Orders: Consumer Goods &amp; Materials (SA, Mil. 1982$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.164734</td>
-      <td>0.164734</td>
+      <td>0.168491</td>
+      <td>0.168491</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -346,8 +346,8 @@
       <td>Mfrs' New Orders: Nondefense Capital Goods ex Aircraft (SA, Mil.Chn.1982$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.350045</td>
-      <td>0.350045</td>
+      <td>0.314051</td>
+      <td>0.314051</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -362,8 +362,8 @@
       <td>New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.530497</td>
-      <td>0.530497</td>
+      <td>0.493102</td>
+      <td>0.493102</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -378,8 +378,8 @@
       <td>Housing Starts (SAAR, Thous.Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.501375</td>
-      <td>0.501375</td>
+      <td>0.484373</td>
+      <td>0.484373</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -394,8 +394,8 @@
       <td>New 1-Family Houses Sold: United States (SAAR, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.307917</td>
-      <td>0.307917</td>
+      <td>0.469965</td>
+      <td>0.469965</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -410,8 +410,8 @@
       <td>NAR Total Existing Home Sales, United States (SAAR, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.496716</td>
-      <td>0.496716</td>
+      <td>0.405410</td>
+      <td>0.405410</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -426,8 +426,8 @@
       <td>Retail Sales &amp; Food Services (SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.197853</td>
-      <td>0.197853</td>
+      <td>0.213623</td>
+      <td>0.213623</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -442,8 +442,8 @@
       <td>Retail Sales &amp; Food Services Excl Motor Vehicles &amp; Parts Dealers (SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.197625</td>
-      <td>0.197625</td>
+      <td>0.209658</td>
+      <td>0.209658</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -458,8 +458,8 @@
       <td>Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.124401</td>
-      <td>0.124401</td>
+      <td>0.126858</td>
+      <td>0.126858</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -474,8 +474,8 @@
       <td>Consumer Confidence (SA, 1985=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.127535</td>
-      <td>0.127535</td>
+      <td>0.177201</td>
+      <td>0.177201</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -490,8 +490,8 @@
       <td>University of Michigan: Consumer Sentiment (NSA, Q1-66=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.044769</td>
-      <td>0.044769</td>
+      <td>0.098593</td>
+      <td>0.098593</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -506,8 +506,8 @@
       <td>Personal Income (SAAR, Bil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.135027</td>
+      <td>0.135027</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -522,8 +522,8 @@
       <td>Personal Consumption Expenditures (SAAR, Bil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.253969</td>
-      <td>0.253969</td>
+      <td>0.225913</td>
+      <td>0.225913</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -538,8 +538,8 @@
       <td>Personal Saving Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.112420</td>
-      <td>-0.112420</td>
+      <td>0.058861</td>
+      <td>-0.058861</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -554,8 +554,8 @@
       <td>Exports: Goods and Services, BOP Basis (SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.511815</td>
-      <td>0.511815</td>
+      <td>0.501329</td>
+      <td>0.501329</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -570,8 +570,8 @@
       <td>Exports: Goods, BOP Basis (SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.520515</td>
-      <td>0.520515</td>
+      <td>0.505616</td>
+      <td>0.505616</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -586,8 +586,8 @@
       <td>Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.086247</td>
-      <td>0.086247</td>
+      <td>0.152329</td>
+      <td>0.152329</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -602,8 +602,8 @@
       <td>Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.095498</td>
-      <td>0.095498</td>
+      <td>0.177054</td>
+      <td>0.177054</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -618,8 +618,8 @@
       <td>Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.239632</td>
-      <td>0.239632</td>
+      <td>0.194036</td>
+      <td>0.194036</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -634,8 +634,8 @@
       <td>Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.157765</td>
-      <td>-0.157765</td>
+      <td>0.167215</td>
+      <td>-0.167215</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -650,8 +650,8 @@
       <td>Industrial Production: Manufacturing [NAICS] (SA, 2017=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.268725</td>
-      <td>0.268725</td>
+      <td>0.296294</td>
+      <td>0.296294</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -666,8 +666,8 @@
       <td>Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>0.043768</td>
+      <td>-0.043768</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -682,8 +682,8 @@
       <td>JOLTS: Job Openings: Total (EOP, SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.173315</td>
-      <td>0.173315</td>
+      <td>0.189725</td>
+      <td>0.189725</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -698,8 +698,8 @@
       <td>JOLTS: Quits Rate: Total (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.182554</td>
-      <td>0.182554</td>
+      <td>0.179547</td>
+      <td>0.179547</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -714,8 +714,8 @@
       <td>Retail Sales &amp; Food Svc Ex Motor Vehicle/Parts Dealers &amp; Gas Stations(SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.188990</td>
-      <td>0.188990</td>
+      <td>0.217840</td>
+      <td>0.217840</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -730,8 +730,8 @@
       <td>Exports, FAS Value (SA, Mil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.478391</td>
-      <td>0.478391</td>
+      <td>0.484906</td>
+      <td>0.484906</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -746,8 +746,8 @@
       <td>C &amp; I Loans in Bank Credit: All Commercial Banks (SA, Bil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.052812</td>
+      <td>-0.052812</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -762,8 +762,8 @@
       <td>Mfrs' Shipments: Nondefense Capital Goods ex Aircraft (SA, Mil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.306075</td>
-      <td>0.306075</td>
+      <td>0.245714</td>
+      <td>0.245714</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -778,8 +778,8 @@
       <td>Empire State Mfg Svy: Cap Expenditures, 6 Mos Ahead: Diffusion Index (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.281486</td>
-      <td>0.281486</td>
+      <td>0.318975</td>
+      <td>0.318975</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -794,8 +794,8 @@
       <td>NFIB: Businesses Making a Capital Expenditure During the Last 6 Months (%)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.136962</td>
+      <td>0.136962</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -810,8 +810,8 @@
       <td>NFIB: Percent Planning Capital Expenditures next 3 to 6 Months (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.112306</td>
-      <td>0.112306</td>
+      <td>0.176236</td>
+      <td>0.176236</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -826,8 +826,8 @@
       <td>Philly Fed Mfg Bus Outlook: Future Capital Expenditures Diffusion Indx(SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.269885</td>
-      <td>0.269885</td>
+      <td>0.273867</td>
+      <td>0.273867</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -842,8 +842,8 @@
       <td>Richmond Fed Mfg Survey: Expected Manufacturing Capital Expenditures (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.290338</td>
-      <td>0.290338</td>
+      <td>0.285026</td>
+      <td>0.285026</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -858,8 +858,8 @@
       <td>ISM Mfg: PMI Composite Index (SA, 50+ = Econ Expand)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.376053</td>
-      <td>0.376053</td>
+      <td>0.357968</td>
+      <td>0.357968</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -874,8 +874,8 @@
       <td>ISM Mfg: New Orders Index (SA, 50+ = Econ Expand)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.349491</td>
-      <td>0.349491</td>
+      <td>0.323481</td>
+      <td>0.323481</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -890,8 +890,8 @@
       <td>Philly Fed Mfg Business Outlook: Current Activity Diffusion Index(SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.296720</td>
-      <td>0.296720</td>
+      <td>0.319785</td>
+      <td>0.319785</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -906,8 +906,8 @@
       <td>Richmond Fed Mfg Survey: Current Manufacturing Composite (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.333152</td>
-      <td>0.333152</td>
+      <td>0.327976</td>
+      <td>0.327976</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -922,8 +922,8 @@
       <td>Consumer Credit Outstanding (EOP, SA, Bil.$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.169966</td>
-      <td>0.169966</td>
+      <td>0.141303</td>
+      <td>0.141303</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -938,8 +938,8 @@
       <td>Real Sales: Retail Trade (SA, Mil.Chn.2017$)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.166108</td>
+      <td>0.166108</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -954,8 +954,8 @@
       <td>ISM Mfg: New Export Orders Index (SA, 50+ = Econ Expand)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.315415</td>
-      <td>0.315415</td>
+      <td>0.355676</td>
+      <td>0.355676</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -970,8 +970,8 @@
       <td>Kansas City Fed Mfg Survey: New Orders for Exports: Versus a Month Ago(SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.372512</td>
-      <td>0.372512</td>
+      <td>0.362468</td>
+      <td>0.362468</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -986,8 +986,8 @@
       <td>Home Builders: Housing Market Index&nbsp;&nbsp;[Composite] (SA, All Good = 100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.354480</td>
-      <td>0.354480</td>
+      <td>0.370148</td>
+      <td>0.370148</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1002,8 +1002,8 @@
       <td>UK: LFS: Unemployment Rate: Aged 16 and Over (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>0.070644</td>
+      <td>-0.070644</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1018,8 +1018,8 @@
       <td>UK: Unemployment: Claimant Count Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.214153</td>
-      <td>-0.214153</td>
+      <td>0.100329</td>
+      <td>-0.100329</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1034,8 +1034,8 @@
       <td>UK: Unemployment: Claimant Count (SA, Thous)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.231598</td>
-      <td>-0.231598</td>
+      <td>0.223353</td>
+      <td>-0.223353</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1050,8 +1050,8 @@
       <td>Great Britain: AWE: Total Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.177945</td>
-      <td>0.177945</td>
+      <td>0.141541</td>
+      <td>0.141541</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1066,8 +1066,8 @@
       <td>Great Britain: AWE, Regular Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.117872</td>
-      <td>0.117872</td>
+      <td>0.090981</td>
+      <td>0.090981</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1082,8 +1082,8 @@
       <td>UK: Industrial Production (SA, 2024=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.194656</td>
-      <td>0.194656</td>
+      <td>0.209355</td>
+      <td>0.209355</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1098,8 +1098,8 @@
       <td>Great Britain: Retail Sales Volume: Retail excluding Auto Fuel(SA, Yr/Yr %Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.236420</td>
-      <td>0.236420</td>
+      <td>0.254687</td>
+      <td>0.254687</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1114,8 +1114,8 @@
       <td>UK: New Car Registrations (NSA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.286868</td>
-      <td>0.286868</td>
+      <td>0.227033</td>
+      <td>0.227033</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1130,8 +1130,8 @@
       <td>UK: GfK Consumer Confidence Barometer (NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.174948</td>
-      <td>0.174948</td>
+      <td>0.235380</td>
+      <td>0.235380</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1146,8 +1146,8 @@
       <td>U.K.: Exports: Goods and Services (SA, Mil.Pounds)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.613000</td>
-      <td>0.613000</td>
+      <td>0.616750</td>
+      <td>0.616750</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1162,8 +1162,8 @@
       <td>UK: Job Vacancies excluding Agriculture, Forestry &amp; Fishing (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.277946</td>
-      <td>0.277946</td>
+      <td>0.218312</td>
+      <td>0.218312</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -1178,8 +1178,8 @@
       <td>UK: Payrolled Employees from PAYE RTI: Change (SA, Number)</td>
       <td>change</td>
       <td>1</td>
-      <td>0.197707</td>
-      <td>0.197707</td>
+      <td>0.245660</td>
+      <td>0.245660</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1194,8 +1194,8 @@
       <td>Great Britain: AWE: Whole Economy: Total Pay in Real Terms: 3M Growth (SA, %)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.141436</td>
-      <td>0.141436</td>
+      <td>0.213292</td>
+      <td>0.213292</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1210,8 +1210,8 @@
       <td>UK: Exports of Services (SA, Mil.Chn.2024.GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.615028</td>
-      <td>0.615028</td>
+      <td>0.609786</td>
+      <td>0.609786</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1226,8 +1226,8 @@
       <td>Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.278452</td>
-      <td>0.278452</td>
+      <td>0.284040</td>
+      <td>0.284040</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1242,8 +1242,8 @@
       <td>UK: Industrial Production: Capital Goods(SA, 2024=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.354869</td>
-      <td>0.354869</td>
+      <td>0.225591</td>
+      <td>0.225591</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1258,8 +1258,8 @@
       <td>Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.183235</td>
-      <td>0.183235</td>
+      <td>0.159648</td>
+      <td>0.159648</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1274,8 +1274,8 @@
       <td>U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.157611</td>
-      <td>0.157611</td>
+      <td>0.128732</td>
+      <td>0.128732</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1290,8 +1290,8 @@
       <td>UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.148731</td>
-      <td>0.148731</td>
+      <td>0.227699</td>
+      <td>0.227699</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1306,8 +1306,8 @@
       <td>UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.196649</td>
-      <td>0.196649</td>
+      <td>0.239211</td>
+      <td>0.239211</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1322,8 +1322,8 @@
       <td>UK: Residential Property Transactions over 40,000 GBP(SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.473723</td>
-      <td>0.473723</td>
+      <td>0.529223</td>
+      <td>0.529223</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1338,8 +1338,8 @@
       <td>UK: New Car Registrations: Private (NSA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.294211</td>
-      <td>0.294211</td>
+      <td>0.206520</td>
+      <td>0.206520</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1354,8 +1354,8 @@
       <td>UK: BoE Agents' Survey: Current Capacity Utilization (NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.301882</td>
-      <td>0.301882</td>
+      <td>0.282278</td>
+      <td>0.282278</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1370,8 +1370,8 @@
       <td>UK: BoE Agents' Survey: Investment Intentions (NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.423190</td>
-      <td>0.423190</td>
+      <td>0.426569</td>
+      <td>0.426569</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1386,8 +1386,8 @@
       <td>UK: BoE Agents' Survey: Total Manufacturing Output Including Exports(NSA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.406367</td>
-      <td>0.406367</td>
+      <td>0.437903</td>
+      <td>0.437903</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1402,8 +1402,8 @@
       <td>UK: CBI Industrial Trends: Current Total Order Book(% Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.391363</td>
-      <td>0.391363</td>
+      <td>0.395266</td>
+      <td>0.395266</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1418,8 +1418,8 @@
       <td>UK: CBI Industrial Trends: Volume of Output Over Next 3 Months(% Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.372669</td>
-      <td>0.372669</td>
+      <td>0.358334</td>
+      <td>0.358334</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -1434,8 +1434,8 @@
       <td>UK: Industrial Production: Manufacturing (SA, 2024=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.329809</td>
-      <td>0.329809</td>
+      <td>0.290551</td>
+      <td>0.290551</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1450,8 +1450,8 @@
       <td>U.K. PMI: Manufacturing Output (SA, 50+=Expansion)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.287784</td>
+      <td>0.287784</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1466,8 +1466,8 @@
       <td>UK: CBI Dist Trades: Retail: Volume of Sales, Moving Average (% Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.148622</td>
-      <td>0.148622</td>
+      <td>0.219849</td>
+      <td>0.219849</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -1482,8 +1482,8 @@
       <td>UK: Consumer Credit ex Student Loans: Gross Lending (SA, Mil.GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.354577</td>
-      <td>0.354577</td>
+      <td>0.287659</td>
+      <td>0.287659</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -1498,8 +1498,8 @@
       <td>Great Britain: Retail Sales Value: Retailing excluding Auto Fuel(SA, Thous.GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.228164</td>
-      <td>0.228164</td>
+      <td>0.232237</td>
+      <td>0.232237</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1514,8 +1514,8 @@
       <td>Great Britain: Retail Sales Value: Retailing including Auto Fuel(SA, Thous.GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.256554</td>
-      <td>0.256554</td>
+      <td>0.254969</td>
+      <td>0.254969</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1530,8 +1530,8 @@
       <td>U.K. PMI: Services Business Activity (SA, 50+=Expansion)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.028398</td>
-      <td>0.028398</td>
+      <td>0.238639</td>
+      <td>0.238639</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1546,8 +1546,8 @@
       <td>UK: CBI Industrial Trends: Current Export Order Book(% Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.495955</td>
-      <td>0.495955</td>
+      <td>0.497776</td>
+      <td>0.497776</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1562,8 +1562,8 @@
       <td>UK: Mortgage Lending: Total [incl Housing Assns]: Gross New Loans (SA, Mil.GBP)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.410599</td>
-      <td>0.410599</td>
+      <td>0.431777</td>
+      <td>0.431777</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1578,8 +1578,8 @@
       <td>England &amp; Wales: RICS Housing Survey: Change in Newly Agreed Sales (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.411317</td>
-      <td>0.411317</td>
+      <td>0.350497</td>
+      <td>0.350497</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1594,8 +1594,8 @@
       <td>England &amp; Wales: RICS Survey: Sales Avg/Chartered Surveyor: Last 3Mo(Number, SA)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.516996</td>
-      <td>0.516996</td>
+      <td>0.504867</td>
+      <td>0.504867</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1610,8 +1610,8 @@
       <td>England &amp; Wales: RICS Housing Srvy: Stocks Avg/Chart Surveyor (EOP, Number, SA)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>0.252123</td>
+      <td>-0.252123</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -1626,8 +1626,8 @@
       <td>England &amp; Wales: RICS Housing Survey: Change in New Buyer Enquiries (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.412951</td>
-      <td>0.412951</td>
+      <td>0.303622</td>
+      <td>0.303622</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1642,8 +1642,8 @@
       <td>France: Harmonized Unemployment Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>-0.095532</td>
+      <td>0.095532</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -1658,8 +1658,8 @@
       <td>France: Registered Unemployed: Actively Seeking, Not Working(SWDA, EOP, Thous)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.235635</td>
-      <td>-0.235635</td>
+      <td>0.169119</td>
+      <td>-0.169119</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -1674,8 +1674,8 @@
       <td>France: New Passenger Car Registrations (NSA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.510528</td>
-      <td>0.510528</td>
+      <td>0.424614</td>
+      <td>0.424614</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1690,8 +1690,8 @@
       <td>France: New Passenger Cars + Light Commercial Vehicles</td>
       <td>level</td>
       <td>1</td>
-      <td>0.515065</td>
-      <td>0.515065</td>
+      <td>0.435153</td>
+      <td>0.435153</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1738,8 +1738,8 @@
       <td>France: Retail Sales Volume excl Motor Vehicles &amp; Motorcycles (SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.370687</td>
-      <td>0.370687</td>
+      <td>0.394493</td>
+      <td>0.394493</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -1754,8 +1754,8 @@
       <td>France: Wholesale/Retail Trade &amp; Repair of Motor Vehicles[Volume](SWDA,2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.528430</td>
-      <td>0.528430</td>
+      <td>0.467445</td>
+      <td>0.467445</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1770,8 +1770,8 @@
       <td>France: INSEE HH Survey: Overall Household Confidence Indicator (SA, LT Avg=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.032421</td>
-      <td>0.032421</td>
+      <td>0.177366</td>
+      <td>0.177366</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1802,8 +1802,8 @@
       <td>France: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.029118</td>
-      <td>0.029118</td>
+      <td>-0.035093</td>
+      <td>-0.035093</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1818,8 +1818,8 @@
       <td>France: BdF Retail Sales Survey, Volume: Total Sales (SWDA, 2010=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.431042</td>
+      <td>0.431042</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1850,8 +1850,8 @@
       <td>Germany: Registered Unemployment Rate, % of Labor Force: Total (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.075805</td>
-      <td>-0.075805</td>
+      <td>0.152315</td>
+      <td>-0.152315</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1866,8 +1866,8 @@
       <td>Germany: Total Unemployed (SA, Thous)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.132941</td>
-      <td>-0.132941</td>
+      <td>0.186183</td>
+      <td>-0.186183</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1882,8 +1882,8 @@
       <td>Germany: LFS: Unemployment Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.042632</td>
-      <td>-0.042632</td>
+      <td>0.135641</td>
+      <td>-0.135641</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1898,8 +1898,8 @@
       <td>Germany: Industrial Production including Construction (SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.308112</td>
-      <td>0.308112</td>
+      <td>0.285378</td>
+      <td>0.285378</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1914,8 +1914,8 @@
       <td>Germany: Manufacturing Orders [Volume](SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.263467</td>
-      <td>0.263467</td>
+      <td>0.269858</td>
+      <td>0.269858</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -1930,8 +1930,8 @@
       <td>Germany: Foreign Manufacturing Orders [Volume](SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.341627</td>
-      <td>0.341627</td>
+      <td>0.328971</td>
+      <td>0.328971</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1946,8 +1946,8 @@
       <td>Germany: New Passenger Car Registrations (NSA, Number)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.037671</td>
-      <td>0.037671</td>
+      <td>-0.013437</td>
+      <td>-0.013437</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1978,8 +1978,8 @@
       <td>Germany: Retail Sales Volume excluding Motor Vehicles(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.174491</td>
-      <td>0.174491</td>
+      <td>0.182578</td>
+      <td>0.182578</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -1994,8 +1994,8 @@
       <td>Germany: Retail Trade Volume Ex Autos, Motorcycles &amp; Fuel (SWDA,2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.170007</td>
-      <td>0.170007</td>
+      <td>0.178335</td>
+      <td>0.178335</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2010,8 +2010,8 @@
       <td>Germany: Sale Of Motor Vehicles (SWDA,2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.080314</td>
+      <td>0.080314</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -2026,8 +2026,8 @@
       <td>Germany: Icon Consumer Barometer (SA, 100+=optimistic)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.320149</td>
-      <td>0.320149</td>
+      <td>0.275961</td>
+      <td>0.275961</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2042,8 +2042,8 @@
       <td>Germany: GfK Consumer Survey, Economic Expectations (NSA, % Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.257829</td>
-      <td>0.257829</td>
+      <td>0.231687</td>
+      <td>0.231687</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2058,8 +2058,8 @@
       <td>Germany: GfK Consumer Survey, Income Expectations (NSA, % Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.324121</td>
-      <td>0.324121</td>
+      <td>0.280905</td>
+      <td>0.280905</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2074,8 +2074,8 @@
       <td>Germany: GfK Consumer Survey, Consumption and Buying Propensity (NSA, % Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.295596</td>
-      <td>0.295596</td>
+      <td>0.272079</td>
+      <td>0.272079</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2090,8 +2090,8 @@
       <td>Germany: GfK Consumer Survey, Current Savings (NSA, % Balance)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.267077</td>
-      <td>-0.267077</td>
+      <td>0.254465</td>
+      <td>-0.254465</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2106,8 +2106,8 @@
       <td>Germany: Exports of Goods (SA, Bil.Euros)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.325728</td>
-      <td>0.325728</td>
+      <td>0.308396</td>
+      <td>0.308396</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2122,8 +2122,8 @@
       <td>Germany: Job Vacancies (NSA, Number)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.066493</td>
-      <td>0.066493</td>
+      <td>0.215370</td>
+      <td>0.215370</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2138,8 +2138,8 @@
       <td>Germany: Total Employed: German Residents (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.088837</td>
-      <td>0.088837</td>
+      <td>0.194950</td>
+      <td>0.194950</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2154,8 +2154,8 @@
       <td>Germany: Job Vacancies [Unsubsidized] (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.064838</td>
-      <td>0.064838</td>
+      <td>0.217731</td>
+      <td>0.217731</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2170,8 +2170,8 @@
       <td>Germany: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.012851</td>
+      <td>-0.012851</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2186,8 +2186,8 @@
       <td>Germany: IP: Computers and Peripheral Equipment (SA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.196483</td>
+      <td>0.196483</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2202,8 +2202,8 @@
       <td>Germany: Industrial Production: Investment Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.234710</td>
-      <td>0.234710</td>
+      <td>0.259893</td>
+      <td>0.259893</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2218,8 +2218,8 @@
       <td>Germany: LFS: Employed Persons (SA, Mil)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.036979</td>
-      <td>0.036979</td>
+      <td>0.136612</td>
+      <td>0.136612</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2250,8 +2250,8 @@
       <td>Germany: Foreign Industry Sales [Volume]: Manufacturing(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.349812</td>
-      <td>0.349812</td>
+      <td>0.327226</td>
+      <td>0.327226</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2266,8 +2266,8 @@
       <td>Germany: Foreign Industry Sales [Volume]: Consumer Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.269000</td>
-      <td>0.269000</td>
+      <td>0.284673</td>
+      <td>0.284673</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2282,8 +2282,8 @@
       <td>Germany: Foreign Industry Sales [Vol]: Durable Consumer Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.315810</td>
-      <td>0.315810</td>
+      <td>0.299902</td>
+      <td>0.299902</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2298,8 +2298,8 @@
       <td>Germany: Foreign Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.298260</td>
-      <td>0.298260</td>
+      <td>0.307914</td>
+      <td>0.307914</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2314,8 +2314,8 @@
       <td>Germany: Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.256979</td>
-      <td>0.256979</td>
+      <td>0.269085</td>
+      <td>0.269085</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2330,8 +2330,8 @@
       <td>Germany: Consumer Confidence Indicator (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.341679</td>
-      <td>0.341679</td>
+      <td>0.302496</td>
+      <td>0.302496</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2346,8 +2346,8 @@
       <td>Germany: ifo Demand vs. Previous Month: Capital Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.216361</td>
-      <td>0.216361</td>
+      <td>0.214723</td>
+      <td>0.214723</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2362,8 +2362,8 @@
       <td>Germany: ifo Orders vs. Previous Month: Capital Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.260531</td>
-      <td>0.260531</td>
+      <td>0.238782</td>
+      <td>0.238782</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -2378,8 +2378,8 @@
       <td>Germany: ifo Production Activity vs. Previous Month: Capital Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.220382</td>
-      <td>0.220382</td>
+      <td>0.239359</td>
+      <td>0.239359</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2394,8 +2394,8 @@
       <td>Germany: ifo Demand vs. Previous Month: Machinery &amp; Equipment, nec(SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.267731</td>
-      <td>0.267731</td>
+      <td>0.241135</td>
+      <td>0.241135</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2410,8 +2410,8 @@
       <td>Germany: ifo Production Activity Vs. Prev Mo: Machinery &amp; Equip, Nec (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.296311</td>
-      <td>0.296311</td>
+      <td>0.273442</td>
+      <td>0.273442</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2426,8 +2426,8 @@
       <td>Germany: Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.261318</td>
-      <td>0.261318</td>
+      <td>0.256741</td>
+      <td>0.256741</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2442,8 +2442,8 @@
       <td>Germany: Industry Sales Volume: Mfg of Machinery/Equip N.E.C.(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.244729</td>
-      <td>0.244729</td>
+      <td>0.248838</td>
+      <td>0.248838</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2458,8 +2458,8 @@
       <td>Germany: IP: Computers, Electronics, Electrical Equipment (SA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.295114</td>
-      <td>0.295114</td>
+      <td>0.275609</td>
+      <td>0.275609</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2474,8 +2474,8 @@
       <td>Germany: Industrial Production: Machinery &amp; Equipment nec (SA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.279488</td>
-      <td>0.279488</td>
+      <td>0.258556</td>
+      <td>0.258556</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2490,8 +2490,8 @@
       <td>Germany: Mfg Orders Volume: Computers &amp; Peripheral Equipment(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.163103</td>
+      <td>0.163103</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -2506,8 +2506,8 @@
       <td>Germany: ifo Business Expectations: Industry and Trade (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.210639</td>
-      <td>0.210639</td>
+      <td>0.206958</td>
+      <td>0.206958</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2522,8 +2522,8 @@
       <td>Germany: ifo Business Situation: Industry and Trade (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.232452</td>
-      <td>0.232452</td>
+      <td>0.183753</td>
+      <td>0.183753</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2538,8 +2538,8 @@
       <td>Germany: GfK Consumer Climate (NSA, % Balance)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.341304</td>
-      <td>0.341304</td>
+      <td>0.182520</td>
+      <td>0.182520</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2554,8 +2554,8 @@
       <td>Germany: ifo Business Climate Index: Consumer Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.309735</td>
-      <td>0.309735</td>
+      <td>0.270031</td>
+      <td>0.270031</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -2570,8 +2570,8 @@
       <td>Germany: ifo Orders vs. Previous Month: Consumer Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.229078</td>
-      <td>0.229078</td>
+      <td>0.224891</td>
+      <td>0.224891</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2586,8 +2586,8 @@
       <td>Germany: ifo Business Situation: Consumer Goods (SA, % Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.280256</td>
-      <td>0.280256</td>
+      <td>0.294759</td>
+      <td>0.294759</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2602,8 +2602,8 @@
       <td>Germany: Retail Sales Value excluding Motor Vehicles(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.056457</td>
-      <td>0.056457</td>
+      <td>0.136495</td>
+      <td>0.136495</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2618,8 +2618,8 @@
       <td>Germany: Foreign Mfg Orders [Volume], Consumer Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.237113</td>
-      <td>0.237113</td>
+      <td>0.269986</td>
+      <td>0.269986</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2634,8 +2634,8 @@
       <td>Germany: Foreign Mfg Orders [Volume], Intermediate Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.300316</td>
-      <td>0.300316</td>
+      <td>0.305417</td>
+      <td>0.305417</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2650,8 +2650,8 @@
       <td>Germany: ifo Export Expectations [next 3 mos]: Mfg inc Food &amp; Bev (SA, 2015=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.281081</td>
-      <td>0.281081</td>
+      <td>0.274618</td>
+      <td>0.274618</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2666,8 +2666,8 @@
       <td>Germany: Foreign Mfg Orders Volume: Motor Vehicles(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.239113</td>
-      <td>0.239113</td>
+      <td>0.274917</td>
+      <td>0.274917</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2682,8 +2682,8 @@
       <td>Germany: Foreign Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.333427</td>
-      <td>0.333427</td>
+      <td>0.326552</td>
+      <td>0.326552</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2698,8 +2698,8 @@
       <td>Canada: Unemployment Rate: Both Sexes, 15 Years and Over (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.252876</td>
-      <td>-0.252876</td>
+      <td>0.181526</td>
+      <td>-0.181526</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2714,8 +2714,8 @@
       <td>Canada: Employment: Both Sexes, 15 Years and Over (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.387206</td>
-      <td>0.387206</td>
+      <td>0.370185</td>
+      <td>0.370185</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2730,8 +2730,8 @@
       <td>Canada: Avg Wkly Earnings incl OT: Industry Total [ex Unclassified] (SA, C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>-0.192502</td>
+      <td>-0.192502</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2746,8 +2746,8 @@
       <td>Canada: Unfilled Orders: All Manufacturing Industries (EOP, SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.236596</td>
-      <td>0.236596</td>
+      <td>0.130230</td>
+      <td>0.130230</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2762,8 +2762,8 @@
       <td>Canada: Wholesale Trade (SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.439639</td>
-      <td>0.439639</td>
+      <td>0.339802</td>
+      <td>0.339802</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -2778,8 +2778,8 @@
       <td>Canada: Permits: Residential and Non-Residential (SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.473389</td>
-      <td>0.473389</td>
+      <td>0.428728</td>
+      <td>0.428728</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -2794,8 +2794,8 @@
       <td>Canada: Dwelling Starts: All Areas (SAAR, Thous.Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.354797</td>
-      <td>0.354797</td>
+      <td>0.449676</td>
+      <td>0.449676</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2810,8 +2810,8 @@
       <td>Canada: Dwelling Starts, Urban Centres 10,000+ (SAAR, Thous.Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.342032</td>
-      <td>0.342032</td>
+      <td>0.444546</td>
+      <td>0.444546</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2826,8 +2826,8 @@
       <td>Canada: Retail Sales Value(SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.423550</td>
-      <td>0.423550</td>
+      <td>0.406545</td>
+      <td>0.406545</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2842,8 +2842,8 @@
       <td>Canada: Retail Sales Value ex Motor Vehicles &amp; Parts Dealers (SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.315242</td>
-      <td>0.315242</td>
+      <td>0.336775</td>
+      <td>0.336775</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2858,8 +2858,8 @@
       <td>Canada: New Motor Vehicle Sales (NSA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.402256</td>
-      <td>0.402256</td>
+      <td>0.347321</td>
+      <td>0.347321</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2874,8 +2874,8 @@
       <td>Canada: Exports of Goods, BOP Basis (SA, Mil.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.613676</td>
-      <td>0.613676</td>
+      <td>0.624113</td>
+      <td>0.624113</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2890,8 +2890,8 @@
       <td>Canada: Job Vacancies (SA, Number)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.110979</td>
+      <td>0.110979</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2906,8 +2906,8 @@
       <td>Canada: Inflation Indicators: Avg Hourly Earnings of Permanent Workers (Y/Y %)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.270260</td>
+      <td>-0.270260</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2922,8 +2922,8 @@
       <td>Canada: Retail Sales in Chained 2017 Prices (SA, Mil.Chn.2017.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.423523</td>
-      <td>0.423523</td>
+      <td>0.395970</td>
+      <td>0.395970</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2938,8 +2938,8 @@
       <td>Canada: New Motor Vehicle Sales (SA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.400642</td>
-      <td>0.400642</td>
+      <td>0.344721</td>
+      <td>0.344721</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2954,8 +2954,8 @@
       <td>Canada: Avg Hourly Earnings inc Overtime: Hrly Workers: Total Economy (SA, C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>-0.180195</td>
+      <td>-0.180195</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2970,8 +2970,8 @@
       <td>Canada: Unemployment Insurance: Regular Benefits Beneficiaries (SA, Number)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.075214</td>
-      <td>-0.075214</td>
+      <td>0.013231</td>
+      <td>-0.013231</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -2986,8 +2986,8 @@
       <td>Canada: Building Permits Authorized (SA, Thous Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.499222</td>
-      <td>0.499222</td>
+      <td>0.450737</td>
+      <td>0.450737</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3002,8 +3002,8 @@
       <td>Canada: Exports(SA, Mil.Chn.2017.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.609260</td>
-      <td>0.609260</td>
+      <td>0.629872</td>
+      <td>0.629872</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3018,8 +3018,8 @@
       <td>Canada: Permits: Non-Residential (SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.434808</td>
-      <td>0.434808</td>
+      <td>0.332078</td>
+      <td>0.332078</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3034,8 +3034,8 @@
       <td>Canada: Real Shipments: All Manufacturing Industries&nbsp;&nbsp;(SA, Mil.2017.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.527628</td>
-      <td>0.527628</td>
+      <td>0.497248</td>
+      <td>0.497248</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3050,8 +3050,8 @@
       <td>Canada: New Orders: All Manufacturing Industries&nbsp;&nbsp;(SA, Mil.2017.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.532250</td>
-      <td>0.532250</td>
+      <td>0.512879</td>
+      <td>0.512879</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3066,8 +3066,8 @@
       <td>Canada: Industrial Production: Manufacturing, Mining &amp; Utilities (SA, 2007=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.496989</td>
+      <td>0.496989</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3082,8 +3082,8 @@
       <td>Canada: Exports of Energy Products (SA, Mil.Chn.2017.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.502199</td>
-      <td>0.502199</td>
+      <td>0.462324</td>
+      <td>0.462324</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -3098,8 +3098,8 @@
       <td>Canada: Permits: Residential (SA, Thous.C$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.532742</td>
-      <td>0.532742</td>
+      <td>0.461734</td>
+      <td>0.461734</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3114,8 +3114,8 @@
       <td>Japan: Labor Force Survey: Unemployment Rate, Total (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.064627</td>
-      <td>-0.064627</td>
+      <td>0.146195</td>
+      <td>-0.146195</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3130,8 +3130,8 @@
       <td>Japan: Gen Workers: Ratio of Active Job Openings to Applications (SA, Ratio)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.117958</td>
-      <td>0.117958</td>
+      <td>0.162164</td>
+      <td>0.162164</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3146,8 +3146,8 @@
       <td>Japan: Regular Employment [5 or More Empl]: All Surveyed Indus (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.139229</td>
-      <td>0.139229</td>
+      <td>0.068907</td>
+      <td>0.068907</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3162,8 +3162,8 @@
       <td>Japan: Labor Force Survey: Labor Force Participation Rate (NSA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.002596</td>
-      <td>0.002596</td>
+      <td>0.051152</td>
+      <td>0.051152</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3178,8 +3178,8 @@
       <td>Japan: Total Cash Earnings/Employee [5 or More Empl]: All Surveyed Ind(NSA, Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.143244</td>
-      <td>0.143244</td>
+      <td>0.185682</td>
+      <td>0.185682</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3194,8 +3194,8 @@
       <td>Japan: Real Earnings Index [5/More Empl]: All Surveyed Industries (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.096284</td>
+      <td>0.096284</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -3210,8 +3210,8 @@
       <td>Japan: IP: Mining and Manufacturing (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.324010</td>
-      <td>0.324010</td>
+      <td>0.297127</td>
+      <td>0.297127</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3226,8 +3226,8 @@
       <td>Japan: Machinery Orders Received: Priv Demand ex Volatile Orders (SA, Mil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.257024</td>
-      <td>0.257024</td>
+      <td>0.263109</td>
+      <td>0.263109</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3242,8 +3242,8 @@
       <td>Japan: Machine Tools: Orders (Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.272999</td>
-      <td>0.272999</td>
+      <td>0.275799</td>
+      <td>0.275799</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3258,8 +3258,8 @@
       <td>Japan: General Workers: New Job Openings (NSA, Thous Persons)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.251360</td>
-      <td>0.251360</td>
+      <td>0.197009</td>
+      <td>0.197009</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3290,8 +3290,8 @@
       <td>Japan: Domestic Shipments: Mining &amp; Mfg: Consumer Durables (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.200298</td>
-      <td>0.200298</td>
+      <td>0.201596</td>
+      <td>0.201596</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3306,8 +3306,8 @@
       <td>Japan: Consumer Confidence Index: All Households (NSA, 50+=better)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.182568</td>
-      <td>0.182568</td>
+      <td>0.117551</td>
+      <td>0.117551</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3322,8 +3322,8 @@
       <td>Japan: Operating Rate: Manufacturing (SA, 2020=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.215541</td>
-      <td>0.215541</td>
+      <td>0.157200</td>
+      <td>0.157200</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3338,8 +3338,8 @@
       <td>Japan: Overtime Hours Worked [30 or More Empl]: Manufacturing (2020=100)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.156592</td>
-      <td>0.156592</td>
+      <td>0.182403</td>
+      <td>0.182403</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3354,8 +3354,8 @@
       <td>Japan: Producer's Shipments: Capital Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.315573</td>
-      <td>0.315573</td>
+      <td>0.301516</td>
+      <td>0.301516</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3370,8 +3370,8 @@
       <td>Japan: Department Store Sales: All Japan (Yr/Yr %Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.261432</td>
-      <td>0.261432</td>
+      <td>0.229425</td>
+      <td>0.229425</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -3402,8 +3402,8 @@
       <td>Japan: Retail Sales Value: Total (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.262424</td>
-      <td>0.262424</td>
+      <td>0.254753</td>
+      <td>0.254753</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3418,8 +3418,8 @@
       <td>Japan: Department Store &amp; Supermarket Sales: Total (Yr/Yr %Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.283950</td>
-      <td>0.283950</td>
+      <td>0.271496</td>
+      <td>0.271496</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3434,8 +3434,8 @@
       <td>Japan: Chain Store Sales: Total [Adj for Number of Stores] (Yr/Yr %Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.075155</td>
-      <td>0.075155</td>
+      <td>0.137519</td>
+      <td>0.137519</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3450,8 +3450,8 @@
       <td>Japan: JFA Convenience Store Data: Existing Stores: Sales, % Change(Yr/Yr % Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.239033</td>
-      <td>0.239033</td>
+      <td>0.080966</td>
+      <td>0.080966</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3466,8 +3466,8 @@
       <td>Japan: Motor Vehicle New Registration Sales (NSA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.153167</td>
-      <td>0.153167</td>
+      <td>0.146215</td>
+      <td>0.146215</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3482,8 +3482,8 @@
       <td>Japan: Consumer Confidence: 2+ Person Households (NSA, 50+=better)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.192243</td>
-      <td>0.192243</td>
+      <td>0.137041</td>
+      <td>0.137041</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3498,8 +3498,8 @@
       <td>Japan: Avg Disb per HH, Real: 2+ Person HH Inc Agr: Living Exp (NSA, Y/Y%Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.147162</td>
-      <td>0.147162</td>
+      <td>0.171190</td>
+      <td>0.171190</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3514,8 +3514,8 @@
       <td>Japan: Avg Disbursements Workers' HH Inc Agri: Living Expenditure(NSA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.086274</td>
-      <td>0.086274</td>
+      <td>0.106178</td>
+      <td>0.106178</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3530,8 +3530,8 @@
       <td>Japan: Exports of Goods: Value (NSA, Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.319674</td>
-      <td>0.319674</td>
+      <td>0.302309</td>
+      <td>0.302309</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3546,8 +3546,8 @@
       <td>Japan: Exports to the World: Volume Index (NSA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.291125</td>
-      <td>0.291125</td>
+      <td>0.293300</td>
+      <td>0.293300</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3562,8 +3562,8 @@
       <td>Japan: Exports to United States (NSA, Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.275167</td>
-      <td>0.275167</td>
+      <td>0.268225</td>
+      <td>0.268225</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3578,8 +3578,8 @@
       <td>Japan: Exports to EU (NSA, Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.272657</td>
-      <td>0.272657</td>
+      <td>0.274645</td>
+      <td>0.274645</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3594,8 +3594,8 @@
       <td>Japan: Exports to Asia (NSA, Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.266135</td>
-      <td>0.266135</td>
+      <td>0.274041</td>
+      <td>0.274041</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3610,8 +3610,8 @@
       <td>Japan: Real Contr Cash Earnings[5+ Employees]: All Surveyed Inds (NSA, Y/Y%Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.025479</td>
+      <td>0.025479</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3626,8 +3626,8 @@
       <td>Japan: Labor Force Survey: Total Employed (SA, 10,000 Persons)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.161361</td>
-      <td>0.161361</td>
+      <td>0.215768</td>
+      <td>0.215768</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3642,8 +3642,8 @@
       <td>Japan: General Workers: Rate of Filled Vacancies (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.167234</td>
+      <td>-0.167234</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3658,8 +3658,8 @@
       <td>Japan: Common Establishments Labor Force Survey: All Industry: Regular Pay (Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.137347</td>
-      <td>0.137347</td>
+      <td>0.106839</td>
+      <td>0.106839</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3674,8 +3674,8 @@
       <td>Japan: Consumption Activity Index [Real] (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.256411</td>
-      <td>0.256411</td>
+      <td>0.252530</td>
+      <td>0.252530</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3690,8 +3690,8 @@
       <td>Japan: Export Shipments: Mining &amp; Mfg: Investment Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.321228</td>
-      <td>0.321228</td>
+      <td>0.294605</td>
+      <td>0.294605</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3706,8 +3706,8 @@
       <td>Japan: Export Shipments: Mining &amp; Mfg: Consumer Durables (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.232860</td>
-      <td>0.232860</td>
+      <td>0.274701</td>
+      <td>0.274701</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3722,8 +3722,8 @@
       <td>Japan: IP: Business Oriented Machinery (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.219998</td>
-      <td>0.219998</td>
+      <td>0.264008</td>
+      <td>0.264008</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3738,8 +3738,8 @@
       <td>Japan: Producer's Shipments: Business Oriented Machinery (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.223286</td>
-      <td>0.223286</td>
+      <td>0.253055</td>
+      <td>0.253055</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3754,8 +3754,8 @@
       <td>Japan: Producer's Shipments: General-Purpose Machinery (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.300479</td>
-      <td>0.300479</td>
+      <td>0.268628</td>
+      <td>0.268628</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3770,8 +3770,8 @@
       <td>Japan: Real Exports (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.245529</td>
-      <td>0.245529</td>
+      <td>0.292449</td>
+      <td>0.292449</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3786,8 +3786,8 @@
       <td>Japan: Total Hours Worked/Empl [5 or More Empl]: All Surveyed Inds (NSA, Hours)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.069970</td>
-      <td>0.069970</td>
+      <td>-0.045708</td>
+      <td>-0.045708</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -3802,8 +3802,8 @@
       <td>Japan: Wholesale and Retail Sales: Total (Bil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.198886</td>
-      <td>0.198886</td>
+      <td>0.236624</td>
+      <td>0.236624</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -3818,8 +3818,8 @@
       <td>Japan: IP: General-Purpose Machinery (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.310233</td>
-      <td>0.310233</td>
+      <td>0.279772</td>
+      <td>0.279772</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3834,8 +3834,8 @@
       <td>Japan: Domestic Shipments: Mining &amp; Mfg: Capital Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.271383</td>
-      <td>0.271383</td>
+      <td>0.295445</td>
+      <td>0.295445</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3850,8 +3850,8 @@
       <td>Japan: Diffusion Index for Current Conditions (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.019459</td>
-      <td>0.019459</td>
+      <td>0.144125</td>
+      <td>0.144125</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3866,8 +3866,8 @@
       <td>Japan: Diffusion Index for Future Conditions (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.003430</td>
-      <td>0.003430</td>
+      <td>0.133298</td>
+      <td>0.133298</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3882,8 +3882,8 @@
       <td>Japan: Machinery Orders Received: Total (SA, Mil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.206440</td>
-      <td>0.206440</td>
+      <td>0.259243</td>
+      <td>0.259243</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3898,8 +3898,8 @@
       <td>Japan: IP: Manufacturing (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.323925</td>
-      <td>0.323925</td>
+      <td>0.297083</td>
+      <td>0.297083</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3914,8 +3914,8 @@
       <td>Japan: Producer's Shipments: Manufacturing (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.319393</td>
-      <td>0.319393</td>
+      <td>0.292124</td>
+      <td>0.292124</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3930,8 +3930,8 @@
       <td>Japan: Consumer Conf: 2+ Person Households: Overall Livelihood (SA, 50+=better)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.133204</td>
-      <td>0.133204</td>
+      <td>0.076464</td>
+      <td>0.076464</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3946,8 +3946,8 @@
       <td>Japan: Diffusion Index for Current Conditions: Households (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.237652</td>
-      <td>0.237652</td>
+      <td>0.238381</td>
+      <td>0.238381</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3962,8 +3962,8 @@
       <td>Japan: Diffusion Index for Future Conditions: Households (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.217146</td>
-      <td>0.217146</td>
+      <td>0.223089</td>
+      <td>0.223089</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3978,8 +3978,8 @@
       <td>Japan: Diffusion Index for Current Conditions: Retail Sales (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.225509</td>
-      <td>0.225509</td>
+      <td>0.231038</td>
+      <td>0.231038</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -3994,8 +3994,8 @@
       <td>Japan: Diffusion Index for Future Conditions: Retail Sales (SA, 50+=improving)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.212530</td>
-      <td>0.212530</td>
+      <td>0.214322</td>
+      <td>0.214322</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4010,8 +4010,8 @@
       <td>Japan: Index of Living Expenditure: 2+ Person Household Incl Agri (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.195461</td>
-      <td>0.195461</td>
+      <td>0.238811</td>
+      <td>0.238811</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4026,8 +4026,8 @@
       <td>Japan: Export Shipments: Mining &amp; Mfg: Capital Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.322052</td>
-      <td>0.322052</td>
+      <td>0.293678</td>
+      <td>0.293678</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4042,8 +4042,8 @@
       <td>Japan: Export Shipments: Mining &amp; Mfg: Consumer Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.254915</td>
-      <td>0.254915</td>
+      <td>0.283933</td>
+      <td>0.283933</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4058,8 +4058,8 @@
       <td>Japan: Export Shipments: Mining &amp; Mfg: Final Demand Goods (SA, 2020=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.327937</td>
-      <td>0.327937</td>
+      <td>0.308355</td>
+      <td>0.308355</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4074,8 +4074,8 @@
       <td>Japan: BOP: Current Account Balance: Exports of Goods (SA, 100 Mil.Yen)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.313417</td>
-      <td>0.313417</td>
+      <td>0.300640</td>
+      <td>0.300640</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4090,8 +4090,8 @@
       <td>Australia: Labor Force: Unemployment Rate (SA, %)</td>
       <td>rate</td>
       <td>-1</td>
-      <td>0.000000</td>
-      <td>-0.000000</td>
+      <td>-0.208491</td>
+      <td>0.208491</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4106,8 +4106,8 @@
       <td>Australia: Labor Force: Unemployed (SA, Thous)</td>
       <td>level</td>
       <td>-1</td>
-      <td>0.094204</td>
-      <td>-0.094204</td>
+      <td>0.018477</td>
+      <td>-0.018477</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4122,8 +4122,8 @@
       <td>Australia: Labor Force: Employed (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.012073</td>
-      <td>0.012073</td>
+      <td>-0.093086</td>
+      <td>-0.093086</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4138,8 +4138,8 @@
       <td>Australia: Labor Force: Employed, Full-time (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.124194</td>
+      <td>-0.124194</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4154,8 +4154,8 @@
       <td>Australia: Labor Force: Employed, Part-time (SA, Thous)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.034781</td>
-      <td>0.034781</td>
+      <td>0.047888</td>
+      <td>0.047888</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4170,8 +4170,8 @@
       <td>Australia: Labor Force: Participation Rate (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>-0.264786</td>
+      <td>-0.264786</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4186,8 +4186,8 @@
       <td>Australia: ANZ-Indeed Australian Job Ads (SA, 2019=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.164802</td>
-      <td>0.164802</td>
+      <td>0.059331</td>
+      <td>0.059331</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4202,8 +4202,8 @@
       <td>Australia: Internet Vacancy Index (Trend, Jan-06=100)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.189367</td>
-      <td>0.189367</td>
+      <td>0.047411</td>
+      <td>0.047411</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4218,8 +4218,8 @@
       <td>Australia: Dwelling Units Approved (SA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.626818</td>
-      <td>0.626818</td>
+      <td>0.628414</td>
+      <td>0.628414</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4234,8 +4234,8 @@
       <td>Australia: Nominal Household Spending (SA,Mil.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.031336</td>
-      <td>0.031336</td>
+      <td>-0.153677</td>
+      <td>-0.153677</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -4250,8 +4250,8 @@
       <td>Australia: Westpac-Melbourne Inst Consumer Sentiment Index (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.377688</td>
-      <td>0.377688</td>
+      <td>0.376033</td>
+      <td>0.376033</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4266,8 +4266,8 @@
       <td>Australia: Family Finances Last 12 Months (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.338128</td>
-      <td>0.338128</td>
+      <td>0.341148</td>
+      <td>0.341148</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4282,8 +4282,8 @@
       <td>Australia: Family Finances Next 12 Months (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.337444</td>
-      <td>0.337444</td>
+      <td>0.334437</td>
+      <td>0.334437</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4298,8 +4298,8 @@
       <td>Australia: Economic Conditions Next 12 Months (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.361131</td>
-      <td>0.361131</td>
+      <td>0.297075</td>
+      <td>0.297075</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4314,8 +4314,8 @@
       <td>Australia: Economic Conditions Next 5 Years (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.306008</td>
-      <td>0.306008</td>
+      <td>0.167838</td>
+      <td>0.167838</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4330,8 +4330,8 @@
       <td>Australia: Time to Buy Major Household Items (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.311098</td>
-      <td>0.311098</td>
+      <td>0.340046</td>
+      <td>0.340046</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4346,8 +4346,8 @@
       <td>Australia: BOP: Goods Exports (SA, Mil.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.153598</td>
-      <td>0.153598</td>
+      <td>0.049219</td>
+      <td>0.049219</td>
       <td>2026-08</td>
       <td>True</td>
       <td>Existing</td>
@@ -4362,8 +4362,8 @@
       <td>Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.129162</td>
-      <td>0.129162</td>
+      <td>0.194632</td>
+      <td>0.194632</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4378,8 +4378,8 @@
       <td>Australia: Roy Morgan Monthly Consumer Confidence (NSA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.311508</td>
-      <td>0.311508</td>
+      <td>0.340455</td>
+      <td>0.340455</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4394,8 +4394,8 @@
       <td>Australia: Bldg Approvals: Non-residential (SA, Mil.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.115312</td>
-      <td>0.115312</td>
+      <td>0.162592</td>
+      <td>0.162592</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4410,8 +4410,8 @@
       <td>AU: Retail Turnover Using Bank Transactions (SA, Mil.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.026885</td>
-      <td>0.026885</td>
+      <td>-0.040880</td>
+      <td>-0.040880</td>
       <td>2026-08</td>
       <td>False</td>
       <td>Existing</td>
@@ -4426,8 +4426,8 @@
       <td>Australia: NAB Business Survey: Capital Expenditure (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.414727</td>
-      <td>0.414727</td>
+      <td>0.413302</td>
+      <td>0.413302</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -4442,8 +4442,8 @@
       <td>Australia: NAB Business Survey: Capacity Utilization (SA, %)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.427441</td>
-      <td>0.427441</td>
+      <td>0.347795</td>
+      <td>0.347795</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4458,8 +4458,8 @@
       <td>Australia PMI: Manufacturing (SA, 50+=Expansion)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.249529</td>
+      <td>0.249529</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -4474,8 +4474,8 @@
       <td>Australia: NAB Business Survey: Business Conditions (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.470884</td>
-      <td>0.470884</td>
+      <td>0.453076</td>
+      <td>0.453076</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4490,8 +4490,8 @@
       <td>Australia: NAB Business Survey: Forward Orders (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.416728</td>
-      <td>0.416728</td>
+      <td>0.425894</td>
+      <td>0.425894</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4506,8 +4506,8 @@
       <td>Australia: NAB Business Survey: Trading Conditions (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.468959</td>
-      <td>0.468959</td>
+      <td>0.441559</td>
+      <td>0.441559</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4522,8 +4522,8 @@
       <td>AU: Retail Turnover Using Bank Transactions: Household Goods (SA, Mil.A$)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.038123</td>
-      <td>0.038123</td>
+      <td>0.089517</td>
+      <td>0.089517</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -4538,8 +4538,8 @@
       <td>Australia: Westpac-Melbourne Inst Consumer Expectations Idx (SA, 100+=Favorable)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.367246</td>
-      <td>0.367246</td>
+      <td>0.320987</td>
+      <td>0.320987</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4554,8 +4554,8 @@
       <td>Australia: NAB Business Survey: Exporters' Sales (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.698709</td>
-      <td>0.698709</td>
+      <td>0.706058</td>
+      <td>0.706058</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4570,8 +4570,8 @@
       <td>Australia: NAB Business Survey: Exports (SA, %Bal)</td>
       <td>rate</td>
       <td>1</td>
-      <td>0.698723</td>
-      <td>0.698723</td>
+      <td>0.706442</td>
+      <td>0.706442</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4586,8 +4586,8 @@
       <td>Australia: Housing Credit including Securitizations (Y/Y % Chg)</td>
       <td>growth_yoy</td>
       <td>1</td>
-      <td>0.080553</td>
-      <td>0.080553</td>
+      <td>-0.011020</td>
+      <td>-0.011020</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>
@@ -4602,8 +4602,8 @@
       <td>Australia: Dwelling Units Approved: Private Sector (SA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.626988</td>
-      <td>0.626988</td>
+      <td>0.627975</td>
+      <td>0.627975</td>
       <td>2026-08</td>
       <td>False</td>
       <td>BlackRock reference union</td>
@@ -4618,8 +4618,8 @@
       <td>Australia: New Home Sales: Detached Houses (SA, Units)</td>
       <td>level</td>
       <td>1</td>
-      <td>0.455518</td>
-      <td>0.455518</td>
+      <td>0.458935</td>
+      <td>0.458935</td>
       <td>2026-08</td>
       <td>True</td>
       <td>BlackRock reference union</td>

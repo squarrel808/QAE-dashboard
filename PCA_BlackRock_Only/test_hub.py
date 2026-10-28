@@ -28,7 +28,7 @@ with sync_playwright() as p:
     assert original.locator('[data-c="FR"]').count()==1
     assert original.locator('#momentumChart').count()==0
     assert page.goto(base+'/pca').status==200
-    assert page.get_by_text('Category PCA · Equal-Weight GDP Proxy',exact=False).count()==1
+    assert page.get_by_text('CFNAI형 일반 PCA',exact=False).count()==1
     assert not errors,errors
     browser.close()
 print('PASS: PCA III route after PCA II, active navigation, automatic iframe height, paired views, preserved PCA/PCA II')
