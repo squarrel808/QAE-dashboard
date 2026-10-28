@@ -12,6 +12,7 @@ const TABS = [
   { href: '/cpidist', label: 'CPI 분포' },
   { href: '/consensus', label: 'Consensus' },
   { href: '/surprise', label: 'Surprise Index' },
+  { href: '/pmi', label: 'PMI' },
   { href: '/policy', label: 'Policy Tone' },
   { href: '/equity', label: 'Equity' },
   { href: '/market-rotation', label: 'Market Rotation' },
