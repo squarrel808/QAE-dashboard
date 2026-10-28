@@ -12,7 +12,7 @@ def main():
     now=datetime.now(ZoneInfo('Asia/Seoul'));logs=BASE/'logs';logs.mkdir(exist_ok=True)
     logfile=logs/(now.strftime('%Y%m%d_%H%M%S')+'.log')
     steps=[] if args.cached else ['fetch_data.py','fetch_supplement.py','fetch_blackrock.py']
-    steps+=['build.py','test_model.py','build_dashboard.py']
+    steps+=['build.py','test_model.py','test_period_alignment.py','build_dashboard.py']
     commands=[(step,[sys.executable,'-X','utf8',str(BASE/step)]) for step in steps]
     node=shutil.which('node')
     if not node:raise RuntimeError('Node.js is required to synchronize the dashboard snapshot')

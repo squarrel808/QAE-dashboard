@@ -9,6 +9,7 @@ import build_model as core
 from derive_momentum import difference
 from annual_weights import POLICY,OLD_POLICY,read_ledger,save_ledger,weight_panel,migrate_export_weights
 from blackrock_union import extend
+from period_alignment import align_uk_period_ends,ALIGNMENTS
 AXES={'Consumer':'소비·고용·소득·소비심리','Capex':'기업활동·제조업·설비투자','Housing':'주택투자','Export':'수출'}
 MAPPING={'C_actual':'Consumer','C_labor':'Consumer','C_sentiment':'Consumer','I_business':'Capex','I_housing':'Housing','X':'Export'}
 HOUSING={'US':(['usecon:fr'],[], 'usecon:gdp'),'UK':(['uk:l62tq','uk:l62rq'],[],None),'FR':(['france:frsnfih'],[],None),'DE':(['germany:desnfir'],['germany:desnfgr'],None),'CA':(['g10:s156nprr'],[],None),'JP':(['japan:n9dfd'],[],None),'AU':(['anz:ausnfr'],[],None)}
@@ -36,6 +37,7 @@ def main():
     raw=pd.concat([pd.read_csv(BASE/'source/raw_haver.csv'),pd.read_csv(BASE/'values.csv'),pd.read_csv(BASE/'blackrock_source/values.csv')]).drop_duplicates(['pk','date'],keep='last')
     review=core.READ(ROOT/'outputs/gdp_expenditure_review/report_data.json')
     wide,specs,audit=core.prepare(review,meta,raw)
+    wide,specs=align_uk_period_ends(wide,specs)
     # France previously had no monthly business-investment proxy. Add the
     # verified investment-goods production series, explicitly marked as a proxy.
     pk='france:frsdk';m=meta[pk];kind,direction,ambiguous,seasonal=core.classify(m,'I_business')
@@ -104,6 +106,7 @@ def main():
         weights_rows.extend(dict(country=cc,year=r['year'],cutoff=r['cutoff'],quarter=r['quarter'],assumed_available=r['assumed_available'],**r['weights']) for r in annual)
         print(cc,{a:d['count'] for a,d in diagnostics.items()},quarter,{a:round(v*100,2) for a,v in w.items()},flush=True)
     payload['indicators']=classifications
+    payload['period_alignment']=ALIGNMENTS
     payload['input_series']=input_series
     payload['blackrock_review']={'targets':len(blackrock_audit),'actions':pd.Series([r['action'] for r in blackrock_audit]).value_counts().to_dict(),'excluded_region':'EA','scope':'기존 7개국 유지. 사용자 제공 BlackRock 패널 텍스트 기준 개념 매핑; 원본 티커 동일성 미검증.'}
     pd.DataFrame(classifications).to_csv(BASE/'classification_signs.csv',index=False,encoding='utf-8-sig')
