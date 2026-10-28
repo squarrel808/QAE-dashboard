@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react'
  */
 export default function RawDashboard({ src, title }: { src: string; title?: string }) {
   const ref = useRef<HTMLIFrameElement>(null)
+  const observer = useRef<ResizeObserver | null>(null)
   const [status, setStatus] = useState<'loading' | 'ready' | 'missing'>('loading')
 
   useEffect(() => {
@@ -20,19 +21,28 @@ export default function RawDashboard({ src, title }: { src: string; title?: stri
     return () => { cancelled = true }
   }, [src])
 
+  useEffect(() => () => observer.current?.disconnect(), [])
+
   // 내용 높이에 맞춰 iframe 높이 조절 (캔버스가 setTimeout 후 그려지므로 여러 번 재시도)
   function fit() {
     const f = ref.current
     try {
       const doc = f?.contentDocument
       if (doc?.body) {
-        const h = Math.max(doc.body.scrollHeight, doc.documentElement?.scrollHeight || 0)
-        if (h > 0) f!.style.height = h + 'px'
+        const style = getComputedStyle(doc.body)
+        const h = Math.ceil(doc.body.getBoundingClientRect().height + parseFloat(style.marginTop || '0') + parseFloat(style.marginBottom || '0'))
+        if (h > 0 && Math.abs(f!.getBoundingClientRect().height - h) > 2) f!.style.height = h + 'px'
       }
     } catch { /* cross-origin 아니면 무시 */ }
   }
 
   function onLoad() {
+    observer.current?.disconnect()
+    const body = ref.current?.contentDocument?.body
+    if (body) {
+      observer.current = new ResizeObserver(fit)
+      observer.current.observe(body)
+    }
     fit()
     ;[150, 400, 900, 1600].forEach((t) => setTimeout(fit, t))
   }

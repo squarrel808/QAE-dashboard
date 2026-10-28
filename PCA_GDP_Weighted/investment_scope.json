@@ -1,0 +1,16 @@
+{
+  "definition": "총고정투자 − 일반정부 고정투자. 공기업은 각국 국민계정의 기업부문 분류를 따름.",
+  "user_choice_date": "2026-10-28",
+  "government_consumption_included": false,
+  "government_investment_included": false,
+  "countries": {
+    "US": {"total": "g10:s111nf", "government": ["g10:s111nfg"], "gdp": "g10:s111ngdp", "basis": "SA, Bil.$"},
+    "UK": {"total": "g10:s112nf", "government": ["uk:rnczq", "uk:rnsmq"], "gdp": "g10:s112ngdp", "basis": "SA, Mil.GBP; 중앙정부 + 지방정부"},
+    "FR": {"total": "g10:s132nf", "government": ["france:frsnig37"], "gdp": "g10:s132ngdp", "basis": "SWDA, Mil.EUR"},
+    "DE": {"total": "g10:s134nf", "government": ["germany:desnfg"], "gdp": "g10:s134ngdp", "basis": "SWDA, Bil.EUR"},
+    "CA": {"total": "g10:s156nf", "government": ["g10:s156nfg"], "gdp": "g10:s156ngdp", "basis": "SA, Mil.C$; 기업부문 공기업 포함 가능"},
+    "JP": {"total": "japan:n9df", "government": ["japan:n9dgg"], "gdp": "japan:n9dp", "weight_lag_months": 9, "basis": "NSA, Bil.Yen; 같은 기준의 최근 4분기 합. 일반정부 투자 상세는 2025Q1까지(수정일 2025-12-23); 분기말+9개월 지연 규칙, 이후 완결된 구성비 유지. 과거 실제 발표 빈티지 복원은 아님."},
+    "AU": {"total": "g10:s193nf", "government": ["anz:ausk5f"], "gdp": "g10:s193ngdp", "basis": "SA, Mil.A$"}
+  },
+  "monthly_proxy_note": "투자 PCA는 민간·기업 투자활동을 설명하는 대리지표다. 자본재 생산·수주·주택 등 일부 월별 지표는 최종 구매자의 민간/정부를 분리하지 못하며, 일반정부 투자액 자체를 입력하거나 가중 합산하지 않는다."
+}

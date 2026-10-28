@@ -8,6 +8,7 @@ const TABS = [
   { href: '/earnings', label: '실적 캘린더' },
   { href: '/reports', label: 'Report' },
   { href: '/pca', label: 'PCA' },
+  { href: '/gdp-pca', label: 'PCA II' },
   { href: '/caimap', label: 'CAI' },
   { href: '/cpidist', label: 'CPI 분포' },
   { href: '/consensus', label: 'Consensus' },

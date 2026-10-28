@@ -1,0 +1,5321 @@
+{
+  "policy": "january_1_ttm_lagged_frozen_v1",
+  "records": {
+    "US:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q3",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6502376939909954,
+        "Capex": 0.12799591101855556,
+        "Housing": 0.04417502743253483,
+        "Export": 0.10710063636592299
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.933836+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q3",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.645963247387914,
+        "Capex": 0.13307992092184917,
+        "Housing": 0.0437372981383915,
+        "Export": 0.11095597022872762
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.938671+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6478814887804004,
+        "Capex": 0.13722454875263138,
+        "Housing": 0.045334684462758096,
+        "Export": 0.1067653513682985
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.943614+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6512969819720035,
+        "Capex": 0.1413015612792889,
+        "Housing": 0.04786054300671176,
+        "Export": 0.10304123548213552
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.948776+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6577313881311034,
+        "Capex": 0.14487892358044466,
+        "Housing": 0.04763481539871949,
+        "Export": 0.10632388407859882
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.954077+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6656691177867716,
+        "Capex": 0.1414734657141385,
+        "Housing": 0.04792781494861399,
+        "Export": 0.10134146573182087
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.959934+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6720442519554155,
+        "Capex": 0.12672328169944663,
+        "Housing": 0.05019219448003601,
+        "Export": 0.09102494251493687
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.966115+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6765524701209349,
+        "Capex": 0.12019428414649388,
+        "Housing": 0.0541593704976172,
+        "Export": 0.08982338546653901
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.972197+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6732510288065844,
+        "Capex": 0.11951369543479096,
+        "Housing": 0.06019283488902331,
+        "Export": 0.09510745313214448
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.978227+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6730841121495327,
+        "Capex": 0.12357840863914815,
+        "Housing": 0.06466146675025994,
+        "Export": 0.09885514018691588
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.984463+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6716555815471258,
+        "Capex": 0.1282249253253757,
+        "Housing": 0.06343886923203843,
+        "Export": 0.10450322287323364
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.990637+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.672422109288166,
+        "Capex": 0.13363780105905904,
+        "Housing": 0.05113986875562507,
+        "Export": 0.1121612269578408
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:08.997973+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6797304786234677,
+        "Capex": 0.1358757456254226,
+        "Housing": 0.03769115487874728,
+        "Export": 0.12488679831853265
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.004191+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6820070089097482,
+        "Capex": 0.12133570189323509,
+        "Housing": 0.027994166154016294,
+        "Export": 0.10935696363523256
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.011189+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6821861668178306,
+        "Capex": 0.11417228881606703,
+        "Housing": 0.02567117250275456,
+        "Export": 0.12026604857401996
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.017883+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6856258001112073,
+        "Capex": 0.11996968884153861,
+        "Housing": 0.024140846117663792,
+        "Export": 0.13392083586567186
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.025192+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6802383686644528,
+        "Capex": 0.12934747011886769,
+        "Housing": 0.02573493467333564,
+        "Export": 0.13630466494925356
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.032870+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6766459530558069,
+        "Capex": 0.13098989633640884,
+        "Housing": 0.0296714211451197,
+        "Export": 0.1354334577747949
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.041512+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6737337977174793,
+        "Capex": 0.13625839879275423,
+        "Housing": 0.031390398264871104,
+        "Export": 0.1360905663841727
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.049236+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6723077685349835,
+        "Capex": 0.13793117750968556,
+        "Housing": 0.03424721637282024,
+        "Export": 0.1271284882984756
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.056481+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6760382803866662,
+        "Capex": 0.13470271569714093,
+        "Housing": 0.037274710890990846,
+        "Export": 0.11930970849828874
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.063864+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6778372463910236,
+        "Capex": 0.13527765329313954,
+        "Housing": 0.0390731954679119,
+        "Export": 0.12054006905699526
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.071625+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6751482648607388,
+        "Capex": 0.13773081507891544,
+        "Housing": 0.039609616699675707,
+        "Export": 0.12348554539938542
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.079694+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6711954223863349,
+        "Capex": 0.13932961636986357,
+        "Housing": 0.038400556230224814,
+        "Export": 0.11930264678524116
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.087725+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6664167072850661,
+        "Capex": 0.13550176114534612,
+        "Housing": 0.04091175915760465,
+        "Export": 0.10445333883243971
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.096270+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6764490349884441,
+        "Capex": 0.13138868109714716,
+        "Housing": 0.047508114049826876,
+        "Export": 0.106001673756282
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.106640+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6785637472088724,
+        "Capex": 0.13170683335865993,
+        "Housing": 0.0468666901298295,
+        "Export": 0.11596622881969021
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.119604+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6754405491309441,
+        "Capex": 0.13844686603046996,
+        "Housing": 0.04015571103141681,
+        "Export": 0.11177850842781709
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.132537+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6732839792106097,
+        "Capex": 0.13945455325797287,
+        "Housing": 0.04028130568298138,
+        "Export": 0.10979224395825578
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.142368+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "US:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "US",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6766957257834313,
+        "Capex": 0.1405172574611514,
+        "Housing": 0.03901493122515119,
+        "Export": 0.10870756379170618
+      },
+      "sources": [
+        "g10:s111ncp",
+        "g10:s111nf",
+        "g10:s111nfg",
+        "g10:s111ngdp",
+        "g10:s111nx",
+        "usecon:fr",
+        "usecon:gdp"
+      ],
+      "created_kst": "2026-10-28T17:32:09.152008+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6566453850126158,
+        "Capex": 0.13334496671803617,
+        "Housing": 0.028668853337175056,
+        "Export": 0.24866156894454428
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.572445+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6606035644241445,
+        "Capex": 0.1330893845360294,
+        "Housing": 0.029243742538498676,
+        "Export": 0.2405787162283586
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.576945+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6553284694305453,
+        "Capex": 0.13245219063733887,
+        "Housing": 0.031743526546687134,
+        "Export": 0.25317467381539865
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.582447+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6572784720900562,
+        "Capex": 0.1325669465062347,
+        "Housing": 0.03167491382774006,
+        "Export": 0.2604164463899286
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.587145+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6547661069655444,
+        "Capex": 0.12347929338335797,
+        "Housing": 0.033500412950045376,
+        "Export": 0.24760076448918802
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.591782+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6522077754372372,
+        "Capex": 0.12270566491529664,
+        "Housing": 0.03806122531334996,
+        "Export": 0.23990218154524104
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.597087+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6486422293748578,
+        "Capex": 0.11355196289278734,
+        "Housing": 0.040070763589390365,
+        "Export": 0.23793145983997743
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.601920+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6431580787901785,
+        "Capex": 0.12278144609484451,
+        "Housing": 0.0421237754104819,
+        "Export": 0.24984056666127363
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.606739+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6335035753571581,
+        "Capex": 0.11618159820593563,
+        "Housing": 0.0418729460750722,
+        "Export": 0.2761999453431093
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.613273+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6307381122897279,
+        "Capex": 0.12033925291758427,
+        "Housing": 0.040668284216050954,
+        "Export": 0.25453338636344275
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.619027+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6331474606605069,
+        "Capex": 0.1200924468675246,
+        "Housing": 0.03854065478386811,
+        "Export": 0.27164707536063815
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.624455+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6284009819434073,
+        "Capex": 0.10690995083256306,
+        "Housing": 0.03339578541099876,
+        "Export": 0.26852626085378994
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.630589+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6319265256955121,
+        "Capex": 0.10268114275256635,
+        "Housing": 0.03078309624700182,
+        "Export": 0.28467156487006684
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.636891+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6324812984507232,
+        "Capex": 0.10401976973519488,
+        "Housing": 0.030438924562122206,
+        "Export": 0.3104019769735195
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.643733+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6319946409400586,
+        "Capex": 0.10730171917004777,
+        "Housing": 0.02906353937826714,
+        "Export": 0.3120312650833258
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.650777+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6396939950879466,
+        "Capex": 0.11158055530798484,
+        "Housing": 0.03080243368897022,
+        "Export": 0.30557846368024943
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.658059+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.633800609124806,
+        "Capex": 0.11358066055674482,
+        "Housing": 0.03210994842800768,
+        "Export": 0.2889195091234054
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.665439+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6328683861105386,
+        "Capex": 0.11940700316428454,
+        "Housing": 0.03343185310206839,
+        "Export": 0.28204653298238386
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.672468+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6356517094933073,
+        "Capex": 0.12672788864854886,
+        "Housing": 0.034921645176436415,
+        "Export": 0.28638280768130947
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.680168+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6345008568619458,
+        "Capex": 0.12558934825073592,
+        "Housing": 0.037777481542938626,
+        "Export": 0.3107114721326165
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.687578+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6350851724998299,
+        "Capex": 0.12366596104270638,
+        "Housing": 0.039662763283914965,
+        "Export": 0.3168359593253229
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.696531+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6347244426309558,
+        "Capex": 0.12277392411441923,
+        "Housing": 0.040545741163144855,
+        "Export": 0.31680100604025496
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.704573+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5994562096535743,
+        "Capex": 0.11786489179025575,
+        "Housing": 0.03592246082715176,
+        "Export": 0.3045767324178542
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.713085+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5850518000592303,
+        "Capex": 0.11808771650297409,
+        "Housing": 0.03943583770535867,
+        "Export": 0.2860573474962385
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.721545+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6166097429444545,
+        "Capex": 0.11958762072010319,
+        "Housing": 0.04238522577548283,
+        "Export": 0.3240341897900769
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.729507+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6210273576205044,
+        "Capex": 0.11850653553894172,
+        "Housing": 0.040912258616470736,
+        "Export": 0.33067059155169953
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.737642+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6103845348496177,
+        "Capex": 0.11608720593062412,
+        "Housing": 0.03934068753655166,
+        "Export": 0.3084965551860626
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.745814+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "UK:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "UK",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.6055674873334274,
+        "Capex": 0.11621769091074938,
+        "Housing": 0.03838663935717662,
+        "Export": 0.29894703672684153
+      },
+      "sources": [
+        "g10:s112ncp",
+        "g10:s112nf",
+        "g10:s112ngdp",
+        "g10:s112nx",
+        "uk:l62rq",
+        "uk:l62tq",
+        "uk:rnczq",
+        "uk:rnsmq"
+      ],
+      "created_kst": "2026-10-28T17:32:12.754232+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q3",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5480213137682878,
+        "Capex": 0.10527343151346791,
+        "Housing": 0.04383341318736984,
+        "Export": 0.2382497608411937
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.588197+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q3",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5411351610748149,
+        "Capex": 0.10247250076060058,
+        "Housing": 0.04500010977740279,
+        "Export": 0.26037866930968834
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.592722+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.538968253968254,
+        "Capex": 0.10569631626235401,
+        "Housing": 0.04549266247379455,
+        "Export": 0.2740917939502845
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.597419+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5371885122129177,
+        "Capex": 0.11087289833230102,
+        "Housing": 0.04804226326638072,
+        "Export": 0.26818810170686386
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.602363+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5382009754434818,
+        "Capex": 0.11682231108771499,
+        "Housing": 0.047730344923797345,
+        "Export": 0.2913163264114002
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.607346+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5396587605947105,
+        "Capex": 0.11947849111076345,
+        "Housing": 0.047748011868968064,
+        "Export": 0.30093053340678033
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.612353+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5405660708529997,
+        "Capex": 0.11454047033218129,
+        "Housing": 0.04894160898411695,
+        "Export": 0.287348772789793
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.618083+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5421714019221335,
+        "Capex": 0.11240828562728569,
+        "Housing": 0.05041926127410031,
+        "Export": 0.2749952092399343
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.623052+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5409062626518369,
+        "Capex": 0.11147410396630239,
+        "Housing": 0.052296050895167846,
+        "Export": 0.2728963167404927
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.628064+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5428328528044112,
+        "Capex": 0.11231182789530628,
+        "Housing": 0.05454739453126344,
+        "Export": 0.27911655340869584
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.634630+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5448103232536174,
+        "Capex": 0.11509842679294983,
+        "Housing": 0.05835866228094204,
+        "Export": 0.2891362372323477
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.640270+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5410206770553354,
+        "Capex": 0.12095532510950649,
+        "Housing": 0.05981053462521697,
+        "Export": 0.2893343476250089
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.646606+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5455704497824039,
+        "Capex": 0.1257037987403417,
+        "Housing": 0.06017501233455229,
+        "Export": 0.2941598346742496
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.652714+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5527201356163529,
+        "Capex": 0.11599805997281692,
+        "Housing": 0.05435065527459065,
+        "Export": 0.2649188554251953
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.658647+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5535920162043337,
+        "Capex": 0.1123900432832663,
+        "Housing": 0.05277164908184027,
+        "Export": 0.27088527434702664
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.665113+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5536709816707703,
+        "Capex": 0.117147323494224,
+        "Housing": 0.05382114107451526,
+        "Export": 0.29100109856032835
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.671156+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5481388641104249,
+        "Capex": 0.11897517445824733,
+        "Housing": 0.05311505679159971,
+        "Export": 0.30253216975052577
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.677369+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5473913613314805,
+        "Capex": 0.11552748832858527,
+        "Housing": 0.0515169881953937,
+        "Export": 0.3058722108429773
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.684258+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5455119109102196,
+        "Capex": 0.11699763006579839,
+        "Housing": 0.05139483364589392,
+        "Export": 0.30712232986559507
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.690877+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5443264111704474,
+        "Capex": 0.11686207460299629,
+        "Housing": 0.04858483371373719,
+        "Export": 0.3154484153188131
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.697773+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5443684595623199,
+        "Capex": 0.11996382927850917,
+        "Housing": 0.0493774393214574,
+        "Export": 0.31450370426300356
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.704773+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5449773530454021,
+        "Capex": 0.12264836151415841,
+        "Housing": 0.05161272168822913,
+        "Export": 0.3218276896940749
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.711663+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5453342380923487,
+        "Capex": 0.12644206650833384,
+        "Housing": 0.052479726247725636,
+        "Export": 0.3280100400902822
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.719414+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5403438948692325,
+        "Capex": 0.12867184362306044,
+        "Housing": 0.05322664064567073,
+        "Export": 0.33095330378728494
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.727112+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5410412847684112,
+        "Capex": 0.1285473288791371,
+        "Housing": 0.0519378762123143,
+        "Export": 0.2942137713316815
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.735054+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5256478715330412,
+        "Capex": 0.13555284753238495,
+        "Housing": 0.05894525430219021,
+        "Export": 0.3017975417448179
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.742543+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.538964432447187,
+        "Capex": 0.13379970739162997,
+        "Housing": 0.058940669008094325,
+        "Export": 0.3572930170430804
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.751381+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5456229054469388,
+        "Capex": 0.1366902508433703,
+        "Housing": 0.05396066312551978,
+        "Export": 0.35211296346881077
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.759059+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5437875230186819,
+        "Capex": 0.134668702122853,
+        "Housing": 0.04580563675321919,
+        "Export": 0.33866590907535066
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.768838+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "FR:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "FR",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.540499049972137,
+        "Capex": 0.13343661669229168,
+        "Housing": 0.04449957366240777,
+        "Export": 0.3386036940306023
+      },
+      "sources": [
+        "france:frsnfih",
+        "france:frsnig37",
+        "g10:s132ncp",
+        "g10:s132nf",
+        "g10:s132ngdp",
+        "g10:s132nx"
+      ],
+      "created_kst": "2026-10-28T17:32:15.777495+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q3",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5598760126071214,
+        "Capex": 0.13022062462556322,
+        "Housing": 0.07387721080461566,
+        "Export": 0.21975462999140422
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.019456+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q3",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5597965285360055,
+        "Capex": 0.1285467198644884,
+        "Housing": 0.07349309686833538,
+        "Export": 0.24106368432330944
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.023713+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5549878224563846,
+        "Capex": 0.13211243103533976,
+        "Housing": 0.07160345941647199,
+        "Export": 0.2580197822953427
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.028728+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5607544308964819,
+        "Capex": 0.1313042168235563,
+        "Housing": 0.06955110292509635,
+        "Export": 0.25426323437219045
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.033446+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5626970343382477,
+        "Capex": 0.135219828969475,
+        "Housing": 0.06720829479168633,
+        "Export": 0.28488097710154225
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.038460+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.564699562440599,
+        "Capex": 0.1337627812799875,
+        "Housing": 0.06138641591559191,
+        "Export": 0.30919333881239125
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.043574+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5630595922045736,
+        "Capex": 0.11963050580150951,
+        "Housing": 0.05689895234876648,
+        "Export": 0.309478427396643
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.048483+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.570066708936497,
+        "Capex": 0.1140865698032667,
+        "Housing": 0.054403950740763894,
+        "Export": 0.3132596290375874
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.054379+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5695179422373168,
+        "Capex": 0.11292683568965062,
+        "Housing": 0.05249058789458442,
+        "Export": 0.3327146354948266
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.059476+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5747554808263166,
+        "Capex": 0.11459054684757689,
+        "Housing": 0.04946112610992421,
+        "Export": 0.3515615858969747
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.064717+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.567864233912262,
+        "Capex": 0.12008652580099063,
+        "Housing": 0.05034673020252054,
+        "Export": 0.38047944489727675
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.070289+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5512419897214643,
+        "Capex": 0.1231750840682698,
+        "Housing": 0.05168691707378972,
+        "Export": 0.4061806040225874
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.075962+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5480131811481799,
+        "Capex": 0.1261284621736547,
+        "Housing": 0.04980127952831863,
+        "Export": 0.4134196127458924
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.081728+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5694278784191609,
+        "Capex": 0.11580398812049211,
+        "Housing": 0.05043027193186094,
+        "Export": 0.36218089832774314
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.088109+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5612210836826581,
+        "Capex": 0.1123311597578016,
+        "Housing": 0.051111628629094866,
+        "Export": 0.3827161931377116
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.094261+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5500699403666348,
+        "Capex": 0.11792093057498346,
+        "Housing": 0.053477876757711845,
+        "Export": 0.41283589781344326
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.100450+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5514488415362058,
+        "Capex": 0.11841425073580286,
+        "Housing": 0.05714705660932004,
+        "Export": 0.4253030145511512
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.107224+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5503413836998489,
+        "Capex": 0.11423782187731227,
+        "Housing": 0.05703369651743037,
+        "Export": 0.418220456370567
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.113433+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5402324466324953,
+        "Capex": 0.11650560181527175,
+        "Housing": 0.0582389567589835,
+        "Export": 0.41647588754499354
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.121074+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5364842265174459,
+        "Capex": 0.11636582352346705,
+        "Housing": 0.056486899712794504,
+        "Export": 0.4257422192085386
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.128382+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5335942596216569,
+        "Capex": 0.11689749819589007,
+        "Housing": 0.05780872338347024,
+        "Export": 0.41496733694470445
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.137102+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5317940071618624,
+        "Capex": 0.11717787511237707,
+        "Housing": 0.05842245301352158,
+        "Export": 0.4198861245728158
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.145538+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5293161980073486,
+        "Capex": 0.11967699483494533,
+        "Housing": 0.05990968433189116,
+        "Export": 0.42402944139380766
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.155345+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5319196409658223,
+        "Capex": 0.12168383414157449,
+        "Housing": 0.06215426155380006,
+        "Export": 0.42267010486893514
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.163515+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.520251683687988,
+        "Capex": 0.11504899438626948,
+        "Housing": 0.06656855333618858,
+        "Export": 0.39294101415074
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.171701+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5048306392701588,
+        "Capex": 0.11448917156870822,
+        "Housing": 0.06695035344131556,
+        "Export": 0.41079657488726673
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.179982+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5295965129112816,
+        "Capex": 0.11634801715061723,
+        "Housing": 0.06860272314366948,
+        "Export": 0.449189007736088
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.191029+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5354510588627648,
+        "Capex": 0.11833154672574384,
+        "Housing": 0.06616427261249674,
+        "Export": 0.4365873412896925
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.200137+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5353116026458473,
+        "Capex": 0.11278657993963356,
+        "Housing": 0.06200699993578041,
+        "Export": 0.41768653498591757
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.209472+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "DE:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "DE",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5400750079476411,
+        "Capex": 0.10930329754856956,
+        "Housing": 0.06031781672183699,
+        "Export": 0.404967331304369
+      },
+      "sources": [
+        "g10:s134ncp",
+        "g10:s134nf",
+        "g10:s134ngdp",
+        "g10:s134nx",
+        "germany:desnfg",
+        "germany:desnfgr",
+        "germany:desnfir"
+      ],
+      "created_kst": "2026-10-28T17:32:21.219008+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q3",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5502102085155611,
+        "Capex": 0.10815392718414642,
+        "Housing": 0.04416495019892215,
+        "Export": 0.3713037160351006
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.035538+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q3",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5552470483642727,
+        "Capex": 0.12306123520273055,
+        "Housing": 0.047817001377113554,
+        "Export": 0.3759788060771697
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.040277+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5577092680961326,
+        "Capex": 0.13159459862039993,
+        "Housing": 0.04558016822247631,
+        "Export": 0.3928881049413343
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.045229+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5523521024203543,
+        "Capex": 0.1292809521588067,
+        "Housing": 0.04432921523567675,
+        "Export": 0.4156090842895014
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.051212+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5359515020801442,
+        "Capex": 0.12454274682438707,
+        "Housing": 0.043325719371654275,
+        "Export": 0.43610735132000983
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.057390+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5330849401504175,
+        "Capex": 0.12348714648348179,
+        "Housing": 0.046083610159695074,
+        "Export": 0.4330392080565434
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.062549+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5470159606937501,
+        "Capex": 0.11444743728202916,
+        "Housing": 0.05359104937612854,
+        "Export": 0.4012182888462967
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.068041+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5438730993338166,
+        "Capex": 0.11115312243825877,
+        "Housing": 0.055914037316248485,
+        "Export": 0.3776144341623956
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.076583+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.53623506495288,
+        "Capex": 0.11412974724542785,
+        "Housing": 0.06091685452170507,
+        "Export": 0.3731586014744906
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.082681+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5316930288731885,
+        "Capex": 0.11912097484170855,
+        "Housing": 0.06289250509132874,
+        "Export": 0.3649524606357732
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.090466+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5273350605141685,
+        "Capex": 0.1262590286492979,
+        "Housing": 0.06478611325063692,
+        "Export": 0.35962301854475137
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.096810+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5324001350286935,
+        "Capex": 0.1270864344387468,
+        "Housing": 0.06894950891350127,
+        "Export": 0.3499757269848414
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.103486+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5300207264728527,
+        "Capex": 0.12722256191784287,
+        "Housing": 0.0674949998215842,
+        "Export": 0.3417466967372891
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.112122+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5558889302782083,
+        "Capex": 0.11914657201084711,
+        "Housing": 0.06318835346930785,
+        "Export": 0.2973362794618145
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.118666+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.557026595537557,
+        "Capex": 0.11511611210622641,
+        "Housing": 0.06833846034032942,
+        "Export": 0.28877927748140647
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.126495+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5485315886673061,
+        "Capex": 0.12402342128244406,
+        "Housing": 0.06632460523113484,
+        "Export": 0.30184020271721235
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.133981+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5448762202093044,
+        "Capex": 0.1317771084337349,
+        "Housing": 0.06925292410517984,
+        "Export": 0.30756090053645235
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.143003+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5461913997048908,
+        "Capex": 0.13478533305106113,
+        "Housing": 0.06838416538030684,
+        "Export": 0.3031172638886968
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.151037+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5437361655710533,
+        "Capex": 0.1380660183633608,
+        "Housing": 0.06728742138651427,
+        "Export": 0.31411059845758305
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.162832+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5577535549725026,
+        "Capex": 0.13293490453690793,
+        "Housing": 0.07119063209698162,
+        "Export": 0.31758054956721093
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.171865+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5709794819718593,
+        "Capex": 0.11709995126856204,
+        "Housing": 0.07582422400915234,
+        "Export": 0.3139919020109441
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.180199+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5655541857864698,
+        "Capex": 0.10968393065105918,
+        "Housing": 0.07698344326480121,
+        "Export": 0.31743759196804877
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.189466+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5625296717310921,
+        "Capex": 0.11268035350028553,
+        "Housing": 0.07581608229200089,
+        "Export": 0.3216971397688721
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.197159+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5639523536542139,
+        "Capex": 0.11571392937943346,
+        "Housing": 0.07271756587037288,
+        "Export": 0.32416231615153357
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.205840+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5573187294003021,
+        "Capex": 0.11141341228517218,
+        "Housing": 0.07794022346318502,
+        "Export": 0.2992952397901449
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.214292+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5302470333339311,
+        "Capex": 0.1060227519118877,
+        "Housing": 0.09470996855228,
+        "Export": 0.30575408502459245
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.222784+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5248945252925498,
+        "Capex": 0.10850425462164512,
+        "Housing": 0.08847332487635229,
+        "Export": 0.33395038412748185
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.232963+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5400790590345855,
+        "Capex": 0.11586964086041368,
+        "Housing": 0.07779670738444372,
+        "Export": 0.33372434577268634
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.242228+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5407971136124008,
+        "Capex": 0.11354526032406677,
+        "Housing": 0.07575137825333787,
+        "Export": 0.3264896787850837
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.251135+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "CA:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "CA",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5411736339100892,
+        "Capex": 0.11354869861724004,
+        "Housing": 0.07549095094188132,
+        "Export": 0.3168086961439199
+      },
+      "sources": [
+        "g10:s156ncp",
+        "g10:s156nf",
+        "g10:s156nfg",
+        "g10:s156ngdp",
+        "g10:s156nprr",
+        "g10:s156nx"
+      ],
+      "created_kst": "2026-10-28T17:32:25.262069+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q1",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5149021060720623,
+        "Capex": 0.20015099878194814,
+        "Housing": 0.0598818454168204,
+        "Export": 0.0877100195004248
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.098716+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q1",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5144870658349093,
+        "Capex": 0.20359673728836694,
+        "Housing": 0.06559408328615715,
+        "Export": 0.09363276109065292
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.103330+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q1",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5137242248090439,
+        "Capex": 0.20271223355201623,
+        "Housing": 0.05624227832978156,
+        "Export": 0.10298071182686003
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.107896+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q1",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5243538855598082,
+        "Capex": 0.19221886109944455,
+        "Housing": 0.05069388165561465,
+        "Export": 0.10012925246526157
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.113420+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q1",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5319036184883907,
+        "Capex": 0.18812105077968777,
+        "Housing": 0.051922252689376766,
+        "Export": 0.09839394571010107
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.118432+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q1",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5256513530868224,
+        "Capex": 0.1919608972885135,
+        "Housing": 0.051601326018673815,
+        "Export": 0.10340637306045954
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.123469+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q1",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5379310782786735,
+        "Capex": 0.182933017954657,
+        "Housing": 0.04956997467494785,
+        "Export": 0.0995086465469565
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.130666+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q1",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5415200492020221,
+        "Capex": 0.174388409855257,
+        "Housing": 0.049038605982916136,
+        "Export": 0.10907717370345678
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.136158+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q1",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5391656935777636,
+        "Capex": 0.17245395522369844,
+        "Housing": 0.049138720060494606,
+        "Export": 0.11563545538400684
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.142767+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q1",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5396043270971815,
+        "Capex": 0.17361418712046617,
+        "Housing": 0.050355852714686324,
+        "Export": 0.12810660317783357
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.149338+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q1",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5413057819799674,
+        "Capex": 0.18021350133844274,
+        "Housing": 0.05026829166454031,
+        "Export": 0.14227669810576712
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.156553+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q1",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5411081514407192,
+        "Capex": 0.1834781123685258,
+        "Housing": 0.05040734820308256,
+        "Export": 0.15827581995141263
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.165205+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q1",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5432236271091693,
+        "Capex": 0.18320626829662978,
+        "Housing": 0.044735167777336445,
+        "Export": 0.17393033673154157
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.171470+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q1",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5565833409573492,
+        "Capex": 0.18107331343050476,
+        "Housing": 0.04603597744414148,
+        "Export": 0.1544617336284944
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.177987+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q1",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5664063716701075,
+        "Capex": 0.1652303520870853,
+        "Housing": 0.0375198166287971,
+        "Export": 0.13256496060633893
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.185418+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q1",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5598361912984287,
+        "Capex": 0.16088144195963974,
+        "Housing": 0.03890142431163247,
+        "Export": 0.1495050957491791
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.194218+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q1",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5659997945278563,
+        "Capex": 0.16706967766656633,
+        "Housing": 0.04090660815073881,
+        "Export": 0.1453003403776959
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.202584+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q1",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5724471264124051,
+        "Capex": 0.16961190062280704,
+        "Housing": 0.04233236604634375,
+        "Export": 0.14385924715725246
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.210422+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q1",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5742132106414625,
+        "Capex": 0.17611357088125262,
+        "Housing": 0.045622668563598257,
+        "Export": 0.15958091064273391
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.218742+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q1",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5582627098797144,
+        "Capex": 0.18238556077776294,
+        "Housing": 0.04270081922831489,
+        "Export": 0.17317725166005868
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.227450+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q1",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.544904852804121,
+        "Capex": 0.1844010488005322,
+        "Housing": 0.04248866915677074,
+        "Export": 0.16666757255435688
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.235908+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q1",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.538259963535916,
+        "Capex": 0.18300946980387703,
+        "Housing": 0.04327943777286492,
+        "Export": 0.16033806398076916
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.244296+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q1",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5355788003588717,
+        "Capex": 0.18600640057103787,
+        "Housing": 0.04241950534123725,
+        "Export": 0.1738834716976346
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.251883+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q1",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5371921431620599,
+        "Capex": 0.19145028733509573,
+        "Housing": 0.040645726257811515,
+        "Export": 0.17760946113506182
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.259918+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q1",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5344945637096843,
+        "Capex": 0.19104204224570903,
+        "Housing": 0.0420595952920592,
+        "Export": 0.1677794058346122
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.275077+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q1",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5267773522796405,
+        "Capex": 0.1877519645981062,
+        "Housing": 0.040633309039188825,
+        "Export": 0.15217246270139587
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.286170+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q1",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5295940245478372,
+        "Capex": 0.18943455836489367,
+        "Housing": 0.042524836106514884,
+        "Export": 0.1802948086888278
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.296045+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q1",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5473445711135869,
+        "Capex": 0.19903136223391155,
+        "Housing": 0.043870142633364764,
+        "Export": 0.208721627698199
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.305410+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q1",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5330108310369198,
+        "Capex": 0.1983519640660555,
+        "Housing": 0.04335621314284407,
+        "Export": 0.21417764009143328
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.316740+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "JP:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "JP",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q1",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 9,
+      "weights": {
+        "Consumer": 0.5272877712517058,
+        "Capex": 0.19976398877264856,
+        "Housing": 0.042918981155683086,
+        "Export": 0.22228813396435
+      },
+      "sources": [
+        "g10:s158ncp",
+        "g10:s158nx",
+        "japan:n9df",
+        "japan:n9dfd",
+        "japan:n9dgg",
+        "japan:n9dp"
+      ],
+      "created_kst": "2026-10-28T17:32:32.326413+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:1997": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 1997,
+      "cutoff": "1997-01-01",
+      "quarter": "1996Q3",
+      "assumed_available": "1996-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5699122592997506,
+        "Capex": 0.16196922091249583,
+        "Housing": 0.046531811824041806,
+        "Export": 0.18740676037346138
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.314854+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:1998": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 1998,
+      "cutoff": "1998-01-01",
+      "quarter": "1997Q3",
+      "assumed_available": "1997-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5685511660085003,
+        "Capex": 0.1666268046424199,
+        "Housing": 0.048078916178135415,
+        "Export": 0.19494655831282653
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.319757+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:1999": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 1999,
+      "cutoff": "1999-01-01",
+      "quarter": "1998Q3",
+      "assumed_available": "1998-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5713789898565161,
+        "Capex": 0.1709207893863017,
+        "Housing": 0.05372926125602994,
+        "Export": 0.19371067293396807
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.325285+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2000": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2000,
+      "cutoff": "2000-01-01",
+      "quarter": "1999Q3",
+      "assumed_available": "1999-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5770818025185598,
+        "Capex": 0.17024666176805942,
+        "Housing": 0.05505390579471457,
+        "Export": 0.1793887931689766
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.330853+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2001": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2001,
+      "cutoff": "2001-01-01",
+      "quarter": "2000Q3",
+      "assumed_available": "2000-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.573740858693088,
+        "Capex": 0.1659265156876622,
+        "Housing": 0.060196980419910354,
+        "Export": 0.20300631045057796
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.336120+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2002": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2002,
+      "cutoff": "2002-01-01",
+      "quarter": "2001Q3",
+      "assumed_available": "2001-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5791888376492846,
+        "Capex": 0.15177680863051146,
+        "Housing": 0.047295314010669894,
+        "Export": 0.2211380756630428
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.341233+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2003": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2003,
+      "cutoff": "2003-01-01",
+      "quarter": "2002Q3",
+      "assumed_available": "2002-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5751177152530667,
+        "Capex": 0.1602264598703607,
+        "Housing": 0.05781581246567855,
+        "Export": 0.20215347186972196
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.346681+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2004": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2004,
+      "cutoff": "2004-01-01",
+      "quarter": "2003Q3",
+      "assumed_available": "2003-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5761105211386849,
+        "Capex": 0.17295476678689053,
+        "Housing": 0.062000528528293394,
+        "Export": 0.18301148570282028
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.352207+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2005": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2005,
+      "cutoff": "2005-01-01",
+      "quarter": "2004Q3",
+      "assumed_available": "2004-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5744233896731624,
+        "Capex": 0.1724888525219006,
+        "Housing": 0.06681450528349038,
+        "Export": 0.1738598022336947
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.358724+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2006": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2006,
+      "cutoff": "2006-01-01",
+      "quarter": "2005Q3",
+      "assumed_available": "2005-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5661902656832656,
+        "Capex": 0.1797936042269042,
+        "Housing": 0.06371025908401565,
+        "Export": 0.18415291646660928
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.366055+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2007": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2007,
+      "cutoff": "2007-01-01",
+      "quarter": "2006Q3",
+      "assumed_available": "2006-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.561392271167317,
+        "Capex": 0.18905532571733033,
+        "Housing": 0.05761561123908921,
+        "Export": 0.2021884255559212
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.372619+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2008": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2008,
+      "cutoff": "2008-01-01",
+      "quarter": "2007Q3",
+      "assumed_available": "2007-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.561125733263817,
+        "Capex": 0.19098645239853657,
+        "Housing": 0.05493612068555512,
+        "Export": 0.1984848797568485
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.379885+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2009": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2009,
+      "cutoff": "2009-01-01",
+      "quarter": "2008Q3",
+      "assumed_available": "2008-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5513160650126058,
+        "Capex": 0.19422985916793495,
+        "Housing": 0.054110940908573754,
+        "Export": 0.21177244598634384
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.386300+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2010": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2010,
+      "cutoff": "2010-01-01",
+      "quarter": "2009Q3",
+      "assumed_available": "2009-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5476845229807218,
+        "Capex": 0.18756012582119214,
+        "Housing": 0.05068844065264996,
+        "Export": 0.2179742977936988
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.393594+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2011": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2011,
+      "cutoff": "2011-01-01",
+      "quarter": "2010Q3",
+      "assumed_available": "2010-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5507437485524733,
+        "Capex": 0.1740707812535021,
+        "Housing": 0.05085207958221578,
+        "Export": 0.20467840626377484
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.402139+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2012": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2012,
+      "cutoff": "2012-01-01",
+      "quarter": "2011Q3",
+      "assumed_available": "2011-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5369898293307377,
+        "Capex": 0.17763100751253585,
+        "Housing": 0.04712603109519785,
+        "Export": 0.21480213588190608
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.411643+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2013": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2013,
+      "cutoff": "2013-01-01",
+      "quarter": "2012Q3",
+      "assumed_available": "2012-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5416820106642161,
+        "Capex": 0.19840995414982132,
+        "Housing": 0.04224629512705491,
+        "Export": 0.20783915744098483
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.420257+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2014": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2014,
+      "cutoff": "2014-01-01",
+      "quarter": "2013Q3",
+      "assumed_available": "2013-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5483186899446163,
+        "Capex": 0.19878103336176647,
+        "Housing": 0.04413683593692336,
+        "Export": 0.20192921752380072
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.428940+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2015": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2015,
+      "cutoff": "2015-01-01",
+      "quarter": "2014Q3",
+      "assumed_available": "2014-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5522827314049178,
+        "Capex": 0.18513259920183006,
+        "Housing": 0.04802388568146483,
+        "Export": 0.20784169794317742
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.437663+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2016": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2016,
+      "cutoff": "2016-01-01",
+      "quarter": "2015Q3",
+      "assumed_available": "2015-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.565092390439049,
+        "Capex": 0.17380968502885086,
+        "Housing": 0.0546076875823907,
+        "Export": 0.19949575823235993
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.446708+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2017": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2017,
+      "cutoff": "2017-01-01",
+      "quarter": "2016Q3",
+      "assumed_available": "2016-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5715677523717191,
+        "Capex": 0.15654091234045192,
+        "Housing": 0.05916731806584826,
+        "Export": 0.19110293061063383
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.455745+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2018": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2018,
+      "cutoff": "2018-01-01",
+      "quarter": "2017Q3",
+      "assumed_available": "2017-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.553889074294618,
+        "Capex": 0.14728779942250145,
+        "Housing": 0.05714434003435525,
+        "Export": 0.21583701013357026
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.465618+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2019": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2019,
+      "cutoff": "2019-01-01",
+      "quarter": "2018Q3",
+      "assumed_available": "2018-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5530889560649195,
+        "Capex": 0.14721386968620848,
+        "Housing": 0.05756357339722468,
+        "Export": 0.22368337499966648
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.475476+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2020": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2020,
+      "cutoff": "2020-01-01",
+      "quarter": "2019Q3",
+      "assumed_available": "2019-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5392481078513379,
+        "Capex": 0.13850886620503608,
+        "Housing": 0.052551075267460196,
+        "Export": 0.24541671693718517
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.488640+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2021": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2021,
+      "cutoff": "2021-01-01",
+      "quarter": "2020Q3",
+      "assumed_available": "2020-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5205887455021877,
+        "Capex": 0.13833835316411652,
+        "Housing": 0.048780784716720246,
+        "Export": 0.22712443330354234
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.501335+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2022": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2022,
+      "cutoff": "2022-01-01",
+      "quarter": "2021Q3",
+      "assumed_available": "2021-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5006288600760768,
+        "Capex": 0.13922348562313386,
+        "Housing": 0.0501586791056708,
+        "Export": 0.2304528164379283
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.512849+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2023": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2023,
+      "cutoff": "2023-01-01",
+      "quarter": "2022Q3",
+      "assumed_available": "2022-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.4950176640634328,
+        "Capex": 0.14090390592497018,
+        "Housing": 0.049914251517589076,
+        "Export": 0.2608187482415467
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.524304+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2024": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2024,
+      "cutoff": "2024-01-01",
+      "quarter": "2023Q3",
+      "assumed_available": "2023-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.509553024269534,
+        "Capex": 0.1445057480272912,
+        "Housing": 0.050861867929261784,
+        "Export": 0.2619423848771348
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.535223+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2025": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2025,
+      "cutoff": "2025-01-01",
+      "quarter": "2024Q3",
+      "assumed_available": "2024-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.515300474062716,
+        "Capex": 0.1506299868718817,
+        "Housing": 0.05095582173584213,
+        "Export": 0.2413257475405129
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.546331+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    },
+    "AU:2026": {
+      "policy": "january_1_ttm_lagged_frozen_v1",
+      "country": "AU",
+      "year": 2026,
+      "cutoff": "2026-01-01",
+      "quarter": "2025Q3",
+      "assumed_available": "2025-12-31",
+      "publication_lag_months": 3,
+      "weights": {
+        "Consumer": 0.5203355214393507,
+        "Capex": 0.1508175624392316,
+        "Housing": 0.05343777940123039,
+        "Export": 0.23293321744014703
+      },
+      "sources": [
+        "anz:ausk5f",
+        "anz:ausnfr",
+        "g10:s193ncp",
+        "g10:s193nf",
+        "g10:s193ngdp",
+        "g10:s193nx"
+      ],
+      "created_kst": "2026-10-28T17:32:35.557988+09:00",
+      "vintage_note": "Current revised data at snapshot creation; release eligibility approximated by lag, not a historical real-time vintage."
+    }
+  }
+}

@@ -1,370 +1,351 @@
-﻿country,bbg,label,pk,group,status,note,selected,action,reason
-FR,FRUEREU Index,France Unemployment Rate ILO Method - Mainland France,france:frselrm,C_labor,월별 대체 가능,본토 ILO 원계열 france:frselur는 분기·중단(2026Q1). 원본의 유일한 2026-03 값 7.9는 이 분기 계열과 일치. 월별 조화실업률은 지역·방법론이 다른 대안이며 보간하지 않음.,france:frselrm,include,월별 원자료를 한 번만 편입
-FR,FRUERNC Index,"Unemployed Change (000s, sa)",g10:s132eluc,C_labor,월별 대체 가능,WECO 수치 전부 공란. 실업자 정의를 확정할 근거가 없어 월별 등록 구직자 증감을 대안으로 제시. FRJSTCHG와 중복 입력 금지.,g10:s132eluc,include,월별 원자료를 한 번만 편입
-FR,FRJSTSA Index,Total Jobseekers (000s),g10:s132eluc,C_labor,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132eluc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRJSTCHG Index,Total Jobseekers Net Change (000s),g10:s132eluc,C_labor,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132eluc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FPIPI Index,Industrial Production Index (sa),g10:s132d,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132d,include,월별 원자료를 한 번만 편입
-FR,FPIPYOY Index,"Industrial Production (yoy %, sa)",g10:s132d,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132d,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FPIPMOM Index,"Industrial Production (mom %, sa)",g10:s132d,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132d,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRMPYOY Index,"Manufacturing Production (yoy %, sa)",g10:s132dm,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132dm,include,월별 원자료를 한 번만 편입
-FR,FRMPMOM Index,Manufacturing Production sa (mom %),g10:s132dm,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132dm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRBSCUR Index,BoF Capacity Utilization (%),france:frsvfzc,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,france:frsvfzc,include,월별 원자료를 한 번만 편입
-FR,FRVHNYOY Index,New Car Registrations (yoy %),france:frnopcr,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,france:frnopcr,include,월별 원자료를 한 번만 편입
-FR,FRVHRYOY Index,New Car & Light Truck Registrations (yoy %),derived:fr_car_light,C_actual,대응 후보 · 일부 값 차이,승용차+경상용차 신규등록 건수를 더한 후 전년비. 9개월 평균 차이 0.008%p. 구성 합계는 재현되나 원본 표시 정밀도까지 전부 일치하지 않음.,derived:fr_car_light,include,월별 원자료를 한 번만 편입
-FR,FRCOSCHG Index,Housing Starts (yoy %),g10:n132hs,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n132hs,include,월별 원자료를 한 번만 편입
-FR,FRCOPCHG Index,Housing Permits (yoy %),g10:n132hp,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n132hp,include,월별 원자료를 한 번만 편입
-FR,RSWAFRYY Index,"Retail Sales ex-Autos (yoy %, wda, volume)",france:frstu47,C_actual,월별 대체 가능,WECO는 WDA 물량. 현재 조회된 SWDA·NSA·금액·속보 계열로는 수치를 재현하지 못함. SWDA 소매물량 전년비를 별도 대안으로 사용 가능.,france:frstu47,include,월별 원자료를 한 번만 편입
-FR,RSSAFRMM Index,"Retail Sales ex-Autos (mom %, sa, volume)",g10:s132rsic,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,france:frstu47,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRRLXCMM Index,"INSEE Retail Sales Ex-Autos (mom %, sa)",france:frstu47,C_actual,대응 후보 · 일부 값 차이,금액이 아니라 SWDA 소매판매 물량 전월비 후보. 8개월 중 5개월이 표시 정밀도 내 일치. 잔여 차이를 단순 개정으로 단정하지 않음.,france:frstu47,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRRLCMRM Index,"INSEE Motor Vehicle Sales (mom %, sa)",france:frstu45,C_actual,대응 후보 · 일부 값 차이,자동차 판매 단독보다 자동차 도소매·수리 전체 물량 전월비가 7/8개월 일치. 원본 범위가 불명확하여 동등성 확정에서 제외.,france:frstu45,include,월별 원자료를 한 번만 편입
-FR,FRCCO Index,Consumer Confidence Index,g10:s132vcc,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s132vcc,include,월별 원자료를 한 번만 편입
-FR,FRTEBAL Index,Trade Balance (EUR mn),g10:s132ib,TRADE_REF,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132ib,include,월별 원자료를 한 번만 편입
-FR,FRTEEXPY Index,"Exports (yoy %, sa)",g10:s132ix,X,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132ix,include,월별 원자료를 한 번만 편입
-FR,FRTEIMPY Index,"Imports (yoy %, sa)",g10:s132im,M,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132im,include,월별 원자료를 한 번만 편입
-FR,FRTEEXPM Index,"Exports (mom %, sa)",g10:s132ix,X,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132ix,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,FRTEIMPM Index,"Imports (mom %, sa)",g10:s132im,M,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s132im,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKUEILOR Index,"Unemployment Rate (%, sa)",derived:uk_mgsx_endmonth,C_labor,기준월 정렬 후 일치,Haver/ONS MGSX의 월 표기를 한 달 뒤로 정렬하면 8/8개월 일치. 3개월 이동기간 통계이므로 월별 단월 실업률로 해석하지 않음. WECO와의 정렬 규칙이며 발표일을 뜻하지 않음.,derived:uk_mgsx_endmonth,include,월별 원자료를 한 번만 편입
-UK,UKUER Index,"Claimant Count Rate (%, sa)",uk:bcje,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:bcje,include,월별 원자료를 한 번만 편입
-UK,UKUEMOM Index,"Jobless Claims Monthly Change (000s, sa)",uk:bcjd,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:bcjd,include,월별 원자료를 한 번만 편입
-UK,UKAWMWHO Index,"Average Weekly Earnings (yoy %, 3-mo avg)",uk:kac3,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:kac3,include,월별 원자료를 한 번만 편입
-UK,UKAWXTOM Index,"Average Weekly Earnings ex Bonus (yoy %, 3-mo avg)",uk:kai9,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:kai9,include,월별 원자료를 한 번만 편입
-UK,UKIPIYOY Index,"Industrial Production (yoy %, sa)",uk:k2dg,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:k222,include,월별 원자료를 한 번만 편입
-UK,UKIPIMOM Index,"Industrial Production (mom %, sa)",uk:k222,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:k222,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKMPIYOY Index,"Manufacturing Production (yoy %, sa)",g10:s112dm,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s112dm,include,월별 원자료를 한 번만 편입
-UK,UKMPIMOM Index,"Manufacturing Production (mom %, sa)",g10:s112dm,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s112dm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKISCT3M Index,Index of Services (avg 3-mo % chg),uk:s2ku,COMMON,대응 후보 · 일부 값 차이,서비스업 지수의 최근 3개월 평균/직전 3개월 평균 변화율. 6/8개월 일치; 원계열 반올림·개정 가능성은 있으나 차이 원인 확정은 아님.,uk:s2ku,include,월별 원자료를 한 번만 편입
-UK,UKISCTMM Index,Index of Services (mom %),uk:s222,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:s2ku,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKRVAYOY Index,Retail Sales (yoy %),uk:j45u,C_actual,수치 일치,자동차 연료 제외 실질 소매판매 전년비.,uk:j45u,include,월별 원자료를 한 번만 편입
-UK,UKRVAMOM Index,Retail Sales (mom %),uk:j45w,C_actual,수치 일치,자동차 연료 제외 실질 소매판매 전월비.,uk:j45u,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKVHRR Index,New Car Registrations (000s),uk:uncreg,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:uncreg,include,월별 원자료를 한 번만 편입
-UK,UKVHRYY Index,New Car Registrations (yoy %),uk:uncreg,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:uncreg,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,UKCCI Index,GfK Consumer Confidence Index,uk:ugfci,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ugfci,include,월별 원자료를 한 번만 편입
-UK,UKTBALEE Index,"Visible Trade Balance (£ mn, sa)",uk:boki,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:boki,include,월별 원자료를 한 번만 편입
-UK,UKTBLGDT Index,"Visible Trade Balance Non-EU-27 (£ mn, sa)",uk:l87k,TRADE_REF,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,uk:l87k,include,월별 원자료를 한 번만 편입
-UK,UKTBLGCG Index,"Visible Trade Balance EU-27 (£ mn, sa)",uk:l87q,TRADE_REF,월별 대체 가능,기존 uk:lgcg는 중단. 현행 EU 상품 무역수지 l87q는 2026-08까지 수신. WECO 전부 공란; EU 구성국·과거 범위가 달라 자동 연결하지 않음.,uk:l87q,include,월별 원자료를 한 번만 편입
-UK,UKTBTTBA Index,"BOP Trade Balance (£ mn, sa)",uk:ikbj,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ikbj,include,월별 원자료를 한 번만 편입
-UK,UKTBTTEX Index,"BOP Exports (£ bn, sa)",uk:ikbh,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ikbh,include,월별 원자료를 한 번만 편입
-UK,UKTBTTIM Index,"BOP Imports (£ bn, sa)",uk:ikbi,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ikbi,include,월별 원자료를 한 번만 편입
-JP,JNUE Index,"Unemployment Rate (%, sa)",japan:fluedr2,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:fluedr2,include,월별 원자료를 한 번만 편입
-JP,JBTARATE Index,Jobs-to-Applicants Ratio (sa),japan:jaor2,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jaor2,include,월별 원자료를 한 번만 편입
-JP,JNLSRESA Index,Employment  Index  (sa),japan:jprei2,C_labor,수치 일치,5인 이상 고용지수. 기존 30인 이상 후보 교체.,japan:jprei2,include,월별 원자료를 한 번만 편입
-JP,JNUNPRT Index,Labor Force Participation Rate (%),japan:flpr,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:flpr,include,월별 원자료를 한 번만 편입
-JP,JNLSCASH Index,"Average Monthly Cash Earnings (¥ 10,000)",japan:mefa,C_labor,수치 일치,5인 이상 총현금급여. 엔을 1만 엔 단위로 환산.,japan:mefa,include,월별 원자료를 한 번만 편입
-JP,JNLSUCTL Index,Average Monthly Cash Earnings (yoy %),japan:mefa,C_labor,수치 일치,5인 이상 총현금급여의 전년비.,japan:mefa,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNLSCONT Index,Real Wage Earnings  Index ,japan:jpewfra2,C_labor,월별 대체 가능,WECO 실질임금 라벨에 대해 실질임금·실질고용자소득·명목 총급여·정액급여의 SA/NSA 후보를 비교했으나 일치 없음. 5인 이상 실질임금지수(SA)를 별도 대안으로 제시.,japan:jpewfra2,include,월별 원자료를 한 번만 편입
-JP,JNIPYOY Index,"Industrial Production (yoy %, nsa)",japan:jpniip,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiip,include,월별 원자료를 한 번만 편입
-JP,JNIPMOM Index,"Industrial Production (mom %, sa)",japan:jpsiip,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiip,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNISI/S Index,Producer's Inventory/Shipment Ratio (sa),japan:jpsiir,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiir,include,월별 원자료를 한 번만 편입
-JP,JNVHPYOY Index,Vehicle Production (yoy %),japan:mvpt,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:mvpt,include,월별 원자료를 한 번만 편입
-JP,JNMOYOY Index,Machine Orders (yoy %),japan:omnpeen,I_business,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,japan:omnpeen2,include,월별 원자료를 한 번만 편입
-JP,JNMOCHNG Index,Machine Orders (mom %),japan:omnpeen2,I_business,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,japan:omnpeen2,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNMTOY Index,Machine Tool Orders (yoy %),japan:wmor,I_business,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:wmor,include,월별 원자료를 한 번만 편입
-JP,JNIAADJ Index,All Industry Activity  Index  (sa),japan:jpsiip;japan:jpstiter,COMMON,월별 대체 가능,전산업활동지수는 2020년 중단. 월별 광공업생산과 3차산업활동을 각각 사용 가능. 과거 가중치로 전산업지수를 임의 재생성하지 않음.,japan:jpsiip,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNIAADJ Index,All Industry Activity  Index  (sa),japan:jpsiip;japan:jpstiter,COMMON,월별 대체 가능,전산업활동지수는 2020년 중단. 월별 광공업생산과 3차산업활동을 각각 사용 가능. 과거 가중치로 전산업지수를 임의 재생성하지 않음.,japan:jpstiter,include,월별 원자료를 한 번만 편입
-JP,JNTIAIAM Index,"All Industry Activity  Index  (mom %, sa)",japan:jpsiip;japan:jpstiter,COMMON,월별 대체 가능,전산업활동지수 전월비의 후속 동일계열은 없음. 광공업생산·3차산업활동 각각의 전월비로 대체 관찰.,japan:jpsiip,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNTIAIAM Index,"All Industry Activity  Index  (mom %, sa)",japan:jpsiip;japan:jpstiter,COMMON,월별 대체 가능,전산업활동지수 전월비의 후속 동일계열은 없음. 광공업생산·3차산업활동 각각의 전월비로 대체 관찰.,japan:jpstiter,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JPTSALL Index,Tertiary Industry  Index  (sa),japan:jpstiter,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpstiter,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNTIAMOM Index,"Tertiary Industry  Index  (mom %, sa)",japan:jpstiter,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpstiter,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNBTCASE Index,Bankruptcies (cases),japan:cbnc,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,japan:cbnc,include,월별 원자료를 한 번만 편입
-JP,JNBTYOY Index,Bankruptcies (yoy %),japan:cbnc,COMMON,대응 후보 · 일부 값 차이,"도산 건수의 전년비. 6/9개월 표시 정밀도 일치, 평균 차이 0.0037%p. 원자료 수신과 계산 가능 확인.",japan:cbnc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JBTAJBOF Index,"New Job Offers (000s, nsa)",japan:janw,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:janw,include,월별 원자료를 한 번만 편입
-JP,JNHSFTLM Index,"Housing Starts Floor Area (mom %, sa)",japan:costsn2,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:costsn2,include,월별 원자료를 한 번만 편입
-JP,JIPSDURA Index,Consumer Durables Shipments  Index  (sa),japan:jpshd224,C_actual,정의 대응 · 원본 공란,"월별 내구소비재 국내출하(SA, 2020=100). 정의와 최신 수신 확인; WECO 수치가 없어 Bloomberg 동일계열 수치 대조는 불가.",japan:jpshd224,include,월별 원자료를 한 번만 편입
-JP,JCOMACF Index,Consumer Sentiment  Index ,japan:ccia,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:ccia,include,월별 원자료를 한 번만 편입
-JP,JIPSMANU Index,Manufacturers Shipments  Index  (sa),japan:jpsht2a1,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsht2a1,include,월별 원자료를 한 번만 편입
-JP,JNCAP Index,Capacity Utilization  Index  (sa),japan:jpsiio,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiio,include,월별 원자료를 한 번만 편입
-JP,OEJPL009 Index,Manufacturing Overtime  Index ,japan:jpewmih,C_labor,정의 대응 · 원본 공란,"월별 제조업 초과근로시간, 30인 이상 사업체. Haver 정의·최신 수신 확인; WECO 전부 공란으로 규모/조정의 원본 동등성은 수치 검증 불가.",japan:jpewmih,include,월별 원자료를 한 번만 편입
-JP,JIPSCAPG Index,Capital Goods Shipments  Index  (sa),japan:jpsiisct,I_business,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiisct,include,월별 원자료를 한 번만 편입
-JP,JNDSTYOY Index,Department Store Sales (yoy %),japan:jdspc,C_actual,월별 대체 가능,원본 중복 행에 전국/도쿄 라벨이 혼재. 전국 백화점과 도쿄 수치가 일치하지 않음. JAPANR는 현재 연결에서 열리지 않음. 전국 백화점 판매는 별도 월별 대안.,japan:jdspc,include,월별 원자료를 한 번만 편입
-JP,JNNEWHSY Index,"Wholesale Sales (yoy %, nsa)",g10:n158tws,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n158tws,include,월별 원자료를 한 번만 편입
-JP,JNHSAN Index,Annualized Housing Starts (mn),japan:costny2,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:costny2,include,월별 원자료를 한 번만 편입
-JP,JNHSYOY Index,Housing Starts (yoy %),japan:costn,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:costny2,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNC SALE Index,Tokyo Condo Sales (yoy %),japan:costn,I_housing,월별 대체 가능,도쿄 신규 콘도 판매의 동등 계열을 확보하지 못함. JAPANR 접근 실패. 전국 주택착공 전년비는 지역·단계가 다른 주택활동 보조지표이며 콘도 판매로 이름 붙이지 않음.,japan:costny2,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNCSTOTY Index,Construction Orders (yoy %),japan:cnorv,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,japan:cnorv,include,월별 원자료를 한 번만 편입
-JP,JNNETYOY Index,"Retail Trade (yoy %, nsa)",japan:corsv,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsir2,include,월별 원자료를 한 번만 편입
-JP,JNRETMOM Index,"Retail Trade (mom %, sa)",japan:jpsir2,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsir2,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNRSYOY Index,Large Retailers Sales (yoy %),japan:pctl,C_actual,대응 후보 · 일부 값 차이,"백화점+슈퍼마켓 대형소매 판매 전년비. 7/8개월 일치, 나머지 0.1%p 차이.",japan:pctl,include,월별 원자료를 한 번만 편입
-JP,JNDSNYOY Index,National Department Store Sales (yoy %),japan:jdspc,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jdspc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,JNSMTYOY Index,Supermarket Sales (yoy %),japan:cspc,C_actual,수치 일치,일반 슈퍼마켓 통계가 아니라 일본체인스토어협회 점포수 조정 판매 전년비.,japan:cspc,include,월별 원자료를 한 번만 편입
-JP,JNCVSSY Index,Convenience Store Sales (yoy %),japan:csjerss,C_actual,수치 일치,편의점 기존점 판매 전년비. 전체점포 후보 교체.,japan:csjerss,include,월별 원자료를 한 번만 편입
-JP,JNVHSYOY Index,Vehicle Sales (yoy %),japan:jpnvs,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,japan:jpnvs,include,월별 원자료를 한 번만 편입
-JP,JCOMHCF Index,Consumer Confidence Households  Index ,japan:ccit,C_sentiment,수치 일치,2인 이상 가구 소비자신뢰 NSA. SA 후보 교체.,japan:ccit,include,월별 원자료를 한 번만 편입
-JP,JHHSLERY Index,Overall Household Spending (yoy %),japan:fiaalec,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:fiaalec,include,월별 원자료를 한 번만 편입
-JP,JHHSLEXY Index,Workers Households Real Living Expenditures (yoy %),japan:fiwalec,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:fiwalec,include,월별 원자료를 한 번만 편입
-JP,JNBPTRD Index,"BOP Trade Balance (¥ bn, nsa)",japan:bng,TRADE_REF,수치 일치,국제수지 상품수지 NSA. 1억 엔→10억 엔 환산.,japan:bng,include,월별 원자료를 한 번만 편입
-JP,JNTBALA Index,"Merchandise Trade Balance (¥ bn, sa)",g10:s158ib,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s158ib,include,월별 원자료를 한 번만 편입
-JP,JNTBAL Index,"Merchandise Trade Balance (¥ bn, nsa)",g10:n158ib,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n158ib,include,월별 원자료를 한 번만 편입
-JP,JNTBEXPY Index,Merchandise Trade Exports (yoy %),japan:veattl,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:veattl,include,월별 원자료를 한 번만 편입
-JP,JNTBIMPY Index,Merchandise Trade Imports (yoy %),japan:viattl,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:viattl,include,월별 원자료를 한 번만 편입
-JP,JNVOEXPY Index,Total Export Volume (yoy %),japan:jpitwqx,X,대응 후보 · 일부 값 차이,"전세계 수출 물량 NSA 전년비. 기존 SA 후보를 교체. 7/9개월 일치, 평균 차이 0.033%p.",japan:jpitwqx,include,월별 원자료를 한 번만 편입
-JP,JNVOUSEY Index,Exports to U.S. (yoy %),japan:veaus,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:veaus,include,월별 원자료를 한 번만 편입
-JP,JNVOEUY Index,Exports to EU (yoy %),japan:veaeuu,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:veaeuu,include,월별 원자료를 한 번만 편입
-JP,JNVOASIY Index,Exports to Asia (yoy %),japan:veaasa,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:veaasa,include,월별 원자료를 한 번만 편입
-JP,JNVOIMPY Index,Total Import Volume (yoy %),japan:jpitwqm,M,대응 후보 · 일부 값 차이,"전세계 수입 물량 NSA 전년비. 기존 SA 후보를 교체. 7/9개월 일치, 평균 차이 0.032%p.",japan:jpitwqm,include,월별 원자료를 한 번만 편입
-JP,JNVOUSIY Index,Imports from U.S. (yoy %),japan:viaus,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:viaus,include,월별 원자료를 한 번만 편입
-JP,JNVOEUIY Index,Imports from EU (yoy %),japan:viaeuu,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:viaeuu,include,월별 원자료를 한 번만 편입
-JP,JNVOAEXY Index,Imports from Asia (yoy %),japan:viaasa,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:viaasa,include,월별 원자료를 한 번만 편입
-CA,CAGDPYOY Index,Real GDP (yoy %),g10:s156gch,GDP_REF,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s156gch,include,월별 원자료를 한 번만 편입
-CA,CAGDPMOM Index,"Real GDP (mom %, sa)",g10:s156gch,GDP_REF,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,g10:s156gch,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CANLXEMR Index,"Unemployment Rate (%, sa)",canada:v2062815,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v2062815,include,월별 원자료를 한 번만 편입
-CA,CANLNETJ Index,"Labor Force Employment Net Chg (000s, sa)",canada:v2062811,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v2062811,include,월별 원자료를 한 번만 편입
-CA,CAAEYOY% Index,"Avg Weekly Earnings (yoy %, sa)",canada:v7e11153,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v7e11153,include,월별 원자료를 한 번만 편입
-CA,CALPULC% Index,Unit Labor Cost (%),,C_labor,적합한 월별 대체 미확보,사업부문 단위노동비용 canada:v1409159는 분기. 같은 개념의 현재 월별 계열을 확보하지 못함. 임금과 생산성을 혼동해 대체하지 않음. 소비여력에는 이미 확보한 월별 평균주급을 별도 사용.,,exclude,적합한 현행 월별 대체 없음
-CA,CAMFSHIP Index,"Manufacturing Shipments (C$ bn, sa)",g10:s156ts,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ts,include,월별 원자료를 한 번만 편입
-CA,CAMFCHNG Index,"Manufacturing Shipments (mom %, sa)",g10:s156ts,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ts,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CAMFNORD Index,"Mfg. New Orders (C$ bn, sa)",g10:s156to,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156to,include,월별 원자료를 한 번만 편입
-CA,CAMFINV Index,"Mfg. Inventory (C$ bn, sa)",g10:s156ti,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ti,include,월별 원자료를 한 번만 편입
-CA,CAMFUNOR Index,"Mfg. Unfilled Orders (C$ bn, sa)",g10:s156tu,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156tu,include,월별 원자료를 한 번만 편입
-CA,CAWTYOY Index,"Wholesale Trade Total Sales (yoy %, sa)",g10:s156tws,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156tws,include,월별 원자료를 한 번만 편입
-CA,CAWTMOM Index,"Wholesale Trade Total Sales (mom %, sa)",g10:s156tws,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156tws,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CAWTINV Index,"Wholesale Trade Inventories (C$ bn, sa)",canada:v52w8145,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v52w8145,include,월별 원자료를 한 번만 편입
-CA,CAWTCHNG Index,"Wholesale Trade Inventories (mom %, sa)",canada:v52w8145,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v52w8145,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CAWTRATI Index,Wholesale Trade Inventory/Sales Ratio,canada:v52w8145,INVENTORY,월별 대체 가능,도매 재고/판매 비율의 직접 월별 코드는 미확보. 총판매·곡물 제외·석유 및 곡물 제외 분모로도 WECO를 재현하지 못함. 계산 비율은 채택하지 않고 월별 도매재고 잔액을 별도 대안으로 제시.,canada:v52w8145,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CACAPUTL Index,Capacity Utilization (%),canada:vb804837,COMMON,월별 대체 가능,전체 산업 설비가동률은 분기. 월별 제조업 가동률로 대체 가능하지만 산업 범위가 좁음. 원본 공란이므로 동일계열로 주장하지 않음.,canada:vb804837,include,월별 원자료를 한 번만 편입
-CA,CAHOPTOT Index,"Building Permits Value (C$ bn, sa)",canada:vk119645,COMMON,수치 일치,"WECO C$bn 라벨과 달리 수치는 C$million 단위와 일치. Haver 천 C$를 1,000으로 나눔.",canada:vk119645,include,월별 원자료를 한 번만 편입
-CA,CAHOMOM Index,"Building Permits Value (mom %, sa)",canada:vk119645,COMMON,대응 후보 · 일부 값 차이,계절조정 총 건축허가 금액의 전월비. 7/8개월 일치; 주거·비주거 구분 전 총계는 공통 건설에 배치.,canada:vk119645,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CAHSTOTL Index,"Housing Starts (000s, saar)",g10:z156hs,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:z156hs,include,월별 원자료를 한 번만 편입
-CA,CAHSSMOM Index,"Housing Starts MoM (mom %, sa)",g10:z156hs,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:z156hs,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CAHSURBA Index,"Housing Starts Urban (000s, saar)",canada:gp00001,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:gp00001,include,월별 원자료를 한 번만 편입
-CA,CARSYOY Index,"Retail Sales (yoy %, sa)",g10:s156trs,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156trs,include,월별 원자료를 한 번만 편입
-CA,CARSCHNG Index,"Retail Sales (mom %, sa)",g10:s156trs,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156trs,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CARSXASC Index,"Retail Sales Ex Motor Vehicles (mom %, sa)",g10:s156trsx,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156trsx,include,월별 원자료를 한 번만 편입
-CA,CAVSCOTU Index,New Motor Vehicle Sales Total Units (000s),g10:n156cvr,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n156cvr,include,월별 원자료를 한 번만 편입
-CA,CATBTOTB Index,"Trade Balance (C$ bn, sa)",g10:s156ib,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ib,include,월별 원자료를 한 번만 편입
-CA,CATBTOTE Index,"Exports (C$ bn, sa)",g10:s156ix,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ix,include,월별 원자료를 한 번만 편입
-CA,CATBTOTI Index,"Imports (C$ bn, sa)",g10:s156im,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156im,include,월별 원자료를 한 번만 편입
-CA,CATBTTEY Index,"Exports (yoy %, sa)",g10:s156ix,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ix,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,CATBTTIY Index,"Imports (yoy %, sa)",g10:s156im,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156im,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AULFUNEM Index,"Unemployment Rate (%, sa)",anz:auselur,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselur,include,월별 원자료를 한 번만 편입
-AU,AULFTOT Index,Unemployed (000s),anz:auselu,C_labor,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,anz:auselu,include,월별 원자료를 한 번만 편입
-AU,AULFEMPL Index,"Total Employed Employment (mn, sa)",anz:ausele,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausele,include,월별 원자료를 한 번만 편입
-AU,AULFFULL Index,"Full-Time Employment (mn, sa)",anz:auselel,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselel,include,월별 원자료를 한 번만 편입
-AU,AULFPT Index,"Part-Time Employment (mn, sa)",anz:auselep,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselep,include,월별 원자료를 한 번만 편입
-AU,AULFEMPC Index,"Total Employed Change (000s, mom, sa)",anz:ausele,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausele,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AULFEMFC Index,"Full-Time Employment Change (000s, mom, sa)",anz:auselel,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselel,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AULFEMCP Index,"Part-Time Employment Change (000s, mom, sa)",anz:auselep,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselep,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AULFPART Index,"Labor Force Participation Rate (%, sa)",anz:auselpr,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselpr,include,월별 원자료를 한 번만 편입
-AU,AULFANTC Index,ANZ Job Advertisements (mom %),anz:austja,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:austja,include,월별 원자료를 한 번만 편입
-AU,DLIVTRNI Index,DEEWR Skilled Vacancies Internet Trend Index,anz:auiej10,C_labor,수치 일치,인터넷 구인 추세지수(Jan-2006=100). 기존 중단 후보를 현행 코드로 교체.,anz:auiej10,include,월별 원자료를 한 번만 편입
-AU,DLIVTY% Index,DEEWR Skilled Vacancies Internet Trend (yoy %),anz:auiej10,C_labor,수치 일치,인터넷 구인 추세지수(Jan-2006=100). 기존 중단 후보를 현행 코드로 교체.,anz:auiej10,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,DLIVTM% Index,DEEWR Skilled Vacancies Internet Trend (mom %),anz:auiej10,C_labor,수치 일치,인터넷 구인 추세지수(Jan-2006=100). 기존 중단 후보를 현행 코드로 교체.,anz:auiej10,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,OEAUTPGG Index,OECD Australia All Activities Hourly Earnings Index,,C_labor,적합한 월별 대체 미확보,OECD 전산업 시간당 임금지수의 동등 월별 계열 미확보. Haver 평균주급은 비월별. 월별 지급임금 auneet도 2026-06 종료/DISC. 현재 월별 후속 하드데이터를 확보하지 못함.,,exclude,적합한 현행 월별 대체 없음
-AU,OEAUTEDN Index,OECD Australia Manufacturing Weekly Earnings Index (sa),,C_labor,적합한 월별 대체 미확보,OECD 제조업 주급의 동등 월별 계열 미확보. 월별 지급임금 대안도 중단; 임금 서베이를 하드데이터로 대체하지 않음.,,exclude,적합한 현행 월별 대체 없음
-AU,OEAUUIAC Index,OECD Australia Industrial Production Index,,COMMON,적합한 월별 대체 미확보,산업생산 ausdgv는 분기. 월별 제조업 매출 austbmi는 2025-09 종료/DISC. 최신 ANZ 전체 목록에서도 적합한 현행 월별 생산 대안을 확보하지 못함.,,exclude,적합한 현행 월별 대체 없음
-AU,AUBAHSET Index,Building Approvals for Total Dwelling Units (sa),anz:aushah,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aushah,include,월별 원자료를 한 번만 편입
-AU,AUBAY Index,"Building Approvals for Total Dwelling Units (yoy %, sa)",anz:aushah,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aushah,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AUBAC Index,"Building Approvals for Total Dwelling Units (mom %, sa)",anz:aushah,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aushah,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AURSTYSA Index,"Retail Sales (yoy %, sa)",anz:ausncpi,C_actual,월별 대체 가능,소매판매 austrs는 2025-06 종료. ABS 월별 가계지출(MHSI)의 명목 총지출 전년비로 대체. 서비스까지 포함해 범위가 확대되므로 소매판매와 자동 연결 금지.,anz:ausncpi,include,월별 원자료를 한 번만 편입
-AU,AURSTSA Index,"Retail Sales (mom %, sa)",anz:ausncpi,C_actual,월별 대체 가능,소매판매 후속 월별 대안은 명목 가계지출(MHSI) 전월비. 실질 소비지수나 기존 소매판매와 동일하지 않음.,anz:ausncpi,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,WMCCCONS Index,Westpac Consumer Sentiment Index (sa),anz:ausvcc,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcc,include,월별 원자료를 한 번만 편입
-AU,WMCCCONY Index,"Westpac Consumer Sentiment Index (yoy %, nsa)",anz:aunvcc,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,WMCCCON% Index,"Westpac Consumer Sentiment Index (mom %, sa)",anz:ausvcc,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,WMCC12M% Index,Westpac Consumer Sentiment -- Family Finances Last 12 Months (mom %),anz:ausvcpfl,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcpfl,include,월별 원자료를 한 번만 편입
-AU,WMCCN1M% Index,Westpac Consumer Sentiment -- Family Finances Next 12 Months (mom %),anz:ausvcpfn,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcpfn,include,월별 원자료를 한 번만 편입
-AU,WMCCE1M% Index,Westpac Consumer Sentiment -- Economic Conditions Next 12 Months (mom %),anz:ausvce1,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvce1,include,월별 원자료를 한 번만 편입
-AU,WMCCE5M% Index,Westpac Consumer Sentiment -- Economic Conditions Next Five Years (mom %),anz:ausvce5,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvce5,include,월별 원자료를 한 번만 편입
-AU,WMCCHSM% Index,Westpac Consumer Sentiment -- Good Time to Buy Major Household Items (mom %),anz:ausvct,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvct,include,월별 원자료를 한 번만 편입
-AU,AUITGSB Index,Trade Balance (AUD bn),anz:ausbmg,TRADE_REF,수치 일치,상품만의 무역수지. WECO AUDbn 라벨과 달리 실제 값은 백만 AUD와 일치.,anz:ausbmg,include,월별 원자료를 한 번만 편입
-AU,AUITEXP Index,Exports (AUD bn),anz:ausbmgc,X,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgc,include,월별 원자료를 한 번만 편입
-AU,AUITIMP Index,Imports (AUD bn),anz:ausbmgd,M,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgd,include,월별 원자료를 한 번만 편입
-AU,AUITEXPY Index,Exports (yoy%),anz:ausbmgc,X,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AUITEXP% Index,Exports (mom %),anz:ausbmgc,X,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AUITIMPY Index,Imports (yoy%),anz:ausbmgd,M,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgd,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,AUITIMP% Index,Imports (mom %),anz:ausbmgd,M,월별 대체 가능,기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.,anz:ausbmgd,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,USURTOT Index,Unemployment Rate (%),usecon:kr,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:kr,include,월별 원자료를 한 번만 편입
-US,USUDMAER Index,U6 Underemployment Rate (%),usecon:klu6,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:klu6,include,월별 원자료를 한 번만 편입
-US,NFP TCH Index,"Chg. in NonFarm Payrolls (mom, 000s)",usecon:lanagra,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lanagra,include,월별 원자료를 한 번만 편입
-US,NFP PCH Index,"Chg. in Private Payrolls (mom, 000s)",usecon:lapriva,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lapriva,include,월별 원자료를 한 번만 편입
-US,USMMMNCH Index,"Chg. in Mfg. Payrolls (mom, 000s)",usecon:lamanua,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lamanua,include,월별 원자료를 한 번만 편입
-US,AWH TOTL Index,Average Weekly Hours All Private Employees,usecon:lrtpriva,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lrtpriva,include,월별 원자료를 한 번만 편입
-US,USWHTOT Index,Average Weekly Hours Non-Farm Private Employees,usecon:lrpriva,C_labor,수치 일치,전 민간근로자가 아닌 생산·비관리직 주당근로시간.,usecon:lrpriva,include,월별 원자료를 한 번만 편입
-US,USEMTOT Index,"Total Employment in Labor Force (mn, sa)",usecon:ke,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ke,include,월별 원자료를 한 번만 편입
-US,USEMNCHG Index,"Net Change in Total Employment in Labor Force (000s, sa)",usecon:ke,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ke,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,USERTOT Index,Employment/Population Ratio (%),usecon:kq,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:kq,include,월별 원자료를 한 번만 편입
-US,JOLTOPEN Index,JOLTS Job Openings (yoy %),usecon:ljjtpa,C_labor,수치 일치,"WECO의 yoy 라벨 오류: 실제 값은 JOLTS 구인율(%, SA).",usecon:ljjtpa,include,월별 원자료를 한 번만 편입
-US,JOLTHIRS Index,JOLTS Job Hires (yoy %),usecon:ljhtpa,C_labor,수치 일치,"WECO의 yoy 라벨 오류: 실제 값은 JOLTS 채용률(%, SA).",usecon:ljhtpa,include,월별 원자료를 한 번만 편입
-US,JOLTSEPS Index,JOLTS Job Separations (yoy %),usecon:ljstpa,C_labor,수치 일치,"WECO의 yoy 라벨 오류: 실제 값은 JOLTS 총이직률(%, SA).",usecon:ljstpa,include,월별 원자료를 한 번만 편입
-US,CHALYOY% Index,Challenger Job Cut Announce. (yoy %),surveys:cgcto,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,surveys:cgcto,include,월별 원자료를 한 번만 편입
-US,ADP CHNG Index,"ADP Employment Chg. (mom, 000s)",usecon:laxepa,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:laxepa,include,월별 원자료를 한 번만 편입
-US,USHEYOY Index,Avg. Hourly Earnings (yoy %),usecon:lepriva,C_labor,수치 일치,생산·비관리직 시간당 임금 전년비. 전체 민간근로자 임금 후보 교체.,usecon:lepriva,include,월별 원자료를 한 번만 편입
-US,USHETOT% Index,Avg. Hourly Earnings (mom %),usecon:lepriva,C_labor,수치 일치,생산·비관리직 시간당 임금 전월비.,usecon:lepriva,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,IP  YOY Index,Industrial Production (yoy %),usecon:ipy,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ip,include,월별 원자료를 한 번만 편입
-US,IP  CHNG Index,Industrial Production (mom %),usecon:ipp,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ip,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,CPTICHNG Index,Capacity Utilization (%),usecon:cut,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:cut,include,월별 원자료를 한 번만 편입
-US,TMNOCHNG Index,Factory Orders (mom %),usecon:nmo,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nmo,include,월별 원자료를 한 번만 편입
-US,DGNOYOY Index,Durable Goods Orders (yoy %),usecon:nmodgn,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nmodg,include,월별 원자료를 한 번만 편입
-US,DGNOCHNG Index,Durable Goods Orders (mom %),usecon:nmodg,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nmodg,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,MTIBCHNG Index,Business Inventories (mom %),usecon:nti,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nti,include,월별 원자료를 한 번만 편입
-US,MWINCHNG Index,Wholesale Inventories (mom %),usecon:nwih,INVENTORY,수치 일치,도매재고 본계열 사용. 속보(Advance) 후보 교체.,usecon:nwih,include,월별 원자료를 한 번만 편입
-US,MGT2TB Index,Total Business Inventory/Sales Ratio,usecon:ntr,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ntr,include,월별 원자료를 한 번만 편입
-US,MGT2MA Index,Manufacturing Inventory/Sales Ratio,usecon:nmri,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nmri,include,월별 원자료를 한 번만 편입
-US,MGT2WH Index,Wholesale Inventory/Sales Ratio,usecon:nwrh,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nwrh,include,월별 원자료를 한 번만 편입
-US,MGT2WHDU Index,Durable Goods Inventory/Sales Ratio,usecon:nwrh1,INVENTORY,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nwrh1,include,월별 원자료를 한 번만 편입
-US,MGT2RE Index,Retail Inventory/Sales Ratio,usecon:nrr,INVENTORY,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nrr,include,월별 원자료를 한 번만 편입
-US,IP Index,Industrial Production Index,usecon:ip,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ip,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,MTSLRL$ Index,Real Mfg. & Trade Sales (USD bn),usecon:tsth,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:tsth,include,월별 원자료를 한 번만 편입
-US,AGWHTOTL Index,Aggregate Hours of Work Index,usecon:litpriva,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:litpriva,include,월별 원자료를 한 번만 편입
-US,NFP T Index,Payroll Survey Employment (mn),usecon:lanagra,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lanagra,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,PIDSPINX Index,"Real Personal Income excluding Transfers (USD, saar)",usecon:ypxtphm,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ypxtphm,include,월별 원자료를 한 번만 편입
-US,LEI AVGW Index,Average Work Week (hrs),usecon:lrmanua,C_labor,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:lrmanua,include,월별 원자료를 한 번만 편입
-US,LEI WKIJ Index,Jobless Claims (000s),bci:a0m005,C_labor,수치 일치,BCI 월별 주간 신규실업수당 청구 평균 구성항목 사용.,bci:a0m005,include,월별 원자료를 한 번만 편입
-US,LEI NWCN Index,Mfg. New Orders - Consumer Goods and Materials (index),bci:a0m008,C_actual,수치 일치,BCI 실질 소비재·원자재 신규주문. 단순 index가 아니라 1982년 가격 기준 백만 달러.,bci:a0m008,include,월별 원자료를 한 번만 편입
-US,LEI MNO Index,Mfg. New Orders - Non-Defense Capital Goods ex-Aircraft (index),bci:a0m033,I_business,수치 일치,"BCI 항공기 제외 비국방 자본재 신규주문, 1982년 실질금액. 명목 후보 교체.",bci:a0m033,include,월별 원자료를 한 번만 편입
-US,LEI BP Index,Building Permits (000s),usecon:hpt,I_housing,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:hpt,include,월별 원자료를 한 번만 편입
-US,NHSPSTOT Index,"Housing Starts (000s, saar)",usecon:hst,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:hst,include,월별 원자료를 한 번만 편입
-US,NHSPATOT Index,"Building Permits (000s, saar)",usecon:hpt,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:hpt,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,NHSLTOT Index,"New Home Sales (000s, saar)",usecon:hn1us,I_housing,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:hn1us,include,월별 원자료를 한 번만 편입
-US,ETSLTOTL Index,"Existing Home Sales (mn, saar)",usecon:hxtus,I_housing,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:hxtus,include,월별 원자료를 한 번만 편입
-US,ETSLMOM Index,"Existing Home Sales (mom %, sa)",usecon:hxtus,I_housing,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:hxtus,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,USPHTMOM Index,"Pending Home Sales (mom %, sa)",usecon:hxtus,I_housing,월별 대체 가능,Haver 제품상 PREALTOR에 잠정주택판매가 있으나 현재 연결에서 DB 열기 실패. 월별 기존주택 거래완료 건수는 계약 기준 잠정판매와 시점·범위가 다른 대안. 원자료 접근 권한 확인 필요.,usecon:hxtus,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,RSTAMOM Index,"Retail Sales (mom %, sa)",usecon:nrst,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nrst,include,월별 원자료를 한 번만 편입
-US,RSTAXMOM Index,"Retail Sales ex-Autos (mom %, sa)",usecon:nrstxm,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nrstxm,include,월별 원자료를 한 번만 편입
-US,RSTAYOY Index,Retail Sales (yoy %),usecon:nrst,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nrst,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,RSTAXYOY Index,Retail Sales ex-Autos (yoy %),usecon:nrstxm,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,usecon:nrstxm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,SAARTOTL Index,"Total Vehicle Sales (mn, sa)",usecon:tvsar,C_actual,월별 대체 가능,USECON 총/경량/국산/수입 자동차 판매 후보가 WECO와 일치하지 않음. WARDS 접근 실패. BEA 경량자동차 판매(SAAR)를 별도 월별 대안으로 제시.,usecon:tvsar,include,월별 원자료를 한 번만 편입
-US,CONCCONF Index,Conference Board Index (sa),cbdb:ccin,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,cbdb:ccin,include,월별 원자료를 한 번만 편입
-US,CONSSENT Index,U. of Mich. Consumer Confidence Index,usecon:csent,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:csent,include,월별 원자료를 한 번만 편입
-US,PITLYOY Index,"Personal Income (yoy %, sa)",usecon:ypm,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ypm,include,월별 원자료를 한 번만 편입
-US,PITLCHNG Index,"Personal Income (mom %, sa)",usecon:ypm,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ypm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,PCE CHY% Index,"Personal Expenditure (yoy %, sa)",usecon:cbm,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:cbm,include,월별 원자료를 한 번만 편입
-US,PCE CHNC Index,"Personal Expenditure (mom %, sa)",usecon:cbm,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:cbm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,PIDSDPS Index,Personal Savings Rate (%),usecon:ypsvrm,C_labor,수치 일치,저축률 수준 자체가 일치. 상승을 소비에 항상 +로 처리하지 않고 설명용으로 유지.,usecon:ypsvrm,include,월별 원자료를 한 번만 편입
-US,USTBTOT Index,"Trade Balance (USD bn, sa)",usecon:bgsb,TRADE_REF,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bgsb,include,월별 원자료를 한 번만 편입
-US,USTBEXP Index,"Exports (USD bn, sa)",usecon:bgsx,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bgsx,include,월별 원자료를 한 번만 편입
-US,USTBIMP Index,"Imports (USD bn, sa)",usecon:bgsm,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bgsm,include,월별 원자료를 한 번만 편입
-US,USTBEXPY Index,Exports (yoy %),usecon:bgsx,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bgsx,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,USTBIMPY Index,Imports (yoy %),usecon:bgsm,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bgsm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRUEPR Index,Unemployment Rate (%),germany:dese315,C_labor,수치 일치,조화실업률이 아니라 독일 등록실업률 SA.,germany:dese315,include,월별 원자료를 한 번만 편입
-DE,GRUECHNG Index,"Unemployment Change (000s, sa)",germany:dese001,C_labor,대응 후보 · 일부 값 차이,"독일 등록실업자 SA 총계의 전월 차. 6/9개월 일치, 나머지 각 1천 명 차이. 조화실업자 계열과 구분.",germany:dese001,include,월별 원자료를 한 번만 편입
-DE,GILOURS Index,ILO Unemployment Rate (% sa),germany:deseur,C_labor,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:deseur,include,월별 원자료를 한 번만 편입
-DE,GEINYY Index,Industrial Production (yoy %),germany:dewdy,COMMON,수치 일치,건설 포함 산업생산 WDA 전년비.,germany:desdy,include,월별 원자료를 한 번만 편입
-DE,GRIPIMOM Index,Industrial Production (mom % sa),germany:desdy,COMMON,수치 일치,건설 포함 산업생산 SWDA 전월비.,germany:desdy,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GEIOYY Index,Factory Orders (yoy %),germany:dewtoc,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destoc,include,월별 원자료를 한 번만 편입
-DE,GRIORTMM Index,"Factory Orders (mom %, sa)",germany:destoc,COMMON,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destoc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRIORDYY Index,Domestic Orders (yoy %),germany:destac,COMMON,수치 일치,국내 제조업 주문 SA 전년비. WDA 후보 교체.,germany:destac,include,월별 원자료를 한 번만 편입
-DE,GRIORDMM Index,Domestic Orders (mom %),germany:destac,COMMON,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destac,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRIORFYY Index,Foreign Orders (yoy %),germany:destbc,X,대응 후보 · 일부 값 차이,해외 제조업 주문 SA 물량의 전년비. WDA가 아닌 SA가 7/8개월 일치. 평균 차이 0.035%p.,germany:destbc,include,월별 원자료를 한 번만 편입
-DE,GRIORFMM Index,Foreign Orders (% mom),germany:destbc,X,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destbc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRVHREGY Index,News Car Registrations (yoy %),germany:denopcr,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:denopcr,include,월별 원자료를 한 번만 편입
-DE,GRVHREGM Index,News Car Registrations (mom %),germany:denopcr,C_actual,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:denopcr,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRCOPRBY Index,Residential Construction Orders (yoy %),germany:destor2c,I_housing,수치 일치,주택건설 주문의 SWDA 물량 전년비.,germany:destor2c,include,월별 원자료를 한 번만 편입
-DE,GRCOPRBM Index,Residential Construction Orders (mom %),germany:destor2c,I_housing,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destor2c,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRFRINYY Index,Retail Sales (yoy %),germany:dentuy47,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destu47,include,월별 원자료를 한 번만 편입
-DE,GRFRIAMM Index,Retail Sales (mom %),germany:destu47,C_actual,수치 일치,표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.,germany:destu47,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRRSXVHY Index,Retail Sales ex-Auto/Petro (yoy %),eudata:w134d4yk,C_actual,대응 후보 · 일부 값 차이,자동차·연료 제외 소매 물량 WDA. GERMANY/EUDATA의 동일 개념을 조회했으나 2/8개월만 원본 정밀도 내 일치. 평균 0.190%p 차이로 수치 동등성 미확정.,eudata:s134d4yk,include,월별 원자료를 한 번만 편입
-DE,GRRSXVHM Index,Retail Sales ex-Auto/Petro (mom %),eudata:s134d4yk,C_actual,대응 후보 · 일부 값 차이,자동차·연료 제외 소매 물량 SWDA 전월비 후보. 지수 차이를 % 변화로 오인하지 않고 실제 전월비를 계산; 잔여 수치 차이 기록.,eudata:s134d4yk,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRRSVYOY Index,"Motor Vehicle Sales (yoy %, sa)",eudata:s134d451,C_actual,월별 대체 가능,"자동차 매매 물량/금액, 자동차 수리 포함/제외, NSA/WDA/SWDA 후보를 모두 비교했으나 재현 실패. 월별 자동차 매매 물량 SWDA를 독립 대안으로 제시.",eudata:s134d451,include,월별 원자료를 한 번만 편입
-DE,GRRSVMOM Index,New Motor Vehicle Sales (mom % sa),eudata:s134d451,C_actual,월별 대체 가능,원본 신규차 단독과 Haver 자동차 매매 전체의 범위가 불일치할 수 있음. 자동차 매매 SWDA 물량 전월비를 대안으로만 제시.,eudata:s134d451,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRCCI Index,ICON Consumer Confidence Index,germany:desvconi,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desvconi,include,월별 원자료를 한 번만 편입
-DE,GGFKBUS Index,GfK Economic Outlook Index,germany:denvcce,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:denvcce,include,월별 원자료를 한 번만 편입
-DE,GGFKINC Index,GfK Consumer Income Expectations Index,germany:denvcci,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:denvcci,include,월별 원자료를 한 번만 편입
-DE,GGFKWBUY Index,GfK Consumer Willingness to Buy Index,germany:denvccb,C_sentiment,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:denvccb,include,월별 원자료를 한 번만 편입
-DE,GGFKWSAV Index,GfK Consumer Willingness to Save Index,germany:denvccs,C_sentiment,수치 일치,GfK 저축의향 지수. 소비 개선과 동일한 + 방향으로 고정하지 않음.,germany:denvccs,include,월별 원자료를 한 번만 편입
-DE,GRTBALE Index,Trade Balance (EUR bn),g10:n134ib,TRADE_REF,수치 일치,무역수지 NSA. 기존 SA 후보 교체.,g10:n134ib,include,월별 원자료를 한 번만 편입
-DE,GRBTEXYY Index,"Exports (yoy %, sa)",germany:desixt,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desixt,include,월별 원자료를 한 번만 편입
-DE,GRBTIMYY Index,"Imports (yoy %, sa)",germany:desimt,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desimt,include,월별 원자료를 한 번만 편입
-DE,GRBTEXMM Index,"Exports (mom %, sa)",germany:desixt,X,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desixt,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,GRBTIMMM Index,"Imports (mom %, sa)",germany:desimt,M,개념 대응·수신 확인, · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desimt,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,,"UK: Job Vacancies Per 100 Employee Jobs DISC (SA, %)",uk:ap2y,C_labor,월별 대체 가능,추가 점검: 기존 매핑의 직원 100명당 구인율은 2026-06 종료/DISC. 월별 구인 건수(AP2Y)로 대체 관찰 가능. 비율과 건수는 다르며 같은 입력을 중복 편입하지 않음.,uk:ap2y,include,월별 원자료를 한 번만 편입
-UK,,"UK: Payrolled Employees from PAYE RTI: Change (SA, Number)",uk:ukseppfc,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ukseppfc,include,월별 원자료를 한 번만 편입
-UK,,"Great Britain: AWE: Whole Economy: Total Pay in Real Terms: 3M Growth (SA, %)",uk:a3ww,C_labor,코드·수신 확인,임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:a3ww,include,월별 원자료를 한 번만 편입
-UK,,"UK: Gross Value Added Chained Volume Index: Rolling 3-Month (SA, Y/Y %Chg)",uk:edmy,GDP_REF,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:edmy,include,월별 원자료를 한 번만 편입
-UK,,"UK: Services Industries: Contribution to Y/Y % Chg in Roll 3M Real GVA (SA, %Pt)",uk:edng,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:edng,include,월별 원자료를 한 번만 편입
-UK,,"UK: Manufacturing: Contribution to Y/Y% Chg in Rolling 3 Mths Real GVA (SA, %Pt)",uk:ednc,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ednc,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Job Vacancies (NSA, Number)",germany:dene250,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:dene250,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Total Employed: German Residents (SA, Thous)",germany:desetd,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desetd,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Registered Unemployment Rate, % of Labor Force: Total (SA, %)",germany:dese315,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:dese315,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,,"Germany: Job Vacancies [Unsubsidized] (SA, Thous)",germany:dese250u,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:dese250u,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)",eudata:i134yoy,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,eudata:i134yoy,include,월별 원자료를 한 번만 편입
-FR,,"France: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)",g10:n132iwty,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:n132iwty,include,월별 원자료를 한 번만 편입
-FR,,"France: Harmonized Unemployment Rate (SA, %)",g10:s132eurh,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,france:frselrm,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-FR,,"France: BdF Retail Sales Survey, Volume: Total Sales (SWDA, 2010=100)",intsrvys:s132vb1c,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,intsrvys:s132vb1c,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Job Vacancies (SA, Number)",canada:v14s3287,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v14s3287,include,월별 원자료를 한 번만 편입
-CA,,Canada: Inflation Indicators: Avg Hourly Earnings of Permanent Workers (Y/Y %),canada:laheinf,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:laheinf,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Avg Wkly Earnings incl OT: Industry Total [ex Unclassified] (NSA, C$)",canada:v1558664,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v7e11153,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Export: BOP Basis (SA, Mil.C$)",canada:v6911338,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156ix,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Retail Sales in Chained 2017 Prices (SA, Mil.Chn.2017.C$)",canada:v1q40181,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v1q40181,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Real Contr Cash Earnings[5+ Employees]: All Surveyed Inds (NSA, Y/Y%Chg)",japan:jpecy,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpecy,include,월별 원자료를 한 번만 편입
-UK,,"UK: Job Vacancies excluding Agriculture, Forestry & Fishing (SA, Thous)",uk:ap2y,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ap2y,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)",anz:aunhpiv,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aunhpiv,include,월별 원자료를 한 번만 편입
-AU,,"Australia: Roy Morgan Monthly Consumer Confidence (NSA, %Bal)",anz:aunvrmc,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aunvrmc,include,월별 원자료를 한 번만 편입
-AU,,"Australia: Bldg Approvals: Non-residential (SA, Mil.A$)",anz:aushpn,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aushpn,include,월별 원자료를 한 번만 편입
-US,,"Exports: Goods, BOP Basis (SA, Mil.$)",usecon:bpxmm,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:bpxmm,include,월별 원자료를 한 번만 편입
-US,,"Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)",usecon:cdbhm,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:cdbhm,include,월별 원자료를 한 번만 편입
-US,,"Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)",usecon:cnbhm,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:cnbhm,include,월별 원자료를 한 번만 편입
-US,,"Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)",usecon:csbhm,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:csbhm,include,월별 원자료를 한 번만 편입
-DE,,"Germany: IP: Computers and Peripheral Equipment (SA, 2021=100)",germany:desd262,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desd262,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Industrial Production: Investment Goods(SWDA, 2021=100)",germany:desdk,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desdk,include,월별 원자료를 한 번만 편입
-DE,,"Germany: LFS: Employed Persons (SA, Mil)",germany:desele,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desele,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Trade in Goods Balance (SA, Bil.Euros)",germany:desibt,TRADE_REF,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desibt,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Turnover in Residential Construction (SWDA, Bil.Euros)",germany:desrth,I_housing,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desrth,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Foreign Industry Sales [Volume]: Manufacturing(SWDA, 2021=100)",germany:destlc,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destlc,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Foreign Industry Sales [Volume]: Consumer Goods(SWDA, 2021=100)",germany:destlgc,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destlgc,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Foreign Industry Sales [Vol]: Durable Consumer Goods(SWDA, 2021=100)",germany:destlgd,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destlgd,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Foreign Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)",germany:destlk,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destlk,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)",germany:destok,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:destok,include,월별 원자료를 한 번만 편입
-DE,,"Germany: Consumer Confidence Indicator (SA, %Bal)",germany:desvcc,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:desvcc,include,월별 원자료를 한 번만 편입
-US,,"Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)",cbdb:ehn,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,cbdb:ehn,include,월별 원자료를 한 번만 편입
-UK,,"UK: Imports of Capital Goods (SA, Mil.Chn.2024.GBP)",uk:engw,M,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:engw,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Labor Force Survey: Total Employed (SA, 10,000 Persons)",japan:fled2,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:fled2,include,월별 원자료를 한 번만 편입
-CA,,"Canada: New Motor Vehicle Sales (SA, Units)",g10:h156cvr,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:h156cvr,include,월별 원자료를 한 번만 편입
-AU,,"Australia: Exports of Goods, fob (SA, Mil.A$)",g10:h193ix,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausbmgc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,,"UK: Exports of Services (SA, Mil.Chn.2024.GBP)",uk:ikbe,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ikbe,include,월별 원자료를 한 번만 편입
-UK,,"UK: Trade Balance of Services (SA, Mil.Chn.2024.GBP)",uk:ikbg,TRADE_REF,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ikbg,include,월별 원자료를 한 번만 편입
-US,,"Industrial Production: Manufacturing [NAICS] (SA, 2017=100)",usecon:ipmfn,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ipmfn,include,월별 원자료를 한 번만 편입
-UK,,"Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)",uk:j5ek,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:j5ek,include,월별 원자료를 한 번만 편입
-JP,,"Japan: General Workers: Rate of Filled Vacancies (SA, %)",japan:jafvrn2,C_labor,코드·수신 확인,임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jafvrn2,include,월별 원자료를 한 번만 편입
-JP,,Japan: Common Establishments Labor Force Survey: All Industry: Regular Pay (Yen),japan:jpnectt3,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpnectt3,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Consumption Activity Index [Real] (SA, 2020=100)",japan:jpscaic,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpscaic,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Export Shipments: Mining & Mfg: Investment Goods (SA, 2020=100)",japan:jpshx202,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpshx202,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Export Shipments: Mining & Mfg: Consumer Durables (SA, 2020=100)",japan:jpshx224,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpshx224,include,월별 원자료를 한 번만 편입
-JP,,"Japan: IP: Business Oriented Machinery (SA, 2020=100)",japan:jpsiipbo,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiipbo,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Producer's Shipments: Business Oriented Machinery (SA, 2020=100)",japan:jpsiisbo,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiisbo,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Producer's Shipments: General-Purpose Machinery (SA, 2020=100)",japan:jpsiisgm,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsiisgm,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Real Exports (SA, 2020=100)",japan:jpsivx,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:jpsivx,include,월별 원자료를 한 번만 편입
-UK,,"UK: Industrial Production: Capital Goods(SA, 2024=100)",uk:k24s,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:k24s,include,월별 원자료를 한 번만 편입
-UK,,"Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)",uk:ka46,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ka46,include,월별 원자료를 한 번만 편입
-US,,"Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)",usecon:kut27p,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:kut27p,include,월별 원자료를 한 번만 편입
-US,,"JOLTS: Hires Rate: Total (SA, %)",usecon:ljhtpa,C_labor,코드·수신 확인,임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ljhtpa,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"JOLTS: Job Openings: Total (EOP, SA, Thous)",usecon:ljjtla,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ljjtla,include,월별 원자료를 한 번만 편입
-US,,"JOLTS: Quits Rate: Total (SA, %)",usecon:ljqtpa,C_labor,코드·수신 확인,임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:ljqtpa,include,월별 원자료를 한 번만 편입
-JP,,"Japan: Total Hours Worked/Empl [5 or More Empl]: All Surveyed Inds (NSA, Hours)",japan:mhfa,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:mhfa,include,월별 원자료를 한 번만 편입
-UK,,"UK: GfK Consumer Confidence Barometer (NSA, % Bal)",intsrvys:n112vgi,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ugfci,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"Mfrs' New Orders: All Manufacturing Industries Ex Transportation (SA, Mil.$)",usecon:nmoxt,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nmoxt,include,월별 원자료를 한 번만 편입
-US,,"Mfrs' Shipments: All Manufacturing Industries Ex Transportation (SA, Mil.$)",usecon:nmsxt,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nmsxt,include,월별 원자료를 한 번만 편입
-US,,"Retail Sales & Food Svc Ex Motor Vehicle/Parts Dealers & Gas Stations(SA, Mil.$)",usecon:nrstxm7,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nrstxm7,include,월별 원자료를 한 번만 편입
-US,,"U.S.: Avg Hourly Earnings, Prod & Nonsupervisory Employees: Pvt Nonfarm(SA,$/Hr)",g10:s111eh,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lepriva,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"U.S.: Total Employees on Nonfarm Payrolls (SA, Thous)",g10:s111elen,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:lanagra,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"U.S.: Civilian Unemployment Rate (SA, %)",g10:s111elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:kr,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"U.S.: Manufacturing New Orders: Durable Goods (SA, Mil.$)",g10:s111tod,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:nmodg,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,,"U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)",g10:s112ele,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s112ele,include,월별 원자료를 한 번만 편입
-UK,,"U.K.: Unemployment Rate: Aged 16 and Over [3-Mo Moving Avg](SA, %)",g10:s112elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,derived:uk_mgsx_endmonth,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-DE,,"Germany: LFS: Unemployment Rate (SA, %)",g10:s134elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,germany:deseur,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Avg Hourly Earnings inc Overtime: Hrly Workers: Total Economy (SA, C$)",g10:s156eh,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156eh,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Employment: 15 Years and Over (SA, Thous)",g10:s156ele,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v2062811,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Unemployment Insurance: Regular Benefits Beneficiaries (SA, Number)",g10:s156eluc,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156eluc,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Unemployment Rate: 15 Years and Over (SA, %)",g10:s156elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v2062815,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Building Permits Authorized (SA, Thous Units)",g10:s156hp,I_housing,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s156hp,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Dwelling Starts: All Areas (SA, Thous.Units)",g10:s156hs,I_housing,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:z156hs,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-CA,,"Canada: Real Retail Sales (SA, Mil.2017.C$)",g10:s156trsc,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v1q40181,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-JP,,"Japan: Unemployment Rate (SA, %)",g10:s158elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:fluedr2,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: Labor Force: Employed (SA, Thous)",g10:s193ele,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausele,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: Labor Force: Unemployment Rate (SA, %)",g10:s193elur,C_labor,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:auselur,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: Dwelling Units Approved (SA, Units)",g10:s193hp,I_housing,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:aushah,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"AU: Retail Turnover Using Bank Transactions (SA, Mil.A$)",g10:s193trs,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,g10:s193trs,include,월별 원자료를 한 번만 편입
-AU,,"Australia: Westpac-Melbourne Institute Consumer Sentiment Index (SA, Index)",intsrvys:s193vcc,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvcc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: Time to Buy Major Household Items (SA, Index)",intsrvys:s193vct,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausvct,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-US,,"Exports, FAS Value (SA, Mil.Chn.2017$)",usecon:tmxah,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:tmxah,include,월별 원자료를 한 번만 편입
-US,,"Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)",usecon:tvsar,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,usecon:tvsar,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-UK,,"UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)",uk:ugfcgl,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ugfcgl,include,월별 원자료를 한 번만 편입
-UK,,"UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)",uk:ugfcm,C_sentiment,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ugfcm,include,월별 원자료를 한 번만 편입
-UK,,"UK: Residential Property Transactions over 40,000 GBP(SA, Thous)",uk:ukspt,I_housing,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:ukspt,include,월별 원자료를 한 번만 편입
-UK,,"UK: New Car Registrations: Private (NSA, Units)",uk:uncregp,C_actual,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,uk:uncregp,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Exports(SA, Mil.Chn.2017.C$)",canada:v6912717,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:v6912717,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Permits: Non-Residential (SA, Thous.C$)",canada:vk119649,I_business,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:vk119649,include,월별 원자료를 한 번만 편입
-CA,,"Canada: Real Shipments: All Manufacturing Industries  (SA, Mil.2017.C$)",canada:vm263908,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:vm263908,include,월별 원자료를 한 번만 편입
-CA,,"Canada: New Orders: All Manufacturing Industries  (SA, Mil.2017.C$)",canada:vm263939,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,canada:vm263939,include,월별 원자료를 한 번만 편입
-JP,,Japan: Wholesale and Retail Sales: Total (Bil.Yen),japan:wrs,COMMON,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,japan:wrs,include,월별 원자료를 한 번만 편입
-AU,,"Australia: BOP: Goods Trade Balance (SA, Mil.A$)",anz:ausbmg,TRADE_REF,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausbmg,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: BOP: Goods Exports (SA, Mil.A$)",anz:ausbmgc,X,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausbmgc,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
-AU,,"Australia: BOP: Goods Imports (SA, Mil.A$)",anz:ausbmgd,M,코드·수신 확인,기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.,anz:ausbmgd,duplicate,같은 원계열/계절조정/단위·변환 중복 제거
+﻿country,pk,previous_group,axis,included
+FR,france:frselrm,C_labor,Consumer,True
+FR,g10:s132eluc,C_labor,Consumer,True
+FR,g10:s132d,COMMON,Excluded reference,False
+FR,g10:s132dm,COMMON,Excluded reference,False
+FR,france:frsvfzc,COMMON,Excluded reference,False
+FR,france:frnopcr,C_actual,Consumer,True
+FR,derived:fr_car_light,C_actual,Consumer,True
+FR,g10:n132hs,I_housing,Housing,True
+FR,g10:n132hp,I_housing,Housing,True
+FR,france:frstu47,C_actual,Consumer,True
+FR,france:frstu45,C_actual,Consumer,True
+FR,g10:s132vcc,C_sentiment,Consumer,True
+FR,g10:s132ib,TRADE_REF,Excluded reference,False
+FR,g10:s132ix,X,Export,True
+FR,g10:s132im,M,Excluded reference,False
+UK,derived:uk_mgsx_endmonth,C_labor,Consumer,True
+UK,uk:bcje,C_labor,Consumer,True
+UK,uk:bcjd,C_labor,Consumer,True
+UK,uk:kac3,C_labor,Consumer,True
+UK,uk:kai9,C_labor,Consumer,True
+UK,uk:k222,I_business,Capex,True
+UK,g10:s112dm,COMMON,Excluded reference,False
+UK,uk:s2ku,COMMON,Excluded reference,False
+UK,uk:j45u,C_actual,Consumer,True
+UK,uk:uncreg,C_actual,Consumer,True
+UK,uk:ugfci,C_sentiment,Consumer,True
+UK,uk:boki,TRADE_REF,Excluded reference,False
+UK,uk:l87k,TRADE_REF,Excluded reference,False
+UK,uk:l87q,TRADE_REF,Excluded reference,False
+UK,uk:ikbj,TRADE_REF,Excluded reference,False
+UK,uk:ikbh,X,Export,True
+UK,uk:ikbi,M,Excluded reference,False
+JP,japan:fluedr2,C_labor,Consumer,True
+JP,japan:jaor2,C_labor,Consumer,True
+JP,japan:jprei2,C_labor,Consumer,True
+JP,japan:flpr,C_labor,Consumer,True
+JP,japan:mefa,C_labor,Consumer,True
+JP,japan:jpewfra2,C_labor,Consumer,True
+JP,japan:jpsiip,I_business,Capex,True
+JP,japan:jpsiir,INVENTORY,Excluded reference,False
+JP,japan:mvpt,COMMON,Excluded reference,False
+JP,japan:omnpeen2,I_business,Capex,True
+JP,japan:wmor,I_business,Capex,True
+JP,japan:jpstiter,COMMON,Excluded reference,False
+JP,japan:cbnc,COMMON,Excluded reference,False
+JP,japan:janw,C_labor,Consumer,True
+JP,japan:costsn2,I_housing,Housing,True
+JP,japan:jpshd224,C_actual,Consumer,True
+JP,japan:ccia,C_sentiment,Consumer,True
+JP,japan:jpsht2a1,COMMON,Excluded reference,False
+JP,japan:jpsiio,I_business,Capex,True
+JP,japan:jpewmih,C_labor,Consumer,True
+JP,japan:jpsiisct,I_business,Capex,True
+JP,japan:jdspc,C_actual,Consumer,True
+JP,g10:n158tws,COMMON,Excluded reference,False
+JP,japan:costny2,I_housing,Housing,True
+JP,japan:cnorv,COMMON,Excluded reference,False
+JP,japan:jpsir2,C_actual,Consumer,True
+JP,japan:pctl,C_actual,Consumer,True
+JP,japan:cspc,C_actual,Consumer,True
+JP,japan:csjerss,C_actual,Consumer,True
+JP,japan:jpnvs,C_actual,Consumer,True
+JP,japan:ccit,C_sentiment,Consumer,True
+JP,japan:fiaalec,C_actual,Consumer,True
+JP,japan:fiwalec,C_actual,Consumer,True
+JP,japan:bng,TRADE_REF,Excluded reference,False
+JP,g10:s158ib,TRADE_REF,Excluded reference,False
+JP,g10:n158ib,TRADE_REF,Excluded reference,False
+JP,japan:veattl,X,Export,True
+JP,japan:viattl,M,Excluded reference,False
+JP,japan:jpitwqx,X,Export,True
+JP,japan:veaus,X,Export,True
+JP,japan:veaeuu,X,Export,True
+JP,japan:veaasa,X,Export,True
+JP,japan:jpitwqm,M,Excluded reference,False
+JP,japan:viaus,M,Excluded reference,False
+JP,japan:viaeuu,M,Excluded reference,False
+JP,japan:viaasa,M,Excluded reference,False
+CA,g10:s156gch,GDP_REF,Excluded reference,False
+CA,canada:v2062815,C_labor,Consumer,True
+CA,canada:v2062811,C_labor,Consumer,True
+CA,canada:v7e11153,C_labor,Consumer,True
+CA,g10:s156ts,COMMON,Excluded reference,False
+CA,g10:s156to,COMMON,Excluded reference,False
+CA,g10:s156ti,INVENTORY,Excluded reference,False
+CA,g10:s156tu,I_business,Capex,True
+CA,g10:s156tws,I_business,Capex,True
+CA,canada:v52w8145,INVENTORY,Excluded reference,False
+CA,canada:vb804837,COMMON,Excluded reference,False
+CA,canada:vk119645,I_housing,Housing,True
+CA,g10:z156hs,I_housing,Housing,True
+CA,canada:gp00001,I_housing,Housing,True
+CA,g10:s156trs,C_actual,Consumer,True
+CA,g10:s156trsx,C_actual,Consumer,True
+CA,g10:n156cvr,C_actual,Consumer,True
+CA,g10:s156ib,TRADE_REF,Excluded reference,False
+CA,g10:s156ix,X,Export,True
+CA,g10:s156im,M,Excluded reference,False
+AU,anz:auselur,C_labor,Consumer,True
+AU,anz:auselu,C_labor,Consumer,True
+AU,anz:ausele,C_labor,Consumer,True
+AU,anz:auselel,C_labor,Consumer,True
+AU,anz:auselep,C_labor,Consumer,True
+AU,anz:auselpr,C_labor,Consumer,True
+AU,anz:austja,C_labor,Consumer,True
+AU,anz:auiej10,C_labor,Consumer,True
+AU,anz:aushah,I_housing,Housing,True
+AU,anz:ausncpi,C_actual,Consumer,True
+AU,anz:ausvcc,C_sentiment,Consumer,True
+AU,anz:ausvcfl,C_sentiment,Consumer,True
+AU,anz:ausvcfn,C_sentiment,Consumer,True
+AU,anz:ausvce1,C_sentiment,Consumer,True
+AU,anz:ausvce5,C_sentiment,Consumer,True
+AU,anz:ausvct,C_sentiment,Consumer,True
+AU,anz:ausbmg,TRADE_REF,Excluded reference,False
+AU,anz:ausbmgc,X,Export,True
+AU,anz:ausbmgd,M,Excluded reference,False
+US,usecon:kr,C_labor,Consumer,True
+US,usecon:klu6,C_labor,Consumer,True
+US,usecon:lanagra,C_labor,Consumer,True
+US,usecon:lapriva,C_labor,Consumer,True
+US,usecon:lamanua,C_labor,Consumer,True
+US,usecon:lrtpriva,C_labor,Consumer,True
+US,usecon:lrpriva,C_labor,Consumer,True
+US,usecon:ke,C_labor,Consumer,True
+US,usecon:kq,C_labor,Consumer,True
+US,usecon:ljjtpa,C_labor,Consumer,True
+US,usecon:ljhtpa,C_labor,Consumer,True
+US,usecon:ljstpa,C_labor,Consumer,True
+US,surveys:cgcto,C_labor,Consumer,True
+US,usecon:laxepa,C_labor,Consumer,True
+US,usecon:lepriva,C_labor,Consumer,True
+US,usecon:ip,COMMON,Excluded reference,False
+US,usecon:cut,COMMON,Excluded reference,False
+US,usecon:nmo,COMMON,Excluded reference,False
+US,usecon:nmodg,COMMON,Excluded reference,False
+US,usecon:nti,INVENTORY,Excluded reference,False
+US,usecon:nwih,INVENTORY,Excluded reference,False
+US,usecon:ntr,INVENTORY,Excluded reference,False
+US,usecon:nmri,INVENTORY,Excluded reference,False
+US,usecon:nwrh,INVENTORY,Excluded reference,False
+US,usecon:nwrh1,INVENTORY,Excluded reference,False
+US,usecon:nrr,INVENTORY,Excluded reference,False
+US,usecon:tsth,COMMON,Excluded reference,False
+US,usecon:litpriva,C_labor,Consumer,True
+US,usecon:ypxtphm,C_labor,Consumer,True
+US,usecon:lrmanua,C_labor,Consumer,True
+US,bci:a0m005,C_labor,Consumer,True
+US,bci:a0m008,C_actual,Consumer,True
+US,bci:a0m033,I_business,Capex,True
+US,usecon:hpt,I_housing,Housing,True
+US,usecon:hst,I_housing,Housing,True
+US,usecon:hn1us,I_housing,Housing,True
+US,usecon:hxtus,I_housing,Housing,True
+US,usecon:nrst,C_actual,Consumer,True
+US,usecon:nrstxm,C_actual,Consumer,True
+US,usecon:tvsar,C_actual,Consumer,True
+US,cbdb:ccin,C_sentiment,Consumer,True
+US,usecon:csent,C_sentiment,Consumer,True
+US,usecon:ypm,C_labor,Consumer,True
+US,usecon:cbm,C_actual,Consumer,True
+US,usecon:ypsvrm,C_labor,Consumer,True
+US,usecon:bgsb,TRADE_REF,Excluded reference,False
+US,usecon:bgsx,X,Export,True
+US,usecon:bgsm,M,Excluded reference,False
+DE,germany:dese315,C_labor,Consumer,True
+DE,germany:dese001,C_labor,Consumer,True
+DE,germany:deseur,C_labor,Consumer,True
+DE,germany:desdy,I_business,Capex,True
+DE,germany:destoc,I_business,Capex,True
+DE,germany:destac,COMMON,Excluded reference,False
+DE,germany:destbc,X,Export,True
+DE,germany:denopcr,C_actual,Consumer,True
+DE,germany:destor2c,I_housing,Housing,True
+DE,germany:destu47,C_actual,Consumer,True
+DE,eudata:s134d4yk,C_actual,Consumer,True
+DE,eudata:s134d451,C_actual,Consumer,True
+DE,germany:desvconi,C_sentiment,Consumer,True
+DE,germany:denvcce,C_sentiment,Consumer,True
+DE,germany:denvcci,C_sentiment,Consumer,True
+DE,germany:denvccb,C_sentiment,Consumer,True
+DE,germany:denvccs,C_sentiment,Consumer,True
+DE,g10:n134ib,TRADE_REF,Excluded reference,False
+DE,germany:desixt,X,Export,True
+DE,germany:desimt,M,Excluded reference,False
+UK,uk:ap2y,C_labor,Consumer,True
+UK,uk:ukseppfc,C_labor,Consumer,True
+UK,uk:a3ww,C_labor,Consumer,True
+UK,uk:edmy,GDP_REF,Excluded reference,False
+UK,uk:edng,COMMON,Excluded reference,False
+UK,uk:ednc,COMMON,Excluded reference,False
+DE,germany:dene250,C_labor,Consumer,True
+DE,germany:desetd,C_labor,Consumer,True
+DE,germany:dese250u,C_labor,Consumer,True
+DE,eudata:i134yoy,C_labor,Consumer,True
+FR,g10:n132iwty,C_labor,Consumer,True
+FR,intsrvys:s132vb1c,C_actual,Consumer,True
+CA,canada:v14s3287,C_labor,Consumer,True
+CA,canada:laheinf,C_labor,Consumer,True
+CA,canada:v1q40181,C_actual,Consumer,True
+JP,japan:jpecy,C_labor,Consumer,True
+AU,anz:aunhpiv,I_business,Capex,True
+AU,anz:aunvrmc,C_sentiment,Consumer,True
+AU,anz:aushpn,I_business,Capex,True
+US,usecon:bpxmm,X,Export,True
+US,usecon:cdbhm,C_actual,Consumer,True
+US,usecon:cnbhm,C_actual,Consumer,True
+US,usecon:csbhm,C_actual,Consumer,True
+DE,germany:desd262,I_business,Capex,True
+DE,germany:desdk,I_business,Capex,True
+DE,germany:desele,C_labor,Consumer,True
+DE,germany:desibt,TRADE_REF,Excluded reference,False
+DE,germany:desrth,I_housing,Housing,True
+DE,germany:destlc,X,Export,True
+DE,germany:destlgc,X,Export,True
+DE,germany:destlgd,X,Export,True
+DE,germany:destlk,X,Export,True
+DE,germany:destok,I_business,Capex,True
+DE,germany:desvcc,C_sentiment,Consumer,True
+US,cbdb:ehn,C_sentiment,Consumer,True
+UK,uk:engw,M,Excluded reference,False
+JP,japan:fled2,C_labor,Consumer,True
+CA,g10:h156cvr,C_actual,Consumer,True
+UK,uk:ikbe,X,Export,True
+UK,uk:ikbg,TRADE_REF,Excluded reference,False
+US,usecon:ipmfn,I_business,Capex,True
+UK,uk:j5ek,C_actual,Consumer,True
+JP,japan:jafvrn2,C_labor,Consumer,True
+JP,japan:jpnectt3,C_labor,Consumer,True
+JP,japan:jpscaic,C_actual,Consumer,True
+JP,japan:jpshx202,X,Export,True
+JP,japan:jpshx224,X,Export,True
+JP,japan:jpsiipbo,I_business,Capex,True
+JP,japan:jpsiisbo,I_business,Capex,True
+JP,japan:jpsiisgm,I_business,Capex,True
+JP,japan:jpsivx,X,Export,True
+UK,uk:k24s,I_business,Capex,True
+UK,uk:ka46,C_labor,Consumer,True
+US,usecon:kut27p,C_labor,Consumer,True
+US,usecon:ljjtla,C_labor,Consumer,True
+US,usecon:ljqtpa,C_labor,Consumer,True
+JP,japan:mhfa,C_labor,Consumer,True
+US,usecon:nmoxt,COMMON,Excluded reference,False
+US,usecon:nmsxt,COMMON,Excluded reference,False
+US,usecon:nrstxm7,C_actual,Consumer,True
+UK,g10:s112ele,C_labor,Consumer,True
+CA,g10:s156eh,C_labor,Consumer,True
+CA,g10:s156eluc,C_labor,Consumer,True
+CA,g10:s156hp,I_housing,Housing,True
+AU,g10:s193trs,C_actual,Consumer,True
+US,usecon:tmxah,X,Export,True
+UK,uk:ugfcgl,C_sentiment,Consumer,True
+UK,uk:ugfcm,C_sentiment,Consumer,True
+UK,uk:ukspt,I_housing,Housing,True
+UK,uk:uncregp,C_actual,Consumer,True
+CA,canada:v6912717,X,Export,True
+CA,canada:vk119649,I_business,Capex,True
+CA,canada:vm263908,I_business,Capex,True
+CA,canada:vm263939,I_business,Capex,True
+JP,japan:wrs,C_actual,Consumer,True
+FR,france:frsdk,I_business,Capex,True
+US,usecon:fabwc,I_business,Capex,True
+US,usecon:nmscnx,I_business,Capex,True
+US,surveys:em6ci,I_business,Capex,True
+US,surveys:nfib25,I_business,Capex,True
+US,surveys:nfib11,I_business,Capex,True
+US,surveys:bofcex,I_business,Capex,True
+US,surveys:ri6cx,I_business,Capex,True
+US,usecon:napmc,I_business,Capex,True
+US,usecon:napmni,I_business,Capex,True
+US,surveys:bocgx,I_business,Capex,True
+US,surveys:rimcx,I_business,Capex,True
+US,usecon:fot,C_actual,Consumer,True
+US,usecon:tsrh,C_actual,Consumer,True
+US,usecon:napmnxi,X,Export,True
+US,surveys:kcmnxea,X,Export,True
+US,surveys:hbshmi,I_housing,Housing,True
+UK,uk:unvaa3,I_business,Capex,True
+UK,uk:unvai3,I_business,Capex,True
+UK,uk:unvao1,I_business,Capex,True
+UK,uk:ucbito,I_business,Capex,True
+UK,uk:ucbivo,I_business,Capex,True
+UK,uk:k22a,I_business,Capex,True
+UK,intsrvys:s112vpmg,I_business,Capex,True
+UK,uk:ucbvrs,C_sentiment,Consumer,True
+UK,uk:usb3pu,C_actual,Consumer,True
+UK,uk:uksrsf,C_actual,Consumer,True
+UK,uk:ukstrs,C_actual,Consumer,True
+UK,intsrvys:s112vpms,C_sentiment,Consumer,True
+UK,uk:ucbieo,X,Export,True
+UK,uk:usvtvc,I_housing,Housing,True
+UK,uk:urshg,I_housing,Housing,True
+UK,uk:urshs,I_housing,Housing,True
+UK,uk:urshv,I_housing,Housing,True
+UK,uk:urshq,I_housing,Housing,True
+DE,germany:desvdbk,I_business,Capex,True
+DE,germany:desvhbk,I_business,Capex,True
+DE,germany:desvubk,I_business,Capex,True
+DE,germany:desvdqo,I_business,Capex,True
+DE,germany:desvuqo,I_business,Capex,True
+DE,germany:destsk,I_business,Capex,True
+DE,germany:destss0,I_business,Capex,True
+DE,germany:desdcij,I_business,Capex,True
+DE,germany:desd28,I_business,Capex,True
+DE,germany:desto262,I_business,Capex,True
+DE,germany:desveba,I_business,Capex,True
+DE,germany:desvcba,I_business,Capex,True
+DE,germany:denvcc,C_sentiment,Consumer,True
+DE,germany:desvbbc,C_sentiment,Consumer,True
+DE,germany:desvhbc,C_sentiment,Consumer,True
+DE,germany:desvcbc,C_sentiment,Consumer,True
+DE,germany:destr47,C_actual,Consumer,True
+DE,germany:destbgc,X,Export,True
+DE,germany:destbi,X,Export,True
+DE,germany:desvxim,X,Export,True
+DE,germany:destb291,X,Export,True
+DE,germany:destbk,X,Export,True
+JP,japan:jpsiipgm,I_business,Capex,True
+JP,japan:jpshd203,I_business,Capex,True
+JP,intsrvys:s158vbit,I_business,Capex,True
+JP,intsrvys:s158vbet,I_business,Capex,True
+JP,japan:omnn2,I_business,Capex,True
+JP,japan:jpsiipm,I_business,Capex,True
+JP,japan:jpsiism,I_business,Capex,True
+JP,intsrvys:s158vcis,C_sentiment,Consumer,True
+JP,intsrvys:s158vbih,C_sentiment,Consumer,True
+JP,intsrvys:s158vbeh,C_sentiment,Consumer,True
+JP,intsrvys:s158vbir,C_sentiment,Consumer,True
+JP,intsrvys:s158vber,C_sentiment,Consumer,True
+JP,japan:jpfanal2,C_actual,Consumer,True
+JP,japan:jpshx203,X,Export,True
+JP,japan:jpshx223,X,Export,True
+JP,japan:jpshx201,X,Export,True
+JP,japan:bngx2,X,Export,True
+CA,g10:s156d,I_business,Capex,True
+CA,canada:v6912719,X,Export,True
+CA,canada:vk119646,I_housing,Housing,True
+AU,anz:ausvbce,I_business,Capex,True
+AU,anz:ausvbh,I_business,Capex,True
+AU,intsrvys:s193vpmm,I_business,Capex,True
+AU,anz:ausvbc,I_business,Capex,True
+AU,anz:ausvbf,I_business,Capex,True
+AU,anz:ausvbt,I_business,Capex,True
+AU,anz:ausbrsh,C_actual,Consumer,True
+AU,anz:ausvcp,C_sentiment,Consumer,True
+AU,anz:ausvbes,X,Export,True
+AU,anz:ausvbe,X,Export,True
+AU,anz:ausfchsy,I_housing,Housing,True
+AU,anz:aushahv,I_housing,Housing,True
+AU,anz:aushnh,I_housing,Housing,True
