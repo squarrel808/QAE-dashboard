@@ -1,0 +1,351 @@
+﻿country,pk,previous_group,axis,included
+FR,france:frselrm,C_labor,Consumer,True
+FR,g10:s132eluc,C_labor,Consumer,True
+FR,g10:s132d,COMMON,Excluded reference,False
+FR,g10:s132dm,COMMON,Excluded reference,False
+FR,france:frsvfzc,COMMON,Excluded reference,False
+FR,france:frnopcr,C_actual,Consumer,True
+FR,derived:fr_car_light,C_actual,Consumer,True
+FR,g10:n132hs,I_housing,Housing,True
+FR,g10:n132hp,I_housing,Housing,True
+FR,france:frstu47,C_actual,Consumer,True
+FR,france:frstu45,C_actual,Consumer,True
+FR,g10:s132vcc,C_sentiment,Consumer,True
+FR,g10:s132ib,TRADE_REF,Excluded reference,False
+FR,g10:s132ix,X,Export,True
+FR,g10:s132im,M,Excluded reference,False
+UK,derived:uk_mgsx_endmonth,C_labor,Consumer,True
+UK,uk:bcje,C_labor,Consumer,True
+UK,uk:bcjd,C_labor,Consumer,True
+UK,uk:kac3,C_labor,Consumer,True
+UK,uk:kai9,C_labor,Consumer,True
+UK,uk:k222,I_business,Capex,True
+UK,g10:s112dm,COMMON,Excluded reference,False
+UK,uk:s2ku,COMMON,Excluded reference,False
+UK,uk:j45u,C_actual,Consumer,True
+UK,uk:uncreg,C_actual,Consumer,True
+UK,uk:ugfci,C_sentiment,Consumer,True
+UK,uk:boki,TRADE_REF,Excluded reference,False
+UK,uk:l87k,TRADE_REF,Excluded reference,False
+UK,uk:l87q,TRADE_REF,Excluded reference,False
+UK,uk:ikbj,TRADE_REF,Excluded reference,False
+UK,uk:ikbh,X,Export,True
+UK,uk:ikbi,M,Excluded reference,False
+JP,japan:fluedr2,C_labor,Consumer,True
+JP,japan:jaor2,C_labor,Consumer,True
+JP,japan:jprei2,C_labor,Consumer,True
+JP,japan:flpr,C_labor,Consumer,True
+JP,japan:mefa,C_labor,Consumer,True
+JP,japan:jpewfra2,C_labor,Consumer,True
+JP,japan:jpsiip,I_business,Capex,True
+JP,japan:jpsiir,INVENTORY,Excluded reference,False
+JP,japan:mvpt,COMMON,Excluded reference,False
+JP,japan:omnpeen2,I_business,Capex,True
+JP,japan:wmor,I_business,Capex,True
+JP,japan:jpstiter,COMMON,Excluded reference,False
+JP,japan:cbnc,COMMON,Excluded reference,False
+JP,japan:janw,C_labor,Consumer,True
+JP,japan:costsn2,I_housing,Housing,True
+JP,japan:jpshd224,C_actual,Consumer,True
+JP,japan:ccia,C_sentiment,Consumer,True
+JP,japan:jpsht2a1,COMMON,Excluded reference,False
+JP,japan:jpsiio,I_business,Capex,True
+JP,japan:jpewmih,C_labor,Consumer,True
+JP,japan:jpsiisct,I_business,Capex,True
+JP,japan:jdspc,C_actual,Consumer,True
+JP,g10:n158tws,COMMON,Excluded reference,False
+JP,japan:costny2,I_housing,Housing,True
+JP,japan:cnorv,COMMON,Excluded reference,False
+JP,japan:jpsir2,C_actual,Consumer,True
+JP,japan:pctl,C_actual,Consumer,True
+JP,japan:cspc,C_actual,Consumer,True
+JP,japan:csjerss,C_actual,Consumer,True
+JP,japan:jpnvs,C_actual,Consumer,True
+JP,japan:ccit,C_sentiment,Consumer,True
+JP,japan:fiaalec,C_actual,Consumer,True
+JP,japan:fiwalec,C_actual,Consumer,True
+JP,japan:bng,TRADE_REF,Excluded reference,False
+JP,g10:s158ib,TRADE_REF,Excluded reference,False
+JP,g10:n158ib,TRADE_REF,Excluded reference,False
+JP,japan:veattl,X,Export,True
+JP,japan:viattl,M,Excluded reference,False
+JP,japan:jpitwqx,X,Export,True
+JP,japan:veaus,X,Export,True
+JP,japan:veaeuu,X,Export,True
+JP,japan:veaasa,X,Export,True
+JP,japan:jpitwqm,M,Excluded reference,False
+JP,japan:viaus,M,Excluded reference,False
+JP,japan:viaeuu,M,Excluded reference,False
+JP,japan:viaasa,M,Excluded reference,False
+CA,g10:s156gch,GDP_REF,Excluded reference,False
+CA,canada:v2062815,C_labor,Consumer,True
+CA,canada:v2062811,C_labor,Consumer,True
+CA,canada:v7e11153,C_labor,Consumer,True
+CA,g10:s156ts,COMMON,Excluded reference,False
+CA,g10:s156to,COMMON,Excluded reference,False
+CA,g10:s156ti,INVENTORY,Excluded reference,False
+CA,g10:s156tu,I_business,Capex,True
+CA,g10:s156tws,I_business,Capex,True
+CA,canada:v52w8145,INVENTORY,Excluded reference,False
+CA,canada:vb804837,COMMON,Excluded reference,False
+CA,canada:vk119645,I_housing,Housing,True
+CA,g10:z156hs,I_housing,Housing,True
+CA,canada:gp00001,I_housing,Housing,True
+CA,g10:s156trs,C_actual,Consumer,True
+CA,g10:s156trsx,C_actual,Consumer,True
+CA,g10:n156cvr,C_actual,Consumer,True
+CA,g10:s156ib,TRADE_REF,Excluded reference,False
+CA,g10:s156ix,X,Export,True
+CA,g10:s156im,M,Excluded reference,False
+AU,anz:auselur,C_labor,Consumer,True
+AU,anz:auselu,C_labor,Consumer,True
+AU,anz:ausele,C_labor,Consumer,True
+AU,anz:auselel,C_labor,Consumer,True
+AU,anz:auselep,C_labor,Consumer,True
+AU,anz:auselpr,C_labor,Consumer,True
+AU,anz:austja,C_labor,Consumer,True
+AU,anz:auiej10,C_labor,Consumer,True
+AU,anz:aushah,I_housing,Housing,True
+AU,anz:ausncpi,C_actual,Consumer,True
+AU,anz:ausvcc,C_sentiment,Consumer,True
+AU,anz:ausvcfl,C_sentiment,Consumer,True
+AU,anz:ausvcfn,C_sentiment,Consumer,True
+AU,anz:ausvce1,C_sentiment,Consumer,True
+AU,anz:ausvce5,C_sentiment,Consumer,True
+AU,anz:ausvct,C_sentiment,Consumer,True
+AU,anz:ausbmg,TRADE_REF,Excluded reference,False
+AU,anz:ausbmgc,X,Export,True
+AU,anz:ausbmgd,M,Excluded reference,False
+US,usecon:kr,C_labor,Consumer,True
+US,usecon:klu6,C_labor,Consumer,True
+US,usecon:lanagra,C_labor,Consumer,True
+US,usecon:lapriva,C_labor,Consumer,True
+US,usecon:lamanua,C_labor,Consumer,True
+US,usecon:lrtpriva,C_labor,Consumer,True
+US,usecon:lrpriva,C_labor,Consumer,True
+US,usecon:ke,C_labor,Consumer,True
+US,usecon:kq,C_labor,Consumer,True
+US,usecon:ljjtpa,C_labor,Consumer,True
+US,usecon:ljhtpa,C_labor,Consumer,True
+US,usecon:ljstpa,C_labor,Consumer,True
+US,surveys:cgcto,C_labor,Consumer,True
+US,usecon:laxepa,C_labor,Consumer,True
+US,usecon:lepriva,C_labor,Consumer,True
+US,usecon:ip,COMMON,Excluded reference,False
+US,usecon:cut,COMMON,Excluded reference,False
+US,usecon:nmo,COMMON,Excluded reference,False
+US,usecon:nmodg,COMMON,Excluded reference,False
+US,usecon:nti,INVENTORY,Excluded reference,False
+US,usecon:nwih,INVENTORY,Excluded reference,False
+US,usecon:ntr,INVENTORY,Excluded reference,False
+US,usecon:nmri,INVENTORY,Excluded reference,False
+US,usecon:nwrh,INVENTORY,Excluded reference,False
+US,usecon:nwrh1,INVENTORY,Excluded reference,False
+US,usecon:nrr,INVENTORY,Excluded reference,False
+US,usecon:tsth,COMMON,Excluded reference,False
+US,usecon:litpriva,C_labor,Consumer,True
+US,usecon:ypxtphm,C_labor,Consumer,True
+US,usecon:lrmanua,C_labor,Consumer,True
+US,bci:a0m005,C_labor,Consumer,True
+US,bci:a0m008,C_actual,Consumer,True
+US,bci:a0m033,I_business,Capex,True
+US,usecon:hpt,I_housing,Housing,True
+US,usecon:hst,I_housing,Housing,True
+US,usecon:hn1us,I_housing,Housing,True
+US,usecon:hxtus,I_housing,Housing,True
+US,usecon:nrst,C_actual,Consumer,True
+US,usecon:nrstxm,C_actual,Consumer,True
+US,usecon:tvsar,C_actual,Consumer,True
+US,cbdb:ccin,C_sentiment,Consumer,True
+US,usecon:csent,C_sentiment,Consumer,True
+US,usecon:ypm,C_labor,Consumer,True
+US,usecon:cbm,C_actual,Consumer,True
+US,usecon:ypsvrm,C_labor,Consumer,True
+US,usecon:bgsb,TRADE_REF,Excluded reference,False
+US,usecon:bgsx,X,Export,True
+US,usecon:bgsm,M,Excluded reference,False
+DE,germany:dese315,C_labor,Consumer,True
+DE,germany:dese001,C_labor,Consumer,True
+DE,germany:deseur,C_labor,Consumer,True
+DE,germany:desdy,I_business,Capex,True
+DE,germany:destoc,I_business,Capex,True
+DE,germany:destac,COMMON,Excluded reference,False
+DE,germany:destbc,X,Export,True
+DE,germany:denopcr,C_actual,Consumer,True
+DE,germany:destor2c,I_housing,Housing,True
+DE,germany:destu47,C_actual,Consumer,True
+DE,eudata:s134d4yk,C_actual,Consumer,True
+DE,eudata:s134d451,C_actual,Consumer,True
+DE,germany:desvconi,C_sentiment,Consumer,True
+DE,germany:denvcce,C_sentiment,Consumer,True
+DE,germany:denvcci,C_sentiment,Consumer,True
+DE,germany:denvccb,C_sentiment,Consumer,True
+DE,germany:denvccs,C_sentiment,Consumer,True
+DE,g10:n134ib,TRADE_REF,Excluded reference,False
+DE,germany:desixt,X,Export,True
+DE,germany:desimt,M,Excluded reference,False
+UK,uk:ap2y,C_labor,Consumer,True
+UK,uk:ukseppfc,C_labor,Consumer,True
+UK,uk:a3ww,C_labor,Consumer,True
+UK,uk:edmy,GDP_REF,Excluded reference,False
+UK,uk:edng,COMMON,Excluded reference,False
+UK,uk:ednc,COMMON,Excluded reference,False
+DE,germany:dene250,C_labor,Consumer,True
+DE,germany:desetd,C_labor,Consumer,True
+DE,germany:dese250u,C_labor,Consumer,True
+DE,eudata:i134yoy,C_labor,Consumer,True
+FR,g10:n132iwty,C_labor,Consumer,True
+FR,intsrvys:s132vb1c,C_actual,Consumer,True
+CA,canada:v14s3287,C_labor,Consumer,True
+CA,canada:laheinf,C_labor,Consumer,True
+CA,canada:v1q40181,C_actual,Consumer,True
+JP,japan:jpecy,C_labor,Consumer,True
+AU,anz:aunhpiv,I_business,Capex,True
+AU,anz:aunvrmc,C_sentiment,Consumer,True
+AU,anz:aushpn,I_business,Capex,True
+US,usecon:bpxmm,X,Export,True
+US,usecon:cdbhm,C_actual,Consumer,True
+US,usecon:cnbhm,C_actual,Consumer,True
+US,usecon:csbhm,C_actual,Consumer,True
+DE,germany:desd262,I_business,Capex,True
+DE,germany:desdk,I_business,Capex,True
+DE,germany:desele,C_labor,Consumer,True
+DE,germany:desibt,TRADE_REF,Excluded reference,False
+DE,germany:desrth,I_housing,Housing,True
+DE,germany:destlc,X,Export,True
+DE,germany:destlgc,X,Export,True
+DE,germany:destlgd,X,Export,True
+DE,germany:destlk,X,Export,True
+DE,germany:destok,I_business,Capex,True
+DE,germany:desvcc,C_sentiment,Consumer,True
+US,cbdb:ehn,C_sentiment,Consumer,True
+UK,uk:engw,M,Excluded reference,False
+JP,japan:fled2,C_labor,Consumer,True
+CA,g10:h156cvr,C_actual,Consumer,True
+UK,uk:ikbe,X,Export,True
+UK,uk:ikbg,TRADE_REF,Excluded reference,False
+US,usecon:ipmfn,I_business,Capex,True
+UK,uk:j5ek,C_actual,Consumer,True
+JP,japan:jafvrn2,C_labor,Consumer,True
+JP,japan:jpnectt3,C_labor,Consumer,True
+JP,japan:jpscaic,C_actual,Consumer,True
+JP,japan:jpshx202,X,Export,True
+JP,japan:jpshx224,X,Export,True
+JP,japan:jpsiipbo,I_business,Capex,True
+JP,japan:jpsiisbo,I_business,Capex,True
+JP,japan:jpsiisgm,I_business,Capex,True
+JP,japan:jpsivx,X,Export,True
+UK,uk:k24s,I_business,Capex,True
+UK,uk:ka46,C_labor,Consumer,True
+US,usecon:kut27p,C_labor,Consumer,True
+US,usecon:ljjtla,C_labor,Consumer,True
+US,usecon:ljqtpa,C_labor,Consumer,True
+JP,japan:mhfa,C_labor,Consumer,True
+US,usecon:nmoxt,COMMON,Excluded reference,False
+US,usecon:nmsxt,COMMON,Excluded reference,False
+US,usecon:nrstxm7,C_actual,Consumer,True
+UK,g10:s112ele,C_labor,Consumer,True
+CA,g10:s156eh,C_labor,Consumer,True
+CA,g10:s156eluc,C_labor,Consumer,True
+CA,g10:s156hp,I_housing,Housing,True
+AU,g10:s193trs,C_actual,Consumer,True
+US,usecon:tmxah,X,Export,True
+UK,uk:ugfcgl,C_sentiment,Consumer,True
+UK,uk:ugfcm,C_sentiment,Consumer,True
+UK,uk:ukspt,I_housing,Housing,True
+UK,uk:uncregp,C_actual,Consumer,True
+CA,canada:v6912717,X,Export,True
+CA,canada:vk119649,I_business,Capex,True
+CA,canada:vm263908,I_business,Capex,True
+CA,canada:vm263939,I_business,Capex,True
+JP,japan:wrs,C_actual,Consumer,True
+FR,france:frsdk,I_business,Capex,True
+US,usecon:fabwc,I_business,Capex,True
+US,usecon:nmscnx,I_business,Capex,True
+US,surveys:em6ci,I_business,Capex,True
+US,surveys:nfib25,I_business,Capex,True
+US,surveys:nfib11,I_business,Capex,True
+US,surveys:bofcex,I_business,Capex,True
+US,surveys:ri6cx,I_business,Capex,True
+US,usecon:napmc,I_business,Capex,True
+US,usecon:napmni,I_business,Capex,True
+US,surveys:bocgx,I_business,Capex,True
+US,surveys:rimcx,I_business,Capex,True
+US,usecon:fot,C_actual,Consumer,True
+US,usecon:tsrh,C_actual,Consumer,True
+US,usecon:napmnxi,X,Export,True
+US,surveys:kcmnxea,X,Export,True
+US,surveys:hbshmi,I_housing,Housing,True
+UK,uk:unvaa3,I_business,Capex,True
+UK,uk:unvai3,I_business,Capex,True
+UK,uk:unvao1,I_business,Capex,True
+UK,uk:ucbito,I_business,Capex,True
+UK,uk:ucbivo,I_business,Capex,True
+UK,uk:k22a,I_business,Capex,True
+UK,intsrvys:s112vpmg,I_business,Capex,True
+UK,uk:ucbvrs,C_sentiment,Consumer,True
+UK,uk:usb3pu,C_actual,Consumer,True
+UK,uk:uksrsf,C_actual,Consumer,True
+UK,uk:ukstrs,C_actual,Consumer,True
+UK,intsrvys:s112vpms,C_sentiment,Consumer,True
+UK,uk:ucbieo,X,Export,True
+UK,uk:usvtvc,I_housing,Housing,True
+UK,uk:urshg,I_housing,Housing,True
+UK,uk:urshs,I_housing,Housing,True
+UK,uk:urshv,I_housing,Housing,True
+UK,uk:urshq,I_housing,Housing,True
+DE,germany:desvdbk,I_business,Capex,True
+DE,germany:desvhbk,I_business,Capex,True
+DE,germany:desvubk,I_business,Capex,True
+DE,germany:desvdqo,I_business,Capex,True
+DE,germany:desvuqo,I_business,Capex,True
+DE,germany:destsk,I_business,Capex,True
+DE,germany:destss0,I_business,Capex,True
+DE,germany:desdcij,I_business,Capex,True
+DE,germany:desd28,I_business,Capex,True
+DE,germany:desto262,I_business,Capex,True
+DE,germany:desveba,I_business,Capex,True
+DE,germany:desvcba,I_business,Capex,True
+DE,germany:denvcc,C_sentiment,Consumer,True
+DE,germany:desvbbc,C_sentiment,Consumer,True
+DE,germany:desvhbc,C_sentiment,Consumer,True
+DE,germany:desvcbc,C_sentiment,Consumer,True
+DE,germany:destr47,C_actual,Consumer,True
+DE,germany:destbgc,X,Export,True
+DE,germany:destbi,X,Export,True
+DE,germany:desvxim,X,Export,True
+DE,germany:destb291,X,Export,True
+DE,germany:destbk,X,Export,True
+JP,japan:jpsiipgm,I_business,Capex,True
+JP,japan:jpshd203,I_business,Capex,True
+JP,intsrvys:s158vbit,I_business,Capex,True
+JP,intsrvys:s158vbet,I_business,Capex,True
+JP,japan:omnn2,I_business,Capex,True
+JP,japan:jpsiipm,I_business,Capex,True
+JP,japan:jpsiism,I_business,Capex,True
+JP,intsrvys:s158vcis,C_sentiment,Consumer,True
+JP,intsrvys:s158vbih,C_sentiment,Consumer,True
+JP,intsrvys:s158vbeh,C_sentiment,Consumer,True
+JP,intsrvys:s158vbir,C_sentiment,Consumer,True
+JP,intsrvys:s158vber,C_sentiment,Consumer,True
+JP,japan:jpfanal2,C_actual,Consumer,True
+JP,japan:jpshx203,X,Export,True
+JP,japan:jpshx223,X,Export,True
+JP,japan:jpshx201,X,Export,True
+JP,japan:bngx2,X,Export,True
+CA,g10:s156d,I_business,Capex,True
+CA,canada:v6912719,X,Export,True
+CA,canada:vk119646,I_housing,Housing,True
+AU,anz:ausvbce,I_business,Capex,True
+AU,anz:ausvbh,I_business,Capex,True
+AU,intsrvys:s193vpmm,I_business,Capex,True
+AU,anz:ausvbc,I_business,Capex,True
+AU,anz:ausvbf,I_business,Capex,True
+AU,anz:ausvbt,I_business,Capex,True
+AU,anz:ausbrsh,C_actual,Consumer,True
+AU,anz:ausvcp,C_sentiment,Consumer,True
+AU,anz:ausvbes,X,Export,True
+AU,anz:ausvbe,X,Export,True
+AU,anz:ausfchsy,I_housing,Housing,True
+AU,anz:aushahv,I_housing,Housing,True
+AU,anz:aushnh,I_housing,Housing,True

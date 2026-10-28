@@ -1,0 +1,2853 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{font:13px/1.7 Malgun Gothic;padding:24px;color:#234}table{border-collapse:collapse}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#eef4f8}.scroll{overflow:auto}a{color:#236a96}</style><a href="index.html">PCA III로 돌아가기</a><h1>BlackRock 참조 목록만 사용 · 162개 시계열</h1><p>제공된 패널 목록의 개념과 Haver 정의를 대조한 결과입니다. 원본 BlackRock 티커·변환·로딩의 동일성을 뜻하지 않습니다. Capex에 제조업을 포함하며, 확인된 대리지표는 match=proxy로 표시합니다. 프랑스 및 유로존 제외, 독일·일본 Housing 없음.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>axis</th>
+      <th>Consumer</th>
+      <th>Capex</th>
+      <th>Housing</th>
+      <th>Export</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>호주</th>
+      <td>6</td>
+      <td>8</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>캐나다</th>
+      <td>3</td>
+      <td>6</td>
+      <td>5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>독일</th>
+      <td>9</td>
+      <td>16</td>
+      <td>0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>일본</th>
+      <td>10</td>
+      <td>13</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>영국</th>
+      <td>11</td>
+      <td>9</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>미국</th>
+      <td>8</td>
+      <td>13</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table><h2>전체 참조 항목 검토</h2><p><a href="blackrock_coverage.csv">전체 검토표 CSV</a></p><div class="scroll"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>country</th>
+      <th>axis</th>
+      <th>reference</th>
+      <th>편입</th>
+      <th>match</th>
+      <th>pk</th>
+      <th>descriptor</th>
+      <th>kind</th>
+      <th>direction</th>
+      <th>last</th>
+      <th>reason</th>
+      <th>note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>C&amp;I 대출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:fabwc</td>
+      <td>C &amp; I Loans in Bank Credit: All Commercial Banks (SA, Bil.$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>핵심 자본재 수주</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>bci:a0m033</td>
+      <td>Mfrs' New Orders: Nondefense Capital Goods ex Aircraft (SA, Mil.Chn.1982$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 실질 비국방 자본재 항공기 제외 수주 유지</td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>핵심 자본재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:nmscnx</td>
+      <td>Mfrs' Shipments: Nondefense Capital Goods ex Aircraft (SA, Mil.$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>Empire State 설비투자 계획</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:em6ci</td>
+      <td>Empire State Mfg Svy: Cap Expenditures, 6 Mos Ahead: Diffusion Index (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>제조업 생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:ipmfn</td>
+      <td>Industrial Production: Manufacturing [NAICS] (SA, 2017=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>NFIB 실제 설비투자</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:nfib25</td>
+      <td>NFIB: Businesses Making a Capital Expenditure During the Last 6 Months (%)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>NFIB 투자계획</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:nfib11</td>
+      <td>NFIB: Percent Planning Capital Expenditures next 3 to 6 Months (SA, %)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>필라델피아 연은 설비투자 계획</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:bofcex</td>
+      <td>Philly Fed Mfg Bus Outlook: Future Capital Expenditures Diffusion Indx(SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>리치먼드 연은 설비투자 계획</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:ri6cx</td>
+      <td>Richmond Fed Mfg Survey: Expected Manufacturing Capital Expenditures (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>시카고 PMI</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>접근 가능한 카탈로그에서 정확한 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>ISM 제조업 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:napmc</td>
+      <td>ISM Mfg: PMI Composite Index (SA, 50+ = Econ Expand)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>ISM 제조업 신규수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:napmni</td>
+      <td>ISM Mfg: New Orders Index (SA, 50+ = Econ Expand)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>필라델피아 연은 제조업</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:bocgx</td>
+      <td>Philly Fed Mfg Business Outlook: Current Activity Diffusion Index(SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Capex</td>
+      <td>리치먼드 연은 제조업</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:rimcx</td>
+      <td>Richmond Fed Mfg Survey: Current Manufacturing Composite (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>자동차 판매</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:tvsar</td>
+      <td>Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>Conference Board 소비자신뢰</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>cbdb:ccin</td>
+      <td>Consumer Confidence (SA, 1985=100)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>소비자신용</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:fot</td>
+      <td>Consumer Credit Outstanding (EOP, SA, Bil.$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>핵심 실질 소매판매</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>usecon:tsrh</td>
+      <td>Real Sales: Retail Trade (SA, Mil.Chn.2017$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-07-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>전체 실질 소매판매 대리계열; 핵심 제외범위 원문 불명확</td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>PCE 내구재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:cdbhm</td>
+      <td>Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>PCE 비내구재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:cnbhm</td>
+      <td>Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>PCE 서비스</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:csbhm</td>
+      <td>Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Consumer</td>
+      <td>미시간 소비심리</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:csent</td>
+      <td>University of Michigan: Consumer Sentiment (NSA, Q1-66=100)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Export</td>
+      <td>ISM 신규수출수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:napmnxi</td>
+      <td>ISM Mfg: New Export Orders Index (SA, 50+ = Econ Expand)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Export</td>
+      <td>캔자스 연은 수출수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:kcmnxea</td>
+      <td>Kansas City Fed Mfg Survey: New Orders for Exports: Versus a Month Ago(SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Export</td>
+      <td>명목 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:bgsx</td>
+      <td>Exports: Goods and Services, BOP Basis (SA, Mil.$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Export</td>
+      <td>실질 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:tmxah</td>
+      <td>Exports, FAS Value (SA, Mil.Chn.2017$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Export</td>
+      <td>OECD 수출동향</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>접근 가능한 카탈로그에서 정확한 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Housing</td>
+      <td>NAHB 주택시장</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>surveys:hbshmi</td>
+      <td>Home Builders: Housing Market Index&nbsp;&nbsp;[Composite] (SA, All Good = 100)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Housing</td>
+      <td>신규주택 판매</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:hn1us</td>
+      <td>New 1-Family Houses Sold: United States (SAAR, Thous)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Housing</td>
+      <td>주택착공</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:hst</td>
+      <td>Housing Starts (SAAR, Thous.Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Housing</td>
+      <td>잠정주택 판매</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>NAR 동일 계열 미확인; 다른 제공기관 pending sales는 동일 지표로 간주하지 않음</td>
+    </tr>
+    <tr>
+      <td>US</td>
+      <td>Housing</td>
+      <td>건축허가</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>usecon:hpt</td>
+      <td>New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>BoE 가동률</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:unvaa3</td>
+      <td>UK: BoE Agents' Survey: Current Capacity Utilization (NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>BoE 투자 의향</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:unvai3</td>
+      <td>UK: BoE Agents' Survey: Investment Intentions (NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 서비스 투자 차량·기계</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>서비스 투자 세부항목 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 서비스 투자 IT</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>서비스 투자 세부항목 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 서비스 투자 토지·건물</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>서비스 투자 세부항목 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 생산능력 미달 기업</td>
+      <td>제외</td>
+      <td>concept</td>
+      <td>uk:ucbibcy</td>
+      <td>UK: CBI Industrial Trends: Present Level Output Below Capacity, Yes(% Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td></td>
+      <td>비월별: Q · 월별 보간하지 않음</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 기업낙관</td>
+      <td>제외</td>
+      <td>concept</td>
+      <td>uk:ucbibs</td>
+      <td>UK: CBI Ind Trends: Optimism Re Business Situation Compared to 3 Mo Ago(% Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td></td>
+      <td>비월별: Q · 월별 보간하지 않음</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>건설 PMI 상업용</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>상업용 하위 PMI 미확인; 종합 건설 PMI와 동일시하지 않음</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>자본재 산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:k24s</td>
+      <td>UK: Industrial Production: Capital Goods(SA, 2024=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>BoE 제조업 생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:unvao1</td>
+      <td>UK: BoE Agents' Survey: Total Manufacturing Output Including Exports(NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 수주잔고</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ucbito</td>
+      <td>UK: CBI Industrial Trends: Current Total Order Book(% Balance)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>CBI 생산</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>uk:ucbivo</td>
+      <td>UK: CBI Industrial Trends: Volume of Output Over Next 3 Months(% Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>향후 3개월 생산 기대; 원문 현재/기대 불명확</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>산업생산 제조업</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:k22a</td>
+      <td>UK: Industrial Production: Manufacturing (SA, 2024=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>산업생산 전체</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:k222</td>
+      <td>UK: Industrial Production (SA, 2024=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>제조업 PMI 신규수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Capex</td>
+      <td>제조업 PMI 생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s112vpmg</td>
+      <td>U.K. PMI: Manufacturing Output (SA, 50+=Expansion)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>자동차 등록</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:uncreg</td>
+      <td>UK: New Car Registrations (NSA, Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>CBI 소매판매량</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>uk:ucbvrs</td>
+      <td>UK: CBI Dist Trades: Retail: Volume of Sales, Moving Average (% Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>CBI 판매량 이동평균 계열</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>소비자신용</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>uk:usb3pu</td>
+      <td>UK: Consumer Credit ex Student Loans: Gross Lending (SA, Mil.GBP)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>총 신규대출; 원문 잔액/흐름 불명확</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>EC 소비심리</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>영국 EC 소비심리 현행 월별 계열 미확인; GfK 별도 유지</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>GfK 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ugfci</td>
+      <td>UK: GfK Consumer Confidence Barometer (NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>GfK 경제상황</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ugfcgl</td>
+      <td>UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>GfK 고액구매</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ugfcm</td>
+      <td>UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>소매판매 핵심 명목</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:uksrsf</td>
+      <td>Great Britain: Retail Sales Value: Retailing excluding Auto Fuel(SA, Thous.GBP)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>소매판매 핵심 실질</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>uk:j45u</td>
+      <td>Great Britain: Retail Sales Volume: Retail excluding Auto Fuel(SA, Yr/Yr %Chg)</td>
+      <td>growth_yoy</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 실질 핵심 소매판매 YoY 계열 유지</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>소매판매 전체 명목</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ukstrs</td>
+      <td>Great Britain: Retail Sales Value: Retailing including Auto Fuel(SA, Thous.GBP)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>소매판매 전체 실질</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:j5ek</td>
+      <td>Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Consumer</td>
+      <td>서비스 PMI</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s112vpms</td>
+      <td>U.K. PMI: Services Business Activity (SA, 50+=Expansion)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>BoE 제조업 수출</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>수출 단독 월별 현행 계열 미확인; 제조업 전체로 대체하지 않음</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>CBI 수출수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ucbieo</td>
+      <td>UK: CBI Industrial Trends: Current Export Order Book(% Balance)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>소비재 신규수출수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>현행 월별 세부계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>중간재 신규수출수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>현행 월별 세부계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>투자재 신규수출수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>현행 월별 세부계열 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>제조업 PMI 수출수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>서비스 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ikbe</td>
+      <td>UK: Exports of Services (SA, Mil.Chn.2024.GBP)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Export</td>
+      <td>BOP 명목 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ikbh</td>
+      <td>U.K.: Exports: Goods and Services (SA, Mil.Pounds)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>건설 PMI 주택</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>주택 하위 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>총 모기지 대출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:usvtvc</td>
+      <td>UK: Mortgage Lending: Total [incl Housing Assns]: Gross New Loans (SA, Mil.GBP)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>주거용 부동산 거래</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:ukspt</td>
+      <td>UK: Residential Property Transactions over 40,000 GBP(SA, Thous)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>RICS 매매합의</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:urshg</td>
+      <td>England &amp; Wales: RICS Housing Survey: Change in Newly Agreed Sales (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>RICS 조사원당 판매</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:urshs</td>
+      <td>England &amp; Wales: RICS Survey: Sales Avg/Chartered Surveyor: Last 3Mo(Number, SA)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>RICS 조사원당 매물</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>uk:urshv</td>
+      <td>England &amp; Wales: RICS Housing Srvy: Stocks Avg/Chart Surveyor (EOP, Number, SA)</td>
+      <td>level</td>
+      <td>-1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>매물 증가는 주택경기에 양면적; 공급과잉 방향(-)으로 명시</td>
+    </tr>
+    <tr>
+      <td>UK</td>
+      <td>Housing</td>
+      <td>RICS 신규 구매자 문의</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>uk:urshq</td>
+      <td>England &amp; Wales: RICS Housing Survey: Change in New Buyer Enquiries (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 자본재 수요</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvdbk</td>
+      <td>Germany: ifo Demand vs. Previous Month: Capital Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 자본재 수주잔고</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>germany:desvhbk</td>
+      <td>Germany: ifo Orders vs. Previous Month: Capital Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>수주 전월대비 평가; 잔고 수준과 다름</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 자본재 생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvubk</td>
+      <td>Germany: ifo Production Activity vs. Previous Month: Capital Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 기계장비 수요</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvdqo</td>
+      <td>Germany: ifo Demand vs. Previous Month: Machinery &amp; Equipment, nec(SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 기계장비 생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvuqo</td>
+      <td>Germany: ifo Production Activity Vs. Prev Mo: Machinery &amp; Equip, Nec (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업매출 자본재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destsk</td>
+      <td>Germany: Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업매출 기계장비</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destss0</td>
+      <td>Germany: Industry Sales Volume: Mfg of Machinery/Equip N.E.C.(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업생산 자본재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desdk</td>
+      <td>Germany: Industrial Production: Investment Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업생산 컴퓨터·전기제품</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desdcij</td>
+      <td>Germany: IP: Computers, Electronics, Electrical Equipment (SA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업생산 기계장비</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desd28</td>
+      <td>Germany: Industrial Production: Machinery &amp; Equipment nec (SA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>제조업 수주 자본재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destok</td>
+      <td>Germany: Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>제조업 수주 IT장비</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>germany:desto262</td>
+      <td>Germany: Mfg Orders Volume: Computers &amp; Peripheral Equipment(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>컴퓨터·주변기기 수주; IT 범위 원문 불명확</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 기업기대</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desveba</td>
+      <td>Germany: ifo Business Expectations: Industry and Trade (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>IFO 현재업황</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvcba</td>
+      <td>Germany: ifo Business Situation: Industry and Trade (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desdy</td>
+      <td>Germany: Industrial Production including Construction (SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>제조업 신규수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destoc</td>
+      <td>Germany: Manufacturing Orders [Volume](SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>제조업 PMI 신규수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Capex</td>
+      <td>제조업 PMI 생산</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>EC 소비자신뢰</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvcc</td>
+      <td>Germany: Consumer Confidence Indicator (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>GfK 신뢰</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:denvcc</td>
+      <td>Germany: GfK Consumer Climate (NSA, % Balance)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-11-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>GfK 구매의향</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:denvccb</td>
+      <td>Germany: GfK Consumer Survey, Consumption and Buying Propensity (NSA, % Balance)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>ICON 신뢰</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvconi</td>
+      <td>Germany: Icon Consumer Barometer (SA, 100+=optimistic)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>IFO 소비자 경기</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>germany:desvbbc</td>
+      <td>Germany: ifo Business Climate Index: Consumer Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>소비재 기업 경기이며 가계 설문은 아님; 소비재 경기와 중복 제거</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>IFO 소비재 경기</td>
+      <td>중복 연결 · 1회 사용</td>
+      <td>concept</td>
+      <td>germany:desvbbc</td>
+      <td>Germany: ifo Business Climate Index: Consumer Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>다른 참조 항목과 같은 원계열 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>IFO 소비재 수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvhbc</td>
+      <td>Germany: ifo Orders vs. Previous Month: Consumer Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>IFO 소비재 상황</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvcbc</td>
+      <td>Germany: ifo Business Situation: Consumer Goods (SA, % Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>자동차 제외 소매판매 명목</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destr47</td>
+      <td>Germany: Retail Sales Value excluding Motor Vehicles(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Consumer</td>
+      <td>자동차 제외 소매판매 물량</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destu47</td>
+      <td>Germany: Retail Sales Volume excluding Motor Vehicles(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>소비재 수출수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destbgc</td>
+      <td>Germany: Foreign Mfg Orders [Volume], Consumer Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>중간재 수출수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destbi</td>
+      <td>Germany: Foreign Mfg Orders [Volume], Intermediate Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desixt</td>
+      <td>Germany: Exports of Goods (SA, Bil.Euros)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>IFO 수출기대</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:desvxim</td>
+      <td>Germany: ifo Export Expectations [next 3 mos]: Mfg inc Food &amp; Bev (SA, 2015=100)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>자본재 수출매출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destlk</td>
+      <td>Germany: Foreign Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>소비재 수출매출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destlgc</td>
+      <td>Germany: Foreign Industry Sales [Volume]: Consumer Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>해외 자동차 수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destb291</td>
+      <td>Germany: Foreign Mfg Orders Volume: Motor Vehicles(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>해외 자본재 수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destbk</td>
+      <td>Germany: Foreign Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>해외 소비내구재 매출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destlgd</td>
+      <td>Germany: Foreign Industry Sales [Vol]: Durable Consumer Goods(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>제조품 수출매출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>germany:destlc</td>
+      <td>Germany: Foreign Industry Sales [Volume]: Manufacturing(SWDA, 2021=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Export</td>
+      <td>제조업 PMI 수출</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>업무용 기계 산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiipbo</td>
+      <td>Japan: IP: Business Oriented Machinery (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>범용기계 산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiipgm</td>
+      <td>Japan: IP: General-Purpose Machinery (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>제조업 PMI 신규수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>업무용 기계 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiisbo</td>
+      <td>Japan: Producer's Shipments: Business Oriented Machinery (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>범용기계 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiisgm</td>
+      <td>Japan: Producer's Shipments: General-Purpose Machinery (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>국내 자본재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshd203</td>
+      <td>Japan: Domestic Shipments: Mining &amp; Mfg: Capital Goods (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>경기관찰자 현재 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vbit</td>
+      <td>Japan: Diffusion Index for Current Conditions (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>경기관찰자 미래 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vbet</td>
+      <td>Japan: Diffusion Index for Future Conditions (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>기계수주 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:omnn2</td>
+      <td>Japan: Machinery Orders Received: Total (SA, Mil.Yen)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>제조업 산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiipm</td>
+      <td>Japan: IP: Manufacturing (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>METI 산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiip</td>
+      <td>Japan: IP: Mining and Manufacturing (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>제조업 가동률</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiio</td>
+      <td>Japan: Operating Rate: Manufacturing (SA, 2020=100)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>제조업 PMI 생산</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>제조업 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsiism</td>
+      <td>Japan: Producer's Shipments: Manufacturing (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>OECD 산업신뢰</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>접근 가능한 카탈로그에서 정확한 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Capex</td>
+      <td>민간 핵심 기계수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:omnpeen2</td>
+      <td>Japan: Machinery Orders Received: Priv Demand ex Volatile Orders (SA, Mil.Yen)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>소비자신뢰 종합</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:ccia</td>
+      <td>Japan: Consumer Confidence Index: All Households (NSA, 50+=better)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>소비자신뢰 전반적 생활형편</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vcis</td>
+      <td>Japan: Consumer Conf: 2+ Person Households: Overall Livelihood (SA, 50+=better)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>경기관찰자 가계 현재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vbih</td>
+      <td>Japan: Diffusion Index for Current Conditions: Households (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>경기관찰자 가계 미래</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vbeh</td>
+      <td>Japan: Diffusion Index for Future Conditions: Households (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>경기관찰자 소매 현재</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vbir</td>
+      <td>Japan: Diffusion Index for Current Conditions: Retail Sales (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>경기관찰자 소매 미래</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>intsrvys:s158vber</td>
+      <td>Japan: Diffusion Index for Future Conditions: Retail Sales (SA, 50+=improving)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>명목 생활지출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpfanal2</td>
+      <td>Japan: Index of Living Expenditure: 2+ Person Household Incl Agri (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>실질 생활지출</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>japan:fiaalec</td>
+      <td>Japan: Avg Disb per HH, Real: 2+ Person HH Inc Agr: Living Exp (NSA, Y/Y%Chg)</td>
+      <td>growth_yoy</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 실질 생활지출 YoY 유지</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>OECD 소비자신뢰</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>OECD 변환계열 미확인; 국내 소비자신뢰와 동일시하지 않음</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>소매판매 지수</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsir2</td>
+      <td>Japan: Retail Sales Value: Total (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Consumer</td>
+      <td>도소매판매 지수</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>japan:wrs</td>
+      <td>Japan: Wholesale and Retail Sales: Total (Bil.Yen)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>전체 도소매 판매금액 대리변수</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>해외 자본재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshx203</td>
+      <td>Japan: Export Shipments: Mining &amp; Mfg: Capital Goods (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>해외 소비재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshx223</td>
+      <td>Japan: Export Shipments: Mining &amp; Mfg: Consumer Goods (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>해외 내구재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshx224</td>
+      <td>Japan: Export Shipments: Mining &amp; Mfg: Consumer Durables (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>해외 최종수요재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshx201</td>
+      <td>Japan: Export Shipments: Mining &amp; Mfg: Final Demand Goods (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>해외 투자재 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpshx202</td>
+      <td>Japan: Export Shipments: Mining &amp; Mfg: Investment Goods (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>상품수출 국제수지</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:bngx2</td>
+      <td>Japan: BOP: Current Account Balance: Exports of Goods (SA, 100 Mil.Yen)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>상품수출 통관</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:veattl</td>
+      <td>Japan: Exports of Goods: Value (NSA, Bil.Yen)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>PMI 수출수주</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>PMI 수출경기</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>JP</td>
+      <td>Export</td>
+      <td>실질 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>japan:jpsivx</td>
+      <td>Japan: Real Exports (SA, 2020=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>산업생산</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:s156d</td>
+      <td>Canada: Industrial Production: Manufacturing, Mining &amp; Utilities (SA, 2007=100)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-07-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>ISM Manufacturing Headline</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>ISM은 미국 지표. 원문 캐나다 Ivey 여부 불명확하므로 자동 대체하지 않음</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>제조업 신규수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:vm263939</td>
+      <td>Canada: New Orders: All Manufacturing Industries&nbsp;&nbsp;(SA, Mil.2017.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>제조업 출하</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:vm263908</td>
+      <td>Canada: Real Shipments: All Manufacturing Industries&nbsp;&nbsp;(SA, Mil.2017.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>제조업 미출하 수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:s156tu</td>
+      <td>Canada: Unfilled Orders: All Manufacturing Industries (EOP, SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Capex</td>
+      <td>제조업 도매거래</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>g10:s156tws</td>
+      <td>Canada: Wholesale Trade (SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>전체 도매거래; 제조업 한정 여부 원문 불명확</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Consumer</td>
+      <td>자동차 판매</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:h156cvr</td>
+      <td>Canada: New Motor Vehicle Sales (SA, Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Consumer</td>
+      <td>소매판매 명목</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:s156trs</td>
+      <td>Canada: Retail Sales Value(SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Consumer</td>
+      <td>소매판매 실질</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:v1q40181</td>
+      <td>Canada: Retail Sales in Chained 2017 Prices (SA, Mil.Chn.2017.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Export</td>
+      <td>에너지 수출</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>canada:v6912719</td>
+      <td>Canada: Exports of Energy Products (SA, Mil.Chn.2017.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>중단된 명목 BOP 계열 대신 현행 실질 에너지 수출</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Export</td>
+      <td>수출단가지수</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td>g10:s156pfxi</td>
+      <td>Canada: Export [Customs] Laspeyres Price Index: All Merchandise (SA, 2017=100)</td>
+      <td>auto</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>수출가격 지표: 물가 제외 원칙 유지</td>
+      <td>현행 Laspeyres 수출가격지수 확인. 물가 제외 원칙에 따라 참고표에만 보관</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Export</td>
+      <td>실질 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:v6912717</td>
+      <td>Canada: Exports(SA, Mil.Chn.2017.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Export</td>
+      <td>전체 상품수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:s156ix</td>
+      <td>Canada: Exports of Goods, BOP Basis (SA, Mil.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>주택착공</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:z156hs</td>
+      <td>Canada: Dwelling Starts: All Areas (SAAR, Thous.Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>도시 주택착공</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:gp00001</td>
+      <td>Canada: Dwelling Starts, Urban Centres 10,000+ (SAAR, Thous.Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>건축허가 주거용</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:vk119646</td>
+      <td>Canada: Permits: Residential (SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>건축허가 비주거용</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>canada:vk119649</td>
+      <td>Canada: Permits: Non-Residential (SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 기업 블록에 유지; 주택에 중복 편입하지 않음</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>건축허가 전체</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>g10:s156hp</td>
+      <td>Canada: Building Permits Authorized (SA, Thous Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Housing</td>
+      <td>전체 허가금액</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>canada:vk119645</td>
+      <td>Canada: Permits: Residential and Non-Residential (SA, Thous.C$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>민간 비주거용 건물 착공</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:aunhpiv</td>
+      <td>Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>착공 대신 기존 월별 민간 산업용 건축승인 대리계열; 원문 중복 1회 처리</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>민간 설비투자 제조업</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:ausvbce</td>
+      <td>Australia: NAB Business Survey: Capital Expenditure (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>분기 실제 설비투자 대신 월별 NAB 전체 설비투자 설문 1개로 대체; 제조업/광업별 실제 지출과 다름.</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>민간 설비투자 광업</td>
+      <td>중복 연결 · 1회 사용</td>
+      <td>proxy</td>
+      <td>anz:ausvbce</td>
+      <td>Australia: NAB Business Survey: Capital Expenditure (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>다른 참조 항목과 같은 원계열 · 한 번만 사용</td>
+      <td>분기 실제 설비투자 대신 월별 NAB 전체 설비투자 설문 1개로 대체; 제조업/광업별 실제 지출과 다름.</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>비주거용 건설금액 전체</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:aushpn</td>
+      <td>Australia: Bldg Approvals: Non-residential (SA, Mil.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>분기 건설실적 대신 기존 월별 비주거 승인금액</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>비주거용 건설금액 민간</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:aunhpiv</td>
+      <td>Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 민간 산업용 승인으로 대체; 범위 좁음</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>가동률</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbh</td>
+      <td>Australia: NAB Business Survey: Capacity Utilization (SA, %)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>제조업 PMI 신규수주</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>intsrvys:s193vpmm</td>
+      <td>Australia PMI: Manufacturing (SA, 50+=Expansion)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>구형 하위 PMI 중단. 현행 S&amp;P 제조업 PMI 종합 대리계열 1개로 대체; 신규수주/생산 세부지수와 다름.</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>제조업 PMI 생산</td>
+      <td>중복 연결 · 1회 사용</td>
+      <td>proxy</td>
+      <td>intsrvys:s193vpmm</td>
+      <td>Australia PMI: Manufacturing (SA, 50+=Expansion)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>다른 참조 항목과 같은 원계열 · 한 번만 사용</td>
+      <td>구형 하위 PMI 중단. 현행 S&amp;P 제조업 PMI 종합 대리계열 1개로 대체; 신규수주/생산 세부지수와 다름.</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>NAB 기업여건</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbc</td>
+      <td>Australia: NAB Business Survey: Business Conditions (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>NAB 선행수주</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbf</td>
+      <td>Australia: NAB Business Survey: Forward Orders (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Capex</td>
+      <td>NAB 거래여건</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbt</td>
+      <td>Australia: NAB Business Survey: Trading Conditions (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>백화점 지출</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td>anz:austrsd</td>
+      <td>Australia: Retail Turnover: Department Stores DISC (SA, Mil.A$)</td>
+      <td>auto</td>
+      <td>1</td>
+      <td>2025-06-30</td>
+      <td>중단된 계열 · 현행 월별 계열만 신규 편입</td>
+      <td>ABS 소매조사 중단 후 동일 범위 현행 월별 계열 미확인</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>가정용품 지출</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:ausbrsh</td>
+      <td>AU: Retail Turnover Using Bank Transactions: Household Goods (SA, Mil.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>은행거래 기반 월별 가정용품 판매; 기존 ABS 조사와 다름</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>OECD 소비자신뢰</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>OECD 변환계열 미확인; Westpac와 동일시하지 않음</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>소매판매</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>g10:s193trs</td>
+      <td>AU: Retail Turnover Using Bank Transactions (SA, Mil.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 은행거래 기반 소매판매 유지</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>Roy Morgan 소비심리</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:aunvrmc</td>
+      <td>Australia: Roy Morgan Monthly Consumer Confidence (NSA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>Westpac 소비자기대</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvcp</td>
+      <td>Australia: Westpac-Melbourne Inst Consumer Expectations Idx (SA, 100+=Favorable)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>Westpac 소비심리</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvcc</td>
+      <td>Australia: Westpac-Melbourne Inst Consumer Sentiment Index (SA, 100+=Favorable)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Consumer</td>
+      <td>Westpac 고액구매 판단</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvct</td>
+      <td>Australia: Time to Buy Major Household Items (SA, 100+=Favorable)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-10-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Export</td>
+      <td>BOP 상품수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausbmgc</td>
+      <td>Australia: BOP: Goods Exports (SA, Mil.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Export</td>
+      <td>제조업 PMI 수출판매</td>
+      <td>제외</td>
+      <td>proxy</td>
+      <td></td>
+      <td></td>
+      <td>auto</td>
+      <td>1</td>
+      <td></td>
+      <td>미확인: 조회 가능한 Haver 카탈로그에서 동일 월별 계열을 찾지 못함</td>
+      <td>세부 PMI 미확인</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Export</td>
+      <td>상품수출</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:ausbmgc</td>
+      <td>Australia: BOP: Goods Exports (SA, Mil.A$)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td>기존 BOP 상품수출로 포괄; 별도 통관계열 확인 전 중복 추가 안 함</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Export</td>
+      <td>NAB 수출기업 매출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbes</td>
+      <td>Australia: NAB Business Survey: Exporters' Sales (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Export</td>
+      <td>NAB 수출</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:ausvbe</td>
+      <td>Australia: NAB Business Survey: Exports (SA, %Bal)</td>
+      <td>rate</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Housing</td>
+      <td>주택 건축승인</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:aushah</td>
+      <td>Australia: Dwelling Units Approved (SA, Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>기존 편입 유지 · 한 번만 사용</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Housing</td>
+      <td>주택담보대출 신용</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:ausfchsy</td>
+      <td>Australia: Housing Credit including Securitizations (Y/Y % Chg)</td>
+      <td>growth_yoy</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>총 주택신용 YoY 월별계열</td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Housing</td>
+      <td>민간 건축승인</td>
+      <td>편입</td>
+      <td>concept</td>
+      <td>anz:aushahv</td>
+      <td>Australia: Dwelling Units Approved: Private Sector (SA, Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-08-31</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Housing</td>
+      <td>민간 신규주택 판매</td>
+      <td>편입</td>
+      <td>proxy</td>
+      <td>anz:aushnh</td>
+      <td>Australia: New Home Sales: Detached Houses (SA, Units)</td>
+      <td>level</td>
+      <td>1</td>
+      <td>2026-09-30</td>
+      <td>확인된 현행 월별 계열 편입</td>
+      <td>단독주택 판매; 전체 신규주택보다 좁은 범위</td>
+    </tr>
+  </tbody>
+</table></div>

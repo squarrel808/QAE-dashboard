@@ -1,0 +1,107 @@
+{
+  "stored_date_kst": "2026-10-29",
+  "source_commit": "bb4f6ac7a13d936f57fde068a6ab479d67a7ad57",
+  "type": "immutable_previous_published_release",
+  "method": "EWM Level half-life 24 months; time-varying loadings; II/III nonnegative constraints; I separate Momentum PCA with half-life 12 months",
+  "automatic_refresh": false,
+  "files": {
+    "i/data.json": {
+      "source_path": "macro_hub/public/data/pca.json",
+      "sha256_lf_normalized": "4ceccd3d48b257024692a435c3296887ac6f1e80f4f884489ccc78c1ed68568b"
+    },
+    "i/index.html": {
+      "source_path": "macro_hub/public/embeds/pca.html",
+      "sha256_lf_normalized": "7305eebe7ff32c6f0a307ac74981e4e501cde316e4dfd4c4ea73efa2fb10f590"
+    },
+    "ii/blackrock_coverage.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/blackrock_coverage.csv",
+      "sha256_lf_normalized": "a51681b4a764fa3ceca203af118c3ac96edf1953528a17da14f67007dfd36a5a"
+    },
+    "ii/blackrock_coverage.html": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/blackrock_coverage.html",
+      "sha256_lf_normalized": "ed20e10412ee5152508de5a02c52c539df6cedc9eb03dcff3b5331fdab1c9fe9"
+    },
+    "ii/classification_signs.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/classification_signs.csv",
+      "sha256_lf_normalized": "0377a1849a6cb52ba540ce099a9a13fe78bab043c51eb359c08dec35f91cd467"
+    },
+    "ii/classification_signs.html": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/classification_signs.html",
+      "sha256_lf_normalized": "f091f40f3c812fdddc797f05e6a7926a205fb278e796777edc7d94da34dd267c"
+    },
+    "ii/component_signs.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/component_signs.csv",
+      "sha256_lf_normalized": "44c4c25715ebbe4f27b463b430c261b9cae5334543e2ad42c024b519a4d1e194"
+    },
+    "ii/index.html": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/index.html",
+      "sha256_lf_normalized": "42e58fc6b15ab874c84d29e809b836aa395c544dc4966e8a7e9b97b999a91a2a"
+    },
+    "ii/indices.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/indices.csv",
+      "sha256_lf_normalized": "0e2f10b367cfc062342f047543d8ecbfbedd7f733c48d4149c8370aa5977755a"
+    },
+    "ii/inputs.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/inputs.csv",
+      "sha256_lf_normalized": "0377a1849a6cb52ba540ce099a9a13fe78bab043c51eb359c08dec35f91cd467"
+    },
+    "ii/selection_audit.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/selection_audit.csv",
+      "sha256_lf_normalized": "16559087b8d60471975dad16a7e439cb9052eae683a20bd8722205265059797e"
+    },
+    "ii/weights.csv": {
+      "source_path": "macro_hub/public/embeds/gdp-weighted/weights.csv",
+      "sha256_lf_normalized": "cc247019dd69b2178110734b2cc09d01a598d41e2ff639019f1e80defa2f00f2"
+    },
+    "iii/blackrock_coverage.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/blackrock_coverage.csv",
+      "sha256_lf_normalized": "a51681b4a764fa3ceca203af118c3ac96edf1953528a17da14f67007dfd36a5a"
+    },
+    "iii/blackrock_coverage.html": {
+      "source_path": "macro_hub/public/embeds/pca-iii/blackrock_coverage.html",
+      "sha256_lf_normalized": "7ddb06f38397aeb8d9222f2176c25703e035dd6a4d30e2ca401a8bb52ca6fd1e"
+    },
+    "iii/classification_signs.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/classification_signs.csv",
+      "sha256_lf_normalized": "4f31a587649b7c79f471170109266311255f4ecd9790165d0484d5fd8eb045ae"
+    },
+    "iii/classification_signs.html": {
+      "source_path": "macro_hub/public/embeds/pca-iii/classification_signs.html",
+      "sha256_lf_normalized": "ec448b0d852a3b1cd529ba8a50bba7df9efcbd3017a09116dd65f5232c5074dc"
+    },
+    "iii/component_signs.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/component_signs.csv",
+      "sha256_lf_normalized": "7eda2afbe44b961bd3dd72a9afd5cd59ffa8e9876edd3aab86154281d56bf81e"
+    },
+    "iii/index.html": {
+      "source_path": "macro_hub/public/embeds/pca-iii/index.html",
+      "sha256_lf_normalized": "ad31b4cbabfd11d430a90f8c645562160e912480456ade64fce9d96c9b4ec447"
+    },
+    "iii/indices.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/indices.csv",
+      "sha256_lf_normalized": "1963d168b3eb3eb838bac5b15e7616e5f3de38147efd59485e14d68f9e36cd59"
+    },
+    "iii/inputs.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/inputs.csv",
+      "sha256_lf_normalized": "4f31a587649b7c79f471170109266311255f4ecd9790165d0484d5fd8eb045ae"
+    },
+    "iii/selection_audit.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/selection_audit.csv",
+      "sha256_lf_normalized": "7d230f25f7868b628e68dca9abd88874b1a5a3910411e4e4f5587359dac6ce46"
+    },
+    "iii/weights.csv": {
+      "source_path": "macro_hub/public/embeds/pca-iii/weights.csv",
+      "sha256_lf_normalized": "c1854a545fcd6ece26dce4b6a1287a734b94c7c38c2486433813179c0bed8542"
+    }
+  },
+  "local_bundle": "PCA_Archives\\2026-10-29_pre_cfna\\source_data_and_results.zip",
+  "bundle_sha256": "be368e96851904d152e0525c3c183142fffa7c086c0bec2d67fd7c82a4d4b49e",
+  "bundle_entries": 109,
+  "raw_hashes": {
+    "haver/haver-api_PCA/Meta data_Raw data.xlsx": "71043a9320edad756bcf98953b530c532918209cf00f8ba65bb408fb8a71ad9b",
+    "PCA_Four_Axis/source/raw_haver.csv": "851f624c4402a3847dc22172c423288bc05bd4f950f00ba8fadf80d09f604283",
+    "PCA_Four_Axis/values.csv": "1a7454bc084727e6e6d65cc12f6ca0d2f6f7b2373dd21644467d329de84a688a",
+    "PCA_Four_Axis/blackrock_source/values.csv": "5d100b6e7e8ec0dffe967266fb437288d8aada598342f7a910a1e480b24f2a6c"
+  },
+  "integrity": "verified"
+}
