@@ -292,4 +292,9 @@ def main():
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    result = main()
+    if result == 0:
+        import subprocess
+        import sys
+        subprocess.run([sys.executable, str(BASE.parents[1] / 'macro_hub' / 'scripts' / 'build_cpi_analysis.py'), '--fetch'], check=True)
+    raise SystemExit(result)

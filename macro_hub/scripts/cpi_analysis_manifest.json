@@ -1,0 +1,536 @@
+{
+  "US": {
+    "database": "USECON",
+    "groups": [
+      {
+        "name": "Food & Beverages",
+        "weight": "iufbm@USECON",
+        "index": "icufbn@USECON",
+        "descriptor": "CPI-U: Food and Beverages (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Food & Beverages (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Housing",
+        "weight": "iuhm@USECON",
+        "index": "icuhn@USECON",
+        "descriptor": "CPI-U: Housing (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Housing (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Apparel",
+        "weight": "iuapm@USECON",
+        "index": "icuan@USECON",
+        "descriptor": "CPI-U: Apparel (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Apparel (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Transportation",
+        "weight": "iutrm@USECON",
+        "index": "icutn@USECON",
+        "descriptor": "CPI-U: Transportation (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Transportation (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Medical Care",
+        "weight": "iumm@USECON",
+        "index": "icumn@USECON",
+        "descriptor": "CPI-U: Medical Care (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Medical Care (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Recreation",
+        "weight": "iuem@USECON",
+        "index": "icuen@USECON",
+        "descriptor": "CPI-U: Recreation (NSA, Dec-97=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Recreation (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Education and Communication",
+        "weight": "iudcm@USECON",
+        "index": "icuoecn@USECON",
+        "descriptor": "CPI-U: Education & Communication (NSA, Dec-97=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Education and Communication (Parts per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Other Goods & Services",
+        "weight": "iuom@USECON",
+        "index": "icuon@USECON",
+        "descriptor": "CPI-U: Other Goods and Services (NSA, 1982-84=100)",
+        "weight_descriptor": "CPI-U: Relative Importance: Other Goods & Services (Parts per 100)",
+        "divisor": 100
+      }
+    ]
+  },
+  "Japan": {
+    "database": "JAPAN",
+    "groups": [
+      {
+        "name": "Food and Beverages",
+        "weight": "jpcwf@JAPAN",
+        "index": "jpcijf@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Food and Beverages (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Food and Beverages (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Housing",
+        "weight": "jpcwh@JAPAN",
+        "index": "jpcijh@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Housing (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Housing (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Fuel, Light And Water Charges",
+        "weight": "jpcwfl@JAPAN",
+        "index": "jpcijfl@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Fuel, Light and Water Charges (NSA, 2020=100)",
+        "weight_descriptor": "Japan: CPI Weights: Fuel, Light And Water Charges (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Furniture & Household Utensils",
+        "weight": "jpcwfh@JAPAN",
+        "index": "jpcijfh@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Furniture & Household Utensils (NSA, 2020=100)",
+        "weight_descriptor": "Japan: CPI Weights: Furniture & Household Utensils (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Clothes And Footwear",
+        "weight": "jpcwcl@JAPAN",
+        "index": "jpcijcl@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Clothes and Footwear (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Clothes And Footwear (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Medical Care",
+        "weight": "jpcwmc@JAPAN",
+        "index": "jpcijmc@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Medical Care (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Medical Care (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Transportation & Communication",
+        "weight": "jpcwtr@JAPAN",
+        "index": "jpcijtr@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Transportation & Communication (NSA,2020=100)",
+        "weight_descriptor": "Japan: CPI Weights: Transportation & Communication (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Education",
+        "weight": "jpcwed@JAPAN",
+        "index": "jpcijed@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Education (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Education (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Culture & Recreation",
+        "weight": "jpcwre@JAPAN",
+        "index": "jpcijre@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Culture & Recreation (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Culture & Recreation (Parts per 10000)",
+        "divisor": 10000
+      },
+      {
+        "name": "Miscellaneous",
+        "weight": "jpcwmi@JAPAN",
+        "index": "jpcijmi@JAPAN",
+        "descriptor": "Japan: Consumer Price Index: Miscellaneous (NSA, 2020=100)",
+        "weight_descriptor": "Japan: Consumer Price Index Weights: Miscellaneous (Parts per 10000)",
+        "divisor": 10000
+      }
+    ]
+  },
+  "UK": {
+    "database": "UK",
+    "groups": [
+      {
+        "name": "Food & Non-Alcoholic Beverages",
+        "weight": "chzr@UK",
+        "index": "d7bu@UK",
+        "descriptor": "UK: Consumer Price Index: Food & Non-Alcoholic Beverages (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Food & Non-Alcoholic Beverages (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Alcoholic Beverages, Tobacco & Narcotics",
+        "weight": "chzs@UK",
+        "index": "d7bv@UK",
+        "descriptor": "UK: CPI: Alcoholic Beverages, Tobacco & Narcotics (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Alcoholic Beverages, Tobacco & Narcotics (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Clothing & Footwear",
+        "weight": "chzt@UK",
+        "index": "d7bw@UK",
+        "descriptor": "UK: Consumer Price Index: Clothing & Footwear (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Clothing & Footwear (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Housing, Water, Electricity, Gas & Other Fuels",
+        "weight": "chzu@UK",
+        "index": "d7bx@UK",
+        "descriptor": "UK: CPI: Housing, Water, Electricity, Gas & Other Fuels (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Housing, Water, Electricity, Gas & Other Fuels (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Furniture/Household Equip/Routine Maintenance",
+        "weight": "chzv@UK",
+        "index": "d7by@UK",
+        "descriptor": "UK: CPI: Furniture, Household Equipment & Routine Maintenance (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Furniture/Household Equip/Routine Maintenance (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Health",
+        "weight": "chzw@UK",
+        "index": "d7bz@UK",
+        "descriptor": "UK: Consumer Price Index: Health (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Health (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Transport",
+        "weight": "chzx@UK",
+        "index": "d7c2@UK",
+        "descriptor": "UK: Consumer Price Index: Transport (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Transport (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Communication",
+        "weight": "chzy@UK",
+        "index": "d7c3@UK",
+        "descriptor": "UK: Consumer Price Index: Communication (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Communication (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Recreation & Culture",
+        "weight": "chzz@UK",
+        "index": "d7c4@UK",
+        "descriptor": "UK: Consumer Price Index: Recreation & Culture (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Recreation & Culture (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Education",
+        "weight": "cjuu@UK",
+        "index": "d7c5@UK",
+        "descriptor": "UK: Consumer Price Index: Education (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Education (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Hotels, Cafes & Restaurants",
+        "weight": "cjuv@UK",
+        "index": "d7c6@UK",
+        "descriptor": "UK: Consumer Price Index: Hotels, Cafes & Restaurants (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Hotels, Cafes & Restaurants (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Miscellaneous Goods & Services",
+        "weight": "cjuw@UK",
+        "index": "d7c7@UK",
+        "descriptor": "UK: Consumer Price Index: Miscellaneous Goods & Services (NSA, 2015=100)",
+        "weight_descriptor": "UK: CPI Weight: Miscellaneous Goods & Services (Parts per 1000)",
+        "divisor": 1000
+      }
+    ]
+  },
+  "Germany": {
+    "database": "GERMANY",
+    "groups": [
+      {
+        "name": "Food and Nonalcoholic Drinks",
+        "weight": "denpw001@GERMANY",
+        "index": "denpc001@GERMANY",
+        "descriptor": "Germany: CPI: Food and Nonalcoholic Drinks (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Food and Nonalcoholic Drinks (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Alcoholic Beverages and Tobacco",
+        "weight": "denpw015@GERMANY",
+        "index": "denpc015@GERMANY",
+        "descriptor": "Germany: CPI: Alcoholic Beverages and Tobacco (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Alcoholic Beverages and Tobacco (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Clothing and Footwear",
+        "weight": "denpw021@GERMANY",
+        "index": "denpc021@GERMANY",
+        "descriptor": "Germany: CPI: Clothing and Footwear (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Clothing and Footwear (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Housing/Water/Electricity, Gas & Oth Fuels",
+        "weight": "denpw030@GERMANY",
+        "index": "denpc030@GERMANY",
+        "descriptor": "Germany: CPI: Housing, Water, Electricity, Gas and Other Fuels (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Housing/Water/Electricity, Gas & Oth Fuels (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Furniture, Lighting Equip, Appliances Etc.",
+        "weight": "denpw047@GERMANY",
+        "index": "denpc047@GERMANY",
+        "descriptor": "Germany: CPI: Furniture, Lighting Equipment, Appliances Etc. (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Furniture, Lighting Equip, Appliances Etc. (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Health",
+        "weight": "denpw064@GERMANY",
+        "index": "denpc064@GERMANY",
+        "descriptor": "Germany: CPI: Health (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Health (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Transport",
+        "weight": "denpw074@GERMANY",
+        "index": "denpc074@GERMANY",
+        "descriptor": "Germany: CPI: Transport (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Transport (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Communication",
+        "weight": "denpw091@GERMANY",
+        "index": "denpc091@GERMANY",
+        "descriptor": "Germany: CPI: Communication (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Communication (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Recreation, Entertainment and Culture",
+        "weight": "denpw096@GERMANY",
+        "index": "denpc096@GERMANY",
+        "descriptor": "Germany: CPI: Recreation, Entertainment and Culture (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Recreation, Entertainment and Culture (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Education",
+        "weight": "denpw122@GERMANY",
+        "index": "denpc122@GERMANY",
+        "descriptor": "Germany: CPI: Education (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Education (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Restaurant and Hotels",
+        "weight": "denpw126@GERMANY",
+        "index": "denpc126@GERMANY",
+        "descriptor": "Germany: CPI: Restaurant and Hotels (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Restaurant and Hotels (Parts per 1000)",
+        "divisor": 1000
+      },
+      {
+        "name": "Miscellaneous Goods and Services",
+        "weight": "denpw131@GERMANY",
+        "index": "denpc131@GERMANY",
+        "descriptor": "Germany: CPI: Miscellaneous Goods and Services (NSA, 2020=100)",
+        "weight_descriptor": "Germany: CPI Weight: Miscellaneous Goods and Services (Parts per 1000)",
+        "divisor": 1000
+      }
+    ]
+  },
+  "Australia": {
+    "database": "ANZ",
+    "groups": [
+      {
+        "name": "Food & Nonalcoholic Beverages",
+        "weight": "aunmwff@ANZ",
+        "index": "aumpcf@ANZ",
+        "descriptor": "AU: Consumer Price Index: Food and Nonalcoholic Beverages (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Food & Nonalcoholic Beverages (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Alcohol & Tobacco",
+        "weight": "aunmwb@ANZ",
+        "index": "aumpcb@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Alcohol and Tobacco (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Alcohol & Tobacco (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Clothing & Footwear",
+        "weight": "aunmwa@ANZ",
+        "index": "aumpca@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Clothing and Footwear (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Clothing & Footwear (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Housing",
+        "weight": "aunmww@ANZ",
+        "index": "aumpch@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Housing (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Housing (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Furnishings, HH Equipment & Services",
+        "weight": "aunmwg@ANZ",
+        "index": "aumpco@ANZ",
+        "descriptor": "AU: CPI: Furnishings, Household Equipment and Services (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Wgts: Furnishings, HH Equipment & Services(Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Health",
+        "weight": "aunmwm@ANZ",
+        "index": "aumpcph@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Health (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Health (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Transport",
+        "weight": "aunmwtc@ANZ",
+        "index": "aumpct@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Transport (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Transport (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Communication",
+        "weight": "aunmwc@ANZ",
+        "index": "aumpcc@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Communication (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Communication (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Recreation & Culture",
+        "weight": "aunmwr@ANZ",
+        "index": "aumpcr@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Recreation and Culture (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Recreation & Culture (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Education",
+        "weight": "aunmwe@ANZ",
+        "index": "aumpcd@ANZ",
+        "descriptor": "Australia: Consumer Price Index: Education (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Education (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Insurance & Financial Services",
+        "weight": "aunmwfs@ANZ",
+        "index": "aumpcif@ANZ",
+        "descriptor": "AU: Consumer Price Index: Insurance and Financial Services (NSA, Sep-25=100)",
+        "weight_descriptor": "AU: 8 Cap Cities: CPI Weights: Insurance & Financial Services (Parts Per 100)",
+        "divisor": 100
+      }
+    ]
+  },
+  "Canada": {
+    "database": "CANADA",
+    "groups": [
+      {
+        "name": "Food",
+        "weight": "cwf@CANADA",
+        "index": "v4c90974@CANADA",
+        "descriptor": "Canada: CPI: Food (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Food (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Shelter",
+        "weight": "cww@CANADA",
+        "index": "v4c91050@CANADA",
+        "descriptor": "Canada: CPI: Shelter (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Shelter (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Household Operations/Furnishings/Equipment",
+        "weight": "cwg@CANADA",
+        "index": "v4c91067@CANADA",
+        "descriptor": "Canada: CPI: Household Operations, Furnishings & Equipment (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Household Operations/Furnishings/Equipment (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Clothing and Footwear",
+        "weight": "cwa@CANADA",
+        "index": "v4c91108@CANADA",
+        "descriptor": "Canada: CPI: Clothing and Footwear (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Clothing and Footwear (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Transportation",
+        "weight": "cwt@CANADA",
+        "index": "v4c91128@CANADA",
+        "descriptor": "Canada: CPI: Transportation (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Transportation (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Health and Personal Care",
+        "weight": "cwhp@CANADA",
+        "index": "v4c91153@CANADA",
+        "descriptor": "Canada: CPI: Health and Personal Care (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Health and Personal Care (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Recreation, Education and Reading",
+        "weight": "cwrer@CANADA",
+        "index": "v4c91170@CANADA",
+        "descriptor": "Canada: CPI: Recreation, Education and Reading (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Recreation, Education and Reading (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Alcoholic Beverages",
+        "weight": "cwba@CANADA",
+        "index": "v4c91207@CANADA",
+        "descriptor": "Canada: CPI: Alcoholic Beverages (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Alcoholic Beverages (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Tobacco Products and Smokers' Supplies",
+        "weight": "cwtb@CANADA",
+        "index": "v4c91216@CANADA",
+        "descriptor": "Canada: CPI: Tobacco Products & Smokers' Supplies (NSA, 2002=100)",
+        "weight_descriptor": "Canada: CPI Weights: Tobacco Products and Smokers' Supplies (Parts Per 100)",
+        "divisor": 100
+      },
+      {
+        "name": "Recreational Cannabis",
+        "weight": "cwcb@CANADA",
+        "index": "v1p24072@CANADA",
+        "descriptor": "Canada: CPI: Recreational Cannabis (NSA, Dec-18=100)",
+        "weight_descriptor": "Canada: CPI Weights: Recreational Cannabis (Parts per 100)",
+        "divisor": 100
+      }
+    ]
+  }
+}
