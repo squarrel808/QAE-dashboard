@@ -58,7 +58,12 @@ def build_real():
     for out_name, path, modname in targets:
         if not os.path.exists(path):
             print("[skip] 원본 없음:", path); continue
+        if '--growth-file' in sys.argv and out_name != 'consensus_gdp.json':
+            continue
         mod = load_module(path, modname)
+        if '--growth-file' in sys.argv:
+            source = os.path.abspath(sys.argv[sys.argv.index('--growth-file') + 1])
+            mod.EXCEL_FILES = mod.sheet_file_map(source)
         cache = {}
         for fp in set(mod.EXCEL_FILES.values()):
             if os.path.exists(fp):

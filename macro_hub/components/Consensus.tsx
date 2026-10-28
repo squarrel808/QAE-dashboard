@@ -50,7 +50,11 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
       const m = host.querySelector<HTMLCanvasElement>(`canvas[data-ci="${i}"][data-k="m"]`)
       if (a && st2) drawRidge(a, st2, 185, sharedMaxY)
       if (b && st6) drawRidge(b, st6, 185, sharedMaxY)
-      if (m) drawMedian(m, sliceMl(d.ml || [], mlMonths))
+      const comparisonDates = Object.values(yearData).flatMap(values => (values[c]?.ml || []).map(p=>p.d)).sort()
+      const end = comparisonDates.at(-1)
+      let start = comparisonDates[0]
+      if(end && mlMonths<999){const cut=new Date(end+'T00:00:00Z');cut.setUTCMonth(cut.getUTCMonth()-mlMonths);start=cut.toISOString().slice(0,10)}
+      if (m) drawMedian(m, (d.ml||[]).filter(p=>!start || p.d>=start), start && end ? [start,end] : undefined)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ds, country, bundle, mlMonths, resolvedYear, overview])
@@ -117,19 +121,31 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
       </div>
 
       {overview ? <div className="space-y-4">
-        <div className="flex justify-between items-center flex-wrap gap-2"><p className="text-xs text-[var(--muted)]">Consensus median (%) · blue = lower / red = higher within each panel · — = no data</p><MlToggle /></div>
+        <div className="flex justify-between items-center flex-wrap gap-2"><p className="text-xs text-[var(--muted)]">월별 마지막 관측일의 Consensus median (%) · 2026/2027 동일 기간축 · 빈칸은 관측값 없음</p><MlToggle /></div>
         {(['2026', '2027']).flatMap(y => (['cpi', 'gdp'] as const).map(metric => {
           const source = metric === 'cpi' ? cpi : gdp
           const entries = source.years?.[y] || (source.defaultYear === y ? source.data : {})
           const countryKeys = Object.keys(entries)
-          const sliced = countryKeys.map(id => ({ id, points: sliceMl(entries[id].ml || [], mlMonths) || [] }))
-          const dates = Array.from(new Set(sliced.flatMap(r => r.points.map(p => p.d)))).sort()
+          // One last available observation per calendar month, without carry-forward.
+          const monthly = (points: ConsensusCountry['ml']) => {
+            const grouped = new Map<string, NonNullable<ConsensusCountry['ml']>[number]>()
+            for (const p of [...(points || [])].sort((a,b)=>a.d.localeCompare(b.d))) grouped.set(p.d.slice(0,7), p)
+            return Array.from(grouped, ([month,p]) => ({...p, d:month, observed:p.d}))
+          }
+          const allYears = Object.values(source.years || {[source.defaultYear || '2026']:source.data})
+          const fullDates = Array.from(new Set(allYears.flatMap(values=>Object.values(values).flatMap(c=>(c.ml||[]).map(p=>p.d.slice(0,7)))))).sort()
+          const endMonth = fullDates.at(-1)
+          const cut = endMonth ? new Date(endMonth+'-01T00:00:00Z') : null
+          if(cut && mlMonths<999) cut.setUTCMonth(cut.getUTCMonth()-mlMonths+1)
+          const cutoff = cut?.toISOString().slice(0,7)
+          const dates = fullDates.filter(d=>mlMonths>=999 || !cutoff || d>=cutoff)
+          const sliced = countryKeys.map(id => ({ id, points: monthly(entries[id].ml || []).filter(p=>dates.includes(p.d)) }))
           const values = sliced.flatMap(r => r.points.map(p => p.med)).filter(Number.isFinite)
           const lo = values.length ? Math.min(...values) : 0
           const hi = values.length ? Math.max(...values) : 0
           return <div key={`${y}-${metric}`} className="rounded-xl border border-[var(--line)] bg-white p-4">
             <h3 className="serif text-base mb-3">{y} {metric.toUpperCase()} consensus · Median (%)</h3>
-            {!dates.length ? <p className="text-xs text-[var(--muted)]">No data</p> : <div className="overflow-x-auto"><table style={{ borderCollapse: 'separate', borderSpacing: 2, fontSize: 11, width: '100%' }}>
+            {!dates.length ? <p className="text-xs text-[var(--muted)]">No data</p> : <div className="overflow-x-auto"><table style={{ borderCollapse: 'separate', borderSpacing: 2, fontSize: 16, width: '100%' }}>
               <thead><tr><th className="sticky left-0 bg-white">Country</th>{dates.map(d => <th key={d} className="whitespace-nowrap font-normal px-1">{d.slice(2)}</th>)}</tr></thead>
               <tbody>{sliced.map(row => { const lookup = new Map(row.points.map(p => [p.d, p.med])); return <tr key={row.id}><th scope="row" className="sticky left-0 bg-white whitespace-nowrap text-left pr-3">{source.names?.[row.id] || row.id}</th>{dates.map(d => {
                 const v = lookup.get(d)
@@ -137,7 +153,7 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
                 const t = valid && hi > lo ? (v - lo) / (hi - lo) : 0.5
                 const hue = t < 0.5 ? 215 : 5
                 const light = 96 - Math.abs(t - 0.5) * 68
-                return <td key={d} title={`${source.names?.[row.id] || row.id} · ${d}: ${valid ? v.toFixed(2) + '%' : 'No data'}`} style={{ background: valid ? `hsl(${hue} 60% ${light}%)` : '#f4f3f1', color: valid && light < 55 ? '#fff' : '#222', minWidth: 46, padding: '7px 4px', textAlign: 'center', borderRadius: 3 }}>{valid ? v.toFixed(2) : '—'}</td>
+                return <td key={d} title={`${source.names?.[row.id] || row.id} · ${d}: ${valid ? v.toFixed(2) + '%' : 'No data'}`} style={{ background: valid ? `hsl(${hue} 60% ${light}%)` : '#f4f3f1', color: valid && light < 55 ? '#fff' : '#222', minWidth: 84, padding: '12px 8px', textAlign: 'center', borderRadius: 3 }}>{valid ? v.toFixed(2) : '—'}</td>
               })}</tr> })}</tbody>
             </table></div>}
           </div>

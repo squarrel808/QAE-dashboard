@@ -120,7 +120,7 @@ export function drawRidge(cv: HTMLCanvasElement, state: any, lp: number, sharedM
   }
 }
 
-export function drawMedian(cv: HTMLCanvasElement, ml: MedianPoint[]) {
+export function drawMedian(cv: HTMLCanvasElement, ml: MedianPoint[], range?: [string, string]) {
   if (!ml || !ml.length) return
   const dpr = window.devicePixelRatio || 1
   const W = 640, H = 300
@@ -132,7 +132,9 @@ export function drawMedian(cv: HTMLCanvasElement, ml: MedianPoint[]) {
   const allQ1 = ml.map((d) => d.q1), allQ3 = ml.map((d) => d.q3)
   const yMin = Math.min(...allQ1) - 0.1, yMax = Math.max(...allQ3) + 0.1
   const N = ml.length
-  const xP = (i: number) => lP + (N === 1 ? 0 : (i / (N - 1)) * pW)
+  const startTime = Date.parse((range?.[0] || ml[0].d)+'T00:00:00Z')
+  const endTime = Date.parse((range?.[1] || ml[N-1].d)+'T00:00:00Z')
+  const xP = (i: number) => lP + (Date.parse(ml[i].d+'T00:00:00Z')-startTime)/(endTime-startTime || 1)*pW
   const yP = (v: number) => tP + pH_ - (v - yMin) / (yMax - yMin || 1) * pH_
   x.strokeStyle = 'rgba(0,0,0,.07)'; x.lineWidth = 0.5; x.setLineDash([2, 4])
   const st = (yMax - yMin) > 1 ? 0.5 : 0.2

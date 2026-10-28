@@ -30,9 +30,10 @@ function heatColor(v: number | null | undefined, maxAbs: number) {
 
 export default function CaiMap({ data }: { data: CaiMapData }) {
   const [view, setView] = useState<'cai' | 'map'>('cai')
-  const [months, setMonths] = useState(60)
+  const [months, setMonths] = useState(12)
+  const [overviewMode,setOverviewMode] = useState<'line'|'heat'>('line')
   const [overview, setOverview] = useState(true)
-  const dm = [['EAagg','유로존'],['DE','독일'],['FR','프랑스'],['IT','이탈리아'],['ES','스페인'],['NL','네덜란드'],['BE','벨기에'],['AT','오스트리아'],['FI','핀란드'],['IE','아일랜드'],['PT','포르투갈'],['GR','그리스'],['US','미국'],['GB','영국'],['CA','캐나다'],['AU','호주'],['JP','일본']]
+  const dm = [['US','미국'],['EAagg','유로존'],['DE','독일'],['FR','프랑스'],['IT','이탈리아'],['ES','스페인'],['AU','호주'],['CA','캐나다']]
   const overviewHeat = useMemo(() => {
     const dates = Array.from(new Set(dm.flatMap(([id]) => data.cai[id]?.dates || []))).sort()
     const selected = dates.slice(months >= 9999 ? 0 : -months)
@@ -40,10 +41,18 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
       const series = data.cai[id]
       const lookup = new Map(series?.dates.map((d, i) => [d, series.headline[i]]) || [])
       return { id, label, values: selected.map(d => lookup.get(d) ?? null) }
-    })
+    }).filter(row => row.values.some(value => value != null && Number.isFinite(value)))
     const maxAbs = Math.max(1, ...matrix.flatMap(r => r.values.map(v => Math.abs(v ?? 0))))
     return { dates: selected, matrix, maxAbs }
   }, [data, months])
+  const summaryCards = dm.flatMap(([id,label],index)=>{
+    const series=data.cai[id];if(!series)return []
+    const dates=overviewHeat.dates
+    const points=dates.map(date=>{const i=series.dates.indexOf(date);return {date,value:i<0?null:series.headline[i],completion:i<0?null:series.completion?.[i]??null}})
+    const valid=points.filter(p=>p.value!=null),last=valid.at(-1),previous=valid.at(-2)
+    const values=valid.map(p=>p.value as number),lo=Math.min(0,...values),hi=Math.max(0,...values),pad=Math.max(.2,(hi-lo)*.1)
+    return [{id,label,points,last,previous,domain:[lo-pad,hi+pad],color:['#2d6bb0','#9169b1','#bb851c','#c3474b','#279486','#576985'][index%6]}]
+  })
   const pool = view === 'cai' ? data.cai : data.map
   const available = data.countries.filter((c) => pool[c.id])
   const [country, setCountry] = useState('US')
@@ -127,7 +136,8 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
         </div>
       </div>
 
-      {view === 'cai' && overview ? <div className="rounded-xl border border-[var(--line)] bg-white p-3.5">
+      {view === 'cai' && overview && <div className="flex gap-2 mb-4"><Btn on={overviewMode==='line'} onClick={()=>setOverviewMode('line')}>전체 선그래프</Btn><Btn on={overviewMode==='heat'} onClick={()=>setOverviewMode('heat')}>전체 히트맵</Btn></div>}
+      {view === 'cai' && overview && overviewMode==='line' ? <div><p className="text-sm text-[var(--muted)] mb-4">CAI 성장 모멘텀 · 0 기준선 · 국가별 자동 Y축 · 발표율 100% 미만 관측은 빈 점과 점선으로 표시합니다.</p><div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">{summaryCards.map(c=><article key={c.id} className="rounded-xl border border-[var(--line)] bg-white p-4" data-testid="cai-summary-card"><h3 className="text-lg font-semibold mb-2">{c.label}</h3><div className="text-base mb-1">{[c.previous,c.last].filter(Boolean).map((p,i)=><span key={p!.date}>{i?' / ':''}{p!.date.slice(0,7)} <b>{p!.value!.toFixed(2)}</b></span>)}</div><p className="text-sm text-[var(--muted)] mb-2">구성지표 발표율 {[c.previous,c.last].filter(Boolean).map(p=>p!.completion==null?'미제공':p!.completion.toFixed(0)+'%').join(' / ')}</p><div className="h-[240px]"><ResponsiveContainer width="100%" height="100%"><LineChart data={c.points.map((p,i,arr)=>({...p,complete:p.completion!=null&&p.completion<100?null:p.value,partial:p.completion!=null&&p.completion<100||arr[i+1]?.completion!=null&&(arr[i+1].completion as number)<100?p.value:null}))} margin={{top:8,right:15,bottom:5,left:0}}><CartesianGrid vertical={false} stroke="#edf0ee"/><XAxis dataKey="date" tickFormatter={v=>String(v).slice(2,7)} tick={{fontSize:12}} minTickGap={25}/><YAxis domain={c.domain} tick={{fontSize:12}} width={40}/><ReferenceLine y={0} stroke="#80958d" strokeWidth={1.5}/><Tooltip formatter={v=>typeof v==='number'?v.toFixed(2):'—'}/><Line name="CAI" dataKey="complete" type="linear" stroke={c.color} strokeWidth={2.4} dot={{r:2.5}} connectNulls={false} isAnimationActive={false}/><Line name="CAI · 발표 진행 중" dataKey="partial" type="linear" stroke={c.color} strokeWidth={2} strokeDasharray="5 4" dot={{r:3.5,fill:'#fff',strokeWidth:1.5}} connectNulls={false} isAnimationActive={false}/></LineChart></ResponsiveContainer></div></article>)}</div></div> : view === 'cai' && overview ? <div className="rounded-xl border border-[var(--line)] bg-white p-3.5">
         <h3 className="serif text-[15px] mb-2">주요 DM · CAI 헤드라인</h3>
         <p className="text-xs text-[var(--muted)] mb-3">초록 = 양수 · 빨강 = 음수 · 진하기 = 표시 기간 내 상대 크기 · — = 데이터 없음</p>
         <div className="overflow-x-auto"><table style={{ borderSpacing: 2, borderCollapse: 'separate', fontSize: 11, width: '100%' }}>
