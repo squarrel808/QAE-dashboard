@@ -1,9 +1,23 @@
 // Country overview, paired-date cycle plots, dual heatmaps and input drilldown.
-const regionColors={US:'#378ADD',UK:'#BA7517',FR:'#D4537E',DE:'#7E6BC9',CA:'#1D9E75',JP:'#c65f51',AU:'#46b0c9'};
+const regionColors={US:'#378ADD',UK:'#BA7517',FR:'#D4537E',DE:'#7E6BC9',CA:'#1D9E75',JP:'#c65f51',AU:'#46b0c9',DM:'#172e43'};
+const dmMembers=['US','UK','FR','DE','CA','JP','AU'];
+const cycleNames={...D.names,DM:'주요DM'},hiddenCycleSeries=new Set(),dmSeriesCache=new Map();
 let drillObserver=null;
 const selectedCountries=()=>cc==='ALL'?Object.keys(D.countries):[cc];
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 function seriesFor(c,version,measure='headline'){
+  if(c==='DM'){
+    const key=version+'|'+measure;
+    if(!dmSeriesCache.has(key)){
+      const dates=seriesFor('US',version,measure).dates;
+      const values=dates.map(month=>{
+        const members=dmMembers.map(member=>atMonth(member,version,month,measure));
+        return members.every(finite)?members.reduce((a,b)=>a+b,0)/dmMembers.length:null;
+      });
+      dmSeriesCache.set(key,{dates,values,latest:dates[values.findLastIndex(finite)]||''});
+    }
+    return dmSeriesCache.get(key);
+  }
   const v=D.countries[c].versions[version];return {dates:v.dates,values:measure==='headline'?v.headline:v.blocks[measure],latest:v.latest};
 }
 function atMonth(c,version,month,measure='headline'){
@@ -20,10 +34,20 @@ function renderOverview(){
   $('title').textContent='전체 국가 · '+(mode==='YoY'?'Level · 주 PCA':'Momentum · PCA 3M/3M 차분');
   $('mainchart').innerHTML=plot(dates,countries.map(c=>({name:D.names[c],v:D.countries[c].versions[mode].headline,c:regionColors[c]})));
   $('latest').textContent='각 국가는 자체 최신 유효월까지 표시 · 아래 국가 이름을 선택하면 기여분 막대와 개별 부문을 볼 수 있습니다.';
-  $('blockcharts').innerHTML=axes.map(a=>`<section class="panel"><h2>${a}</h2>${plot(dates,countries.map(c=>({name:D.names[c],v:D.countries[c].versions[mode].blocks[a],c:regionColors[c]})))}<p class="sub">${countries.map(c=>`<span style="color:${regionColors[c]}">${D.names[c]}</span>`).join(' · ')}</p></section>`).join('');
+  renderSectorHeatmaps();
+}
+function heatTable(rows,version,dates){
+  const values=rows.map(r=>dates.map(d=>atMonth(r.c,version,d,r.measure))),max=Math.max(.01,...values.flat().filter(finite).map(Math.abs));
+  return `<p class="sub">색상 범위 −${fmt(max,2)} ~ +${fmt(max,2)} · 0 중심</p><table><thead><tr><th>국가 / 부문</th>${dates.map(d=>`<th>${d.slice(2)}</th>`).join('')}</tr></thead><tbody>`+rows.map((r,j)=>'<tr><th>'+r.label+'</th>'+values[j].map((v,i)=>finite(v)?`<td data-month="${dates[i]}" data-country="${r.c}" data-measure="${r.measure}" data-value="${v}" title="${r.label} · ${dates[i]}: ${fmt(v,3)}" style="background:rgba(${v>=0?'37,136,117':'198,95,81'},${.06+.62*Math.min(1,Math.abs(v)/max)})">${fmt(v)}</td>`:`<td style="background:#f1f3f5" title="${dates[i]} 자료 없음">—</td>`).join('')+'</tr>').join('')+'</tbody></table>';
+}
+function renderSectorHeatmaps(){
+  if(cc!=='ALL')return;
+  const month=$('cycleDate').value,n=+$('sectorWindow').value,dates=seriesFor('US',mode).dates.filter(d=>d<=month).slice(-n);
+  $('blockcharts').innerHTML=axes.map(a=>`<section class="panel sector-heatmap" data-sector="${a}"><h2>${a} · ${mode==='YoY'?'Level':'Momentum'}</h2><p class="sub">전체 국가 · 기준 ${month} · 최근 ${n}개월</p><div class="scroll">${heatTable(dmMembers.map(c=>({c,measure:a,label:D.names[c]})),mode,dates)}</div></section>`).join('');
 }
 function render(){
   if(cc==='ALL')renderOverview();else renderSingle();
+  $('sectorControls').hidden=cc!=='ALL';
   $('cards').classList.toggle('overview',cc==='ALL');countryControls();
   $('yoy').classList.toggle('active',mode==='YoY');$('momentum').classList.toggle('active',mode==='Momentum');
   inputs();renderCycle();renderHeatMaps();renderDrilldown();
@@ -35,10 +59,11 @@ function inputs(){
 }
 function renderCycle(){
   const month=$('cycleDate').value,measure=$('cycleMeasure').value,n=+$('cycleTrail').value;
-  const paths=selectedCountries().map(c=>{
+  const candidates=[...selectedCountries(),'DM'].map(c=>{
     const dates=seriesFor(c,'YoY').dates.filter(d=>d<=month).slice(-n);
     return {c,points:dates.map(d=>({d,x:atMonth(c,'YoY',d,measure),y:atMonth(c,'Momentum',d,measure)}))};
   });
+  const paths=candidates.filter(p=>!hiddenCycleSeries.has(p.c));
   const points=paths.flatMap(p=>p.points).filter(p=>finite(p.x)&&finite(p.y));
   const xmax=Math.max(.25,...points.map(p=>Math.abs(p.x)))*1.25,ymax=Math.max(.1,...points.map(p=>Math.abs(p.y)))*1.3;
   const W=1040,H=500,L=85,R=85,T=40,B=60,x=v=>L+(v+xmax)/(2*xmax)*(W-L-R),y=v=>T+(ymax-v)/(2*ymax)*(H-T-B);
@@ -49,15 +74,19 @@ function renderCycle(){
     svg+=`<line x1="${x(xv)}" x2="${x(xv)}" y1="${T}" y2="${H-B}" stroke="${i===0?'#92a4b5':'#dfe7ee'}" ${i===0?'stroke-dasharray="4 4"':''}/><text x="${x(xv)}" y="${H-B+23}" text-anchor="middle">${fmt(xv,2)}</text><line x1="${L}" x2="${W-R}" y1="${y(yv)}" y2="${y(yv)}" stroke="${i===0?'#92a4b5':'#dfe7ee'}" ${i===0?'stroke-dasharray="4 4"':''}/><text x="${L-12}" y="${y(yv)+4}" text-anchor="end">${fmt(yv,2)}</text>`;
   }
   svg+=`<text x="${L+12}" y="${T+20}">평균 이하 · 개선</text><text x="${W-R-12}" y="${T+20}" text-anchor="end">평균 이상 · 개선</text><text x="${L+12}" y="${H-B-14}">평균 이하 · 둔화</text><text x="${W-R-12}" y="${H-B-14}" text-anchor="end">평균 이상 · 둔화</text><text x="${W/2}" y="${H-10}" text-anchor="middle">Level · 주 PCA 점수 →</text><text transform="translate(22 ${H/2}) rotate(-90)" text-anchor="middle">Momentum · PCA 3M/3M 차분 →</text>`;
-  const legends=[];
   paths.forEach((p,j)=>{
-    let segment=[];const flush=()=>{if(segment.length>1)svg+=`<path d="${segment.map((v,i)=>(i?'L':'M')+x(v.x)+','+y(v.y)).join(' ')}" stroke="${regionColors[p.c]}" stroke-opacity=".65" stroke-width="1.8" fill="none" marker-end="url(#arr-${p.c})"/>`;segment=[]};
+    let segment=[];const flush=()=>{if(segment.length>1)svg+=`<path data-cycle-series="${p.c}" d="${segment.map((v,i)=>(i?'L':'M')+x(v.x)+','+y(v.y)).join(' ')}" stroke="${regionColors[p.c]}" stroke-opacity="${p.c==='DM'?.95:.65}" stroke-width="${p.c==='DM'?3:1.8}" fill="none" marker-end="url(#arr-${p.c})"/>`;segment=[]};
     p.points.forEach(pt=>{if(!finite(pt.x)||!finite(pt.y)){flush();return}segment.push(pt)});flush();
-    p.points.forEach((pt,i)=>{if(!finite(pt.x)||!finite(pt.y))return;const current=pt.d===month;svg+=`<circle data-country="${p.c}" data-month="${pt.d}" data-level="${pt.x}" data-momentum="${pt.y}" cx="${x(pt.x)}" cy="${y(pt.y)}" r="${current?6:2.6}" fill="${regionColors[p.c]}" opacity="${current?1:.25+.55*i/Math.max(1,p.points.length-1)}" ${current?'stroke="white" stroke-width="1.6"':''}><title>${D.names[p.c]} · ${pt.d}\nLevel ${fmt(pt.x,3)} · Momentum ${fmt(pt.y,3)}</title></circle>`;if(current)svg+=`<text x="${x(pt.x)+10}" y="${y(pt.y)-10+(j%2)*24}" fill="${regionColors[p.c]}">${D.names[p.c]}</text>`});
-    const last=p.points.find(pt=>pt.d===month),valid=last&&finite(last.x)&&finite(last.y);
-    legends.push(`<span class="cycle-item" style="color:${regionColors[p.c]}">● ${D.names[p.c]} · ${month} · ${valid?`Level ${fmt(last.x,2)} / Mom ${fmt(last.y,2)}`:'자료 없음'}</span>`);
+    p.points.forEach((pt,i)=>{if(!finite(pt.x)||!finite(pt.y))return;const current=pt.d===month;svg+=`<circle data-country="${p.c}" data-month="${pt.d}" data-level="${pt.x}" data-momentum="${pt.y}" cx="${x(pt.x)}" cy="${y(pt.y)}" r="${current?(p.c==='DM'?7:6):2.6}" fill="${regionColors[p.c]}" opacity="${current?1:.25+.55*i/Math.max(1,p.points.length-1)}" ${current?'stroke="white" stroke-width="1.6"':''}><title>${cycleNames[p.c]} · ${pt.d}\nLevel ${fmt(pt.x,3)} · Momentum ${fmt(pt.y,3)}</title></circle>`;if(current)svg+=`<text x="${x(pt.x)+10}" y="${y(pt.y)-10+(j%2)*24}" fill="${regionColors[p.c]}">${cycleNames[p.c]}</text>`});
   });
+  const legends=candidates.map(p=>{
+    const last=p.points.find(pt=>pt.d===month),valid=last&&finite(last.x)&&finite(last.y);
+    const shown=!hiddenCycleSeries.has(p.c);
+    return `<button type="button" data-cycle-toggle="${p.c}" aria-pressed="${shown}" class="cycle-item ${shown?'':'cycle-hidden'}" title="클릭하여 ${shown?'숨기기':'다시 표시'}" style="color:${regionColors[p.c]}">● ${cycleNames[p.c]} · ${month} · ${valid?`Level ${fmt(last.x,2)} / Mom ${fmt(last.y,2)}`:'자료 없음'}</button>`;
+  });
+  if(!paths.length)svg+=`<text x="${W/2}" y="${H/2-30}" text-anchor="middle">아래 범례를 클릭해 표시할 계열을 선택하세요.</text>`;
   $('cycleChart').innerHTML=svg+'</svg>';$('cycleLegend').innerHTML=legends.join('');
+  $('cycleLegend').querySelectorAll('[data-cycle-toggle]').forEach(b=>b.onclick=()=>{const key=b.dataset.cycleToggle;hiddenCycleSeries.has(key)?hiddenCycleSeries.delete(key):hiddenCycleSeries.add(key);renderCycle()});
 }
 function renderHeatMaps(){
   const month=$('cycleDate').value,n=+$('heatWindow').value,measure=$('cycleMeasure').value;
@@ -65,8 +94,7 @@ function renderHeatMaps(){
   const rows=cc==='ALL'?selectedCountries().map(c=>({c,measure,label:D.names[c]})):[{c:cc,measure:'headline',label:'Growth'},...axes.map(a=>({c:cc,measure:a,label:a}))];
   $('heatCaption').textContent=cc==='ALL'?`전체 국가 · ${measure==='headline'?'Growth':measure} · 기준 ${month}`:`${D.names[cc]} · 종합·부문별 · 기준 ${month}`;
   for(const [version,id] of [['YoY','heatLevel'],['Momentum','heatMomentum']]){
-    const values=rows.map(r=>dates.map(d=>atMonth(r.c,version,d,r.measure))),max=Math.max(.01,...values.flat().filter(finite).map(Math.abs));
-    $(id).innerHTML=`<p class="sub">색상 범위 −${fmt(max,2)} ~ +${fmt(max,2)} · 0 중심</p><table><thead><tr><th>${cc==='ALL'?'국가':'부문'}</th>${dates.map(d=>`<th>${d.slice(2)}</th>`).join('')}</tr></thead><tbody>`+rows.map((r,j)=>'<tr><th>'+r.label+'</th>'+values[j].map((v,i)=>finite(v)?`<td data-month="${dates[i]}" data-country="${r.c}" data-value="${v}" title="${r.label} · ${dates[i]}: ${fmt(v,3)}" style="background:rgba(${v>=0?'37,136,117':'198,95,81'},${.06+.62*Math.min(1,Math.abs(v)/max)})">${fmt(v)}</td>`:`<td style="background:#f1f3f5" title="${dates[i]} 자료 없음">—</td>`).join('')+'</tr>').join('')+'</tbody></table>';
+    $(id).innerHTML=heatTable(rows,version,dates);
   }
 }
 function miniChart(dates,values,label){
@@ -102,6 +130,7 @@ function renderDrilldown(){
 // Analysis controls share an explicit reference month; never combine two dates.
 const cycleMonths=[...new Set(Object.entries(D.countries).flatMap(([c,v])=>v.versions.YoY.dates.filter(d=>finite(atMonth(c,'YoY',d)))))].sort();
 $('cycleDate').innerHTML=cycleMonths.slice().reverse().map(d=>`<option>${d}</option>`).join('');
-for(const id of ['cycleDate','cycleMeasure'])$(id).onchange=()=>{renderCycle();renderHeatMaps()};
+for(const id of ['cycleDate','cycleMeasure'])$(id).onchange=()=>{renderCycle();renderHeatMaps();renderSectorHeatmaps()};
+$('sectorWindow').onchange=renderSectorHeatmaps;
 $('cycleTrail').onchange=renderCycle;$('heatWindow').onchange=renderHeatMaps;
 $('drillAxis').onchange=renderDrilldown;$('drillView').onchange=renderDrilldown;$('drillSearch').oninput=renderDrilldown;

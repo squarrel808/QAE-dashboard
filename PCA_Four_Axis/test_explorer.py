@@ -24,7 +24,9 @@ with sync_playwright() as p:
   assert page.locator('#heatMomentum tbody tr').count()==5
   assert page.locator('#drillCharts .mini-card').count()==sum(r['country']==c for r in d['indicators'])
  page.locator('[data-c="ALL"]').click()
- assert page.locator('#cycleChart circle[data-month="'+month+'"]').count()==7
+ assert page.locator('#cycleChart circle[data-month="'+month+'"]').count()==8
+ assert page.locator('#blockcharts .sector-heatmap').count()==4
+ assert page.locator('#blockcharts svg').count()==0
  assert page.locator('#heatLevel tbody tr').count()==7
  assert page.locator('#drillCharts .mini-card').count()==288
  page.locator('#cycleMeasure').select_option('Capex')
