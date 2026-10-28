@@ -6,6 +6,17 @@ import type { ConsensusBundle, ConsensusCountry } from '@/lib/types'
 // 6M median 구간 토글 옵션 (개월)
 const ML_RANGES: [string, number][] = [['1M', 1], ['3M', 3], ['6M', 6], ['12M', 12], ['All', 999]]
 
+// Color only within each country's displayed history, at the displayed precision.
+function rowHeatColor(value: number, low: number, high: number) {
+  const rounded = Number(value.toFixed(2))
+  const position = high > low ? (rounded - low) / (high - low) : 0.5
+  const strength = Math.min(1, Math.abs(position - 0.5) * 2)
+  const target = position < 0.5 ? [33, 102, 172] : [178, 24, 43]
+  const rgb = target.map(channel => Math.round(247 + (channel - 247) * strength))
+  const luminance = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000
+  return { background: `rgb(${rgb.join(',')})`, color: luminance < 145 ? '#fff' : '#203640' }
+}
+
 // ml 시계열을 마지막 날짜 기준 최근 N개월로 자른다
 function sliceMl(ml: ConsensusCountry['ml'], months: number) {
   if (!ml?.length || months >= 999) return ml
@@ -122,6 +133,13 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
 
       {overview ? <div className="space-y-4">
         <div className="flex justify-between items-center flex-wrap gap-2"><p className="text-xs text-[var(--muted)]">월별 마지막 관측일의 Consensus median (%) · 2026/2027 동일 기간축 · 빈칸은 관측값 없음</p><MlToggle /></div>
+        <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]" aria-label="히트맵 색상 기준">
+          <span>국가별·선택 기간 내 상대 수준</span>
+          <span className="px-3 py-1 rounded" style={rowHeatColor(0, 0, 1)}>낮음</span>
+          <span className="px-3 py-1 rounded" style={rowHeatColor(0.5, 0, 1)}>중간</span>
+          <span className="px-3 py-1 rounded" style={rowHeatColor(1, 0, 1)}>높음</span>
+          <span>변화 없음: 중립색 · 회색: 자료 없음 · 국가 간 절대 수준 비교용 색상이 아닙니다.</span>
+        </div>
         {(['2026', '2027']).flatMap(y => (['cpi', 'gdp'] as const).map(metric => {
           const source = metric === 'cpi' ? cpi : gdp
           const entries = source.years?.[y] || (source.defaultYear === y ? source.data : {})
@@ -140,20 +158,19 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
           const cutoff = cut?.toISOString().slice(0,7)
           const dates = fullDates.filter(d=>mlMonths>=999 || !cutoff || d>=cutoff)
           const sliced = countryKeys.map(id => ({ id, points: monthly(entries[id].ml || []).filter(p=>dates.includes(p.d)) }))
-          const values = sliced.flatMap(r => r.points.map(p => p.med)).filter(Number.isFinite)
-          const lo = values.length ? Math.min(...values) : 0
-          const hi = values.length ? Math.max(...values) : 0
           return <div key={`${y}-${metric}`} className="rounded-xl border border-[var(--line)] bg-white p-4">
             <h3 className="serif text-base mb-3">{y} {metric.toUpperCase()} consensus · Median (%)</h3>
             {!dates.length ? <p className="text-xs text-[var(--muted)]">No data</p> : <div className="overflow-x-auto"><table style={{ borderCollapse: 'separate', borderSpacing: 2, fontSize: 16, width: '100%' }}>
               <thead><tr><th className="sticky left-0 bg-white">Country</th>{dates.map(d => <th key={d} className="whitespace-nowrap font-normal px-1">{d.slice(2)}</th>)}</tr></thead>
-              <tbody>{sliced.map(row => { const lookup = new Map(row.points.map(p => [p.d, p.med])); return <tr key={row.id}><th scope="row" className="sticky left-0 bg-white whitespace-nowrap text-left pr-3">{source.names?.[row.id] || row.id}</th>{dates.map(d => {
+              <tbody>{sliced.map(row => {
+                const lookup = new Map(row.points.map(p => [p.d, p.med]))
+                const values = row.points.map(p => p.med).filter(Number.isFinite).map(v => Number(v.toFixed(2)))
+                const lo = values.length ? Math.min(...values) : 0
+                const hi = values.length ? Math.max(...values) : 0
+                return <tr key={row.id}><th scope="row" className="sticky left-0 bg-white whitespace-nowrap text-left pr-3">{source.names?.[row.id] || row.id}</th>{dates.map(d => {
                 const v = lookup.get(d)
                 const valid = v != null && Number.isFinite(v)
-                const t = valid && hi > lo ? (v - lo) / (hi - lo) : 0.5
-                const hue = t < 0.5 ? 215 : 5
-                const light = 96 - Math.abs(t - 0.5) * 68
-                return <td key={d} title={`${source.names?.[row.id] || row.id} · ${d}: ${valid ? v.toFixed(2) + '%' : 'No data'}`} style={{ background: valid ? `hsl(${hue} 60% ${light}%)` : '#f4f3f1', color: valid && light < 55 ? '#fff' : '#222', minWidth: 84, padding: '12px 8px', textAlign: 'center', borderRadius: 3 }}>{valid ? v.toFixed(2) : '—'}</td>
+                return <td key={d} title={`${source.names?.[row.id] || row.id} · ${d}: ${valid ? v.toFixed(2) + '%' : 'No data'}${valid ? ` · 해당 국가의 표시 기간 범위 ${lo.toFixed(2)}–${hi.toFixed(2)}%` : ''}`} style={{ ...(valid ? rowHeatColor(v, lo, hi) : { background: '#e8edeb', color: '#657575' }), minWidth: 84, padding: '12px 8px', textAlign: 'center', borderRadius: 3 }}>{valid ? v.toFixed(2) : '—'}</td>
               })}</tr> })}</tbody>
             </table></div>}
           </div>
