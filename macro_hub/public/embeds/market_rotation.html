@@ -1114,6 +1114,7 @@ html>body{padding:0}
           <button type="button" aria-pressed="true"><span class="mrd-cross" style="color:var(--viz-series-2)">×</span>4W EPS</button>
         </div>
         <div id="mrd-index-eps" class="mrd-chart"></div>
+        <p data-footnote="mrd-index-eps" style="font-size:12px;line-height:1.6;color:#738079;margin:6px 0 0">주: 파란 막대는 13주 EPS 변화율 × 4/13으로 환산한 4주 기준 값이며, × 표시는 실제 4주 EPS 변화율입니다. 단순 선형 환산이며 복리 환산은 아닙니다.</p>
       </div>
       <div>
         <h2 class="mrd-chart-title">EPS Momentum — 4W minus 13W trend on 4W basis</h2>
@@ -1121,6 +1122,7 @@ html>body{padding:0}
           <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-3)"></span>4W − 4/13 × 13W</button>
         </div>
         <div id="mrd-index-momentum" class="mrd-chart"></div>
+        <p data-footnote="mrd-index-momentum" style="font-size:12px;line-height:1.6;color:#738079;margin:6px 0 0">주: EPS 모멘텀 = 실제 4주 EPS 변화율 − (13주 EPS 변화율 × 4/13). 양수는 최근 4주 개선 속도가 13주 추세보다 빠름을 뜻합니다. 단위: %p.</p>
       </div>
     </div>
     <div class="mrd-section-space">
@@ -1270,6 +1272,7 @@ html>body{padding:0}
       <div>
         <h2 class="mrd-chart-title" id="mrd-price-scatter-title">3M Price Return vs 13W EPS Change</h2>
         <div id="mrd-price-scatter" class="mrd-chart"></div>
+<p data-footnote="price-scatter-period" style="font-size:12px;line-height:1.6;color:#738079;margin-top:6px">주: 3M EPS 변화는 13주 변화율, 6M EPS 변화는 26주 변화율을 사용합니다. 오른쪽 기여도 그래프와 동일한 EPS 기준입니다.</p>
       </div>
       <div>
         <h2 class="mrd-chart-title" id="mrd-attribution-title">3M Return Attribution by Sector</h2>
@@ -2214,7 +2217,7 @@ html>body{padding:0}
       renderContributionGrid('#mrd-contribution-industry-grid',peHistories.filter(d=>d.index===code&&d.level==='Industry'),true);
     }
     function renderPrice2(){
-      const settings={price1d:{label:'1D',epsKey:'eps1d',epsLabel:'1D EPS change'},price5d:{label:'5D',epsKey:'eps5d',epsLabel:'5D EPS change'},price1m:{label:'1M',epsKey:'eps4',epsLabel:'1M EPS change'},price3m:{label:'3M',epsKey:'eps13',epsLabel:'13W EPS change'},price6m:{label:'6M',epsKey:'eps6m',epsLabel:'26W EPS change'}}[price2Period];
+      const settings={price1d:{label:'1D',epsKey:'eps1d',epsLabel:'1D EPS change'},price5d:{label:'5D',epsKey:'eps5d',epsLabel:'5D EPS change'},price1m:{label:'1M',epsKey:'eps4',epsLabel:'1M EPS change'},price3m:{label:'3M',epsKey:'eps13',epsLabel:'3M EPS change'},price6m:{label:'6M',epsKey:'eps6m',epsLabel:'26W EPS change'}}[price2Period];
       const code=root.querySelector('#mrd-price-index').value;
       const level=root.querySelector('#mrd-price-level').value;
       const rawData=groupData(root.querySelector('#mrd-price-index'),root.querySelector('#mrd-price-level'));

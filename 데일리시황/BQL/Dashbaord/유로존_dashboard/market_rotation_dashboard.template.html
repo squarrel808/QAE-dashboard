@@ -38,6 +38,7 @@
       border-radius: 6px;
       box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 12%, transparent);
     }
+    #market-rotation-dashboard-17 .mrd-business-summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.5; margin-top: 4px; max-width: min(420px, calc(100vw - 40px)); }
     #market-rotation-dashboard-17 .mrd-tooltip strong { font-weight: 500; }
     #market-rotation-dashboard-17 .mrd-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 4px 0 10px; }
     #market-rotation-dashboard-17 .mrd-legend button { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; color: var(--foreground); }
@@ -226,6 +227,7 @@
           <button type="button" aria-pressed="true"><span class="mrd-cross" style="color:var(--viz-series-2)">×</span>4W EPS</button>
         </div>
         <div id="mrd-index-eps" class="mrd-chart"></div>
+        <p data-footnote="mrd-index-eps" style="font-size:12px;line-height:1.6;color:#738079;margin:6px 0 0">주: 파란 막대는 13주 EPS 변화율 × 4/13으로 환산한 4주 기준 값이며, × 표시는 실제 4주 EPS 변화율입니다. 단순 선형 환산이며 복리 환산은 아닙니다.</p>
       </div>
       <div>
         <h2 class="mrd-chart-title">EPS Momentum — 4W minus 13W trend on 4W basis</h2>
@@ -233,6 +235,7 @@
           <button type="button" aria-pressed="true"><span class="mrd-swatch" style="background:var(--viz-series-3)"></span>4W − 4/13 × 13W</button>
         </div>
         <div id="mrd-index-momentum" class="mrd-chart"></div>
+        <p data-footnote="mrd-index-momentum" style="font-size:12px;line-height:1.6;color:#738079;margin:6px 0 0">주: EPS 모멘텀 = 실제 4주 EPS 변화율 − (13주 EPS 변화율 × 4/13). 양수는 최근 4주 개선 속도가 13주 추세보다 빠름을 뜻합니다. 단위: %p.</p>
       </div>
     </div>
     <div class="mrd-section-space">
@@ -382,6 +385,7 @@
       <div>
         <h2 class="mrd-chart-title" id="mrd-price-scatter-title">3M Price Return vs 13W EPS Change</h2>
         <div id="mrd-price-scatter" class="mrd-chart"></div>
+<p data-footnote="price-scatter-period" style="font-size:12px;line-height:1.6;color:#738079;margin-top:6px">주: 3M EPS 변화는 13주 변화율, 6M EPS 변화는 26주 변화율을 사용합니다. 오른쪽 기여도 그래프와 동일한 EPS 기준입니다.</p>
       </div>
       <div>
         <h2 class="mrd-chart-title" id="mrd-attribution-title">3M Return Attribution by Sector</h2>
@@ -466,7 +470,7 @@
   </section>
 
   <p class="mrd-note text-small">
-    EPS changes rebuild constituent earnings as EPS × implied shares, where implied shares equal market cap ÷ price, and then compare the summed earnings amounts. Positive observations are used and stock-level earnings changes are capped at ±100% for 4W/13W comparisons. Group contributions use base-period earnings weights. In comparison charts, 13W EPS change is linearly converted to a 4W basis (13W × 4/13) and compared with actual 4W change. Price & Attribution II uses the latest date on which a material share of constituent prices actually changed; 1D and 5D EPS changes are aligned to the same active-price sessions. FY1/FY2 lines show aggregate forward-earnings estimate changes since 2026-01-01. P/E equals total market cap divided by total earnings; observations below 1x are excluded as data-quality outliers. Price attribution uses start-date market-cap weights; P/E contribution is the residual multiple change implied by price return and earnings change, with the EPS×P/E interaction split equally so the two contributions sum to price return. Operating-margin observations outside ±200% are excluded from weighted averages. Price returns and the index heatmap exclude dividends. STOXX 600 market-cap and earnings weights are approximate because the source currency is mixed.
+    Index-level EPS, price, P/E, ROE and margins use the supplied BQuant Index Level sheet directly. Index FY1/FY2 changes compare index EPS levels with the start of 2026. Revision breadth remains constituent-based. Sector and industry EPS changes rebuild constituent earnings as EPS × implied shares, where implied shares equal market cap ÷ price, and then compare the summed earnings amounts. Positive observations are used and stock-level earnings changes are capped at ±100% for 4W/13W comparisons. Group contributions use base-period earnings weights. In comparison charts, 13W EPS change is linearly converted to a 4W basis (13W × 4/13) and compared with actual 4W change. Price & Attribution II uses the latest date on which a material share of constituent prices actually changed; 1D and 5D EPS changes are aligned to the same active-price sessions. Index FY1/FY2 lines show direct index EPS changes since 2026-01-01. P/E equals total market cap divided by total earnings; observations below 1x are excluded as data-quality outliers. Price attribution uses start-date market-cap weights; P/E contribution is the residual multiple change implied by price return and earnings change, with the EPS×P/E interaction split equally so the two contributions sum to price return. Operating-margin observations outside ±200% are excluded from weighted averages. Price returns and the index heatmap exclude dividends. STOXX 600 market-cap and earnings weights are approximate because the source currency is mixed.
   </p>
   <div class="mrd-tooltip text-small" role="tooltip"></div>
 
@@ -522,7 +526,23 @@
 
     function showTip(event, html) {
       const [x, y] = d3.pointer(event, root);
-      tooltip.html(html).style('display', 'block').style('left', `${x + 14}px`).style('top', `${y + 14}px`);
+      tooltip.style('position','absolute').style('max-width','280px').style('width',null).html(html).style('display', 'block').style('left', `${x + 14}px`).style('top', `${y + 14}px`);
+    }
+    function stockDescription(stock) {
+      const key=String(stock.ticker||'').trim().replace(/\s+/g,' ').toUpperCase();
+      const descriptions=DATA.stockDescriptions||{};
+      const summary=descriptions[key] || (/ (US|UW|UN) EQUITY$/.test(key) ? ['US','UW','UN'].map(exchange=>descriptions[key.replace(/ (US|UW|UN) EQUITY$/,` ${exchange} EQUITY`)]).find(Boolean) : null);
+      return summary || `${stock.sector||'업종 미분류'} · ${stock.industry||'세부 업종 미분류'} (저장된 사업 설명 없음)`;
+    }
+    function showStockTip(event,stock) {
+      const node=event.currentTarget, box=node.getBoundingClientRect();
+      const x=Number.isFinite(event.clientX)&&event.type!=='focus'?event.clientX:box.left+box.width/2;
+      const y=Number.isFinite(event.clientY)&&event.type!=='focus'?event.clientY:box.top;
+      tooltip.html(`<strong>${escapeText(stock.company||stock.ticker||'')}</strong><div class="mrd-business-summary">${escapeText(stockDescription(stock))}</div>`)
+        .style('position','fixed').style('max-width','420px').style('width','max-content').style('display','block');
+      const bounds=tooltip.node().getBoundingClientRect();
+      tooltip.style('left',`${Math.max(8,Math.min(x+14,window.innerWidth-bounds.width-8))}px`)
+        .style('top',`${Math.max(8,y+14+bounds.height>window.innerHeight?y-bounds.height-10:y+14)}px`);
     }
     function hideTip() { tooltip.style('display', 'none'); }
     function clear(selector) { d3.select(root).select(selector).selectAll('*').remove(); }
@@ -1174,7 +1194,8 @@
         .attr('aria-label',d=>`${d.data.company||d.data.ticker}, ${d.data.ticker}, ${label} ${mapReturn(d.data.mapValue)}, market cap weight ${stockWeight(d.data.weight)}`);
       tiles.append('rect').attr('width',d=>Math.max(0,d.x1-d.x0)).attr('height',d=>Math.max(0,d.y1-d.y0))
         .attr('fill',d=>color(d.data.mapValue)).attr('stroke','#252a33').attr('stroke-width',.7);
-      tiles.append('title').text(d=>`${d.data.company||d.data.ticker}\n${d.data.ticker}\n${d.data.sector} / ${d.data.industry}\n${label}: ${mapReturn(d.data.mapValue)}\nWeight: ${stockWeight(d.data.weight)} (${dataset.asOf})\n${range}`);
+      tiles.attr('data-business-summary',d=>stockDescription(d.data));
+      /* Native title omitted because the accessible custom tooltip appears immediately. */
       tiles.each(function(d,i){
         const w=d.x1-d.x0,h=d.y1-d.y0,ticker=mapTicker(d.data.ticker);
         if(w<23||h<16)return;
@@ -1200,9 +1221,12 @@
           .attr('font-weight',d.depth===1?700:500).attr('clip-path',`url(#${clip})`).text(d.data.name.toUpperCase());
       });
       const showDetail=d=>{detail.textContent=`${d.data.company||d.data.ticker} (${d.data.ticker}) · ${d.data.sector||'Unclassified'} / ${d.data.industry||'Unclassified'} · ${label} ${mapReturn(d.data.mapValue)} · ${dataset.asOf} 시가총액 비중 ${stockWeight(d.data.weight)} · ${range}`;};
-      tiles.on('pointerenter',(_,d)=>showDetail(d)).on('focus',(_,d)=>showDetail(d)).on('click',(_,d)=>showDetail(d));
+      tiles.on('pointerenter',(event,d)=>{showDetail(d);showStockTip(event,d.data);}).on('pointermove',(event,d)=>showStockTip(event,d.data)).on('pointerleave',hideTip).on('focus',(event,d)=>{showDetail(d);showStockTip(event,d.data);}).on('blur',hideTip).on('click',(_,d)=>showDetail(d));
     }
 
+    window.addEventListener('scroll',hideTip,true);
+    window.addEventListener('resize',hideTip);
+    root.addEventListener('keydown',event=>{if(event.key==='Escape')hideTip();});
     function renderEurope(){
       const code=root.querySelector('#mrd-heatmap-index').value;
       const data=rows.filter(d=>d.index===code&&d.level==='Sector');
@@ -1276,7 +1300,17 @@
       const sortHeader=(key,text)=>`<button type="button" class="mrd-stock-sort ${stockSortKey===key?'active':''}" data-stock-sort="${key}" aria-label="Sort by ${text}">${text}<span class="mrd-stock-sort-arrow" aria-hidden="true">${stockSortKey===key?sortArrow:'↕'}</span></button>`;
       const ariaSort=key=>stockSortKey===key?(stockSortDirection==='asc'?'ascending':'descending'):'none';
       const startWeightHeader=contributionMode?`<th class="mrd-num">${label} start weight</th>`:'';
-      target.innerHTML=`<table class="mrd-stock-table"><thead><tr><th aria-sort="${ariaSort('sector')}">${sortHeader('sector','Sector')}</th><th aria-sort="${ariaSort('industry')}">${sortHeader('industry','Industry group')}</th><th>Stock</th><th class="mrd-num">Current index mkt-cap share</th>${startWeightHeader}<th class="mrd-num" aria-sort="${ariaSort('metric')}">${sortHeader('metric',metricLabel)}</th></tr></thead><tbody>${data.map(d=>{const width=Math.min(50,Math.abs(d._metric)/maxAbs*50),positive=d._metric>=0,formatted=contributionMode?pctp(d._metric):pct(d._metric),startWeightCell=contributionMode?`<td class="mrd-num">${stockWeight(d._startWeight)}</td>`:'';return `<tr><td>${escapeText(d._sector)}</td><td>${escapeText(d._industry)}</td><td class="mrd-stock-company" title="${escapeText(d._stock)}">${escapeText(d._stock)}</td><td class="mrd-num">${stockWeight(d._currentWeight)}</td>${startWeightCell}<td class="mrd-stock-value-cell"><div class="mrd-stock-bar-track"><span class="mrd-stock-bar ${positive?'positive':'negative'}" style="width:${width}%"></span><span class="mrd-stock-bar-label" style="color:${positive?'var(--viz-series-1)':'var(--destructive)'}">${formatted}</span></div></td></tr>`;}).join('')}</tbody></table>`;
+      target.innerHTML=`<table class="mrd-stock-table"><thead><tr><th aria-sort="${ariaSort('sector')}">${sortHeader('sector','Sector')}</th><th aria-sort="${ariaSort('industry')}">${sortHeader('industry','Industry group')}</th><th>Stock</th><th class="mrd-num">Current index mkt-cap share</th>${startWeightHeader}<th class="mrd-num" aria-sort="${ariaSort('metric')}">${sortHeader('metric',metricLabel)}</th></tr></thead><tbody>${data.map(d=>{const width=Math.min(50,Math.abs(d._metric)/maxAbs*50),positive=d._metric>=0,formatted=contributionMode?pctp(d._metric):pct(d._metric),startWeightCell=contributionMode?`<td class="mrd-num">${stockWeight(d._startWeight)}</td>`:'';return `<tr><td>${escapeText(d._sector)}</td><td>${escapeText(d._industry)}</td><td class="mrd-stock-company" tabindex="0" data-stock-row="${data.indexOf(d)}">${escapeText(d._stock)}</td><td class="mrd-num">${stockWeight(d._currentWeight)}</td>${startWeightCell}<td class="mrd-stock-value-cell"><div class="mrd-stock-bar-track"><span class="mrd-stock-bar ${positive?'positive':'negative'}" style="width:${width}%"></span><span class="mrd-stock-bar-label" style="color:${positive?'var(--viz-series-1)':'var(--destructive)'}">${formatted}</span></div></td></tr>`;}).join('')}</tbody></table>`;
+      target.querySelectorAll('[data-stock-row]').forEach(cell=>{
+        const stock=data[Number(cell.dataset.stockRow)];
+        if(!stock.ticker) return;
+        cell.setAttribute('aria-label',`${stock.company||stock.ticker}: ${stockDescription(stock)}`);
+        cell.addEventListener('pointerenter',event=>showStockTip(event,stock));
+        cell.addEventListener('pointermove',event=>showStockTip(event,stock));
+        cell.addEventListener('pointerleave',hideTip);
+        cell.addEventListener('focus',event=>showStockTip(event,stock));
+        cell.addEventListener('blur',hideTip);
+      });
       target.querySelectorAll('[data-stock-sort]').forEach(button=>button.addEventListener('click',()=>{
         const key=button.dataset.stockSort;
         if(stockSortKey===key)stockSortDirection=stockSortDirection==='asc'?'desc':'asc';
@@ -1294,7 +1328,7 @@
       renderContributionGrid('#mrd-contribution-industry-grid',peHistories.filter(d=>d.index===code&&d.level==='Industry'),true);
     }
     function renderPrice2(){
-      const settings={price1d:{label:'1D',epsKey:'eps1d',epsLabel:'1D EPS change'},price5d:{label:'5D',epsKey:'eps5d',epsLabel:'5D EPS change'},price1m:{label:'1M',epsKey:'eps4',epsLabel:'1M EPS change'},price3m:{label:'3M',epsKey:'eps13',epsLabel:'13W EPS change'},price6m:{label:'6M',epsKey:'eps6m',epsLabel:'26W EPS change'}}[price2Period];
+      const settings={price1d:{label:'1D',epsKey:'eps1d',epsLabel:'1D EPS change'},price5d:{label:'5D',epsKey:'eps5d',epsLabel:'5D EPS change'},price1m:{label:'1M',epsKey:'eps4',epsLabel:'1M EPS change'},price3m:{label:'3M',epsKey:'eps13',epsLabel:'3M EPS change'},price6m:{label:'6M',epsKey:'eps6m',epsLabel:'26W EPS change'}}[price2Period];
       const code=root.querySelector('#mrd-price-index').value;
       const level=root.querySelector('#mrd-price-level').value;
       const rawData=groupData(root.querySelector('#mrd-price-index'),root.querySelector('#mrd-price-level'));
@@ -1493,6 +1527,7 @@
       renderValuation1();
     }));
     root.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{
+      hideTip();
       root.querySelectorAll('[data-tab]').forEach(b=>{const on=b===button;b.setAttribute('aria-selected',String(on));b.classList.toggle('btn-primary',on);});
       root.querySelectorAll('[data-panel]').forEach(panel=>panel.hidden=panel.dataset.panel!==button.dataset.tab);
       drawActive();
