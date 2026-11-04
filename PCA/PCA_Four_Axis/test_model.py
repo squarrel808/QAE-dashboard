@@ -3,6 +3,15 @@ from pathlib import Path
 import pandas as pd,numpy as np
 BASE=Path(__file__).resolve().parent
 def main():
+    from build import fixed_pca
+    # A late month with one observed input is eligible; a wholly empty one is not.
+    rng=np.random.default_rng(71)
+    sample=pd.DataFrame(rng.normal(size=(40,3)),columns=['a','b','c'])
+    sample.iloc[-2,1:]=np.nan
+    sample.iloc[-1,:]=np.nan
+    score,_,_,count,_=fixed_pca(sample,min_available=1)
+    assert count.iloc[-2]==1 and np.isfinite(score.iloc[-2])
+    assert count.iloc[-1]==0 and pd.isna(score.iloc[-1])
     from annual_weights import resolve_year,weight_panel,POLICY,OLD_POLICY,migrate_export_weights
     import copy
     # Jan 1 selection excludes quarters whose assumed publication is later.
@@ -60,7 +69,7 @@ def main():
             assert f.loc[f.date>pd.Period(version['latest'],freq='M').end_time,list(d['axes'])].isna().all().all()
         for a in d['axes']:
             mask=y.headline.notna()
-            np.testing.assert_allclose(y.loc[mask,'contrib_'+a],y.loc[mask,a]*y.loc[mask,'weight_'+a],atol=1e-10)
+            np.testing.assert_allclose(y.loc[mask,'contrib_'+a],(y.loc[mask,a]*y.loc[mask,'weight_'+a]).fillna(0),atol=1e-10)
             assert (y.groupby(y.index.year)['weight_'+a].nunique()<=1).all()
             n=sum(r['country']==cc and r['axis']==a for r in d['indicators']);assert n==c['diagnostics'][a]['count']
         for r in c['annual_weights']:
@@ -100,13 +109,12 @@ def main():
         assert pd.Timestamp(r['last'])>=pd.Timestamp.now()-pd.DateOffset(months=6)
         assert (r['country'],r['pk'],r['included_axis']) in current
     assert 'usecon:napmc' not in {r['pk'] for r in d['indicators'] if r['country']=='CA'}
-    # Trade surveys alone cannot move the published cutoff beyond actual exports.
-    merged=pd.concat([pd.read_csv(BASE/'source/raw_haver.csv'),pd.read_csv(BASE/'values.csv'),pd.read_csv(BASE/'blackrock_source/values.csv')]).drop_duplicates(['pk','date'],keep='last')
-    merged['month']=pd.PeriodIndex(merged.date,freq='M').to_timestamp('M')
+    assert d['publication_policy']=='available_inputs_provisional_v1'
     for cc,c in d['countries'].items():
-        actual_codes=[r['pk'] for r in d['indicators'] if r['country']==cc and r['axis']=='Export' and r['kind'] in ['level','growth_yoy','growth_mom']]
-        last_raw=merged.loc[merged.pk.isin(actual_codes),'month'].max()
-        assert pd.Period(c['versions']['YoY']['latest'],freq='M').to_timestamp('M')<=last_raw
+        v=c['versions']['YoY'];i=v['dates'].index(v['latest'])
+        assert v['available_inputs']>=1
+        assert v['provisional']==(v['available_inputs']<v['total_inputs'])
+        assert abs(sum(v['contributions'][a][i] or 0 for a in d['axes'])-v['latest_value'])<1e-10
     print('PASS: original inputs, seven-region geography, no duplicate inputs, monthly-only additions, unchanged annual weights, no US ISM in Canada')
     print('PASS: 7 countries, January cutoffs, frozen revisions, automatic year rollover, annual fixed weights, contributions, post-PCA Momentum, fixed unrestricted loadings')
 if __name__=='__main__':main()

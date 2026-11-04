@@ -15,5 +15,6 @@
     "history": "current-vintage revised history; not a real-time backtest",
     "source": "https://www.chicagofed.org/-/media/publications/cfnai/background/cfnai-background-pdf.pdf"
   },
+  "publication_policy": "available_inputs_provisional_v1",
   "weights": "january_1_ttm_lagged_frozen_half_exports_v3"
 }

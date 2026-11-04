@@ -23,7 +23,7 @@ function validate(html) {
   }
 }
 
-if (fs.existsSync(path.join(source, 'index.html'))) {
+if (!process.env.VERCEL && files.every(name => fs.existsSync(path.join(source, name)))) {
   validate(fs.readFileSync(path.join(source, 'index.html'), 'utf8'))
   fs.mkdirSync(destination, { recursive: true })
   for (const name of files) fs.copyFileSync(path.join(source, name), path.join(destination, name))

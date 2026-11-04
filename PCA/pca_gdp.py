@@ -377,7 +377,7 @@ def run_version(wide, cat_map, rule_map, halflife, mode, tag=""):
         # 막대 합 = 지수가 그대로 유지된다.
         if len(full):
             panel = panel.loc[full.index[0]:]
-        need = max(2, int(np.ceil(len(gdp_cats) * GDP_MIN_CAT_RATIO)))
+        need = 1  # Publish using available categories; partial months are provisional.
         panel = panel[panel.notna().sum(axis=1) >= need]
         n_avail = panel.notna().sum(axis=1)
         res["gdp"] = panel.mean(axis=1)
@@ -460,10 +460,11 @@ def build_country_versions(results, cat_map, desc_map):
     for ver, r in results.items():
         idx = r["z"].index
         dates = [d.strftime("%Y-%m") for d in idx]
-        # 최신 관측월 = 지표가 2개 이상 들어온 마지막 달.
-        # (한 달 먼저 나오는 서베이 1개가 기준월을 끌고 가면 나머지가 전부 미갱신으로 보인다)
-        cnt = r["z"].notna().sum(axis=1)
-        ref = cnt[cnt >= 2].index[-1] if (cnt >= 2).any() else (idx[-1] if len(idx) else None)
+        # Publish even partial months; LEI alone must not advance GDP's cutoff.
+        cols_growth = [c for c in r["z"].columns if cat_map[c] != LEI_CAT]
+        level_z = results['YoY']['z'][cols_growth]
+        cnt = level_z.notna().sum(axis=1)
+        ref = r['gdp'].last_valid_index()
         gdp_cats = [c for c in r["cat_index"] if c != LEI_CAT]
 
         cat_block = {}
@@ -477,6 +478,9 @@ def build_country_versions(results, cat_map, desc_map):
         versions[ver] = {
             "dates": dates,
             "latest": ref.strftime("%Y-%m") if ref is not None else None,
+            "available_inputs": int(cnt.get(ref, 0)),
+            "total_inputs": len(cols_growth),
+            "provisional": bool(cnt.get(ref, 0) < len(cols_growth)),
             "gdp": {
                 "index": fmt_series(r["gdp"], idx),
                 "contrib": {cat_label(c): fmt_series(r["gdp_contrib"][c], idx) for c in gdp_cats},

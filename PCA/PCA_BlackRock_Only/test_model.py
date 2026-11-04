@@ -30,9 +30,11 @@ for cc,c in d['countries'].items():
     np.testing.assert_allclose(m[cols].iloc[5:],y[cols].rolling(3,min_periods=3).mean().diff(3).iloc[5:],atol=1e-10,equal_nan=True)
     np.testing.assert_allclose(y.headline,y[['contrib_'+a for a in active]].sum(axis=1,min_count=len(active)),atol=1e-10,equal_nan=True)
     for a in AXES:
-        if a not in active:assert y[a].isna().all() and y['contrib_'+a].isna().all()
+        if a not in active:
+            assert y[a].isna().all() and y['contrib_'+a].isna().all()
+            continue
         valid=y.headline.notna()
-        np.testing.assert_allclose(y.loc[valid,'contrib_'+a],y.loc[valid,a]*y.loc[valid,'weight_'+a],equal_nan=True,atol=1e-10)
+        np.testing.assert_allclose(y.loc[valid,'contrib_'+a],(y.loc[valid,a]*y.loc[valid,'weight_'+a]).fillna(0),equal_nan=True,atol=1e-10)
     for r in c['annual_weights']:
         if (key:=f"{cc}:{r['year']}") in ledger:assert r['weights']==ledger[key]['weights']
     assert all(v['latest'] for v in c['versions'].values())
@@ -45,7 +47,7 @@ review=json.loads((B.parent.parent/'outputs/gdp_expenditure_review/report_data.j
 wide,specs,_=core.prepare(review,meta,raw);wide,_=align_uk_period_ends(wide,specs)
 sp=[r for r in d['indicators'] if r['country']=='UK' and r['axis']=='Consumer']
 z=standardize(pd.DataFrame({r['pk']:core.transform(wide[r['pk']],r,'YoY') for r in sp}))
-score,loading,_,_,_=fixed_pca(z)
+score,loading,_,_,_=fixed_pca(z,min_available=1)
 v=d['countries']['UK']['versions']['YoY'];last=pd.Timestamp(v['latest'])+pd.offsets.MonthEnd(0)
 assert abs(score[last]-v['blocks']['Consumer'][v['dates'].index(v['latest'])])<1e-10
 for r in sp:

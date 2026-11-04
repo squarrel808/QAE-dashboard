@@ -213,6 +213,7 @@ export default function Pca({ data }: { data: PcaData }) {
           <h2 className="serif text-[18px] m-0">{node ? node.label : countryLabel} — Activity Index</h2>
           <p className="text-xs text-[var(--muted)] mt-1">CFNAI형 일반 PCA · 카테고리 동일가중 · 갱신별 고정 로딩 · 음수 계수 허용</p>
           <p className="text-xs text-[var(--muted)] mt-1">전체 표본을 다시 추정하므로 과거 값도 바뀝니다. GDP 성장률이 아닌 표준화 지수입니다. <a className="underline" href="/pca-comparison">미국·영국 변경 전후 비교</a></p>
+          <p className="text-xs text-[var(--muted)] mt-1">{yoy.latest} · {yoy.provisional ? '잠정치' : '전체 관측'} · 관측 {yoy.available_inputs}/{yoy.total_inputs}개. 미발표 지표를 제외하고 계산하며, 발표 후 값과 Momentum이 바뀔 수 있습니다.</p>
         </div>
         <span className="flex items-center gap-2">
           <span className="text-xs text-[var(--muted)]">국가</span>

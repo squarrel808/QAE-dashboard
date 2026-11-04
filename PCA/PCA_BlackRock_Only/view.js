@@ -10,13 +10,13 @@ function endpointSummary(countries,ver,measure='headline'){
 }
 function renderSingle(){
   const c=D.countries[cc],level=c.versions.YoY,momentum=c.versions.Momentum;
-  $('cards').innerHTML=axes.map(a=>`<div class="card"><h3 style="color:${colors[a]}">${a}</h3>${c.active_axes.includes(a)?latestPair(cc,a):'<p class="missing">참조 지표 없음 · 미편입</p>'}<div class="sub">${c.diagnostics[a].count}개 지표 · ${c.diagnostics[a].single?'단일지표 표준화':'직접 PCA'}<br>${a==='Export'?'총수출/GDP × ½':'GDP 비중'} ${fmt(c.weights[a]*100,1)}% ${c.missing_axes.includes(a)?'· 합산 제외':''}</div></div>`).join('');
+  $('cards').innerHTML=axes.map(a=>`<div class="card"><h3 style="color:${colors[a]}">${a}</h3>${c.active_axes.includes(a)?latestPair(cc,a):'<p class="missing">참조 지표 없음 · 미편입</p>'}<div class="sub">관측 ${c.diagnostics[a].available_latest}/${c.diagnostics[a].count}개 지표 · ${c.diagnostics[a].single?'단일지표 표준화':'직접 PCA'}<br>${a==='Export'?'총수출/GDP × ½':'GDP 비중'} ${fmt(c.weights[a]*100,1)}% ${c.missing_axes.includes(a)?'· 합산 제외':''}</div></div>`).join('');
   $('title').textContent=`${D.names[cc]} · Growth Level ${fmt(level.latest_value,3)} · ${level.latest}`;
   $('mainchart').innerHTML=contributionChart(level);
   $('momentumTitle').textContent=`${D.names[cc]} · Growth Momentum ${fmt(momentum.latest_value,3)} · ${momentum.latest}`;
   $('momentumChart').innerHTML=contributionChart(momentum);
   const coverage=c.missing_axes.length?` · ${c.missing_axes.join(', ')} 미편입 · 비중 재배분 없음`:'';
-  $('latest').textContent=`${c.weight_year}년 연초 고정 가중치 · ${c.weight_quarter} · 막대는 부문 기여분, 검은 선은 합계${coverage}`;
+  $('latest').textContent=`${level.provisional?'잠정치':'전체 관측'} · 관측 ${level.available_inputs}/${level.total_inputs}개 · ${c.weight_year}년 연초 고정 가중치 · ${c.weight_quarter} · 막대는 부문 기여분, 검은 선은 합계${coverage}`;
   $('momentumLatest').textContent='완성된 Level PCA의 최근 3개월 평균 − 직전 3개월 평균 · 지수 포인트 차분'+coverage;
   $('blockcharts').innerHTML=axes.map(a=>`<section class="panel" data-sector="${a}"><h2 style="color:${colors[a]}">${a}</h2>${c.missing_axes.includes(a)?'<p class="missing">BlackRock 참조 목록에 해당 부문 지표가 없어 계산하지 않습니다.</p>':'<div class="metric-stack">'+['YoY','Momentum'].map(ver=>{
     const v=c.versions[ver],i=v.dates.indexOf(v.latest);
@@ -30,7 +30,7 @@ function renderOverview(){
     $(title).textContent='전체 국가 · Growth '+(ver==='YoY'?'Level':'Momentum');
     $(chart).innerHTML=plot(dates,countries.map(c=>({name:D.names[c],v:D.countries[c].versions[ver].headline,c:regionColors[c]})))+endpointSummary(countries,ver);
   }
-  $('latest').textContent='각 국가의 최신 유효월과 끝값을 함께 표시합니다. 독일·일본은 Housing을 제외한 합계입니다.';
+  $('latest').textContent='미발표 지표를 제외한 잠정치입니다. 각 국가의 최신 유효월과 끝값을 함께 표시합니다. 독일·일본은 Housing을 제외한 합계입니다.';
   $('momentumLatest').textContent='동일한 국가 지수의 최근 3개월 평균 − 직전 3개월 평균 · 위 Level과 같은 기간';
   renderSectorHeatmaps();
 }

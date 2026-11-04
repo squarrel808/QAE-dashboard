@@ -20,7 +20,7 @@ function validate(html){
   }
   if(!html.includes('id="momentumChart"'))throw new Error('Paired Level/Momentum view missing')
 }
-if(fs.existsSync(path.join(source,'index.html'))){
+if(!process.env.VERCEL && files.every(file=>fs.existsSync(path.join(source,file)))){
   validate(fs.readFileSync(path.join(source,'index.html'),'utf8'))
   fs.mkdirSync(destination,{recursive:true})
   for(const file of files)fs.copyFileSync(path.join(source,file),path.join(destination,file))

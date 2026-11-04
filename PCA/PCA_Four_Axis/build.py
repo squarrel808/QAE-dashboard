@@ -63,7 +63,7 @@ def main(output_base=None,reference_only=False):
             else:records[key]=record
     legacy_backup=output/'annual_weights_gross_export_v1.json'
     if any(r['policy']==OLD_POLICY for r in records.values()) and not legacy_backup.exists():shutil.copy2(ledger_path,legacy_backup)
-    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs; '+DESCRIPTION+'; frozen January GDP shares; Export = 0.5 * gross exports/GDP','estimation':ESTIMATION,'weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
+    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs; '+DESCRIPTION+'; frozen January GDP shares; Export = 0.5 * gross exports/GDP','estimation':ESTIMATION,'publication_policy':'available_inputs_provisional_v1','weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
     if reference_only:payload.update(model='PCA III',universe='blackrock_reference_only',excluded_countries={cc:n for cc,n in review['names'].items() if cc not in names})
     classifications=[];timeseries=[];weights_rows=[];loads=[]
     input_series={}
@@ -82,7 +82,7 @@ def main(output_base=None,reference_only=False):
                 blocks[axis]=pd.Series(np.nan,index=z.index)
                 diagnostics[axis]={'count':0,'single':False,'available_latest':0}
                 continue
-            score,loading,explained,n,fit_detail=fixed_pca(z[keys])
+            score,loading,explained,n,fit_detail=fixed_pca(z[keys],min_available=1)
             blocks[axis]=score;block_loads[axis]=loading
             diagnostics[axis]={'count':len(keys),'single':len(keys)==1,'fit':fit_detail}
             for t in loading.index:
@@ -94,16 +94,12 @@ def main(output_base=None,reference_only=False):
         lag=core.INVESTMENT_SCOPE['countries'][cc].get('weight_lag_months',3)
         wp,weight_quarters,annual=weight_panel(candidates,cc,panel.index,lag,records,sources)
         active=[a for a in AXES if diagnostics[a]['count']>0]
-        contrib=panel*wp;headline=contrib[active].sum(axis=1,min_count=len(active))
-        # Consumer requires at least one consumption-actual observation.
-        actual=[k for k,s in sp.items() if s['group']=='C_actual']
-        headline=headline.where(z[actual].notna().any(axis=1))
-        # Export surveys now extend further than the trade release. A new
-        # survey-only month must not represent the full Export activity block.
-        export_actual=[k for k,s in sp.items() if s['group']=='X' and s['kind'] in ['level','growth_yoy','growth_mom']]
-        if not export_actual:raise ValueError((cc,'No actual export inputs'))
-        headline=headline.where(z[export_actual].notna().any(axis=1))
-        contrib=contrib.where(headline.notna(),axis=0)
+        contrib=panel*wp
+        headline=contrib[active].sum(axis=1,min_count=1)
+        # Missing block contributions are zero ONLY for aggregation accounting;
+        # block scores and raw observations remain missing. GDP shares stay fixed.
+        contrib[active]=contrib[active].fillna(0).where(headline.notna(),axis=0)
+        coverage=z.notna().sum(axis=1)
         versions={}
         for mode in ['YoY','Momentum']:
             bp=panel if mode=='YoY' else difference(panel)
@@ -115,7 +111,7 @@ def main(output_base=None,reference_only=False):
             # masquerade as a collapse of the full Consumer block.
             bp=bp.copy();bp.loc[bp.index>last,:]=np.nan
             assert (cp[active].sum(axis=1,min_count=len(active))-hp).abs().max()<1e-10
-            versions[mode]={'dates':[str(t)[:7] for t in idx],'headline':vals(hp.loc[idx]),'blocks':{a:vals(bp.loc[idx,a]) for a in AXES},'contributions':{a:vals(cp.loc[idx,a]) for a in AXES},'latest':str(last)[:7],'latest_value':float(hp[last]),'negative_loadings':sum(diagnostics[a]['fit']['negative_loadings'] for a in active)}
+            versions[mode]={'dates':[str(t)[:7] for t in idx],'headline':vals(hp.loc[idx]),'blocks':{a:vals(bp.loc[idx,a]) for a in AXES},'contributions':{a:vals(cp.loc[idx,a]) for a in AXES},'latest':str(last)[:7],'latest_value':float(hp[last]),'available_inputs':int(coverage[last]),'total_inputs':len(sp),'provisional':bool(coverage[last]<len(sp)),'negative_loadings':sum(diagnostics[a]['fit']['negative_loadings'] for a in active)}
             for t in idx:timeseries.append(dict(country=cc,version=mode,date=str(t)[:10],headline=hp[t],weight_year=t.year,weight_quarter=weight_quarters[t],**{'weight_'+a:wp.at[t,a] for a in AXES},**{a:bp.at[t,a] for a in AXES},**{'contrib_'+a:cp.at[t,a] for a in AXES}))
         last=headline.last_valid_index()
         for axis in AXES:
@@ -142,6 +138,6 @@ def main(output_base=None,reference_only=False):
     (output/'dashboard_data.json').write_text(json.dumps(payload,ensure_ascii=False,allow_nan=False),encoding='utf8')
     assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in hashes.items())
     save_ledger(ledger_path,records)
-    (output/'validation.json').write_text(json.dumps({'pca_i_unchanged_during_this_build':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','estimation':ESTIMATION,'weights':POLICY},indent=2),encoding='utf8')
+    (output/'validation.json').write_text(json.dumps({'pca_i_unchanged_during_this_build':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','estimation':ESTIMATION,'publication_policy':'available_inputs_provisional_v1','weights':POLICY},indent=2),encoding='utf8')
 
 if __name__=='__main__':main()

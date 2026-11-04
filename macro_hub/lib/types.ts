@@ -49,6 +49,9 @@ export type ConsensusBundle = {
 
 // ── PCA (활동지수 요인 분해) ──
 export type PcaVersion = {
+  available_inputs?: number
+  total_inputs?: number
+  provisional?: boolean
   dates: string[]
   // 최신 관측월 (YYYY-MM). 지표가 2개 이상 들어온 마지막 달 — 드릴다운 updated 배지 기준
   latest?: string | null
