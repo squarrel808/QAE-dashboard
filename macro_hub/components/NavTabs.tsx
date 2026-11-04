@@ -7,6 +7,7 @@ const TABS = [
   { href: '/econ', label: '경제지표' },
   { href: '/earnings', label: '실적 캘린더' },
   { href: '/reports', label: 'Report' },
+  { href: '/country-indicators', label: '국가별 경제지표' },
   { href: '/pca', label: 'PCA' },
   { href: '/gdp-pca', label: 'PCA II' },
   { href: '/pca-iii', label: 'PCA III' },
