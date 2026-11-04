@@ -39,6 +39,7 @@ SOURCES = {
 def main():
     os.makedirs(DEST, exist_ok=True)
     subprocess.run(['node', os.path.join(HERE, 'sync_surprise.mjs')], check=True)
+    subprocess.run(['node', os.path.join(HERE, 'sync_gdp_weighted.mjs')], check=True)
     ok, miss = 0, 0
     for name, src in SOURCES.items():
         dst = os.path.join(DEST, name)

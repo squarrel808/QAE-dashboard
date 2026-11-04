@@ -1,0 +1,12 @@
+{
+  "source": "snowflake",
+  "snowflake_python": "C:/Users/infomax/Documents/python/SNOWFLAKE/snowflake/.venv/Scripts/python.exe",
+  "connection_name": "A8240085925871-NPS_TAA",
+  "role": "TAA_DEVELOPER",
+  "warehouse": "TAA_DEV_WH",
+  "database": "TAA_DB_DEV",
+  "private_key_file": "~/.snowflake/keys/jeyhyuk_snowflake_rsa_key.p8",
+  "start_date": "2019-12-01",
+  "max_economic_age_days": 10,
+  "max_inflation_age_days": 75
+}

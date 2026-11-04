@@ -1,0 +1,6088 @@
+[
+  {
+    "id": "FR|france:frselrm",
+    "country": "FR",
+    "pk": "france:frselrm",
+    "group": "C_labor",
+    "label": "France: Harmonized Unemployment Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "france:frselrm"
+    ],
+    "origins": [
+      "FRUEREU Index",
+      "France: Harmonized Unemployment Rate (SA, %)"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "본토 ILO 원계열 france:frselur는 분기·중단(2026Q1). 원본의 유일한 2026-03 값 7.9는 이 분기 계열과 일치. 월별 조화실업률은 지역·방법론이 다른 대안이며 보간하지 않음.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|g10:s132eluc",
+    "country": "FR",
+    "pk": "g10:s132eluc",
+    "group": "C_labor",
+    "label": "France: Registered Unemployed: Actively Seeking, Not Working(SWDA, EOP, Thous)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132eluc"
+    ],
+    "origins": [
+      "FRUERNC Index",
+      "FRJSTSA Index",
+      "FRJSTCHG Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "WECO 수치 전부 공란. 실업자 정의를 확정할 근거가 없어 월별 등록 구직자 증감을 대안으로 제시. FRJSTCHG와 중복 입력 금지.",
+    "first": "1996-01-31",
+    "last": "2026-08-31",
+    "n": 368
+  },
+  {
+    "id": "FR|g10:s132d",
+    "country": "FR",
+    "pk": "g10:s132d",
+    "group": "COMMON",
+    "label": "France: Industrial Production excluding Construction (SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132d"
+    ],
+    "origins": [
+      "FPIPI Index",
+      "FPIPYOY Index",
+      "FPIPMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|g10:s132dm",
+    "country": "FR",
+    "pk": "g10:s132dm",
+    "group": "COMMON",
+    "label": "France: Industrial Production: Manufacturing (SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132dm"
+    ],
+    "origins": [
+      "FRMPYOY Index",
+      "FRMPMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|france:frsvfzc",
+    "country": "FR",
+    "pk": "france:frsvfzc",
+    "group": "COMMON",
+    "label": "France: BdF Bus Survey: Capacity Utilization Rate, Total Industry(SA, %Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "france:frsvfzc"
+    ],
+    "origins": [
+      "FRBSCUR Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "FR|france:frnopcr",
+    "country": "FR",
+    "pk": "france:frnopcr",
+    "group": "C_actual",
+    "label": "France: New Passenger Car Registrations (NSA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "france:frnopcr"
+    ],
+    "origins": [
+      "FRVHNYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "FR|derived:fr_car_light",
+    "country": "FR",
+    "pk": "derived:fr_car_light",
+    "group": "C_actual",
+    "label": "France: New Passenger Cars + Light Commercial Vehicles",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "france:frnopcr",
+      "france:frnolcvr"
+    ],
+    "origins": [
+      "FRVHRYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "승용차+경상용차 신규등록 건수를 더한 후 전년비. 9개월 평균 차이 0.008%p. 구성 합계는 재현되나 원본 표시 정밀도까지 전부 일치하지 않음.",
+    "first": "1999-09-30",
+    "last": "2026-09-30",
+    "n": 325
+  },
+  {
+    "id": "FR|g10:n132hs",
+    "country": "FR",
+    "pk": "g10:n132hs",
+    "group": "I_housing",
+    "label": "France: Housing Starts (NSA, Number)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n132hs"
+    ],
+    "origins": [
+      "FRCOSCHG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-01-31",
+    "last": "2026-08-31",
+    "n": 320
+  },
+  {
+    "id": "FR|g10:n132hp",
+    "country": "FR",
+    "pk": "g10:n132hp",
+    "group": "I_housing",
+    "label": "France: Total Authorized Housing Permits (NSA, Number)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n132hp"
+    ],
+    "origins": [
+      "FRCOPCHG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|france:frstu47",
+    "country": "FR",
+    "pk": "france:frstu47",
+    "group": "C_actual",
+    "label": "France: Retail Sales Volume excl Motor Vehicles & Motorcycles (SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "france:frstu47"
+    ],
+    "origins": [
+      "RSWAFRYY Index",
+      "RSSAFRMM Index",
+      "FRRLXCMM Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "WECO는 WDA 물량. 현재 조회된 SWDA·NSA·금액·속보 계열로는 수치를 재현하지 못함. SWDA 소매물량 전년비를 별도 대안으로 사용 가능.",
+    "first": "1999-01-31",
+    "last": "2026-08-31",
+    "n": 332
+  },
+  {
+    "id": "FR|france:frstu45",
+    "country": "FR",
+    "pk": "france:frstu45",
+    "group": "C_actual",
+    "label": "France: Wholesale/Retail Trade & Repair of Motor Vehicles[Volume](SWDA,2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "france:frstu45"
+    ],
+    "origins": [
+      "FRRLCMRM Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "자동차 판매 단독보다 자동차 도소매·수리 전체 물량 전월비가 7/8개월 일치. 원본 범위가 불명확하여 동등성 확정에서 제외.",
+    "first": "1999-01-31",
+    "last": "2026-08-31",
+    "n": 332
+  },
+  {
+    "id": "FR|g10:s132vcc",
+    "country": "FR",
+    "pk": "g10:s132vcc",
+    "group": "C_sentiment",
+    "label": "France: INSEE HH Survey: Overall Household Confidence Indicator (SA, LT Avg=100)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132vcc"
+    ],
+    "origins": [
+      "FRCCO Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "FR|g10:s132ib",
+    "country": "FR",
+    "pk": "g10:s132ib",
+    "group": "TRADE_REF",
+    "label": "France: Balance of Trade in Goods, Incl Military Eqpt [fob/fob](SWDA, Mil.Euros)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132ib"
+    ],
+    "origins": [
+      "FRTEBAL Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|g10:s132ix",
+    "country": "FR",
+    "pk": "g10:s132ix",
+    "group": "X",
+    "label": "France: Exports of Goods including Military Eqpt [fob] (SWDA, Mil.Euros)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132ix"
+    ],
+    "origins": [
+      "FRTEEXPY Index",
+      "FRTEEXPM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "FR|g10:s132im",
+    "country": "FR",
+    "pk": "g10:s132im",
+    "group": "M",
+    "label": "France: Imports of Goods including Military Eqpt [fob] (SWDA, Mil.Euros)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s132im"
+    ],
+    "origins": [
+      "FRTEIMPY Index",
+      "FRTEIMPM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|derived:uk_mgsx_endmonth",
+    "country": "UK",
+    "pk": "derived:uk_mgsx_endmonth",
+    "group": "C_labor",
+    "label": "UK: LFS: Unemployment Rate: Aged 16 and Over (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:mgsx"
+    ],
+    "origins": [
+      "UKUEILOR Index",
+      "U.K.: Unemployment Rate: Aged 16 and Over [3-Mo Moving Avg](SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "기준월 정렬 후 일치",
+    "note": "Haver/ONS MGSX의 월 표기를 한 달 뒤로 정렬하면 8/8개월 일치. 3개월 이동기간 통계이므로 월별 단월 실업률로 해석하지 않음. WECO와의 정렬 규칙이며 발표일을 뜻하지 않음.",
+    "first": "1995-02-28",
+    "last": "2026-08-31",
+    "n": 379
+  },
+  {
+    "id": "UK|uk:bcje",
+    "country": "UK",
+    "pk": "uk:bcje",
+    "group": "C_labor",
+    "label": "UK: Unemployment: Claimant Count Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:bcje"
+    ],
+    "origins": [
+      "UKUER Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:bcjd",
+    "country": "UK",
+    "pk": "uk:bcjd",
+    "group": "C_labor",
+    "label": "UK: Unemployment: Claimant Count (SA, Thous)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:bcjd"
+    ],
+    "origins": [
+      "UKUEMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:kac3",
+    "country": "UK",
+    "pk": "uk:kac3",
+    "group": "C_labor",
+    "label": "Great Britain: AWE: Total Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:kac3"
+    ],
+    "origins": [
+      "UKAWMWHO Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-03-31",
+    "last": "2026-08-31",
+    "n": 306
+  },
+  {
+    "id": "UK|uk:kai9",
+    "country": "UK",
+    "pk": "uk:kai9",
+    "group": "C_labor",
+    "label": "Great Britain: AWE, Regular Pay: Whole Economy [3Mo Mvg Avg vs Yr Ago] (SA, %)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:kai9"
+    ],
+    "origins": [
+      "UKAWXTOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-03-31",
+    "last": "2026-08-31",
+    "n": 306
+  },
+  {
+    "id": "UK|uk:k222",
+    "country": "UK",
+    "pk": "uk:k222",
+    "group": "COMMON",
+    "label": "UK: Industrial Production (SA, 2024=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:k222"
+    ],
+    "origins": [
+      "UKIPIYOY Index",
+      "UKIPIMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|g10:s112dm",
+    "country": "UK",
+    "pk": "g10:s112dm",
+    "group": "COMMON",
+    "label": "UK: Industrial Production: Manufacturing (SA, 2024=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s112dm"
+    ],
+    "origins": [
+      "UKMPIYOY Index",
+      "UKMPIMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|uk:s2ku",
+    "country": "UK",
+    "pk": "uk:s2ku",
+    "group": "COMMON",
+    "label": "UK: Index of Services: Total Service Industries (SA, 2024=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:s2ku"
+    ],
+    "origins": [
+      "UKISCT3M Index",
+      "UKISCTMM Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "서비스업 지수의 최근 3개월 평균/직전 3개월 평균 변화율. 6/8개월 일치; 원계열 반올림·개정 가능성은 있으나 차이 원인 확정은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:j45u",
+    "country": "UK",
+    "pk": "uk:j45u",
+    "group": "C_actual",
+    "label": "Great Britain: Retail Sales Volume: Retail excluding Auto Fuel(SA, Yr/Yr %Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:j45u"
+    ],
+    "origins": [
+      "UKRVAYOY Index",
+      "UKRVAMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "자동차 연료 제외 실질 소매판매 전년비.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:uncreg",
+    "country": "UK",
+    "pk": "uk:uncreg",
+    "group": "C_actual",
+    "label": "UK: New Car Registrations (NSA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:uncreg"
+    ],
+    "origins": [
+      "UKVHRR Index",
+      "UKVHRYY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:ugfci",
+    "country": "UK",
+    "pk": "uk:ugfci",
+    "group": "C_sentiment",
+    "label": "UK: GfK Consumer Confidence Barometer (NSA, % Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:ugfci"
+    ],
+    "origins": [
+      "UKCCI Index",
+      "UK: GfK Consumer Confidence Barometer (NSA, % Bal)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "UK|uk:boki",
+    "country": "UK",
+    "pk": "uk:boki",
+    "group": "TRADE_REF",
+    "label": "U.K.: Trade Balance: Goods (SA, Mil.Pounds)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:boki"
+    ],
+    "origins": [
+      "UKTBALEE Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:l87k",
+    "country": "UK",
+    "pk": "uk:l87k",
+    "group": "TRADE_REF",
+    "label": "U.K.: Trade Balance with non-EU Countries in Goods (SA, Mil. Pounds)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:l87k"
+    ],
+    "origins": [
+      "UKTBLGDT Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:l87q",
+    "country": "UK",
+    "pk": "uk:l87q",
+    "group": "TRADE_REF",
+    "label": "U.K.: Trade Balance with the European Union in Goods (SA, Mil.Pounds)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:l87q"
+    ],
+    "origins": [
+      "UKTBLGCG Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "기존 uk:lgcg는 중단. 현행 EU 상품 무역수지 l87q는 2026-08까지 수신. WECO 전부 공란; EU 구성국·과거 범위가 달라 자동 연결하지 않음.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:ikbj",
+    "country": "UK",
+    "pk": "uk:ikbj",
+    "group": "TRADE_REF",
+    "label": "U.K.: Trade Balance: Goods and Services (SA, Mil.Pounds)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ikbj"
+    ],
+    "origins": [
+      "UKTBTTBA Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:ikbh",
+    "country": "UK",
+    "pk": "uk:ikbh",
+    "group": "X",
+    "label": "U.K.: Exports: Goods and Services (SA, Mil.Pounds)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ikbh"
+    ],
+    "origins": [
+      "UKTBTTEX Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:ikbi",
+    "country": "UK",
+    "pk": "uk:ikbi",
+    "group": "M",
+    "label": "U.K.: Imports: Goods and Services (SA, Mil.Pounds)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ikbi"
+    ],
+    "origins": [
+      "UKTBTTIM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "JP|japan:fluedr2",
+    "country": "JP",
+    "pk": "japan:fluedr2",
+    "group": "C_labor",
+    "label": "Japan: Labor Force Survey: Unemployment Rate, Total (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:fluedr2"
+    ],
+    "origins": [
+      "JNUE Index",
+      "Japan: Unemployment Rate (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jaor2",
+    "country": "JP",
+    "pk": "japan:jaor2",
+    "group": "C_labor",
+    "label": "Japan: Gen Workers: Ratio of Active Job Openings to Applications (SA, Ratio)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jaor2"
+    ],
+    "origins": [
+      "JBTARATE Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jprei2",
+    "country": "JP",
+    "pk": "japan:jprei2",
+    "group": "C_labor",
+    "label": "Japan: Regular Employment [5 or More Empl]: All Surveyed Indus (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jprei2"
+    ],
+    "origins": [
+      "JNLSRESA Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "5인 이상 고용지수. 기존 30인 이상 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:flpr",
+    "country": "JP",
+    "pk": "japan:flpr",
+    "group": "C_labor",
+    "label": "Japan: Labor Force Survey: Labor Force Participation Rate (NSA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:flpr"
+    ],
+    "origins": [
+      "JNUNPRT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:mefa",
+    "country": "JP",
+    "pk": "japan:mefa",
+    "group": "C_labor",
+    "label": "Japan: Total Cash Earnings/Employee [5 or More Empl]: All Surveyed Ind(NSA, Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:mefa"
+    ],
+    "origins": [
+      "JNLSCASH Index",
+      "JNLSUCTL Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "5인 이상 총현금급여. 엔을 1만 엔 단위로 환산.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpewfra2",
+    "country": "JP",
+    "pk": "japan:jpewfra2",
+    "group": "C_labor",
+    "label": "Japan: Real Earnings Index [5/More Empl]: All Surveyed Industries (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpewfra2"
+    ],
+    "origins": [
+      "JNLSCONT Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "WECO 실질임금 라벨에 대해 실질임금·실질고용자소득·명목 총급여·정액급여의 SA/NSA 후보를 비교했으나 일치 없음. 5인 이상 실질임금지수(SA)를 별도 대안으로 제시.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpsiip",
+    "country": "JP",
+    "pk": "japan:jpsiip",
+    "group": "COMMON",
+    "label": "Japan: IP: Mining and Manufacturing (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiip"
+    ],
+    "origins": [
+      "JNIPYOY Index",
+      "JNIPMOM Index",
+      "JNIAADJ Index",
+      "JNTIAIAM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpsiir",
+    "country": "JP",
+    "pk": "japan:jpsiir",
+    "group": "INVENTORY",
+    "label": "Japan: Inventory/Sales Ratio: Mining and Manufacturing (SA, 2020=100)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiir"
+    ],
+    "origins": [
+      "JNISI/S Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:mvpt",
+    "country": "JP",
+    "pk": "japan:mvpt",
+    "group": "COMMON",
+    "label": "Japan: Motor Vehicle Production: Total (Thous Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:mvpt"
+    ],
+    "origins": [
+      "JNVHPYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-07-31",
+    "n": 378
+  },
+  {
+    "id": "JP|japan:omnpeen2",
+    "country": "JP",
+    "pk": "japan:omnpeen2",
+    "group": "I_business",
+    "label": "Japan: Machinery Orders Received: Priv Demand ex Volatile Orders (SA, Mil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:omnpeen2"
+    ],
+    "origins": [
+      "JNMOYOY Index",
+      "JNMOCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:wmor",
+    "country": "JP",
+    "pk": "japan:wmor",
+    "group": "I_business",
+    "label": "Japan: Machine Tools: Orders (Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:wmor"
+    ],
+    "origins": [
+      "JNMTOY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:jpstiter",
+    "country": "JP",
+    "pk": "japan:jpstiter",
+    "group": "COMMON",
+    "label": "Japan: Tertiary Industry Activity Index: Tertiary Industry (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpstiter"
+    ],
+    "origins": [
+      "JNIAADJ Index",
+      "JNTIAIAM Index",
+      "JPTSALL Index",
+      "JNTIAMOM Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "전산업활동지수는 2020년 중단. 월별 광공업생산과 3차산업활동을 각각 사용 가능. 과거 가중치로 전산업지수를 임의 재생성하지 않음.",
+    "first": "2013-01-31",
+    "last": "2026-08-31",
+    "n": 164
+  },
+  {
+    "id": "JP|japan:cbnc",
+    "country": "JP",
+    "pk": "japan:cbnc",
+    "group": "COMMON",
+    "label": "Japan: Corporate Bankruptcies: Number of Cases (Cases)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:cbnc"
+    ],
+    "origins": [
+      "JNBTCASE Index",
+      "JNBTYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:janw",
+    "country": "JP",
+    "pk": "japan:janw",
+    "group": "C_labor",
+    "label": "Japan: General Workers: New Job Openings (NSA, Thous Persons)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:janw"
+    ],
+    "origins": [
+      "JBTAJBOF Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:costsn2",
+    "country": "JP",
+    "pk": "japan:costsn2",
+    "group": "I_housing",
+    "label": "Japan: New Housing Construction Started, Floor Area (SA, Mil.Sq.Meters)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:costsn2"
+    ],
+    "origins": [
+      "JNHSFTLM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpshd224",
+    "country": "JP",
+    "pk": "japan:jpshd224",
+    "group": "C_actual",
+    "label": "Japan: Domestic Shipments: Mining & Mfg: Consumer Durables (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpshd224"
+    ],
+    "origins": [
+      "JIPSDURA Index"
+    ],
+    "substitution": false,
+    "review_status": "정의 대응 · 원본 공란",
+    "note": "월별 내구소비재 국내출하(SA, 2020=100). 정의와 최신 수신 확인; WECO 수치가 없어 Bloomberg 동일계열 수치 대조는 불가.",
+    "first": "1998-01-31",
+    "last": "2026-08-31",
+    "n": 344
+  },
+  {
+    "id": "JP|japan:ccia",
+    "country": "JP",
+    "pk": "japan:ccia",
+    "group": "C_sentiment",
+    "label": "Japan: Consumer Confidence Index: All Households (NSA, 50+=better)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:ccia"
+    ],
+    "origins": [
+      "JCOMACF Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2004-04-30",
+    "last": "2026-09-30",
+    "n": 270
+  },
+  {
+    "id": "JP|japan:jpsht2a1",
+    "country": "JP",
+    "pk": "japan:jpsht2a1",
+    "group": "COMMON",
+    "label": "Japan: Shipments: Manufacturing Industry (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsht2a1"
+    ],
+    "origins": [
+      "JIPSMANU Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2018-01-31",
+    "last": "2026-08-31",
+    "n": 104
+  },
+  {
+    "id": "JP|japan:jpsiio",
+    "country": "JP",
+    "pk": "japan:jpsiio",
+    "group": "COMMON",
+    "label": "Japan: Operating Rate: Manufacturing (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiio"
+    ],
+    "origins": [
+      "JNCAP Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpewmih",
+    "country": "JP",
+    "pk": "japan:jpewmih",
+    "group": "C_labor",
+    "label": "Japan: Overtime Hours Worked [30 or More Empl]: Manufacturing (2020=100)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpewmih"
+    ],
+    "origins": [
+      "OEJPL009 Index"
+    ],
+    "substitution": false,
+    "review_status": "정의 대응 · 원본 공란",
+    "note": "월별 제조업 초과근로시간, 30인 이상 사업체. Haver 정의·최신 수신 확인; WECO 전부 공란으로 규모/조정의 원본 동등성은 수치 검증 불가.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpsiisct",
+    "country": "JP",
+    "pk": "japan:jpsiisct",
+    "group": "I_business",
+    "label": "Japan: Producer's Shipments: Capital Goods (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiisct"
+    ],
+    "origins": [
+      "JIPSCAPG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jdspc",
+    "country": "JP",
+    "pk": "japan:jdspc",
+    "group": "C_actual",
+    "label": "Japan: Department Store Sales: All Japan (Yr/Yr %Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jdspc"
+    ],
+    "origins": [
+      "JNDSTYOY Index",
+      "JNDSNYOY Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "원본 중복 행에 전국/도쿄 라벨이 혼재. 전국 백화점과 도쿄 수치가 일치하지 않음. JAPANR는 현재 연결에서 열리지 않음. 전국 백화점 판매는 별도 월별 대안.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|g10:n158tws",
+    "country": "JP",
+    "pk": "g10:n158tws",
+    "group": "COMMON",
+    "label": "Japan: Wholesale Sales (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n158tws"
+    ],
+    "origins": [
+      "JNNEWHSY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:costny2",
+    "country": "JP",
+    "pk": "japan:costny2",
+    "group": "I_housing",
+    "label": "Japan: Housing Starts: Seasonally Adjusted at Annual Rate (SAAR, Thous Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:costny2"
+    ],
+    "origins": [
+      "JNHSAN Index",
+      "JNHSYOY Index",
+      "JNC SALE Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2004-04-30",
+    "last": "2026-08-31",
+    "n": 269
+  },
+  {
+    "id": "JP|japan:cnorv",
+    "country": "JP",
+    "pk": "japan:cnorv",
+    "group": "COMMON",
+    "label": "Japan: Construction Orders (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:cnorv"
+    ],
+    "origins": [
+      "JNCSTOTY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpsir2",
+    "country": "JP",
+    "pk": "japan:jpsir2",
+    "group": "C_actual",
+    "label": "Japan: Retail Sales Value: Total (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsir2"
+    ],
+    "origins": [
+      "JNNETYOY Index",
+      "JNRETMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2002-01-31",
+    "last": "2026-08-31",
+    "n": 296
+  },
+  {
+    "id": "JP|japan:pctl",
+    "country": "JP",
+    "pk": "japan:pctl",
+    "group": "C_actual",
+    "label": "Japan: Department Store & Supermarket Sales: Total (Yr/Yr %Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:pctl"
+    ],
+    "origins": [
+      "JNRSYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "백화점+슈퍼마켓 대형소매 판매 전년비. 7/8개월 일치, 나머지 0.1%p 차이.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:cspc",
+    "country": "JP",
+    "pk": "japan:cspc",
+    "group": "C_actual",
+    "label": "Japan: Chain Store Sales: Total [Adj for Number of Stores] (Yr/Yr %Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:cspc"
+    ],
+    "origins": [
+      "JNSMTYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "일반 슈퍼마켓 통계가 아니라 일본체인스토어협회 점포수 조정 판매 전년비.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:csjerss",
+    "country": "JP",
+    "pk": "japan:csjerss",
+    "group": "C_actual",
+    "label": "Japan: JFA Convenience Store Data: Existing Stores: Sales, % Change(Yr/Yr % Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:csjerss"
+    ],
+    "origins": [
+      "JNCVSSY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "편의점 기존점 판매 전년비. 전체점포 후보 교체.",
+    "first": "1998-12-31",
+    "last": "2026-09-30",
+    "n": 334
+  },
+  {
+    "id": "JP|japan:jpnvs",
+    "country": "JP",
+    "pk": "japan:jpnvs",
+    "group": "C_actual",
+    "label": "Japan: Motor Vehicle New Registration Sales (NSA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpnvs"
+    ],
+    "origins": [
+      "JNVHSYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "2005-03-31",
+    "last": "2026-09-30",
+    "n": 259
+  },
+  {
+    "id": "JP|japan:ccit",
+    "country": "JP",
+    "pk": "japan:ccit",
+    "group": "C_sentiment",
+    "label": "Japan: Consumer Confidence: 2+ Person Households (NSA, 50+=better)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:ccit"
+    ],
+    "origins": [
+      "JCOMHCF Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "2인 이상 가구 소비자신뢰 NSA. SA 후보 교체.",
+    "first": "1995-03-31",
+    "last": "2026-09-30",
+    "n": 307
+  },
+  {
+    "id": "JP|japan:fiaalec",
+    "country": "JP",
+    "pk": "japan:fiaalec",
+    "group": "C_actual",
+    "label": "Japan: Avg Disb per HH, Real: 2+ Person HH Inc Agr: Living Exp (NSA, Y/Y%Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:fiaalec"
+    ],
+    "origins": [
+      "JHHSLERY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-01-31",
+    "last": "2026-08-31",
+    "n": 308
+  },
+  {
+    "id": "JP|japan:fiwalec",
+    "country": "JP",
+    "pk": "japan:fiwalec",
+    "group": "C_actual",
+    "label": "Japan: Avg Disbursements Workers' HH Inc Agri: Living Expenditure(NSA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:fiwalec"
+    ],
+    "origins": [
+      "JHHSLEXY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-01-31",
+    "last": "2026-08-31",
+    "n": 308
+  },
+  {
+    "id": "JP|japan:bng",
+    "country": "JP",
+    "pk": "japan:bng",
+    "group": "TRADE_REF",
+    "label": "Japan: BOP: Current Account Balance: Goods (100 Mil.Yen)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:bng"
+    ],
+    "origins": [
+      "JNBPTRD Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "국제수지 상품수지 NSA. 1억 엔→10억 엔 환산.",
+    "first": "1996-01-31",
+    "last": "2026-08-31",
+    "n": 368
+  },
+  {
+    "id": "JP|g10:s158ib",
+    "country": "JP",
+    "pk": "g10:s158ib",
+    "group": "TRADE_REF",
+    "label": "Japan: Balance of Trade in Goods (SA, Bil.Yen)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s158ib"
+    ],
+    "origins": [
+      "JNTBALA Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|g10:n158ib",
+    "country": "JP",
+    "pk": "g10:n158ib",
+    "group": "TRADE_REF",
+    "label": "Japan: Balance of Trade in Goods (NSA, Bil.Yen)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n158ib"
+    ],
+    "origins": [
+      "JNTBAL Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:veattl",
+    "country": "JP",
+    "pk": "japan:veattl",
+    "group": "X",
+    "label": "Japan: Exports of Goods: Value (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:veattl"
+    ],
+    "origins": [
+      "JNTBEXPY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:viattl",
+    "country": "JP",
+    "pk": "japan:viattl",
+    "group": "M",
+    "label": "Japan: Imports of Goods: Value (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:viattl"
+    ],
+    "origins": [
+      "JNTBIMPY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:jpitwqx",
+    "country": "JP",
+    "pk": "japan:jpitwqx",
+    "group": "X",
+    "label": "Japan: Exports to the World: Volume Index (NSA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpitwqx"
+    ],
+    "origins": [
+      "JNVOEXPY Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "전세계 수출 물량 NSA 전년비. 기존 SA 후보를 교체. 7/9개월 일치, 평균 차이 0.033%p.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:veaus",
+    "country": "JP",
+    "pk": "japan:veaus",
+    "group": "X",
+    "label": "Japan: Exports to United States (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:veaus"
+    ],
+    "origins": [
+      "JNVOUSEY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:veaeuu",
+    "country": "JP",
+    "pk": "japan:veaeuu",
+    "group": "X",
+    "label": "Japan: Exports to EU (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:veaeuu"
+    ],
+    "origins": [
+      "JNVOEUY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:veaasa",
+    "country": "JP",
+    "pk": "japan:veaasa",
+    "group": "X",
+    "label": "Japan: Exports to Asia (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:veaasa"
+    ],
+    "origins": [
+      "JNVOASIY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:jpitwqm",
+    "country": "JP",
+    "pk": "japan:jpitwqm",
+    "group": "M",
+    "label": "Japan: Imports from the World: Volume Index (NSA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpitwqm"
+    ],
+    "origins": [
+      "JNVOIMPY Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "전세계 수입 물량 NSA 전년비. 기존 SA 후보를 교체. 7/9개월 일치, 평균 차이 0.032%p.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:viaus",
+    "country": "JP",
+    "pk": "japan:viaus",
+    "group": "M",
+    "label": "Japan: Imports from United States (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:viaus"
+    ],
+    "origins": [
+      "JNVOUSIY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:viaeuu",
+    "country": "JP",
+    "pk": "japan:viaeuu",
+    "group": "M",
+    "label": "Japan: Imports from EU (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:viaeuu"
+    ],
+    "origins": [
+      "JNVOEUIY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "JP|japan:viaasa",
+    "country": "JP",
+    "pk": "japan:viaasa",
+    "group": "M",
+    "label": "Japan: Imports from Asia (NSA, Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:viaasa"
+    ],
+    "origins": [
+      "JNVOAEXY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "CA|g10:s156gch",
+    "country": "CA",
+    "pk": "g10:s156gch",
+    "group": "GDP_REF",
+    "label": "Canada: GDP at Basic Prices: All Industries(SA, Mil.Chn.2017.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156gch"
+    ],
+    "origins": [
+      "CAGDPYOY Index",
+      "CAGDPMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1997-01-31",
+    "last": "2026-07-31",
+    "n": 355
+  },
+  {
+    "id": "CA|canada:v2062815",
+    "country": "CA",
+    "pk": "canada:v2062815",
+    "group": "C_labor",
+    "label": "Canada: Unemployment Rate: Both Sexes, 15 Years and Over (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v2062815"
+    ],
+    "origins": [
+      "CANLXEMR Index",
+      "Canada: Unemployment Rate: 15 Years and Over (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "CA|canada:v2062811",
+    "country": "CA",
+    "pk": "canada:v2062811",
+    "group": "C_labor",
+    "label": "Canada: Employment: Both Sexes, 15 Years and Over (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v2062811"
+    ],
+    "origins": [
+      "CANLNETJ Index",
+      "Canada: Employment: 15 Years and Over (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "CA|canada:v7e11153",
+    "country": "CA",
+    "pk": "canada:v7e11153",
+    "group": "C_labor",
+    "label": "Canada: Avg Wkly Earnings incl OT: Industry Total [ex Unclassified] (SA, C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v7e11153"
+    ],
+    "origins": [
+      "CAAEYOY% Index",
+      "Canada: Avg Wkly Earnings incl OT: Industry Total [ex Unclassified] (NSA, C$)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-01-31",
+    "last": "2026-07-31",
+    "n": 307
+  },
+  {
+    "id": "CA|g10:s156ts",
+    "country": "CA",
+    "pk": "g10:s156ts",
+    "group": "COMMON",
+    "label": "Canada: Shipments: All Manufacturing Industries (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156ts"
+    ],
+    "origins": [
+      "CAMFSHIP Index",
+      "CAMFCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156to",
+    "country": "CA",
+    "pk": "g10:s156to",
+    "group": "COMMON",
+    "label": "Canada: New Orders: All Manufacturing Industries (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156to"
+    ],
+    "origins": [
+      "CAMFNORD Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156ti",
+    "country": "CA",
+    "pk": "g10:s156ti",
+    "group": "INVENTORY",
+    "label": "Canada: Total Inventory Owned: All Mfg Industries (EOP, SA, Thous.C$)",
+    "kind": "inventory_stock",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156ti"
+    ],
+    "origins": [
+      "CAMFINV Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156tu",
+    "country": "CA",
+    "pk": "g10:s156tu",
+    "group": "COMMON",
+    "label": "Canada: Unfilled Orders: All Manufacturing Industries (EOP, SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156tu"
+    ],
+    "origins": [
+      "CAMFUNOR Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156tws",
+    "country": "CA",
+    "pk": "g10:s156tws",
+    "group": "COMMON",
+    "label": "Canada: Wholesale Trade (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156tws"
+    ],
+    "origins": [
+      "CAWTYOY Index",
+      "CAWTMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|canada:v52w8145",
+    "country": "CA",
+    "pk": "canada:v52w8145",
+    "group": "INVENTORY",
+    "label": "Canada: Wholesale Inventories (EOP, SA, Thous.C$)",
+    "kind": "inventory_stock",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v52w8145"
+    ],
+    "origins": [
+      "CAWTINV Index",
+      "CAWTCHNG Index",
+      "CAWTRATI Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|canada:vb804837",
+    "country": "CA",
+    "pk": "canada:vb804837",
+    "group": "COMMON",
+    "label": "Canada: Capacity Utilization Rate: Manufacturing (NSA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "canada:vb804837"
+    ],
+    "origins": [
+      "CACAPUTL Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "전체 산업 설비가동률은 분기. 월별 제조업 가동률로 대체 가능하지만 산업 범위가 좁음. 원본 공란이므로 동일계열로 주장하지 않음.",
+    "first": "2017-01-31",
+    "last": "2026-08-31",
+    "n": 116
+  },
+  {
+    "id": "CA|canada:vk119645",
+    "country": "CA",
+    "pk": "canada:vk119645",
+    "group": "COMMON",
+    "label": "Canada: Permits: Residential and Non-Residential (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:vk119645"
+    ],
+    "origins": [
+      "CAHOPTOT Index",
+      "CAHOMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "WECO C$bn 라벨과 달리 수치는 C$million 단위와 일치. Haver 천 C$를 1,000으로 나눔.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:z156hs",
+    "country": "CA",
+    "pk": "g10:z156hs",
+    "group": "I_housing",
+    "label": "Canada: Dwelling Starts: All Areas (SAAR, Thous.Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:z156hs"
+    ],
+    "origins": [
+      "CAHSTOTL Index",
+      "CAHSSMOM Index",
+      "Canada: Dwelling Starts: All Areas (SA, Thous.Units)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "CA|canada:gp00001",
+    "country": "CA",
+    "pk": "canada:gp00001",
+    "group": "I_housing",
+    "label": "Canada: Dwelling Starts, Urban Centres 10,000+ (SAAR, Thous.Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:gp00001"
+    ],
+    "origins": [
+      "CAHSURBA Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "CA|g10:s156trs",
+    "country": "CA",
+    "pk": "g10:s156trs",
+    "group": "C_actual",
+    "label": "Canada: Retail Sales Value(SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156trs"
+    ],
+    "origins": [
+      "CARSYOY Index",
+      "CARSCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156trsx",
+    "country": "CA",
+    "pk": "g10:s156trsx",
+    "group": "C_actual",
+    "label": "Canada: Retail Sales Value ex Motor Vehicles & Parts Dealers (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156trsx"
+    ],
+    "origins": [
+      "CARSXASC Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:n156cvr",
+    "country": "CA",
+    "pk": "g10:n156cvr",
+    "group": "C_actual",
+    "label": "Canada: New Motor Vehicle Sales (NSA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n156cvr"
+    ],
+    "origins": [
+      "CAVSCOTU Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156ib",
+    "country": "CA",
+    "pk": "g10:s156ib",
+    "group": "TRADE_REF",
+    "label": "Canada: Balance of Trade in Goods (SA, Mil.Can$)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156ib"
+    ],
+    "origins": [
+      "CATBTOTB Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156ix",
+    "country": "CA",
+    "pk": "g10:s156ix",
+    "group": "X",
+    "label": "Canada: Exports of Goods, BOP Basis (SA, Mil.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156ix"
+    ],
+    "origins": [
+      "CATBTOTE Index",
+      "CATBTTEY Index",
+      "Canada: Export: BOP Basis (SA, Mil.C$)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:s156im",
+    "country": "CA",
+    "pk": "g10:s156im",
+    "group": "M",
+    "label": "Canada: Imports of Goods, BOP Basis (SA, Mil C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156im"
+    ],
+    "origins": [
+      "CATBTOTI Index",
+      "CATBTTIY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "AU|anz:auselur",
+    "country": "AU",
+    "pk": "anz:auselur",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Unemployment Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auselur"
+    ],
+    "origins": [
+      "AULFUNEM Index",
+      "Australia: Labor Force: Unemployment Rate (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:auselu",
+    "country": "AU",
+    "pk": "anz:auselu",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Unemployed (SA, Thous)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auselu"
+    ],
+    "origins": [
+      "AULFTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:ausele",
+    "country": "AU",
+    "pk": "anz:ausele",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Employed (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausele"
+    ],
+    "origins": [
+      "AULFEMPL Index",
+      "AULFEMPC Index",
+      "Australia: Labor Force: Employed (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:auselel",
+    "country": "AU",
+    "pk": "anz:auselel",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Employed, Full-time (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auselel"
+    ],
+    "origins": [
+      "AULFFULL Index",
+      "AULFEMFC Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:auselep",
+    "country": "AU",
+    "pk": "anz:auselep",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Employed, Part-time (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auselep"
+    ],
+    "origins": [
+      "AULFPT Index",
+      "AULFEMCP Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:auselpr",
+    "country": "AU",
+    "pk": "anz:auselpr",
+    "group": "C_labor",
+    "label": "Australia: Labor Force: Participation Rate (SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auselpr"
+    ],
+    "origins": [
+      "AULFPART Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:austja",
+    "country": "AU",
+    "pk": "anz:austja",
+    "group": "C_labor",
+    "label": "Australia: ANZ-Indeed Australian Job Ads (SA, 2019=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:austja"
+    ],
+    "origins": [
+      "AULFANTC Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "AU|anz:auiej10",
+    "country": "AU",
+    "pk": "anz:auiej10",
+    "group": "C_labor",
+    "label": "Australia: Internet Vacancy Index (Trend, Jan-06=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:auiej10"
+    ],
+    "origins": [
+      "DLIVTRNI Index",
+      "DLIVTY% Index",
+      "DLIVTM% Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "인터넷 구인 추세지수(Jan-2006=100). 기존 중단 후보를 현행 코드로 교체.",
+    "first": "2006-01-31",
+    "last": "2026-09-30",
+    "n": 249
+  },
+  {
+    "id": "AU|anz:aushah",
+    "country": "AU",
+    "pk": "anz:aushah",
+    "group": "I_housing",
+    "label": "Australia: Dwelling Units Approved (SA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:aushah"
+    ],
+    "origins": [
+      "AUBAHSET Index",
+      "AUBAY Index",
+      "AUBAC Index",
+      "Australia: Dwelling Units Approved (SA, Units)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "AU|anz:ausncpi",
+    "country": "AU",
+    "pk": "anz:ausncpi",
+    "group": "C_actual",
+    "label": "Australia: Nominal Household Spending (SA,Mil.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausncpi"
+    ],
+    "origins": [
+      "AURSTYSA Index",
+      "AURSTSA Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "소매판매 austrs는 2025-06 종료. ABS 월별 가계지출(MHSI)의 명목 총지출 전년비로 대체. 서비스까지 포함해 범위가 확대되므로 소매판매와 자동 연결 금지.",
+    "first": "2012-07-31",
+    "last": "2026-08-31",
+    "n": 170
+  },
+  {
+    "id": "AU|anz:ausvcc",
+    "country": "AU",
+    "pk": "anz:ausvcc",
+    "group": "C_sentiment",
+    "label": "Australia: Westpac-Melbourne Inst Consumer Sentiment Index (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvcc"
+    ],
+    "origins": [
+      "WMCCCONS Index",
+      "WMCCCONY Index",
+      "WMCCCON% Index",
+      "Australia: Westpac-Melbourne Institute Consumer Sentiment Index (SA, Index)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausvcfl",
+    "country": "AU",
+    "pk": "anz:ausvcfl",
+    "group": "C_sentiment",
+    "label": "Australia: Family Finances Last 12 Months (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvcfl"
+    ],
+    "origins": [
+      "WMCC12M% Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님. | 2026-10-28 검토: 전월비 코드 대신 같은 소비심리의 SA 수준 코드를 사용.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausvcfn",
+    "country": "AU",
+    "pk": "anz:ausvcfn",
+    "group": "C_sentiment",
+    "label": "Australia: Family Finances Next 12 Months (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvcfn"
+    ],
+    "origins": [
+      "WMCCN1M% Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님. | 2026-10-28 검토: 전월비 코드 대신 같은 소비심리의 SA 수준 코드를 사용.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausvce1",
+    "country": "AU",
+    "pk": "anz:ausvce1",
+    "group": "C_sentiment",
+    "label": "Australia: Economic Conditions Next 12 Months (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvce1"
+    ],
+    "origins": [
+      "WMCCE1M% Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausvce5",
+    "country": "AU",
+    "pk": "anz:ausvce5",
+    "group": "C_sentiment",
+    "label": "Australia: Economic Conditions Next 5 Years (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvce5"
+    ],
+    "origins": [
+      "WMCCE5M% Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausvct",
+    "country": "AU",
+    "pk": "anz:ausvct",
+    "group": "C_sentiment",
+    "label": "Australia: Time to Buy Major Household Items (SA, 100+=Favorable)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausvct"
+    ],
+    "origins": [
+      "WMCCHSM% Index",
+      "Australia: Time to Buy Major Household Items (SA, Index)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:ausbmg",
+    "country": "AU",
+    "pk": "anz:ausbmg",
+    "group": "TRADE_REF",
+    "label": "Australia: BOP: Goods Trade Balance (SA, Mil.A$)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausbmg"
+    ],
+    "origins": [
+      "AUITGSB Index",
+      "Australia: BOP: Goods Trade Balance (SA, Mil.A$)"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "상품만의 무역수지. WECO AUDbn 라벨과 달리 실제 값은 백만 AUD와 일치.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "AU|anz:ausbmgc",
+    "country": "AU",
+    "pk": "anz:ausbmgc",
+    "group": "X",
+    "label": "Australia: BOP: Goods Exports (SA, Mil.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausbmgc"
+    ],
+    "origins": [
+      "AUITEXP Index",
+      "AUITEXPY Index",
+      "AUITEXP% Index",
+      "Australia: Exports of Goods, fob (SA, Mil.A$)",
+      "Australia: BOP: Goods Exports (SA, Mil.A$)"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "AU|anz:ausbmgd",
+    "country": "AU",
+    "pk": "anz:ausbmgd",
+    "group": "M",
+    "label": "Australia: BOP: Goods Imports (SA, Mil.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:ausbmgd"
+    ],
+    "origins": [
+      "AUITIMP Index",
+      "AUITIMPY Index",
+      "AUITIMP% Index",
+      "Australia: BOP: Goods Imports (SA, Mil.A$)"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "기존 월별 상품+서비스 계열은 2023-08 종료. 현행 월별 상품만의 계열로 대체 가능. 서비스는 분기 자료로 별도 관리하고 월별로 복제하지 않음. WECO 수치 전부 공란.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:kr",
+    "country": "US",
+    "pk": "usecon:kr",
+    "group": "C_labor",
+    "label": "Civilian Unemployment Rate: 16 yr + (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:kr"
+    ],
+    "origins": [
+      "USURTOT Index",
+      "U.S.: Civilian Unemployment Rate (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:klu6",
+    "country": "US",
+    "pk": "usecon:klu6",
+    "group": "C_labor",
+    "label": "Unempl+Margin Attach+Part Time Econ Reasons/CLF + Margin Attach (SA,%)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:klu6"
+    ],
+    "origins": [
+      "USUDMAER Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:lanagra",
+    "country": "US",
+    "pk": "usecon:lanagra",
+    "group": "C_labor",
+    "label": "All Employees: Total Nonfarm (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lanagra"
+    ],
+    "origins": [
+      "NFP TCH Index",
+      "NFP T Index",
+      "U.S.: Total Employees on Nonfarm Payrolls (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:lapriva",
+    "country": "US",
+    "pk": "usecon:lapriva",
+    "group": "C_labor",
+    "label": "All Employees: Total Private Industries (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lapriva"
+    ],
+    "origins": [
+      "NFP PCH Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:lamanua",
+    "country": "US",
+    "pk": "usecon:lamanua",
+    "group": "C_labor",
+    "label": "All Employees: Manufacturing (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lamanua"
+    ],
+    "origins": [
+      "USMMMNCH Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:lrtpriva",
+    "country": "US",
+    "pk": "usecon:lrtpriva",
+    "group": "C_labor",
+    "label": "Average Weekly Hours: Total Private Industries (SA, Hrs)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lrtpriva"
+    ],
+    "origins": [
+      "AWH TOTL Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2006-03-31",
+    "last": "2026-09-30",
+    "n": 247
+  },
+  {
+    "id": "US|usecon:lrpriva",
+    "country": "US",
+    "pk": "usecon:lrpriva",
+    "group": "C_labor",
+    "label": "Average Weekly Hours: Prod & Nonsupervisory: Private Industries (SA, Hrs)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lrpriva"
+    ],
+    "origins": [
+      "USWHTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "전 민간근로자가 아닌 생산·비관리직 주당근로시간.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:ke",
+    "country": "US",
+    "pk": "usecon:ke",
+    "group": "C_labor",
+    "label": "Civilian Employment: Sixteen Years & Over (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ke"
+    ],
+    "origins": [
+      "USEMTOT Index",
+      "USEMNCHG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:kq",
+    "country": "US",
+    "pk": "usecon:kq",
+    "group": "C_labor",
+    "label": "Civilian Employment/Population Ratio: 16 yr + (SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:kq"
+    ],
+    "origins": [
+      "USERTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:ljjtpa",
+    "country": "US",
+    "pk": "usecon:ljjtpa",
+    "group": "C_labor",
+    "label": "JOLTS: Job Openings Rate: Total (EOP, SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ljjtpa"
+    ],
+    "origins": [
+      "JOLTOPEN Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "WECO의 yoy 라벨 오류: 실제 값은 JOLTS 구인율(%, SA).",
+    "first": "2000-12-31",
+    "last": "2026-08-31",
+    "n": 309
+  },
+  {
+    "id": "US|usecon:ljhtpa",
+    "country": "US",
+    "pk": "usecon:ljhtpa",
+    "group": "C_labor",
+    "label": "JOLTS: Hires Rate: Total (SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ljhtpa"
+    ],
+    "origins": [
+      "JOLTHIRS Index",
+      "JOLTS: Hires Rate: Total (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "WECO의 yoy 라벨 오류: 실제 값은 JOLTS 채용률(%, SA).",
+    "first": "2000-12-31",
+    "last": "2026-08-31",
+    "n": 309
+  },
+  {
+    "id": "US|usecon:ljstpa",
+    "country": "US",
+    "pk": "usecon:ljstpa",
+    "group": "C_labor",
+    "label": "JOLTS: Total Separations Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": true,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ljstpa"
+    ],
+    "origins": [
+      "JOLTSEPS Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "WECO의 yoy 라벨 오류: 실제 값은 JOLTS 총이직률(%, SA).",
+    "first": "2000-12-31",
+    "last": "2026-08-31",
+    "n": 309
+  },
+  {
+    "id": "US|surveys:cgcto",
+    "country": "US",
+    "pk": "surveys:cgcto",
+    "group": "C_labor",
+    "label": "Challenger, Gray & Christmas: Announced Job Cuts, Total (Number)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "surveys:cgcto"
+    ],
+    "origins": [
+      "CHALYOY% Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:laxepa",
+    "country": "US",
+    "pk": "usecon:laxepa",
+    "group": "C_labor",
+    "label": "ADP Nonfarm Private Payroll Employment (SA, Thous.)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:laxepa"
+    ],
+    "origins": [
+      "ADP CHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2010-01-31",
+    "last": "2026-09-30",
+    "n": 201
+  },
+  {
+    "id": "US|usecon:lepriva",
+    "country": "US",
+    "pk": "usecon:lepriva",
+    "group": "C_labor",
+    "label": "Avg Hourly Earnings: Prod & Nonsupervisory: Total Private Industries(SA, $/Hour)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lepriva"
+    ],
+    "origins": [
+      "USHEYOY Index",
+      "USHETOT% Index",
+      "U.S.: Avg Hourly Earnings, Prod & Nonsupervisory Employees: Pvt Nonfarm(SA,$/Hr)"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "생산·비관리직 시간당 임금 전년비. 전체 민간근로자 임금 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:ip",
+    "country": "US",
+    "pk": "usecon:ip",
+    "group": "COMMON",
+    "label": "Industrial Production Index (SA, 2017=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ip"
+    ],
+    "origins": [
+      "IP  YOY Index",
+      "IP  CHNG Index",
+      "IP Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:cut",
+    "country": "US",
+    "pk": "usecon:cut",
+    "group": "COMMON",
+    "label": "Capacity Utilization: Industry (SA, Percent of Capacity)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:cut"
+    ],
+    "origins": [
+      "CPTICHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:nmo",
+    "country": "US",
+    "pk": "usecon:nmo",
+    "group": "COMMON",
+    "label": "Mfrs' New Orders: All Manufacturing Industries (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nmo"
+    ],
+    "origins": [
+      "TMNOCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nmodg",
+    "country": "US",
+    "pk": "usecon:nmodg",
+    "group": "COMMON",
+    "label": "Manufacturers' New Orders: Durable Goods (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nmodg"
+    ],
+    "origins": [
+      "DGNOYOY Index",
+      "DGNOCHNG Index",
+      "U.S.: Manufacturing New Orders: Durable Goods (SA, Mil.$)"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:nti",
+    "country": "US",
+    "pk": "usecon:nti",
+    "group": "INVENTORY",
+    "label": "Inventories: Total Business (EOP, SA, Mil.$)",
+    "kind": "inventory_stock",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nti"
+    ],
+    "origins": [
+      "MTIBCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nwih",
+    "country": "US",
+    "pk": "usecon:nwih",
+    "group": "INVENTORY",
+    "label": "Merchant Wholesalers: Inventories: Total (EOP, SA, Mil.$)",
+    "kind": "inventory_stock",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nwih"
+    ],
+    "origins": [
+      "MWINCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "도매재고 본계열 사용. 속보(Advance) 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:ntr",
+    "country": "US",
+    "pk": "usecon:ntr",
+    "group": "INVENTORY",
+    "label": "Inventory/Sales Ratio: Total Business (SA)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ntr"
+    ],
+    "origins": [
+      "MGT2TB Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nmri",
+    "country": "US",
+    "pk": "usecon:nmri",
+    "group": "INVENTORY",
+    "label": "Mfrs' Inventory/Sales Ratio: All Manufacturing Industries (SA)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nmri"
+    ],
+    "origins": [
+      "MGT2MA Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:nwrh",
+    "country": "US",
+    "pk": "usecon:nwrh",
+    "group": "INVENTORY",
+    "label": "Merchant Wholesalers: Inventory/Sales Ratio: Total (SA)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nwrh"
+    ],
+    "origins": [
+      "MGT2WH Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nwrh1",
+    "country": "US",
+    "pk": "usecon:nwrh1",
+    "group": "INVENTORY",
+    "label": "Merchant Wholesalers: Inventory/Sales Ratio: Durable Goods (SA)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nwrh1"
+    ],
+    "origins": [
+      "MGT2WHDU Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nrr",
+    "country": "US",
+    "pk": "usecon:nrr",
+    "group": "INVENTORY",
+    "label": "Inv/Sales Ratios: Total Retail (SA)",
+    "kind": "inventory_ratio",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nrr"
+    ],
+    "origins": [
+      "MGT2RE Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:tsth",
+    "country": "US",
+    "pk": "usecon:tsth",
+    "group": "COMMON",
+    "label": "Real Manufacturing & Trade Sales: All Industries (SA, Mil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:tsth"
+    ],
+    "origins": [
+      "MTSLRL$ Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-07-31",
+    "n": 379
+  },
+  {
+    "id": "US|usecon:litpriva",
+    "country": "US",
+    "pk": "usecon:litpriva",
+    "group": "C_labor",
+    "label": "Aggregate Weekly Hours Index: Total Private Industries (SA, 2007=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:litpriva"
+    ],
+    "origins": [
+      "AGWHTOTL Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2006-03-31",
+    "last": "2026-09-30",
+    "n": 247
+  },
+  {
+    "id": "US|usecon:ypxtphm",
+    "country": "US",
+    "pk": "usecon:ypxtphm",
+    "group": "C_labor",
+    "label": "Real Personal Income excluding Current Transfer Receipts (SAAR, Bil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ypxtphm"
+    ],
+    "origins": [
+      "PIDSPINX Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:lrmanua",
+    "country": "US",
+    "pk": "usecon:lrmanua",
+    "group": "C_labor",
+    "label": "Average Weekly Hours: Prod & Nonsupervisory: Manufacturing (SA, Hrs)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:lrmanua"
+    ],
+    "origins": [
+      "LEI AVGW Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|bci:a0m005",
+    "country": "US",
+    "pk": "bci:a0m005",
+    "group": "C_labor",
+    "label": "Average Weekly Initial Claims Unemployment Insurance (SA, Thous)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "bci:a0m005"
+    ],
+    "origins": [
+      "LEI WKIJ Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "BCI 월별 주간 신규실업수당 청구 평균 구성항목 사용.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|bci:a0m008",
+    "country": "US",
+    "pk": "bci:a0m008",
+    "group": "C_actual",
+    "label": "Manufacturers New Orders: Consumer Goods & Materials (SA, Mil. 1982$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "bci:a0m008"
+    ],
+    "origins": [
+      "LEI NWCN Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "BCI 실질 소비재·원자재 신규주문. 단순 index가 아니라 1982년 가격 기준 백만 달러.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|bci:a0m033",
+    "country": "US",
+    "pk": "bci:a0m033",
+    "group": "I_business",
+    "label": "Mfrs' New Orders: Nondefense Capital Goods ex Aircraft (SA, Mil.Chn.1982$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "bci:a0m033"
+    ],
+    "origins": [
+      "LEI MNO Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "BCI 항공기 제외 비국방 자본재 신규주문, 1982년 실질금액. 명목 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:hpt",
+    "country": "US",
+    "pk": "usecon:hpt",
+    "group": "I_housing",
+    "label": "New Pvt Housing Units Authorized by Building Permit (SAAR, Thous.Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:hpt"
+    ],
+    "origins": [
+      "LEI BP Index",
+      "NHSPATOT Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:hst",
+    "country": "US",
+    "pk": "usecon:hst",
+    "group": "I_housing",
+    "label": "Housing Starts (SAAR, Thous.Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:hst"
+    ],
+    "origins": [
+      "NHSPSTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:hn1us",
+    "country": "US",
+    "pk": "usecon:hn1us",
+    "group": "I_housing",
+    "label": "New 1-Family Houses Sold: United States (SAAR, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:hn1us"
+    ],
+    "origins": [
+      "NHSLTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:hxtus",
+    "country": "US",
+    "pk": "usecon:hxtus",
+    "group": "I_housing",
+    "label": "NAR Total Existing Home Sales, United States (SAAR, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:hxtus"
+    ],
+    "origins": [
+      "ETSLTOTL Index",
+      "ETSLMOM Index",
+      "USPHTMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1999-01-31",
+    "last": "2026-09-30",
+    "n": 333
+  },
+  {
+    "id": "US|usecon:nrst",
+    "country": "US",
+    "pk": "usecon:nrst",
+    "group": "C_actual",
+    "label": "Retail Sales & Food Services (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nrst"
+    ],
+    "origins": [
+      "RSTAMOM Index",
+      "RSTAYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:nrstxm",
+    "country": "US",
+    "pk": "usecon:nrstxm",
+    "group": "C_actual",
+    "label": "Retail Sales & Food Services Excl Motor Vehicles & Parts Dealers (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nrstxm"
+    ],
+    "origins": [
+      "RSTAXMOM Index",
+      "RSTAXYOY Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:tvsar",
+    "country": "US",
+    "pk": "usecon:tvsar",
+    "group": "C_actual",
+    "label": "Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:tvsar"
+    ],
+    "origins": [
+      "SAARTOTL Index",
+      "Total Light Vehicle Retail Sales [Imported+Domestic] (SAAR, Mil. Units)"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "USECON 총/경량/국산/수입 자동차 판매 후보가 WECO와 일치하지 않음. WARDS 접근 실패. BEA 경량자동차 판매(SAAR)를 별도 월별 대안으로 제시.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|cbdb:ccin",
+    "country": "US",
+    "pk": "cbdb:ccin",
+    "group": "C_sentiment",
+    "label": "Consumer Confidence (SA, 1985=100)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "cbdb:ccin"
+    ],
+    "origins": [
+      "CONCCONF Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:csent",
+    "country": "US",
+    "pk": "usecon:csent",
+    "group": "C_sentiment",
+    "label": "University of Michigan: Consumer Sentiment (NSA, Q1-66=100)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "usecon:csent"
+    ],
+    "origins": [
+      "CONSSENT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "US|usecon:ypm",
+    "country": "US",
+    "pk": "usecon:ypm",
+    "group": "C_labor",
+    "label": "Personal Income (SAAR, Bil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ypm"
+    ],
+    "origins": [
+      "PITLYOY Index",
+      "PITLCHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:cbm",
+    "country": "US",
+    "pk": "usecon:cbm",
+    "group": "C_actual",
+    "label": "Personal Consumption Expenditures (SAAR, Bil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:cbm"
+    ],
+    "origins": [
+      "PCE CHY% Index",
+      "PCE CHNC Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:ypsvrm",
+    "country": "US",
+    "pk": "usecon:ypsvrm",
+    "group": "C_labor",
+    "label": "Personal Saving Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": true,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ypsvrm"
+    ],
+    "origins": [
+      "PIDSDPS Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "저축률 수준 자체가 일치. 상승을 소비에 항상 +로 처리하지 않고 설명용으로 유지.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:bgsb",
+    "country": "US",
+    "pk": "usecon:bgsb",
+    "group": "TRADE_REF",
+    "label": "Trade Balance:  Goods and Services, BOP Basis (SA, Mil.$)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:bgsb"
+    ],
+    "origins": [
+      "USTBTOT Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:bgsx",
+    "country": "US",
+    "pk": "usecon:bgsx",
+    "group": "X",
+    "label": "Exports: Goods and Services, BOP Basis (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:bgsx"
+    ],
+    "origins": [
+      "USTBEXP Index",
+      "USTBEXPY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:bgsm",
+    "country": "US",
+    "pk": "usecon:bgsm",
+    "group": "M",
+    "label": "Imports: Goods and Services, BOP Basis (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:bgsm"
+    ],
+    "origins": [
+      "USTBIMP Index",
+      "USTBIMPY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:dese315",
+    "country": "DE",
+    "pk": "germany:dese315",
+    "group": "C_labor",
+    "label": "Germany: Registered Unemployment Rate, % of Labor Force: Total (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:dese315"
+    ],
+    "origins": [
+      "GRUEPR Index",
+      "Germany: Registered Unemployment Rate, % of Labor Force: Total (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "조화실업률이 아니라 독일 등록실업률 SA.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "DE|germany:dese001",
+    "country": "DE",
+    "pk": "germany:dese001",
+    "group": "C_labor",
+    "label": "Germany: Total Unemployed (SA, Thous)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:dese001"
+    ],
+    "origins": [
+      "GRUECHNG Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "독일 등록실업자 SA 총계의 전월 차. 6/9개월 일치, 나머지 각 1천 명 차이. 조화실업자 계열과 구분.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "DE|germany:deseur",
+    "country": "DE",
+    "pk": "germany:deseur",
+    "group": "C_labor",
+    "label": "Germany: LFS: Unemployment Rate (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:deseur"
+    ],
+    "origins": [
+      "GILOURS Index",
+      "Germany: LFS: Unemployment Rate (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desdy",
+    "country": "DE",
+    "pk": "germany:desdy",
+    "group": "COMMON",
+    "label": "Germany: Industrial Production including Construction (SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desdy"
+    ],
+    "origins": [
+      "GEINYY Index",
+      "GRIPIMOM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "건설 포함 산업생산 WDA 전년비.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destoc",
+    "country": "DE",
+    "pk": "germany:destoc",
+    "group": "COMMON",
+    "label": "Germany: Manufacturing Orders [Volume](SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destoc"
+    ],
+    "origins": [
+      "GEIOYY Index",
+      "GRIORTMM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destac",
+    "country": "DE",
+    "pk": "germany:destac",
+    "group": "COMMON",
+    "label": "Germany: Domestic Manufacturing Orders [Volume](SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destac"
+    ],
+    "origins": [
+      "GRIORDYY Index",
+      "GRIORDMM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "국내 제조업 주문 SA 전년비. WDA 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destbc",
+    "country": "DE",
+    "pk": "germany:destbc",
+    "group": "X",
+    "label": "Germany: Foreign Manufacturing Orders [Volume](SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destbc"
+    ],
+    "origins": [
+      "GRIORFYY Index",
+      "GRIORFMM Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "해외 제조업 주문 SA 물량의 전년비. WDA가 아닌 SA가 7/8개월 일치. 평균 차이 0.035%p.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:denopcr",
+    "country": "DE",
+    "pk": "germany:denopcr",
+    "group": "C_actual",
+    "label": "Germany: New Passenger Car Registrations (NSA, Number)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:denopcr"
+    ],
+    "origins": [
+      "GRVHREGY Index",
+      "GRVHREGM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "DE|germany:destor2c",
+    "country": "DE",
+    "pk": "germany:destor2c",
+    "group": "I_housing",
+    "label": "Germany: Construction Orders: Housing Construction, Volume (SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destor2c"
+    ],
+    "origins": [
+      "GRCOPRBY Index",
+      "GRCOPRBM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "주택건설 주문의 SWDA 물량 전년비.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destu47",
+    "country": "DE",
+    "pk": "germany:destu47",
+    "group": "C_actual",
+    "label": "Germany: Retail Sales Volume excluding Motor Vehicles(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destu47"
+    ],
+    "origins": [
+      "GRFRINYY Index",
+      "GRFRIAMM Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "표시된 단위·계절조정·변환을 적용한 Haver 값과 WECO를 월별로 대조.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|eudata:s134d4yk",
+    "country": "DE",
+    "pk": "eudata:s134d4yk",
+    "group": "C_actual",
+    "label": "Germany: Retail Trade Volume Ex Autos, Motorcycles & Fuel (SWDA,2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "eudata:s134d4yk"
+    ],
+    "origins": [
+      "GRRSXVHY Index",
+      "GRRSXVHM Index"
+    ],
+    "substitution": false,
+    "review_status": "대응 후보 · 일부 값 차이",
+    "note": "자동차·연료 제외 소매 물량 WDA. GERMANY/EUDATA의 동일 개념을 조회했으나 2/8개월만 원본 정밀도 내 일치. 평균 0.190%p 차이로 수치 동등성 미확정.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|eudata:s134d451",
+    "country": "DE",
+    "pk": "eudata:s134d451",
+    "group": "C_actual",
+    "label": "Germany: Sale Of Motor Vehicles (SWDA,2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "eudata:s134d451"
+    ],
+    "origins": [
+      "GRRSVYOY Index",
+      "GRRSVMOM Index"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "자동차 매매 물량/금액, 자동차 수리 포함/제외, NSA/WDA/SWDA 후보를 모두 비교했으나 재현 실패. 월별 자동차 매매 물량 SWDA를 독립 대안으로 제시.",
+    "first": "1995-01-31",
+    "last": "2026-07-31",
+    "n": 379
+  },
+  {
+    "id": "DE|germany:desvconi",
+    "country": "DE",
+    "pk": "germany:desvconi",
+    "group": "C_sentiment",
+    "label": "Germany: Icon Consumer Barometer (SA, 100+=optimistic)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desvconi"
+    ],
+    "origins": [
+      "GRCCI Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2006-12-31",
+    "last": "2026-09-30",
+    "n": 238
+  },
+  {
+    "id": "DE|germany:denvcce",
+    "country": "DE",
+    "pk": "germany:denvcce",
+    "group": "C_sentiment",
+    "label": "Germany: GfK Consumer Survey, Economic Expectations (NSA, % Balance)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:denvcce"
+    ],
+    "origins": [
+      "GGFKBUS Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2002-01-31",
+    "last": "2026-09-30",
+    "n": 297
+  },
+  {
+    "id": "DE|germany:denvcci",
+    "country": "DE",
+    "pk": "germany:denvcci",
+    "group": "C_sentiment",
+    "label": "Germany: GfK Consumer Survey, Income Expectations (NSA, % Balance)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:denvcci"
+    ],
+    "origins": [
+      "GGFKINC Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2002-01-31",
+    "last": "2026-09-30",
+    "n": 297
+  },
+  {
+    "id": "DE|germany:denvccb",
+    "country": "DE",
+    "pk": "germany:denvccb",
+    "group": "C_sentiment",
+    "label": "Germany: GfK Consumer Survey, Consumption and Buying Propensity (NSA, % Balance)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:denvccb"
+    ],
+    "origins": [
+      "GGFKWBUY Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2002-01-31",
+    "last": "2026-09-30",
+    "n": 297
+  },
+  {
+    "id": "DE|germany:denvccs",
+    "country": "DE",
+    "pk": "germany:denvccs",
+    "group": "C_sentiment",
+    "label": "Germany: GfK Consumer Survey, Current Savings (NSA, % Balance)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": true,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:denvccs"
+    ],
+    "origins": [
+      "GGFKWSAV Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "GfK 저축의향 지수. 소비 개선과 동일한 + 방향으로 고정하지 않음.",
+    "first": "2002-01-31",
+    "last": "2026-09-30",
+    "n": 297
+  },
+  {
+    "id": "DE|g10:n134ib",
+    "country": "DE",
+    "pk": "g10:n134ib",
+    "group": "TRADE_REF",
+    "label": "Germany: Balance of Trade in Goods (NSA, Bil.Euros)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n134ib"
+    ],
+    "origins": [
+      "GRTBALE Index"
+    ],
+    "substitution": false,
+    "review_status": "수치 일치",
+    "note": "무역수지 NSA. 기존 SA 후보 교체.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desixt",
+    "country": "DE",
+    "pk": "germany:desixt",
+    "group": "X",
+    "label": "Germany: Exports of Goods (SA, Bil.Euros)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desixt"
+    ],
+    "origins": [
+      "GRBTEXYY Index",
+      "GRBTEXMM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desimt",
+    "country": "DE",
+    "pk": "germany:desimt",
+    "group": "M",
+    "label": "Germany: Imports of Goods (SA, Bil.Euros)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desimt"
+    ],
+    "origins": [
+      "GRBTIMYY Index",
+      "GRBTIMMM Index"
+    ],
+    "substitution": false,
+    "review_status": "개념 대응·수신 확인",
+    "note": " · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|uk:ap2y",
+    "country": "UK",
+    "pk": "uk:ap2y",
+    "group": "C_labor",
+    "label": "UK: Job Vacancies excluding Agriculture, Forestry & Fishing (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ap2y"
+    ],
+    "origins": [
+      "UK: Job Vacancies Per 100 Employee Jobs DISC (SA, %)",
+      "UK: Job Vacancies excluding Agriculture, Forestry & Fishing (SA, Thous)"
+    ],
+    "substitution": true,
+    "review_status": "월별 대체 가능",
+    "note": "추가 점검: 기존 매핑의 직원 100명당 구인율은 2026-06 종료/DISC. 월별 구인 건수(AP2Y)로 대체 관찰 가능. 비율과 건수는 다르며 같은 입력을 중복 편입하지 않음.",
+    "first": "2001-05-31",
+    "last": "2026-08-31",
+    "n": 304
+  },
+  {
+    "id": "UK|uk:ukseppfc",
+    "country": "UK",
+    "pk": "uk:ukseppfc",
+    "group": "C_labor",
+    "label": "UK: Payrolled Employees from PAYE RTI: Change (SA, Number)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ukseppfc"
+    ],
+    "origins": [
+      "UK: Payrolled Employees from PAYE RTI: Change (SA, Number)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2017-01-31",
+    "last": "2026-08-31",
+    "n": 116
+  },
+  {
+    "id": "UK|uk:a3ww",
+    "country": "UK",
+    "pk": "uk:a3ww",
+    "group": "C_labor",
+    "label": "Great Britain: AWE: Whole Economy: Total Pay in Real Terms: 3M Growth (SA, %)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:a3ww"
+    ],
+    "origins": [
+      "Great Britain: AWE: Whole Economy: Total Pay in Real Terms: 3M Growth (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-03-31",
+    "last": "2026-08-31",
+    "n": 306
+  },
+  {
+    "id": "UK|uk:edmy",
+    "country": "UK",
+    "pk": "uk:edmy",
+    "group": "GDP_REF",
+    "label": "UK: Gross Value Added Chained Volume Index: Rolling 3-Month (SA, Y/Y %Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:edmy"
+    ],
+    "origins": [
+      "UK: Gross Value Added Chained Volume Index: Rolling 3-Month (SA, Y/Y %Chg)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-03-31",
+    "last": "2026-08-31",
+    "n": 342
+  },
+  {
+    "id": "UK|uk:edng",
+    "country": "UK",
+    "pk": "uk:edng",
+    "group": "COMMON",
+    "label": "UK: Services Industries: Contribution to Y/Y % Chg in Roll 3M Real GVA (SA, %Pt)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:edng"
+    ],
+    "origins": [
+      "UK: Services Industries: Contribution to Y/Y % Chg in Roll 3M Real GVA (SA, %Pt)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-03-31",
+    "last": "2026-08-31",
+    "n": 342
+  },
+  {
+    "id": "UK|uk:ednc",
+    "country": "UK",
+    "pk": "uk:ednc",
+    "group": "COMMON",
+    "label": "UK: Manufacturing: Contribution to Y/Y% Chg in Rolling 3 Mths Real GVA (SA, %Pt)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ednc"
+    ],
+    "origins": [
+      "UK: Manufacturing: Contribution to Y/Y% Chg in Rolling 3 Mths Real GVA (SA, %Pt)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-03-31",
+    "last": "2026-08-31",
+    "n": 342
+  },
+  {
+    "id": "DE|germany:dene250",
+    "country": "DE",
+    "pk": "germany:dene250",
+    "group": "C_labor",
+    "label": "Germany: Job Vacancies (NSA, Number)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "germany:dene250"
+    ],
+    "origins": [
+      "Germany: Job Vacancies (NSA, Number)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "DE|germany:desetd",
+    "country": "DE",
+    "pk": "germany:desetd",
+    "group": "C_labor",
+    "label": "Germany: Total Employed: German Residents (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desetd"
+    ],
+    "origins": [
+      "Germany: Total Employed: German Residents (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:dese250u",
+    "country": "DE",
+    "pk": "germany:dese250u",
+    "group": "C_labor",
+    "label": "Germany: Job Vacancies [Unsubsidized] (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:dese250u"
+    ],
+    "origins": [
+      "Germany: Job Vacancies [Unsubsidized] (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-01-31",
+    "last": "2026-09-30",
+    "n": 321
+  },
+  {
+    "id": "DE|eudata:i134yoy",
+    "country": "DE",
+    "pk": "eudata:i134yoy",
+    "group": "C_labor",
+    "label": "Germany: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "eudata:i134yoy"
+    ],
+    "origins": [
+      "Germany: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2019-01-31",
+    "last": "2026-09-30",
+    "n": 93
+  },
+  {
+    "id": "FR|g10:n132iwty",
+    "country": "FR",
+    "pk": "g10:n132iwty",
+    "group": "C_labor",
+    "label": "France: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "g10:n132iwty"
+    ],
+    "origins": [
+      "France: Indeed Wage Tracker: Posted Wage Growth (NSA, Y/Y% Chg)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2019-01-31",
+    "last": "2026-09-30",
+    "n": 93
+  },
+  {
+    "id": "FR|intsrvys:s132vb1c",
+    "country": "FR",
+    "pk": "intsrvys:s132vb1c",
+    "group": "C_actual",
+    "label": "France: BdF Retail Sales Survey, Volume: Total Sales (SWDA, 2010=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "intsrvys:s132vb1c"
+    ],
+    "origins": [
+      "France: BdF Retail Sales Survey, Volume: Total Sales (SWDA, 2010=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-05-31",
+    "n": 377
+  },
+  {
+    "id": "CA|canada:v14s3287",
+    "country": "CA",
+    "pk": "canada:v14s3287",
+    "group": "C_labor",
+    "label": "Canada: Job Vacancies (SA, Number)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v14s3287"
+    ],
+    "origins": [
+      "Canada: Job Vacancies (SA, Number)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2015-04-30",
+    "last": "2026-07-31",
+    "n": 130
+  },
+  {
+    "id": "CA|canada:laheinf",
+    "country": "CA",
+    "pk": "canada:laheinf",
+    "group": "C_labor",
+    "label": "Canada: Inflation Indicators: Avg Hourly Earnings of Permanent Workers (Y/Y %)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "canada:laheinf"
+    ],
+    "origins": [
+      "Canada: Inflation Indicators: Avg Hourly Earnings of Permanent Workers (Y/Y %)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-01-31",
+    "last": "2026-09-30",
+    "n": 345
+  },
+  {
+    "id": "CA|canada:v1q40181",
+    "country": "CA",
+    "pk": "canada:v1q40181",
+    "group": "C_actual",
+    "label": "Canada: Retail Sales in Chained 2017 Prices (SA, Mil.Chn.2017.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v1q40181"
+    ],
+    "origins": [
+      "Canada: Retail Sales in Chained 2017 Prices (SA, Mil.Chn.2017.C$)",
+      "Canada: Real Retail Sales (SA, Mil.2017.C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "JP|japan:jpecy",
+    "country": "JP",
+    "pk": "japan:jpecy",
+    "group": "C_labor",
+    "label": "Japan: Real Contr Cash Earnings[5+ Employees]: All Surveyed Inds (NSA, Y/Y%Chg)",
+    "kind": "growth_yoy",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpecy"
+    ],
+    "origins": [
+      "Japan: Real Contr Cash Earnings[5+ Employees]: All Surveyed Inds (NSA, Y/Y%Chg)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2003-08-31",
+    "last": "2026-08-31",
+    "n": 277
+  },
+  {
+    "id": "AU|anz:aunhpiv",
+    "country": "AU",
+    "pk": "anz:aunhpiv",
+    "group": "I_business",
+    "label": "Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "anz:aunhpiv"
+    ],
+    "origins": [
+      "Australia: Nonres Bldg Approvals: Pvt Sector: Industrial Bldg (NSA, Thous.A$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-07-31",
+    "last": "2026-08-31",
+    "n": 314
+  },
+  {
+    "id": "AU|anz:aunvrmc",
+    "country": "AU",
+    "pk": "anz:aunvrmc",
+    "group": "C_sentiment",
+    "label": "Australia: Roy Morgan Monthly Consumer Confidence (NSA, %Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "anz:aunvrmc"
+    ],
+    "origins": [
+      "Australia: Roy Morgan Monthly Consumer Confidence (NSA, %Bal)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-10-31",
+    "n": 382
+  },
+  {
+    "id": "AU|anz:aushpn",
+    "country": "AU",
+    "pk": "anz:aushpn",
+    "group": "I_business",
+    "label": "Australia: Bldg Approvals: Non-residential (SA, Mil.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "anz:aushpn"
+    ],
+    "origins": [
+      "Australia: Bldg Approvals: Non-residential (SA, Mil.A$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:bpxmm",
+    "country": "US",
+    "pk": "usecon:bpxmm",
+    "group": "X",
+    "label": "Exports: Goods, BOP Basis (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:bpxmm"
+    ],
+    "origins": [
+      "Exports: Goods, BOP Basis (SA, Mil.$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:cdbhm",
+    "country": "US",
+    "pk": "usecon:cdbhm",
+    "group": "C_actual",
+    "label": "Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:cdbhm"
+    ],
+    "origins": [
+      "Real Personal Consumption Expenditures: Durable Goods (SAAR, Bil.Chn.2017$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:cnbhm",
+    "country": "US",
+    "pk": "usecon:cnbhm",
+    "group": "C_actual",
+    "label": "Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:cnbhm"
+    ],
+    "origins": [
+      "Real Personal Consumption Expenditures: Nondurable Goods (SAAR, Bil.Chn.2017$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:csbhm",
+    "country": "US",
+    "pk": "usecon:csbhm",
+    "group": "C_actual",
+    "label": "Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:csbhm"
+    ],
+    "origins": [
+      "Real Personal Consumption Expenditures: Services (SAAR, Bil.Chn.2017$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desd262",
+    "country": "DE",
+    "pk": "germany:desd262",
+    "group": "I_business",
+    "label": "Germany: IP: Computers and Peripheral Equipment (SA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desd262"
+    ],
+    "origins": [
+      "Germany: IP: Computers and Peripheral Equipment (SA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desdk",
+    "country": "DE",
+    "pk": "germany:desdk",
+    "group": "I_business",
+    "label": "Germany: Industrial Production: Investment Goods(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desdk"
+    ],
+    "origins": [
+      "Germany: Industrial Production: Investment Goods(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desele",
+    "country": "DE",
+    "pk": "germany:desele",
+    "group": "C_labor",
+    "label": "Germany: LFS: Employed Persons (SA, Mil)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desele"
+    ],
+    "origins": [
+      "Germany: LFS: Employed Persons (SA, Mil)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desibt",
+    "country": "DE",
+    "pk": "germany:desibt",
+    "group": "TRADE_REF",
+    "label": "Germany: Trade in Goods Balance (SA, Bil.Euros)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desibt"
+    ],
+    "origins": [
+      "Germany: Trade in Goods Balance (SA, Bil.Euros)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desrth",
+    "country": "DE",
+    "pk": "germany:desrth",
+    "group": "I_housing",
+    "label": "Germany: Turnover in Residential Construction (SWDA, Bil.Euros)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desrth"
+    ],
+    "origins": [
+      "Germany: Turnover in Residential Construction (SWDA, Bil.Euros)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destlc",
+    "country": "DE",
+    "pk": "germany:destlc",
+    "group": "X",
+    "label": "Germany: Foreign Industry Sales [Volume]: Manufacturing(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destlc"
+    ],
+    "origins": [
+      "Germany: Foreign Industry Sales [Volume]: Manufacturing(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destlgc",
+    "country": "DE",
+    "pk": "germany:destlgc",
+    "group": "X",
+    "label": "Germany: Foreign Industry Sales [Volume]: Consumer Goods(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destlgc"
+    ],
+    "origins": [
+      "Germany: Foreign Industry Sales [Volume]: Consumer Goods(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destlgd",
+    "country": "DE",
+    "pk": "germany:destlgd",
+    "group": "X",
+    "label": "Germany: Foreign Industry Sales [Vol]: Durable Consumer Goods(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destlgd"
+    ],
+    "origins": [
+      "Germany: Foreign Industry Sales [Vol]: Durable Consumer Goods(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destlk",
+    "country": "DE",
+    "pk": "germany:destlk",
+    "group": "X",
+    "label": "Germany: Foreign Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destlk"
+    ],
+    "origins": [
+      "Germany: Foreign Industry Sales [Volume]: Capital Goods(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:destok",
+    "country": "DE",
+    "pk": "germany:destok",
+    "group": "I_business",
+    "label": "Germany: Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:destok"
+    ],
+    "origins": [
+      "Germany: Mfg Orders [Volume], Capital Goods(SWDA, 2021=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "DE|germany:desvcc",
+    "country": "DE",
+    "pk": "germany:desvcc",
+    "group": "C_sentiment",
+    "label": "Germany: Consumer Confidence Indicator (SA, %Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "germany:desvcc"
+    ],
+    "origins": [
+      "Germany: Consumer Confidence Indicator (SA, %Bal)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|cbdb:ehn",
+    "country": "US",
+    "pk": "cbdb:ehn",
+    "group": "C_sentiment",
+    "label": "Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "cbdb:ehn"
+    ],
+    "origins": [
+      "Appraisal Pres Sit: Employment, Jobs Hard to Get (% Respondents; SA)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:engw",
+    "country": "UK",
+    "pk": "uk:engw",
+    "group": "M",
+    "label": "UK: Imports of Capital Goods (SA, Mil.Chn.2024.GBP)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:engw"
+    ],
+    "origins": [
+      "UK: Imports of Capital Goods (SA, Mil.Chn.2024.GBP)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "JP|japan:fled2",
+    "country": "JP",
+    "pk": "japan:fled2",
+    "group": "C_labor",
+    "label": "Japan: Labor Force Survey: Total Employed (SA, 10,000 Persons)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:fled2"
+    ],
+    "origins": [
+      "Japan: Labor Force Survey: Total Employed (SA, 10,000 Persons)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|g10:h156cvr",
+    "country": "CA",
+    "pk": "g10:h156cvr",
+    "group": "C_actual",
+    "label": "Canada: New Motor Vehicle Sales (SA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:h156cvr"
+    ],
+    "origins": [
+      "Canada: New Motor Vehicle Sales (SA, Units)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|uk:ikbe",
+    "country": "UK",
+    "pk": "uk:ikbe",
+    "group": "X",
+    "label": "UK: Exports of Services (SA, Mil.Chn.2024.GBP)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ikbe"
+    ],
+    "origins": [
+      "UK: Exports of Services (SA, Mil.Chn.2024.GBP)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "UK|uk:ikbg",
+    "country": "UK",
+    "pk": "uk:ikbg",
+    "group": "TRADE_REF",
+    "label": "UK: Trade Balance of Services (SA, Mil.Chn.2024.GBP)",
+    "kind": "change",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ikbg"
+    ],
+    "origins": [
+      "UK: Trade Balance of Services (SA, Mil.Chn.2024.GBP)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "US|usecon:ipmfn",
+    "country": "US",
+    "pk": "usecon:ipmfn",
+    "group": "COMMON",
+    "label": "Industrial Production: Manufacturing [NAICS] (SA, 2017=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ipmfn"
+    ],
+    "origins": [
+      "Industrial Production: Manufacturing [NAICS] (SA, 2017=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:j5ek",
+    "country": "UK",
+    "pk": "uk:j5ek",
+    "group": "C_actual",
+    "label": "Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:j5ek"
+    ],
+    "origins": [
+      "Great Britain: Retail Sales Volume: Retailing including Auto Fuel(SA,2024=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1996-01-31",
+    "last": "2026-09-30",
+    "n": 369
+  },
+  {
+    "id": "JP|japan:jafvrn2",
+    "country": "JP",
+    "pk": "japan:jafvrn2",
+    "group": "C_labor",
+    "label": "Japan: General Workers: Rate of Filled Vacancies (SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": true,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jafvrn2"
+    ],
+    "origins": [
+      "Japan: General Workers: Rate of Filled Vacancies (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "JP|japan:jpnectt3",
+    "country": "JP",
+    "pk": "japan:jpnectt3",
+    "group": "C_labor",
+    "label": "Japan: Common Establishments Labor Force Survey: All Industry: Regular Pay (Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:jpnectt3"
+    ],
+    "origins": [
+      "Japan: Common Establishments Labor Force Survey: All Industry: Regular Pay (Yen)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2016-01-31",
+    "last": "2026-08-31",
+    "n": 128
+  },
+  {
+    "id": "JP|japan:jpscaic",
+    "country": "JP",
+    "pk": "japan:jpscaic",
+    "group": "C_actual",
+    "label": "Japan: Consumption Activity Index [Real] (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpscaic"
+    ],
+    "origins": [
+      "Japan: Consumption Activity Index [Real] (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2003-01-31",
+    "last": "2026-08-31",
+    "n": 284
+  },
+  {
+    "id": "JP|japan:jpshx202",
+    "country": "JP",
+    "pk": "japan:jpshx202",
+    "group": "X",
+    "label": "Japan: Export Shipments: Mining & Mfg: Investment Goods (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpshx202"
+    ],
+    "origins": [
+      "Japan: Export Shipments: Mining & Mfg: Investment Goods (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-01-31",
+    "last": "2026-08-31",
+    "n": 344
+  },
+  {
+    "id": "JP|japan:jpshx224",
+    "country": "JP",
+    "pk": "japan:jpshx224",
+    "group": "X",
+    "label": "Japan: Export Shipments: Mining & Mfg: Consumer Durables (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpshx224"
+    ],
+    "origins": [
+      "Japan: Export Shipments: Mining & Mfg: Consumer Durables (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1998-01-31",
+    "last": "2026-08-31",
+    "n": 344
+  },
+  {
+    "id": "JP|japan:jpsiipbo",
+    "country": "JP",
+    "pk": "japan:jpsiipbo",
+    "group": "I_business",
+    "label": "Japan: IP: Business Oriented Machinery (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiipbo"
+    ],
+    "origins": [
+      "Japan: IP: Business Oriented Machinery (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2003-01-31",
+    "last": "2026-08-31",
+    "n": 284
+  },
+  {
+    "id": "JP|japan:jpsiisbo",
+    "country": "JP",
+    "pk": "japan:jpsiisbo",
+    "group": "I_business",
+    "label": "Japan: Producer's Shipments: Business Oriented Machinery (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiisbo"
+    ],
+    "origins": [
+      "Japan: Producer's Shipments: Business Oriented Machinery (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2018-01-31",
+    "last": "2026-08-31",
+    "n": 104
+  },
+  {
+    "id": "JP|japan:jpsiisgm",
+    "country": "JP",
+    "pk": "japan:jpsiisgm",
+    "group": "I_business",
+    "label": "Japan: Producer's Shipments: General-Purpose Machinery (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsiisgm"
+    ],
+    "origins": [
+      "Japan: Producer's Shipments: General-Purpose Machinery (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2018-01-31",
+    "last": "2026-08-31",
+    "n": 104
+  },
+  {
+    "id": "JP|japan:jpsivx",
+    "country": "JP",
+    "pk": "japan:jpsivx",
+    "group": "X",
+    "label": "Japan: Real Exports (SA, 2020=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "japan:jpsivx"
+    ],
+    "origins": [
+      "Japan: Real Exports (SA, 2020=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|uk:k24s",
+    "country": "UK",
+    "pk": "uk:k24s",
+    "group": "I_business",
+    "label": "UK: Industrial Production: Capital Goods(SA, 2024=100)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:k24s"
+    ],
+    "origins": [
+      "UK: Industrial Production: Capital Goods(SA, 2024=100)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-06-30",
+    "last": "2026-08-31",
+    "n": 375
+  },
+  {
+    "id": "UK|uk:ka46",
+    "country": "UK",
+    "pk": "uk:ka46",
+    "group": "C_labor",
+    "label": "Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:ka46"
+    ],
+    "origins": [
+      "Great Britain: Average Weekly Earnings: Whole Economy (NSA, GBP)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-01-31",
+    "last": "2026-08-31",
+    "n": 320
+  },
+  {
+    "id": "US|usecon:kut27p",
+    "country": "US",
+    "pk": "usecon:kut27p",
+    "group": "C_labor",
+    "label": "Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)",
+    "kind": "rate",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:kut27p"
+    ],
+    "origins": [
+      "Unemployed for 27 Weeks and Over: % of Civilians Unemployed (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "US|usecon:ljjtla",
+    "country": "US",
+    "pk": "usecon:ljjtla",
+    "group": "C_labor",
+    "label": "JOLTS: Job Openings: Total (EOP, SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ljjtla"
+    ],
+    "origins": [
+      "JOLTS: Job Openings: Total (EOP, SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-12-31",
+    "last": "2026-08-31",
+    "n": 309
+  },
+  {
+    "id": "US|usecon:ljqtpa",
+    "country": "US",
+    "pk": "usecon:ljqtpa",
+    "group": "C_labor",
+    "label": "JOLTS: Quits Rate: Total (SA, %)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:ljqtpa"
+    ],
+    "origins": [
+      "JOLTS: Quits Rate: Total (SA, %)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "임금 또는 채용·이직률의 실제 정의에 따라 민간소비 고용·소득 보조 블록으로 편성. 상승 방향을 소비 개선으로 고정하지 않음. · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2000-12-31",
+    "last": "2026-08-31",
+    "n": 309
+  },
+  {
+    "id": "JP|japan:mhfa",
+    "country": "JP",
+    "pk": "japan:mhfa",
+    "group": "C_labor",
+    "label": "Japan: Total Hours Worked/Empl [5 or More Empl]: All Surveyed Inds (NSA, Hours)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:mhfa"
+    ],
+    "origins": [
+      "Japan: Total Hours Worked/Empl [5 or More Empl]: All Surveyed Inds (NSA, Hours)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nmoxt",
+    "country": "US",
+    "pk": "usecon:nmoxt",
+    "group": "COMMON",
+    "label": "Mfrs' New Orders: All Manufacturing Industries Ex Transportation (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nmoxt"
+    ],
+    "origins": [
+      "Mfrs' New Orders: All Manufacturing Industries Ex Transportation (SA, Mil.$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nmsxt",
+    "country": "US",
+    "pk": "usecon:nmsxt",
+    "group": "COMMON",
+    "label": "Mfrs' Shipments: All Manufacturing Industries Ex Transportation (SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nmsxt"
+    ],
+    "origins": [
+      "Mfrs' Shipments: All Manufacturing Industries Ex Transportation (SA, Mil.$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "US|usecon:nrstxm7",
+    "country": "US",
+    "pk": "usecon:nrstxm7",
+    "group": "C_actual",
+    "label": "Retail Sales & Food Svc Ex Motor Vehicle/Parts Dealers & Gas Stations(SA, Mil.$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:nrstxm7"
+    ],
+    "origins": [
+      "Retail Sales & Food Svc Ex Motor Vehicle/Parts Dealers & Gas Stations(SA, Mil.$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-09-30",
+    "n": 381
+  },
+  {
+    "id": "UK|g10:s112ele",
+    "country": "UK",
+    "pk": "g10:s112ele",
+    "group": "C_labor",
+    "label": "U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s112ele"
+    ],
+    "origins": [
+      "U.K.: LFS: Employment: Aged 16 and Over [3-Mo Moving Avg] (SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-07-31",
+    "n": 379
+  },
+  {
+    "id": "CA|g10:s156eh",
+    "country": "CA",
+    "pk": "g10:s156eh",
+    "group": "C_labor",
+    "label": "Canada: Avg Hourly Earnings inc Overtime: Hrly Workers: Total Economy (SA, C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156eh"
+    ],
+    "origins": [
+      "Canada: Avg Hourly Earnings inc Overtime: Hrly Workers: Total Economy (SA, C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-01-31",
+    "last": "2026-07-31",
+    "n": 307
+  },
+  {
+    "id": "CA|g10:s156eluc",
+    "country": "CA",
+    "pk": "g10:s156eluc",
+    "group": "C_labor",
+    "label": "Canada: Unemployment Insurance: Regular Benefits Beneficiaries (SA, Number)",
+    "kind": "level",
+    "direction": -1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156eluc"
+    ],
+    "origins": [
+      "Canada: Unemployment Insurance: Regular Benefits Beneficiaries (SA, Number)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "CA|g10:s156hp",
+    "country": "CA",
+    "pk": "g10:s156hp",
+    "group": "I_housing",
+    "label": "Canada: Building Permits Authorized (SA, Thous Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s156hp"
+    ],
+    "origins": [
+      "Canada: Building Permits Authorized (SA, Thous Units)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "AU|g10:s193trs",
+    "country": "AU",
+    "pk": "g10:s193trs",
+    "group": "C_actual",
+    "label": "AU: Retail Turnover Using Bank Transactions (SA, Mil.A$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "g10:s193trs"
+    ],
+    "origins": [
+      "AU: Retail Turnover Using Bank Transactions (SA, Mil.A$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2012-07-31",
+    "last": "2026-08-31",
+    "n": 170
+  },
+  {
+    "id": "US|usecon:tmxah",
+    "country": "US",
+    "pk": "usecon:tmxah",
+    "group": "X",
+    "label": "Exports, FAS Value (SA, Mil.Chn.2017$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "usecon:tmxah"
+    ],
+    "origins": [
+      "Exports, FAS Value (SA, Mil.Chn.2017$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "UK|uk:ugfcgl",
+    "country": "UK",
+    "pk": "uk:ugfcgl",
+    "group": "C_sentiment",
+    "label": "UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:ugfcgl"
+    ],
+    "origins": [
+      "UK: GfK Consumer Survey: General Economic Situation: Last 12 Mos (NSA, % Bal)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1996-01-31",
+    "last": "2026-10-31",
+    "n": 370
+  },
+  {
+    "id": "UK|uk:ugfcm",
+    "country": "UK",
+    "pk": "uk:ugfcm",
+    "group": "C_sentiment",
+    "label": "UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)",
+    "kind": "rate",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:ugfcm"
+    ],
+    "origins": [
+      "UK: GfK Consumer Survey: Major Purchases at Present (NSA, % Bal)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1996-01-31",
+    "last": "2026-10-31",
+    "n": 370
+  },
+  {
+    "id": "UK|uk:ukspt",
+    "country": "UK",
+    "pk": "uk:ukspt",
+    "group": "I_housing",
+    "label": "UK: Residential Property Transactions over 40,000 GBP(SA, Thous)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "uk:ukspt"
+    ],
+    "origins": [
+      "UK: Residential Property Transactions over 40,000 GBP(SA, Thous)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2005-04-30",
+    "last": "2026-08-31",
+    "n": 257
+  },
+  {
+    "id": "UK|uk:uncregp",
+    "country": "UK",
+    "pk": "uk:uncregp",
+    "group": "C_actual",
+    "label": "UK: New Car Registrations: Private (NSA, Units)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "uk:uncregp"
+    ],
+    "origins": [
+      "UK: New Car Registrations: Private (NSA, Units)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2001-01-31",
+    "last": "2026-09-30",
+    "n": 307
+  },
+  {
+    "id": "CA|canada:v6912717",
+    "country": "CA",
+    "pk": "canada:v6912717",
+    "group": "X",
+    "label": "Canada: Exports(SA, Mil.Chn.2017.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:v6912717"
+    ],
+    "origins": [
+      "Canada: Exports(SA, Mil.Chn.2017.C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "CA|canada:vk119649",
+    "country": "CA",
+    "pk": "canada:vk119649",
+    "group": "I_business",
+    "label": "Canada: Permits: Non-Residential (SA, Thous.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:vk119649"
+    ],
+    "origins": [
+      "Canada: Permits: Non-Residential (SA, Thous.C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  },
+  {
+    "id": "CA|canada:vm263908",
+    "country": "CA",
+    "pk": "canada:vm263908",
+    "group": "COMMON",
+    "label": "Canada: Real Shipments: All Manufacturing Industries  (SA, Mil.2017.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:vm263908"
+    ],
+    "origins": [
+      "Canada: Real Shipments: All Manufacturing Industries  (SA, Mil.2017.C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1997-01-31",
+    "last": "2026-08-31",
+    "n": 356
+  },
+  {
+    "id": "CA|canada:vm263939",
+    "country": "CA",
+    "pk": "canada:vm263939",
+    "group": "COMMON",
+    "label": "Canada: New Orders: All Manufacturing Industries  (SA, Mil.2017.C$)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "adjusted",
+    "dependencies": [
+      "canada:vm263939"
+    ],
+    "origins": [
+      "Canada: New Orders: All Manufacturing Industries  (SA, Mil.2017.C$)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "2002-02-28",
+    "last": "2026-08-31",
+    "n": 295
+  },
+  {
+    "id": "JP|japan:wrs",
+    "country": "JP",
+    "pk": "japan:wrs",
+    "group": "COMMON",
+    "label": "Japan: Wholesale and Retail Sales: Total (Bil.Yen)",
+    "kind": "level",
+    "direction": 1,
+    "ambiguous": false,
+    "seasonal": "NSA",
+    "dependencies": [
+      "japan:wrs"
+    ],
+    "origins": [
+      "Japan: Wholesale and Retail Sales: Total (Bil.Yen)"
+    ],
+    "substitution": false,
+    "review_status": "코드·수신 확인",
+    "note": "기존 Haver 계열 자체를 조회. WECO 동등계열이라는 뜻은 아님 · 이전 개념/수신 확인을 유지; 이번 109개 수치 재검토 대상은 아님.",
+    "first": "1995-01-31",
+    "last": "2026-08-31",
+    "n": 380
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "country": "US",
+    "latest": "2026-08",
+    "contribution_error": 6.661338147750939e-16
+  },
+  {
+    "country": "UK",
+    "latest": "2026-08",
+    "contribution_error": 4.440892098500626e-16
+  },
+  {
+    "country": "FR",
+    "latest": "2026-08",
+    "contribution_error": 6.661338147750939e-16
+  },
+  {
+    "country": "DE",
+    "latest": "2026-08",
+    "contribution_error": 6.661338147750939e-16
+  },
+  {
+    "country": "CA",
+    "latest": "2026-08",
+    "contribution_error": 8.881784197001252e-16
+  },
+  {
+    "country": "JP",
+    "latest": "2026-08",
+    "contribution_error": 4.440892098500626e-16
+  },
+  {
+    "country": "AU",
+    "latest": "2026-08",
+    "contribution_error": 3.3306690738754696e-16
+  }
+]

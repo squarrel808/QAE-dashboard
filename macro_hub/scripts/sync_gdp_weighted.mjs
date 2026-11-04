@@ -4,7 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const source = path.resolve(root, '../PCA_Four_Axis')
+const source = path.resolve(root, '../PCA/PCA_Four_Axis')
 const destination = path.join(root, 'public/embeds/gdp-weighted')
 const files = ['index.html', 'indices.csv', 'inputs.csv', 'selection_audit.csv', 'classification_signs.html', 'classification_signs.csv', 'component_signs.csv', 'weights.csv', 'blackrock_coverage.csv', 'blackrock_coverage.html']
 

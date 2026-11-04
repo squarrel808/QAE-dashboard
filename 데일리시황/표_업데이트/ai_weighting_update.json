@@ -1,0 +1,16 @@
+[
+  {
+    "period": "1D",
+    "asOf": "2026-10-13",
+    "weighting": "equal_weight",
+    "verified_stage_periods": 192,
+    "stocks": "SNDK moved from server to compute; constituent returns unchanged"
+  },
+  {
+    "period": "5D",
+    "asOf": "2026-10-09",
+    "weighting": "equal_weight",
+    "verified_stage_periods": 192,
+    "stocks": "SNDK moved from server to compute; constituent returns unchanged"
+  }
+]

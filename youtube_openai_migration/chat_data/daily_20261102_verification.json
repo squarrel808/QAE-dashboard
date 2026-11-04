@@ -1,0 +1,15 @@
+{
+  "report": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-11-02\\report_chat_20261102_0833.html",
+  "report_sha256": "097907290fc8f2f3e99cf5050893b734e1098b95381d649e3c94595efbc55e97",
+  "source_sha256": "baf6c39de868dbf178a58caeb5f84c4b8febc4bc95a9dbb08405593318f82354",
+  "chars": 256684,
+  "main_program_start_and_signoff_read": true,
+  "adjacent_programs_partial_and_labeled": true,
+  "completed_updated": true,
+  "remaining_ids": [
+    "5lKIW85jDDY"
+  ],
+  "completed_before": 439,
+  "completed_after": 440,
+  "html_structure_verified": true
+}

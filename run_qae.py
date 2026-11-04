@@ -113,9 +113,11 @@ PIPELINE = [
     ("web", "JSON (build_pca_json.py)", "build_pca_json.py",
      "macro_hub", os.path.join("scripts", "build_pca_json.py")),
     ("web", "PCA II·III (pca_ii_iii_update.py)", "pca_ii_iii_update.py",
-     "PCA_Four_Axis", "run_update.py"),
+     "PCA/PCA_Four_Axis", "run_update.py"),
     ("web", "JSON (build_caimap_json.py)", "build_caimap_json.py",
      "macro_hub", os.path.join("scripts", "build_caimap_json.py")),
+    ("web", "Citi Surprise (update_surprise.py)", "update_surprise.py",
+     "데일리시황/표_업데이트/surprise index", "update_surprise.py"),
     ("web", "embeds (sync_embeds.py)", "sync_embeds.py",
      "macro_hub", os.path.join("scripts", "sync_embeds.py")),
 ]

@@ -609,70 +609,47 @@ BOFA_LOGIN_BTN_XPATH = (
     "//input[@type='submit' and normalize-space(translate(@value,'LOGIN','login'))='log in']")
 
 def bofa_login(driver, userid=BOFA_USERID, password=BOFA_PASSWORD, timeout=45):
-    """
-    BofA 로그인 (직접 입력판).
-    전용 프로필에선 자동완성이 안 채워져 입력칸이 빈 채로 뜬다. 빈칸으로 'Log In'을
-    눌러도 doLogin() 검증에 막혀 아무 일도 안 일어나므로, ID/PW를 직접 입력한 뒤 클릭한다.
-    [핵심] 로그인 여부를 '아이디칸 id'가 아니라 '로그인 버튼 존재'로 판단한다.
-           (아이디칸 id가 바뀌어도 동작하도록)
-    """
+    """Preserve autofill, click Log In, and verify authenticated research content."""
     driver.get(BOFA_LOGIN_URL)
-    # 로그인 버튼이 있으면 = 로그인 페이지. 없으면 = 이미 로그인된 세션 → 건너뜀.
-    try:
-        btn = WebDriverWait(driver, 12).until(
-            EC.element_to_be_clickable((By.XPATH, BOFA_LOGIN_BTN_XPATH)))
-    except TimeoutException:
-        print("[BofA] 로그인 버튼 없음(이미 로그인된 세션) → 건너뜀")
+
+    def first_visible(by, selector):
+        return next((e for e in driver.find_elements(by, selector)
+                     if e.is_displayed()), None)
+
+    def ready(d):
+        return first_visible(By.CSS_SELECTOR,
+            'a[onclick*="htmlIconClickOnCachedPortlet"], '
+            'a[href*="researchlibrary"][href*="logout"], '
+            'a[href*="logout"], #chartContainer, .highcharts-container')
+
+    def state(d):
+        return ready(d) or first_visible(By.XPATH, BOFA_LOGIN_BTN_XPATH)
+
+    WebDriverWait(driver, timeout).until(state)
+    if ready(driver):
+        print("[BofA] Authenticated research page ready")
         return
-    # [확정] 로그인칸은 빈 채로 뜨고(자동완성 안 됨), 빈칸으로 doLogin()을 부르면
-    #        검증에 막혀 아무 일도 안 일어난다. → ID/PW를 직접 입력한 뒤 버튼 클릭.
-    #        (입력칸 id가 'userid'/'password', 버튼 onclick='doLogin()'으로 DOM 확인됨)
-    uid = (driver.find_elements(By.ID, "userid")
-           or driver.find_elements(By.CSS_SELECTOR,
-                "input[name='userid'], input#username, input[name='username'], input[type='text']"))
-    pwd = (driver.find_elements(By.ID, "password")
-           or driver.find_elements(By.CSS_SELECTOR, "input[type='password']"))
-    if uid and pwd:
-        uid[0].clear(); uid[0].send_keys(userid)
-        pwd[0].clear(); pwd[0].send_keys(password)
-        print("[BofA] ID/PW 직접 입력 완료 → 'Log In' 클릭")
-    else:
-        print("[BofA] 입력칸을 못 찾음 → 자동완성에 의존하여 클릭")
-    time.sleep(0.5)
-    driver.execute_script("arguments[0].click();", btn)
-    # 로그인 전환 확인 (login/signin 둘 다 사라져야 성공)
-    try:
-        WebDriverWait(driver, 15).until(
-            lambda d: "login" not in d.current_url.lower()
-                      and "signin" not in d.current_url.lower())
-        print("[BofA] 로그인 완료")
-        return
-    except TimeoutException:
-        pass
-    # 아직 로그인 페이지면: doLogin() 직접 호출 + (자동완성 비었으면) 수동 입력 후 재시도
-    print("[BofA] 전환 안 됨 → 수동 입력/doLogin() 재시도")
-    uid = (driver.find_elements(By.ID, "userid")
-           or driver.find_elements(By.CSS_SELECTOR,
-                "input[name='userid'], input#username, input[name='username'], input[type='text']"))
-    pwd = (driver.find_elements(By.ID, "password")
-           or driver.find_elements(By.CSS_SELECTOR, "input[type='password']"))
-    if uid and pwd and not (uid[0].get_attribute("value") or "").strip():
-        uid[0].clear(); uid[0].send_keys(userid)
-        pwd[0].clear(); pwd[0].send_keys(password)
-    try:
-        els = driver.find_elements(By.XPATH, BOFA_LOGIN_BTN_XPATH)
-        if els:
-            driver.execute_script("arguments[0].click();", els[0])
-        else:
-            driver.execute_script("if (typeof doLogin === 'function') doLogin();")
-    except Exception:
-        pass
-    try:
+    # Never erase password-manager values. Only fill empty fields if configured.
+    uid = first_visible(By.CSS_SELECTOR,
+        "input#userid, input[name='userid'], input#username, input[name='username'], input[type='email'], input[type='text']")
+    pwd = first_visible(By.CSS_SELECTOR, "input[type='password']")
+    for field, value in ((uid, userid), (pwd, password)):
+        if field is not None and value and not field.get_attribute("value"):
+            field.send_keys(value)
+    # Allow autofill to finish before submitting. Missing values need manual input.
+    if uid is not None and pwd is not None:
         WebDriverWait(driver, timeout).until(
-            lambda d: "login" not in d.current_url.lower())
-    except TimeoutException:
-        pass
-    print("[BofA] 로그인 시도 완료")
+            lambda d: bool(uid.get_attribute("value")) and bool(pwd.get_attribute("value")))
+    btn = WebDriverWait(driver, timeout).until(
+        lambda d: (lambda e: e if e is not None and e.is_enabled() else False)(
+            first_visible(By.XPATH, BOFA_LOGIN_BTN_XPATH)))
+    try:
+        btn.click()
+    except Exception:
+        driver.execute_script("arguments[0].click();", btn)
+    # Timeout propagates: an unchanged login page must not be reported as success.
+    WebDriverWait(driver, timeout).until(ready)
+    print("[BofA] Authenticated research page ready")
 
 # ============================================================
 #  [구버전/미사용] BofA - Trending Research Reports (Highcharts 차트 클릭 방식)

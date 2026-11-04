@@ -1,0 +1,157 @@
+{
+  "QBkoENvGntA": {
+    "duration": "PT9M37S",
+    "first": 0.03,
+    "last_end": 576.68,
+    "segments": 165,
+    "chars": 9995,
+    "same_as_cached": true,
+    "gaps_over_8s": []
+  },
+  "cS9Ph2hWEss": {
+    "duration": "PT1H26M50S",
+    "first": 0.216,
+    "last_end": 5204.949,
+    "segments": 1342,
+    "chars": 69356,
+    "same_as_cached": true,
+    "gaps_over_8s": [
+      {
+        "start": 9.359,
+        "end": 20.303,
+        "gap": 10.94,
+        "before": "BLOOMBERG OPEN\nINTEREST\" STARTS RIGHT NOW.♪",
+        "after": "DANI: ELECTION DAY IS HERE.\nVOTERS DELIVER THE BIGGEST"
+      },
+      {
+        "start": 767.45,
+        "end": 785.284,
+        "gap": 17.83,
+        "before": "YOU ARE WATCHING\n\"OPEN INTEREST.\"",
+        "after": "♪\nISABELLE: NOW THE HIGH INTEREST,"
+      },
+      {
+        "start": 1208.307,
+        "end": 1223.205,
+        "gap": 14.9,
+        "before": "WHITNEY JOINS US.\nTHIS IS \"BLOOMBERG OPEN INTEREST",
+        "after": "DANI: THREE DAYS OF LOSSES,\nLITTLE CHANGED ON THE S&P AND"
+      },
+      {
+        "start": 1302.034,
+        "end": 1316.782,
+        "gap": 14.75,
+        "before": "WITH EMILY ROWLAND OF NEXT.\nTHIS IS OPEN INTEREST.",
+        "after": "♪\nDANI: LET'S GET YOUR TRADING DAY"
+      },
+      {
+        "start": 1914.579,
+        "end": 1929.127,
+        "gap": 14.55,
+        "before": "THIS IS \"BLOOMBERG OPEN INTEREST\n.\"",
+        "after": "LET'S GET INTO IT WITH NORAH:\nWITH THE ANALYST ACTION."
+      },
+      {
+        "start": 2240.154,
+        "end": 2256.487,
+        "gap": 16.33,
+        "before": "NEXT.\nTHIS IS \"OPEN INTEREST.\"",
+        "after": "GO WITHOUT BUMPS IN THE COMING\nYEARS BUT I CAN SAY WHEN YOU"
+      },
+      {
+        "start": 2583.013,
+        "end": 2600.447,
+        "gap": 17.43,
+        "before": "THAT IS COMING UP IN HOUR TWO.♪",
+        "after": "DANI: IT'S 30 MINUTES INTO THE\nTRADING DAY."
+      },
+      {
+        "start": 3299.596,
+        "end": 3310.991,
+        "gap": 11.39,
+        "before": "THAT IS NEXT AND MORE.\nTHIS IS \"BLOOMBERG OPEN INTEREST",
+        "after": "ISABELLE: NOW TO HIGH INTEREST,\nA LOOK AT WHAT IS TAKING PLACE"
+      },
+      {
+        "start": 3848.1270000000004,
+        "end": 3857.353,
+        "gap": 9.23,
+        "before": "JOINING US.\nTHIS IS \"BLOOMBERG OPEN INTEREST",
+        "after": "DANI: NEARLY ONE HOUR TRADING\nDAY, STOCKS HOLDING ON TO GAIN,"
+      },
+      {
+        "start": 3893.322,
+        "end": 3907.386,
+        "gap": 14.06,
+        "before": "TO FOLLOW IN THIS ELECTION.\nTHIS IS \"BLOOMBERG OPEN INTEREST",
+        "after": ">> A GOOD PORTION OF IT WE WILL\nWIN IN A LANDSLIDE."
+      },
+      {
+        "start": 4749.978,
+        "end": 4764.142,
+        "gap": 14.16,
+        "before": "♪THIS IS \"OPEN INTEREST\"",
+        "after": "CHAIR GARY GENSLER SAYS CHANGE\nIN THE HOUSE AND SENATE WILL"
+      }
+    ]
+  },
+  "KhnxubbrOrk": {
+    "duration": "PT2H24M21S",
+    "first": 5.171,
+    "last_end": 8653.311,
+    "segments": 2263,
+    "chars": 117966,
+    "same_as_cached": true,
+    "gaps_over_8s": [
+      {
+        "start": 974.707,
+        "end": 1000.065,
+        "gap": 25.36,
+        "before": "LIVE FROM NEW YORK CITY THIS\nMORNING, GOOD MORNING.",
+        "after": "♪\nJONATHAN: EQUITIES ARE LITTLE"
+      },
+      {
+        "start": 2685.5159999999996,
+        "end": 2903.267,
+        "gap": 217.75,
+        "before": "U.S.\nI WONDER AT WHAT POINT THAT",
+        "after": ">> OUR ENTIRE ECONOMY IS NOW ONE"
+      },
+      {
+        "start": 3718.0139999999997,
+        "end": 3737.533,
+        "gap": 19.52,
+        "before": "MORNING, GOOD MORNING.\n♪",
+        "after": "JONATHAN: BIG WEEK COMING UP\nHERE LOTS OF ECONOMIC DATA."
+      },
+      {
+        "start": 5327.188,
+        "end": 5340.068,
+        "gap": 12.88,
+        "before": "WITH MATT LUZZETTI\nOF DEUTSCHE BANK.",
+        "after": "JONATHAN: STOCKS ARE NEGATIVE"
+      },
+      {
+        "start": 5784.545,
+        "end": 5794.622,
+        "gap": 10.08,
+        "before": "HE WAS DOING WORK.\n♪",
+        "after": ">> THIS IS A MUCH MORE\nCOMPLICATED MIDTERM."
+      },
+      {
+        "start": 6673.466,
+        "end": 6686.112,
+        "gap": 12.65,
+        "before": "LIVE FROM NEW YORK CITY GOOD\nMORNING.",
+        "after": "♪\n>> THINKING ABOUT THE POTENTIAL"
+      },
+      {
+        "start": 8065.991,
+        "end": 8085.51,
+        "gap": 19.52,
+        "before": "WATCHING BLOOMBERG TV.\n♪",
+        "after": ">> THE MIDTERMS I\nTHINK IT IS A BIG EVENT."
+      }
+    ]
+  }
+}

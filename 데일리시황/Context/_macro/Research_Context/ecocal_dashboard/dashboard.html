@@ -128,4 +128,7 @@ function setView(view){
 $('overviewTab').addEventListener('click',()=>setView('overview'));
 $('indicatorsTab').addEventListener('click',()=>setView('indicators'));
 setView('overview');
-</script></body></html>
+</script><script>
+(()=>{const m=DATA.meta;const reviewed=m.commentary_reviewed_on||m.latest_view_date;const days=reviewed?Math.floor((Date.now()-Date.parse(reviewed+'T00:00:00+09:00'))/86400000):null;if(days===null||days>3){const el=document.createElement('div');el.style.cssText='padding:14px;background:#fff2cc;color:#6b4300;border:1px solid #ddad32';el.textContent=reviewed?'검토 자료일 '+reviewed+' · '+days+'일 경과. 화면 생성일과 별개이며 최신 검토 여부를 확인하세요.':'검토 자료일 미확인. 최신 업데이트 여부를 확인하세요.';document.body.prepend(el);}})();
+</script>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "pca_i_unchanged_during_this_build": true,
+  "pca_ii_unchanged": false,
+  "countries": 7,
+  "inputs": 288,
+  "momentum": "post-PCA 3m/3m difference",
+  "estimation": {
+    "id": "cfna_style_fixed_full_sample_v1",
+    "normalization": "full_sample_mean_std",
+    "halflife": null,
+    "loadings": "fixed_per_release",
+    "constraint": "unrestricted",
+    "correlation": "pairwise_complete_full_sample_psd_repair",
+    "missing": "observed-input sum divided by sqrt(observed count); no raw imputation",
+    "history": "current-vintage revised history; not a real-time backtest",
+    "source": "https://www.chicagofed.org/-/media/publications/cfnai/background/cfnai-background-pdf.pdf"
+  },
+  "weights": "january_1_ttm_lagged_frozen_half_exports_v3"
+}

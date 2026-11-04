@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-29T08:35:00.916285+09:00",
+  "completed_state_updated": true,
+  "videos": [
+    {
+      "id": "Tt6rGQB09HI",
+      "transcript_chars": 119420,
+      "transcript_sha256": "1a0a99f5f0b5879dce68f25f0dd614800fd4c6bffdba25083bcd4b1226f772f5",
+      "summary_chars": 4133
+    },
+    {
+      "id": "PxIiU9Gdr2o",
+      "transcript_chars": 71551,
+      "transcript_sha256": "085112ea1c8648a235ad573f4a7339e845662a7e98676d7bfe28d3524d51b890",
+      "summary_chars": 4527
+    },
+    {
+      "id": "KVyBp7SFrxg",
+      "transcript_chars": 120367,
+      "transcript_sha256": "c39514e1e5c65ab0a1411e4119326b6f9ef03a89a1c7e1598f5be3669b7fbad1",
+      "summary_chars": 5078
+    }
+  ],
+  "report_path": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-29\\report_chat_20261029_0835.html",
+  "sha256": "b6ee977e8a84e499d6a5fe117d5551a8441cf2fdce607945a88136d627026581",
+  "completed_at": "2026-10-29T08:35:31.986594+09:00",
+  "completed_count": 433,
+  "pending_after": 0
+}

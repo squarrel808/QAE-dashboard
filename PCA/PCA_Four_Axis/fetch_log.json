@@ -1,0 +1,17 @@
+{
+  "checked_kst": "2026-11-04T08:44:15.776583+09:00",
+  "requested": [
+    "usecon:fr",
+    "usecon:gdp",
+    "uk:l62tq",
+    "uk:l62rq",
+    "france:frsnfih",
+    "germany:desnfir",
+    "germany:desnfgr",
+    "g10:s156nprr",
+    "japan:n9dfd",
+    "anz:ausnfr",
+    "france:frsdk"
+  ],
+  "errors": []
+}

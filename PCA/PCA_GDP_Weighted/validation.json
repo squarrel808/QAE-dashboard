@@ -1,0 +1,250 @@
+{
+  "models": [
+    {
+      "country": "US",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2005-01",
+      "contribution_error": 0.0,
+      "inputs": 61,
+      "negative_loadings": 0
+    },
+    {
+      "country": "US",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2005-06",
+      "contribution_error": 0.0,
+      "inputs": 61,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "UK",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2010-02",
+      "contribution_error": 0.0,
+      "inputs": 34,
+      "negative_loadings": 0
+    },
+    {
+      "country": "UK",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2010-07",
+      "contribution_error": 0.0,
+      "inputs": 34,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "FR",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2005-01",
+      "contribution_error": 0.0,
+      "inputs": 17,
+      "negative_loadings": 0
+    },
+    {
+      "country": "FR",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2005-06",
+      "contribution_error": 0.0,
+      "inputs": 17,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "DE",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2005-01",
+      "contribution_error": 0.0,
+      "inputs": 35,
+      "negative_loadings": 0
+    },
+    {
+      "country": "DE",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2005-06",
+      "contribution_error": 0.0,
+      "inputs": 35,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "CA",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2005-01",
+      "contribution_error": 0.0,
+      "inputs": 31,
+      "negative_loadings": 0
+    },
+    {
+      "country": "CA",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2005-06",
+      "contribution_error": 0.0,
+      "inputs": 31,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "JP",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2010-01",
+      "contribution_error": 0.0,
+      "inputs": 59,
+      "negative_loadings": 0
+    },
+    {
+      "country": "JP",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2010-06",
+      "contribution_error": 0.0,
+      "inputs": 59,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    },
+    {
+      "country": "AU",
+      "version": "YoY",
+      "latest": "2026-08",
+      "first": "2016-06",
+      "contribution_error": 0.0,
+      "inputs": 23,
+      "negative_loadings": 0
+    },
+    {
+      "country": "AU",
+      "version": "Momentum",
+      "latest": "2026-08",
+      "first": "2016-11",
+      "contribution_error": 0.0,
+      "inputs": 23,
+      "negative_loadings": 0,
+      "derivation": "post_pca_3m3m_difference"
+    }
+  ],
+  "blackrock_unchanged": true,
+  "pca_loadings_unchanged": true,
+  "selection": {
+    "include": 260,
+    "duplicate": 105,
+    "exclude": 4
+  },
+  "inputs": 260,
+  "investment_scope": {
+    "definition": "총고정투자 − 일반정부 고정투자. 공기업은 각국 국민계정의 기업부문 분류를 따름.",
+    "user_choice_date": "2026-10-28",
+    "government_consumption_included": false,
+    "government_investment_included": false,
+    "countries": {
+      "US": {
+        "total": "g10:s111nf",
+        "government": [
+          "g10:s111nfg"
+        ],
+        "gdp": "g10:s111ngdp",
+        "basis": "SA, Bil.$"
+      },
+      "UK": {
+        "total": "g10:s112nf",
+        "government": [
+          "uk:rnczq",
+          "uk:rnsmq"
+        ],
+        "gdp": "g10:s112ngdp",
+        "basis": "SA, Mil.GBP; 중앙정부 + 지방정부"
+      },
+      "FR": {
+        "total": "g10:s132nf",
+        "government": [
+          "france:frsnig37"
+        ],
+        "gdp": "g10:s132ngdp",
+        "basis": "SWDA, Mil.EUR"
+      },
+      "DE": {
+        "total": "g10:s134nf",
+        "government": [
+          "germany:desnfg"
+        ],
+        "gdp": "g10:s134ngdp",
+        "basis": "SWDA, Bil.EUR"
+      },
+      "CA": {
+        "total": "g10:s156nf",
+        "government": [
+          "g10:s156nfg"
+        ],
+        "gdp": "g10:s156ngdp",
+        "basis": "SA, Mil.C$; 기업부문 공기업 포함 가능"
+      },
+      "JP": {
+        "total": "japan:n9df",
+        "government": [
+          "japan:n9dgg"
+        ],
+        "gdp": "japan:n9dp",
+        "weight_lag_months": 9,
+        "basis": "NSA, Bil.Yen; 같은 기준의 최근 4분기 합. 일반정부 투자 상세는 2025Q1까지(수정일 2025-12-23); 분기말+9개월 지연 규칙, 이후 완결된 구성비 유지. 과거 실제 발표 빈티지 복원은 아님."
+      },
+      "AU": {
+        "total": "g10:s193nf",
+        "government": [
+          "anz:ausk5f"
+        ],
+        "gdp": "g10:s193ngdp",
+        "basis": "SA, Mil.A$"
+      }
+    },
+    "monthly_proxy_note": "투자 PCA는 민간·기업 투자활동을 설명하는 대리지표다. 자본재 생산·수주·주택 등 일부 월별 지표는 최종 구매자의 민간/정부를 분리하지 못하며, 일반정부 투자액 자체를 입력하거나 가중 합산하지 않는다."
+  },
+  "momentum_method": "Completed YoY PCA: trailing 3-month mean minus preceding 3-month mean; no refit or restandardization",
+  "momentum_checks": [
+    {
+      "country": "US",
+      "latest": "2026-08",
+      "contribution_error": 6.661338147750939e-16
+    },
+    {
+      "country": "UK",
+      "latest": "2026-08",
+      "contribution_error": 4.440892098500626e-16
+    },
+    {
+      "country": "FR",
+      "latest": "2026-08",
+      "contribution_error": 6.661338147750939e-16
+    },
+    {
+      "country": "DE",
+      "latest": "2026-08",
+      "contribution_error": 6.661338147750939e-16
+    },
+    {
+      "country": "CA",
+      "latest": "2026-08",
+      "contribution_error": 8.881784197001252e-16
+    },
+    {
+      "country": "JP",
+      "latest": "2026-08",
+      "contribution_error": 4.440892098500626e-16
+    },
+    {
+      "country": "AU",
+      "latest": "2026-08",
+      "contribution_error": 3.3306690738754696e-16
+    }
+  ]
+}

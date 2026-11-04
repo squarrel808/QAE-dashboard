@@ -7,12 +7,17 @@ import math
 import sys
 from datetime import date, timedelta
 from pathlib import Path
+import sys as _period_sys
+_period_sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if p.name == "BQL")))
+from period_policy import active_price_sessions
 from typing import Any
 
 import numpy as np
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 MATERIAL_DIR = SCRIPT_DIR.parent
+sys.path.insert(0, str(MATERIAL_DIR))
+from index_levels import apply_ai
 THEME_DIR = MATERIAL_DIR.parent
 BQL_DIR = THEME_DIR.parent
 DEFAULT_MASTER = BQL_DIR / "Rawfile" / "BQuant_Master.xlsx"
@@ -37,7 +42,7 @@ STAGES = [
         "color": "#2563eb",
         "description": "AI 가속기, CPU, HBM·메모리, 맞춤형 AI 반도체와 전력관리 반도체.",
         "core": "NVDA AMD AVGO MRVL MU".split(),
-        "adjacent": "INTC MPWR".split(),
+        "adjacent": "INTC MPWR SNDK".split(),
     },
     {
         "key": "semicap",
@@ -64,7 +69,7 @@ STAGES = [
         "color": "#0284c7",
         "description": "AI 서버, 랙 통합, 위탁생산, 기업·클라우드 스토리지와 데이터 관리.",
         "core": "DELL HPE SMCI".split(),
-        "adjacent": "FLEX JBL NTAP STX WDC SNDK".split(),
+        "adjacent": "FLEX JBL NTAP STX WDC".split(),
     },
     {
         "key": "power_equipment",
@@ -167,7 +172,7 @@ RATIONALES = {
     "NTAP": "AI 워크로드용 기업 스토리지와 데이터 관리 제공.",
     "STX": "클라우드와 AI 데이터 파이프라인용 대용량 스토리지 공급.",
     "WDC": "기업·클라우드 스토리지 수요에 노출.",
-    "SNDK": "데이터 집약적 워크로드용 플래시 스토리지 노출.",
+    "SNDK": "NAND 플래시 메모리와 SSD 공급을 통해 데이터센터·AI 워크로드의 메모리 반도체 수요에 노출.",
     "VRT": "고밀도 AI 데이터센터의 전력·열관리·액체냉각 인프라 공급.",
     "ETN": "데이터센터 부하 증가에 필요한 배전·스위치기어·전력품질 장비 공급.",
     "GEV": "전력망 장비와 발전설비를 통해 데이터센터 전력수요에 노출.",
@@ -247,7 +252,9 @@ def load_spx(sources: list[Path] | None = None) -> raw_builder.RawIndex:
     return selected
 
 
-def valid_return(prices: np.ndarray, start: int, end: int) -> np.ndarray:
+def valid_return(prices: np.ndarray, start: int | None, end: int) -> np.ndarray:
+    if start is None:
+        return np.full(prices.shape[0], np.nan)
     before = prices[:, start]
     after = prices[:, end]
     valid = np.isfinite(before) & np.isfinite(after) & (before > 0) & (after > 0)
@@ -256,38 +263,19 @@ def valid_return(prices: np.ndarray, start: int, end: int) -> np.ndarray:
     return out
 
 
-def nearest_index(dates: list[date], target: date) -> int:
+def nearest_index(dates: list[date], target: date) -> int | None:
     candidates = [i for i, value in enumerate(dates) if value <= target]
-    return candidates[-1] if candidates else 0
+    return candidates[-1] if candidates else None
 
 
 def latest_trading_index(prices: np.ndarray) -> int:
-    """Ignore trailing holidays/stale copied rows and return the latest real SPX session."""
-    for current in range(prices.shape[1] - 1, 0, -1):
-        before = prices[:, current - 1]
-        after = prices[:, current]
-        valid = np.isfinite(before) & np.isfinite(after) & (before > 0) & (after > 0)
-        if not valid.any():
-            continue
-        changed = ~np.isclose(after[valid], before[valid], rtol=1e-7, atol=1e-9)
-        if float(changed.mean()) > 0.10:
-            return current
-    raise ValueError("SPX panel has no valid changing-price session")
+    sessions=active_price_sessions(prices)
+    if len(sessions)<2:raise ValueError("No active price session")
+    return sessions[-1]
 
 
-def actual_session_indices(prices: np.ndarray) -> list[int]:
-    """Return genuine market sessions, excluding holidays and carried rows."""
-    sessions: list[int] = []
-    for current in range(1, prices.shape[1]):
-        before = prices[:, current - 1]
-        after = prices[:, current]
-        valid = np.isfinite(before) & np.isfinite(after) & (before > 0) & (after > 0)
-        if not valid.any():
-            continue
-        changed = ~np.isclose(after[valid], before[valid], rtol=1e-7, atol=1e-9)
-        if float(changed.mean()) > 0.10:
-            sessions.append(current)
-    return sessions
+def actual_session_indices(prices: np.ndarray):
+    return active_price_sessions(prices)
 
 
 def shift_months(value: date, months: int) -> date:
@@ -322,68 +310,60 @@ def reconcile_known_splits(prices: np.ndarray, tickers: list[str]) -> None:
             series[:right] /= 2.0
 
 
-def chain_series(
-    prices: np.ndarray,
-    market_caps: np.ndarray,
-    members: list[int],
-    dates: list[date],
-) -> list[list[Any]]:
-    """Rebase the shares-weighted aggregate Price to 100.
+def cap_weighted_return(prices, market_caps, members, start, end):
+    """Price returns weighted by positive, finite market caps at the period start."""
+    if start is None or not len(members):
+        return None
+    values = valid_return(prices[members, :], start, end)
+    start_caps = market_caps[members, start]
+    valid = np.isfinite(values) & np.isfinite(start_caps) & (start_caps > 0)
+    if not valid.any():
+        return None
+    return round(float(np.average(values[valid], weights=start_caps[valid])), 6)
 
-    Aggregate Price = sum(Price * Shares) / sum(Shares). The current source has
-    no direct shares field, so Shares is reconstructed as Market Cap / Price.
-    """
-    level = 100.0
-    result: list[list[Any]] = [[dates[0].isoformat(), level]]
+
+def chain_series(prices, market_caps, members, dates):
+    """Daily start-market-cap weighted index; gaps stay unavailable."""
+    initial = cap_weighted_return(prices, market_caps, members, 0, 0)
+    level = 100.0 if initial is not None else None
+    result = [[dates[0].isoformat(), level]]
     for current in range(1, len(dates)):
-        previous = current - 1
-        price0 = prices[members, previous]
-        price1 = prices[members, current]
-        mcap0 = market_caps[members, previous]
-        mcap1 = market_caps[members, current]
-        shares0 = np.divide(
-            mcap0,
-            price0,
-            out=np.full_like(mcap0, np.nan, dtype=float),
-            where=np.isfinite(mcap0) & np.isfinite(price0) & (mcap0 > 0) & (price0 > 0),
-        )
-        shares1 = np.divide(
-            mcap1,
-            price1,
-            out=np.full_like(mcap1, np.nan, dtype=float),
-            where=np.isfinite(mcap1) & np.isfinite(price1) & (mcap1 > 0) & (price1 > 0),
-        )
-        valid = (
-            np.isfinite(price0) & np.isfinite(price1) &
-            np.isfinite(shares0) & np.isfinite(shares1) &
-            (price0 > 0) & (price1 > 0) & (shares0 > 0) & (shares1 > 0)
-        )
-        if valid.any():
-            aggregate0 = float(np.average(price0[valid], weights=shares0[valid]))
-            aggregate1 = float(np.average(price1[valid], weights=shares1[valid]))
-            if aggregate0 > 0 and aggregate1 > 0:
-                level *= aggregate1 / aggregate0
-        result.append([dates[current].isoformat(), round(level, 6)])
+        value = cap_weighted_return(prices, market_caps, members, current - 1, current)
+        level = level * (1.0 + value) if level is not None and value is not None else None
+        result.append([dates[current].isoformat(), round(level, 6) if level is not None else None])
     return result
 
 
-def series_return(series: list[list[Any]], start: int, end: int) -> float | None:
+def period_series(prices, market_caps, members, dates, start):
+    """Fixed period-start market-cap basket matching its period-table return."""
+    if start is None:
+        return []
+    result = []
+    for current in range(start, len(dates)):
+        value = cap_weighted_return(prices, market_caps, members, start, current)
+        result.append([dates[current].isoformat(), round(100 * (1 + value), 6) if value is not None else None])
+    return result
+
+
+def series_return(series: list[list[Any]], start: int | None, end: int) -> float | None:
+    if start is None:
+        return None
     first = series[start][1]
     last = series[end][1]
     return round(last / first - 1.0, 6) if first and last else None
 
 
-def period_indices(dates: list[date]) -> dict[str, int]:
+def period_indices(dates: list[date]) -> dict[str, int | None]:
     end = len(dates) - 1
     last = dates[end]
     return {
-        "1D": max(0, end - 1),
-        "5D": max(0, end - 5),
-        "1W": nearest_index(dates, last - timedelta(days=7)),
+        "1D": end - 1 if end >= 1 else None,
+        "5D": end - 5 if end >= 5 else None,
+        "1W": end - 5 if end >= 5 else None,
         "1M": nearest_index(dates, shift_months(last, -1)),
         "3M": nearest_index(dates, shift_months(last, -3)),
         "6M": nearest_index(dates, shift_months(last, -6)),
-        "YTD": nearest_index(dates, date(last.year, 1, 1)),
+        "YTD": nearest_index(dates, date(last.year, 1, 1) - timedelta(days=1)),
         "Since 2025-07-01": nearest_index(dates, date(2025, 7, 1)),
     }
 
@@ -405,7 +385,10 @@ def build_data(raw: raw_builder.RawIndex) -> dict[str, Any]:
 
     benchmark_members = list(range(len(raw.tickers)))
     benchmark_series = chain_series(prices, mcaps, benchmark_members, dates)
-    benchmark_returns = {key: series_return(benchmark_series, start, end) for key, start in periods.items()}
+    benchmark_returns = {
+        key: cap_weighted_return(prices, mcaps, benchmark_members, start, end)
+        for key, start in periods.items()
+    }
 
     stocks: list[dict[str, Any]] = []
     stage_rows: dict[str, list[int]] = {}
@@ -448,7 +431,9 @@ def build_data(raw: raw_builder.RawIndex) -> dict[str, Any]:
             for label, start in periods.items():
                 member_returns = valid_return(prices[members, :], start, end)
                 valid = member_returns[np.isfinite(member_returns)]
-                basket_return = series_return(series, start, end)
+                basket_return = cap_weighted_return(prices, mcaps, members, start, end)
+                valid_caps = mcaps[members, start] if start is not None else np.full(len(members), np.nan)
+                weighted_members = np.isfinite(member_returns) & np.isfinite(valid_caps) & (valid_caps > 0)
                 benchmark_return = benchmark_returns[label]
                 performance[label] = {
                     "return": basket_return,
@@ -458,9 +443,19 @@ def build_data(raw: raw_builder.RawIndex) -> dict[str, Any]:
                     "breadth": round(float(np.mean(valid > 0)), 6) if len(valid) else None,
                     "median": round(float(np.median(valid)), 6) if len(valid) else None,
                     "dispersion": round(float(np.std(valid)), 6) if len(valid) else None,
-                    "members": int(len(valid)),
+                    "members": int(weighted_members.sum()),
+                    "weightedMembers": int(weighted_members.sum()),
+                    "startMarketCap": float(valid_caps[weighted_members].sum()) if weighted_members.any() else None,
                 }
-            stage_data[stage["key"]] = {"series": series, "performance": performance, "members": len(members)}
+            stage_data[stage["key"]] = {
+                "series": series,
+                "periodSeries": {
+                    label: period_series(prices, mcaps, members, dates, start)
+                    for label, start in periods.items()
+                },
+                "performance": performance,
+                "members": len(members),
+            }
         modes[mode] = stage_data
 
     stage_meta = [
@@ -469,7 +464,7 @@ def build_data(raw: raw_builder.RawIndex) -> dict[str, Any]:
            "expandedCount": sum(1 for symbol in stage["core"] + stage["adjacent"] if symbol in symbol_to_row)}
         for stage in STAGES
     ]
-    return {
+    data = {
         "meta": {
             "title": "S&P 500 AI 밸류체인 로테이션 모니터",
             "asOf": dates[-1].isoformat(),
@@ -477,25 +472,30 @@ def build_data(raw: raw_builder.RawIndex) -> dict[str, Any]:
             "endDate": dates[-1].isoformat(),
             "spxMembers": len(raw.tickers),
             "priceField": "병합된 Bloomberg 구성종목 Price",
+            "weighting": "market_cap",
+            "returnMethod": "period-start market-cap weighted mean of valid stock price returns",
+            "seriesMethod": "periodSeries uses fixed period-start market caps, including prior year-end caps for YTD; daily series chains daily start-market-cap weighted returns",
             "source": raw.source,
         },
         "dates": [value.isoformat() for value in dates],
-        "periodStarts": {key: dates[value].isoformat() for key, value in periods.items()},
+        "periodStarts": {key: dates[value].isoformat() if value is not None else None for key, value in periods.items()},
         "benchmark": {"series": benchmark_series, "returns": benchmark_returns},
         "stages": stage_meta,
         "modes": modes,
         "stocks": stocks,
         "sources": SOURCES,
         "notes": [
-            "각 바스켓의 집계가격은 Σ(Price×Shares)/ΣShares이며 배당은 제외한다. 현재 원자료의 Shares는 Market Cap/Price로 역산한다.",
-            "비교지수는 현재 S&P 500 Raw 패널 전체 종목의 주식수 가중 집계가격이다.",
-            "1개월·3개월·6개월은 달력상 같은 날짜 또는 그 이전의 최근 실제 거래일을 사용하며, 휴일·carry-forward 열은 제외한다.",
+            "Core·Expanded 밸류체인 기간 수익률은 각 기간 시작일 시가총액 가중평균이다. 양끝 가격이 유효하고 시작일 시총이 양수인 종목만 같은 집합으로 집계하며 배당은 제외한다.",
+            "비교지수는 BQuant Index Level 시트의 S&P 500 Price 레벨 수익률이다.",
+            "기간별 성과 추이는 해당 기간 시작일 시가총액을 고정해 계산하며, YTD는 전년 말 마지막 실제 거래일의 시가총액을 사용한다. 상승종목 비율·중앙값·분산도는 유효 가격수익률을 가진 종목 수 기준 통계이다.",
+            "1D·5D는 직전 1·5거래일, 1개월·3개월·6개월은 달력상 같은 날짜 또는 그 이전의 최근 실제 거래일을 사용한다. 휴일·carry-forward 열은 제외하며 시작일까지 이력이 없으면 데이터 부족으로 표시한다.",
             "APH의 2026-09-02 2대1 주식배당 전후 가격 기준은 보고용 계산에서만 연속되도록 보정하며 Master 원본은 바꾸지 않는다.",
             "현재 구성종목을 과거로 소급하므로 생존편향이 있으며, 매매 가능한 백테스트가 아니라 로테이션 모니터링용이다.",
             "Alphabet은 발행사 이중가중을 피하기 위해 GOOGL만 포함하고 GOOG는 제외한다.",
             "Core는 직접 노출도가 높은 종목이며 Core+Adjacent는 의미 있는 2차 수혜주를 추가한다. 12개 분류는 분석 목적의 판단이며 지수사업자 공식 분류가 아니다.",
         ],
     }
+    return apply_ai(data)
 
 
 HTML_TEMPLATE = r'''<!doctype html>
@@ -508,8 +508,8 @@ HTML_TEMPLATE = r'''<!doctype html>
 <div class="controls"><label>종목 범위</label><button data-mode="Core" class="active">핵심 종목</button><button data-mode="Expanded">핵심 + 인접 종목</button><label style="margin-left:10px">기간</label><span id="periods"></span></div>
 <div class="tabs"><button data-tab="overview" class="active">로테이션 개요</button><button data-tab="timeline">상대성과 추이</button><button data-tab="heatmap">종목 히트맵</button><button data-tab="universe">분류 종목·근거</button></div>
 <div id="kpis" class="kpis"></div>
-<section id="overview" class="section active"><div class="grid"><div class="panel"><h2>AI 밸류체인 수익률 순위</h2><div class="sub">주식수 가중 집계가격 수익률. 오른쪽 숫자는 같은 방식의 S&P 500 대비 초과수익률.</div><div id="bars"></div></div><div class="panel"><h2>로테이션 맵</h2><div class="sub">x축은 3개월 초과수익률, y축은 선택 기간 초과수익률. 원 크기는 유효 종목 수.</div><svg id="scatter" viewBox="0 0 680 430"></svg></div></div></section>
-<section id="timeline" class="section"><div class="panel"><h2>주식수 가중 S&P 500 집계가격 대비 상대성과</h2><div class="sub">선택 기간 시작점을 0%로 환산. 양수이면 해당 밸류체인이 주식수 가중 S&P 500 집계가격을 상회했다는 뜻이다.</div><div id="timelineLegend" class="legend"></div><svg id="lines" viewBox="0 0 1450 650"></svg></div></section>
+<section id="overview" class="section active"><div class="grid"><div class="panel"><h2>AI 밸류체인 수익률 순위</h2><div class="sub">기간 시작일 시가총액 가중평균. 오른쪽 숫자는 S&P 500 실제 지수 대비 초과수익률.</div><div id="bars"></div></div><div class="panel"><h2>로테이션 맵</h2><div class="sub">x축은 3개월 초과수익률, y축은 선택 기간 초과수익률. 원 크기는 유효 종목 수.</div><svg id="scatter" viewBox="0 0 680 430"></svg></div></div></section>
+<section id="timeline" class="section"><div class="panel"><h2>S&P 500 실제 지수 대비 상대성과</h2><div class="sub">선택 기간 시작 시총으로 가중한 가격수익률에서 실제 지수 수익률을 차감한다. 양수이면 해당 밸류체인이 S&P 500을 상회했다는 뜻이다.</div><div id="timelineLegend" class="legend"></div><svg id="lines" viewBox="0 0 1450 650"></svg></div></section>
 <section id="heatmap" class="section"><div class="panel"><h2>구성종목 수익률 히트맵</h2><div class="sub">12개 밸류체인 안에서 선택 기간 수익률 순으로 정렬한다.</div><div id="heatgrid" class="heatgrid"></div></div></section>
 <section id="universe" class="section"><div class="panel"><h2>분류 종목</h2><div class="sub">종목마다 하나의 주된 밸류체인만 부여해 중복 집계를 막았다.</div><div class="tablewrap"><table class="datatable"><thead><tr><th>밸류체인</th><th>티커</th><th>회사명</th><th>순수도</th><th>GICS 섹터</th><th>편입 근거</th><th class="r">1개월</th><th class="r">3개월</th><th class="r">6개월</th></tr></thead><tbody id="stockRows"></tbody></table></div></div><div class="panel" style="margin-top:14px"><h2>분류 참고자료</h2><div id="sources"></div></div></section>
 <div id="method" class="method"></div></div><div id="tip" class="tooltip"></div>
@@ -521,13 +521,24 @@ document.getElementById('periods').innerHTML=periods.map(p=>`<button data-period
 document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{S.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));render()});
 document.querySelectorAll('[data-period]').forEach(b=>b.onclick=()=>{S.period=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>x.classList.toggle('active',x===b));render()});
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{S.tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===S.tab));render()});
-function stageStats(){return DATA.stages.map(m=>({...m,...DATA.modes[S.mode][m.key].performance[S.period],series:DATA.modes[S.mode][m.key].series})).sort((a,b)=>(b.return??-99)-(a.return??-99))}
-function renderKpis(stats){const top=stats[0],bot=stats.at(-1),bench=DATA.benchmark.returns[S.period];const broad=stats.reduce((a,x)=>a+(x.breadth??0),0)/stats.length;document.getElementById('kpis').innerHTML=`<div class="kpi"><small>${periodLabel[S.period]} 선도 밸류체인</small><strong>${top.short}</strong><span class="${cls(top.return)}">${pct(top.return)}</span></div><div class="kpi"><small>후행 밸류체인</small><strong>${bot.short}</strong><span class="${cls(bot.return)}">${pct(bot.return)}</span></div><div class="kpi"><small>주식수 가중 S&P 500</small><strong>${pct(bench)}</strong><span>${periodLabel[S.period]} 집계가격 수익률</span></div><div class="kpi"><small>평균 상승종목 비율</small><strong>${pct(broad)}</strong><span>${modeLabel[S.mode]} 기준</span></div>`}
+function stageStats(){return DATA.stages.map(m=>({...m,...DATA.modes[S.mode][m.key].performance[S.period],series:DATA.modes[S.mode][m.key].periodSeries[S.period]})).sort((a,b)=>(b.return??-99)-(a.return??-99))}
+function renderKpis(stats){const available=stats.filter(x=>Number.isFinite(x.return));const top=available[0],bot=available.at(-1),bench=DATA.benchmark.returns[S.period];const breadth=stats.map(x=>x.breadth).filter(Number.isFinite);const broad=breadth.length?breadth.reduce((a,x)=>a+x,0)/breadth.length:null;document.getElementById('kpis').innerHTML=`<div class="kpi"><small>${periodLabel[S.period]} 선도 밸류체인</small><strong>${top?.short??'데이터 부족'}</strong><span class="${top?cls(top.return):''}">${pct(top?.return)}</span></div><div class="kpi"><small>후행 밸류체인</small><strong>${bot?.short??'데이터 부족'}</strong><span class="${bot?cls(bot.return):''}">${pct(bot?.return)}</span></div><div class="kpi"><small>S&P 500 실제 지수</small><strong>${pct(bench)}</strong><span>${periodLabel[S.period]} Price 레벨 수익률</span></div><div class="kpi"><small>평균 상승종목 비율</small><strong>${pct(broad)}</strong><span>${modeLabel[S.mode]} 기준</span></div>`}
 function renderBars(stats){const max=Math.max(.01,...stats.flatMap(x=>[Math.abs(x.return||0),Math.abs(x.relative||0)]));document.getElementById('bars').innerHTML=stats.map(x=>{const w=Math.abs(x.return||0)/max*48;return `<div class="barrow"><div><b>${x.short}</b><br><span class="tag">${x.members}종목 · 상승비율 ${pct(x.breadth)}</span></div><div class="barwrap"><span class="bar ${x.return>=0?'pos':'neg'}" style="width:${w}%;background:${x.color}"></span></div><div class="num ${cls(x.return)}"><b>${pct(x.return)}</b></div><div class="num ${cls(x.relative)}">${pct(x.relative)}</div></div>`}).join('')}
 function svgEl(n,a={}){const e=document.createElementNS('http://www.w3.org/2000/svg',n);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));return e}function clear(e){while(e.firstChild)e.removeChild(e.firstChild)}
-function renderScatter(stats){const svg=document.getElementById('scatter');clear(svg);const W=680,H=430,m={l:65,r:25,t:25,b:48};const pts=stats.map(x=>({x:DATA.modes[S.mode][x.key].performance['3M'].relative||0,y:x.relative||0,...x}));let lim=Math.max(.04,...pts.flatMap(p=>[Math.abs(p.x),Math.abs(p.y)]))*1.18;const sx=x=>m.l+(x+lim)/(2*lim)*(W-m.l-m.r),sy=y=>H-m.b-(y+lim)/(2*lim)*(H-m.t-m.b);[-lim,-lim/2,0,lim/2,lim].forEach(v=>{svg.append(svgEl('line',{x1:sx(v),x2:sx(v),y1:m.t,y2:H-m.b,stroke:v===0?'#111827':'#e5e7eb','stroke-width':v===0?1.8:1}));svg.append(svgEl('line',{x1:m.l,x2:W-m.r,y1:sy(v),y2:sy(v),stroke:v===0?'#111827':'#e5e7eb','stroke-width':v===0?1.8:1}))});pts.forEach(p=>{const c=svgEl('circle',{cx:sx(p.x),cy:sy(p.y),r:8+Math.sqrt(p.members)*2,fill:p.color,'fill-opacity':.78,stroke:'#fff','stroke-width':2});c.onmousemove=e=>tip(e,`<b>${p.name}</b><br>3개월 초과수익률 ${pct(p.x)}<br>${periodLabel[S.period]} 초과수익률 ${pct(p.y)}<br>유효 종목 ${p.members}개`);c.onmouseleave=hideTip;svg.append(c);const t=svgEl('text',{x:sx(p.x)+13,y:sy(p.y)-10,'font-size':12,fill:'#263247'});t.textContent=p.short;svg.append(t)});const xl=svgEl('text',{x:W/2,y:H-10,'text-anchor':'middle',fill:'#64748b'});xl.textContent='3개월 초과수익률';svg.append(xl);const yl=svgEl('text',{x:15,y:H/2,transform:`rotate(-90 15 ${H/2})`,'text-anchor':'middle',fill:'#64748b'});yl.textContent=`${periodLabel[S.period]} 초과수익률`;svg.append(yl)}
-function selectedStart(){return DATA.periodStarts[S.period]}function sliceSeries(series){const start=selectedStart();return series.filter(x=>x[0]>=start)}
-function renderLines(stats){const svg=document.getElementById('lines');clear(svg);const W=1450,H=650,m={l:70,r:30,t:25,b:50};const bench=Object.fromEntries(sliceSeries(DATA.benchmark.series).map(x=>x));const lines=stats.map(s=>{const vals=sliceSeries(s.series);const first=vals[0][1],b0=bench[vals[0][0]];return {...s,vals:vals.map(v=>[v[0],v[1]/first-bench[v[0]]/b0])}});let min=Math.min(0,...lines.flatMap(x=>x.vals.map(v=>v[1]))),max=Math.max(0,...lines.flatMap(x=>x.vals.map(v=>v[1])));const pad=Math.max(.01,(max-min)*.12);min-=pad;max+=pad;const n=Math.max(...lines.map(x=>x.vals.length));const sx=i=>m.l+i/Math.max(1,n-1)*(W-m.l-m.r),sy=y=>H-m.b-(y-min)/(max-min)*(H-m.t-m.b);for(let i=0;i<6;i++){const v=min+(max-min)*i/5;svg.append(svgEl('line',{x1:m.l,x2:W-m.r,y1:sy(v),y2:sy(v),stroke:Math.abs(v)<(max-min)/12?'#111827':'#e5e7eb','stroke-width':Math.abs(v)<(max-min)/12?1.7:1}));const t=svgEl('text',{x:m.l-8,y:sy(v)+4,'text-anchor':'end',fill:'#64748b'});t.textContent=pct(v);svg.append(t)}lines.forEach(l=>{let d='';l.vals.forEach((v,i)=>d+=`${i?'L':'M'}${sx(i)},${sy(v[1])}`);const p=svgEl('path',{d,fill:'none',stroke:l.color,'stroke-width':2.5});p.onmousemove=e=>tip(e,`<b>${l.name}</b><br>최근 초과수익률 ${pct(l.vals.at(-1)[1])}`);p.onmouseleave=hideTip;svg.append(p)});document.getElementById('timelineLegend').innerHTML=lines.map(l=>`<span><i class="dot" style="background:${l.color}"></i>${l.short} ${pct(l.vals.at(-1)[1])}</span>`).join('')}
+function renderScatter(stats){const svg=document.getElementById('scatter');clear(svg);const W=680,H=430,m={l:65,r:25,t:25,b:48};const pts=stats.filter(x=>Number.isFinite(x.relative)&&Number.isFinite(DATA.modes[S.mode][x.key].performance['3M'].relative)).map(x=>({x:DATA.modes[S.mode][x.key].performance['3M'].relative,y:x.relative,...x}));if(!pts.length){const t=svgEl('text',{x:W/2,y:H/2,'text-anchor':'middle',fill:'#64748b'});t.textContent='선택 기간 또는 3개월 수익률 데이터가 부족합니다.';svg.append(t);return}let lim=Math.max(.04,...pts.flatMap(p=>[Math.abs(p.x),Math.abs(p.y)]))*1.18;const sx=x=>m.l+(x+lim)/(2*lim)*(W-m.l-m.r),sy=y=>H-m.b-(y+lim)/(2*lim)*(H-m.t-m.b);[-lim,-lim/2,0,lim/2,lim].forEach(v=>{svg.append(svgEl('line',{x1:sx(v),x2:sx(v),y1:m.t,y2:H-m.b,stroke:v===0?'#111827':'#e5e7eb','stroke-width':v===0?1.8:1}));svg.append(svgEl('line',{x1:m.l,x2:W-m.r,y1:sy(v),y2:sy(v),stroke:v===0?'#111827':'#e5e7eb','stroke-width':v===0?1.8:1}))});pts.forEach(p=>{const c=svgEl('circle',{cx:sx(p.x),cy:sy(p.y),r:8+Math.sqrt(p.members)*2,fill:p.color,'fill-opacity':.78,stroke:'#fff','stroke-width':2});c.onmousemove=e=>tip(e,`<b>${p.name}</b><br>3개월 초과수익률 ${pct(p.x)}<br>${periodLabel[S.period]} 초과수익률 ${pct(p.y)}<br>유효 종목 ${p.members}개`);c.onmouseleave=hideTip;svg.append(c);const t=svgEl('text',{x:sx(p.x)+13,y:sy(p.y)-10,'font-size':12,fill:'#263247'});t.textContent=p.short;svg.append(t)});const xl=svgEl('text',{x:W/2,y:H-10,'text-anchor':'middle',fill:'#64748b'});xl.textContent='3개월 초과수익률';svg.append(xl);const yl=svgEl('text',{x:15,y:H/2,transform:`rotate(-90 15 ${H/2})`,'text-anchor':'middle',fill:'#64748b'});yl.textContent=`${periodLabel[S.period]} 초과수익률`;svg.append(yl)}
+function selectedStart(){return DATA.periodStarts[S.period]}function sliceSeries(series){const start=selectedStart();return start?series.filter(x=>x[0]>=start):[]}
+function renderLines(stats){
+ const svg=document.getElementById('lines');clear(svg);const W=1450,H=650,m={l:70,r:30,t:25,b:50};
+ const bench=Object.fromEntries(sliceSeries(DATA.benchmark.series)),b0=bench[selectedStart()];
+ const lines=stats.map(s=>({...s,vals:(s.series||[]).map(v=>[v[0],v[1]!=null&&b0>0&&bench[v[0]]>0?v[1]/100-bench[v[0]]/b0:null])}));
+ const finite=lines.flatMap(l=>l.vals.filter(v=>v[1]!=null).map(v=>v[1]));
+ if(!finite.length){const t=svgEl('text',{x:W/2,y:H/2,'text-anchor':'middle',fill:'#64748b'});t.textContent='선택 기간의 가격 또는 시작 시가총액 데이터가 부족합니다.';svg.append(t);document.getElementById('timelineLegend').innerHTML='';return}
+ let min=Math.min(0,...finite),max=Math.max(0,...finite);const pad=Math.max(.01,(max-min)*.12);min-=pad;max+=pad;const n=Math.max(...lines.map(x=>x.vals.length));const sx=i=>m.l+i/Math.max(1,n-1)*(W-m.l-m.r),sy=y=>H-m.b-(y-min)/(max-min)*(H-m.t-m.b);
+ for(let i=0;i<6;i++){const v=min+(max-min)*i/5;svg.append(svgEl('line',{x1:m.l,x2:W-m.r,y1:sy(v),y2:sy(v),stroke:Math.abs(v)<(max-min)/12?'#111827':'#e5e7eb','stroke-width':Math.abs(v)<(max-min)/12?1.7:1}));const t=svgEl('text',{x:m.l-8,y:sy(v)+4,'text-anchor':'end',fill:'#64748b'});t.textContent=pct(v);svg.append(t)}
+ lines.forEach(l=>{let d='',pen=false;l.vals.forEach((v,i)=>{if(v[1]==null){pen=false;return}d+=`${pen?'L':'M'}${sx(i)},${sy(v[1])}`;pen=true});if(!d)return;const p=svgEl('path',{d,fill:'none',stroke:l.color,'stroke-width':2.5});p.onmousemove=e=>tip(e,`<b>${l.name}</b><br>최근 초과수익률 ${pct(l.vals.at(-1)?.[1])}`);p.onmouseleave=hideTip;svg.append(p)});
+ document.getElementById('timelineLegend').innerHTML=lines.map(l=>`<span><i class="dot" style="background:${l.color}"></i>${l.short} ${pct(l.vals.at(-1)?.[1])}</span>`).join('')
+}
+
 function color(v){if(v==null)return '#eef2f6';const a=Math.min(1,Math.abs(v)/.25);return v>=0?`rgba(22,163,74,${.12+.72*a})`:`rgba(220,38,38,${.12+.72*a})`}function renderHeat(){const allowed=S.mode==='Core'?['Core']:['Core','Adjacent'];const stocks=DATA.stocks.filter(x=>allowed.includes(x.confidence));let out='';DATA.stages.forEach(st=>{out+=`<div class="stageTitle" style="border-color:${st.color}">${st.name}</div>`;stocks.filter(x=>x.stage===st.key).sort((a,b)=>(b.returns[S.period]??-99)-(a.returns[S.period]??-99)).forEach(x=>out+=`<div class="tile" style="background:${color(x.returns[S.period])}" title="${x.rationale.replaceAll('"','&quot;')}"><b>${x.ticker} · ${pct(x.returns[S.period])}</b><span>${x.company}</span><span>${confidenceLabel[x.confidence]}</span></div>`) });document.getElementById('heatgrid').innerHTML=out}
 function renderUniverse(){const order=Object.fromEntries(DATA.stages.map((x,i)=>[x.key,i]));document.getElementById('stockRows').innerHTML=[...DATA.stocks].sort((a,b)=>order[a.stage]-order[b.stage]||a.confidence.localeCompare(b.confidence)||a.ticker.localeCompare(b.ticker)).map(x=>`<tr><td>${stageBy[x.stage].short}</td><td><b>${x.ticker}</b></td><td>${x.company}</td><td><span class="tag">${confidenceLabel[x.confidence]}</span></td><td>${gicsLabel[x.gicsSector]||x.gicsSector}</td><td>${x.rationale}</td><td class="r ${cls(x.returns['1M'])}">${pct(x.returns['1M'])}</td><td class="r ${cls(x.returns['3M'])}">${pct(x.returns['3M'])}</td><td class="r ${cls(x.returns['6M'])}">${pct(x.returns['6M'])}</td></tr>`).join('');document.getElementById('sources').innerHTML=DATA.sources.map(x=>`<div class="source"><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a><br><span class="sub">${x[2]}</span></div>`).join('')}
 function tip(e,s){const t=document.getElementById('tip');t.innerHTML=s;t.style.display='block';t.style.left=Math.min(innerWidth-300,e.clientX+15)+'px';t.style.top=Math.min(innerHeight-100,e.clientY+15)+'px'}function hideTip(){document.getElementById('tip').style.display='none'}

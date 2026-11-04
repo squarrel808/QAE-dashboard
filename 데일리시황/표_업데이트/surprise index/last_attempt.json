@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "source": "snowflake",
+  "source_table": "TAA_DB_DEV.CORE.FACT_TIME_SERIES",
+  "retrieved_at": "2026-10-31T23:04:35+09:00",
+  "built_at": "2026-10-31T23:04:35+09:00",
+  "mode": "snowflake-refresh",
+  "snapshot": "runs/20261031_230435_406385/snapshot.json",
+  "report": "runs/20261031_230435_406385/index.html",
+  "sha256": "d4bb42b4f9302cd27750b588bb123a758d69341d846207009e22ac0acf827a16",
+  "series": {
+    "economic": 13,
+    "inflation": 11
+  },
+  "latest_observation": {
+    "economic": "2026-10-30",
+    "inflation": "2026-09-30"
+  }
+}

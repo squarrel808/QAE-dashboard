@@ -1,0 +1,20 @@
+[
+  {
+    "staged": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\recovered_reports\\2026-10-04\\report_20261004_0830.html",
+    "target": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-04\\report_20261004_0830.html",
+    "videos": 1,
+    "status": "부분 요약 · 전체 자막 재수집 대기"
+  },
+  {
+    "staged": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\recovered_reports\\2026-10-05\\report_20261005_0830.html",
+    "target": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-05\\report_20261005_0830.html",
+    "videos": 1,
+    "status": "전체 자막 기반 복구 완료"
+  },
+  {
+    "staged": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\recovered_reports\\2026-10-06\\report_20261006_0830.html",
+    "target": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-06\\report_20261006_0830.html",
+    "videos": 3,
+    "status": "전체 자막 기반 복구 완료"
+  }
+]

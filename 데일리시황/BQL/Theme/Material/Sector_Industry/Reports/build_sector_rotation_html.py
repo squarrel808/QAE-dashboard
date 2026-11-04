@@ -5,9 +5,13 @@ import hashlib
 import html
 import json
 import math
+import sys
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
+import sys as _period_sys
+_period_sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if p.name == "BQL")))
+from period_policy import active_price_sessions
 from typing import Any
 
 import numpy as np
@@ -15,6 +19,8 @@ import openpyxl
 
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parents[1]))
+from index_levels import apply_market
 DEFAULT_BQL_ROOT = Path(r"C:\Users\infomax\Documents\python\QAE\데일리시황\BQL")
 DEFAULT_MASTER = DEFAULT_BQL_ROOT / "Rawfile" / "BQuant_Master.xlsx"
 DEFAULT_OUTPUT_ROOT = DEFAULT_BQL_ROOT / "Theme" / "output"
@@ -24,23 +30,43 @@ MARKETS = {
     "STOXX600": {
         "title": "STOXX Europe 600",
         "sheet": "SXXP Raw",
-        "code": "SXXP Index",
+        "code": "SXXP Index"
     },
     "SP500": {
         "title": "S&P 500",
         "sheet": "SPX Raw",
-        "code": "SPX Index",
+        "code": "SPX Index"
     },
     "TOPIX": {
         "title": "TOPIX",
         "sheet": "TPX500 Raw",
-        "code": "TPX500 Index",
+        "code": "TPX500 Index"
     },
     "HANGSENG": {
         "title": "Hang Seng",
         "sheet": "HSI Raw",
-        "code": "HSI Index",
+        "code": "HSI Index"
     },
+    "DAX": {
+        "title": "DAX",
+        "sheet": "DAX Raw",
+        "code": "DAX Index"
+    },
+    "UKX": {
+        "title": "FTSE 100 (UKX)",
+        "sheet": "UKX Raw",
+        "code": "UKX Index"
+    },
+    "ASX200": {
+        "title": "S&P/ASX 200",
+        "sheet": "AS51 Raw",
+        "code": "AS51 Index"
+    },
+    "CSI300": {
+        "title": "CSI 300",
+        "sheet": "SHSZ300 Raw",
+        "code": "SHSZ300 Index"
+    }
 }
 
 PERIODS = ("1D", "5D", "1M", "3M", "6M")
@@ -65,14 +91,14 @@ class MarketRaw:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate fast HTML sector/industry rotation reports for Europe, US, Japan, and Hong Kong."
+        description="Generate fast HTML sector/industry rotation reports for the configured global equity markets."
     )
     parser.add_argument("--master", type=Path, default=DEFAULT_MASTER)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--primary", choices=("1D", "5D"), required=True)
     parser.add_argument(
         "--market",
-        choices=("ALL", "STOXX600", "SP500", "TOPIX", "HANGSENG"),
+        choices=("ALL", *MARKETS),
         default="ALL",
     )
     parser.add_argument("--top-n", type=int, default=5)
@@ -225,28 +251,8 @@ def load_market(workbook: Any, key: str) -> MarketRaw:
     )
 
 
-def genuine_sessions(prices: np.ndarray) -> list[int]:
-    accepted: list[int] = []
-    for current in range(1, prices.shape[1]):
-        before = prices[:, current - 1]
-        after = prices[:, current]
-        valid = np.isfinite(before) & np.isfinite(after) & (before > 0) & (after > 0)
-        comparable = int(valid.sum())
-        if comparable < max(10, int(prices.shape[0] * 0.50)):
-            continue
-        changed = ~np.isclose(after[valid], before[valid], rtol=1e-7, atol=1e-9)
-        if int(changed.sum()) >= max(5, math.ceil(comparable * 0.02)):
-            accepted.append(current)
-    # The first accepted change also proves that the immediately preceding column
-    # is a genuine usable closing baseline. Keeping it is essential for an exact
-    # five-session return when only six closing observations have accumulated.
-    if accepted:
-        baseline = accepted[0] - 1
-        base_values = prices[:, baseline]
-        valid_base = np.isfinite(base_values) & (base_values > 0)
-        if int(valid_base.sum()) >= max(10, int(prices.shape[0] * 0.50)):
-            accepted.insert(0, baseline)
-    return accepted
+def genuine_sessions(prices: np.ndarray):
+    return active_price_sessions(prices)
 
 
 def shift_months(value: date, months: int) -> date:
@@ -292,8 +298,14 @@ def summarize_group(
     returns: dict[str, np.ndarray],
     start_caps: dict[str, np.ndarray],
 ) -> dict[str, Any]:
-    summary: dict[str, Any] = {"n": len(stock_indices), "returns": {}, "breadth": {}}
+    summary: dict[str, Any] = {
+        "n": len(stock_indices), "returns": {}, "breadth": {},
+        "indexStartWeights": {}, "indexReturnContributions": {}, "eligibleCount": {},
+    }
     for period in PERIODS:
+        summary["indexStartWeights"][period] = None
+        summary["indexReturnContributions"][period] = None
+        summary["eligibleCount"][period] = None
         vector = returns.get(period)
         if vector is None:
             summary["returns"][period] = None
@@ -305,9 +317,20 @@ def summarize_group(
             summary["returns"][period] = None
         else:
             eligible = [idx for idx in stock_indices if math.isfinite(float(vector[idx])) and math.isfinite(float(caps[idx])) and float(caps[idx]) > 0]
+            universe_eligible = np.isfinite(vector) & np.isfinite(caps) & (caps > 0)
+            universe_cap = float(caps[universe_eligible].sum())
+            summary["eligibleCount"][period] = len(eligible)
             summary["returns"][period] = (
                 float(np.average(vector[eligible], weights=caps[eligible])) if eligible else None
             )
+            if eligible and universe_cap > 0:
+                # The return, weight and contribution use exactly the same
+                # eligible universe. Missing observations are never zero returns.
+                group_cap = float(caps[eligible].sum())
+                summary["indexStartWeights"][period] = group_cap / universe_cap
+                summary["indexReturnContributions"][period] = float(
+                    np.dot(vector[eligible], caps[eligible]) / universe_cap
+                )
         summary["breadth"][period] = (sum(value > 0 for value in values) / len(values)) if values else None
     return summary
 
@@ -326,8 +349,11 @@ def build_market(raw: MarketRaw, primary: str, top_n: int, cutoff: date | None) 
     sector_map: dict[str, list[int]] = {}
     industry_map: dict[tuple[str, str], list[int]] = {}
     for idx, (sector, industry) in enumerate(zip(raw.sectors, raw.industries)):
+        if sector.casefold() == 'unclassified':
+            continue
         sector_map.setdefault(sector, []).append(idx)
-        industry_map.setdefault((sector, industry), []).append(idx)
+        if industry.casefold() != 'unclassified':
+            industry_map.setdefault((sector, industry), []).append(idx)
 
     industries: list[dict[str, Any]] = []
     for (sector, industry), indices in industry_map.items():
@@ -367,11 +393,28 @@ def build_market(raw: MarketRaw, primary: str, top_n: int, cutoff: date | None) 
 
     coverage: dict[str, float | None] = {}
     cap_coverage: dict[str, float | None] = {}
+    attribution_coverage: dict[str, dict[str, Any]] = {}
     for period in PERIODS:
         vector = returns.get(period)
         coverage[period] = float(np.isfinite(vector).sum() / len(vector)) if vector is not None else None
         caps = start_caps.get(period)
         cap_coverage[period] = float((np.isfinite(caps) & (caps > 0) & np.isfinite(vector)).sum() / len(vector)) if caps is not None and vector is not None else None
+        if caps is not None and vector is not None:
+            known_caps = np.isfinite(caps) & (caps > 0)
+            eligible = known_caps & np.isfinite(vector)
+            known_cap = float(caps[known_caps].sum())
+            eligible_cap = float(caps[eligible].sum())
+            attribution_coverage[period] = {
+                "eligibleCount": int(eligible.sum()),
+                "memberCount": len(vector),
+                "knownStartCapCount": int(known_caps.sum()),
+                "eligibleStartCapFraction": eligible_cap / known_cap if known_cap > 0 else None,
+            }
+        else:
+            attribution_coverage[period] = {
+                "eligibleCount": None, "memberCount": len(raw.tickers),
+                "knownStartCapCount": None, "eligibleStartCapFraction": None,
+            }
     if coverage.get(primary) is None:
         raise ValueError(f"{raw.title}: {primary} 계산에 필요한 거래일 이력이 부족합니다.")
     if float(coverage[primary]) < 0.80:
@@ -381,7 +424,7 @@ def build_market(raw: MarketRaw, primary: str, top_n: int, cutoff: date | None) 
     if cap_coverage[primary] is None or float(cap_coverage[primary]) < 0.80:
         raise ValueError(f"{raw.title}: {primary} 유효 시가총액·가격 비율이 80% 미만입니다.")
 
-    return {
+    result = {
         "key": raw.key,
         "title": raw.title,
         "sourceSheet": raw.source_sheet,
@@ -392,6 +435,25 @@ def build_market(raw: MarketRaw, primary: str, top_n: int, cutoff: date | None) 
         "memberCount": len(raw.tickers),
         "coverage": coverage,
         "capCoverage": cap_coverage,
+        "sectorAttribution": {
+            "method": "period-start market-cap weighted price returns over the eligible current constituent universe",
+            "weightField": "indexStartWeights",
+            "weightUnit": "fraction",
+            "contributionField": "indexReturnContributions",
+            "contributionUnit": "decimal_return",
+            "displayUnit": "basis_points",
+            "displayMultiplier": 10000,
+            "differenceDefinition": "constituent contribution total minus official benchmark return",
+            "coverage": attribution_coverage,
+            "totalContributions": dict(benchmark["returns"]),
+            "officialWeightAdjustment": False,
+            "notes": [
+                "Raw company market caps are used, not official free-float or capped index weights.",
+                "Each period excludes missing endpoint prices or non-positive/missing start caps and renormalizes remaining start caps.",
+                "Eligible start-cap coverage uses only known positive start caps as its denominator; missing caps have unknown value.",
+                "STOXX600 raw caps mix currencies; TOPIX constituents are TPX500 while the official benchmark is TPX.",
+            ],
+        },
         "benchmark": benchmark,
         "sectors": sectors,
         "industries": industries,
@@ -404,6 +466,16 @@ def build_market(raw: MarketRaw, primary: str, top_n: int, cutoff: date | None) 
         },
         "sessionDates": [raw.dates[idx].isoformat() for idx in sessions[-10:]],
     }
+    result = apply_market(result)
+    result["sectorAttribution"]["differenceToOfficialBenchmark"] = {
+        period: (
+            result["sectorAttribution"]["totalContributions"][period] - result["benchmark"]["returns"][period]
+            if result["sectorAttribution"]["totalContributions"][period] is not None
+            and result["benchmark"]["returns"].get(period) is not None else None
+        )
+        for period in PERIODS
+    }
+    return result
 
 
 def esc(value: Any) -> str:
@@ -430,6 +502,13 @@ def breadth_pct(value: float | None) -> str:
     if value is None or not math.isfinite(float(value)):
         return "데이터 부족"
     return f"{float(value) * 100:.0f}%"
+
+
+def contribution_pct(value: float | None) -> str:
+    """Convert a decimal return contribution to basis points exactly once."""
+    if value is None or not math.isfinite(float(value)):
+        return "데이터 부족"
+    return f"{float(value) * 10000:+.1f}bp"
 
 
 def value_class(value: float | None) -> str:
@@ -466,6 +545,51 @@ def multi_period_table(rows: list[dict[str, Any]], name_columns: list[tuple[str,
     )
 
 
+def sector_contribution_table(market: dict[str, Any]) -> str:
+    attribution = market["sectorAttribution"]
+    rows: list[str] = []
+    # Keep the identical sector order as the adjacent return table.
+    for sector in market["sectors"]:
+        cells = []
+        for period in PERIODS:
+            value = sector["indexReturnContributions"].get(period)
+            weight = sector["indexStartWeights"].get(period)
+            weight_text = f"{weight * 100:.2f}%" if weight is not None else "데이터 부족"
+            tooltip = f"기간 시작 비중 {weight_text} · 섹터 수익률 {pct(sector['returns'].get(period), 2)}"
+            cells.append(f'<td class="num {value_class(value)}" title="{esc(tooltip)}">{contribution_pct(value)}</td>')
+        rows.append(f"<tr><td>{esc(sector['sector'])}</td>{''.join(cells)}</tr>")
+    residual = {p: (attribution["totalContributions"][p] - sum(s["indexReturnContributions"].get(p) or 0 for s in market["sectors"])) if attribution["totalContributions"].get(p) is not None else None for p in PERIODS}
+    if any(v is not None and abs(v) > 1e-10 for v in residual.values()):
+        cells = ''.join(f'<td class="num {value_class(residual[p])}">{contribution_pct(residual[p])}</td>' for p in PERIODS)
+        rows.append('<tr class="coverage-row"><td title="원자료 섹터 분류가 없어 섹터별 행에서 빠진 종목의 기여도">분류 미확인 기여도</td>'+cells+'</tr>')
+    for label, values, is_return in (
+        ("기여도 합계", attribution["totalContributions"], False),
+        ("공식 BM 수익률", market["benchmark"]["returns"], True),
+        ("합계 − 공식 BM", attribution["differenceToOfficialBenchmark"], False),
+    ):
+        cells = "".join(
+            f'<td class="num {value_class(values.get(period))}">{contribution_pct(values.get(period))}</td>'
+            for period in PERIODS
+        )
+        rows.append(f"<tr class='benchmark'><td>{label}</td>{cells}</tr>")
+    cap_cells = []
+    count_cells = []
+    for period in PERIODS:
+        coverage = attribution["coverage"][period]
+        fraction = coverage["eligibleStartCapFraction"]
+        cap_cells.append(f"<td class='num'>{f'{fraction * 100:.1f}%' if fraction is not None else '데이터 부족'}</td>")
+        count = coverage["eligibleCount"]
+        count_text = f"{count}/{coverage['memberCount']}" if count is not None else "데이터 부족"
+        count_cells.append(f"<td class='num'>{count_text}</td>")
+    rows.append(f"<tr class='coverage-row'><td title='확인 가능한 양의 시작 시총 중 유효 가격을 가진 종목의 비중'>유효 시총 비중</td>{''.join(cap_cells)}</tr>")
+    rows.append(f"<tr class='coverage-row'><td>유효 종목 / 전체</td>{''.join(count_cells)}</tr>")
+    return (
+        "<div class='table-wrap'><table><thead><tr><th>섹터</th>"
+        + "".join(f"<th class='num'>{period}</th>" for period in PERIODS)
+        + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>"
+    )
+
+
 def overall_table(market: dict[str, Any]) -> str:
     primary = market["primary"]
     bm_return = market["benchmark"]["returns"].get(primary)
@@ -484,7 +608,7 @@ def overall_table(market: dict[str, Any]) -> str:
     bm_breadth = market["benchmark"]["breadth"].get(primary)
     rows.append(
         "<tr class='benchmark'>"
-        f"<td>BM 전체 (시작일 시총가중)</td><td class='num'>{market['memberCount']}</td>"
+        f"<td>BM 지수 (Index Level)</td><td class='num'>{market['memberCount']}</td>"
         f"<td class='num {value_class(bm_return)}'>{pct(bm_return)}</td>"
         f"<td class='num'>{breadth_pct(bm_breadth)}</td>"
         "<td class='num zero'>0.0%</td>"
@@ -578,6 +702,18 @@ def key_findings(market: dict[str, Any]) -> str:
     return "<div class='cards'>" + "".join(cards) + "</div>" + multi_period_table(selected, [("industry", "산업그룹"), ("sector", "섹터")])
 
 
+def market_basis_note(market: dict[str, Any]) -> str:
+    notes = []
+    if market["key"] == "DAX":
+        notes.append('DAX 공식 BM(DAX Index)은 배당 재투자를 반영하는 성과지수입니다. 섹터·산업 수익률과 기여도는 배당 제외 종목 가격 기준이므로, 합계와 공식 BM의 차이에는 배당 기준 차이도 포함됩니다. <a href="https://stoxx.com/index/DAX/" target="_blank" rel="noopener">STOXX 산식 안내</a>')
+    coverage = market.get("sectorAttribution", {}).get("coverage", {}).get(market["primary"], {})
+    eligible = coverage.get("eligibleCount")
+    members = market.get("memberCount")
+    if eligible is not None and members and eligible < members:
+        notes.append(f'현재 주기간 가중 수익률·기여도 유효 종목은 {eligible}/{members}개입니다. 가격 또는 양의 시작 시가총액이 없는 종목은 제외합니다. 종목 수 기준 상승 비율과 가중 계산의 유효 종목 수는 다를 수 있습니다.')
+    return '<div class="market-basis-note attribution-note">' + '<br>'.join(notes) + '</div>' if notes else ''
+
+
 def render_market_panel(market: dict[str, Any], descriptions: dict[tuple[str, str], str], active: bool = False) -> str:
     primary = market["primary"]
     starts = " · ".join(
@@ -609,7 +745,11 @@ def render_market_panel(market: dict[str, Any], descriptions: dict[tuple[str, st
 {overall_table(market)}
 
 <h2>2. 섹터 로테이션 — 1D / 5D / 1M / 3M / 6M</h2>
-{sector_rotation}
+<div class="rotation-grid">
+<div class="rotation-column"><h3>섹터 수익률 (%)</h3>{sector_rotation}</div>
+<div class="rotation-column"><h3>전체 지수 수익률 기여도 (bp, 시총 기준 추정)</h3>{sector_contribution_table(market)}</div>
+</div>
+<div class="attribution-note">기여도 = 각 기간 시작 시총 비중 × 섹터 수익률. 1bp = 0.01%p이며, 이 표의 공식 BM 수익률도 bp로 표시합니다. 같은 행의 섹터를 비교하며, 기여도 셀에 마우스를 올리면 시작 비중이 표시됩니다. 기여도 합계는 유효 구성종목의 시총가중 수익률이며 공식 BM에 맞춰 조정하지 않습니다. 유효 시총 비중은 확인 가능한 양의 시작 시총 중 가격도 유효한 종목의 비중입니다.</div>
 
 <h2>3. 섹터별 상승 종목 비율 — {primary}</h2>
 {breadth_table(market)}
@@ -623,7 +763,8 @@ def render_market_panel(market: dict[str, Any], descriptions: dict[tuple[str, st
 <h2>6. 섹터별 산업그룹과 종목</h2>
 {''.join(details)}
 
-<div class="note">계산 기준: 현재 구성종목의 현지통화 가격 단순수익률을 각 기간 시작일 시가총액으로 가중했습니다. BM은 해당 시장 전체 구성종목의 같은 방식으로 계산한 합성 수익률이며 공식 지수 수익률과 다를 수 있습니다. 배당과 환율 효과는 포함하지 않습니다. STOXX Europe 600은 시가총액 통화가 혼합돼 가중치와 합성 BM이 근사치입니다. 1D와 5D는 유효 거래일 기준이며, 1M·3M·6M은 해당 달력 기간 이전의 가장 가까운 유효 거래일 종가를 사용합니다. 데이터가 부족한 기간은 임의 보간하지 않고 ‘데이터 부족’으로 표시합니다.</div>
+{market_basis_note(market)}
+<div class="note">계산 기준: 현재 구성종목의 현지통화 가격 단순수익률을 각 기간 시작일 시가총액으로 가중했습니다. BM은 BQuant Index Level 시트의 해당 시장 Price 필드의 지수 레벨 수익률입니다. 섹터 기여도는 유효 구성종목 전체의 시작 시총 대비 비중으로 계산하며, 원자료 회사 시총을 사용하므로 공식 지수의 유동주식수·비중 상한 및 구성종목 변경을 재현하지 않습니다. STOXX Europe 600은 시가총액 통화가 혼합돼 가중치·수익률·기여도가 근사치이고, TOPIX 구성종목은 TPX500 Raw이며 공식 BM은 TPX Index여서 차이가 발생할 수 있습니다. 상승 종목 비율은 구성종목 수 기준입니다. 섹터·산업의 종목 수익률에는 배당과 환율 효과를 포함하지 않습니다. 1D와 5D는 유효 거래일 기준이며, 1M·3M·6M은 해당 달력 기간 이전의 가장 가까운 유효 거래일 종가를 사용합니다. 가격 또는 양의 시작 시총이 없는 종목은 해당 기간의 가중 계산에서 제외하고 남은 시총으로 비중을 재계산합니다. 데이터가 부족한 기간은 임의 보간하지 않고 ‘데이터 부족’으로 표시합니다.</div>
 </section>"""
 
 
@@ -644,13 +785,15 @@ def render_combined_html(markets: list[dict[str, Any]], primary: str, descriptio
 *{{box-sizing:border-box}} body{{margin:0;font-family:Arial,'Malgun Gothic',sans-serif;color:var(--text);background:#fff}}
 main{{max-width:1440px;margin:0 auto;padding:20px 24px 50px}} h1{{margin:0 0 5px;font-size:27px}} h2{{margin:26px 0 9px;padding-bottom:5px;border-bottom:2px solid var(--navy);font-size:19px}} h3{{margin:22px 0 8px;color:var(--navy);font-size:17px}} h4{{margin:13px 0 6px;font-size:14px}}
 .meta{{font-size:12px;color:#667085;line-height:1.6}} .badge{{display:inline-block;padding:4px 10px;margin-right:5px;border-radius:999px;background:var(--navy);color:#fff;font-weight:700}}
-.report-header{{margin-bottom:12px}} .report-header h1{{font-size:22px}} .market-tabs{{position:sticky;top:0;z-index:20;display:flex;gap:5px;padding:8px 0;background:rgba(255,255,255,.96);border-bottom:1px solid #cbd5e1;margin-bottom:16px}} .market-tab{{border:1px solid #aebdce;border-radius:5px;background:#fff;color:var(--navy);padding:6px 11px;font-size:12px;font-weight:700;cursor:pointer}} .market-tab.active{{background:var(--navy);color:#fff;border-color:var(--navy)}} .market-panel{{display:none}} .market-panel.active{{display:block}}
+.report-header{{margin-bottom:12px}} .report-header h1{{font-size:22px}} .market-tabs{{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:5px;padding:8px 0;background:rgba(255,255,255,.96);border-bottom:1px solid #cbd5e1;margin-bottom:16px}} .market-tab{{border:1px solid #aebdce;border-radius:5px;background:#fff;color:var(--navy);padding:6px 11px;font-size:12px;font-weight:700;cursor:pointer}} .market-tab.active{{background:var(--navy);color:#fff;border-color:var(--navy)}} .market-panel{{display:none}} .market-panel.active{{display:block}}
 .table-wrap{{display:block;width:max-content;max-width:100%;overflow:auto;border:1px solid #b8c5d5;border-radius:5px}} table{{width:auto;min-width:700px;border-collapse:collapse;font-size:12px;white-space:nowrap}} th{{position:sticky;top:0;background:var(--navy);color:#fff;padding:5px 8px;text-align:left;line-height:1.25;z-index:1;border:1px solid #3c587b}} td{{padding:5px 8px;line-height:1.25;border:1px solid #ccd6e3}} tbody tr:nth-child(even){{background:var(--pale)}} tr:hover{{background:#fff6d8!important}} th.num,.num{{text-align:right;font-variant-numeric:tabular-nums}} .pos{{color:var(--blue);font-weight:700}} .neg{{color:var(--red);font-weight:700}} .zero{{color:#555}} .na{{color:#98a2b3;font-weight:400}} .benchmark{{background:#e2eaf4!important;border-top:2px solid var(--navy);font-weight:700}} .ticker{{color:#475467}}
 .stock-name{{font-weight:700}} .stock-desc{{max-width:390px;margin-top:2px;color:#667085;font-size:10px;line-height:1.35;white-space:pre-line}}
+.rotation-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}} .rotation-column{{min-width:0}} .rotation-column h3{{margin:4px 0 8px;font-size:14px}} .rotation-grid .table-wrap{{width:100%}} .rotation-grid table{{width:100%;min-width:560px;table-layout:fixed}} .rotation-grid th:first-child,.rotation-grid td:first-child{{width:34%;white-space:normal}} .rotation-grid td,.rotation-grid th{{padding:5px 6px}} .coverage-row{{font-size:11px;color:#667085}} .attribution-note{{margin-top:9px;font-size:11px;line-height:1.6;color:#596579}}
 .commentary-slot:empty{{display:none}} .commentary-block{{margin:8px 0;padding:9px 11px;border-left:3px solid var(--navy);background:#f8fafc;font-size:11px;line-height:1.55;white-space:normal}} .commentary-block strong{{display:block;margin-bottom:2px;color:var(--navy)}} .commentary-block .commentary-meta{{margin-top:3px;color:#667085;font-size:10px}} .stock-desc+.commentary-block{{max-width:390px;margin-top:5px}}
 .cards{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}} .card{{padding:13px 15px;border:1px solid var(--line);border-radius:8px;background:#fafcff}} .card span{{display:block;font-size:11px;color:#667085}} .card b{{display:block;margin:5px 0}} .card strong{{font-size:18px}}
 .note{{margin-top:30px;padding:12px 14px;border-left:4px solid var(--navy);background:var(--pale);font-size:11px;line-height:1.65;color:#596579}} .sector-detail{{page-break-inside:avoid}}
 @media(max-width:800px){{main{{padding:18px 12px}}.cards{{grid-template-columns:1fr}}}}
+@media(max-width:1200px){{.rotation-grid{{grid-template-columns:1fr}}}}
 @media print{{main{{max-width:none;padding:10mm}}.table-wrap{{overflow:visible}}th{{position:static}}}}
 </style></head><body><main data-report="sector" data-as-of="{esc(as_of)}" data-primary="{esc(primary)}">
 <header class="report-header"><h1>글로벌 섹터·산업 로테이션 — {primary}</h1><div class="meta">기준일 {esc(as_of)} · 시장 탭을 눌러 이동</div></header>

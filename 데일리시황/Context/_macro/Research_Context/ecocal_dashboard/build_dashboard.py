@@ -164,12 +164,13 @@ def indicator_candidates(src,e,house,asof,limit=3):
     scopes=[('country',e['country_code'],0)]
     if region!=e['country_code']:scopes.append(('region',region,1))
     rows=[]
-    sql='''SELECT d.doc_id,d.house,d.title,d.published,c.page,c.text,bm25(chunks_fts) AS rank
+    release_day=date.fromisoformat(e['date']).isoformat()
+    sql=f'''SELECT d.doc_id,d.house,d.title,d.published,c.page,c.text,bm25(chunks_fts) AS rank
            FROM chunks_fts f JOIN chunks c ON c.chunk_id=f.rowid JOIN documents d ON d.doc_id=c.doc_id
            WHERE d.status='indexed' AND d.date_review=0 AND d.house=? AND d.published<=?
              AND chunks_fts MATCH ?
              AND EXISTS(SELECT 1 FROM tags t WHERE t.doc_id=d.doc_id AND t.kind='country' AND t.value=?)
-           ORDER BY rank,d.published DESC LIMIT 12'''
+           ORDER BY CASE WHEN d.published BETWEEN '{release_day}' AND date('{release_day}','+14 days') THEN 0 WHEN d.published BETWEEN date('{release_day}','-21 days') AND '{release_day}' THEN 1 ELSE 2 END, abs(julianday(d.published)-julianday('{release_day}')),rank LIMIT 100'''
     for scope,code,priority in scopes:
         for row in src.execute(sql,(house,asof,spec['query'],code)):
             rows.append((priority,scope,dict(row)))
@@ -417,7 +418,7 @@ def load_authored_comments(src,events,asof):
         selected[e['id']]={**review,'houses':houses}
     return selected,stale-set(selected)
 
-def build(book,root,output,asof,include_interpretation=False,requested_at=None):
+def build(book,root,output,asof,include_interpretation=False,requested_at=None,publish_stable=True):
     events=load_calendar(book)
     calendar_events=events
     events=indicator_history.merge(calendar_events,indicator_history.read())
@@ -435,7 +436,7 @@ def build(book,root,output,asof,include_interpretation=False,requested_at=None):
         note_map[(identity(n['match']),n['house'])].append({**n,'evidence':es})
     authored,stale_commentary=load_authored_comments(src,events,asof)
     source_refs={};counts=collections.Counter();used_notes=set();candidate_docs=set()
-    for e in calendar_events:
+    for e in events:
         e['facts']=factual(e);e['reading']=interpretation(e) if include_interpretation else '';e['houses']=[]
         e['available_at_request']=e['actual'] is not None and e['date']<=asof
         e['commentary']=authored.get(e['id'])
@@ -476,21 +477,6 @@ def build(book,root,output,asof,include_interpretation=False,requested_at=None):
                 for ref in item['evidence']:
                     if not ref['published'] or ref['published']>asof:raise ValueError('기준일 이후/날짜 미확인 근거')
                     source_refs[ref['doc_id']]=ref
-    for e in events:
-        if e['record_origin']!='history':continue
-        e['commentary']=authored.get(e['id'])
-        e['commentary_status']='source_reviewed_draft' if e['commentary'] else 'needs_recheck' if e['id'] in stale_commentary else 'not_reviewed'
-        e['available_at_request']=e['actual'] is not None and e['date']<=asof
-        for h in e.get('houses',[]):
-            h['commentary']=next((x for x in (e['commentary'] or {}).get('houses',[]) if x['house']==h['house']),None)
-            if h['commentary']:
-                h['status']=h['commentary']['kind']
-                h['interpretation_status']='source_reviewed_draft'
-                for x in h['commentary']['evidence']:source_refs[x['doc_id']]=x
-            elif e['commentary_status']=='needs_recheck':
-                h['status']='needs_recheck'
-            for item in h.get('direct',[])+h.get('forecasts',[]):
-                for x in item.get('evidence',[]):source_refs[x['doc_id']]=x
     counts=collections.Counter(h['status'] for e in events for h in e['houses'])
     dates=[e['date'] for e in events];months=sorted({e['release_month'] for e in events})
     columns=calendar_events[0].get('source_columns') or [{'letter':chr(66+i),'key':k,'label':LABELS[i]} for i,k in enumerate(FIELDS)]
@@ -504,7 +490,7 @@ def build(book,root,output,asof,include_interpretation=False,requested_at=None):
         meta['time_note']='발표일시는 파일 A열 그대로이며 시간대는 파일에 명시되지 않음. 날짜만 있는 행은 시각 미확인으로 보존. 실제값은 H열 기준이며 % 표시형식의 분수는 퍼센트 수치로 변환. k/m/b/t와 통화기호는 원본에 명시된 값만 사용. 원문 후보는 전체 페이지 검토가 필요한 미검토 검색 결과이고 상위 거시 뷰는 보조 배경임.'
     macro_spec=importlib.util.spec_from_file_location('daily_macro_context',HERE/'build_macro_views.py')
     macro=importlib.util.module_from_spec(macro_spec);macro_spec.loader.exec_module(macro)
-    meta['macro_views']=macro.build(root,output,asof,requested_at)
+    meta['macro_views']=macro.build(root,output,asof,requested_at,publish_stable=publish_stable)
     payload={'schema_version':2,'meta':meta,'columns':columns,'countries':[{'code':c,'label':l} for c,l in COUNTRIES.values() if any(e['country_code']==c for e in events)],'themes':THEMES,'houses':HOUSES,'events':events,'sources':list(source_refs.values())}
     output.mkdir(parents=True,exist_ok=True)
     encoded=json.dumps(payload,ensure_ascii=False,allow_nan=False,separators=(',',':')).replace('</','<\\/')

@@ -1,0 +1,39 @@
+{
+  "report": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-11-04\\report_chat_20261104_0841.html",
+  "report_sha256": "aeed8b46ba37b18ba23a69cd53b2327a5b50090f6cc1c4463fdb8e390e4ca7ec",
+  "evidence": {
+    "cS9Ph2hWEss": {
+      "supplement": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\chat_data\\cS9Ph2hWEss_recovered_segments_20261104.json",
+      "range_seconds": [
+        4520,
+        4730
+      ],
+      "sha256": "b419c2bc801f380aa5511adfa0f72473f460e34b64dac0c3e8adde1ef73e3437",
+      "reviewed": true,
+      "original_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\chat_data\\cS9Ph2hWEss.txt",
+      "original_sha256": "ff619484d888c90a51a1fffa6f4c8e22c40f8d655ab2e0a19b3e2115f5afa33b",
+      "original_full_reviewed": true
+    },
+    "KhnxubbrOrk": {
+      "supplement": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\chat_data\\KhnxubbrOrk_recovered_segments_20261104.json",
+      "range_seconds": [
+        2650,
+        2915
+      ],
+      "sha256": "f4c4f3abef79959a0c8d2d2f933a0a71afdd4370dd6f1ac11347d539374f9c78",
+      "reviewed": true,
+      "original_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\chat_data\\KhnxubbrOrk.txt",
+      "original_sha256": "9507ee8152771dc2d2fe4a13cb2324b25ec5c83e313d3e7d9460390e8124d94e",
+      "original_full_reviewed": true
+    },
+    "QBkoENvGntA": {
+      "original_path": "C:\\Users\\infomax\\Documents\\python\\QAE\\youtube_openai_migration\\chat_data\\QBkoENvGntA.txt",
+      "original_sha256": "752dde28f1255de3596ff7feec38ff3507adbda498c6b5d31a238f0ec3d0fe3b",
+      "original_full_reviewed": true
+    }
+  },
+  "completed_updated": true,
+  "completion_count_before": 442,
+  "completion_count_after": 445,
+  "html_validated": true
+}

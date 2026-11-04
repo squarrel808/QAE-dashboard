@@ -10,17 +10,44 @@ import tempfile
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
+import sys as _period_sys
+_period_sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if p.name == "BQL")))
+from period_policy import active_price_sessions
 from typing import Any, Iterable
 
 import numpy as np
 import openpyxl
 from pyxlsb import open_workbook
+import official_index_levels
+import sys
 
 
 DASHBOARD_DIR = Path(__file__).resolve().parent
 BQL_DIR = DASHBOARD_DIR.parent
 DEFAULT_SOURCES = [BQL_DIR / "Rawfile" / "BQuant_Master.xlsx"]
 DEFAULT_D3 = DASHBOARD_DIR / "유로존_dashboard" / "d3.v7.9.0.min.js"
+
+def load_stock_descriptions() -> dict[str, str]:
+    """Read maintained business summaries; keep exchange-qualified ticker keys."""
+    path = BQL_DIR / "Theme" / "Material" / "Sector_Industry" / "stock_descriptions.xlsx"
+    if not path.is_file():
+        return {}
+    result = {}
+    book = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    try:
+        rows = iter(book["Stock_Descriptions"].values)
+        headers = list(next(rows))
+        ticker_col = headers.index("Ticker")
+        summary_col = headers.index("Business Summary (KR)")
+        for row in rows:
+            ticker = " ".join(str(row[ticker_col] or "").split()).upper()
+            summary = str(row[summary_col] or "").strip().split("\n")[0]
+            if ticker and summary:
+                result[ticker] = summary
+    finally:
+        book.close()
+    return result
+
 
 STOXX600_SECTOR_MAP = {
     "ENG": "Energy",
@@ -440,44 +467,8 @@ def business_day_back_index(dates: list[date], current: int, periods: int) -> in
     return sessions[max(0, len(sessions) - 1 - periods)]
 
 
-def active_market_session_indices(
-    dates: list[date],
-    prices: np.ndarray,
-    min_changed_fraction: float = 0.02,
-) -> list[int]:
-    """Return dates containing a genuine market-price update.
-
-    The BQL workbook carries the last close across weekends, holidays and a
-    not-yet-closed current date.  Treating every weekday as a trading session
-    can therefore create a false 0% 1D return.  A date is accepted only when a
-    material share of constituents changed versus the last accepted session.
-    """
-    if not dates or prices.ndim != 2 or prices.shape[1] != len(dates):
-        return []
-
-    sessions: list[int] = []
-    last_active: int | None = None
-    for observation in range(len(dates)):
-        current_values = prices[:, observation]
-        current_valid = np.isfinite(current_values) & (current_values > 0)
-        if last_active is None:
-            if current_valid.any():
-                sessions.append(observation)
-                last_active = observation
-            continue
-
-        previous_values = prices[:, last_active]
-        valid = current_valid & np.isfinite(previous_values) & (previous_values > 0)
-        valid_count = int(valid.sum())
-        if valid_count == 0:
-            continue
-        tolerance = np.maximum(np.abs(previous_values[valid]) * 1e-10, 1e-10)
-        changed_count = int((np.abs(current_values[valid] - previous_values[valid]) > tolerance).sum())
-        required = max(1, int(math.ceil(valid_count * min_changed_fraction)))
-        if changed_count >= required:
-            sessions.append(observation)
-            last_active = observation
-    return sessions
+def active_market_session_indices(dates: list[date], prices: np.ndarray, min_changed_fraction: float = 0.02):
+    return active_price_sessions(prices)
 
 
 def safe_weighted_mean(values: np.ndarray, weights: np.ndarray, mask: np.ndarray | None = None) -> float:
@@ -523,21 +514,20 @@ def weighted_change(
     return value, changes, weight_col, valid
 
 
-def aggregate_earnings_change(
+def aggregate_share_weighted_eps_change(
     eps: np.ndarray,
     price: np.ndarray,
     mcap: np.ndarray,
     current: int,
     back: int,
-    clip_low: float,
-    clip_high: float,
 ) -> tuple[float, np.ndarray, np.ndarray, np.ndarray]:
-    """Aggregate EPS estimates after rebuilding each stock's total earnings.
+    """Compare share-weighted EPS levels on a matched constituent universe.
 
-    Implied shares are market cap divided by price.  Multiplying those shares
-    by the per-share EPS estimate produces a comparable total-earnings amount
-    for each constituent.  The group change is therefore earnings weighted,
-    rather than a market-cap-weighted average of per-share EPS changes.
+    EPS is supplied by the source. Shares = market cap / price. At each
+    endpoint basket EPS = sum(EPS * shares) / sum(shares). The share
+    denominator is essential: growth in total earnings is not EPS growth.
+    Returned base earnings are decomposition weights, not the EPS level.
+    No clipping is applied to the exact basket-level ratio.
     """
     current_eps = eps[:, current]
     base_eps = eps[:, back]
@@ -576,27 +566,23 @@ def aggregate_earnings_change(
     )
     if not valid.any():
         return np.nan, changes, base_earnings, valid
-    changes[valid] = np.clip(
-        current_earnings[valid] / base_earnings[valid] - 1.0,
-        clip_low,
-        clip_high,
-    )
-    denominator = float(base_earnings[valid].sum())
-    value = (
-        float(np.sum(base_earnings[valid] * changes[valid]) / denominator)
-        if denominator > 0
-        else np.nan
-    )
+    base_share_total = float((base_mcap[valid] / base_price[valid]).sum())
+    current_share_total = float((current_mcap[valid] / current_price[valid]).sum())
+    changes[valid] = (current_earnings[valid] / base_earnings[valid]
+                      * base_share_total / current_share_total - 1.0)
+    base_eps_level = float(base_earnings[valid].sum()) / base_share_total
+    current_eps_level = float(current_earnings[valid].sum()) / current_share_total
+    value = current_eps_level / base_eps_level - 1.0
     return value, changes, base_earnings, valid
 
 
-def aggregate_forward_earnings_growth(
+def aggregate_forward_eps_growth(
     fy1_eps: np.ndarray,
     fy2_eps: np.ndarray,
     price: np.ndarray,
     mcap: np.ndarray,
 ) -> float:
-    """Return FY2 versus FY1 growth from summed constituent earnings."""
+    """Compare FY2/FY1 share-weighted EPS using the same date and shares."""
     valid = (
         np.isfinite(fy1_eps)
         & (fy1_eps > 0)
@@ -612,9 +598,10 @@ def aggregate_forward_earnings_growth(
     shares = mcap[valid] / price[valid]
     fy1_earnings = fy1_eps[valid] * shares
     fy2_earnings = fy2_eps[valid] * shares
-    changes = np.clip(fy2_earnings / fy1_earnings - 1.0, -1.0, 3.0)
-    denominator = float(fy1_earnings.sum())
-    return float(np.sum(fy1_earnings * changes) / denominator) if denominator > 0 else np.nan
+    total_shares = float(shares.sum())
+    fy1_level = float(fy1_earnings.sum()) / total_shares
+    fy2_level = float(fy2_earnings.sum()) / total_shares
+    return fy2_level / fy1_level - 1.0 if fy1_level > 0 else np.nan
 
 
 def harmonic_pe(pe: np.ndarray, mcap: np.ndarray) -> np.ndarray:
@@ -847,14 +834,12 @@ def pe_fan_history(
                         price_return[observation] = float(
                             np.sum(stock_returns[plausible_returns] * return_weights) / return_denominator
                         )
-            earnings_change, _, _, earnings_valid = aggregate_earnings_change(
+            earnings_change, _, _, earnings_valid = aggregate_share_weighted_eps_change(
                 eps_values,
                 price_values,
                 market_caps,
                 observation,
-                baseline,
-                -0.95,
-                5.0,
+                baseline
             )
             if not earnings_valid.any() or not np.isfinite(earnings_change) or not np.isfinite(price_return[observation]):
                 continue
@@ -875,14 +860,12 @@ def pe_fan_history(
         earnings_baseline = earnings_candidates[0]
 
         def cumulative_change(values: np.ndarray, observation: int) -> float:
-            change, _, _, _ = aggregate_earnings_change(
+            change, _, _, _ = aggregate_share_weighted_eps_change(
                 values,
                 price_values,
                 market_caps,
                 observation,
-                earnings_baseline,
-                -1.0,
-                3.0,
+                earnings_baseline
             )
             return change
 
@@ -983,14 +966,14 @@ def aggregate_group(
     back5d = sessions[max(0, len(sessions) - 6)]
     mcap = metrics["mcap"]
 
-    eps4, eps4_stock, eps4_base_earnings, eps4_valid = aggregate_earnings_change(
-        metrics["eps12"], metrics["price"], mcap, current, back4, -1.0, 1.0
+    eps4, eps4_stock, eps4_base_earnings, eps4_valid = aggregate_share_weighted_eps_change(
+        metrics["eps12"], metrics["price"], mcap, current, back4
     )
-    eps13, eps13_stock, eps13_base_earnings, eps13_valid = aggregate_earnings_change(
-        metrics["eps12"], metrics["price"], mcap, current, back13, -1.0, 1.0
+    eps13, eps13_stock, eps13_base_earnings, eps13_valid = aggregate_share_weighted_eps_change(
+        metrics["eps12"], metrics["price"], mcap, current, back13
     )
-    eps6m, _, eps6_base_earnings, eps6_valid = aggregate_earnings_change(
-        metrics["eps12"], metrics["price"], mcap, current, back6m, -1.0, 1.0
+    eps6m, _, eps6_base_earnings, eps6_valid = aggregate_share_weighted_eps_change(
+        metrics["eps12"], metrics["price"], mcap, current, back6m
     )
     price1m, _, price1_base_mcap, price1_valid = weighted_change(
         metrics["price"], mcap, current, back1m, False, -0.95, 5.0, True
@@ -1001,11 +984,11 @@ def aggregate_group(
     price6m, _, price6_base_mcap, price6_valid = weighted_change(
         metrics["price"], mcap, current, back6m, False, -0.95, 5.0, True
     )
-    eps1d, _, eps1_base_earnings, eps1_valid = aggregate_earnings_change(
-        metrics["eps12"], metrics["price"], mcap, short_current, back1d, -1.0, 1.0
+    eps1d, _, eps1_base_earnings, eps1_valid = aggregate_share_weighted_eps_change(
+        metrics["eps12"], metrics["price"], mcap, short_current, back1d
     )
-    eps5d, _, eps5_base_earnings, eps5_valid = aggregate_earnings_change(
-        metrics["eps12"], metrics["price"], mcap, short_current, back5d, -1.0, 1.0
+    eps5d, _, eps5_base_earnings, eps5_valid = aggregate_share_weighted_eps_change(
+        metrics["eps12"], metrics["price"], mcap, short_current, back5d
     )
     price1d, _, price1d_base_mcap, price1d_valid = weighted_change(
         metrics["price"], mcap, short_current, back1d, False, -0.95, 5.0, True
@@ -1056,7 +1039,7 @@ def aggregate_group(
 
     fy1 = metrics["eps_fy1"][:, current]
     fy2 = metrics["eps_fy2"][:, current]
-    fy2_growth = aggregate_forward_earnings_growth(
+    fy2_growth = aggregate_forward_eps_growth(
         fy1,
         fy2,
         metrics["price"][:, current],
@@ -1421,6 +1404,7 @@ def sanitize(value: Any) -> Any:
 
 
 def standalone_document(fragment: str) -> str:
+    theme = Path(__file__).with_name("dashboard_theme.css").read_text(encoding="utf-8")
     return (
         "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
         "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
@@ -1428,6 +1412,7 @@ def standalone_document(fragment: str) -> str:
         "--border:#dce2ea;--background:#ffffff}body{margin:0;padding:12px;"
         "font-family:Segoe UI,Arial,sans-serif;background:var(--background);"
         "color:var(--foreground)}</style></head><body>"
+        + "<style>" + theme + "</style>"
         + fragment
         + "</body></html>"
     )
@@ -1508,8 +1493,10 @@ def build(
     fragment_path: Path,
     valuation_source: Path | None,
     standalone_path: Path,
+    index_level_source: Path | None = None,
 ) -> dict[str, Any]:
     config = REGIONS[region]
+    official, index_level_metadata = official_index_levels.load(sys.modules[__name__], index_level_source)
     expected_index_order = config["indices"]
 
     rows: list[dict[str, Any]] = []
@@ -1526,6 +1513,8 @@ def build(
         group_rows, group_boxes, group_histories, group_coverage = aggregate_index(
             raw, config["attribution_start"], config["earnings_start"], True
         )
+        official_index_levels.apply(sys.modules[__name__], raw, group_rows, group_boxes,
+                                    group_histories, official, config)
         rows.extend(group_rows)
         stock_rows.extend(build_stock_rows(raw, True))
         stock_maps[code] = build_stock_map(raw)
@@ -1570,11 +1559,13 @@ def build(
                 "endDate": max(all_ends) if all_ends else None,
                 "duplicateSourcesSkipped": skipped_duplicates,
                 "sectorValuationHistory": valuation_metadata,
-                "method": "EPS estimates are converted to constituent earnings using implied shares (market cap divided by price) and aggregated with base-period earnings weights; 1D and 5D use the latest active price session and prior active sessions, with EPS aligned to the same dates; price returns use start-date market-cap weights; P/E is total market cap divided by total earnings.",
+                "indexLevelSource": index_level_metadata,
+                "method": "Index-level EPS, price and valuation use the supplied Index Level sheet directly. Sector/industry EPS = sum(source EPS * shares) / sum(shares), with shares = market cap / price, using matched constituents at both endpoints; 1D and 5D use the latest active price session and prior active sessions, with EPS aligned to the same dates; price returns use start-date market-cap weights; P/E is total market cap divided by total earnings.",
             },
             "rows": [[item[field] for field in ROW_FIELDS] for item in rows],
             "stockRows": [[item[field] for field in STOCK_FIELDS] for item in stock_rows],
             "stockMap": stock_maps,
+            "stockDescriptions": load_stock_descriptions(),
             "industrySectorMap": industry_sector_maps,
             "boxes": [
                 [
@@ -1702,6 +1693,7 @@ def main() -> None:
     parser.add_argument("--us-template", type=Path, default=None, help="Optional US template override for validation")
     parser.add_argument("--japan-template", type=Path, default=None, help="Optional Japan template override for validation")
     parser.add_argument("--sync-embed", type=Path, metavar="HTML_PATH", help="After successful europe/all builds, update this local market_rotation HTML copy (no deployment)")
+    parser.add_argument("--index-level-source", type=Path, help="Workbook containing Index Level; defaults to latest BQuant in ____Rawdata___")
     parser.add_argument("sources", nargs="*", type=Path)
     args = parser.parse_args()
     if args.sync_embed is not None and args.region not in ("all", "europe"):
@@ -1716,7 +1708,9 @@ def main() -> None:
     d3_path = asset_root / "유로존_dashboard" / "d3.v7.9.0.min.js"
     for region in regions:
         config = REGIONS[region]
-        directory = config["directory"]
+        directory = Path(config["directory"])
+        if not (asset_root / directory).is_dir() and (asset_root / "새 폴더" / directory).is_dir():
+            directory = Path("새 폴더") / directory
         overrides = {"europe": args.europe_template, "us": args.us_template, "japan": args.japan_template}
         template_path = overrides[region] or asset_root / directory / "market_rotation_dashboard.template.html"
         valuation_source = asset_root / directory / config["valuation_source"] if config["valuation_source"] else None
@@ -1731,6 +1725,7 @@ def main() -> None:
             output_root / directory / config["fragment"],
             valuation_source,
             standalone_path,
+            index_level_source=args.index_level_source,
         )
     if args.sync_embed is not None:
         europe = REGIONS["europe"]

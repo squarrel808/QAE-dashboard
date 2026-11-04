@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-31T08:33:55.978114+09:00",
+  "completed_state_updated": true,
+  "videos": [
+    {
+      "id": "D4kixNIUxZw",
+      "transcript_chars": 11863,
+      "transcript_sha256": "0ca593561ea1765c9c768a5525cbd62328b778d9ee31943107873b205a37978f",
+      "summary_chars": 2763
+    },
+    {
+      "id": "W8fAR3WJHTk",
+      "transcript_chars": 70537,
+      "transcript_sha256": "1fcb8a867dbc7ebea632d04115f17132fc1b6240438d1d8fa875489b10587c6b",
+      "summary_chars": 4325
+    },
+    {
+      "id": "aGX2Ezs0FG4",
+      "transcript_chars": 119444,
+      "transcript_sha256": "a1494f8e64061bfa0ba3b442eefdd733e54310b120eb36ba5d29c9d7edf43611",
+      "summary_chars": 5113
+    }
+  ],
+  "report_path": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-31\\report_chat_20261031_0833.html",
+  "sha256": "a6a190a4fa5f1f495a1e53c119cf7d55ffed8b03768738369826fdb6dcbce5c5",
+  "caption_check": [
+    {
+      "id": "D4kixNIUxZw",
+      "duration": "PT10M38S",
+      "start": 0.06,
+      "end": 637.58,
+      "segments": 193,
+      "same": true
+    },
+    {
+      "id": "W8fAR3WJHTk",
+      "duration": "PT1H27M21S",
+      "start": 0.287,
+      "end": 5234.449,
+      "segments": 1377,
+      "same": true
+    },
+    {
+      "id": "aGX2Ezs0FG4",
+      "duration": "PT2H24M25S",
+      "start": 5.238,
+      "end": 8664.055,
+      "segments": 2325,
+      "same": true
+    }
+  ],
+  "pending_ids": [
+    "5lKIW85jDDY"
+  ],
+  "completed_count": 438,
+  "pending_after": 1
+}

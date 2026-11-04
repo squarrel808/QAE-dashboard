@@ -1,0 +1,10 @@
+{
+  "asOf": "2026-10-30",
+  "weekly": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20261030\\주간자료_20261030.html",
+  "audit": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\Material\\Morning\\runs\\20261102_20261030",
+  "markets": 8,
+  "scope": "sector, AI and source-only factor commentary",
+  "commentarySourceDate": "2026-11-02",
+  "factor": "C:\\Users\\infomax\\Documents\\python\\QAE\\데일리시황\\BQL\\Theme\\output\\20261030\\Factor_Theme\\팩터_테마_로테이션_20261030.html",
+  "sourceObservations": 65
+}

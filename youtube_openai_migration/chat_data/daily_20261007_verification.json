@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-10-07T08:41:12.338494+09:00",
+  "report": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-07\\report_chat_20261007_0841.html",
+  "report_sha256": "d47d2f1f7d4fed63fb03da37c9ae293bb5b257213f31f70dd7f497989056a90f",
+  "videos": [
+    {
+      "id": "iPkKBgquLoM",
+      "transcript_chars": 11248,
+      "transcript_sha256": "bb76c564c702e122d994beaa67583430fbd75668643fce3a7f658547a6dca61c",
+      "summary_chars": 2073
+    },
+    {
+      "id": "MA2MbmUH2ig",
+      "transcript_chars": 88289,
+      "transcript_sha256": "ef21e9e2f656af5e1c6a9a86b46895706e778da0ad1afdc6ead4f924624f182f",
+      "summary_chars": 3355
+    },
+    {
+      "id": "KzetCWwCPvs",
+      "transcript_chars": 115506,
+      "transcript_sha256": "7b30763233d2d5a99694b70544663ecb483a3be75553b6d232cbdd99a090d0c6",
+      "summary_chars": 3563
+    },
+    {
+      "id": "5Ss3rqP9e-s",
+      "transcript_chars": 43162,
+      "transcript_sha256": "99ab818a6fa359f92517b3182db2ce254958407fb12ae30629163404afed2459",
+      "summary_chars": 3012
+    },
+    {
+      "id": "9OwwYtoXZK0",
+      "transcript_chars": 116983,
+      "transcript_sha256": "abda7692ce3075bbb9a9cde8c81dd49f948960f216d5d78b402f0fed02e1b8a3",
+      "summary_chars": 3411
+    }
+  ],
+  "completed_state_updated": true,
+  "completed_at": "2026-10-07T08:41:40.974624+09:00"
+}

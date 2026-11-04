@@ -139,7 +139,7 @@ def build_market_tables(bql, out, cutoff, periods):
     sp500_date = market_dates.get('SP500')
     if data['meta']['asOf'] != sp500_date:
         raise ValueError(f'AI와 S&P 500 섹터의 마지막 실제 거래일이 일치하지 않습니다: AI={data["meta"]["asOf"]}, SP500={sp500_date}')
-    # The legacy AI builder clamps short windows to its first date. Mark those unavailable.
+    # Keep unavailable-period metadata aligned with the report window policy.
     dates = data['dates']
     for period in ai_html.PERIODS:
         enough = len(dates) >= (2 if period == '1D' else 6) if period in ('1D','5D') else dates[0] <= ai_html.ai.shift_months(datetime.fromisoformat(dates[-1]).date(), -int(period[:-1])).isoformat()
@@ -150,6 +150,9 @@ def build_market_tables(bql, out, cutoff, periods):
                 for stage in mode.values():
                     for key in ('return','relative','breadth','median','dispersion'):
                         stage['performance'][period][key] = None
+                    stage['performance'][period]['weightedMembers'] = 0
+                    stage['performance'][period]['startMarketCap'] = None
+                    stage['periodSeries'][period] = []
             for stock in data['stocks']:
                 stock['returns'][period] = None
     for period in periods:
@@ -168,8 +171,8 @@ def build_market_tables(bql, out, cutoff, periods):
 def build_consensus(qae, inputs, out, observed_date):
     """Reuse the existing country parser/renderer with this run's exact raw files.
 
-    Read the entire raw snapshot. Historical consensus pipelines remain separate;
-    these outputs never overwrite their accumulated xlsx histories.
+    Read the entire raw snapshot and merge accumulated history for display.
+    These outputs never overwrite their accumulated xlsx histories.
     """
     import pandas as pd
     outputs, meta = [], {}
@@ -191,6 +194,7 @@ def build_consensus(qae, inputs, out, observed_date):
                 if not result or not result.get('2w'):
                     raise ValueError(f'{code} {sheet}: 최신 컨센서스를 읽지 못했습니다.')
                 data[sheet] = result
+        history_source = mod.merge_median_history(mod, data, observed_date)
         target = out/'Consensus'/f'{key}.html'
         target.parent.mkdir(parents=True, exist_ok=True)
         generated = datetime.now(KST).strftime('%Y-%m-%d %H:%M')
@@ -200,7 +204,9 @@ def build_consensus(qae, inputs, out, observed_date):
         bundle = {'data': years.get(default_year, {}), 'years': years,
                   'defaultYear': default_year, 'names': mod.COUNTRY_NAMES, 'generatedAt': generated,
                   'source': str(inputs[key]), 'sourceSHA256': digest(inputs[key]),
-                  'history_scope': '이번 원본에 수록된 기간. 별도의 누적 컨센서스 이력은 변경하지 않음.'}
+                  'history_source': history_source,
+                  'history_scope': '누적 이력 + 이번 업로드 (겹치는 날짜는 업로드 우선).',
+                  'median_ranges': ['1M', '3M', '6M', '12M', 'All']}
         save_json(target.with_suffix('.json'), bundle)
         outputs.append(target)
         meta[key] = {year: {country: d['2w'][-1]['date'] for country, d in values.items()}
@@ -214,9 +220,9 @@ def render_index(manifest, outputs, dest):
               'ai_1D.html':'AI 밸류체인 1D', 'ai_5D.html':'AI 밸류체인 5D',
               'growth.html':'GDP 컨센서스', 'inflation.html':'CPI 컨센서스', 'index.html':'경제지표 · 지표 요약과 IB 코멘트',
               'macro_views.html':'IB 거시 맥락 뷰 · Growth / Inflation / 통화정책'}
-    links = ''.join(f'<li><a href="{esc(os.path.relpath(p,dest.parent).replace(os.sep,"/"))}">{labels[p.name]}</a></li>' for p in outputs)
+    links = ''.join(f'<li><a href="{esc(os.path.relpath((p.parents[3]/"IB_views/index.html" if p.name=="macro_views.html" else p),dest.parent).replace(os.sep,"/"))}">{labels[p.name]}</a></li>' for p in outputs)
     rows = ''.join(f'<tr><td>{esc(k)}</td><td>{esc(v["name"])}</td><td>{esc(v["modified"])}</td></tr>' for k,v in manifest['inputs'].items())
-    page = f'''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>데일리 표 업데이트</title><style>body{{font:16px/1.7 "Malgun Gothic",sans-serif;margin:40px auto;padding:0 22px;max-width:1040px;color:#203a33;background:#f7f8f4}}a{{color:#24694c}}li{{margin:12px 0}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:10px;border-bottom:1px solid #d3dfd6;text-align:left}}.box{{background:white;padding:22px;border:1px solid #d3dfd6;border-radius:10px}}small{{color:#667970}}</style><h1>데일리 표 업데이트</h1><p>요청 시점 {esc(manifest['requested_at'])}<br>주가 기준일 {esc(manifest['markets']['AI']['asOf'])} · WECO 누적 실제값 {manifest['weco']['available_at_request']}건 (최신 원본 {manifest['weco'].get('latest_calendar_reported',manifest['weco']['available_at_request'])}건)</p><div class="box"><ul>{links}</ul></div><p>경제지표 메뉴에서 과거 실제값과 최신 캘린더를 함께 볼 수 있습니다. 해석은 숫자 스냅샷이 일치하는 경우에만 표시합니다.</p><p><a href="{esc(os.path.relpath(Path(manifest['review_queue']),dest.parent).replace(os.sep,'/'))}">해석 검토 대상 데이터</a></p><h2>이번에 읽은 원본</h2><table><tr><th>구분</th><th>파일</th><th>수정 시각</th></tr>{rows}</table><p><small>최신 원본은 표시된 기간의 수치를 갱신하며, 기간 밖의 과거 실제값은 누적 이력에서 불러옵니다. ECFC 화면의 과거 구간은 이번 원본 수록 범위이며 기존 누적 이력은 별도로 유지됩니다.</small></p></html>'''
+    page = f'''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>데일리 표 업데이트</title><style>body{{font:16px/1.7 "Malgun Gothic",sans-serif;margin:40px auto;padding:0 22px;max-width:1040px;color:#203a33;background:#f7f8f4}}a{{color:#24694c}}li{{margin:12px 0}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:10px;border-bottom:1px solid #d3dfd6;text-align:left}}.box{{background:white;padding:22px;border:1px solid #d3dfd6;border-radius:10px}}small{{color:#667970}}</style><h1>데일리 표 업데이트</h1><p>요청 시점 {esc(manifest['requested_at'])}<br>주가 기준일 {esc(manifest['markets']['AI']['asOf'])} · WECO 누적 실제값 {manifest['weco']['available_at_request']}건 (최신 원본 {manifest['weco'].get('latest_calendar_reported',manifest['weco']['available_at_request'])}건)</p><div class="box"><ul>{links}</ul></div><p>경제지표 메뉴에서 과거 실제값과 최신 캘린더를 함께 볼 수 있습니다. 해석은 숫자 스냅샷이 일치하는 경우에만 표시합니다.</p><p><a href="{esc(os.path.relpath(Path(manifest['review_queue']),dest.parent).replace(os.sep,'/'))}">해석 검토 대상 데이터</a></p><h2>이번에 읽은 원본</h2><table><tr><th>구분</th><th>파일</th><th>수정 시각</th></tr>{rows}</table><p><small>최신 원본은 표시된 기간의 수치를 갱신하며, 기간 밖의 과거 실제값은 누적 이력에서 불러옵니다. ECFC 화면은 누적 이력과 이번 업로드를 함께 표시하며 1M·3M·6M·12M·전체 기간을 선택할 수 있습니다.</small></p></html>'''
     if manifest['weco'].get('authored_event_count'):
         intro = f"경제지표 {manifest['weco']['authored_event_count']}개에 핵심 요약과 해석을 작성했습니다. IB 원문 요약·비교 코멘트 {manifest['weco']['authored_house_count']}건을 함께 표시하며, 긴 원문과 검색 후보는 접어 두었습니다. IB 요약과 AI 해석 초안은 구분해서 표시합니다."
         page = page.replace('경제지표 메뉴에서 과거 실제값과 최신 캘린더를 함께 볼 수 있습니다. 해석은 숫자 스냅샷이 일치하는 경우에만 표시합니다.', intro+' 과거 실제값과 최신 캘린더를 함께 볼 수 있습니다.')
@@ -227,6 +233,11 @@ def render_index(manifest, outputs, dest):
     if manifest.get('weco_refreshed_at'):
         note = f'<p><b>IB 자료 갱신</b> {esc(manifest["weco_refreshed_at"])} · 보고서 최신 발행일 {esc(manifest["weco"]["source_date_max"])}</p>'
         page = page.replace('<h2>이번에 읽은 원본</h2>', note + '<h2>이번에 읽은 원본</h2>')
+    # Independent API reports keep their stable menu when the four-file portal is rebuilt.
+    surprise_helper = Path(__file__).resolve().parent/'표_업데이트/surprise index/portal_link.py'
+    if surprise_helper.exists():
+        surprise = load_module(surprise_helper, 'daily_surprise_portal')
+        page = surprise.add_portal_link(page, dest)
     dest.write_text(page, encoding='utf-8')
 
 

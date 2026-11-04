@@ -42,6 +42,48 @@ START_URLS = {
 }
 
 
+def bofa_click_login(page, timeout=45):
+    """Click a saved/autofilled login form once, then verify research content."""
+    selectors = ('button[onclick*="doLogin"], button[aria-label="Login button"], '
+                 'input[type="submit"][value="Log In"]')
+    def ready():
+        for frame in page.frames:
+            if frame.locator('a[onclick*="htmlIconClickOnCachedPortlet"]').count():
+                return True
+        return False
+    def button():
+        for frame in page.frames:
+            candidates = [frame.locator(selectors),
+                          frame.get_by_role('button', name=re.compile(r'^log\s*in$', re.I))]
+            for candidates_in_frame in candidates:
+                for i in range(candidates_in_frame.count()):
+                    item = candidates_in_frame.nth(i)
+                    if item.is_visible():
+                        return frame, item
+        return None
+    def state():
+        return True if ready() else button()
+    found = wait_until(state, timeout)
+    if found is True:
+        return
+    frame, btn = found
+    # Password-manager fields are kept intact; never submit an empty form.
+    def filled():
+        fields = frame.locator('input[type="password"]')
+        passwords = [fields.nth(i) for i in range(fields.count()) if fields.nth(i).is_visible()]
+        users = frame.locator('input#userid, input[name="userid"], input#username, '
+                              'input[name="username"], input[type="email"], input[type="text"]')
+        users = [users.nth(i) for i in range(users.count()) if users.nth(i).is_visible()]
+        return (all(field.input_value() for field in passwords)
+                and all(field.input_value() for field in users))
+    wait_until(filled, timeout)
+    try:
+        btn.click(timeout=10000)
+    except Exception:
+        btn.evaluate('(element) => element.click()')
+    wait_until(ready, timeout)
+
+
 def months_before(day: date, months: int) -> date:
     y, m = divmod(day.year * 12 + day.month - 1 - months, 12)
     return date(y, m + 1, min(day.day, calendar.monthrange(y, m + 1)[1]))
@@ -921,6 +963,7 @@ class Collector:
         regions={'Global':'Global','US/Can':'North America','Eur':'Europe','Jpn':'Japan','Aus/NZ':'Aus/NZ'}
         for region,search_region in regions.items():
             page.goto(self.urls['BofA'],wait_until="domcontentloaded",timeout=60000)
+            bofa_click_login(page)
             frame_with(page,'a[onclick*="htmlIconClickOnCachedPortlet"]')
             page.get_by_role('tab',name=region,exact=True).first.click()
             # Other regional panels and other report sections remain in the DOM.

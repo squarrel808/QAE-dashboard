@@ -1,0 +1,45 @@
+{
+  "started_kst": "2026-11-04T08:43:17.431935+09:00",
+  "cached": false,
+  "log": "C:\\Users\\infomax\\Documents\\python\\QAE\\PCA\\PCA_Four_Axis\\logs\\20261104_084317.log",
+  "steps": [
+    {
+      "name": "fetch_data.py",
+      "returncode": 0
+    },
+    {
+      "name": "fetch_supplement.py",
+      "returncode": 0
+    },
+    {
+      "name": "fetch_blackrock.py",
+      "returncode": 0
+    },
+    {
+      "name": "build.py",
+      "returncode": 0
+    },
+    {
+      "name": "test_model.py",
+      "returncode": 0
+    },
+    {
+      "name": "test_period_alignment.py",
+      "returncode": 0
+    },
+    {
+      "name": "build_dashboard.py",
+      "returncode": 0
+    },
+    {
+      "name": "sync_dashboard",
+      "returncode": 0
+    },
+    {
+      "name": "pca_iii",
+      "returncode": 0
+    }
+  ],
+  "success": true,
+  "finished_kst": "2026-11-04T08:44:55.547821+09:00"
+}

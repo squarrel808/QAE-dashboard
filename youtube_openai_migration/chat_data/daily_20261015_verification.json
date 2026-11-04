@@ -1,0 +1,29 @@
+{
+  "report_path": "C:\\Users\\infomax\\Desktop\\보따리\\유투브\\2026-10-15\\report_chat_20261015_0837.html",
+  "report_sha256": "631d8153193a2d78b455600351f9dfe505e95c42f639dc07bc3729df98563c9a",
+  "created_at": "2026-10-15T08:37:17.863516+09:00",
+  "videos": [
+    {
+      "id": "PZoa93Cyuio",
+      "transcript_chars": 8585,
+      "transcript_sha256": "f7d8d4cb71b6da1ddf68465ce5841395ba3c8fa80602dd155c5caae97d129240",
+      "summary_chars": 2223
+    },
+    {
+      "id": "sC0tGppM_MM",
+      "transcript_chars": 64870,
+      "transcript_sha256": "e34a045b8b4aca5c7448cd5517587afd99684e29146b19e59b22da80486a48dc",
+      "summary_chars": 4184
+    },
+    {
+      "id": "9bCiqNAyJT8",
+      "transcript_chars": 114883,
+      "transcript_sha256": "779ca090258893f4b0e33de8707b7251a91a2f691a6ada01c1b1973217e9cbe1",
+      "summary_chars": 4358
+    }
+  ],
+  "completed_state_updated": true,
+  "completed_at": "2026-10-15T08:39:06.480804+09:00",
+  "completed_count": 403,
+  "recovery_pending": []
+}

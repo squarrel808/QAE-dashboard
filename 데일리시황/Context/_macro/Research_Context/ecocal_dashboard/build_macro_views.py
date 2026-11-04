@@ -20,7 +20,7 @@ def module(path):
     spec=importlib.util.spec_from_file_location('macro_views_living_ib',path)
     mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);return mod
 
-def build(root,output,asof,requested_at=None,main_href=None):
+def build(root,output,asof,requested_at=None,main_href=None,publish_stable=True):
     root=Path(root);output=Path(output);date.fromisoformat(asof)
     living=module(root/'living_ib.py')
     with closing(living.source_db(root/'data/research.sqlite3')) as src, closing(living.source_db(root/'data/living_ib.sqlite3')) as state:
@@ -72,16 +72,26 @@ def build(root,output,asof,requested_at=None,main_href=None):
               'indexed_documents':indexed[0],'latest_indexed_report_date':indexed[1],
               'supplemental_views':sum(v['view_id'] in {x['view_id'] for x in supplemental} for v in current),
               'conflict_groups':sum(g['conflict'] for g in groups),'draft':True,
-              'mode':'restored_saved_context_not_new_research',
+              'mode':'page_grounded_reviewed_context',
               'view_payload_sha256':hashlib.sha256(living.canonical(combined).encode()).hexdigest(),
-              'note':'저장된 검토 뷰를 복원한 화면입니다. 최근 보고서가 검색 DB에 추가됐더라도 각 하우스의 거시 전망이 새로 검토·갱신됐다는 뜻은 아닙니다.'}
+              'note':'원문 페이지를 검토해 저장한 견해와 이전 이력입니다. 각 견해의 자료일을 확인하세요. 검색 DB 최신일과 모든 하우스의 검토 완료일은 다르며, 오래된 항목은 경과일을 표시합니다.'}
         countries=[{'code':c,'label':label} for c,label in living.COUNTRIES.items() if any(g['country']==c for g in groups)]
         payload={'schema_version':1,'meta':meta,'houses':list(living.HOUSES),'countries':countries,'themes':THEMES,'groups':groups,'forecasts':current_forecasts}
     output.mkdir(parents=True,exist_ok=True)
     main_href=main_href or os.path.relpath(root.parents[2]/'표_업데이트/index.html',output).replace(os.sep,'/')
     encoded=encode(payload)
     template=(HERE/'macro_views.html').read_text(encoding='utf-8')
-    result=template.replace('__MACRO_VIEW_DATA__',encoded).replace('__MAIN_HREF__',html.escape(main_href,quote=True))
+    personal_script=(HERE/'personal_views.js').read_text(encoding='utf-8')
+    base=template.replace('__MACRO_VIEW_DATA__',encoded).replace('__PERSONAL_VIEWS_SCRIPT__',personal_script)
+    result=base.replace('__MAIN_HREF__',html.escape(main_href,quote=True)).replace('__INDICATOR_HREF__','index.html')
+    # A fixed entry path preserves browser storage across versioned daily runs.
+    if publish_stable:
+        stable=root.parents[2]/'표_업데이트/IB_views'
+        stable.mkdir(parents=True,exist_ok=True)
+        indicator_href=os.path.relpath(output/'index.html',stable).replace(os.sep,'/')
+        stable_result=base.replace('__MAIN_HREF__','../index.html').replace('__INDICATOR_HREF__',html.escape(indicator_href,quote=True))
+        (stable/'index.html').write_text(stable_result,encoding='utf-8')
+        (stable/'macro_views_data.json').write_text(encoded,encoding='utf-8')
     (output/'macro_views_data.json').write_text(encoded,encoding='utf-8')
     (output/'macro_views.html').write_text(result,encoding='utf-8')
     return meta

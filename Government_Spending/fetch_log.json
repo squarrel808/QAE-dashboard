@@ -1,0 +1,29 @@
+{
+  "checked_kst": "2026-10-28T14:17:34.496828+09:00",
+  "requested": [
+    "canada:fgbus",
+    "canada:fgeus",
+    "canada:fgrus",
+    "canada:fgbuk",
+    "canada:fgeuk",
+    "canada:fgruk",
+    "canada:fgbfr",
+    "canada:fgefr",
+    "canada:fgrfr",
+    "canada:fgbde",
+    "canada:fgede",
+    "canada:fgrde",
+    "canada:fgbca",
+    "canada:fgeca",
+    "canada:fgrca",
+    "canada:fgbjp",
+    "canada:fgejp",
+    "canada:fgrjp",
+    "anz:aunfu",
+    "anz:aunfur",
+    "anz:aunfue",
+    "anz:aunfun",
+    "anz:aunngdp"
+  ],
+  "errors": []
+}

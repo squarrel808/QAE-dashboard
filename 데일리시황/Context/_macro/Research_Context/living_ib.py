@@ -19,7 +19,7 @@ import sys
 import tempfile
 
 HOUSES = ('GS', 'JPM', 'Citi', 'BofA', 'HSBC')
-COUNTRIES = {'US': '미국', 'EA': '유로존', 'GB': '영국', 'CA': '캐나다', 'AU': '호주', 'JP': '일본', 'GLOBAL': '글로벌'}
+COUNTRIES = {'US': '미국', 'EA': '유로존', 'GB': '영국', 'CA': '캐나다', 'AU': '호주', 'JP': '일본', 'CN': '중국', 'GLOBAL': '글로벌'}
 TRACKS = {
     'policy.near_term': '정책금리 기본 전망', 'policy.easing_start': '인하 시작 시점',
     'policy.reaction': '정책 판단 조건', 'inflation.preview': '물가 발표 전 전망',

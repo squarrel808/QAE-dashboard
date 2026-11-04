@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..')
-const source=path.resolve(root,'../PCA_BlackRock_Only')
+const source=path.resolve(root,'../PCA/PCA_BlackRock_Only')
 const destination=path.join(root,'public/embeds/pca-iii')
 const files=['index.html','indices.csv','inputs.csv','selection_audit.csv','classification_signs.html','classification_signs.csv','component_signs.csv','weights.csv','blackrock_coverage.csv','blackrock_coverage.html']
 function validate(html){

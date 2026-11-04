@@ -584,12 +584,13 @@
       container.innerHTML='';list.innerHTML='';
       if(!clean.length){container.innerHTML='<div class="mrd-empty">No valid sector returns for this period</div>';return;}
       const maxWeight=d3.max(clean,d=>d.weight)||1;
-      list.innerHTML=clean.map(d=>`<div class="mrd-sector-row" style="--sector-weight:${d.weight/maxWeight*100}%"><span class="mrd-sector-name" title="${d.group}">${d.group}</span><span class="mrd-sector-weight">${pct0(d.weight)}</span><span class="mrd-sector-return" style="color:${d[metric]>=0?'#15803d':'#b91c1c'}">${pct(d[metric])}</span></div>`).join('');
+      list.innerHTML=clean.map(d=>`<div class="mrd-sector-row" style="--sector-weight:${d.weight/maxWeight*100}%"><span class="mrd-sector-name" title="${d.group}">${d.group}</span><span class="mrd-sector-weight">${pct0(d.weight)}</span><span class="mrd-sector-return" style="color:${d[metric]===0?'#6b7280':d[metric]>0?'#15803d':'#b91c1c'}">${pct(d[metric])}</span></div>`).join('');
 
       const width=Math.max(320,container.getBoundingClientRect().width||900);
       const height=width<600?420:560;
       const maxAbs=Math.max(0.05,d3.max(clean,d=>Math.abs(d[metric]))||0.05);
-      const color=d3.scaleLinear().domain([-maxAbs,0,maxAbs]).range(['#b91c1c','#f3f4f6','#15803d']).clamp(true);
+      const signScale=d3.scaleLinear().domain([-maxAbs,0,maxAbs]).range(['#b91c1c','#f3f4f6','#15803d']).clamp(true);
+      const color=value=>!valid(value)?'#68717d':value===0?'#f3f4f6':signScale(Math.sign(value)*Math.max(Math.abs(value),maxAbs*.20));
       const hierarchy=d3.hierarchy({children:clean}).sum(d=>d.weight||0).sort((a,b)=>b.value-a.value);
       d3.treemap().size([width,height]).paddingInner(3).round(true)(hierarchy);
       const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',`${indexLabel(indexCode)} sector heatmap by market-cap weight and price return`);
@@ -1151,7 +1152,13 @@
       detail.textContent='종목에 마우스를 올리거나 선택하면 상세정보가 표시됩니다.';
       root.querySelector('#mrd-map-title').textContent=`${indexLabel(code)} · Stock Map — ${label}`;
       root.querySelector('#mrd-map-status').textContent='';
-      const color=value=>!valid(value)?'#68717d':mapPalette[Math.max(0,Math.min(6,Math.round(value/limit*3)+3))];
+      // Every negative return uses red; only exact zero uses the neutral bin.
+      const color=value=>{
+        if(!valid(value))return '#68717d';
+        if(value===0)return mapPalette[3];
+        const shade=Math.min(3,Math.max(1,Math.ceil(Math.abs(value)/limit*3)));
+        return mapPalette[value<0?3-shade:3+shade];
+      };
       d3.select(root.querySelector('#mrd-map-legend')).selectAll('span').data([-1,-2/3,-1/3,0,1/3,2/3,1,null]).join('span')
         .style('background',v=>color(v===null?null:v*limit))
         .text((v,i)=>v===null?'N/A':`${i===0?'≤ ':i===6?'≥ ':''}${d3.format('+.0%')(v*limit)}`);
@@ -1231,6 +1238,11 @@
       const code=root.querySelector('#mrd-heatmap-index').value;
       const data=rows.filter(d=>d.index===code&&d.level==='Sector');
       root.querySelector('#mrd-heatmap-title').textContent=`${indexLabel(code)} Sector Heatmap — ${returnPeriodLabels[heatmapPeriod]} Price Return`;
+      const fiveDayWindow=DATA.stockMap?.[code]?.periods?.['1w'];
+      root.querySelector('#mrd-heatmap-note').textContent=heatmapPeriod==='price5d'
+        ? `최근 5거래일 · ${fiveDayWindow?.startDate||'N/A'} → ${fiveDayWindow?.endDate||'N/A'} · 배당 제외 · 수익률: 시작일 시총가중 / 타일 면적: 최신 시총 비중`
+        : 'Tile area and the left-hand percentages are current sector market-cap weights. Colour shows the selected period price return.';
+
       const indexHistory=peHistories.find(d=>d.index===code&&d.level==='Index');
       const firstPoint=(indexHistory?.values||[]).find(v=>v.length>=9&&valid(v[8]));
       const start=firstPoint?d3.utcFormat('%Y-%m-%d')(new Date(firstPoint[0]*86400000)):'available start';

@@ -34,7 +34,7 @@ function chgN(p: Series, m: number): number | null {
 
 // 초록(+)/빨강(-) 히트맵 색 — scale 기준으로 정규화
 function heatColor(pct: number | null, scale = 0.08): string {
-  if (pct == null || isNaN(pct)) return '#f4f3f1'
+  if (pct == null || !Number.isFinite(pct) || pct === 0) return '#f4f3f1'
   const t = Math.max(-1, Math.min(1, pct / scale))
   const lerp = (a: number, b: number, x: number) => Math.round(a + (b - a) * x)
   if (t >= 0) {
@@ -87,6 +87,14 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   const [rLines, setRLines] = useState(36)
   const [rTop, setRTop] = useState(12)
 
+  const rankingReturn = (p: Series): number | null => {
+    if (rTop !== -5) return chgN(p, rTop)
+    if (data.frequency !== 'daily' || p.close.length < 6) return null
+    const base = p.close[p.close.length - 6]
+    const last = p.close[p.close.length - 1]
+    return Number.isFinite(base) && Number.isFinite(last) && base !== 0 ? last / base - 1 : null
+  }
+
   // ── 히트맵 셀 조회
   const cell = (sec: string, fac: string): number | null => {
     const it = data.sector.items.find((x) => x.sector === sec && x.factor === fac)
@@ -114,7 +122,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   // ── TOP/BOTTOM 랭킹
   const ranked = useMemo(() => {
     return universe
-      .map((p) => ({ label: p.label, nameNote: p.nameNote, v: chgN(p, rTop) }))
+      .map((p) => ({ label: p.label, nameNote: p.nameNote, v: rankingReturn(p) }))
       .filter((r): r is { label: string; nameNote: string | undefined; v: number } => r.v != null)
       .sort((a, b) => b.v - a.v)
   }, [universe, rTop])
@@ -151,12 +159,13 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
     })
   }, [universe, selected, rUniv])
 
-  const Sel = ({ value, onChange }: { value: number; onChange: (n: number) => void }) => (
+  const Sel = ({ value, onChange, ranking }: { value: number; onChange: (n: number) => void; ranking?: boolean }) => (
     <select
       value={value}
       onChange={(e) => onChange(+e.target.value)}
       className="bg-white border border-[var(--line)] rounded-md px-2 py-1 text-xs"
     >
+      {ranking && data.frequency === 'daily' && <option value={-5}>5D</option>}
       {RANGES.map(([lab, m]) => <option key={m} value={m}>{lab}</option>)}
     </select>
   )
@@ -243,7 +252,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
       </Card>
 
       <div className="grid gap-3.5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-        <Card title="③ 수익률 TOP10" control={<Sel value={rTop} onChange={setRTop} />}>
+        <Card title="③ 수익률 TOP10" control={<Sel value={rTop} onChange={setRTop} ranking />}>
           <Bars rows={top10} />
         </Card>
         <Card title="④ 수익률 BOTTOM10" control={<span className="text-xs text-[var(--muted)]">③ 기간 연동</span>}>

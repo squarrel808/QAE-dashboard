@@ -1,0 +1,2439 @@
+{
+  "names": {
+    "us": "미국",
+    "uk": "영국",
+    "fr": "프랑스",
+    "de": "독일",
+    "ca": "캐나다",
+    "jp": "일본",
+    "au": "호주"
+  },
+  "rows": [
+    {
+      "country": "au",
+      "year": 2003,
+      "expenditure": 34.374568071872844,
+      "revenue": 35.816832426910246,
+      "balance": 1.4422643550374088
+    },
+    {
+      "country": "au",
+      "year": 2004,
+      "expenditure": 34.142769668667206,
+      "revenue": 35.63876951698155,
+      "balance": 1.4959998483143373
+    },
+    {
+      "country": "au",
+      "year": 2005,
+      "expenditure": 34.41299399958618,
+      "revenue": 36.24074074074074,
+      "balance": 1.8277467411545625
+    },
+    {
+      "country": "au",
+      "year": 2006,
+      "expenditure": 34.36051152936842,
+      "revenue": 35.6967131321195,
+      "balance": 1.3362016027510824
+    },
+    {
+      "country": "au",
+      "year": 2007,
+      "expenditure": 33.81135077995795,
+      "revenue": 35.6541516048483,
+      "balance": 1.8428008248903536
+    },
+    {
+      "country": "au",
+      "year": 2008,
+      "expenditure": 34.505429646806874,
+      "revenue": 34.11251802088003,
+      "balance": -0.3929116259268457
+    },
+    {
+      "country": "au",
+      "year": 2009,
+      "expenditure": 37.26544557454004,
+      "revenue": 32.76088067536532,
+      "balance": -4.504564899174722
+    },
+    {
+      "country": "au",
+      "year": 2010,
+      "expenditure": 37.072173433382076,
+      "revenue": 31.18767018938631,
+      "balance": -5.884503243995762
+    },
+    {
+      "country": "au",
+      "year": 2011,
+      "expenditure": 35.39477978600475,
+      "revenue": 31.26544083171673,
+      "balance": -4.129338954288014
+    },
+    {
+      "country": "au",
+      "year": 2012,
+      "expenditure": 36.38897123052584,
+      "revenue": 32.95465674272843,
+      "balance": -3.4343144877974074
+    },
+    {
+      "country": "au",
+      "year": 2013,
+      "expenditure": 35.51294996334078,
+      "revenue": 33.079044374142185,
+      "balance": -2.4339055891985963
+    },
+    {
+      "country": "au",
+      "year": 2014,
+      "expenditure": 36.58009980272702,
+      "revenue": 33.84746485400133,
+      "balance": -2.7326349487256856
+    },
+    {
+      "country": "au",
+      "year": 2015,
+      "expenditure": 36.72652156082446,
+      "revenue": 34.21948144660298,
+      "balance": -2.5070401142214864
+    },
+    {
+      "country": "au",
+      "year": 2016,
+      "expenditure": 37.185273444669285,
+      "revenue": 34.27412427165566,
+      "balance": -2.911149173013629
+    },
+    {
+      "country": "au",
+      "year": 2017,
+      "expenditure": 36.65380812609627,
+      "revenue": 34.78308954454666,
+      "balance": -1.8707185815496163
+    },
+    {
+      "country": "au",
+      "year": 2018,
+      "expenditure": 36.36743432254159,
+      "revenue": 35.635880555100115,
+      "balance": -0.7315537674414694
+    },
+    {
+      "country": "au",
+      "year": 2019,
+      "expenditure": 36.61472652921027,
+      "revenue": 35.07978738009926,
+      "balance": -1.5349391491110134
+    },
+    {
+      "country": "au",
+      "year": 2020,
+      "expenditure": 47.66218439653333,
+      "revenue": 34.33949374280068,
+      "balance": -13.32269065373265
+    },
+    {
+      "country": "au",
+      "year": 2021,
+      "expenditure": 40.196711512423526,
+      "revenue": 35.059887425225625,
+      "balance": -5.136824087197902
+    },
+    {
+      "country": "au",
+      "year": 2022,
+      "expenditure": 36.662987992808524,
+      "revenue": 34.76451136509567,
+      "balance": -1.8984766277128549
+    },
+    {
+      "country": "au",
+      "year": 2023,
+      "expenditure": 37.165926508677614,
+      "revenue": 36.01321832855414,
+      "balance": -1.15270818012348
+    },
+    {
+      "country": "au",
+      "year": 2024,
+      "expenditure": 38.65721691449896,
+      "revenue": 36.401605665743986,
+      "balance": -2.255611248754971
+    },
+    {
+      "country": "au",
+      "year": 2025,
+      "expenditure": 39.68322148590792,
+      "revenue": 36.4570096304309,
+      "balance": -3.226211855477023
+    },
+    {
+      "country": "ca",
+      "year": 1995,
+      "expenditure": 47.7,
+      "revenue": 42.2,
+      "balance": -5.5
+    },
+    {
+      "country": "ca",
+      "year": 1996,
+      "expenditure": 45.9,
+      "revenue": 42.8,
+      "balance": -3.1
+    },
+    {
+      "country": "ca",
+      "year": 1997,
+      "expenditure": 43.5,
+      "revenue": 43.5,
+      "balance": 0.0
+    },
+    {
+      "country": "ca",
+      "year": 1998,
+      "expenditure": 43.4,
+      "revenue": 43.5,
+      "balance": 0.1
+    },
+    {
+      "country": "ca",
+      "year": 1999,
+      "expenditure": 41.8,
+      "revenue": 43.4,
+      "balance": 1.7
+    },
+    {
+      "country": "ca",
+      "year": 2000,
+      "expenditure": 40.6,
+      "revenue": 43.2,
+      "balance": 2.6
+    },
+    {
+      "country": "ca",
+      "year": 2001,
+      "expenditure": 41.1,
+      "revenue": 41.6,
+      "balance": 0.5
+    },
+    {
+      "country": "ca",
+      "year": 2002,
+      "expenditure": 40.4,
+      "revenue": 40.2,
+      "balance": -0.2
+    },
+    {
+      "country": "ca",
+      "year": 2003,
+      "expenditure": 40.3,
+      "revenue": 40.1,
+      "balance": -0.1
+    },
+    {
+      "country": "ca",
+      "year": 2004,
+      "expenditure": 39.1,
+      "revenue": 39.9,
+      "balance": 0.8
+    },
+    {
+      "country": "ca",
+      "year": 2005,
+      "expenditure": 38.5,
+      "revenue": 40.1,
+      "balance": 1.6
+    },
+    {
+      "country": "ca",
+      "year": 2006,
+      "expenditure": 38.7,
+      "revenue": 40.5,
+      "balance": 1.8
+    },
+    {
+      "country": "ca",
+      "year": 2007,
+      "expenditure": 38.5,
+      "revenue": 40.3,
+      "balance": 1.8
+    },
+    {
+      "country": "ca",
+      "year": 2008,
+      "expenditure": 38.8,
+      "revenue": 39.0,
+      "balance": 0.2
+    },
+    {
+      "country": "ca",
+      "year": 2009,
+      "expenditure": 43.4,
+      "revenue": 39.5,
+      "balance": -3.9
+    },
+    {
+      "country": "ca",
+      "year": 2010,
+      "expenditure": 43.1,
+      "revenue": 38.3,
+      "balance": -4.7
+    },
+    {
+      "country": "ca",
+      "year": 2011,
+      "expenditure": 41.6,
+      "revenue": 38.3,
+      "balance": -3.3
+    },
+    {
+      "country": "ca",
+      "year": 2012,
+      "expenditure": 40.9,
+      "revenue": 38.4,
+      "balance": -2.5
+    },
+    {
+      "country": "ca",
+      "year": 2013,
+      "expenditure": 40.0,
+      "revenue": 38.5,
+      "balance": -1.5
+    },
+    {
+      "country": "ca",
+      "year": 2014,
+      "expenditure": 38.4,
+      "revenue": 38.5,
+      "balance": 0.2
+    },
+    {
+      "country": "ca",
+      "year": 2015,
+      "expenditure": 40.0,
+      "revenue": 40.0,
+      "balance": -0.1
+    },
+    {
+      "country": "ca",
+      "year": 2016,
+      "expenditure": 40.8,
+      "revenue": 40.3,
+      "balance": -0.5
+    },
+    {
+      "country": "ca",
+      "year": 2017,
+      "expenditure": 40.5,
+      "revenue": 40.3,
+      "balance": -0.1
+    },
+    {
+      "country": "ca",
+      "year": 2018,
+      "expenditure": 40.7,
+      "revenue": 41.0,
+      "balance": 0.4
+    },
+    {
+      "country": "ca",
+      "year": 2019,
+      "expenditure": 40.6,
+      "revenue": 40.6,
+      "balance": 0.0
+    },
+    {
+      "country": "ca",
+      "year": 2020,
+      "expenditure": 52.4,
+      "revenue": 41.4,
+      "balance": -10.9
+    },
+    {
+      "country": "ca",
+      "year": 2021,
+      "expenditure": 45.5,
+      "revenue": 42.4,
+      "balance": -3.1
+    },
+    {
+      "country": "ca",
+      "year": 2022,
+      "expenditure": 40.6,
+      "revenue": 41.2,
+      "balance": 0.6
+    },
+    {
+      "country": "ca",
+      "year": 2023,
+      "expenditure": 42.1,
+      "revenue": 42.2,
+      "balance": 0.1
+    },
+    {
+      "country": "ca",
+      "year": 2024,
+      "expenditure": 44.7,
+      "revenue": 42.7,
+      "balance": -2.0
+    },
+    {
+      "country": "de",
+      "year": 1995,
+      "expenditure": 55.2,
+      "revenue": 45.8,
+      "balance": -9.4
+    },
+    {
+      "country": "de",
+      "year": 1996,
+      "expenditure": 49.6,
+      "revenue": 45.9,
+      "balance": -3.6
+    },
+    {
+      "country": "de",
+      "year": 1997,
+      "expenditure": 48.8,
+      "revenue": 45.7,
+      "balance": -3.0
+    },
+    {
+      "country": "de",
+      "year": 1998,
+      "expenditure": 48.3,
+      "revenue": 45.6,
+      "balance": -2.7
+    },
+    {
+      "country": "de",
+      "year": 1999,
+      "expenditure": 48.5,
+      "revenue": 46.6,
+      "balance": -1.9
+    },
+    {
+      "country": "de",
+      "year": 2000,
+      "expenditure": 48.1,
+      "revenue": 46.3,
+      "balance": -1.7
+    },
+    {
+      "country": "de",
+      "year": 2001,
+      "expenditure": 47.7,
+      "revenue": 44.5,
+      "balance": -3.1
+    },
+    {
+      "country": "de",
+      "year": 2002,
+      "expenditure": 48.2,
+      "revenue": 44.2,
+      "balance": -4.1
+    },
+    {
+      "country": "de",
+      "year": 2003,
+      "expenditure": 48.5,
+      "revenue": 44.7,
+      "balance": -3.8
+    },
+    {
+      "country": "de",
+      "year": 2004,
+      "expenditure": 47.0,
+      "revenue": 43.6,
+      "balance": -3.4
+    },
+    {
+      "country": "de",
+      "year": 2005,
+      "expenditure": 46.9,
+      "revenue": 43.5,
+      "balance": -3.4
+    },
+    {
+      "country": "de",
+      "year": 2006,
+      "expenditure": 45.3,
+      "revenue": 43.6,
+      "balance": -1.8
+    },
+    {
+      "country": "de",
+      "year": 2007,
+      "expenditure": 43.5,
+      "revenue": 43.7,
+      "balance": 0.2
+    },
+    {
+      "country": "de",
+      "year": 2008,
+      "expenditure": 44.4,
+      "revenue": 44.2,
+      "balance": -0.3
+    },
+    {
+      "country": "de",
+      "year": 2009,
+      "expenditure": 48.3,
+      "revenue": 45.1,
+      "balance": -3.2
+    },
+    {
+      "country": "de",
+      "year": 2010,
+      "expenditure": 48.1,
+      "revenue": 43.7,
+      "balance": -4.4
+    },
+    {
+      "country": "de",
+      "year": 2011,
+      "expenditure": 45.3,
+      "revenue": 44.5,
+      "balance": -0.8
+    },
+    {
+      "country": "de",
+      "year": 2012,
+      "expenditure": 45.1,
+      "revenue": 45.0,
+      "balance": -0.1
+    },
+    {
+      "country": "de",
+      "year": 2013,
+      "expenditure": 45.2,
+      "revenue": 45.3,
+      "balance": 0.1
+    },
+    {
+      "country": "de",
+      "year": 2014,
+      "expenditure": 44.5,
+      "revenue": 45.2,
+      "balance": 0.7
+    },
+    {
+      "country": "de",
+      "year": 2015,
+      "expenditure": 44.5,
+      "revenue": 45.4,
+      "balance": 0.9
+    },
+    {
+      "country": "de",
+      "year": 2016,
+      "expenditure": 44.7,
+      "revenue": 45.9,
+      "balance": 1.1
+    },
+    {
+      "country": "de",
+      "year": 2017,
+      "expenditure": 44.5,
+      "revenue": 45.9,
+      "balance": 1.3
+    },
+    {
+      "country": "de",
+      "year": 2018,
+      "expenditure": 44.7,
+      "revenue": 46.5,
+      "balance": 1.9
+    },
+    {
+      "country": "de",
+      "year": 2019,
+      "expenditure": 45.5,
+      "revenue": 46.9,
+      "balance": 1.3
+    },
+    {
+      "country": "de",
+      "year": 2020,
+      "expenditure": 51.1,
+      "revenue": 46.7,
+      "balance": -4.4
+    },
+    {
+      "country": "de",
+      "year": 2021,
+      "expenditure": 50.7,
+      "revenue": 47.5,
+      "balance": -3.2
+    },
+    {
+      "country": "de",
+      "year": 2022,
+      "expenditure": 48.6,
+      "revenue": 46.7,
+      "balance": -1.9
+    },
+    {
+      "country": "de",
+      "year": 2023,
+      "expenditure": 48.1,
+      "revenue": 45.7,
+      "balance": -2.5
+    },
+    {
+      "country": "de",
+      "year": 2024,
+      "expenditure": 49.4,
+      "revenue": 46.8,
+      "balance": -2.7
+    },
+    {
+      "country": "fr",
+      "year": 1995,
+      "expenditure": 56.0,
+      "revenue": 50.9,
+      "balance": -5.1
+    },
+    {
+      "country": "fr",
+      "year": 1996,
+      "expenditure": 56.0,
+      "revenue": 52.1,
+      "balance": -3.9
+    },
+    {
+      "country": "fr",
+      "year": 1997,
+      "expenditure": 55.6,
+      "revenue": 51.9,
+      "balance": -3.7
+    },
+    {
+      "country": "fr",
+      "year": 1998,
+      "expenditure": 54.0,
+      "revenue": 51.6,
+      "balance": -2.4
+    },
+    {
+      "country": "fr",
+      "year": 1999,
+      "expenditure": 53.7,
+      "revenue": 52.1,
+      "balance": -1.5
+    },
+    {
+      "country": "fr",
+      "year": 2000,
+      "expenditure": 52.6,
+      "revenue": 51.3,
+      "balance": -1.3
+    },
+    {
+      "country": "fr",
+      "year": 2001,
+      "expenditure": 52.8,
+      "revenue": 51.4,
+      "balance": -1.4
+    },
+    {
+      "country": "fr",
+      "year": 2002,
+      "expenditure": 53.9,
+      "revenue": 50.7,
+      "balance": -3.2
+    },
+    {
+      "country": "fr",
+      "year": 2003,
+      "expenditure": 54.4,
+      "revenue": 50.3,
+      "balance": -4.1
+    },
+    {
+      "country": "fr",
+      "year": 2004,
+      "expenditure": 54.0,
+      "revenue": 50.4,
+      "balance": -3.6
+    },
+    {
+      "country": "fr",
+      "year": 2005,
+      "expenditure": 54.3,
+      "revenue": 50.8,
+      "balance": -3.5
+    },
+    {
+      "country": "fr",
+      "year": 2006,
+      "expenditure": 53.7,
+      "revenue": 51.1,
+      "balance": -2.7
+    },
+    {
+      "country": "fr",
+      "year": 2007,
+      "expenditure": 53.6,
+      "revenue": 50.6,
+      "balance": -3.0
+    },
+    {
+      "country": "fr",
+      "year": 2008,
+      "expenditure": 54.3,
+      "revenue": 50.8,
+      "balance": -3.5
+    },
+    {
+      "country": "fr",
+      "year": 2009,
+      "expenditure": 58.0,
+      "revenue": 50.6,
+      "balance": -7.4
+    },
+    {
+      "country": "fr",
+      "year": 2010,
+      "expenditure": 57.7,
+      "revenue": 50.6,
+      "balance": -7.2
+    },
+    {
+      "country": "fr",
+      "year": 2011,
+      "expenditure": 57.0,
+      "revenue": 51.7,
+      "balance": -5.3
+    },
+    {
+      "country": "fr",
+      "year": 2012,
+      "expenditure": 57.9,
+      "revenue": 52.7,
+      "balance": -5.2
+    },
+    {
+      "country": "fr",
+      "year": 2013,
+      "expenditure": 58.6,
+      "revenue": 53.7,
+      "balance": -4.9
+    },
+    {
+      "country": "fr",
+      "year": 2014,
+      "expenditure": 58.4,
+      "revenue": 53.8,
+      "balance": -4.6
+    },
+    {
+      "country": "fr",
+      "year": 2015,
+      "expenditure": 57.6,
+      "revenue": 53.7,
+      "balance": -3.9
+    },
+    {
+      "country": "fr",
+      "year": 2016,
+      "expenditure": 57.4,
+      "revenue": 53.6,
+      "balance": -3.8
+    },
+    {
+      "country": "fr",
+      "year": 2017,
+      "expenditure": 57.7,
+      "revenue": 54.3,
+      "balance": -3.4
+    },
+    {
+      "country": "fr",
+      "year": 2018,
+      "expenditure": 56.4,
+      "revenue": 54.0,
+      "balance": -2.3
+    },
+    {
+      "country": "fr",
+      "year": 2019,
+      "expenditure": 55.3,
+      "revenue": 53.0,
+      "balance": -2.4
+    },
+    {
+      "country": "fr",
+      "year": 2020,
+      "expenditure": 61.7,
+      "revenue": 52.8,
+      "balance": -8.9
+    },
+    {
+      "country": "fr",
+      "year": 2021,
+      "expenditure": 59.5,
+      "revenue": 52.9,
+      "balance": -6.6
+    },
+    {
+      "country": "fr",
+      "year": 2022,
+      "expenditure": 58.4,
+      "revenue": 53.7,
+      "balance": -4.7
+    },
+    {
+      "country": "fr",
+      "year": 2023,
+      "expenditure": 56.8,
+      "revenue": 51.4,
+      "balance": -5.4
+    },
+    {
+      "country": "fr",
+      "year": 2024,
+      "expenditure": 57.2,
+      "revenue": 51.4,
+      "balance": -5.8
+    },
+    {
+      "country": "jp",
+      "year": 1995,
+      "expenditure": 33.4,
+      "revenue": 29.1,
+      "balance": -4.3
+    },
+    {
+      "country": "jp",
+      "year": 1996,
+      "expenditure": 33.8,
+      "revenue": 28.9,
+      "balance": -4.9
+    },
+    {
+      "country": "jp",
+      "year": 1997,
+      "expenditure": 33.1,
+      "revenue": 29.6,
+      "balance": -3.5
+    },
+    {
+      "country": "jp",
+      "year": 1998,
+      "expenditure": 38.6,
+      "revenue": 28.6,
+      "balance": -10.0
+    },
+    {
+      "country": "jp",
+      "year": 1999,
+      "expenditure": 35.6,
+      "revenue": 28.8,
+      "balance": -6.7
+    },
+    {
+      "country": "jp",
+      "year": 2000,
+      "expenditure": 36.0,
+      "revenue": 28.7,
+      "balance": -7.3
+    },
+    {
+      "country": "jp",
+      "year": 2001,
+      "expenditure": 35.2,
+      "revenue": 29.0,
+      "balance": -6.2
+    },
+    {
+      "country": "jp",
+      "year": 2002,
+      "expenditure": 35.4,
+      "revenue": 28.1,
+      "balance": -7.3
+    },
+    {
+      "country": "jp",
+      "year": 2003,
+      "expenditure": 35.0,
+      "revenue": 27.6,
+      "balance": -7.4
+    },
+    {
+      "country": "jp",
+      "year": 2004,
+      "expenditure": 33.7,
+      "revenue": 28.4,
+      "balance": -5.3
+    },
+    {
+      "country": "jp",
+      "year": 2005,
+      "expenditure": 33.5,
+      "revenue": 29.1,
+      "balance": -4.4
+    },
+    {
+      "country": "jp",
+      "year": 2006,
+      "expenditure": 33.1,
+      "revenue": 30.0,
+      "balance": -3.0
+    },
+    {
+      "country": "jp",
+      "year": 2007,
+      "expenditure": 33.1,
+      "revenue": 30.2,
+      "balance": -2.9
+    },
+    {
+      "country": "jp",
+      "year": 2008,
+      "expenditure": 34.1,
+      "revenue": 30.0,
+      "balance": -4.1
+    },
+    {
+      "country": "jp",
+      "year": 2009,
+      "expenditure": 38.7,
+      "revenue": 29.0,
+      "balance": -9.7
+    },
+    {
+      "country": "jp",
+      "year": 2010,
+      "expenditure": 37.7,
+      "revenue": 28.7,
+      "balance": -9.1
+    },
+    {
+      "country": "jp",
+      "year": 2011,
+      "expenditure": 38.6,
+      "revenue": 29.6,
+      "balance": -9.0
+    },
+    {
+      "country": "jp",
+      "year": 2012,
+      "expenditure": 38.6,
+      "revenue": 30.4,
+      "balance": -8.2
+    },
+    {
+      "country": "jp",
+      "year": 2013,
+      "expenditure": 38.8,
+      "revenue": 31.2,
+      "balance": -7.6
+    },
+    {
+      "country": "jp",
+      "year": 2014,
+      "expenditure": 38.4,
+      "revenue": 32.8,
+      "balance": -5.6
+    },
+    {
+      "country": "jp",
+      "year": 2015,
+      "expenditure": 37.3,
+      "revenue": 33.6,
+      "balance": -3.7
+    },
+    {
+      "country": "jp",
+      "year": 2016,
+      "expenditure": 37.2,
+      "revenue": 33.6,
+      "balance": -3.6
+    },
+    {
+      "country": "jp",
+      "year": 2017,
+      "expenditure": 36.7,
+      "revenue": 33.6,
+      "balance": -3.1
+    },
+    {
+      "country": "jp",
+      "year": 2018,
+      "expenditure": 36.7,
+      "revenue": 34.3,
+      "balance": -2.5
+    },
+    {
+      "country": "jp",
+      "year": 2019,
+      "expenditure": 37.3,
+      "revenue": 34.2,
+      "balance": -3.0
+    },
+    {
+      "country": "jp",
+      "year": 2020,
+      "expenditure": 44.5,
+      "revenue": 35.5,
+      "balance": -9.1
+    },
+    {
+      "country": "jp",
+      "year": 2021,
+      "expenditure": 42.5,
+      "revenue": 36.3,
+      "balance": -6.1
+    },
+    {
+      "country": "jp",
+      "year": 2022,
+      "expenditure": 41.8,
+      "revenue": 37.5,
+      "balance": -4.2
+    },
+    {
+      "country": "jp",
+      "year": 2023,
+      "expenditure": 39.2,
+      "revenue": 36.9,
+      "balance": -2.3
+    },
+    {
+      "country": "jp",
+      "year": 2024,
+      "expenditure": 39.1,
+      "revenue": 37.6,
+      "balance": -1.5
+    },
+    {
+      "country": "uk",
+      "year": 1995,
+      "expenditure": 37.6,
+      "revenue": 32.6,
+      "balance": -5.0
+    },
+    {
+      "country": "uk",
+      "year": 1996,
+      "expenditure": 35.7,
+      "revenue": 32.1,
+      "balance": -3.6
+    },
+    {
+      "country": "uk",
+      "year": 1997,
+      "expenditure": 34.9,
+      "revenue": 32.9,
+      "balance": -2.0
+    },
+    {
+      "country": "uk",
+      "year": 1998,
+      "expenditure": 34.5,
+      "revenue": 34.3,
+      "balance": -0.2
+    },
+    {
+      "country": "uk",
+      "year": 1999,
+      "expenditure": 33.9,
+      "revenue": 34.7,
+      "balance": 0.8
+    },
+    {
+      "country": "uk",
+      "year": 2000,
+      "expenditure": 33.9,
+      "revenue": 35.3,
+      "balance": 1.4
+    },
+    {
+      "country": "uk",
+      "year": 2001,
+      "expenditure": 34.7,
+      "revenue": 35.0,
+      "balance": 0.3
+    },
+    {
+      "country": "uk",
+      "year": 2002,
+      "expenditure": 35.9,
+      "revenue": 34.0,
+      "balance": -2.0
+    },
+    {
+      "country": "uk",
+      "year": 2003,
+      "expenditure": 37.2,
+      "revenue": 34.0,
+      "balance": -3.2
+    },
+    {
+      "country": "uk",
+      "year": 2004,
+      "expenditure": 38.0,
+      "revenue": 34.9,
+      "balance": -3.2
+    },
+    {
+      "country": "uk",
+      "year": 2005,
+      "expenditure": 38.4,
+      "revenue": 35.3,
+      "balance": -3.2
+    },
+    {
+      "country": "uk",
+      "year": 2006,
+      "expenditure": 38.4,
+      "revenue": 35.7,
+      "balance": -2.8
+    },
+    {
+      "country": "uk",
+      "year": 2007,
+      "expenditure": 38.7,
+      "revenue": 36.0,
+      "balance": -2.7
+    },
+    {
+      "country": "uk",
+      "year": 2008,
+      "expenditure": 41.0,
+      "revenue": 35.9,
+      "balance": -5.1
+    },
+    {
+      "country": "uk",
+      "year": 2009,
+      "expenditure": 44.6,
+      "revenue": 34.6,
+      "balance": -10.1
+    },
+    {
+      "country": "uk",
+      "year": 2010,
+      "expenditure": 44.7,
+      "revenue": 35.5,
+      "balance": -9.2
+    },
+    {
+      "country": "uk",
+      "year": 2011,
+      "expenditure": 43.5,
+      "revenue": 36.1,
+      "balance": -7.4
+    },
+    {
+      "country": "uk",
+      "year": 2012,
+      "expenditure": 43.6,
+      "revenue": 36.1,
+      "balance": -7.4
+    },
+    {
+      "country": "uk",
+      "year": 2013,
+      "expenditure": 41.8,
+      "revenue": 36.5,
+      "balance": -5.3
+    },
+    {
+      "country": "uk",
+      "year": 2014,
+      "expenditure": 41.2,
+      "revenue": 35.7,
+      "balance": -5.5
+    },
+    {
+      "country": "uk",
+      "year": 2015,
+      "expenditure": 40.4,
+      "revenue": 35.8,
+      "balance": -4.6
+    },
+    {
+      "country": "uk",
+      "year": 2016,
+      "expenditure": 39.6,
+      "revenue": 36.3,
+      "balance": -3.3
+    },
+    {
+      "country": "uk",
+      "year": 2017,
+      "expenditure": 39.2,
+      "revenue": 36.7,
+      "balance": -2.5
+    },
+    {
+      "country": "uk",
+      "year": 2018,
+      "expenditure": 38.9,
+      "revenue": 36.6,
+      "balance": -2.3
+    },
+    {
+      "country": "uk",
+      "year": 2019,
+      "expenditure": 38.8,
+      "revenue": 36.3,
+      "balance": -2.5
+    },
+    {
+      "country": "uk",
+      "year": 2020,
+      "expenditure": 50.0,
+      "revenue": 36.8,
+      "balance": -13.2
+    },
+    {
+      "country": "uk",
+      "year": 2021,
+      "expenditure": 45.8,
+      "revenue": 38.0,
+      "balance": -7.7
+    },
+    {
+      "country": "uk",
+      "year": 2022,
+      "expenditure": 44.1,
+      "revenue": 39.5,
+      "balance": -4.6
+    },
+    {
+      "country": "uk",
+      "year": 2023,
+      "expenditure": 44.8,
+      "revenue": 38.8,
+      "balance": -6.1
+    },
+    {
+      "country": "uk",
+      "year": 2024,
+      "expenditure": 44.0,
+      "revenue": 38.3,
+      "balance": -5.7
+    },
+    {
+      "country": "us",
+      "year": 2001,
+      "expenditure": 32.8,
+      "revenue": 32.3,
+      "balance": -0.5
+    },
+    {
+      "country": "us",
+      "year": 2002,
+      "expenditure": 33.7,
+      "revenue": 29.9,
+      "balance": -3.8
+    },
+    {
+      "country": "us",
+      "year": 2003,
+      "expenditure": 34.0,
+      "revenue": 29.3,
+      "balance": -4.8
+    },
+    {
+      "country": "us",
+      "year": 2004,
+      "expenditure": 33.7,
+      "revenue": 29.5,
+      "balance": -4.2
+    },
+    {
+      "country": "us",
+      "year": 2005,
+      "expenditure": 33.9,
+      "revenue": 30.9,
+      "balance": -3.1
+    },
+    {
+      "country": "us",
+      "year": 2006,
+      "expenditure": 33.7,
+      "revenue": 31.7,
+      "balance": -2.0
+    },
+    {
+      "country": "us",
+      "year": 2007,
+      "expenditure": 34.6,
+      "revenue": 31.6,
+      "balance": -2.9
+    },
+    {
+      "country": "us",
+      "year": 2008,
+      "expenditure": 37.1,
+      "revenue": 30.5,
+      "balance": -6.6
+    },
+    {
+      "country": "us",
+      "year": 2009,
+      "expenditure": 41.4,
+      "revenue": 28.2,
+      "balance": -13.2
+    },
+    {
+      "country": "us",
+      "year": 2010,
+      "expenditure": 39.8,
+      "revenue": 28.8,
+      "balance": -11.0
+    },
+    {
+      "country": "us",
+      "year": 2011,
+      "expenditure": 38.8,
+      "revenue": 29.1,
+      "balance": -9.7
+    },
+    {
+      "country": "us",
+      "year": 2012,
+      "expenditure": 37.2,
+      "revenue": 29.1,
+      "balance": -8.1
+    },
+    {
+      "country": "us",
+      "year": 2013,
+      "expenditure": 35.8,
+      "revenue": 31.2,
+      "balance": -4.6
+    },
+    {
+      "country": "us",
+      "year": 2014,
+      "expenditure": 35.3,
+      "revenue": 31.3,
+      "balance": -4.0
+    },
+    {
+      "country": "us",
+      "year": 2015,
+      "expenditure": 35.0,
+      "revenue": 31.5,
+      "balance": -3.5
+    },
+    {
+      "country": "us",
+      "year": 2016,
+      "expenditure": 35.3,
+      "revenue": 31.0,
+      "balance": -4.4
+    },
+    {
+      "country": "us",
+      "year": 2017,
+      "expenditure": 35.2,
+      "revenue": 30.4,
+      "balance": -4.8
+    },
+    {
+      "country": "us",
+      "year": 2018,
+      "expenditure": 35.3,
+      "revenue": 30.0,
+      "balance": -5.3
+    },
+    {
+      "country": "us",
+      "year": 2019,
+      "expenditure": 35.8,
+      "revenue": 30.0,
+      "balance": -5.8
+    },
+    {
+      "country": "us",
+      "year": 2020,
+      "expenditure": 44.7,
+      "revenue": 30.6,
+      "balance": -14.1
+    },
+    {
+      "country": "us",
+      "year": 2021,
+      "expenditure": 43.2,
+      "revenue": 31.8,
+      "balance": -11.4
+    },
+    {
+      "country": "us",
+      "year": 2022,
+      "expenditure": 36.8,
+      "revenue": 33.1,
+      "balance": -3.7
+    },
+    {
+      "country": "us",
+      "year": 2023,
+      "expenditure": 37.7,
+      "revenue": 29.9,
+      "balance": -7.8
+    },
+    {
+      "country": "us",
+      "year": 2024,
+      "expenditure": 37.9,
+      "revenue": 29.9,
+      "balance": -8.0
+    }
+  ],
+  "common": [
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "fetched": "2026-10-28T14:17:34.496828+09:00",
+  "metadata": {
+    "canada:fgbus": {
+      "database": "canada",
+      "code": "fgbus",
+      "startdate": "2001-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United States: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 24,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "111",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgeus": {
+      "database": "canada",
+      "code": "fgeus",
+      "startdate": "2001-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United States: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 24,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "111",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgrus": {
+      "database": "canada",
+      "code": "fgrus",
+      "startdate": "2001-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United States: General Government Revenue as a % of GDP (%)",
+      "numobs": 24,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "111",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgbuk": {
+      "database": "canada",
+      "code": "fgbuk",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United Kingdom: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "112",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgeuk": {
+      "database": "canada",
+      "code": "fgeuk",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United Kingdom: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "112",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgruk": {
+      "database": "canada",
+      "code": "fgruk",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "United Kingdom: General Government Revenue as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "112",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgbfr": {
+      "database": "canada",
+      "code": "fgbfr",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "France: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "132",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgefr": {
+      "database": "canada",
+      "code": "fgefr",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "France: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "132",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgrfr": {
+      "database": "canada",
+      "code": "fgrfr",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "France: General Government Revenue as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "132",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgbde": {
+      "database": "canada",
+      "code": "fgbde",
+      "startdate": "1991-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Germany: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 34,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "134",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgede": {
+      "database": "canada",
+      "code": "fgede",
+      "startdate": "1991-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Germany: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 34,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "134",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgrde": {
+      "database": "canada",
+      "code": "fgrde",
+      "startdate": "1991-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Germany: General Government Revenue as a % of GDP (%)",
+      "numobs": 34,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "134",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgbca": {
+      "database": "canada",
+      "code": "fgbca",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Canada: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T06:03:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "156",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgeca": {
+      "database": "canada",
+      "code": "fgeca",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Canada: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "156",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgrca": {
+      "database": "canada",
+      "code": "fgrca",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Canada: General Government Revenue as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "156",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgbjp": {
+      "database": "canada",
+      "code": "fgbjp",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Japan: General Government Overal Balance as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T06:03:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "158",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgejp": {
+      "database": "canada",
+      "code": "fgejp",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Japan: General Government Total Expenditure as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "158",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "canada:fgrjp": {
+      "database": "canada",
+      "code": "fgrjp",
+      "startdate": "1980-12-31T00:00:00.000",
+      "enddate": "2024-12-31T00:00:00.000",
+      "frequency": "A",
+      "descriptor": "Japan: General Government Revenue as a % of GDP (%)",
+      "numobs": 45,
+      "datetimemod": "2025-11-08T05:47:00.000",
+      "magnitude": 0,
+      "decprecision": 1,
+      "diftype": 1,
+      "aggtype": "NST",
+      "datatype": "%",
+      "group": "R37",
+      "geography1": "158",
+      "geography2": "",
+      "shortsource": "DoFC",
+      "longsource": "Department of Finance Canada"
+    },
+    "anz:aunfu": {
+      "database": "anz",
+      "code": "aunfu",
+      "startdate": "2002-09-30T00:00:00.000",
+      "enddate": "2026-06-30T00:00:00.000",
+      "frequency": "Q",
+      "descriptor": "Australia: Gen Govt Operating Statement: GFS Net Lending/Borrowing (NSA, Mil.A$)",
+      "numobs": 96,
+      "datetimemod": "2026-09-01T10:32:00.000",
+      "magnitude": 6,
+      "decprecision": 0,
+      "diftype": 1,
+      "aggtype": "SUM",
+      "datatype": "LocCur",
+      "group": "A34",
+      "geography1": "193",
+      "geography2": "",
+      "shortsource": "ABS",
+      "longsource": "Australian Bureau of Statistics"
+    },
+    "anz:aunfur": {
+      "database": "anz",
+      "code": "aunfur",
+      "startdate": "2002-09-30T00:00:00.000",
+      "enddate": "2026-06-30T00:00:00.000",
+      "frequency": "Q",
+      "descriptor": "Australia: General Government Operating Statement: GFS Revenue (NSA, Mil.A$)",
+      "numobs": 96,
+      "datetimemod": "2026-09-01T10:32:00.000",
+      "magnitude": 6,
+      "decprecision": 0,
+      "diftype": 0,
+      "aggtype": "SUM",
+      "datatype": "LocCur",
+      "group": "A34",
+      "geography1": "193",
+      "geography2": "",
+      "shortsource": "ABS",
+      "longsource": "Australian Bureau of Statistics"
+    },
+    "anz:aunfue": {
+      "database": "anz",
+      "code": "aunfue",
+      "startdate": "2002-09-30T00:00:00.000",
+      "enddate": "2026-06-30T00:00:00.000",
+      "frequency": "Q",
+      "descriptor": "Australia: General Government Operating Statement: GFS Expenses (NSA, Mil.A$)",
+      "numobs": 96,
+      "datetimemod": "2026-09-01T10:32:00.000",
+      "magnitude": 6,
+      "decprecision": 0,
+      "diftype": 0,
+      "aggtype": "SUM",
+      "datatype": "LocCur",
+      "group": "A34",
+      "geography1": "193",
+      "geography2": "",
+      "shortsource": "ABS",
+      "longsource": "Australian Bureau of Statistics"
+    },
+    "anz:aunfun": {
+      "database": "anz",
+      "code": "aunfun",
+      "startdate": "2002-09-30T00:00:00.000",
+      "enddate": "2026-06-30T00:00:00.000",
+      "frequency": "Q",
+      "descriptor": "Australia: Gen Gov Operating Statement: Net Acquisitn of Nonfin Ast(NSA, Mil.A$)",
+      "numobs": 96,
+      "datetimemod": "2026-09-01T10:32:00.000",
+      "magnitude": 6,
+      "decprecision": 0,
+      "diftype": 1,
+      "aggtype": "SUM",
+      "datatype": "LocCur",
+      "group": "A34",
+      "geography1": "193",
+      "geography2": "",
+      "shortsource": "ABS",
+      "longsource": "Australian Bureau of Statistics"
+    },
+    "anz:aunngdp": {
+      "database": "anz",
+      "code": "aunngdp",
+      "startdate": "1959-09-30T00:00:00.000",
+      "enddate": "2026-06-30T00:00:00.000",
+      "frequency": "Q",
+      "descriptor": "Australia: Gross Domestic Product (NSA, Mil.A$)",
+      "numobs": 268,
+      "datetimemod": "2026-09-02T10:32:00.000",
+      "magnitude": 6,
+      "decprecision": 0,
+      "diftype": 0,
+      "aggtype": "SUM",
+      "datatype": "LocCur",
+      "group": "F10",
+      "geography1": "193",
+      "geography2": "",
+      "shortsource": "ABS",
+      "longsource": "Australian Bureau of Statistics"
+    }
+  },
+  "au_ttm": [
+    {
+      "quarter": "2003Q2",
+      "expenditure": 34.57804396577015,
+      "revenue": 35.625226864766226,
+      "balance": 1.0471828989960767
+    },
+    {
+      "quarter": "2003Q3",
+      "expenditure": 34.55621171227487,
+      "revenue": 35.79808840220527,
+      "balance": 1.2418766899304048
+    },
+    {
+      "quarter": "2003Q4",
+      "expenditure": 34.374568071872844,
+      "revenue": 35.816832426910246,
+      "balance": 1.4422643550374088
+    },
+    {
+      "quarter": "2004Q1",
+      "expenditure": 33.79667423237905,
+      "revenue": 36.02415522765559,
+      "balance": 2.2274809952765415
+    },
+    {
+      "quarter": "2004Q2",
+      "expenditure": 34.309565900608916,
+      "revenue": 35.78841554299976,
+      "balance": 1.4788496423908397
+    },
+    {
+      "quarter": "2004Q3",
+      "expenditure": 34.12313731092494,
+      "revenue": 35.74900424153988,
+      "balance": 1.6258669306149383
+    },
+    {
+      "quarter": "2004Q4",
+      "expenditure": 34.142769668667206,
+      "revenue": 35.63876951698155,
+      "balance": 1.4959998483143373
+    },
+    {
+      "quarter": "2005Q1",
+      "expenditure": 34.290029713683126,
+      "revenue": 35.61116267829583,
+      "balance": 1.3211329646127061
+    },
+    {
+      "quarter": "2005Q2",
+      "expenditure": 34.46387537354493,
+      "revenue": 36.36639228420701,
+      "balance": 1.902516910662078
+    },
+    {
+      "quarter": "2005Q3",
+      "expenditure": 34.420176064715676,
+      "revenue": 36.26837972876517,
+      "balance": 1.8482036640494885
+    },
+    {
+      "quarter": "2005Q4",
+      "expenditure": 34.41299399958618,
+      "revenue": 36.24074074074074,
+      "balance": 1.8277467411545625
+    },
+    {
+      "quarter": "2006Q1",
+      "expenditure": 34.36675964455012,
+      "revenue": 36.492142606734035,
+      "balance": 2.125382962183913
+    },
+    {
+      "quarter": "2006Q2",
+      "expenditure": 34.51225796657971,
+      "revenue": 36.119755359989135,
+      "balance": 1.6074973934094205
+    },
+    {
+      "quarter": "2006Q3",
+      "expenditure": 34.51592593064051,
+      "revenue": 35.78622073342805,
+      "balance": 1.2702948027875396
+    },
+    {
+      "quarter": "2006Q4",
+      "expenditure": 34.36051152936842,
+      "revenue": 35.6967131321195,
+      "balance": 1.3362016027510824
+    },
+    {
+      "quarter": "2007Q1",
+      "expenditure": 34.42869304928884,
+      "revenue": 35.32725158230967,
+      "balance": 0.8985585330208293
+    },
+    {
+      "quarter": "2007Q2",
+      "expenditure": 33.91512442991011,
+      "revenue": 35.50083588743382,
+      "balance": 1.5857114575237201
+    },
+    {
+      "quarter": "2007Q3",
+      "expenditure": 33.810101445759315,
+      "revenue": 35.538093826095555,
+      "balance": 1.7279923803362356
+    },
+    {
+      "quarter": "2007Q4",
+      "expenditure": 33.81135077995795,
+      "revenue": 35.6541516048483,
+      "balance": 1.8428008248903536
+    },
+    {
+      "quarter": "2008Q1",
+      "expenditure": 33.69858109416941,
+      "revenue": 35.76069886819603,
+      "balance": 2.0621177740266208
+    },
+    {
+      "quarter": "2008Q2",
+      "expenditure": 34.17800322608749,
+      "revenue": 35.45575041214241,
+      "balance": 1.2777471860549112
+    },
+    {
+      "quarter": "2008Q3",
+      "expenditure": 33.953691496374425,
+      "revenue": 34.73599208965063,
+      "balance": 0.782300593276203
+    },
+    {
+      "quarter": "2008Q4",
+      "expenditure": 34.505429646806874,
+      "revenue": 34.11251802088003,
+      "balance": -0.3929116259268457
+    },
+    {
+      "quarter": "2009Q1",
+      "expenditure": 35.05473328697725,
+      "revenue": 33.20878116618655,
+      "balance": -1.8459521207907024
+    },
+    {
+      "quarter": "2009Q2",
+      "expenditure": 36.332876338881796,
+      "revenue": 32.922486102495824,
+      "balance": -3.410390236385977
+    },
+    {
+      "quarter": "2009Q3",
+      "expenditure": 37.11537944164244,
+      "revenue": 33.02257200236117,
+      "balance": -4.092807439281266
+    },
+    {
+      "quarter": "2009Q4",
+      "expenditure": 37.26544557454004,
+      "revenue": 32.76088067536532,
+      "balance": -4.504564899174722
+    },
+    {
+      "quarter": "2010Q1",
+      "expenditure": 38.120889998648394,
+      "revenue": 32.99649910114168,
+      "balance": -5.124390897506713
+    },
+    {
+      "quarter": "2010Q2",
+      "expenditure": 37.31245534196117,
+      "revenue": 32.06773884169943,
+      "balance": -5.244716500261739
+    },
+    {
+      "quarter": "2010Q3",
+      "expenditure": 37.25778010272728,
+      "revenue": 31.344357275421196,
+      "balance": -5.913422827306084
+    },
+    {
+      "quarter": "2010Q4",
+      "expenditure": 37.072173433382076,
+      "revenue": 31.18767018938631,
+      "balance": -5.884503243995762
+    },
+    {
+      "quarter": "2011Q1",
+      "expenditure": 36.18451053594247,
+      "revenue": 30.96883422758495,
+      "balance": -5.215676308357524
+    },
+    {
+      "quarter": "2011Q2",
+      "expenditure": 35.755061137031426,
+      "revenue": 31.19165733746278,
+      "balance": -4.5634037995686425
+    },
+    {
+      "quarter": "2011Q3",
+      "expenditure": 35.55794244396998,
+      "revenue": 31.115733217880244,
+      "balance": -4.442209226089732
+    },
+    {
+      "quarter": "2011Q4",
+      "expenditure": 35.39477978600475,
+      "revenue": 31.26544083171673,
+      "balance": -4.129338954288014
+    },
+    {
+      "quarter": "2012Q1",
+      "expenditure": 35.51899852941867,
+      "revenue": 31.519191656378855,
+      "balance": -3.9998068730398115
+    },
+    {
+      "quarter": "2012Q2",
+      "expenditure": 36.10421729113939,
+      "revenue": 32.16239854905474,
+      "balance": -3.941818742084651
+    },
+    {
+      "quarter": "2012Q3",
+      "expenditure": 36.34282330360943,
+      "revenue": 32.643638353614854,
+      "balance": -3.6991849499945806
+    },
+    {
+      "quarter": "2012Q4",
+      "expenditure": 36.38897123052584,
+      "revenue": 32.95465674272843,
+      "balance": -3.4343144877974074
+    },
+    {
+      "quarter": "2013Q1",
+      "expenditure": 36.38537020982917,
+      "revenue": 33.12054919442743,
+      "balance": -3.264821015401736
+    },
+    {
+      "quarter": "2013Q2",
+      "expenditure": 35.474484329391764,
+      "revenue": 33.24991999834167,
+      "balance": -2.224564331050101
+    },
+    {
+      "quarter": "2013Q3",
+      "expenditure": 35.554639323563904,
+      "revenue": 33.24284472051285,
+      "balance": -2.3117946030510526
+    },
+    {
+      "quarter": "2013Q4",
+      "expenditure": 35.51294996334078,
+      "revenue": 33.079044374142185,
+      "balance": -2.4339055891985963
+    },
+    {
+      "quarter": "2014Q1",
+      "expenditure": 35.62507920852955,
+      "revenue": 33.44858566504423,
+      "balance": -2.176493543485326
+    },
+    {
+      "quarter": "2014Q2",
+      "expenditure": 36.10626047038038,
+      "revenue": 33.480066512400725,
+      "balance": -2.6261939579796514
+    },
+    {
+      "quarter": "2014Q3",
+      "expenditure": 36.29599591388197,
+      "revenue": 33.67871349192837,
+      "balance": -2.6172824219535977
+    },
+    {
+      "quarter": "2014Q4",
+      "expenditure": 36.58009980272702,
+      "revenue": 33.84746485400133,
+      "balance": -2.7326349487256856
+    },
+    {
+      "quarter": "2015Q1",
+      "expenditure": 36.57205347609371,
+      "revenue": 33.88527094783768,
+      "balance": -2.686782528256024
+    },
+    {
+      "quarter": "2015Q2",
+      "expenditure": 36.7978160237971,
+      "revenue": 33.93508778276991,
+      "balance": -2.862728241027185
+    },
+    {
+      "quarter": "2015Q3",
+      "expenditure": 36.78612808410474,
+      "revenue": 33.982657056090154,
+      "balance": -2.8034710280145867
+    },
+    {
+      "quarter": "2015Q4",
+      "expenditure": 36.72652156082446,
+      "revenue": 34.21948144660298,
+      "balance": -2.5070401142214864
+    },
+    {
+      "quarter": "2016Q1",
+      "expenditure": 36.925668495501384,
+      "revenue": 34.25217089603617,
+      "balance": -2.673497599465216
+    },
+    {
+      "quarter": "2016Q2",
+      "expenditure": 37.07913772800462,
+      "revenue": 34.31099949532575,
+      "balance": -2.768138232678859
+    },
+    {
+      "quarter": "2016Q3",
+      "expenditure": 37.27801228782275,
+      "revenue": 34.469597121152304,
+      "balance": -2.8084151666704438
+    },
+    {
+      "quarter": "2016Q4",
+      "expenditure": 37.185273444669285,
+      "revenue": 34.27412427165566,
+      "balance": -2.911149173013629
+    },
+    {
+      "quarter": "2017Q1",
+      "expenditure": 36.973597031069126,
+      "revenue": 34.19762133236932,
+      "balance": -2.7759756986997974
+    },
+    {
+      "quarter": "2017Q2",
+      "expenditure": 36.784925196620605,
+      "revenue": 34.35396411727139,
+      "balance": -2.4309610793492125
+    },
+    {
+      "quarter": "2017Q3",
+      "expenditure": 36.580275043855856,
+      "revenue": 34.44775087084206,
+      "balance": -2.1325241730137967
+    },
+    {
+      "quarter": "2017Q4",
+      "expenditure": 36.65380812609627,
+      "revenue": 34.78308954454666,
+      "balance": -1.8707185815496163
+    },
+    {
+      "quarter": "2018Q1",
+      "expenditure": 36.638897929618196,
+      "revenue": 34.953322440624326,
+      "balance": -1.685575488993871
+    },
+    {
+      "quarter": "2018Q2",
+      "expenditure": 36.415912355700165,
+      "revenue": 35.39834974644767,
+      "balance": -1.0175626092524965
+    },
+    {
+      "quarter": "2018Q3",
+      "expenditure": 36.334184792644926,
+      "revenue": 35.56029260596719,
+      "balance": -0.7738921866777395
+    },
+    {
+      "quarter": "2018Q4",
+      "expenditure": 36.36743432254159,
+      "revenue": 35.635880555100115,
+      "balance": -0.7315537674414694
+    },
+    {
+      "quarter": "2019Q1",
+      "expenditure": 36.33507147468891,
+      "revenue": 35.599606908658124,
+      "balance": -0.7354645660307887
+    },
+    {
+      "quarter": "2019Q2",
+      "expenditure": 36.52278428895475,
+      "revenue": 35.52876070550869,
+      "balance": -0.9940235834460678
+    },
+    {
+      "quarter": "2019Q3",
+      "expenditure": 36.565601112900126,
+      "revenue": 35.28684576877451,
+      "balance": -1.278755344125612
+    },
+    {
+      "quarter": "2019Q4",
+      "expenditure": 36.61472652921027,
+      "revenue": 35.07978738009926,
+      "balance": -1.5349391491110134
+    },
+    {
+      "quarter": "2020Q1",
+      "expenditure": 36.98403624514415,
+      "revenue": 34.826903281223835,
+      "balance": -2.157132963920309
+    },
+    {
+      "quarter": "2020Q2",
+      "expenditure": 41.52848206591634,
+      "revenue": 34.274506964785424,
+      "balance": -7.253975101130917
+    },
+    {
+      "quarter": "2020Q3",
+      "expenditure": 45.72124884264597,
+      "revenue": 34.353257644364554,
+      "balance": -11.367991198281414
+    },
+    {
+      "quarter": "2020Q4",
+      "expenditure": 47.66218439653333,
+      "revenue": 34.33949374280068,
+      "balance": -13.32269065373265
+    },
+    {
+      "quarter": "2021Q1",
+      "expenditure": 48.185469003796676,
+      "revenue": 34.31251307909238,
+      "balance": -13.872955924704288
+    },
+    {
+      "quarter": "2021Q2",
+      "expenditure": 43.97182623051014,
+      "revenue": 34.68163669170545,
+      "balance": -9.29018953880469
+    },
+    {
+      "quarter": "2021Q3",
+      "expenditure": 41.40831089306306,
+      "revenue": 34.59361674514753,
+      "balance": -6.814694147915532
+    },
+    {
+      "quarter": "2021Q4",
+      "expenditure": 40.196711512423526,
+      "revenue": 35.059887425225625,
+      "balance": -5.136824087197902
+    },
+    {
+      "quarter": "2022Q1",
+      "expenditure": 39.55769806517154,
+      "revenue": 35.327451671176604,
+      "balance": -4.230246393994937
+    },
+    {
+      "quarter": "2022Q2",
+      "expenditure": 39.17605445157734,
+      "revenue": 35.41389412136238,
+      "balance": -3.76216033021496
+    },
+    {
+      "quarter": "2022Q3",
+      "expenditure": 37.658050510819585,
+      "revenue": 35.10707504661955,
+      "balance": -2.5509754642000315
+    },
+    {
+      "quarter": "2022Q4",
+      "expenditure": 36.662987992808524,
+      "revenue": 34.76451136509567,
+      "balance": -1.8984766277128549
+    },
+    {
+      "quarter": "2023Q1",
+      "expenditure": 36.31372336723858,
+      "revenue": 34.70915747639519,
+      "balance": -1.6045658908433866
+    },
+    {
+      "quarter": "2023Q2",
+      "expenditure": 36.553080425639905,
+      "revenue": 35.58913533259812,
+      "balance": -0.9639450930417918
+    },
+    {
+      "quarter": "2023Q3",
+      "expenditure": 36.74857553687166,
+      "revenue": 35.974165331432516,
+      "balance": -0.7744102054391525
+    },
+    {
+      "quarter": "2023Q4",
+      "expenditure": 37.165926508677614,
+      "revenue": 36.01321832855414,
+      "balance": -1.15270818012348
+    },
+    {
+      "quarter": "2024Q1",
+      "expenditure": 37.46228016785726,
+      "revenue": 36.24797197605377,
+      "balance": -1.2143081918034857
+    },
+    {
+      "quarter": "2024Q2",
+      "expenditure": 37.75703584854619,
+      "revenue": 36.05563380938611,
+      "balance": -1.7014020391600824
+    },
+    {
+      "quarter": "2024Q3",
+      "expenditure": 38.25790308547347,
+      "revenue": 36.22279568874184,
+      "balance": -2.0351073967316355
+    },
+    {
+      "quarter": "2024Q4",
+      "expenditure": 38.65721691449896,
+      "revenue": 36.401605665743986,
+      "balance": -2.255611248754971
+    },
+    {
+      "quarter": "2025Q1",
+      "expenditure": 39.039440885942696,
+      "revenue": 36.58244441495019,
+      "balance": -2.456996470992504
+    },
+    {
+      "quarter": "2025Q2",
+      "expenditure": 39.14304295408158,
+      "revenue": 36.277552995809884,
+      "balance": -2.8654899582716964
+    },
+    {
+      "quarter": "2025Q3",
+      "expenditure": 39.5876803161037,
+      "revenue": 36.25197013849443,
+      "balance": -3.3357101776092737
+    },
+    {
+      "quarter": "2025Q4",
+      "expenditure": 39.68322148590792,
+      "revenue": 36.4570096304309,
+      "balance": -3.226211855477023
+    },
+    {
+      "quarter": "2026Q1",
+      "expenditure": 39.61921193848197,
+      "revenue": 36.52488105775614,
+      "balance": -3.0943308807258245
+    },
+    {
+      "quarter": "2026Q2",
+      "expenditure": 39.965447572481864,
+      "revenue": 36.67008751869569,
+      "balance": -3.2953600537861796
+    }
+  ]
+}
