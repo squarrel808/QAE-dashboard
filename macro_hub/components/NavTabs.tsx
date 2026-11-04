@@ -17,7 +17,8 @@ const TABS = [
   { href: '/surprise', label: 'Surprise Index' },
   { href: '/pmi', label: 'PMI' },
   { href: '/policy', label: 'Policy Tone' },
-  { href: '/equity', label: 'Equity' },
+  { href: '/equity', label: 'Factor' },
+  { href: '/theme', label: 'Theme' },
   { href: '/market-rotation', label: 'Market Rotation' },
   { href: '/weekly/index.html', label: '주간 시황' },
 ]
