@@ -9,7 +9,7 @@ const target=path.join(hub,'public/embeds/country-indicators/index.html')
 if (!process.env.VERCEL && fs.existsSync(path.resolve(source,'../PCA_Four_Axis/dashboard_data.json'))) {
   execFileSync('python',['-X','utf8',path.join(source,'build.py')],{stdio:'inherit'})
 }
-if (fs.existsSync(path.join(source,'index.html'))) {
+if (!process.env.VERCEL && fs.existsSync(path.join(source,'index.html'))) {
   fs.mkdirSync(path.dirname(target),{recursive:true})
   fs.copyFileSync(path.join(source,'index.html'),target)
 }

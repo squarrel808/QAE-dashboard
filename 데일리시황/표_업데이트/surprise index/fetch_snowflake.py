@@ -27,7 +27,7 @@ def collect(config, retrieved_at):
             cur.execute(f"""SELECT SERIES_ID,DISPLAY_NAME,SOURCE_PROVIDER,SOURCE_SERIES_KEY,FREQUENCY,GEOGRAPHY_CODE
                 FROM {database}.CORE.SERIES_MASTER WHERE IS_ACTIVE=TRUE AND
                 ((DISPLAY_NAME ILIKE '%Citi%Economic Surprise Index%' AND FREQUENCY='D') OR
-                 (DISPLAY_NAME ILIKE '%Citigroup Inflation Surprise Index%' AND SOURCE_PROVIDER='HAVER' AND FREQUENCY='M'))
+                 (DISPLAY_NAME ILIKE '%Citi%Inflation Surprise Index%' AND SOURCE_PROVIDER='HAVER' AND FREQUENCY='M'))
                 ORDER BY SERIES_ID""")
             masters=cur.fetchall()
             if not masters: raise ValueError('No active Citi series in Snowflake')
@@ -41,7 +41,12 @@ def collect(config, retrieved_at):
     for m in masters:
         kind='economic' if m['FREQUENCY']=='D' else 'inflation'
         code=m['GEOGRAPHY_CODE']
-        if kind=='inflation' and 'Asia-Pacific' in m['DISPLAY_NAME']: code='APAC'
+        # SERIES_MASTER display names were shortened in November 2026.
+        # Preserve the reviewed Haver series identities rather than matching
+        # geographic words that disappeared from the new display labels.
+        source_key=m['SOURCE_SERIES_KEY'] or ''
+        if kind=='inflation' and int(m['SERIES_ID'])==36 and source_key.endswith('N505VCIS@G10'): code='APAC'
+        if kind=='inflation' and int(m['SERIES_ID'])==1775 and source_key.endswith('N110VCIS@G10'): code='G10'
         if code=='DM' and 'G10' in m['DISPLAY_NAME']: code='G10'
         if code not in NAMES or code in countries[kind]: raise ValueError('Unknown or duplicate country: '+str(code))
         countries[kind].add(code)

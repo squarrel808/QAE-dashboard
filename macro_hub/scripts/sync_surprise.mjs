@@ -16,7 +16,7 @@ export function webReport(html) {
 }
 
 export function syncSurprise(source = path.resolve(root, '../데일리시황/표_업데이트/surprise index/index.html'), destination = path.join(root, 'public/embeds/surprise.html')) {
-  if (!fs.existsSync(source)) {
+  if (process.env.VERCEL || !fs.existsSync(source)) {
     // Vercel may receive macro_hub alone; retain the committed public snapshot.
     if (!fs.existsSync(destination)) throw new Error('Surprise source and public snapshot are both missing')
     webReport(fs.readFileSync(destination, 'utf8'))
