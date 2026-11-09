@@ -34,13 +34,8 @@ function chgN(p: Series, m: number): number | null {
 
 // 초록(+)/빨강(-) 히트맵 색 — scale 기준으로 정규화
 function heatColor(pct: number | null, scale = 0.08): string {
-  if (pct == null || !Number.isFinite(pct) || pct === 0) return '#f4f3f1'
-  const t = Math.max(-1, Math.min(1, pct / scale))
-  const lerp = (a: number, b: number, x: number) => Math.round(a + (b - a) * x)
-  if (t >= 0) {
-    return `rgb(${lerp(238, 26, t)},${lerp(243, 122, t)},${lerp(239, 76, t)})`
-  }
-  return `rgb(${lerp(247, 192, -t)},${lerp(238, 57, -t)},${lerp(236, 59, -t)})`
+  if (pct == null || !Number.isFinite(pct)) return '#f1f3f5'
+  return `rgba(${pct >= 0 ? '37,136,117' : '198,95,81'},${.06+.62*Math.min(1,Math.abs(pct)/scale)})`
 }
 
 // 한 시계열을 window(months) 구간에서 100-리베이스 (구간 첫 유효값 = 100)
@@ -223,9 +218,9 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
                   {factors.map((f) => {
                     const pc = cell(sec, f)
                     return (
-                      <td key={f} className="text-center">
+                      <td key={f} className="text-center" title={`${sec} · ${f} · ${rHeat}개월: ${pc == null ? "자료 없음" : (pc*100).toFixed(2)+"%"}`}>
                         <span className="block py-1.5 rounded font-bold" style={{ background: heatColor(pc), minWidth: 26 }}>
-                          {pc == null ? '—' : (pc * 100).toFixed(0)}
+                          {pc == null ? '—' : (pc * 100).toFixed(2)}
                         </span>
                       </td>
                     )

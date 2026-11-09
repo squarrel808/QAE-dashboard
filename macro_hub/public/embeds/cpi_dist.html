@@ -115,6 +115,12 @@ function drawRidge(cv,state,sharedMaxY){
   cv.style.width='100%';cv.style.height='auto';cv.style.maxWidth='none';
   const x=cv.getContext('2d');x.scale(dpr,dpr);
   const pL=lP,pR=W-rP;
+  cv.onpointermove=e=>{const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,py=(e.clientY-r.top)/r.height*H;
+    if(px<pL||px>pR){cv.removeAttribute('title');return;}
+    const value=xL+(px-pL)/(pR-pL)*(xH-xL);let nearest=0,best=Infinity;
+    cs.forEach((curve,i)=>{const delta=Math.abs(py-(tP+pH+i*rS-fky(curve,value)/mY*pH));if(delta<best){best=delta;nearest=i;}});
+    cv.title=items[nearest].date+' · CPI '+value.toFixed(2)+'% · Density '+fky(cs[nearest],value).toFixed(3);
+  };cv.onpointerleave=()=>cv.removeAttribute('title');
   function xP(v){return pL+((v-xL)/(xH-xL||1))*(pR-pL);}
 
   x.strokeStyle='rgba(0,0,0,.07)';x.lineWidth=0.5;x.setLineDash([2,4]);
@@ -184,6 +190,11 @@ function drawDualLine(cv,stats){
   const all=[...medians,...trimmeds,...trimmeds32].filter(v=>Number.isFinite(v));
   const yMin=Math.min(...all)-0.3,yMax=Math.max(...all)+0.3;
   function xP(i){return lP+(N===1?0:(i/(N-1))*pW);}
+  cv.onpointermove=e=>{const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;
+    if(px<lP||px>W-rP){cv.removeAttribute('title');return;}
+    const i=Math.max(0,Math.min(N-1,Math.round((px-lP)/pW*(N-1)))),f=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+    cv.title=stats[i].month+'\nMedian: '+f(stats[i].median)+'\nTrimmed mean: '+f(stats[i].trimmed_mean)+'\nTrimmed mean 32: '+f(stats[i].trimmed_mean_32);
+  };cv.onpointerleave=()=>cv.removeAttribute('title');
   function yP(v){return tP+pH_-(v-yMin)/(yMax-yMin||1)*pH_;}
   x.strokeStyle='rgba(0,0,0,.07)';x.lineWidth=0.5;x.setLineDash([2,4]);
   const st=(yMax-yMin)>3?1:(yMax-yMin)>1?0.5:0.2;
@@ -241,6 +252,11 @@ function drawDistChart(cv,stats){
   const labels=['<0%','0-1%','1-2%','2-3%','3-4%','4%+'];
   const keys=['lt0','0to1','1to2','2to3','3to4','gte4'];
   function xP(i){return lP+(i/(N-1||1))*pW;}
+  cv.onpointermove=e=>{const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;
+    if(px<lP||px>W-rP){cv.removeAttribute('title');return;}
+    const i=Math.max(0,Math.min(N-1,Math.round((px-lP)/pW*(N-1)))),f=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+    cv.title=stats[i].month+'\n'+keys.map((k,j)=>labels[j]+': '+f(stats[i].dist[k])).join('\n');
+  };cv.onpointerleave=()=>cv.removeAttribute('title');
   function yP(pct){return tP+pH_-(pct/100)*pH_;}
   x.strokeStyle='rgba(0,0,0,.07)';x.lineWidth=0.5;x.setLineDash([2,4]);
   for(let p=0;p<=100;p+=20){x.beginPath();x.moveTo(lP,yP(p));x.lineTo(W-rP,yP(p));x.stroke();}
@@ -288,6 +304,11 @@ function drawMovingAvg(cv,stats){
   const pad=Math.max((dataMax-dataMin)*0.25,3);
   const yMin=Math.max(0,Math.floor((dataMin-pad)/5)*5),yMax=Math.min(100,Math.ceil((dataMax+pad)/5)*5);
   function xP(i){return lP+(i/(N-1||1))*pW;}
+  cv.onpointermove=e=>{const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;
+    if(px<lP||px>W-rP){cv.removeAttribute('title');return;}
+    const i=Math.max(0,Math.min(N-1,Math.round((px-lP)/pW*(N-1)))),f=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+    cv.title=stats[i].month+'\n3M moving average: '+f(ma3[i]);
+  };cv.onpointerleave=()=>cv.removeAttribute('title');
   function yP(v){return tP+pH_-((v-yMin)/(yMax-yMin))*pH_;}
 
   const gStep=(yMax-yMin)>40?10:5;
@@ -338,6 +359,11 @@ function drawCoreMomentum(cv,mom){
   if(!allVals.length)return;
   const yMin=Math.min(...allVals)-0.5,yMax=Math.max(...allVals)+0.5;
   function xP(i){return lP+(N===1?0:(i/(N-1))*pW);}
+  cv.onpointermove=e=>{const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;
+    if(px<lP||px>W-rP){cv.removeAttribute('title');return;}
+    const i=Math.max(0,Math.min(N-1,Math.round((px-lP)/pW*(N-1)))),f=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+    cv.title=dates[i]+'\nYoY: '+f(yoy[i])+'\n3M/3M: '+f(m3[i])+'\n6M/6M: '+f(m6[i]);
+  };cv.onpointerleave=()=>cv.removeAttribute('title');
   function yP(v){return tP+pH_-(v-yMin)/(yMax-yMin||1)*pH_;}
 
   // 가로 그리드

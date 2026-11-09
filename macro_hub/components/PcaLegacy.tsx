@@ -108,7 +108,7 @@ export default function Pca({ data }: { data: PcaData }) {
               <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-              <Tooltip contentStyle={{ fontSize: 11 }} /><Legend wrapperStyle={{ fontSize: 11 }} />
+              <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} /><Legend wrapperStyle={{ fontSize: 11 }} />
               {keys.map((k) => <Bar key={k} dataKey={k} stackId="g" fill={CONTRIB_COLORS[k] || '#9aa0a6'} />)}
               <Line type="monotone" dataKey="지수" stroke="#1a1c1f" strokeWidth={1.6} dot={false} />
             </ComposedChart>
@@ -135,7 +135,7 @@ export default function Pca({ data }: { data: PcaData }) {
               <CartesianGrid stroke="rgba(0,0,0,.06)" vertical={false} />
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} width={28} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.2)" />
-              <Tooltip contentStyle={{ fontSize: 10 }} /><Legend wrapperStyle={{ fontSize: 9 }} />
+              <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 10 }} /><Legend wrapperStyle={{ fontSize: 9 }} />
               <Line type="monotone" dataKey="YoY" stroke="#378ADD" strokeWidth={1.3} dot={false} connectNulls />
               <Line type="monotone" dataKey="Momentum" stroke="#BA7517" strokeWidth={1.3} dot={false} connectNulls />
             </LineChart>
@@ -159,7 +159,7 @@ export default function Pca({ data }: { data: PcaData }) {
               <CartesianGrid stroke="rgba(0,0,0,.06)" vertical={false} />
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} width={28} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.2)" />
-              <Tooltip contentStyle={{ fontSize: 10 }} />
+              <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 10 }} />
               <Line type="monotone" dataKey="z" name={name} stroke="#6e1f1f" strokeWidth={1.2} dot={false} connectNulls />
             </LineChart>
           </ResponsiveContainer>
@@ -193,7 +193,7 @@ export default function Pca({ data }: { data: PcaData }) {
               <CartesianGrid stroke="rgba(0,0,0,.07)" vertical={false} />
               <XAxis dataKey="date" {...axis} /><YAxis tick={axis.tick} />
               <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-              <Tooltip contentStyle={{ fontSize: 11 }} />
+              <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} />
               <Line type="monotone" dataKey="LEI" name="LEI" stroke="#6e1f1f" strokeWidth={1.8} dot={false} connectNulls />
             </LineChart>
           </ResponsiveContainer>

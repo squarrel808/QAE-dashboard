@@ -1,4 +1,5 @@
 'use client'
+import { enhanceCharts } from '@/lib/chart-interactions'
 import { useEffect, useRef, useState } from 'react'
 
 /**
@@ -10,6 +11,7 @@ import { useEffect, useRef, useState } from 'react'
  */
 export default function RawDashboard({ src, title }: { src: string; title?: string }) {
   const ref = useRef<HTMLIFrameElement>(null)
+  const cleanupCharts = useRef<(() => void) | null>(null)
   const observer = useRef<ResizeObserver | null>(null)
   const [status, setStatus] = useState<'loading' | 'ready' | 'missing'>('loading')
 
@@ -21,7 +23,7 @@ export default function RawDashboard({ src, title }: { src: string; title?: stri
     return () => { cancelled = true }
   }, [src])
 
-  useEffect(() => () => observer.current?.disconnect(), [])
+  useEffect(() => () => { observer.current?.disconnect(); cleanupCharts.current?.() }, [])
 
   // 내용 높이에 맞춰 iframe 높이 조절 (캔버스가 setTimeout 후 그려지므로 여러 번 재시도)
   function fit() {
@@ -37,6 +39,9 @@ export default function RawDashboard({ src, title }: { src: string; title?: stri
   }
 
   function onLoad() {
+    cleanupCharts.current?.()
+    const doc = ref.current?.contentDocument
+    if (doc) cleanupCharts.current = enhanceCharts(doc)
     observer.current?.disconnect()
     const body = ref.current?.contentDocument?.body
     if (body) {

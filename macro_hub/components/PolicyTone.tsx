@@ -89,7 +89,7 @@ export default function PolicyTone({ data }: { data: PolicyData }) {
                 <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#5a5f66' }} minTickGap={40} />
                 <YAxis domain={[-2.2, 2.2]} tick={{ fontSize: 11, fill: '#5a5f66' }} />
                 <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 {banks.map((b) => (
                   <Line key={b} type="monotone" dataKey={b} name={data.banks[b].label}

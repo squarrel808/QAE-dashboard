@@ -75,6 +75,15 @@ export function drawRidge(cv: HTMLCanvasElement, state: any, lp: number, sharedM
   cv.style.width = '100%'; cv.style.height = 'auto'; cv.style.maxWidth = W + 'px'
   const x = cv.getContext('2d')!; x.scale(dpr, dpr)
   const pL = lp, pR = W - rP
+  cv.onpointermove = e => {
+    const box=cv.getBoundingClientRect(), px=(e.clientX-box.left)/box.width*W, py=(e.clientY-box.top)/box.height*H
+    if(px<pL || px>pR){cv.removeAttribute('title');return}
+    const value=xL+(px-pL)/(pR-pL)*(xH-xL)
+    let nearest=0, distance=Infinity
+    cs.forEach((curve: {x:number;y:number}[], i:number)=>{const delta=Math.abs(py-(tP+pH+i*rS-fky(curve,value)/mY*pH));if(delta<distance){distance=delta;nearest=i}})
+    cv.title=`${items[nearest].date} · 전망치 ${value.toFixed(2)}% · 밀도 ${fky(cs[nearest],value).toFixed(3)}`
+  }
+  cv.onpointerleave=()=>cv.removeAttribute('title')
   const xP = (v: number) => pL + ((v - xL) / (xH - xL || 1)) * (pR - pL)
   x.strokeStyle = 'rgba(0,0,0,.07)'; x.lineWidth = 0.5; x.setLineDash([2, 4])
   const st = range > 2 ? 1 : range > 0.8 ? 0.5 : 0.2
@@ -135,6 +144,15 @@ export function drawMedian(cv: HTMLCanvasElement, ml: MedianPoint[], range?: [st
   const startTime = Date.parse((range?.[0] || ml[0].d)+'T00:00:00Z')
   const endTime = Date.parse((range?.[1] || ml[N-1].d)+'T00:00:00Z')
   const xP = (i: number) => lP + (Date.parse(ml[i].d+'T00:00:00Z')-startTime)/(endTime-startTime || 1)*pW
+  cv.onpointermove = e => {
+    const box=cv.getBoundingClientRect(), px=(e.clientX-box.left)/box.width*W
+    if(px<lP || px>W-rP){cv.removeAttribute('title');return}
+    let nearest=0
+    ml.forEach((_,i)=>{if(Math.abs(xP(i)-px)<Math.abs(xP(nearest)-px))nearest=i})
+    const point=ml[nearest]
+    cv.title=`${point.d}\nMedian: ${point.med.toFixed(2)}%\nQ1: ${point.q1.toFixed(2)}%\nQ3: ${point.q3.toFixed(2)}%`
+  }
+  cv.onpointerleave=()=>cv.removeAttribute('title')
   const yP = (v: number) => tP + pH_ - (v - yMin) / (yMax - yMin || 1) * pH_
   x.strokeStyle = 'rgba(0,0,0,.07)'; x.lineWidth = 0.5; x.setLineDash([2, 4])
   const st = (yMax - yMin) > 1 ? 0.5 : 0.2

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import ChartInteractions from '@/components/ChartInteractions'
 import NavTabs from '@/components/NavTabs'
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
+        <ChartInteractions />
         <header className="px-6 pt-4 pb-2">
           <h1 className="serif text-[22px] m-0">Macro Dashboard</h1>
           <NavTabs />

@@ -21,11 +21,9 @@ function mix(a: number[], b: number[], t: number) {
   return [Math.round(a[0] + (b[0] - a[0]) * t), Math.round(a[1] + (b[1] - a[1]) * t), Math.round(a[2] + (b[2] - a[2]) * t)]
 }
 function heatColor(v: number | null | undefined, maxAbs: number) {
-  if (v == null || !maxAbs) return { bg: '#f4f3f1', fg: '#9aa0a6' }
-  const t = Math.sqrt(Math.min(1, Math.abs(v) / maxAbs))
-  const c = mix(NEUTRAL, v >= 0 ? C_GREEN : C_RED, t)
-  const lum = (0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]) / 255
-  return { bg: `rgb(${c[0]},${c[1]},${c[2]})`, fg: lum > 0.55 ? '#14181f' : '#fff' }
+  if (v == null || !Number.isFinite(v)) return { bg: '#f1f3f5', fg: '#688096' }
+  const alpha = .06 + .62 * Math.min(1, Math.abs(v) / (maxAbs || 1))
+  return { bg: `rgba(${v >= 0 ? '37,136,117' : '198,95,81'},${alpha})`, fg: '#526b80' }
 }
 
 export default function CaiMap({ data }: { data: CaiMapData }) {
@@ -218,7 +216,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
                 <XAxis dataKey="date" {...axis} />
                 <YAxis tick={axis.tick} />
                 <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 {sectorKeys.map((s) => <Bar key={s} dataKey={s} stackId="s" fill={SCOL[s] || '#9aa0a6'} />)}
                 <Line type="monotone" dataKey="headline" stroke="#1a1c1f" strokeWidth={1.8} dot={false} connectNulls />
@@ -233,7 +231,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
                 <XAxis dataKey="date" {...axis} />
                 <YAxis tick={axis.tick} />
                 <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 {sectorKeys.map((s) => (
                   <Line key={s} type="monotone" dataKey={s} stroke={SCOL[s] || '#9aa0a6'}
@@ -280,7 +278,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
           </div>
           <div className="flex items-center gap-2 mt-2 text-[11px] text-[var(--muted)]">
             <span>둔화</span>
-            <span style={{ display: 'inline-block', width: 160, height: 10, borderRadius: 3, background: 'linear-gradient(to right,#c0392b,#f4f3f1,#1a7a4c)' }} />
+            <span style={{ display: 'inline-block', width: 160, height: 10, borderRadius: 3, background: 'linear-gradient(to right,#d99b91,#f5f8f7,#6bb0a3)' }} />
             <span>확장</span>
             <span className="ml-1">진하기 = 화면 내 상대 강도</span>
           </div>
@@ -297,7 +295,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
                 <XAxis dataKey="date" {...axis} />
                 <YAxis tick={axis.tick} />
                 <ReferenceLine y={0} stroke="rgba(0,0,0,.25)" />
-                <Tooltip contentStyle={{ fontSize: 11 }} />
+                <Tooltip formatter={(v, name) => [typeof v === 'number' ? v.toFixed(3) : v, name]} wrapperStyle={{zIndex: 1000}} contentStyle={{ fontSize: 11 }} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 {typeKeys.map((t) => <Line key={t} type="monotone" dataKey={t} stroke={TCOL[t] || '#9aa0a6'} strokeWidth={1.6} dot={false} connectNulls />)}
               </LineChart>

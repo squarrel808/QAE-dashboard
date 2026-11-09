@@ -11,10 +11,7 @@ function rowHeatColor(value: number, low: number, high: number) {
   const rounded = Number(value.toFixed(2))
   const position = high > low ? (rounded - low) / (high - low) : 0.5
   const strength = Math.min(1, Math.abs(position - 0.5) * 2)
-  const target = position < 0.5 ? [33, 102, 172] : [178, 24, 43]
-  const rgb = target.map(channel => Math.round(247 + (channel - 247) * strength))
-  const luminance = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000
-  return { background: `rgb(${rgb.join(',')})`, color: luminance < 145 ? '#fff' : '#203640' }
+  return { background: `rgba(${position >= .5 ? '37,136,117' : '198,95,81'},${.06+.62*strength})`, color: '#526b80' }
 }
 
 // ml 시계열을 마지막 날짜 기준 최근 N개월로 자른다
@@ -159,7 +156,7 @@ export default function Consensus({ cpi, gdp }: { cpi: ConsensusBundle; gdp: Con
           const dates = fullDates.filter(d=>mlMonths>=999 || !cutoff || d>=cutoff)
           const sliced = countryKeys.map(id => ({ id, points: monthly(entries[id].ml || []).filter(p=>dates.includes(p.d)) }))
           return <div key={`${y}-${metric}`} className="rounded-xl border border-[var(--line)] bg-white p-4">
-            <h3 className="serif text-base mb-3">{y} {metric.toUpperCase()} consensus · Median (%)</h3>
+            <p className="text-xs text-slate-500">행별 표시 기간 중심 · 녹색: 상대적으로 높음 · 적색: 낮음 · 회색: 결측</p><h3 className="serif text-base mb-3">{y} {metric.toUpperCase()} consensus · Median (%)</h3>
             {!dates.length ? <p className="text-xs text-[var(--muted)]">No data</p> : <div className="overflow-x-auto"><table style={{ borderCollapse: 'separate', borderSpacing: 2, fontSize: 16, width: '100%' }}>
               <thead><tr><th className="sticky left-0 bg-white">Country</th>{dates.map(d => <th key={d} className="whitespace-nowrap font-normal px-1">{d.slice(2)}</th>)}</tr></thead>
               <tbody>{sliced.map(row => {

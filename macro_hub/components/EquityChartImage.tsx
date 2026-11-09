@@ -35,6 +35,7 @@ export default function EquityChartImage({ rows, series, title }: { rows: Row[];
         const v = r[s.key]
         if (typeof v !== 'number' || !Number.isFinite(v)) { active = false; return }
         d += `${active ? 'L' : 'M'}${x(i).toFixed(2)},${y(v).toFixed(2)}`
+        parts.push(`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="transparent"><title>${esc(String(r.month))} · ${esc(s.label)}: ${v.toFixed(2)}</title></circle>`)
         active = true
       })
       parts.push(`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.6" stroke-linejoin="round"/>`)
@@ -50,7 +51,7 @@ export default function EquityChartImage({ rows, series, title }: { rows: Row[];
   return <div>
     {/* A real image element keeps browser save/copy-image actions available. */}
     {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img src={src} alt={title} className="w-full h-auto" />
+    <div aria-label={title} className="[&_svg]:w-full [&_svg]:h-auto" dangerouslySetInnerHTML={{ __html: decodeURIComponent(src.split(',').slice(1).join(',')) }} />
     <div className="text-right mt-1"><a href={src} download="equity-chart.svg" className="text-xs text-[var(--muted)] underline">그래프 이미지 저장</a></div>
   </div>
 }

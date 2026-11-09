@@ -80,8 +80,8 @@ function details(){
 function overviewHeat(){
  const k=$('heat-kind').value,end=cut(),idx=Number(end.slice(0,4))*12+Number(end.slice(5,7))-1;
  const months=Array.from({length:12},(_,i)=>{const t=idx-11+i;return Math.floor(t/12)+'-'+String(t%12+1).padStart(2,'0')});
- function color(v){const t=Math.min(1,Math.abs(v-50)/10),base=v>=50?[184,70,66]:[49,108,173];return 'rgb('+base.map((b)=>Math.round(246+(b-246)*t)).join(',')+')'}
- $('overview-heat').innerHTML='<table class="overview-heat"><thead><tr><th>국가·지역</th>'+months.map(m=>'<th>'+m.slice(2).replace('-','.')+'</th>').join('')+'</tr></thead><tbody>'+D.countries.map(c=>{const map=new Map(pts(c[k]));return '<tr><th scope="row">'+c.name+'</th>'+months.map(m=>{const v=map.get(m);return v==null?'<td class="missing" title="'+c.name+' '+m+' 관측값 없음">—</td>':'<td style="background:'+color(v)+';color:'+(Math.abs(v-50)>=6?'#fff':'#18343d')+'" title="'+c.name+' '+m+' · '+v.toFixed(2)+'">'+v.toFixed(1)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table>';
+ function color(v){const t=Math.min(1,Math.abs(v-50)/10),base=v>=50?'37,136,117':'198,95,81';return 'rgba('+base+','+(.06+.62*t)+')'}
+ $('overview-heat').innerHTML='<table class="overview-heat"><thead><tr><th>국가·지역</th>'+months.map(m=>'<th>'+m.slice(2).replace('-','.')+'</th>').join('')+'</tr></thead><tbody>'+D.countries.map(c=>{const map=new Map(pts(c[k]));return '<tr><th scope="row">'+c.name+'</th>'+months.map(m=>{const v=map.get(m);return v==null?'<td class="missing" title="'+c.name+' '+m+' 관측값 없음">—</td>':'<td style="background:'+color(v)+';color:'+'#526b80'+'" title="'+c.name+' '+m+' · '+v.toFixed(2)+'">'+v.toFixed(1)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table>';
 }
 $('heat-kind').addEventListener('change',overviewHeat);
 function render(){overviewHeat();summary();cycles();lineCharts();details();}
