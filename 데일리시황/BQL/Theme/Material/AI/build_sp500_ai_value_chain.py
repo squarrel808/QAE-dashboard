@@ -41,7 +41,7 @@ STAGES = [
         "short": "연산·메모리",
         "color": "#2563eb",
         "description": "AI 가속기, CPU, HBM·메모리, 맞춤형 AI 반도체와 전력관리 반도체.",
-        "core": "NVDA AMD AVGO MRVL MU".split(),
+        "core": "NVDA AMD AVGO MRVL MU QCOM".split(),
         "adjacent": "INTC MPWR SNDK".split(),
     },
     {
@@ -131,7 +131,7 @@ STAGES = [
         "short": "엣지·Physical AI",
         "color": "#65a30d",
         "description": "온디바이스 AI, 자율주행, 로봇, 산업용 센싱과 제어 등 데이터센터 밖의 AI.",
-        "core": "QCOM TSLA AXON".split(),
+        "core": "TSLA AXON".split(),
         "adjacent": "AAPL NXPI ADI ON ROK".split(),
     },
 ]
