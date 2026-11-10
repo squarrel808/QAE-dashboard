@@ -116,14 +116,24 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
     const keys = data.sectors.filter((s) => series.heatmap![s])   // 섹터 순서 유지
     if (!keys.length || !idx.length) return null
     const dates = idx.map((i) => series.dates[i])
-    let maxAbs = 0
     const matrix: Record<string, (number | null)[]> = {}
+    const stats: Record<string, {mean:number; sd:number; count:number}> = {}
+    const end = last.slice(0, 7)
+    const startDate = new Date(`${end}-01T00:00:00Z`)
+    startDate.setUTCMonth(startDate.getUTCMonth() - 35)
+    const start = startDate.toISOString().slice(0, 7)
     keys.forEach((s) => {
-      const vals = idx.map((i) => series.heatmap![s]![i] ?? null)
-      vals.forEach((v) => { if (v != null) maxAbs = Math.max(maxAbs, Math.abs(v)) })
-      matrix[s] = vals
+      matrix[s] = idx.map(i => series.heatmap![s]![i] ?? null)
+      const sample = series.dates.flatMap((d,i) => {
+        const v = series.heatmap![s]![i]
+        return d.slice(0,7) >= start && d.slice(0,7) <= end && v != null && Number.isFinite(v) ? [v] : []
+      })
+      const mean = sample.length ? sample.reduce((a,b) => a+b,0)/sample.length : 0
+      const sd = sample.length > 1 ? Math.sqrt(sample.reduce((a,b) => a+(b-mean)**2,0)/(sample.length-1)) : 0
+      stats[s] = {mean,sd,count:sample.length}
     })
-    return { dates, keys, matrix, maxAbs: maxAbs || 1 }
+    return { dates, keys, matrix, stats, start, end }
+
   }, [series, months, data.sectors])
 
   const Btn = ({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) => (
@@ -246,7 +256,7 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
 
       {heat && (
         <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-3.5">
-          <h3 className="serif text-[15px] mb-2.5">섹터 히트맵 (CAI_HEATMAP_SECTOR · 초록=확장 / 빨강=둔화)</h3>
+          <h3 className="serif text-[15px] mb-2.5">섹터 히트맵 · 최근 36개월 평균 대비</h3>
           <div className="overflow-x-auto">
             <table className="border-separate" style={{ borderSpacing: 2, fontSize: 11, width: '100%' }}>
               <thead>
@@ -262,9 +272,11 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
                   <tr key={s}>
                     <td className="text-left pr-2.5 font-medium whitespace-nowrap">{s}</td>
                     {heat.matrix[s].map((v, i) => {
-                      const c = heatColor(v, heat.maxAbs)
+                      const stat = heat.stats[s]
+                      const z = v != null && Number.isFinite(v) && stat.count >= 24 && stat.sd > 1e-12 ? (v-stat.mean)/stat.sd : null
+                      const c = z === 0 ? {bg:'#f5f8f7',fg:'#526b80'} : heatColor(z, 2)
                       return (
-                        <td key={i} className="p-0 text-center">
+                        <td key={i} className="p-0 text-center" title={`${s} · ${heat.dates[i]} · 원값 ${v ?? '없음'} · 기준 ${heat.start}~${heat.end} · 평균 ${stat.mean.toFixed(3)} · ${stat.count}개 관측 · z ${z == null ? '계산 불가' : z.toFixed(2)}`}>
                           <span className="block rounded px-1.5 py-1.5 font-semibold" style={{ background: c.bg, color: c.fg, minWidth: 30 }}>
                             {v == null ? '' : v.toFixed(1)}
                           </span>
@@ -277,10 +289,10 @@ export default function CaiMap({ data }: { data: CaiMapData }) {
             </table>
           </div>
           <div className="flex items-center gap-2 mt-2 text-[11px] text-[var(--muted)]">
-            <span>둔화</span>
+            <span>평균 이하</span>
             <span style={{ display: 'inline-block', width: 160, height: 10, borderRadius: 3, background: 'linear-gradient(to right,#d99b91,#f5f8f7,#6bb0a3)' }} />
-            <span>확장</span>
-            <span className="ml-1">진하기 = 화면 내 상대 강도</span>
+            <span>평균 이상</span>
+            <span className="ml-1">색: 섹터별 최근 36개월 평균 대비 · ±2 표준편차에서 최대 · 24개 미만 또는 변동 없음은 회색 · 숫자는 원값</span>
           </div>
         </div>
       )}
