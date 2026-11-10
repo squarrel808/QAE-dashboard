@@ -169,15 +169,32 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
         <button onClick={() => setTab('reports')} className={btn(tab === 'reports')}>보고서</button>
       </div>
       <p className="text-[11px] text-[var(--muted)] mb-3">
-        보고서 최신 자료: {dates[0] || '없음'} · 하우스뷰 최신 자료: {latestHouseView || '없음'}
+        보고서 최신 자료: {dates[0] || '없음'} · 자산배분 등급 검토 자료: {latestHouseView || '없음'}
       </p>
 
       {/* ── 하우스뷰 (자산군 × 권역) ── */}
       {tab === 'houseview' && (
       <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-4">
+        <h3 className="serif text-[15px] mb-2">하우스별 최신 보고서 의견</h3>
+        <p className="text-[11px] text-[var(--muted)] mb-3">작성된 보고서 요약을 그대로 연결합니다. 아래의 과거 OW·N·UW 등급을 새 의견으로 재분류한 자료는 아닙니다.</p>
+        <div className="grid gap-3 mb-5 md:grid-cols-2">
+          {sources.map(source => {
+            const latest = rows.filter(r => r.source === source).sort((a,b) => b.date.localeCompare(a.date))
+            if (!latest.length) return null
+            const date = latest[0].date
+            return <article key={source} className="rounded-lg border border-[var(--line)] p-3">
+              <h4 className="text-sm font-semibold">{source} <span className="text-xs font-normal text-[var(--muted)]">자료일 {date}</span></h4>
+              {latest.filter(r => r.date === date).map(r => <details key={r.id} className="mt-2 text-xs">
+                <summary className="cursor-pointer leading-relaxed">{r.title}</summary>
+                <ul className="list-disc pl-4 mt-2 space-y-1">{r.summary.map((s,i) => <li key={i}>{s}</li>)}</ul>
+              </details>)}
+            </article>
+          })}
+        </div>
+        {dates[0] > latestHouseView && <p role="status" className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3">자산배분 등급 갱신 지연: 아래 표의 최신 근거는 {latestHouseView || '없음'}입니다. 현재 등급으로 해석하지 마세요. 최신 보고서 의견은 위에서 확인할 수 있습니다.</p>}
         <div className="flex items-center justify-between gap-2 flex-wrap mb-2.5">
           <h3 className="serif text-[15px] m-0">
-            하우스뷰
+            기존 자산배분 등급·이력
             {houseViews && houseViews.generatedAt && (
               <span className="ml-2 text-[11px] font-normal text-[var(--muted)]">{houseViews.generatedAt} 기준</span>
             )}

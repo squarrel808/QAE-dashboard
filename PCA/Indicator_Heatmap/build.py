@@ -3,6 +3,7 @@ from pathlib import Path
 
 B=Path(__file__).resolve().parent
 D=json.loads((B.parent/'PCA_Four_Axis/dashboard_data.json').read_text(encoding='utf8'))
+LABELS_KO=json.loads((B/'labels_ko.json').read_text(encoding='utf8'))
 GROUPS=['고용','임금','가계소득·저축','실제 소비','소비심리·판매 설문','생산·수주·가동률','설비·기계 투자','비주거 건설','기업경기 설문','주택 건설','주택 거래·수요','주택 재고·심리','수출 실적','수출 수주·기대','신용·혼합 참고']
 def classify(s):
     t=s['label'].lower();g=s['previous_group']
@@ -26,6 +27,7 @@ def classify(s):
         return GROUPS[9]
     return GROUPS[13] if any(x in t for x in ['survey','pmi','expectations','order book']) else GROUPS[12]
 for s in D['indicators']:
+    s['label_ko']=LABELS_KO[s['label']]
     s['heatmap_group']=classify(s)
     s['neutral']=any(x in s['label'].lower() for x in ['saving','quits','separations','stocks avg','filled vacancies']) or s['heatmap_group']==GROUPS[-1]
 D['heatmap_groups']=GROUPS
