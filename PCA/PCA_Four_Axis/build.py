@@ -63,7 +63,9 @@ def main(output_base=None,reference_only=False):
             else:records[key]=record
     legacy_backup=output/'annual_weights_gross_export_v1.json'
     if any(r['policy']==OLD_POLICY for r in records.values()) and not legacy_backup.exists():shutil.copy2(ledger_path,legacy_backup)
-    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs; '+DESCRIPTION+'; frozen January GDP shares; Export = 0.5 * gross exports/GDP','estimation':ESTIMATION,'publication_policy':'available_inputs_provisional_v1','weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
+    publication='carry_forward_transformed_inputs_v2' if not reference_only else 'available_inputs_provisional_v1'
+    payload={'names':names,'axes':AXES,'countries':{},'method':'Four direct block PCAs; '+DESCRIPTION+'; frozen January GDP shares; Export = 0.5 * gross exports/GDP','estimation':dict(ESTIMATION),'publication_policy':publication,'weight_policy':POLICY,'generated_kst':pd.Timestamp.now(tz='Asia/Seoul').isoformat()}
+    if not reference_only:payload['estimation']['missing']='Trailing unpublished transformed inputs carried forward for scoring only; fit uses observed data; raw values unchanged'
     if reference_only:payload.update(model='PCA III',universe='blackrock_reference_only',excluded_countries={cc:n for cc,n in review['names'].items() if cc not in names})
     classifications=[];timeseries=[];weights_rows=[];loads=[]
     input_series={}
@@ -83,6 +85,19 @@ def main(output_base=None,reference_only=False):
                 diagnostics[axis]={'count':0,'single':False,'available_latest':0}
                 continue
             score,loading,explained,n,fit_detail=fixed_pca(z[keys],min_available=1)
+            if not reference_only:
+                # Linear normalization makes carrying z equivalent to carrying
+                # the transformed input under this release's fixed mean/std.
+                effective=z[keys].copy()
+                cutoff=wide[[s['pk'] for s in sp.values()]].dropna(how='all').index.max()
+                for key in keys:
+                    last_observed=effective[key].last_valid_index()
+                    if last_observed is not None:
+                        mask=(effective.index>last_observed)&(effective.index<=cutoff)
+                        effective.loc[mask,key]=effective.at[last_observed,key]
+                used=effective.notna() & loading.notna()
+                raw_score=effective.mul(loading).sum(axis=1,min_count=1)/np.sqrt(used.sum(axis=1).replace(0,np.nan))
+                score=(raw_score-fit_detail['score_mean'])/fit_detail['score_std']
             blocks[axis]=score;block_loads[axis]=loading
             diagnostics[axis]={'count':len(keys),'single':len(keys)==1,'fit':fit_detail}
             for t in loading.index:
@@ -112,6 +127,7 @@ def main(output_base=None,reference_only=False):
             bp=bp.copy();bp.loc[bp.index>last,:]=np.nan
             assert (cp[active].sum(axis=1,min_count=len(active))-hp).abs().max()<1e-10
             versions[mode]={'dates':[str(t)[:7] for t in idx],'headline':vals(hp.loc[idx]),'blocks':{a:vals(bp.loc[idx,a]) for a in AXES},'contributions':{a:vals(cp.loc[idx,a]) for a in AXES},'latest':str(last)[:7],'latest_value':float(hp[last]),'available_inputs':int(coverage[last]),'total_inputs':len(sp),'provisional':bool(coverage[last]<len(sp)),'negative_loadings':sum(diagnostics[a]['fit']['negative_loadings'] for a in active)}
+            versions[mode]['release_coverage']={a:{'actual':int(z.loc[last,[k for k,s in sp.items() if MAPPING[s['group']]==a]].notna().sum()),'total':diagnostics[a]['count']} for a in AXES}
             for t in idx:timeseries.append(dict(country=cc,version=mode,date=str(t)[:10],headline=hp[t],weight_year=t.year,weight_quarter=weight_quarters[t],**{'weight_'+a:wp.at[t,a] for a in AXES},**{a:bp.at[t,a] for a in AXES},**{'contrib_'+a:cp.at[t,a] for a in AXES}))
         last=headline.last_valid_index()
         for axis in AXES:
@@ -138,6 +154,6 @@ def main(output_base=None,reference_only=False):
     (output/'dashboard_data.json').write_text(json.dumps(payload,ensure_ascii=False,allow_nan=False),encoding='utf8')
     assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in hashes.items())
     save_ledger(ledger_path,records)
-    (output/'validation.json').write_text(json.dumps({'pca_i_unchanged_during_this_build':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','estimation':ESTIMATION,'publication_policy':'available_inputs_provisional_v1','weights':POLICY},indent=2),encoding='utf8')
+    (output/'validation.json').write_text(json.dumps({'pca_i_unchanged_during_this_build':True,'pca_ii_unchanged':reference_only,'countries':len(names),'inputs':len(classifications),'momentum':'post-PCA 3m/3m difference','estimation':ESTIMATION,'publication_policy':publication,'weights':POLICY},indent=2),encoding='utf8')
 
 if __name__=='__main__':main()

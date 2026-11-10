@@ -109,12 +109,29 @@ def main():
         assert pd.Timestamp(r['last'])>=pd.Timestamp.now()-pd.DateOffset(months=6)
         assert (r['country'],r['pk'],r['included_axis']) in current
     assert 'usecon:napmc' not in {r['pk'] for r in d['indicators'] if r['country']=='CA'}
-    assert d['publication_policy']=='available_inputs_provisional_v1'
+    assert d['publication_policy']=='carry_forward_transformed_inputs_v2'
     for cc,c in d['countries'].items():
         v=c['versions']['YoY'];i=v['dates'].index(v['latest'])
         assert v['available_inputs']>=1
         assert v['provisional']==(v['available_inputs']<v['total_inputs'])
         assert abs(sum(v['contributions'][a][i] or 0 for a in d['axes'])-v['latest_value'])<1e-10
+        # Reconstruct the latest score from actual-or-last-observed transformed
+        # inputs; replacements must never count as new releases.
+        li=d['input_series'][cc]['dates'].index(v['latest'])
+        loads=pd.read_csv(BASE/'loadings.csv')
+        for axis,r in v['release_coverage'].items():
+            selected=[s for s in d['indicators'] if s['country']==cc and s['axis']==axis]
+            coefficients=loads[(loads.country==cc)&(loads.axis==axis)&(loads.date.str[:7]==v['latest'])].set_index('indicator').loading
+            terms=[];actual=0
+            for s in selected:
+                history=d['input_series'][cc]['series'][s['pk']]['zscore'][:li+1]
+                actual+=history[-1] is not None
+                value=next((x for x in reversed(history) if x is not None),None)
+                if value is not None:terms.append(value*coefficients[cc+'|'+s['pk']])
+            assert actual==r['actual'] and len(selected)==r['total']
+            fit=c['diagnostics'][axis]['fit']
+            expected=(sum(terms)/np.sqrt(len(terms))-fit['score_mean'])/fit['score_std']
+            assert abs(expected-v['blocks'][axis][i])<1e-5
     print('PASS: original inputs, seven-region geography, no duplicate inputs, monthly-only additions, unchanged annual weights, no US ISM in Canada')
     print('PASS: 7 countries, January cutoffs, frozen revisions, automatic year rollover, annual fixed weights, contributions, post-PCA Momentum, fixed unrestricted loadings')
 if __name__=='__main__':main()

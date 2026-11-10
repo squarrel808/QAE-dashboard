@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 // 탭 순서 — 여기 배열 순서대로 표시됩니다.
 const TABS = [
   { href: '/econ', label: '경제지표' },
+  { href: '/context-macro', label: 'Context Macro' },
   { href: '/earnings', label: '실적 캘린더' },
   { href: '/reports', label: 'Report' },
   { href: '/country-indicators', label: '국가별 경제지표' },

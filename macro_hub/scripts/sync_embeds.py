@@ -39,6 +39,7 @@ SOURCES = {
 
 def main():
     os.makedirs(DEST, exist_ok=True)
+    subprocess.run([sys.executable, os.path.join(HERE, 'sync_context_macro.py')], check=True)
     # Nightly/web-only deployments must also consume the latest RAWDATA workbook.
     subprocess.run([sys.executable, os.path.join(REPO, '경제지표가져오기', 'weco_dashboard.py')], check=True)
     subprocess.run(['node', os.path.join(HERE, 'sync_surprise.mjs')], check=True)
