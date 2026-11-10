@@ -17,6 +17,7 @@ React로 새로 그리지 않고 '원본 렌더러를 그대로 재사용'한다
 import os
 import shutil
 import subprocess
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                 # macro_hub/
@@ -38,6 +39,8 @@ SOURCES = {
 
 def main():
     os.makedirs(DEST, exist_ok=True)
+    # Nightly/web-only deployments must also consume the latest RAWDATA workbook.
+    subprocess.run([sys.executable, os.path.join(REPO, '경제지표가져오기', 'weco_dashboard.py')], check=True)
     subprocess.run(['node', os.path.join(HERE, 'sync_surprise.mjs')], check=True)
     subprocess.run(['node', os.path.join(HERE, 'sync_gdp_weighted.mjs')], check=True)
     ok, miss = 0, 0

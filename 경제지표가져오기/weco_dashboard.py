@@ -145,8 +145,7 @@ def normalize(rows):
 def load_rows():
     if _load_rows_ext is not None:
         return normalize(_load_rows_ext())
-    print(f"[fallback] load_weco.load_rows() 사용 불가 ({_LOADER_ERR}) -> {SRC}")
-    return normalize(load_rows_legacy())
+    raise RuntimeError(f"WECO 로더 사용 불가: {_LOADER_ERR}")
 
 
 TEMPLATE = r"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
@@ -262,14 +261,25 @@ render();
 
 
 def main():
+    from load_weco import pick_files
+    import hashlib
+    paths = pick_files()
+    fingerprints = {p: hashlib.sha256(open(p, 'rb').read()).hexdigest() for p in paths}
     rows = load_rows()
+    if paths != pick_files() or any(hashlib.sha256(open(p, 'rb').read()).hexdigest() != h for p, h in fingerprints.items()):
+        raise RuntimeError('생성 중 WECO 원본 변경 — 다시 실행하세요')
     n_evt = sum(1 for r in rows if r["kind"] == "evt")
     html = (TEMPLATE
             .replace("__DATA__", json.dumps(rows, ensure_ascii=False))
             .replace("__GEN__", dt.datetime.now().strftime("%Y-%m-%d %H:%M"))
             .replace("__CNT__", str(len(rows))))
-    with open(OUT, "w", encoding="utf-8") as f:
+    sources = ', '.join(os.path.basename(p) + ' / ' + dt.datetime.fromtimestamp(os.path.getmtime(p)).strftime('%Y-%m-%d %H:%M') for p in paths)
+    import html as html_lib
+    html = html.replace('BLOOMBERG WECO</small>', 'BLOOMBERG WECO · 원본 ' + html_lib.escape(sources) + '</small>')
+    html = html.replace('</head>', '<!-- WECO_SOURCE ' + json.dumps({os.path.basename(p): h for p, h in fingerprints.items()}) + ' -->\n</head>')
+    with open(OUT + '.tmp', "w", encoding="utf-8") as f:
         f.write(html)
+    os.replace(OUT + '.tmp', OUT)
     print(f"[saved] {OUT} ({len(rows)} rows, evt {n_evt} / ind {len(rows)-n_evt})")
 
 

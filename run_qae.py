@@ -423,12 +423,12 @@ def main():
             ok_count += 1
         else:
             failures.append({"security": label, "status": f"exit {rc}"})
-            if opt["nightly"]:
+            if opt["nightly"] or log_name == "sync_embeds.py":
                 log("야간 필수 단계 실패 — 이후 처리와 전송을 중단합니다")
                 break
 
     marker = None
-    if opt["nightly"] and not failures:
+    if opt["git"] and not failures:
         check_start = datetime.now()
         total_count += 1
         try:
@@ -443,7 +443,7 @@ def main():
             append_step(run_id, "검증 (배포 전)", check_start, datetime.now(), 1)
 
     # git 단계 (/nopush 면 커밋까지만, /nogit 이면 아예 건너뜀)
-    if opt["nightly"] and failures:
+    if failures:
         send_result = hist["send_result"] = "NOT_RUN"
         log("갱신 실패로 사이트 전송하지 않음")
     elif opt["git"]:

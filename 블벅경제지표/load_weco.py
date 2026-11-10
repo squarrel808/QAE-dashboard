@@ -78,7 +78,7 @@ DISP.update({
 })
 GLOBE = "\U0001F310"
 
-NULLS = {"", "--", "---", "-", "n/a", "na", "nan", "nat", "none", "null", "#n/a"}
+NULLS = {"", "--", "---", "-", "n/a", "na", "nan", "nat", "none", "null", "#n/a", "0x2a"}
 DATE_RANGE = re.compile(r"^\s*(\d{1,2}/\d{1,2}/\d{2,4})\s*-\s*\d")
 HAS_TIME = re.compile(r"\d{1,2}:\d{2}")
 
@@ -156,7 +156,9 @@ def _is_weco(path):
     """헤더만 훑어 WECO 내보내기인지 판별. 파일명 대신 이걸로 거른다."""
     try:
         head = pd.read_excel(path, nrows=0)
-    except Exception:
+    except Exception as exc:
+        if re.search(r"ecocal|weco|_eco", os.path.basename(path), re.I):
+            raise ValueError(f"WECO 원본 읽기 실패: {path}") from exc
         return False
     cols = {str(c).strip() for c in head.columns}
     return REQUIRED_COLS.issubset(cols) or _is_bquant(cols)
@@ -169,7 +171,7 @@ def pick_files(n=None):
     최대 MAX_FILES 개. 옛날에 넣어둔 파일은 이 창 밖이라 자동으로 빠진다.
     """
     # rawdata.find_all("") = 검색 폴더 전체의 xlsx 를 최신순으로
-    files = [f for f in rawdata.find_all("", exts=(".xlsx",), extra_dirs=[BASE])
+    files = [f for f in rawdata.find_all("", exts=(".xlsx", ".xlsb"), extra_dirs=[BASE])
              if os.path.basename(f).lower() not in EXCLUDE_NAMES
              and _is_weco(f)]
     if n is not None:
@@ -209,7 +211,7 @@ def _from_bquant(df):
     cc = df["Country"].astype(str).str.replace(r"\s*Country\s*$", "", regex=True).str.strip()
     # BQuant 는 ISO 코드, WECO 는 블룸버그 코드를 쓴다. 대부분 같지만 영국만 갈린다
     # (BQuant GB vs WECO UK). 안 맞추면 같은 나라가 두 줄로 쪼개진다.
-    cc = cc.replace({"GB": "UK"})
+    cc = cc.replace({"GB": "UK", "DE": "GE", "JP": "JN", "CN": "CH", "CH": "SZ", "KR": "SK", "ES": "SP"})
     out["Country Code"] = cc
     d = df[dcol].astype(str).str.strip()
     t = df["time"].astype(str).str.strip() if "time" in cols else ""
@@ -257,6 +259,9 @@ def load_rows(verbose=True):
     paths = pick_files()
     if not paths:
         raise FileNotFoundError(PATTERN + " 에 해당하는 파일이 없습니다")
+    age = dt.datetime.now().timestamp() - os.path.getmtime(paths[0])
+    if age > 7 * 86400:
+        raise ValueError("최신 WECO 원본이 7일 이상 오래됐습니다: " + paths[0])
 
     frames = []
     for p in paths:
@@ -318,6 +323,9 @@ def load_rows(verbose=True):
         stat.append((p, kind, len(df), kept, dropped, skipped, dup, diag))
 
     rows.sort(key=lambda x: (x["d"], x["t"], -x["rel"]))
+    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+    if not rows or max(r["d"] for r in rows) < today:
+        raise ValueError("WECO 일정이 오늘을 포함하지 않습니다. 원본을 갱신하세요.")
 
     if verbose:
         label = {"ind": "지표", "evt": "연설·이벤트"}
