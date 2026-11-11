@@ -1,5 +1,6 @@
 'use client'
 import { useMemo, useState } from 'react'
+import RawDashboard from './RawDashboard'
 import type { HouseConfidence, HouseStance, HouseView, HouseViewData, ReportRec } from '@/lib/types'
 
 // houseviews.json 이 아직 없을 때의 폴백 축. 데이터가 오면 그쪽 배열이 이긴다.
@@ -45,6 +46,7 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
   const [open, setOpen] = useState<Record<string, boolean>>({})
   // 하우스뷰 영역 — 전체(하우스 합산 매트릭스) / 운용사별(하우스 선택)
   const [tab, setTab] = useState<'houseview' | 'reports'>('reports')
+  const [houseSource, setHouseSource] = useState<'indicators' | 'macro' | 'archive'>('indicators')
   const [hvMode, setHvMode] = useState<'all' | 'byHouse'>('all')
   const [house, setHouse] = useState('ALL')
   const [expand, setExpand] = useState<Record<string, boolean>>({})
@@ -174,6 +176,16 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
 
       {/* ── 하우스뷰 (자산군 × 권역) ── */}
       {tab === 'houseview' && (
+      <>
+      <div className="flex gap-1.5 mb-3 flex-wrap">
+        <button onClick={() => setHouseSource('indicators')} className={btn(houseSource === 'indicators')}>지표·IB 해석</button>
+        <button onClick={() => setHouseSource('macro')} className={btn(houseSource === 'macro')}>거시 맥락</button>
+        <button onClick={() => setHouseSource('archive')} className={btn(houseSource === 'archive')}>기존 자산배분 등급·이력</button>
+      </div>
+      {houseSource !== 'archive' && <RawDashboard key={houseSource}
+        src={houseSource === 'indicators' ? '/embeds/context-indicators.html' : '/embeds/context-macro.html'}
+        title={houseSource === 'indicators' ? '지표·IB 해석' : '거시 맥락'} />}
+      {houseSource === 'archive' && (
       <div className="rounded-xl border border-[var(--line)] bg-white p-3.5 mb-4">
         <h3 className="serif text-[15px] mb-2">하우스별 최신 보고서 의견</h3>
         <p className="text-[11px] text-[var(--muted)] mb-3">작성된 보고서 요약을 그대로 연결합니다. 아래의 과거 OW·N·UW 등급을 새 의견으로 재분류한 자료는 아닙니다.</p>
@@ -295,6 +307,9 @@ export default function Reports({ rows, houseViews }: { rows: ReportRec[]; house
         )}
 
       </div>
+      )}
+
+      </>
       )}
 
       {/* ── 보고서 검색·목록 ── */}

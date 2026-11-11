@@ -231,7 +231,7 @@ def run_step(run_id, label, log_name, workdir, script):
     return rc
 
 
-def run_git(run_id, do_push, add_all):
+def run_git(run_id, do_push, add_all, excluded_paths=()):
     """git add → commit → push 를 한 단계로 묶어 실행.
        반환 = (send_result, send_flag, exit_code)."""
     label, log_name = "전송 (git)", "git"
@@ -253,14 +253,17 @@ def run_git(run_id, do_push, add_all):
         staged = subprocess.check_output(
             ["git", "diff", "--cached", "--name-only"], cwd=BASE_DIR,
             text=True, encoding="utf-8").splitlines()
-        allowed = ("macro_hub/public/data/", "macro_hub/public/embeds/")
+        allowed = ("macro_hub/public/data/", "macro_hub/public/embeds/", "macro_hub/public/weekly/")
         if not add_all and any(not p.startswith(allowed) for p in staged):
             raise RuntimeError("다른 작업의 스테이징 변경이 있어 전송을 중단합니다")
+        if any(p in excluded_paths for p in staged):
+            raise RuntimeError("실행 보류한 화면의 변경이 이미 스테이징되어 있어 전송을 중단합니다")
         if add_all:
             rc = git("add", "-A")
         else:
             log("    | (/dataonly) 산출물만 스테이징")
-            rc = git("add", "--", "macro_hub/public/data", "macro_hub/public/embeds")
+            rc = git("add", "--", "macro_hub/public/data", "macro_hub/public/embeds", "macro_hub/public/weekly",
+                     *(':(exclude)' + p for p in excluded_paths))
         if rc:
             raise RuntimeError("산출물 스테이징 실패")
 
@@ -383,6 +386,9 @@ def show_plan(opt):
 
 # ── 메인 흐름 ─────────────────────────────────────────────────────────
 def main():
+    if any(arg.lstrip('/-').lower() == 'scheduled' for arg in sys.argv[1:]):
+        from scheduled_refresh import main as scheduled_main
+        return scheduled_main(sys.argv[1:])
     start = datetime.now()
     run_id = f"{start:%Y%m%d_%H%M%S}"
     opt = parse_opts(sys.argv)

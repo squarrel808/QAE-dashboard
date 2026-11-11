@@ -19,7 +19,7 @@ def content_hash(content):
     return hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest()
 
 
-def prepare(run_id, root=ROOT):
+def validate_reports(root=ROOT):
     public = root / "macro_hub" / "public"
     records = json.loads((root / "report_pipeline/houseview_records.json").read_text("utf-8"))
     reports = json.loads((public / "data/reports.json").read_text("utf-8"))
@@ -35,18 +35,23 @@ def prepare(run_id, root=ROOT):
     actual = {(r["date"], r["source"], r["title"]) for r in reports}
     if not expected or not expected.issubset(actual):
         raise ValueError("최신 요약의 리포트가 목록에서 누락됐습니다")
+    return {"latestSummary": latest, "latestReport": max(r["date"] for r in reports),
+            "latestHouseview": max((r["date"] for r in views), default=None), "reports": len(reports)}
+
+
+def prepare(run_id, root=ROOT, validate_reports_now=True, excluded_paths=()):
+    public = root / "macro_hub" / "public"
+    report_status = validate_reports(root) if validate_reports_now else {}
     hashes = {}
-    for folder in ("data", "embeds"):
-        for path in sorted((public / folder).glob("*")):
-            if not path.is_file() or path.name == "deployment_status.json":
+    for folder in ("data", "embeds", "weekly"):
+        for path in sorted((public / folder).rglob("*")):
+            if not path.is_file() or path.name == "deployment_status.json" or path.relative_to(public).as_posix() in excluded_paths:
                 continue
             if path.suffix == ".json":
                 json.loads(path.read_text("utf-8"))
             hashes[path.relative_to(public).as_posix()] = content_hash(path.read_bytes())
     marker = {"runId": run_id, "generatedAt": datetime.now().isoformat(timespec="seconds"),
-              "latestSummary": latest, "latestReport": max(r["date"] for r in reports),
-              "latestHouseview": max((r["date"] for r in views), default=None),
-              "reports": len(reports), "files": hashes}
+              **report_status, "files": hashes}
     target = public / "data/deployment_status.json"
     temp = target.with_suffix(".tmp")
     temp.write_text(json.dumps(marker, ensure_ascii=False, indent=2), "utf-8")
@@ -71,11 +76,11 @@ def verify(marker, log=print, timeout=900, fetch=fetch_bytes):
             for path, expected in marker["files"].items():
                 if content_hash(fetch(path, marker["runId"])) != expected:
                     raise ValueError("배포 데이터 불일치: " + path)
-            # JSON만 배포되고 실제 화면이 실패하는 경우도 잡는다.
-            page = fetch("reports", marker["runId"]).decode("utf-8")
-            if marker["latestReport"] not in page:
-                raise ValueError("Report 화면에 최신 날짜가 없습니다")
-            log("Vercel 사이트 반영 확인 완료: " + marker["latestReport"])
+            if marker.get("latestReport"):
+                page = fetch("reports", marker["runId"]).decode("utf-8")
+                if marker["latestReport"] not in page:
+                    raise ValueError("Report 화면에 최신 날짜가 없습니다")
+            log("Vercel 사이트 반영 확인 완료: " + marker["runId"])
             return True
         except Exception as exc:
             log("배포 확인 대기: " + str(exc))
