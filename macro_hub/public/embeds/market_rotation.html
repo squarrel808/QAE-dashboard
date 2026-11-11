@@ -2041,16 +2041,20 @@ html>body{padding:0}
       detail.textContent='종목에 마우스를 올리거나 선택하면 상세정보가 표시됩니다.';
       root.querySelector('#mrd-map-title').textContent=`${indexLabel(code)} · Stock Map — ${label}`;
       root.querySelector('#mrd-map-status').textContent='';
-      // Every negative return uses red; only exact zero uses the neutral bin.
-      const color=value=>{
-        if(!valid(value))return '#68717d';
-        if(value===0)return mapPalette[3];
-        const shade=Math.min(3,Math.max(1,Math.ceil(Math.abs(value)/limit*3)));
-        return mapPalette[value<0?3-shade:3+shade];
-      };
-      d3.select(root.querySelector('#mrd-map-legend')).selectAll('span').data([-1,-2/3,-1/3,0,1/3,2/3,1,null]).join('span')
+      // Continuous, period-scaled colours preserve differences beyond the old +2% cap.
+      const colourStops=[0,1/3,1,2,10/3,20/3].map(v=>v*limit);
+      const positive=d3.scaleLinear().domain(colourStops)
+        .range(['#263c3a','#176b50','#20a34a','#72d52e','#c2ed50','#f0ffc2']).clamp(true);
+      const negative=d3.scaleLinear().domain(colourStops)
+        .range(['#40323c','#9b3045','#e34248','#fa8065','#ffbc94','#ffe0cc']).clamp(true);
+      const color=value=>!valid(value)?'#68717d':value===0?'#414554':value>0?positive(value):negative(-value);
+      const ink=value=>valid(value)&&Math.abs(value)>=limit?'#101d19':'#ffffff';
+      const legendSteps=[-20/3,-10/3,-1,-1/3,0,1/3,1,10/3,20/3,null];
+      d3.select(root.querySelector('#mrd-map-legend')).selectAll('span').data(legendSteps).join('span')
         .style('background',v=>color(v===null?null:v*limit))
-        .text((v,i)=>v===null?'N/A':`${i===0?'≤ ':i===6?'≥ ':''}${d3.format('+.0%')(v*limit)}`);
+        .style('color',v=>ink(v===null?null:v*limit))
+        .text((v,i)=>v===null?'N/A':`${i===0?'≤ ':i===8?'≥ ':''}${d3.format('+.0%')(v*limit)}`)
+        .attr('title','연속 색상 · 상승률이 클수록 밝은 연두색, 하락폭이 클수록 밝은 붉은색');
       d3.select(target).selectAll('*').remove();
       if(!dataset || !dataset.stocks?.length) {
         root.querySelector('#mrd-map-summary').textContent='종목별 데이터가 없습니다.';
@@ -2101,10 +2105,10 @@ html>body{padding:0}
         const size=Math.min(38,Math.max(9,Math.min(w/(ticker.length*.66+1),h*.29)));
         const hasReturn=h>=34&&w>=45;
         text.append('text').attr('x',w/2).attr('y',h/2+(hasReturn?-2:size*.34)).attr('text-anchor','middle')
-          .attr('font-size',size).attr('font-weight',700).text(ticker);
+          .style('fill',ink(d.data.mapValue)).attr('font-size',size).attr('font-weight',700).text(ticker);
         if(hasReturn)text.append('text').attr('x',w/2).attr('y',h/2+Math.min(20,size*.7))
           .attr('text-anchor','middle').attr('font-size',Math.min(19,Math.max(9,size*.56))).attr('font-weight',600)
-          .text(mapReturn(d.data.mapValue));
+          .style('fill',ink(d.data.mapValue)).text(mapReturn(d.data.mapValue));
       });
       tree.descendants().filter(d=>d.depth===1||d.depth===2).forEach((d,i)=>{
         const w=d.x1-d.x0,h=d.y1-d.y0,header=headerHeight(d);
