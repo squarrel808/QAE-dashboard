@@ -58,6 +58,12 @@ def apply(builder, raw, rows, boxes, histories, official, config):
         return dates[builder.nearest_date_index(dates, day)] if day >= dates[0] else None
     current = dates[-1]
     row = next(r for r in rows if r['level'] == 'Index')
+    # Constituent calculations are retained only for breadth/coverage and group
+    # contribution denominators. Never expose them as index financial measures.
+    for field in builder.ROW_FIELDS:
+        if field.startswith(('eps', 'price', 'pe', 'roe', 'opm')) and 'Coverage' not in field and 'Weight' not in field:
+            row[field] = np.nan
+    row['fy2Growth'] = row['momentum'] = row['mcap'] = np.nan
     for suffix, days in [('4', 28), ('13', 91), ('6m', 182)]:
         row['eps' + suffix] = change('eps12', current, back(current - timedelta(days=days)))
     for suffix, days in [('1m', 28), ('3m', 91), ('6m', 182)]:
@@ -106,3 +112,10 @@ def apply(builder, raw, rows, boxes, histories, official, config):
             p[6:8] = old[6:8]
         points.append(p)
     history['values'] = points
+    # Rankings must use original daily index EPS, never constituent sums or
+    # rounded/rebased weekly history. Missing observations stay missing.
+    history['indexFYLevels'] = [
+        [(d - date(1970, 1, 1)).days, value('eps_fy1', d), value('eps_fy2', d)]
+        for d in dates
+    ]
+    history['source'] = 'Index Level'

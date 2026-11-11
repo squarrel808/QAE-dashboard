@@ -30,6 +30,17 @@ class OfficialIndexTests(unittest.TestCase):
         for p in histories[0]['values']:
             self.assertAlmostEqual(p[2] + p[3], p[8])
 
+    def test_daily_fy_levels_are_raw_and_missing_stays_missing(self):
+        args = self.fixture()
+        last = args[0].dates[-1]
+        args[4]['AS51']['eps_fy1'][last] = float('nan')
+        official.apply(builder, *args)
+        history = args[3][0]
+        self.assertEqual(history['source'], 'Index Level')
+        self.assertEqual(len(history['indexFYLevels']), 200)
+        self.assertEqual(history['indexFYLevels'][-1][2], 299)
+        self.assertTrue(builder.np.isnan(history['indexFYLevels'][-1][1]))
+
     def test_missing_index_fails_instead_of_using_constituents(self):
         args = list(self.fixture())
         args[4] = {}

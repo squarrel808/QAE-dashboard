@@ -267,7 +267,7 @@
           <button type="button" class="btn" data-index2-period="6m" aria-pressed="false">6M</button>
         </div>
       </div>
-      <div class="text-small text-muted">Each ranking compares aggregate forward earnings reconstructed as constituent EPS × implied shares (market cap ÷ price) with the nearest weekly observation on or before the selected calendar-month lookback.</div>
+      <div class="text-small text-muted">Source: supplied Excel · Index Level · FY1/FY2 EPS. Change = latest index EPS ÷ reference index EPS − 1. Uses daily source observations on or before the calendar-month lookback; no constituent aggregation.</div>
       <div class="mrd-grid mrd-section-space">
         <div>
           <h3 class="mrd-chart-title" id="mrd-fy1-rank-title">FY1 EPS — 1M · ranked high to low</h3>
@@ -735,15 +735,18 @@
     }
 
     function estimateStrength(history, position, months) {
-      const points=(history.values||[]).filter(v=>v.length>position&&valid(v[position])).slice().sort((a,b)=>a[0]-b[0]);
+      // Fail closed: no fallback to constituent or rebased weekly histories.
+      const slot=position===4?1:2;
+      const points=(DATA.indexFYLevels?.[history.index]||[]).slice().sort((a,b)=>a[0]-b[0]);
       if(points.length<2)return null;
-      const latest=points[points.length-1],target=new Date(latest[0]*86400000);
-      target.setUTCMonth(target.getUTCMonth()-months);
-      const targetDay=Math.floor(+target/86400000);
-      const prior=points.filter(v=>v[0]<=targetDay).pop();
-      if(!prior||!valid(prior[position])||1+prior[position]<=0)return null;
-      const change=(1+latest[position])/(1+prior[position])-1;
-      return valid(change)?{index:history.index,indexName:history.indexName,change,startDay:prior[0],endDay:latest[0],startLevel:prior[position],endLevel:latest[position]}:null;
+      const latest=points[points.length-1],target=new Date(latest[0]*86400000),day=target.getUTCDate();
+      target.setUTCDate(1);target.setUTCMonth(target.getUTCMonth()-months);
+      const lastDay=new Date(Date.UTC(target.getUTCFullYear(),target.getUTCMonth()+1,0)).getUTCDate();
+      target.setUTCDate(Math.min(day,lastDay));
+      const targetDay=Math.floor(+target/86400000),prior=points.filter(v=>v[0]<=targetDay).pop();
+      if(!prior||!valid(prior[slot])||prior[slot]<=0||!valid(latest[slot]))return null;
+      const change=latest[slot]/prior[slot]-1;
+      return valid(change)?{index:history.index,indexName:history.indexName,change,startDay:prior[0],endDay:latest[0],startLevel:prior[slot],endLevel:latest[slot]}:null;
     }
 
     function drawEstimateStrengthBar(selector,histories,position,periodLabel,seriesLabel) {
@@ -762,7 +765,7 @@
       row.append('rect').attr('x',d=>x(Math.min(0,d.change))).attr('width',d=>Math.abs(x(d.change)-x(0))).attr('height',y.bandwidth()).attr('fill',d=>d.change>=0?positiveColor:c.four).attr('opacity',.68);
       row.append('text').attr('x',left-8).attr('y',y.bandwidth()/2+4).attr('text-anchor','end').text(d=>short(d.indexName,width<520?17:27));
       row.append('text').attr('x',d=>d.change>=0?Math.min(left+innerW-4,x(d.change)+6):Math.max(left+4,x(d.change)-6)).attr('y',y.bandwidth()/2+4).attr('text-anchor',d=>d.change>=0?'start':'end').text(d=>pct(d.change));
-      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all').on('pointermove',(event,d)=>showTip(event,`<strong>${d.index} · ${d.indexName}</strong><br>${seriesLabel} ${periodLabel} change ${pct(d.change)}<br>Reference ${d3.utcFormat('%Y-%m-%d')(new Date(d.startDay*86400000))}<br>Latest ${d3.utcFormat('%Y-%m-%d')(new Date(d.endDay*86400000))}`)).on('pointerleave',hideTip);
+      row.append('rect').attr('x',left).attr('width',innerW).attr('height',y.bandwidth()).attr('fill','transparent').style('pointer-events','all').on('pointermove',(event,d)=>showTip(event,`<strong>${d.index} · ${d.indexName}</strong><br>${seriesLabel} ${periodLabel} change ${pct(d.change)}<br>Source: Excel · Index Level<br>Reference ${d3.utcFormat('%Y-%m-%d')(new Date(d.startDay*86400000))}: ${d3.format('.4f')(d.startLevel)}<br>Latest ${d3.utcFormat('%Y-%m-%d')(new Date(d.endDay*86400000))}: ${d3.format('.4f')(d.endLevel)}`)).on('pointerleave',hideTip);
       svg.append('g').attr('transform',`translate(0,${top+innerH})`).call(d3.axisBottom(x).ticks(width<520?4:6).tickFormat(d3.format('.0%')));
       axisTitle(svg,`${seriesLabel} estimate change — ${periodLabel}`,left+innerW/2,height-5,'x');
     }
@@ -1259,6 +1262,10 @@
       root.querySelector('#mrd-fy2-rank-title').textContent=`FY2 EPS — ${label} · ranked high to low`;
       drawEstimateStrengthBar('#mrd-fy1-rank',histories,4,label,'FY1 EPS');
       drawEstimateStrengthBar('#mrd-fy2-rank',histories,5,label,'FY2 EPS');
+      let audit=root.querySelector('#mrd-index-fy-source');
+      if(!audit){audit=document.createElement('div');audit.id='mrd-index-fy-source';root.querySelector('#mrd-fy2-rank').parentElement.parentElement.after(audit);}
+      const months={"1m":1,"3m":3,"6m":6}[index2Period],fmt=d=>d3.utcFormat('%Y-%m-%d')(new Date(d*86400000));
+      audit.innerHTML='<h3 class="mrd-chart-title">Index Level · FY1 / FY2 원본 대조</h3><div style="overflow:auto"><table class="table table-sm"><thead><tr><th>Index</th><th>FY</th><th>기준일</th><th>기준 EPS</th><th>최신일</th><th>최신 EPS</th><th>변화율</th></tr></thead><tbody>'+histories.flatMap(h=>[4,5].map(pos=>{const v=estimateStrength(h,pos,months);return v?`<tr><td>${escapeText(h.indexName)}</td><td>FY${pos-3}</td><td>${fmt(v.startDay)}</td><td>${d3.format('.4f')(v.startLevel)}</td><td>${fmt(v.endDay)}</td><td>${d3.format('.4f')(v.endLevel)}</td><td>${d3.format('+.2%')(v.change)}</td></tr>`:`<tr><td>${escapeText(h.indexName)}</td><td>FY${pos-3}</td><td colspan="5">N/A · Index Level 관측치 부족</td></tr>`;})).join('')+'</tbody></table></div>';
     }
     function renderIndex2(){
       root.querySelectorAll('[data-index2-panel]').forEach(panel=>panel.hidden=panel.dataset.index2Panel!==index2View);

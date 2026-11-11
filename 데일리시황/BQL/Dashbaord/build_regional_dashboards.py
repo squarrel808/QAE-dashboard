@@ -1582,6 +1582,7 @@ def build(
                 ]
                 for item in boxes
             ],
+            "indexFYLevels": {item["index"]: item["indexFYLevels"] for item in pe_histories if item["level"] == "Index"},
             "peHistory": [
                 [
                     item["index"],

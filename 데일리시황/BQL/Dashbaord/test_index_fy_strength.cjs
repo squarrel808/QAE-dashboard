@@ -1,0 +1,18 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const source = fs.readFileSync(path.join(__dirname, '유로존_dashboard/market_rotation_dashboard.template.html'), 'utf8');
+const fn = source.slice(source.indexOf('    function estimateStrength('), source.indexOf('    function drawEstimateStrengthBar('));
+const day = s => Date.parse(s) / 86400000;
+const context = {DATA: {indexFYLevels: {TEST: [[day('2026-02-28'), 20, 30], [day('2026-03-31'), 22, 36]]}}, valid: x => typeof x === 'number' && Number.isFinite(x)};
+vm.createContext(context);vm.runInContext(fn, context);
+const history = {index: 'TEST', indexName: 'Test', values: [[day('2026-03-31'), 0, 0, 0, 999, 999]]};
+assert.ok(Math.abs(context.estimateStrength(history, 4, 1).change - .1) < 1e-12);
+assert.equal(context.estimateStrength(history, 5, 1).startDay, day('2026-02-28'));
+assert.ok(Math.abs(context.estimateStrength(history, 5, 1).change - .2) < 1e-12);
+context.DATA.indexFYLevels.TEST[1][2] = null;
+assert.equal(context.estimateStrength(history, 5, 1), null);
+delete context.DATA.indexFYLevels.TEST;
+assert.equal(context.estimateStrength(history, 4, 1), null);
+console.log('PASS: direct raw EPS, month-end clipping, missing data, no aggregate fallback');
