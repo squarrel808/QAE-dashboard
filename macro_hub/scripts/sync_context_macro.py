@@ -20,10 +20,25 @@ def payload(match):
     data=clean(json.loads(match[2]))
     return match[1]+json.dumps(data,ensure_ascii=False).replace('</','<\\/')+match[3]
 html=re.sub(r'(<script id="macroData" type="application/json">)([\s\S]*?)(</script>)',payload,html)
-html=html.replace('href="../../../index.html"','href="/econ" target="_top"').replace('href="index.html"','href="/econ" target="_top"')
-html=html.replace('지표별 요약·IB 코멘트','경제지표 캘린더')
+html=html.replace('href="../../../index.html"','href="/econ" target="_top"').replace('href="index.html"','href="/context-macro/indicators" target="_top"')
 html=html.replace('</header>','<p style="font-size:12px">원문 제목·자료일·인용은 표시하며, 로컬 원문 PDF는 웹에 게시하지 않습니다.</p></header>')
 assert 'file:///' not in html and not re.search(r'[A-Za-z]:\\\\Users',html)
 dest=ROOT/'macro_hub/public/embeds/context-macro.html'
 dest.write_text(html,encoding='utf8')
 print('Context Macro synchronized:',source.name)
+
+# Publish the companion indicator dashboard with the same reviewed snapshot.
+indicator_source=source.with_name('index.html')
+indicator_html=indicator_source.read_text(encoding='utf8')
+indicator_html=re.sub(r'(<script id="data" type="application/json">)([\s\S]*?)(</script>)',payload,indicator_html)
+indicator_html=indicator_html.replace('href="macro_views.html"','href="/context-macro" target="_top"')
+indicator_html=indicator_html.replace("return location.protocol==='http:'?'/source/'+e.doc_id+'#page='+e.page:e.url", "return e.url")
+# Local PDF references remain readable citations, without broken web links.
+for expression,label in [('sourceUrl(e)','e.title'),('sourceUrl(x)','x.title'),('c.url',None)]:
+    text='${esc('+label+')}' if label else '원문 열기'
+    anchor='<a href="${esc('+expression+')}" target="_blank" rel="noopener">'+text+'</a>'
+    replacement='${'+expression+'?`'+anchor+'`:`<span>'+ (text if label else '로컬 원문 · 웹 미게시') +'</span>`}'
+    indicator_html=indicator_html.replace(anchor,replacement)
+assert 'file:///' not in indicator_html and not re.search(r'[A-Za-z]:\\\\Users',indicator_html)
+(dest.parent/'context-indicators.html').write_text(indicator_html,encoding='utf8')
+print('Context indicators synchronized:',indicator_source.name)
