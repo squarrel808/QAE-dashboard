@@ -292,6 +292,11 @@ def compute_momentum_metrics(series, max_months=MOMENTUM_MAX_HISTORY):
        6M/6M ann.     : 6개월 평균 vs 직전 6개월 평균, 2승 환산
     """
     s = series.dropna().sort_index()
+    if not s.empty:
+        s.index = pd.to_datetime(s.index).to_period('M')
+        s = s.groupby(level=0).last()
+        s = s.reindex(pd.period_range(s.index.min(), s.index.max(), freq='M'))
+        s.index = s.index.to_timestamp('M')
     if len(s) < 13:
         return None
 
@@ -616,6 +621,11 @@ def extract_all_from_haver():
             quality_note = f'원지수 동시 단절 감지: {max(rebase_dates):%Y-%m}. 공식 연결계수 미확인으로 단절을 가로지르는 전년비를 제외했습니다. {safe_start:%Y-%m} 이후만 표시합니다.'
         data = build_country_data(sub_df)
         if data:
+            raw_latest = wide[[col for col, _, _ in items]].dropna(how='all').index.max()
+            data['raw_latest'] = raw_latest.strftime('%Y-%m')
+            if data['stats_timeline'][-1]['month'] != raw_latest.strftime('%b %Y'):
+                available = int(sub_df.loc[raw_latest].notna().sum()) if raw_latest in sub_df.index else 0
+                quality_note += f' 최신 원자료 {raw_latest:%Y-%m} 수신. 해당 월 YoY 계산 가능 항목 {available}/{sub_df.shape[1]}개로 분포 표시 최소 기준(10%) 미달. 전년 동월·비교기간 자료가 없는 항목은 보간하지 않습니다.'
             data['quality_note'] = quality_note
         if data:
             result[country] = data
@@ -658,7 +668,7 @@ def generate_html(all_data):
     """데이터를 받아서 HTML 대시보드를 생성합니다."""
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     coverage = ' · '.join(
-        f"{country}: {data['stats_timeline'][-1]['month']}"
+        f"{country}: 원자료 {data.get('raw_latest', '—')} / YoY 분포 {data['stats_timeline'][-1]['month']}"
         for country, data in all_data.items() if data.get('stats_timeline')
     )
     source_modified = datetime.datetime.fromtimestamp(DASHBOARD_XLSX.stat().st_mtime).strftime('%Y-%m-%d %H:%M')
