@@ -7,6 +7,14 @@ import scheduled_refresh as scheduled
 import deploy_check
 
 class ScheduledRefreshTests(unittest.TestCase):
+    def test_live_check_encodes_korean_weekly_paths(self):
+        with patch.object(deploy_check.urllib.request,'urlopen') as opened:
+            opened.return_value.__enter__.return_value.read.return_value=b'ok'
+            self.assertEqual(deploy_check.fetch_bytes('weekly/주간 시황.html','test'),b'ok')
+            url=opened.call_args.args[0].full_url
+            self.assertIn('/weekly/%EC%A3%BC%EA%B0%84%20',url)
+            self.assertTrue(url.isascii())
+
     def test_failed_module_restores_partial_outputs_and_next_module_runs(self):
         with tempfile.TemporaryDirectory() as directory:
             public=Path(directory)

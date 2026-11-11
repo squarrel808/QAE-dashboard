@@ -6,6 +6,7 @@ import json
 import os
 import time
 import urllib.request
+from urllib.parse import quote
 from datetime import date, datetime
 from pathlib import Path
 
@@ -60,7 +61,7 @@ def prepare(run_id, root=ROOT, validate_reports_now=True, excluded_paths=()):
 
 
 def fetch_bytes(path, run_id):
-    req = urllib.request.Request(SITE + "/" + path + "?qae=" + run_id,
+    req = urllib.request.Request(SITE + "/" + quote(path, safe="/") + "?qae=" + quote(run_id, safe=""),
                                  headers={"Cache-Control": "no-cache"})
     with urllib.request.urlopen(req, timeout=30) as response:
         return response.read()
