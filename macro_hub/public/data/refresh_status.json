@@ -1,0 +1,92 @@
+{
+  "runId": "20261111_165849_verified_refresh",
+  "modules": [
+    {
+      "name": "경제지표",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:32:32"
+    },
+    {
+      "name": "Context Macro",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:32:32"
+    },
+    {
+      "name": "실적 캘린더",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:32:33"
+    },
+    {
+      "name": "Report",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:32:37"
+    },
+    {
+      "name": "PCA I",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:33:13"
+    },
+    {
+      "name": "CPI 분포",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:43:36"
+    },
+    {
+      "name": "Consensus",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:50:24"
+    },
+    {
+      "name": "PCA II·III·국가별 경제지표",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:52:08"
+    },
+    {
+      "name": "CAI",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:52:08"
+    },
+    {
+      "name": "Surprise Index",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:52:18"
+    },
+    {
+      "name": "PMI",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:58:49"
+    },
+    {
+      "name": "Factor",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:54:32"
+    },
+    {
+      "name": "Theme",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:54:40"
+    },
+    {
+      "name": "Market Rotation",
+      "status": "updated",
+      "completedAt": "2026-11-11T16:57:20"
+    }
+  ],
+  "initialValidationRun": "20261111_163230",
+  "houseViews": "앱 예약이 작성한 지표·IB 해석 화면 재사용",
+  "held": {
+    "Policy Tone": "사용자 요청 — 원인 확인만"
+  },
+  "fileDependent": [
+    "주간 시황",
+    "실적 캘린더",
+    "경제지표 WECO",
+    "Consensus ECFC",
+    "Market Rotation BQuant"
+  ],
+  "notes": [
+    "PMI 연결 패키지 설치 및 비활성 ISM 두 계열 번호 수정 후 재검증 완료",
+    "CAI 17개국 및 MAP 13개국 직접 조회 완료",
+    "Theme 63개 중 최근 자료 41개, 지연 22개 표시 유지"
+  ]
+}
