@@ -1,0 +1,425 @@
+[
+  {
+    "country": "US",
+    "factor": "Value",
+    "bbids": [
+      "GSPUVALU"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Momentum",
+    "bbids": [
+      "GSPUMOMO"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Size",
+    "bbids": [
+      "GSPUSIZE"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Volatility",
+    "bbids": [
+      "GSPURSVL"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Dividend",
+    "bbids": [
+      "GSPUDIVD"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "High Beta",
+    "bbids": [
+      "GSPUBETA"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Momentum 3M",
+    "bbids": [
+      "GSPRHMO3"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "US",
+    "factor": "Momentum 12M−1M",
+    "bbids": [
+      "GSPRHIMO"
+    ],
+    "kind": "pair",
+    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "Value",
+    "bbids": [
+      "GSPAJBVA"
+    ],
+    "kind": "pair",
+    "note": "Barra 롱/숏 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "Momentum",
+    "bbids": [
+      "GSPAJBMO"
+    ],
+    "kind": "pair",
+    "note": "Barra 롱/숏 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "Size",
+    "bbids": [
+      "GSPAJBSZ"
+    ],
+    "kind": "pair",
+    "note": "Barra 롱/숏 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "Volatility",
+    "bbids": [
+      "GSPAJBRV"
+    ],
+    "kind": "pair",
+    "note": "Barra 롱/숏 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "High Beta",
+    "bbids": [
+      "GSPAJBBE"
+    ],
+    "kind": "pair",
+    "note": "Barra 롱/숏 페어"
+  },
+  {
+    "country": "JP",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXAJPHD"
+    ],
+    "kind": "basket",
+    "note": "고배당 바스켓"
+  },
+  {
+    "country": "EU",
+    "factor": "Value",
+    "bbids": [
+      "GSXEBFVL",
+      "GSXEBFVS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXEBFML",
+      "GSXEBFMS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "Size",
+    "bbids": [
+      "GSXEHSIZ",
+      "GSXELSIZ"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "Volatility",
+    "bbids": [
+      "GSXEBFRL",
+      "GSXEBFRS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXEBFDL",
+      "GSXEBFDS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "High Beta",
+    "bbids": [
+      "GSXEBFBL",
+      "GSXEBFBS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "EU",
+    "factor": "Momentum 3M",
+    "bbids": [
+      "GSXEHMO3",
+      "GSXELMO3"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "Value",
+    "bbids": [
+      "GSXACBVL",
+      "GSXACBVS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXACBML",
+      "GSXACBMS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "Size",
+    "bbids": [
+      "GSXACBSL",
+      "GSXACBSS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "Volatility",
+    "bbids": [
+      "GSXACHWL",
+      "GSXACHWS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXACBDL",
+      "GSXACBDS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "CN",
+    "factor": "High Beta",
+    "bbids": [
+      "GSXACBBL",
+      "GSXACBBS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "KR",
+    "factor": "Value",
+    "bbids": [
+      "GSXAKVAL",
+      "GSXAKVAS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "KR",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXAKMOL",
+      "GSXAKMOS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "KR",
+    "factor": "Size",
+    "bbids": [
+      "GSXAKSIL",
+      "GSXAKSIS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "TW",
+    "factor": "Value",
+    "bbids": [
+      "GSXATVAL",
+      "GSXATVAS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "TW",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXATMOL",
+      "GSXATMOS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "TW",
+    "factor": "Size",
+    "bbids": [
+      "GSXATSIL",
+      "GSXATSIS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "TW",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXATDYL",
+      "GSXATDYS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "HK",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXAHBML",
+      "GSXAHBMS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "HK",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXAHBYL",
+      "GSXAHBYS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "HK",
+    "factor": "High Beta",
+    "bbids": [
+      "GSXAHBDL",
+      "GSXAHBDS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "GB",
+    "factor": "Value",
+    "bbids": [
+      "GSXEUKVL",
+      "GSXEUKVS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "GB",
+    "factor": "Momentum",
+    "bbids": [
+      "GSXEUKML",
+      "GSXEUKMS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "GB",
+    "factor": "Size",
+    "bbids": [
+      "GSXEUKLG",
+      "GSXEUKSL"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "GB",
+    "factor": "High Beta",
+    "bbids": [
+      "GSXEUKBL",
+      "GSXEUKBS"
+    ],
+    "kind": "legs",
+    "note": "고특성·저특성 구성 바스켓 각각의 추이"
+  },
+  {
+    "country": "KR",
+    "factor": "Dividend",
+    "bbids": [
+      "GSCBKHDS"
+    ],
+    "kind": "basket",
+    "note": "고배당·저P/B 복합 바스켓"
+  },
+  {
+    "country": "KR",
+    "factor": "High Beta",
+    "bbids": [
+      "GSXAKR98"
+    ],
+    "kind": "basket",
+    "note": "GS Korea Beta 바스켓"
+  },
+  {
+    "country": "AU",
+    "factor": "Dividend",
+    "bbids": [
+      "GSXAAUHD"
+    ],
+    "kind": "basket",
+    "note": "고배당 바스켓"
+  }
+]

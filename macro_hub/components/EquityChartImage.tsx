@@ -7,10 +7,11 @@ type Row = Record<string, number | string | null>
 const esc = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[c]!)
 
 // Render actual observations as a standalone SVG image, also available to save.
-export default function EquityChartImage({ rows, series, title }: { rows: Row[]; series: PlotSeries[]; title: string }) {
+export default function EquityChartImage({ rows, series, title, compact = false }: { rows: Row[]; series: PlotSeries[]; title: string; compact?: boolean }) {
   const src = useMemo(() => {
-    const width = 1400, left = 65, right = 25, top = 45, bottom = 345
-    const height = 405 + Math.ceil(series.length / 4) * 24
+    const width = compact ? 800 : 1400, left = 65, right = 25, top = 45, bottom = 345
+    const columns = compact ? 2 : 4
+    const height = 405 + Math.ceil(series.length / columns) * 24
     const values = rows.flatMap(r => series.map(s => r[s.key]).filter((v): v is number => typeof v === 'number' && Number.isFinite(v)))
     let lo = 100, hi = 100
     values.forEach(v => { lo = Math.min(lo, v); hi = Math.max(hi, v) })
@@ -39,14 +40,14 @@ export default function EquityChartImage({ rows, series, title }: { rows: Row[];
         active = true
       })
       parts.push(`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.6" stroke-linejoin="round"/>`)
-      const lx = left + (j % 4) * 330, ly = 402 + Math.floor(j / 4) * 24
+      const lx = left + (j % columns) * ((width - left - right) / columns), ly = 402 + Math.floor(j / columns) * 24
       const label = s.label.length > 40 ? s.label.slice(0, 37) + '…' : s.label
       parts.push(`<path d="M${lx} ${ly - 4}h18" stroke="${s.color}" stroke-width="2"/><text x="${lx + 24}" y="${ly}"><title>${esc(s.label)}</title>${esc(label)}</text>`)
     })
-    if (!values.length) parts.push(`<text x="700" y="190" text-anchor="middle">표시할 데이터가 없습니다</text>`)
+    if (!values.length) parts.push(`<text x="${width / 2}" y="190" text-anchor="middle">표시할 데이터가 없습니다</text>`)
     parts.push('</g></svg>')
     return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(parts.join(''))}`
-  }, [rows, series, title])
+  }, [rows, series, title, compact])
 
   return <div>
     {/* A real image element keeps browser save/copy-image actions available. */}

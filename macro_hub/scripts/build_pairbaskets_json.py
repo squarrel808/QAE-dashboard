@@ -159,6 +159,9 @@ def main():
     mock = "--mock" in sys.argv
     data = build_mock() if mock else build_real()
     apply_display_labels(data)
+    if not mock:
+        from build_major_factors import build_major_factors
+        build_major_factors()
     data["frequency"] = "monthly" if mock else "daily"
     data["generatedAt"] = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

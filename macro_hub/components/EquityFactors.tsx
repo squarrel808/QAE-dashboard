@@ -1,6 +1,8 @@
 'use client'
 import { useMemo, useState } from 'react'
 import ChartImage from './EquityChartImage'
+import { rankFactors, rankingRows } from '@/lib/equityFactors'
+import MajorFactors from './MajorFactors'
 import type { PairBasketsData, Series } from '@/lib/types'
 
 const PALETTE = ['#378ADD', '#1D9E75', '#BA7517', '#D4537E', '#9b8cff', '#46b0c9', '#e0833b', '#cf5fd0', '#6fcf6f', '#d24b4a']
@@ -64,7 +66,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
 
   // universe: 있으면 그대로, 없으면 groups + sector 로 대체 (원본 HTML과 동일한 fallback)
   const universe: Series[] = useMemo(() => {
-    if (data.universe?.length) return data.universe.map(p => ({ ...p, label: p.label?.trim() || p.bbid }))
+    if (data.universe?.length) return data.universe.map(p => ({ ...p, label: p.bbid === 'GSPURSVL' ? 'Residual Volatility · High / Low' : p.label?.trim() || p.bbid }))
     const out: Series[] = []
     const seen = new Set<string>()
     Object.values(data.groups || {}).forEach((arr) =>
@@ -81,14 +83,6 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
   const [sector, setSector] = useState(realSectors[0] || '')
   const [rLines, setRLines] = useState(36)
   const [rTop, setRTop] = useState(12)
-
-  const rankingReturn = (p: Series): number | null => {
-    if (rTop !== -5) return chgN(p, rTop)
-    if (data.frequency !== 'daily' || p.close.length < 6) return null
-    const base = p.close[p.close.length - 6]
-    const last = p.close[p.close.length - 1]
-    return Number.isFinite(base) && Number.isFinite(last) && base !== 0 ? last / base - 1 : null
-  }
 
   // ── 히트맵 셀 조회
   const cell = (sec: string, fac: string): number | null => {
@@ -114,48 +108,14 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
     [data, sector]
   )
 
-  // ── TOP/BOTTOM 랭킹
-  const ranked = useMemo(() => {
-    return universe
-      .map((p) => ({ label: p.label, nameNote: p.nameNote, v: rankingReturn(p) }))
-      .filter((r): r is { label: string; nameNote: string | undefined; v: number } => r.v != null)
-      .sort((a, b) => b.v - a.v)
-  }, [universe, rTop])
-  const top10 = ranked.slice(0, 10)
-  const bottom10 = ranked.slice(-10).reverse()
-
-  // ── ⑤ 추이 비교: TOP10 기본 선택 + 유니버스 체크박스 라인차트
-  const [rUniv, setRUniv] = useState(36)
-  const univTop = useMemo(
-    () => universe.map((p) => ({ bbid: p.bbid, v: chgN(p, rUniv) }))
-      .filter((r): r is { bbid: string; v: number } => r.v != null)
-      .sort((a, b) => b.v - a.v),
-    [universe, rUniv]
-  )
-  const [checked, setChecked] = useState<Set<string>>(() => {
-    const t = universe.map((p) => ({ bbid: p.bbid, v: chgN(p, 36) }))
-      .filter((r): r is { bbid: string; v: number } => r.v != null)
-      .sort((a, b) => b.v - a.v)
-    return new Set(t.slice(0, 10).map((r) => r.bbid))
-  })
-  const toggle = (bbid: string) => setChecked((prev) => {
-    const s = new Set(prev); s.has(bbid) ? s.delete(bbid) : s.add(bbid); return s
-  })
-  const resetTop = () => setChecked(new Set(univTop.slice(0, 10).map((r) => r.bbid)))
-  const selected = useMemo(() => universe.filter((p) => checked.has(p.bbid)), [universe, checked])
-  const univRows = useMemo(() => {
-    const allMonths = Array.from(new Set(universe.flatMap((p) => p.dates))).sort()
-    const months = windowDates(allMonths, rUniv)
-    const reb = selected.map((p) => ({ p, vals: rebaseSeries(p, months) }))
-    return months.map((mo, i) => {
-      const row: Record<string, number | string | null> = { month: mo }
-      reb.forEach(({ p, vals }) => { row[p.bbid] = vals[i] })
-      return row
-    })
-  }, [universe, selected, rUniv])
+  const ranking = useMemo(() => rankFactors(universe, rTop), [universe, rTop])
+  const top10 = ranking.ranked.slice(0, 10)
+  const bottom10 = ranking.ranked.slice(-10).reverse()
+  const periodLabel = rTop === -5 ? '5D' : RANGES.find(([, value]) => value === rTop)?.[0] || ''
 
   const Sel = ({ value, onChange, ranking }: { value: number; onChange: (n: number) => void; ranking?: boolean }) => (
     <select
+      aria-label={ranking ? "수익률·그래프 기간" : undefined}
       value={value}
       onChange={(e) => onChange(+e.target.value)}
       className="bg-white border border-[var(--line)] rounded-md px-2 py-1 text-xs"
@@ -200,9 +160,9 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
 
   return (
     <section>
-      <h2 className="serif text-[15px] mb-3.5">Equity Factors · GS Pair Baskets</h2>
+      <MajorFactors />
 
-      <Card title="① 섹터 × 팩터 · 수익률(%)" control={<Sel value={rHeat} onChange={setRHeat} />}>
+      <Card title="섹터 × 팩터 · 수익률(%)" control={<Sel value={rHeat} onChange={setRHeat} />}>
         <div className="overflow-x-auto">
           <table className="border-separate text-[11px] w-full" style={{ borderSpacing: 2 }}>
             <thead>
@@ -233,7 +193,7 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
       </Card>
 
       <Card
-        title="② 섹터별 팩터 추이 · 100 리베이스"
+        title="섹터별 팩터 추이 · 100 리베이스"
         control={
           <span className="flex items-center gap-2">
             <select value={sector} onChange={(e) => setSector(e.target.value)} className="bg-white border border-[var(--line)] rounded-md px-2 py-1 text-xs">
@@ -246,34 +206,19 @@ export default function EquityFactors({ data }: { data: PairBasketsData }) {
         <ChartImage rows={lineData} series={sectorFactors.map((f, i) => ({ key: f, label: f, color: PALETTE[i % PALETTE.length] }))} title={`${sector} · ${rLines}M · 100 리베이스`} />
       </Card>
 
-      <div className="grid gap-3.5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-        <Card title="③ 수익률 TOP10" control={<Sel value={rTop} onChange={setRTop} ranking />}>
-          <Bars rows={top10} />
-        </Card>
-        <Card title="④ 수익률 BOTTOM10" control={<span className="text-xs text-[var(--muted)]">③ 기간 연동</span>}>
-          <Bars rows={bottom10} />
-        </Card>
+      <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+        <h2 className="serif text-lg">수익률 Top 10 / Bottom 10</h2>
+        <label className="flex items-center gap-2 text-sm">수익률·그래프 기간 <Sel value={rTop} onChange={setRTop} ranking /></label>
       </div>
-
-      <Card title="⑤ 추이 비교 · TOP10 기본 선택 + 유니버스 추가"
-        control={
-          <span className="flex items-center gap-2">
-            <button onClick={resetTop} className="rounded-md border border-[var(--line)] bg-white px-2.5 py-1 text-xs hover:bg-[var(--head)]">현재 기간 TOP10로 리셋</button>
-            <span className="lbl text-xs text-[var(--muted)]">기간</span>
-            <Sel value={rUniv} onChange={setRUniv} />
-          </span>
-        }>
-        <div className="max-h-40 overflow-y-auto border border-[var(--line)] rounded-lg p-2 mb-2.5 grid gap-x-3.5 gap-y-0.5"
-          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
-          {universe.map((p) => (
-            <label key={p.bbid} title={`${p.label}\n${p.nameNote || ''}`} className="text-xs flex items-center gap-1.5 truncate">
-              <input type="checkbox" checked={checked.has(p.bbid)} onChange={() => toggle(p.bbid)} />
-              <span className="truncate">{p.label}</span>
-            </label>
-          ))}
-        </div>
-        <ChartImage rows={univRows} series={selected.map((p, i) => ({ key: p.bbid, label: p.label, color: PALETTE[i % PALETTE.length] }))} title={`선택 바스켓 · ${rUniv}M · 100 리베이스`} />
-      </Card>
+      <p className="text-xs text-[var(--muted)] mb-3">{ranking.start} ~ {ranking.end} · 동일 기준일 자료 {ranking.ranked.length}개 · 추이는 시작값 100 기준</p>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-3.5">
+        {[{ title: 'Top 10', items: top10 }, { title: 'Bottom 10', items: bottom10 }].map(({ title, items }) => (
+          <Card key={title} title={`수익률 ${title} · ${periodLabel}`}>
+            <Bars rows={items} />
+            <ChartImage compact rows={rankingRows(items, ranking.start, ranking.end)} series={items.map((item, i) => ({ key: item.series.bbid, label: item.label, color: PALETTE[i % PALETTE.length] }))} title={`${title} 추이 · ${periodLabel} · 100 리베이스`} />
+          </Card>
+        ))}
+      </div>
 
       <p className="text-[11px] text-[var(--muted)] mt-2">
         데이터: GS Marquee PAIR_BASKETS_LEVELS ({data.frequency === 'daily' ? '일별 종가' : '월별'}){data.generatedAt ? ` · 생성 ${data.generatedAt}` : ''}
