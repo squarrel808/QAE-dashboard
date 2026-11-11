@@ -5,6 +5,11 @@ ROOT=Path(__file__).resolve().parents[2]
 latest=json.loads((ROOT/'데일리시황/표_업데이트/latest.json').read_text(encoding='utf8'))
 source=Path(next(p for p in latest['outputs'] if p.endswith('WECO\\macro_views.html') or p.endswith('WECO/macro_views.html')))
 html=source.read_text(encoding='utf8')
+# Refresh interaction code even when the reviewed research snapshot is older.
+personal_script=(ROOT/'데일리시황/Context/_macro/Research_Context/ecocal_dashboard/personal_views.js').read_text(encoding='utf8')
+start=html.index("'use strict';\nconst PERSONAL_KEY=")
+end=html.index('\nfunction render(){',start)
+html=html[:start]+personal_script+'\n'+html[end:]
 def clean(value):
     if isinstance(value,dict):return {k:clean(v) for k,v in value.items()}
     if isinstance(value,list):return [clean(v) for v in value]
