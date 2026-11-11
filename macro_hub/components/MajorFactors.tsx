@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import ChartImage from './EquityChartImage'
+import FactorReturnHeatmap from './FactorReturnHeatmap'
 import { rankFactors, rankingRows } from '@/lib/equityFactors'
 import type { Series } from '@/lib/types'
 
@@ -30,11 +31,13 @@ export default function MajorFactors() {
   if (failed) return <div role="alert">국가별 팩터를 불러오지 못했습니다. <button className="underline" onClick={() => setAttempt(value => value + 1)}>다시 시도</button></div>
   if (!data) return <p role="status">국가별 주요 팩터를 불러오는 중입니다…</p>
   const byId = new Map(data.series.map(series => [series.bbid, series]))
-  const selected = data.catalog.filter(entry => entry.country === country)
+  const catalog = data.catalog.filter(entry => !/Momentum 12M[−–-]1M/.test(entry.factor)).map(entry => ({ ...entry, factor: entry.factor === 'Momentum' ? 'Momentum 12M' : entry.factor }))
+  const selected = catalog.filter(entry => entry.country === country)
   const periodLabel = PERIODS.find(([, value]) => value === period)?.[0]
   const countryLabel = COUNTRIES.find(([code]) => code === country)?.[1]
   const freshnessDate = new Date(data.checkedAt).getTime() - 7 * 86400000
   const available = (entry: FactorEntry) => entry.bbids.map(id => byId.get(id)).filter((series): series is Series => !!series)
+  const heatSeries = selected.flatMap(entry => available(entry).map((item, i) => ({ ...item, label: `${entry.factor}${entry.kind === 'legs' ? (i === 0 ? ' · 고특성' : ' · 저특성') : entry.kind === 'pair' ? ' · 롱/숏' : ''}` })))
 
   return <section aria-label="국가별 주요 팩터" className="mb-6">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
@@ -50,7 +53,7 @@ export default function MajorFactors() {
         <tbody>{COUNTRIES.map(([code, label]) => <tr key={code} className={country === code ? 'bg-emerald-50' : ''}>
           <th className="p-2 text-left"><button className="underline underline-offset-4 whitespace-nowrap" aria-pressed={country === code} onClick={() => setCountry(code)}>{label}</button></th>
           {FACTORS.map(factor => {
-            const entry = data.catalog.find(item => item.country === code && item.factor === factor)
+            const entry = catalog.find(item => item.country === code && item.factor === (factor === 'Momentum' ? 'Momentum 12M' : factor))
             const histories = entry ? available(entry) : []
             const complete = entry && histories.length === entry.bbids.length
             const stale = histories.some(item => Date.parse(item.dates.at(-1) || '') < freshnessDate)
@@ -62,6 +65,8 @@ export default function MajorFactors() {
       </table>
     </div>
     <p className="text-xs text-[var(--muted)] mb-4">GS 제공 목록 확인 {data.checkedAt.slice(0, 10)} · 롱/숏은 GS 페어 지수, 양쪽 바스켓은 고특성·저특성 각각의 가격 추이입니다. Volatility는 고변동성 / 저변동성 방향이며, 미확인은 조회한 GS 바스켓 범위 기준입니다.</p>
+    <FactorReturnHeatmap series={heatSeries} frequency="daily" country={countryLabel || country} />
+    <FactorReturnHeatmap series={heatSeries} frequency="monthly" country={countryLabel || country} />
     <h3 className="serif text-lg mb-3">{countryLabel} · 주요 팩터 추이</h3>
     {!selected.length && <p className="p-4 border rounded bg-white">조회한 GS 바스켓 범위에서 해당 국가의 주요 팩터 계열을 확인하지 못했습니다.</p>}
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-3.5">

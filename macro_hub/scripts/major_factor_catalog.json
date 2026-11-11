@@ -63,15 +63,6 @@
     "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
   },
   {
-    "country": "US",
-    "factor": "Momentum 12M−1M",
-    "bbids": [
-      "GSPRHIMO"
-    ],
-    "kind": "pair",
-    "note": "고특성 매수 / 저특성 매도 · GS 일별 리밸런싱 페어"
-  },
-  {
     "country": "JP",
     "factor": "Value",
     "bbids": [
