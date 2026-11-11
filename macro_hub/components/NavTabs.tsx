@@ -10,8 +10,6 @@ const TABS = [
   { href: '/reports', label: 'Report' },
   { href: '/country-indicators', label: '국가별 경제지표' },
   { href: '/pca', label: 'PCA' },
-  { href: '/gdp-pca', label: 'PCA II' },
-  { href: '/pca-iii', label: 'PCA III' },
   { href: '/caimap', label: 'CAI' },
   { href: '/cpidist', label: 'CPI 분포' },
   { href: '/consensus', label: 'Consensus' },
@@ -24,16 +22,26 @@ const TABS = [
   { href: '/weekly/index.html', label: '주간 시황' },
 ]
 
+const PCA_TABS = [
+  { href: '/pca', label: 'PCA I' },
+  { href: '/gdp-pca', label: 'PCA II' },
+  { href: '/pca-iii', label: 'PCA III' },
+]
+
 export default function NavTabs() {
   const path = usePathname()
+  const isPca = PCA_TABS.some((t) => path === t.href || path.startsWith(t.href + '/'))
+    || path === '/pca-legacy' || path.startsWith('/pca-legacy/') || path === '/pca-comparison'
   return (
-    <nav className="flex gap-2 flex-wrap mt-3">
+    <>
+    <nav aria-label="주 메뉴" className="flex gap-2 flex-wrap mt-3">
       {TABS.map((t) => {
-        const active = path === t.href || path.startsWith(t.href + '/')
+        const active = t.href === '/pca' ? isPca : path === t.href || path.startsWith(t.href + '/')
         return (
           <Link
             key={t.href}
             href={t.href}
+            aria-current={active ? 'page' : undefined}
             className={
               'rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ' +
               (active
@@ -46,5 +54,25 @@ export default function NavTabs() {
         )
       })}
     </nav>
+    {isPca && (
+      <nav aria-label="PCA 모델 선택" className="flex flex-wrap gap-2 mt-3 rounded-lg border border-[var(--line)] bg-[var(--head)] p-2">
+        {PCA_TABS.map((t) => {
+          const active = path === t.href || path.startsWith(t.href + '/')
+          return (
+            <Link
+              key={t.href}
+              href={t.href}
+              aria-current={active ? 'page' : undefined}
+              className={'rounded-md px-4 py-2 text-sm font-semibold transition-colors ' + (
+                active ? 'bg-[var(--badge)] text-white' : 'bg-white text-[var(--ink)] hover:bg-[var(--line)]'
+              )}
+            >
+              {t.label}
+            </Link>
+          )
+        })}
+      </nav>
+    )}
+    </>
   )
 }
