@@ -41,6 +41,43 @@ class OfficialIndexTests(unittest.TestCase):
         self.assertEqual(history['indexFYLevels'][-1][2], 299)
         self.assertTrue(builder.np.isnan(history['indexFYLevels'][-1][1]))
 
+    def test_constituent_pipeline_cannot_populate_index_metrics(self):
+        from test_stock_map import panel
+        raw = panel(date(2026, 1, 1), date(2026, 7, 20))
+        for key in builder.METRIC_PREFIXES.values():
+            if key not in raw.metrics:
+                raw.metrics[key] = raw.metrics['price'] / 10
+        rows, boxes, histories, _ = builder.aggregate_index(raw, raw.dates[0], raw.dates[0], True)
+        index = next(r for r in rows if r['level'] == 'Index')
+        for field in ('eps4', 'price1m', 'peCurrent', 'roeCurrent', 'mcap', 'fy2Growth'):
+            self.assertTrue(builder.np.isnan(index[field]), field)
+        self.assertTrue(any(builder.np.isfinite(r['peCurrent']) for r in rows if r['level'] == 'Sector'))
+        self.assertTrue(all(p[1:6] == [None]*5 for p in histories[0]['values']))
+
+    def test_index_bottom_up_entry_is_forbidden(self):
+        with self.assertRaisesRegex(ValueError, 'bottom-up aggregation is forbidden'):
+            builder.aggregate_group(None, None, 'Index', 'All')
+
+    def test_all_index_financial_fields_use_official_values(self):
+        args = self.fixture()
+        row = args[1][0]
+        for field in builder.ROW_FIELDS:
+            if field not in ('level', 'index', 'group', 'indexName'):
+                row[field] = -999.0
+        official.apply(builder, *args)
+        for field in ('peCurrent', 'roeCurrent', 'roe12m', 'opmCurrent', 'opm12m', 'mcap'):
+            self.assertAlmostEqual(row[field], 11.99)
+        for field in ('eps4', 'eps13', 'eps6m', 'eps1d', 'eps5d', 'price1d', 'price5d', 'price1m', 'price3m', 'price6m', 'momentum', 'fy2Growth', 'pePercentile'):
+            self.assertNotEqual(row[field], -999.0, field)
+        self.assertEqual(len(args[3][0]['values']), 200)
+
+    def test_missing_financial_value_never_keeps_aggregate(self):
+        args = self.fixture()
+        args[1][0]['roeCurrent'] = 999
+        args[4]['AS51']['roe_current'][args[0].dates[-1]] = float('nan')
+        official.apply(builder, *args)
+        self.assertTrue(builder.np.isnan(args[1][0]['roeCurrent']))
+
     def test_missing_index_fails_instead_of_using_constituents(self):
         args = list(self.fixture())
         args[4] = {}

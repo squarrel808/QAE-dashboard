@@ -148,3 +148,5 @@ node '..\test_stock_map_dates.cjs'
 Index EPS II의 1M/3M/6M 순위는 별도 `indexFYLevels` 일별 원본 EPS 배열의 `최신 EPS / 기준 EPS - 1`이다. 주간 샘플이나 연초 대비 정규화 값을 재사용하지 않는다. 달력 개월 전 날짜(말일 보정) 또는 그 이전의 마지막 원본 날짜를 사용하며, 원본 대조 표에 FY1/FY2 각각 기준일·최신일·EPS·변화율을 표시한다. FY1/FY2는 원본의 상대 회계연도 정의를 그대로 유지한다.
 
 검증: `python ../test_official_index_levels.py`, `node ../test_index_fy_strength.cjs`.
+
+지수 집계 방지: `aggregate_group(..., level="Index")`는 즉시 오류를 발생시킨다. 구성종목 파이프라인은 지수 재무값이 비어 있는 레코드만 만들고, `official_index_levels.apply`만 해당 값을 채운다. Universe 집계는 breadth/커버리지 및 섹터·산업 기여도 분모에만 사용하며 지수 가격·EPS·P/E 값으로 노출하지 않는다. Index EPS I/II, Price & Attribution I의 지수 시계열, 섹터 상대성과의 기준 지수, Valuation의 지수 P/E는 모두 Index Level을 사용한다. 별도 장기 밸류에이션 파일은 섹터에만 사용한다. 상대성과 계산에서도 지수값을 선형 보간하지 않고 같은 날짜의 원본값만 사용한다.

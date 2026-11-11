@@ -470,7 +470,7 @@
   </section>
 
   <p class="mrd-note text-small">
-    Index-level EPS, price, P/E, ROE and margins use the supplied BQuant Index Level sheet directly. Index FY1/FY2 changes compare index EPS levels with the start of 2026. Revision breadth remains constituent-based. Sector and industry EPS changes rebuild constituent earnings as EPS × implied shares, where implied shares equal market cap ÷ price, and then compare the summed earnings amounts. Positive observations are used and stock-level earnings changes are capped at ±100% for 4W/13W comparisons. Group contributions use base-period earnings weights. In comparison charts, 13W EPS change is linearly converted to a 4W basis (13W × 4/13) and compared with actual 4W change. Price & Attribution II uses the latest date on which a material share of constituent prices actually changed; 1D and 5D EPS changes are aligned to the same active-price sessions. Index FY1/FY2 lines show direct index EPS changes since 2026-01-01. P/E equals total market cap divided by total earnings; observations below 1x are excluded as data-quality outliers. Price attribution uses start-date market-cap weights; P/E contribution is the residual multiple change implied by price return and earnings change, with the EPS×P/E interaction split equally so the two contributions sum to price return. Operating-margin observations outside ±200% are excluded from weighted averages. Price returns and the index heatmap exclude dividends. STOXX 600 market-cap and earnings weights are approximate because the source currency is mixed.
+    Index-level EPS, price, P/E, ROE and margins use the supplied BQuant Index Level sheet directly. Index FY1/FY2 changes compare index EPS levels with the start of 2026. Revision breadth remains constituent-based. Sector and industry EPS changes rebuild constituent earnings as EPS × implied shares, where implied shares equal market cap ÷ price, and then compare the summed earnings amounts. Positive observations are used and stock-level earnings changes are capped at ±100% for 4W/13W comparisons. Group contributions use base-period earnings weights. In comparison charts, 13W EPS change is linearly converted to a 4W basis (13W × 4/13) and compared with actual 4W change. Price & Attribution II uses the latest date on which a material share of constituent prices actually changed; 1D and 5D EPS changes are aligned to the same active-price sessions. Index FY1/FY2 lines show direct index EPS changes since 2026-01-01. Sector/industry P/E equals total market cap divided by total earnings; index P/E is the direct Index Level observation; observations below 1x are excluded as data-quality outliers. Price attribution uses start-date market-cap weights; P/E contribution is the residual multiple change implied by price return and earnings change, with the EPS×P/E interaction split equally so the two contributions sum to price return. Operating-margin observations outside ±200% are excluded from weighted averages. Price returns and the index heatmap exclude dividends. STOXX 600 market-cap and earnings weights are approximate because the source currency is mixed.
   </p>
   <div class="mrd-tooltip text-small" role="tooltip"></div>
 
@@ -613,9 +613,10 @@
       const benchmarkValues=(benchmark?.values||[]).filter(v=>v.length>=9&&valid(v[8])).map(v=>({day:v[0],value:v[8]}));
       if(benchmarkValues.length<2)return [];
       const bisect=d3.bisector(d=>d.day).left;
-      const benchmarkAt=day=>{const i=bisect(benchmarkValues,day);if(i<=0)return benchmarkValues[0].value;if(i>=benchmarkValues.length)return benchmarkValues[benchmarkValues.length-1].value;const a=benchmarkValues[i-1],b=benchmarkValues[i],t=(day-a.day)/(b.day-a.day||1);return a.value+t*(b.value-a.value);};
+      const benchmarkByDay=new Map(benchmarkValues.map(v=>[v.day,v.value]));
+      const benchmarkAt=day=>benchmarkByDay.get(day);
       return peHistories.filter(d=>d.index===indexCode&&d.level==='Sector').map(history=>{
-        const points=(history.values||[]).filter(v=>v.length>=9&&valid(v[8])&&v[0]>=benchmarkValues[0].day);
+        const points=(history.values||[]).filter(v=>v.length>=9&&valid(v[8])&&v[0]>=benchmarkValues[0].day&&valid(benchmarkAt(v[0])));
         if(!points.length)return {index:indexCode,indexName:history.indexName,group:history.group,values:[]};
         const sectorBase=points[0][8],benchmarkBase=benchmarkAt(points[0][0]);
         const values=points.map(v=>{const sectorReturn=(1+v[8])/(1+sectorBase)-1,benchmarkReturn=(1+benchmarkAt(v[0]))/(1+benchmarkBase)-1,relative=(1+sectorReturn)/(1+benchmarkReturn)-1;return {date:new Date(v[0]*86400000),day:v[0],sectorReturn,benchmarkReturn,relative};}).filter(d=>valid(d.relative)&&!Number.isNaN(+d.date));
@@ -1399,18 +1400,18 @@
         const cutoff=new Date(Date.UTC(end.getUTCFullYear()-valuationYears,end.getUTCMonth(),end.getUTCDate()));
         const cutoffDay=Math.floor(+cutoff/86400000);
         const sectorHistories=sectorPEHistories.filter(d=>d.index==='SXXP'&&d.level==='Sector'&&externalGroups.has(d.group)).map(d=>({...d,_order:1,values:d.values.filter(v=>v[0]>=cutoffDay)}));
-        const rawIndexHistory=sectorPEHistories.find(d=>d.index==='SXXP'&&d.level==='Index');
-        const indexValues=(rawIndexHistory?.values||[]).filter(v=>v.length>=2&&valid(v[1])&&v[1]>0&&v[0]>=cutoffDay&&v[0]<=Math.floor(+end/86400000));
+        const rawIndexHistory=availableValuationHistories(code).find(d=>d.level==='Index');
+        const indexValues=(rawIndexHistory?.values||[]).filter(v=>v.length>=2&&valid(v[1])&&v[1]>0&&v[0]>=cutoffDay);
         const indexHistory=rawIndexHistory&&indexValues.length?{...rawIndexHistory,_order:0,values:indexValues}:null;
         root.querySelector('#mrd-fan-sector-title').textContent=`${indexLabel(code)} Index + Sector 12MF P/E — ${valuationYears}Y view`;
-        root.querySelector('#mrd-valuation1-note').textContent=`Mean and ±2σ use each sector's available monthly observations within the trailing 10Y; some sectors have shorter histories. External source ends ${external.endDate}, earlier than the latest BQuant date.`;
+        root.querySelector('#mrd-valuation1-note').textContent=`Mean and ±2σ use each sector's available monthly observations within the trailing 10Y; some sectors have shorter histories. Sector source ends ${external.endDate}. Index P/E uses supplied Excel Index Level with its own available history through the latest source date.`;
         renderFanGrid('#mrd-fan-sector-grid',indexHistory?[indexHistory,...sectorHistories]:sectorHistories);
         return;
       }
       const histories=availableValuationHistories(code);
       const span=valuationSpan(histories);
       root.querySelector('#mrd-fan-sector-title').textContent=`${indexLabel(code)} Index + Sector 12MF P/E — available history${span?' '+span:''}`;
-      root.querySelector('#mrd-valuation1-note').textContent=histories.length?'Mean and ±2σ use the available monthly observations, not a 10Y sample. Series are reconstructed from current constituents; historical membership is not point-in-time.':'At least six monthly P/E observations are required. This index does not yet have enough history.';
+      root.querySelector('#mrd-valuation1-note').textContent=histories.length?'Mean and ±2σ use the available monthly observations, not a 10Y sample. Index series uses Excel Index Level directly; sector series are reconstructed from current constituents.':'At least six monthly P/E observations are required. This index does not yet have enough history.';
       renderFanGrid('#mrd-fan-sector-grid',histories);
     }
     function renderValuation2(){
@@ -1430,7 +1431,7 @@
       const groups=new Set(histories.map(d=>d.group));
       const span=valuationSpan(histories);
       root.querySelector('#mrd-box-title').textContent=`${indexLabel(code)} Sector 12MF P/E Distribution — available history${span?' '+span:''}`;
-      root.querySelector('#mrd-valuation2-note').textContent=groups.size?'Box statistics use available daily P/E observations, not a 10Y sample. Series are reconstructed from current constituents; historical membership is not point-in-time.':'At least six monthly P/E observations are required. This index does not yet have enough history.';
+      root.querySelector('#mrd-valuation2-note').textContent=groups.size?'Box statistics use available daily P/E observations, not a 10Y sample. Index series uses Excel Index Level directly; sector series are reconstructed from current constituents.':'At least six monthly P/E observations are required. This index does not yet have enough history.';
       const data=boxes.filter(d=>d.index===code&&d.level==='Sector'&&groups.has(d.group)).map(d=>({...d,_plotKey:aliases[d.group]||d.group,_plotName:`${indexLabel(code)} · ${d.group}`}));
       drawBoxplot('#mrd-boxplot',data);
     }

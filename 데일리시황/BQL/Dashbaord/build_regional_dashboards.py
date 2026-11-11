@@ -720,7 +720,7 @@ def load_stoxx600_sector_valuation(
         boxes: list[dict[str, Any]] = []
         coverage: dict[str, str] = {}
         index_coverage: str | None = None
-        series_specs = [("Stoxx 600", "STOXX Europe 600 — Full Index", "Index")]
+        series_specs = []  # Index P/E comes exclusively from BQuant Index Level.
         series_specs.extend((sector, group, "Sector") for sector, group in STOXX600_SECTOR_MAP.items())
         for sector, group, level in series_specs:
             points = [(d, value) for d, value in observations.get(sector, []) if d >= history_cutoff]
@@ -892,7 +892,7 @@ def pe_fan_history(
     for observation, (observation_date, value) in enumerate(zip(dates, series)):
         if not np.isfinite(value) or value <= 0:
             continue
-        if level == "Index":
+        if level in ("Index", "Universe"):
             iso = observation_date.isocalendar()
             bucket = (iso.year, iso.week)
         else:
@@ -952,6 +952,8 @@ def aggregate_group(
     earnings_start: date | None = None,
     strict_lookback: bool = False,
 ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    if level == "Index":
+        raise ValueError("Index measures must use Index Level; bottom-up aggregation is forbidden")
     metrics = {key: value[member_idx, :] for key, value in raw.metrics.items()}
     dates = raw.dates
     current = nearest_date_index(dates, dates[-1])
@@ -1310,7 +1312,17 @@ def aggregate_index(
     histories: list[dict[str, Any]] = []
     all_members = np.arange(len(raw.tickers), dtype=int)
     active_sessions = active_market_session_indices(raw.dates, raw.metrics["price"])
-    summary, box, history = aggregate_group(raw, all_members, "Index", "All", active_sessions, attribution_start, earnings_start, strict_lookback)
+    # Only constituent breadth/coverage and contribution denominators use the
+    # universe calculation. Financial measures never enter an Index record.
+    universe, _, universe_history = aggregate_group(raw, all_members, "Universe", "All", active_sessions, attribution_start, earnings_start, strict_lookback)
+    summary = {field: np.nan for field in ROW_FIELDS}
+    summary.update(index=raw.code, indexName=raw.name, level="Index", group="All", members=len(raw.tickers), weight=1.0)
+    for field, value in universe.items():
+        if field.startswith('_') or 'Coverage' in field or field in ('breadth4', 'breadth13', 'top5Concentration'):
+            summary[field] = value
+    identity = dict(index=raw.code, indexName=raw.name, level="Index", group="All")
+    box = {**identity}
+    history = {**identity, 'values': [[p[0], None, None, None, None, None, p[6], p[7], None] for p in universe_history['values'] if len(p) >= 8]}
     rows.append(summary)
     boxes.append(box)
     histories.append(history)

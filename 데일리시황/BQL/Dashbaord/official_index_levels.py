@@ -95,7 +95,7 @@ def apply(builder, raw, rows, boxes, histories, official, config):
     sampled = {}
     for d in dates:
         sampled[d.isocalendar()[:2]] = d
-    selected = sorted(set(sampled.values()) | {start, earnings_start})
+    selected = dates  # Keep exact daily benchmarks; never interpolate index levels.
     points = []
     for d in selected:
         epoch = (d - date(1970, 1, 1)).days
