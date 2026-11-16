@@ -1,7 +1,7 @@
 {
-  "runId": "rawdata-refresh-20261116-112946",
-  "generatedAt": "2026-11-16T11:29:46+09:00",
-  "scope": "BQuant, ECFC, WECO rawdata refresh",
+  "runId": "equity-refresh-20261116-161919",
+  "generatedAt": "2026-11-16T16:19:19+09:00",
+  "scope": "BQuant equity refresh; US/Europe close 2026-11-13",
   "files": {
     "data/consensus_cpi.json": "4810b6091e1beb42a480587a5804ade61cb81a6a45188e77d8c9c56a0a82eb31",
     "data/consensus_gdp.json": "6a3b74416c04ad75f964856b34799fab048b2ea7a8a371f5e226287a51f5edf5",
@@ -10,6 +10,6 @@
     "embeds/context-indicators.html": "75fd74abbf39b88b95d5c8ff0004b5dc626ed83324abb103a0acfe9a6c7fda22",
     "embeds/context-macro.html": "380eddc869aff79a5d69f924eb84773f48f04d43b5caa23aab36e1b12543581e",
     "embeds/econ.html": "57ea6c61c199678ca06373a6f65201cde58e7e2a5d1c9c9b5b4c7fe588e8d9c7",
-    "embeds/market_rotation.html": "5bcef794622e885e13bbde8ac9695f0f1b4898fa8a437011d1729f31b0bc7833"
+    "embeds/market_rotation.html": "253fafdbd0c578f047c21e0574628f2ae04a863a3c2c26cabd8627599c34ee49"
   }
 }
