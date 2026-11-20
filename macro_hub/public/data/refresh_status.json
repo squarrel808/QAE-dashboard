@@ -1,76 +1,75 @@
 {
-  "runId": "20261120_230002",
-  "startedAt": "2026-11-20T23:00:02",
+  "runId": "20261121_080002",
+  "startedAt": "2026-11-21T08:00:02",
   "modules": [
     {
       "name": "경제지표",
-      "status": "updated",
-      "completedAt": "2026-11-20T23:00:04"
+      "status": "failed"
     },
     {
       "name": "Context Macro",
       "status": "updated",
-      "completedAt": "2026-11-20T23:00:06"
+      "completedAt": "2026-11-21T08:00:05"
     },
     {
       "name": "실적 캘린더",
       "status": "updated",
-      "completedAt": "2026-11-20T23:00:06"
+      "completedAt": "2026-11-21T08:00:06"
     },
     {
       "name": "Report",
       "status": "updated",
-      "completedAt": "2026-11-20T23:00:09"
+      "completedAt": "2026-11-21T08:00:08"
     },
     {
       "name": "PCA I",
       "status": "updated",
-      "completedAt": "2026-11-20T23:00:42"
+      "completedAt": "2026-11-21T08:00:42"
     },
     {
       "name": "CPI 분포",
       "status": "updated",
-      "completedAt": "2026-11-20T23:10:48"
+      "completedAt": "2026-11-21T08:10:46"
     },
     {
       "name": "Consensus",
       "status": "updated",
-      "completedAt": "2026-11-20T23:16:23"
+      "completedAt": "2026-11-21T08:16:20"
     },
     {
       "name": "PCA II·III·국가별 경제지표",
       "status": "updated",
-      "completedAt": "2026-11-20T23:18:08"
+      "completedAt": "2026-11-21T08:17:59"
     },
     {
       "name": "CAI",
       "status": "updated",
-      "completedAt": "2026-11-20T23:21:15"
+      "completedAt": "2026-11-21T08:21:07"
     },
     {
       "name": "Surprise Index",
       "status": "updated",
-      "completedAt": "2026-11-20T23:21:24"
+      "completedAt": "2026-11-21T08:21:15"
     },
     {
       "name": "PMI",
       "status": "updated",
-      "completedAt": "2026-11-20T23:21:29"
+      "completedAt": "2026-11-21T08:21:21"
     },
     {
       "name": "Factor",
       "status": "updated",
-      "completedAt": "2026-11-20T23:23:28"
+      "completedAt": "2026-11-21T08:22:59"
     },
     {
       "name": "Theme",
       "status": "updated",
-      "completedAt": "2026-11-20T23:23:41"
+      "completedAt": "2026-11-21T08:23:06"
     },
     {
       "name": "Market Rotation",
       "status": "updated",
-      "completedAt": "2026-11-20T23:25:06"
+      "completedAt": "2026-11-21T08:24:32"
     }
   ],
   "held": {
