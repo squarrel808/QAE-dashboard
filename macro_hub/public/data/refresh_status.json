@@ -1,6 +1,6 @@
 {
-  "runId": "20261122_080002",
-  "startedAt": "2026-11-22T08:00:02",
+  "runId": "20261122_230003",
+  "startedAt": "2026-11-22T23:00:03",
   "modules": [
     {
       "name": "경제지표",
@@ -9,17 +9,17 @@
     {
       "name": "Context Macro",
       "status": "updated",
-      "completedAt": "2026-11-22T08:00:05"
+      "completedAt": "2026-11-22T23:00:09"
     },
     {
       "name": "실적 캘린더",
       "status": "updated",
-      "completedAt": "2026-11-22T08:00:06"
+      "completedAt": "2026-11-22T23:00:09"
     },
     {
       "name": "Report",
       "status": "updated",
-      "completedAt": "2026-11-22T08:00:08"
+      "completedAt": "2026-11-22T23:00:12"
     },
     {
       "name": "PCA I",
@@ -32,7 +32,7 @@
     {
       "name": "Consensus",
       "status": "updated",
-      "completedAt": "2026-11-22T09:05:43"
+      "completedAt": "2026-11-23T00:11:00"
     },
     {
       "name": "PCA II·III·국가별 경제지표",
@@ -41,32 +41,32 @@
     {
       "name": "CAI",
       "status": "updated",
-      "completedAt": "2026-11-22T09:38:59"
+      "completedAt": "2026-11-23T00:44:13"
     },
     {
       "name": "Surprise Index",
       "status": "updated",
-      "completedAt": "2026-11-22T09:39:08"
+      "completedAt": "2026-11-23T00:44:26"
     },
     {
       "name": "PMI",
       "status": "updated",
-      "completedAt": "2026-11-22T09:39:13"
+      "completedAt": "2026-11-23T00:44:32"
     },
     {
       "name": "Factor",
       "status": "updated",
-      "completedAt": "2026-11-22T09:41:07"
+      "completedAt": "2026-11-23T00:46:38"
     },
     {
       "name": "Theme",
       "status": "updated",
-      "completedAt": "2026-11-22T09:41:19"
+      "completedAt": "2026-11-23T00:46:47"
     },
     {
       "name": "Market Rotation",
       "status": "updated",
-      "completedAt": "2026-11-22T09:42:44"
+      "completedAt": "2026-11-23T00:49:33"
     }
   ],
   "held": {
